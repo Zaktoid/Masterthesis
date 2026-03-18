@@ -1,0 +1,1102 @@
+\documentclass[a4paper,12pt,oneside,titlepage]{article}
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tikz-cd}
+\usepackage{quiver}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{babel}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{yfonts}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{refs.bib}
+\renewcommand{\tilde}[1]{\widetilde{#1}}
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\renewcommand{\underbar}[1]{\underline{#1}}
+
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{equivbox}[1]{
+  colback=gray!5,
+  colframe=black,
+  fonttitle=\bfseries,
+  title=#1,
+  boxrule=0.8pt,
+  arc=2pt
+}
+
+
+\newcommand{\rightan}[3]{TR_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\rightane}[3]{TR_{#1}^e\mathcal{E}^{#2}_{#3}}
+\newcommand{\lefttan}[3]{TL_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\lefttane}[3]{TL_{#1}^e\mathcal{E}^{#2}_{#3}}
+\newcommand{\conttan}[3]{TK_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\conttane}[3]{TK_{#1}^{e}\mathcal{E}^{#2}_{#3}}
+\newcommand{\fibltan}[3]{TC_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\gentan}[3]{TG_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\todo}[1]{\textcolor{red}{TO DO [}#1\textcolor{red}{]}}
+
+\newcommand{\todomaybe}[1]{\textcolor{orange}{TO DO ? [}#1\textcolor{orange}{]}}
+
+\newcommand{\R}[0]{\mathbb{R}}
+
+\newcommand{\nul}[0]{\operatorname{nul}}
+
+\newcommand{\im}[0]{\operatorname{im}}
+\newcommand{\coker}[0]{\operatorname{coker}}
+\newcommand{\de}[0]{\operatorname{def}}
+
+
+
+\title{Quelques techniques d'étude de problèmes de bifurcation}
+\author{Zakaria Elmi Roble }
+\date{Décembre 2025}
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[section]
+\newtheorem{proposition}[definition]{Proposition} 
+\newtheorem{remarque}[definition]{Remarque}
+\newtheorem{exemple}[definition]{Exemple}
+\newtheorem{lemme}[definition]{Lemme}
+
+\DeclareMathOperator\supp{supp}
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Théorème}
+\newtheorem{corollaire}[definition]{Corollaire}
+\newenvironment{preuve}{\textit{Preuve} }{\hfill$\square$\vspace{\baselineskip} \\}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section*{Introduction}
+\newpage
+\part{Rappels et prérequis}
+
+\section{Notions de calcul différentiel dans des Espaces de Banachs}
+
+\todo{cette section est à restructurer et à retravailler, et complétée}\\
+Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Les plus importants seront démontrés en détail et afin de ne pas alourdir le manuscrit, nous renvoyons le lecteur vers \cite{dieudonne1969fma8} pour les preuves détaillées des autres.
+
+\begin{definition}
+Soient $E,F$ des espaces de Banach (réels ou complexes) et $U$ un ouvert de $E$ et $f,g\in C^0(E,F)$. $f$ et $g$ sont \textit{tangents} en $x_0\in A$ si 
+\begin{equation*}
+    \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_F}{||x-x_0||_E}=0
+\end{equation*}
+\end{definition}
+Il est clair que le relation "être tangent en un point" est une relation d'équivalence.
+\begin{lemme}
+Dans les conditions de la définition précédente, si il existe un élément $h$ de $C^0(A,F)$ tangent à $f$ en $x_0$ tel qu'il existe il existe $u\in L(E,F)$ tel que
+\begin{equation}
+    h(x)=f(x_0)+u(x-x_0)
+\end{equation}
+alors il est unique
+\end{lemme}
+\begin{preuve}
+   Supposons avoir $h$ et $h'$ satisfaisant $(1)$ et notons $u_1,u_2$ les éléments de $L(E,F)$ correspondant, on a alors 
+   \begin{equation*}
+           \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||h(x)-h'(x)||_F}{||x-x_0||_E}
+           = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x)-u_2(x)||_F}{||x-x_0||_E}
+           =           \lim_{y\rightarrow{0},y\neq 0}  \frac{||v(y)||_F}{||y||_E}=0
+   \end{equation*}
+   où on a posé $y=x-x_0$ et $v=u_1-u_2$. Soit $\varepsilon>0$, il existe $r>0$ tel que $||v(y)||\leq \varepsilon||y||$ si $||y||\leq r$, si $x\neq 0$, on récupère $||v(x)||\leq \varepsilon  ||x||$ en choisissant $y=\frac{r x}{||x||}$, ce qui permet d'affirmer que $v=0$, et donc $h=h'$
+\end{preuve}
+Il est donc licite d'introduire la définition suivante
+\begin{definition}
+    Si $E$ et $F$ sont des espaces de Banach, et si $A$ est un ouvert de $E$, alors $f\in C^0(A,F)$ est \textit{dérivable} en $x_0\in A$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$  , ce $u$ est alors la \textit{la dérivée de $f$ en $x_0$} qu'on notera $Df(x_0)$. Naturellement, $f$ est dérivable sur $A$ si elle est dérivable en chaque point
+\end{definition}
+
+\begin{proposition}
+    Dans les conditions de la définition précédente, $Df(x_0)\in \mathcal{L}(E,F)$
+\end{proposition}
+\begin{preuve}
+    Pour tout $\varepsilon>0$, il existe $0<r<1$ tel que
+    \begin{equation*}
+        ||t||_E<r\Rightarrow ||f(x_0+t) - f(x_0)||_F\leq 
+        \frac{\varepsilon}{2}\text{ et } ||f(x_0+t)-(f(x_0)+u(t))||_F\leq\frac{\varepsilon}{2} ||t||_E
+    \end{equation*}
+Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclure.
+\end{preuve}
+On vérifie facilement que si $f$ est constante sur $A$, alors $f$ est dérivable sur $A$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(E,F)$ alors $u$ est dérivable et $Du(x) =u(x)$ sur $E$.
+\begin{remarque}
+On pourrait se demander s'il est possible de relaxer les hypothèses d'avantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme 1.2, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant , par exemple, [SOURCE]. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement
+\end{remarque}
+\begin{remarque}
+On pourrait également se demander "pourquoi $\mathbb{R}$ ou $\mathbb{C}$ ? N'est-il pas possible de travailler avec des champs plus généraux ?". D'une part, notons d'abord qu'il faut pouvoir définir une notion de limite intéressante, ce qui exclue d'emblée les champs finis. Il est possible de faire de l'analyse avec les p-adique, mais la "rigidité" de leur topologie fait qu'il n'est pas vraiment intéressant d'y étudier les bifurcation. Le lecteur intéressé par l'analyse dans des champs plus généraux pourra consulter [Source]. 
+\end{remarque}
+Rappelons que l'espace $\mathcal{L}(E,F)$ muni de la norme $||u||=\sup_{t\in B(1)} u(x)$  est un espace de Banach et que $|| u(x) ||_F\leq ||u||\cdot||x||_E$. 
+
+\begin{proposition}
+Si $E,F,G$ sont des espaces de Banach et si $B\in C^0(E\times F,G)$ est 
+bilinéaire, alors B est dérivable et $DB(x_0,y_0)(x,y)= B(x_0,y)+B(x,y_0)$ 
+pour tous $(x_0,y_0),(x,y)\in E\times F$
+\end{proposition}
+\begin{preuve}
+     Par hypothèse, il existe $C>0$ tel que $||B(x,y)||_G\leq ||x||_E ||y||_F$. Et donc, si $\varepsilon>0$ est fixé et si $\sup(||s||_E,||t||_F)=||(s,t)||_{E\times F}\leq \frac{\varepsilon}{C}$, on a 
+     \begin{equation*}
+         || B(x_0+x,y_0+y)-B(x_0,y_0)-
+         B(x_0,y)-B(x,y_0)||_F= ||B(x,y)||_F\leq\varepsilon ||(x,y)||
+     \end{equation*}
+\end{preuve}
+
+On obtient facilement le résultat suivant:
+\begin{proposition}
+    Si $(F_i)_{i=0}^m$ est une suite finie d'espaces de Banach,$A$ un ouvert d'un espace de Banach $E$ , $F=\prod_{i=0}^m F_i$ 
+    et si $f\in C^0(A,F)$ alors, pour tout $x_0\in E$
+    \begin{equation*}
+    f \text{ est dérivable en $x_0$ }
+    \Leftrightarrow \forall 0\leq i \leq m\quad  \pi_i(f) \text{ est dérivable en $x_0$} 
+    \end{equation*}
+\end{proposition}
+On écrira $Df(x_0)=(Df(x_0)_1,\cdots,Df(x_0)_m)$ où $f_i=\pi_i(f)$
+\\
+On récupère alors le théorème de dérivation des fonctions composées. La preuve est assez similaire au cas $\mathbb{R}^n$
+\begin{proposition}
+    \begin{equation*}
+        \forall E,F,G \text{ espaces de Banach},x_0\in E, A\in\mathcal{V}_{x_0},f\in C^0(A,F),y_0\in F ,B\in \mathcal{V}_{y_0},g\in C^0(B,G)
+    \end{equation*}
+    \begin{equation*}
+        f\text{ dérivable en  $x_0$ et g dérivable en $y_0$ et  $f(x_0)=y_0$}\Rightarrow g\circ f \text{ dérivable en $x_0$}  
+    \end{equation*}
+Et on a l'expression habituelle
+\begin{equation*}
+    D(g\circ f)(x_0)= (Dg(y_0))(Df(x_0))
+\end{equation*}
+
+\end{proposition}
+\begin{preuve}
+    voir \cite{dieudonne1969fma8}
+\end{preuve}
+
+
+De ce qui précède, on déduit immédiatement que l'ensemble des fonctions dérivables en un point $x_0$ est un espace vectoriel, et que si $f$,$g$ dérivable en $x_0$, alors 
+$D (f+g)(x_0)=Df(x_0)+Dg(x_0)$ et si $\alpha$ est un scalaire,
+$D(\alpha f)(x_0)=\alpha Df(x_0)$.
+\begin{remarque}\label{remarque 1-dim}
+    Avec les notations qui précèdent, si $E$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(E,F)$ est isomorphe à $F$ via $f\mapsto (\xi\mapsto f\xi)$
+    $Df(x_0)$ est alors un élément de l'espace d'arrivée $F$
+\end{remarque}
+    \begin{proposition}
+        Soit $I=[\alpha,\beta]$ un intervalle compact de $\mathbb{R}$,  $F$ un espace de banach, $f\in C^0(I,F)$,$\varphi\in C^0(I,\mathbb{R})$, supposons que $D\subset I$ soit dénombrable, et que $\varphi$ et $f$ soient dérivables sur $I\setminus D$ et que
+    $||Df||\leq ||D\varphi||$ sur $I$ alors $||f(\beta)-f(\alpha)||\leq \varphi(\beta)-\varphi(\alpha)$
+\end{proposition}
+\begin{preuve}
+    \todomaybe{écrire la preuve}
+\end{preuve}
+On obtient immédiatement le corollaire suivant
+\begin{corollaire}
+dans les conditions de la proposition précédente, si $||Df||\leq M$ sur  alors
+$||f(\beta)-f(\alpha)||\leq M(\beta-\alpha)$
+\end{corollaire}
+Comme conséquence naturelle, le résultat suivant
+\begin{proposition}
+    Soient $E,F$ des espaces de Banach,
+    $f$ une fonction continue entre $I=\{x_0+st|s\in[0,1]\}$
+    où $x_0,t$ sont des éléments de $E$.
+    Si $f$ est dérivable sur $I$ , alors
+    \begin{equation*}
+        ||f(x_0+t) -f(x_0)||\leq ||t||\cdot \sup_{s\in[0,1]}||D_{x_0+ts}f||
+    \end{equation*}
+\end{proposition}
+\begin{preuve}
+    \todomaybe{ écrire la preuve}
+\end{preuve}
+\begin{corollaire}
+    Soient $E,F$ des espaces de Banach, soient $a,b$ des points de $E$ et $I$ un segment les joignant, $A$ un ouvert de $F$ et $f\in C^0(I,A)$ dérivable sur $I$, on a 
+    \begin{equation*}
+        ||f(b)-f(a)- Df(x_0)(b-a) ||
+        \leq ||b-a||\cdot \sup_{x\in I} ||Df(x)-Df(x_0)||
+    \end{equation*}
+\end{corollaire}
+\begin{definition}
+    Soient $E,F$ des espaces de Banach, soit $A$ un ouvert de $E$.
+    $f\in C^1(A,F)$ si $Df\in C^0(A,\mathcal{L}(E,f))$
+\end{definition}
+\begin{definition}
+    Dans les conditions de la définition précédente, si $E=\prod_{i=1}^n E_i$ où les $E_i$ sont des espaces de Banach. 
+    $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
+    est dérivable. On la note  $D^{(i)}_{a} f$
+\end{definition}
+\begin{proposition}
+    Dans les conditions des définitions précédentes, 
+    \begin{equation*}
+        f\in C^1(A,F)\Leftrightarrow \forall a\in A, \space
+        \forall 1\leq i \leq n \quad  D^{(i)}_a f\text{ est défini et continu}
+    \end{equation*}
+    la dérivée est alors donné par
+    \begin{equation*}
+        Df(x)(t)=\sum_{i=1}^n D_i f(a)(t)
+    \end{equation*}
+\end{proposition}
+\begin{preuve}
+    voir \cite{dieudonne1969fma8}
+\end{preuve}
+
+\begin{theorem}
+Soient $X,\Lambda,Y$ des espaces de Banach, $U$ un ouvert de $X\times \Lambda$ et $f\in C^1(A,G)$. Soit $(x_0,\lambda_0)\in Z_Af$ tel que $D_1 f(x_0,y_0)$ est un homéomorphisme linéaire de $\Lambda$ vers $Y$, alors il existe  $U_0\in \mathcal{V}_{a_0}$ tel que pour 
+\begin{equation*}
+    \forall U\in\mathcal{P}(U_0)\cap\mathcal{V}_{a_0} \text{ connexe, }\exists ! u\in C^0(U,F) :\bigg( u(a_0)=b_0\text{ et  } \forall x\in U , (x,u(x))\in A ,f(x,u(x))=0 \bigg)
+\end{equation*}
+De plus,
+\begin{equation*}
+    u\in C^1(U,F)  \text{ et } Du(x)=-(D_{1}f(x,u(x)))^{-1}\circ 
+    D^{(2)}_{(x,u(x))}f
+\end{equation*}
+\end{theorem}
+\begin{preuve}
+    \todo{Preuve complète}
+\end{preuve}
+
+
+\todo{Rajouter une partie sur les fonctions analytiques dans des Banachs}
+\\
+
+\todo{Inverse local analytique}
+\\
+
+On peut maintenant poser proprement le problème général de la théorie de la bifurcation.
+Etant donné un espace d'état $X$, un espace de paramètre $\Lambda$ et une fonction $F:X\times \Lambda\rightarrow{ Y}$ (où $X$,$\Lambda$,$Y$ sont des espaces Banach réels). Considérons maintenant $(x_0,\lambda_0)$ 
+tel que 
+\begin{equation}
+    F(x_0,\lambda_0)=0
+\end{equation}
+Si $D^{(1)}_{(x_0,\lambda_0)}f$ est un homéomorphisme linéaire, alors le problème est entièrement réglé par le théorème précédent. On s'intéresse alors aux situations où $D^{(1)}_{(x_0,\lambda_0)}f$ n'est pas inversible sur un voisinage de $(x_0,y_0)$.
+\newpage
+\section{Notions de théorie des opérateurs}
+
+\subsection{Opérateurs de Fredholm}
+Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons:
+\begin{definition}
+    Soient $E,F$ des espaces de Banach et soit $D\in  \mathcal{L}(E,F)$. \textit{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  F / \text{im } D=\text{codim } \text{im }D$ sont finis, et il vaut, dans ce cas
+    \begin{equation*}
+        \text{Ind }  D= \dim \ker D -\text{codim } \text{im }D
+    \end{equation*}
+
+\end{definition}
+
+\begin{definition}
+    Dans les conditions de la définition précédente, $D$ est un \textit{opérateur de Fredholm} si son index est défini. On pose $\mathcal{F}(E,F)$ l'ensemble des opérateurs de Fredholm de $E$ vers $F$
+\end{definition}
+Remarquons que dans ce cas, $D^*$ est de Fredholm aussi et 
+\begin{equation*}
+    \operatorname*{Ind} D^*=- \operatorname*{Ind} D
+\end{equation*}
+Où $D^{*}$ est l'opérateur adjoint, défini comme
+\begin{eqnarray*}
+    D^{*}: F^{*}\rightarrow E^{*}, f\mapsto  f\circ D
+\end{eqnarray*}
+$\dim\ker D$ mesure à quel point il 
+n'est pas injectif, et $
+\operatorname{codim} 
+\operatorname{im} D$ à quel point 
+il n'est pas surjectif. On a bien envie que si cette propriété est vraie pour une certaine valeur du paramètre, alors elle reste vraie pour les valeurs voisines. Nous montrons ici que c'est bel et bien le cas.
+
+\todo{AJOUTER compléments}\\
+
+
+Nous donnons une jolie preuve, très algébrique, obtenue dans un cours de l'université d'Utrecht \cite{Marcut2009FredholmNotes}. 
+Rappelons les notions de suite exacte et de suite exacte courte
+\begin{definition}
+    Si $G_0,G_1,\cdots, G_n$ sont des groupes (ou espaces vectoriels, modules, etc...)\footnote{Plus généralement, des objets d'une catégorie abélienne, voir [Source] pour plus d'informations} alors la suite 
+    \begin{equation*}
+       G_0 \xrightarrow{J_1} G_1 \xrightarrow{J_2} G_2 \xrightarrow{J_3} \cdots \xrightarrow{J_n} G_n
+    \end{equation*}
+    est \textit{exacte} si $\im(j_i)=\ker(j_{i+1})$
+    Une suite \textit{exacte courte} est une suite de la forme
+    \[\begin{tikzcd}
+	0 & A & B & C & D
+	\arrow["0", from=1-1, to=1-2]
+	\arrow["{j_1}", hook, from=1-2, to=1-3]
+	\arrow["{j_2}", two heads, from=1-3, to=1-4]
+	\arrow["0", from=1-4, to=1-5]
+    \end{tikzcd}\]
+\end{definition}
+Quand on a une suite exacte, le noyau du premier morphisme est trivial, il est donc injectif. L'image du second morphisme est le noyau de l'application nulle, donc c'est tout l'espace, il est donc surjectif. Intuitivement, peut voir $A$ comme "inclus" dans $B$ via $j_1$, et $j_2$ peut être compris comme une projection, en fait, le premier théorème d'isomorphisme nous assure que 
+\begin{equation*}
+    B/\im(j_1)\cong C
+\end{equation*}
+
+
+On obtient, de façon purement algébrique, le résultat suivant
+\begin{lemme}\label{lemma-compo}
+    Soint $E,F,G$ des espaces Banach, $D_1:E\rightarrow F, D_2: F\rightarrow G$ si 2 des 3 opérateurs $D_1$,$D_2$ et $D_1\circ D_2$ est de Fredholm alors le 3ème l'est aussi et on a 
+    \begin{equation*}
+        \operatorname{Ind}(D_2\circ D_1)= \operatorname{Ind}(D_1)+\operatorname{Ind}(D_2)
+    \end{equation*}
+\end{lemme}
+\begin{proof}
+    Nous supposons d'abord $D_1$ et $D_2$ de Fredholm.
+    Remarquons d'abord qu'on a la suite exacte courte suivante
+    \[\begin{tikzcd}
+	0 & {\ker D_1} & {\ker (D_2\circ D_1)} & {\operatorname{im}(D_1)\cap \ker (D_2)} & 0
+	\arrow["0", from=1-1, to=1-2]
+	\arrow["\iota", hook, from=1-2, to=1-3]
+	\arrow["{D_2}", two heads, from=1-3, to=1-4]
+	\arrow["0", from=1-4, to=1-5]
+    \end{tikzcd}\]
+On a alors
+    \begin{equation*}
+        \operatorname{im}(D_1)\cap \ker (D_2) \cong \ker (D_2\circ D_1)/\ker (D_1)
+    \end{equation*}
+et donc
+\begin{equation*}
+    \dim (\im (D_1)\cap \ker (D_2))= \dim(\ker (D_2\circ D_1))-\dim(\ker (D_1))
+\end{equation*}
+Ce qui nous permet de controller la dimension du noyau du troisième si on contrôle celle des deux autres ! Maintenant, le conoyau: remarquez d'abord qu'on a
+\begin{equation*}
+    \im(D_1\circ D_2)\subseteq \im(D_1)\subseteq G
+\end{equation*}
+(Ce sont bien entendu des sous groupes normaux vis à vis de l'addition de $G$) on défini alors une projection naturelle
+
+\begin{equation*}
+    \pi : G/\im(D_2\circ D_1)\rightarrow 
+    G/\im(D_2), g+\im(D_2\circ D_1)\mapsto g+\im(D_2) 
+\end{equation*}
+De plus, le second théorème d'isomorphisme nous permet d'écrire
+\begin{equation*}
+    (\im(D_1)+\ker(D_2))/\im(D_1)\cong \ker(D_2)/(\im(D_1)\cap \ker(D_2) )
+\end{equation*}
+On a alors la suite exacte suivante
+\[\begin{tikzcd}
+	0 & {\frac{\operatorname{im} (D_1)+\ker(D_2)}{\operatorname{im} (D_1)}} & {\frac{F}{\operatorname{im} (D_1)}} & {\frac{G}{\operatorname{im} (D_2\circ D_1)}} & { \frac{G}{\operatorname{im}(D_2)}} & 0
+	\arrow["0", from=1-1, to=1-2]
+	\arrow["\iota", hook, from=1-2, to=1-3]
+	\arrow["{D_2}", from=1-3, to=1-4]
+	\arrow["\pi", two heads, from=1-4, to=1-5]
+	\arrow["0", from=1-5, to=1-6]
+\end{tikzcd}\]
+Vu ce qui précède, le 4ème élément de la suite est de dimension finie, les 2ème et 4ème éléments le sont par hypothèse  et donc le troisième doit l'être aussi et
+\begin{equation*}
+    \dim(G/\im(D_2\circ D_1)) = \dim(G/\dim D_2) + \dim(F/\im D_1) - \dim(\ker(D_2)) + \dim(\ker(D_2)\cap \im(D_1))
+\end{equation*}
+Ce qui permet de conclure. Les autres cas se montrent de façon similaire
+\end{proof}
+Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des transformations linéaires continues et inversibles de $X$ dans lui même
+\begin{lemme}
+    Si $X$ est un espace de Banach, alors 
+    \begin{equation*}
+        \forall D\in\mathcal{L}(X), ||D||< 1 \Rightarrow (\operatorname*{Id}-D)\in\mathcal{GL}(X)
+    \end{equation*}
+\end{lemme}
+\begin{preuve}
+    Notons d'abord que 
+    \begin{equation*}
+        \forall n\in\mathbb{N}, ||D^n||\leq ||D||^n 
+    \end{equation*}
+    Donc la série
+    \begin{equation*}
+        \sum_{n\in\mathbb{N}} D^n
+    \end{equation*}
+    Est absolument convergente, étant donné que $\mathcal{L}(X)$ est un banach, $D'=\sum_{n\in\mathbb{N}} D^n$ est dans $\mathcal{L}(X)$. 
+    Montrons alors que $D'$ est l'inverse de $D$.
+    On a
+    \begin{equation*}
+        D\circ\big( \sum_{0\leq n\leq k} D^n\big)=\sum_{0\leq n\leq k} D^{n+1}=\big( \sum_{0\leq n\leq k} D^n\big)\circ D = \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
+    \end{equation*}
+
+    En posant $S_k=\sum_{0\leq n\leq k} D^k$
+    \begin{equation*}
+        \lim_{k\rightarrow \infty} ||S_kD -SD||\leq 
+        ||D||\lim_{k\rightarrow \infty}  ||S_k-D'||< \lim_{k\rightarrow \infty}  ||S_k-D'||=0
+    \end{equation*}
+    de la même façon 
+    \begin{equation*}
+        \lim_{k\rightarrow \infty} ||DS_k -DS||=0
+    \end{equation*}
+    Et donc
+    \begin{equation*}
+        D'D=DD'=D'-I\rightarrow (I-D)^{-1}=D'
+    \end{equation*}
+    De plus, $D'$ est continu et
+    \begin{equation*}
+        ||(I-D)^{-1}||\leq \sum_{n\in\mathbb{N}} ||D||^k \leq  \frac{1}{1-||D||}
+    \end{equation*}
+\end{preuve}
+On en tire immédiatement le résultat suivant
+\begin{corollaire}\label{iso-ouverts}
+    $\mathcal{GL}(X)$ est un ouvert de $\mathcal{L}(X)$
+\end{corollaire}
+Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomorphismes linéaires entre $E$ et $F$, c'est aussi un ouvert: soit il est vide, soit il ne l'est pas et dans ce cas on identifie $E$ à $F$ et on applique le corollaire ci-dessus.
+\begin{theorem}(Atkinson)
+    La fonction 
+    \begin{equation*}
+        \operatorname{Ind}: \mathcal{F}(E,F)\rightarrow \mathbb{Z}
+    \end{equation*}
+    est localement constante. En particulier, $\mathcal{F}(E,F)$ est ouvert
+\end{theorem}
+
+\begin{preuve}
+    Soit $D$ de Fredholm,
+    On complémente $\ker D$ par $E_1$ et $\im D$ par $F_1$
+    On considère
+    \begin{equation*}
+        \iota: E_1\rightarrow E\text{ et }\pi: F\rightarrow \im D
+    \end{equation*}
+    Les injections et projections naturelles, $\iota$ est évidemment continu et $\pi$ est continu via la théorème du graphe fermé. On considère élgament la fonction
+    \begin{equation*}
+        \psi : \mathcal{L}(E,F)\rightarrow \mathcal{L}(E_1,\im D), G\rightarrow \pi G\iota 
+    \end{equation*}
+    C'est une fonction continue. étant donné que $\psi(D)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ assez proche de $D$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=-\dim (\ker D)$ et $\operatorname{Ind}(\iota)=\dim (F/\im D)$
+    On conclut immédiatement via \ref{lemma-compo} car 
+    \begin{equation*}
+        0=\operatorname{Ind}(\psi(G))= -\dim(\ker D)+\operatorname{Ind}(G)+\dim(F/\im D)
+    \end{equation*} 
+\end{preuve}
+
+
+
+
+
+
+
+
+
+\part{Réductions de Lyapunov–Schmidt et classification locale}
+
+\section{Réductions de Lyapunov-Schmidt}
+Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm, Il est possible de se ramener à un problème en dimension finie
+\subsection{Cas Fredholm}
+\begin{theorem}(Lyapunov-Schmidt)\label{LP-redux}
+Soient $X,\Lambda,Y$ des espaces de 
+Banach, $U\subset X$,$V\subset \Lambda$ 
+des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $D_1F(x_0,\lambda_0)$ est de fredholm. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et 
+tels que le problème
+\begin{equation*}
+    F(x,\lambda)=0 
+\end{equation*} 
+Se ramène à un problème en dimension finie sur $U_2\times V_2$
+\end{theorem}
+\begin{preuve}
+    Posons $D=D_1f(x_0,\lambda_0)$,
+    par hypothèses, il existe des compléments fermés $X_0$  et $Y_0$ tels que
+    \begin{align*}
+        &X=\ker D\oplus X_0\\
+        &Y=\im D \oplus Y_0
+    \end{align*}
+    Ces derniers induisent des projection naturelles
+    \begin{align*}
+        &\pi_1 : X\rightarrow \ker D\\
+        &\pi_2 : Y\rightarrow Y_0
+    \end{align*}
+    Elle sont continues via la théorème du graphe fermé.
+    Posons alors
+    \begin{equation*}
+        \psi : \ker D\times X_0\rightarrow X\times \Lambda , (v,w)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
+    \end{equation*}
+    Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$). De plus, on a 
+    \begin{equation*}
+        \tilde{F}(v,w, \lambda) = 0 \iff 
+\begin{cases} 
+    \pi_2 \tilde{F}(v,w,\lambda) = 0 \\ 
+    (\operatorname*{Id} - \pi_2) \tilde{F}(v,w, \lambda) = 0 
+\end{cases}
+    \end{equation*}
+Considérons alors   $U_2,W_2$  des ouverts de $\ker D$  de et $X_0$ respectivement tels que $U_2+W_2\subseteq U$ et la fonction 
+\begin{eqnarray*}
+    G: U_2\times W_2\times V\rightarrow \im D: (v,w,\lambda)\mapsto (\operatorname*{Id}-\pi_2) \tilde{F}(v,w,\lambda)
+\end{eqnarray*}
+Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
+\begin{equation*}
+    G(v_0,w_0,\lambda_0)=0\text{ et } D_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) D_1  F (x_0,\lambda_0)
+\end{equation*}
+Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_0$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
+\begin{equation*}
+    \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,y)=0\Leftrightarrow w = \varphi(v,\lambda)
+\end{equation*}
+
+Ainsi, $U_1\times V_1$ et 
+\begin{equation}\label{fonctionproj}
+    \Phi(v,y): U_1\times V_1\rightarrow Y_0, (v,\lambda)\mapsto \pi_2 F(v+\varphi(v,\lambda),\lambda)
+\end{equation}
+répondent à la quesiton
+\end{preuve}
+On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une
+Des calculs simples nous peremettent d'obtenir
+\begin{corollaire}
+    Avec les notations de la preuve précédente, 
+    \begin{equation*}
+        D\varphi(v)(v_0,\lambda_0)=0\text{ et }    D\Phi(v)(v_0,\lambda_0)=0
+    \end{equation*}
+\end{corollaire}
+
+
+
+\section{Quelques résultats dans des espaces de Banach}
+\subsection{Cas où $\dim \Lambda=1$}
+dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
+
+On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold}(repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite.
+\begin{proposition} \textit{(Fold)} \label{fold}
+    Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
+    supposons que
+    \begin{itemize}
+        \item $F\in C^1(U\times V,Z)$
+        \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1(x_0,\lambda_0))=\dim (Y/ \im D_1(x_0,\lambda_0))=1$
+        \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$
+    \end{itemize}
+    Alors il existe $\delta>0$ une une courbe $C^1$
+    \begin{equation*}
+        \gamma:   \left] -\delta,\delta\right[ \rightarrow X\times\R 
+    \end{equation*}
+    Telle que $\gamma(0,0)=(x_0,\lambda_0)$
+    \begin{equation*}
+        F(\gamma(\left] -\delta,\delta\right[))= \{0\}
+    \end{equation*}
+    De plus, sur un voisinage de $(x_0,\lambda_0)$, toutes les solutions sont sur la courbe
+\end{proposition}
+\begin{preuve}
+    En applicant \ref{LP-redux}, et avec les notations de ce théorème, on sait qu'il existe un voisinage de $(x_0,\lambda_0)$, $U_1\times V_1$ sur lequel le problème se ramène résoudre $\Phi(v,\lambda)=0$.
+    Par hypothèses et via [thm], cette fonction est continument dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
+    \begin{equation*}
+        D_2\Phi(v_0,\lambda_0)=\pi_2 D_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 D_2 F(x_0,\lambda_0)
+    \end{equation*}
+    or, étant donné que $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à reduire $U_1\times V_1$, on peut supposer l'existance d'une fonction 
+    \begin{equation*}
+        \psi : U_1\rightarrow V_1\text{ telle que} 
+        \begin{cases}
+            \psi(v_0)=\lambda_0
+            \\ \forall v\in U_1, \Phi(v,\psi(v))=0 
+        \end{cases}
+    \end{equation*}
+    On construit alors $\gamma$: considérons
+    \begin{equation*}
+        x_1\in X : ||x_1||=1 \text{ et } \ker D_1 F(x_0,\lambda)=\rangle x_1\langle_{\R}
+    \end{equation*}
+    Soit $u_0\in U_1$, il existe $\delta>0$ tel que $u_0+t x_0\in U_1$ si $|t|<\delta $ 
+    et 
+    \begin{equation*}
+        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R ,t\mapsto
+                    \begin{pmatrix}
+                    u_0+t x_1+\varphi(u_0+tx_1,\psi(u_0+tx_1)) \\
+                    \psi(u_0+tx_1)
+                    \end{pmatrix}
+    \end{equation*}
+    Répond à la question.
+\end{preuve}
+Des calculs simples  permettent de montrer que 
+\begin{corollaire}
+    avec les notations du théorème précédent, vecteur tangent en $(x_0,\lambda_0)$ est donné par
+    \begin{equation*}
+        (x_1,0)
+    \end{equation*}
+\end{corollaire}
+On a alors simplement la situation "vecteur tangent vertical"
+\begin{remarque}
+    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'obersevables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variable d'état
+\end{remarque}
+La plupart des articles de théorie de la bifurcation supposent l'existence d'une \textit{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
+\begin{equation*}
+\tilde{F}(x,\lambda)=F(\gamma_1(\lambda)+x,\gamma_2(\lambda))
+\end{equation*}
+Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinnage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale.On peut bien sûr supposer que celà à lieu en $(0,0)$
+Le résultat suivant nous donne un petit critère pour l'existance de telles solutions non triviales, on présente ainsi la \textit{bifurcation simple}, ou encore \textit{bifurcation depuis une branche princiaple}
+Dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
+dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
+\begin{theorem}(Crandall-Rabinowitz, bifurcation simple) 
+    Avec les notations de $\ref{fold}$, suppons que 
+    \begin{itemize}
+        \item $F\in C^2(U\times V,Y)$
+        \item $F(0,\lambda_0)=0$ et $\dim (\ker D_1(0,\lambda_0))=\dim (Y/ \im D_1(0,\lambda_0))=1$
+        \item $F(0,\R)={0}$ (branche triviale)
+        \item On peut supposer  $\ker(D_1 F(0,\lambda_0))=\rangle x_1 \langle_{\R} $ 
+        avec $||x_1||=1$ et on impose alors \\ $D^2_{12} F(0,\lambda_0)x_0\notin \im D_1 F
+        (0,\lambda_0)$
+    \end{itemize}
+    Alors il existe une courbe de solutions non triviale 
+         $\gamma :\left] -\delta,\delta\right[ \rightarrow X\times\R $ telle que $\gamma(0)=(0,\lambda_0)$
+    Il existe alors un voisinnage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
+\end{theorem}
+\begin{preuve}
+    \todo{PREUVE}
+\end{preuve}
+\begin{remarque}
+    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. Les méthodes analytiques présentées ci-dessus gèrent assez mal les situations ou l'index est non nul. Dans la section \ref{K-th}, nous verrons une façon particulièrement élégente de gérer l'index de fredholm
+\end{remarque}
+
+\subsection{Cas où $\dim \Lambda=\infty$}
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonct est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibres). Nous présentons alors quelques résultats de [SOURCE].
+Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
+
+\begin{definition}
+    Si $(x_0,\lambda_0)$ est une zéro de $F(x\,\lambda)$ alors et si $U$ est un ouvert non vide de $X$, alors $\gamma\in C^0(U,X\times\Lambda)$ est une poursuite de $(x_0,\lambda_0)$ si $F(\gamma(U))=\{0\}$
+\end{definition}
+\section{La bifurcation de Hopf}
+Plusieurs version du théorème de la bifurcation de Hopf existent, nous montrons celle de \cite{Kawanago2023HopfBanach}
+\begin{theorem}(Hopf)
+    
+\end{theorem}
+
+\section{Théorie des singularités en dimension finie}
+\subsection{L'anneau $\mathcal{E}_n$}
+Le but de cette section est d'exposer la classification proposée par Montaldi dans \cite{montaldi2021sbc}. Il utilise des outils de théorie des singularité et de théorie des catastrophes pour ramemener le problème de classification à un problème \textit{algébrique}, cette approche a été initée par Golubitsky dans \cite{golubitsky1985sgb1}. Cependant, Montaldi propose une approche plus moderne et en un certain sens, plus puissante. Nous allons donc introduire le minimum vital de théorie des singularités et des catastrophes et nous en servir pour obtenir un catalogue des problèmes de bifurcation qui ne sont pas "trop compliqués" (dans un sens que nous allons préciser).
+
+On est dans une théorie locale, les définitions suivantes retranscrivent cet aspect : 
+\begin{definition}
+    Soient $X,Y$ des espaces topologiques, $x_0\in X$ et $y_0\in Y$
+    on pose 
+    \begin{align*}
+        &\mathcal{G}(x_0,X,Y,y_0)=\{ f\in C^0(U,Y) | U\in\mathcal{V}_{x_0},f(x_0)=y_0\} \\
+        & \mathcal{G}(x_0,X,Y)=\{ f\in C^0(U,Y) | U\in\mathcal{V}_{x_0}\}
+    \end{align*}
+    Si de plus, on a une notion de fonction $C^k$ sur $X$ et $Y$ (par exemple, si ce sont des espaces de Banach) on défini naturellement $\mathcal{G}_k(x_0,X,Y,y_0)$ et $\mathcal{G}_k(x_0,X,Y)$ en imposant que les fonctions soient $C^k$ sur leur domaines.
+\end{definition}
+
+\begin{definition}
+    Soient $X,Y$ des espaces topologiques, $f,g\in \mathcal{G}(x_0,X,Y)$ on définit la relation d'équivalence suivante
+    \begin{equation*}
+        f\sim_{x_0} g \Leftrightarrow \exists U\in \operatorname{dom}(f)
+        \cap \operatorname{dom}(g) : f_{|_{U}}=g_{|_{U}}
+    \end{equation*}
+
+\end{definition}
+ Bien sûr, si $f\sim_{x_0} g$ alors $f(x_0)=g(x_0)$, la définition suivante est donc licite
+\begin{definition}
+    Soient $X,Y$ des espaces topologiques sur lesquels on a une notion de fonctions $C^k$, \textit{l'espace des germes lisses} est donné par
+    \begin{equation*}
+        \mathcal{E}(x_0,X,Y)=\mathcal{G}_{\infty}(x_0,X,Y)/\sim_{x_0}
+    \end{equation*}
+    On pose  $\mathcal{E}_n=\mathcal{E}_n(\R^n,\R)$
+\end{definition}
+
+\begin{remarque}
+    La notion moderne généralisant ce genre de structure est appelé \textit{faisceau}.
+    Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, U\subseteq V}$ respectant les axiomes suivants :
+    \begin{itemize}
+        \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
+        \item $\forall U,V,W\in\mathcal{T}: U\subseteq V\subseteq W$, $\rho^V_U\circ \rho^W_V=\rho^W_U$. (fonctorialité 2)
+        \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$ si $s,t\in\mathcal{F}(U)$ sont telles que \\$ \forall i\in\mathcal{I} ,\rho^U_{U_i}(s)=\rho^U_{U_i}(t)$ alors $s=t$ (localité )
+        \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^U_{U_i\cap U_j}(s_j)=\rho^U_{U_i\cap U_j}(s_i)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
+    \end{itemize}
+    Les deux axiomes sont des axiomes purement structurel (voir la section sur la théorie des catégorie). Les deux autres permettent de capturer les propriétés désirés. Ainsi,si $Y$ alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on défini enfin la \textit{fibre} d'un faisceau en un point $x\in X$ comme étant
+    \begin{equation*}
+        \mathcal{F}_x=\varinjlim_{U \ni x} F(U)
+    \end{equation*}
+    alors
+    \begin{equation*}
+        \mathcal{E}(x_0,X,Y)=C^{\infty}(\cdot,Y)_{x_0}
+    \end{equation*} 
+\end{remarque}
+
+On munit $\mathcal{E}_n$ d'une structure d'anneau de la façon suivante: si $\eta_1,\eta_2$ sont des germes et si $f\in\eta_1$ et $g\in\eta_2$, on considère $U=\operatorname{dom}(f)\cap \operatorname{dom}(g)$ 
+\begin{equation*}
+    \eta_1+\eta_2= [f_{|_U}+g_{|_U}]_{\sim_{0}} \text{ et } \eta_1\cdot\eta_2= [f_{|_U}g_{|_U}]_{\sim_{0}}
+\end{equation*}
+
+On vérifie facilement que ces opérations sont bien définies et que $(\mathcal{E}_n,+,\cdot)$ est un anneau commutatif, et que l'évaluation en 0 ainsi que la dérivée en 0 sont bien définies. Nous consacrons les paragraphes suivants à l'étude de cet anneau. Nous commençons par remarquer que c'est un anneau local
+\begin{remarque}
+    Des notions similaires existent en dimension infini. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt. Le lecteur intéressé est invité à consulter \todomaybe{SOURCE qui cite le truc , ou annexe, on verra si j'ai le temps}
+\end{remarque}
+\begin{proposition}
+    l'ensemble $\mathcal{M}_n=\{\eta\in\mathcal{E}_n | \eta(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
+\end{proposition}
+\begin{preuve}
+Il suffit d'observer que si $\eta\in\mathcal{E}_n\setminus\mathcal{M}_n$, alors il inversible. En effet, si $f\in\eta$ alors $1/f$ est défini sur un voisinage de zéro et $\xi=[1/f]_{\sim_0}$ est l'inverse de $\eta$
+\end{preuve}
+
+On peut trouver un ensemble de générateurs pour $\mathcal{M}_n$. Rappelons que $\pi_i$ est la projection sur la $i$-ième composante
+\begin{proposition}(Lemme Hadamard)
+Soient $a,b$ des naturels, on a, en considérant $\R^{a+b}=\R^a\times\R^b$
+    \begin{equation*}
+        I_A=\{[f]_{\sim_0}\in \mathcal{E}_{a+b} | f(0_a,y)=0\}=
+         \langle \pi_1,\cdots, \pi_a\rangle
+    \end{equation*}
+\end{proposition}
+\begin{preuve}
+Posons $P=\langle \pi_1,\cdots,\pi_a\rangle$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
+Soit $\eta\in I_a$ et soit $f\in\eta$. $f$ est alors définie sur $B(0,\varepsilon)$ pour un certain $ \varepsilon>0$. En appliquant successivement le théorème de variations des primitives et de dérivation des fonctions composées, on obtient
+\begin{equation*}
+    f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D^{(i)}_{(tx,y)}f\space dt=\sum_{i=1}^n \pi_i(x)
+    \int_0^1 D^{(i)}_{(tx,y)}f \space dt
+\end{equation*}
+or les fonctions $(x,y)\mapsto \int_0^1D^{(i)}_{(tx,y)}f$ sont lisses (dérivée d'une fonction lisse et intégration sur un compact) ,ce qui permet de conclure.
+\end{preuve}
+Un corollaire particulièrement utile 
+\begin{corollaire}
+    \begin{equation*}
+        \mathcal{M}_n^r=\bigg<\{x^{\alpha} :|\alpha|=r, \alpha\in\mathbb{N}^n\}\bigg>
+    \end{equation*}
+\end{corollaire}
+\begin{preuve}
+    cas $r=1$: il s'agit du résultat précédent.
+    Supposons le résultat établit pour $n\leq m$ il vient alors
+    \begin{equation*}
+        f\in\mathcal{M}_n^{m+1}\Leftrightarrow 
+        \exists n\in\mathbb{N} , g_1,\cdots,g_n \in \mathcal{M}_n^{m}: f=\sum_{j=1}^nx_j g_j
+    \end{equation*}
+    or les $g_j$ sont dans l'idéal généré par les monômes de degré $r$.
+    Et donc
+    \begin{equation*}
+                \mathcal{M}_n^{r+1}\subseteq \bigg<\{x^{\alpha} :|\alpha|=r+1, \alpha\in\mathbb{N}^n\}\bigg>
+    \end{equation*}
+L'autre inclusion étant évidente, on conclut.
+\end{preuve}
+
+
+
+\begin{definition}
+    Le jet d'ordre $r$ d'une germe $f\in\mathcal{E}(0,\R^n,\R^m)$ à l'origine est donné par
+    \begin{equation*}
+        j^r_{0}f(x)=\sum_{ |\alpha|\leq r} \frac{1}{\alpha !} D^{(\alpha)}_{0}fx^{\alpha}
+    \end{equation*}
+    L'espace de jet  $J^k(n,m)$ défini comme
+    \begin{equation*}
+        \{j^k_0 f | f\in \mathcal{E}(0,\R^n,\R^m)\}
+    \end{equation*}
+    et alors un espace vectoriel
+\end{definition}
+
+Notons que la fonction qui à une germe $[f]_{\sim_0}$ associe $[j_0^rf]_{\sim_0}$  est en fait une projection ! 
+en effet,
+\begin{equation*}
+    \pi_r :\mathcal{E}_n\rightarrow \mathcal{E}_n/\mathcal{M}_n^{r+1}
+\end{equation*}
+correspond  à prendre le jet d'ordre $r$, cela se déduit du corollaire suivant:
+
+\begin{corollaire}
+    \begin{equation*}
+        f\in\mathcal{M}_n^r\Leftrightarrow
+        \forall \alpha\in\mathbb{N}^n : |\alpha|< r, D_0^{(\alpha)}f=0 
+    \end{equation*}
+\end{corollaire}
+
+\begin{definition}
+    Un idéal $I\triangleleft \mathcal{E}_n$ est de codimension finie si $\mathcal{E}_n/I$ est un espace vectoriel de dimension finie. Ce qui revient à demander qu'on puisse complémenter $I$ par un espace vectoriel de dimension fini, i.e il existe $J$ un sous vectoriel de dimension fini tel que 
+    \begin{equation*}
+        \mathcal{E}_n=I+J
+    \end{equation*}
+    Une cobase pour un tel idéal est une suite finie $(e_1,\cdots,e_r)$ de $\mathcal{E}_n$ telle que
+    \begin{equation*}
+        \mathcal{E}_n=\big> e_1,\cdots,e_r\big<_{\R}\oplus I
+    \end{equation*}
+\end{definition}
+Rappelons le lemme de Nakayama
+\begin{lemme}(Nakayama)
+    Soit $R$ un anneau et $M$ un idéal tel que si $a\in M$ alors $a+1$ est un inversible. Soient de plus $I$,$J$ des ideéaux de $R$ avec 
+    $I=\langle i_1,\cdots,i_n\rangle $, on a 
+    \begin{equation*}
+        I\subset J+\mathcal{M}I \Rightarrow I\subseteq J 
+    \end{equation*}
+\end{lemme}
+
+
+\begin{proposition}
+    \begin{equation*}
+        \operatorname{codim} I<\infty \Leftrightarrow \; \exists r\in\mathbb{N}: \mathcal{M}_n^{r}\subset I
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    Si $M_n^r\subseteq I$ alors considérons $W=\rangle \{ x^\alpha | \alpha\in\mathbb{N}^n, |\alpha|<r \}\langle_{\mathbb{R}}$
+    on remarque alors que
+    \begin{equation*}
+        \forall f\in\mathcal{E}_n, f=j_0^{r-1}f+(f-j_0^{r-1}f)\in W+ I
+    \end{equation*}
+    et donc $\mathcal{E}_n=W+I$ ce qui montre le premier sens.
+    Pour l'autre implication, on commence par définir la suite d'ideaux $(I_r)_{r>0}=(I+\mathcal{M}_n^r)_{r>0}$ on vient de montrer qu'ils sont tous de codimension finie, on remarque, de plus, que cette suite est décroissante (pour l'inclusion). Posons $c_r=\dim(\mathcal{E}_n/I_r)$ avec $I_0=I$, il vient alors que la suite $(c)_{r>1}$ est croissante et majorée par $c_0$ qui est un entier fini : la suite doit stabiliser.
+    ainsi, on peut trouver $k$ tel que $c_k=c_{k+1}$ donc $\operatorname{codim}(I_k)=\operatorname{codim}(I_{k+1})$ or $I_k\supseteq I_{k+1}$ donc
+    \begin{equation*}
+        I+\mathcal{M}_n^k=I+\mathcal{M}_n^{k+1}
+    \end{equation*}
+    On conclut , grâce à Nakayama, que $\mathcal{M}_n^k\subset I$ comme exigé
+\end{proof}
+
+
+
+\subsection{Détermination finie}
+C'est le coeur du sujet: on veut 
+pouvoir se ramemener à l'étude d'un nombre fini de termes du dévellopement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
+
+Nous introduisons la notion suivante
+\begin{definition}
+    Si $\mathcal{R}$ est une relation 
+    d'équivalence sur $\mathcal{E}(0,\R^n,\R^m)$, on dit que $f$ est $k$-$\mathcal{R}$-\textit{déterminée} si 
+    \begin{equation*}
+        \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
+    \end{equation*}
+\end{definition}
+A la façon de Wall dans \cite{Wall1981FiniteDeterminacy} nous allons considérer des relations d'équivalence induites par des actions de groupes sur l'espace des germes. Cela nous évite de traiter les différentes notions d'équivalence "une par une" comme le fait Montaldi dans \cite{montaldi2021sbc} et d'obtenir rapidement un résultat assez puissant et général\\
+ Plus précesimment:  on rappelle que si $G$ agit à droite sur $E$, alors on a la relation d'équivalence naturelle 
+ \begin{equation*}
+    \sim_G : e \sim_Gf \Leftrightarrow \exists g\in G : g\cdot e=f
+ \end{equation*}
+ Si $G$ agit à droite et $H$ agit à gauche, on définit naturellement l'action de $G\times H$ sur $E$
+ \begin{equation*}
+    (g,h)\cdot x = g\cdot x \cdot h
+ \end{equation*}
+Le groupe le plus naturel est $D(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $D(n)\times D(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
+On considère  $C(n,m)$  les familles de germes de difféomorphismes  $\Phi=(\varphi_{\lambda})_{\lambda\in\Lambda}$ où $\Lambda$ est un voisinnage ouvert de l'origine de $\R^n$ et les $\varphi_{\lambda}$ sont dans $DL(m)$, on impose aussi que la dépendance en $\lambda$ soit lisse. Il est clair qu'on peut identifier l'ensemble de telles familles à l'ensemble des éléments de $D(n+m)$ $\Phi$ tels que
+\begin{equation*}
+    \pi_n \circ \Phi=\pi_n\text{ et } \Phi(\cdot, 0)= (\cdot, 0)
+\end{equation*}
+C'est clairement un groupe.
+Si $f\in\mathcal{E}(0,\R^n,\R^m)$ alors on défini
+\begin{equation*}
+    (\varphi_{\lambda})_{\lambda\in\Lambda}\cdot f= x\mapsto \varphi_x(f(x))
+\end{equation*}
+C'est action induit \textit{l'équivalence fibrée gauche}. Enfin, on pose $K(n,m)= D(n)\ltimes C(n,m) $, son action induit \textit{l'équivalence de contact}. Dans la suite,on écrira $G$ pour signifier un des groupes décrits ci dessus, et $E$ la relation d'équivalence induite par l'aciton de $G$. On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
+\begin{theorem}
+    Si $G$ est un groupe de lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la droite et si $V$ est une sous variété connexe et lisse de $M$ alors 
+    \begin{equation*}
+        \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est toujours la même }
+    \end{equation*}
+\end{theorem}
+la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symmétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que celà revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e , si on pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
+\begin{equation*}
+    \Bigl\{G\cdot v | v\in V\Bigr\}  
+\end{equation*}
+n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orbites induites par les actions décrites ci-dessus.\\
+Rappelons qu'un module est simplement un espace vectoriel mais sur anneau à la place d'un champ, il est important de noter que cette relaxation fait qu'on peut trouver des modules qui ne possèdent pas de bases (modules dits "à torsion"), un module libre est alors un module qui possède une base. On remarque assez facilement que $\mathcal{E}_n^m$ est un module libre sur $\mathcal{E}_n$
+et que
+\begin{equation*}
+    \mathcal{E}(0,\R^n,\R^m)\cong \mathcal{E}_n^m
+\end{equation*}
+
+le corrolaire [corollaire] nous permet aussi de dire que
+
+\begin{equation*}
+    J^k(n,m)\cong \mathcal{E}_n /\mathcal{M}_n^{m+1}
+\end{equation*}
+
+
+Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de définir une notion d'espace tangent. Etant donné qu'il s'agit d'un espace de fonctions, il est naturel de considérer la notion de vecteurs \textit{le long} d'une fonction 
+
+\begin{definition}
+    si $M$ et $N$ sont des $C^1$-variétés, 
+\end{definition}
+
+
+\begin{equation*}
+    tf: \Gamma(TM)\rightarrow \Gamma (f^*TN) ,\space v\mapsto Tf\circ v
+\end{equation*}
+
+
+Intuitivement: On regarde un champ de vecteurs sur $M$, pour chaque vecteur lié $(x,v(x))$ On transporte la base sur $f(x)$ et le vecteur $v(x)$ sur $D_xf(v(x))$ ! 
+On définit alors les espace tangent droits et droits étendus : 
+
+\begin{equation*}
+    TR_f\mathcal{E}^m_n =tf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{ et }
+    TR^e_f\mathcal{E}_n^m  = tf(\mathcal{V}(\R^n))
+\end{equation*}
+On notera $\gentan{f}{n}{m}$ un de ces espaces tangents, et toute affirmation sur $\gentan{f}{n}{m}$ est à comprendre comme une affirmation sur l'ensemble des espaces tangents si dessus
+Ces espaces sont associés à l'équivalence droite. Pour le premier, on fixe l'image de zéro à zéro, pour l'autre, on la laisse libre.\\
+On pose, de plus
+
+
+\begin{equation*}
+    wf: \Gamma(TN)\rightarrow \Gamma(f^*(TN)),\space v\mapsto  v\circ f
+\end{equation*}
+
+
+On définit alors les espaces tangents gauches, gauches étendus et gauche-droite
+
+
+
+\begin{equation*}
+    TL_f\mathcal{E}^m_n =wf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{,   }
+    TL^e_f\mathcal{E}_n^m  = wf(\mathcal{V}(\R^n))
+\end{equation*}
+
+\begin{equation*}
+    TA_f\mathcal{E}^m_n =TR_f\mathcal{E}_n^m +TL_f\mathcal{E}_n^m  \text{,   }
+    TA^e_f\mathcal{E}_n^m  = TR^e_f\mathcal{E}_n^m +TL^e_f\mathcal{E}_n^m
+\end{equation*}
+
+
+On définit enfin 
+
+\begin{equation*}
+    TC_f \mathcal{E}^m_n= f^*(\mathcal{M}_n\cdot \mathcal{V}(R^n))
+\end{equation*}
+et 
+\begin{equation*}
+    TK_f \mathcal{E}^m_n= TR_f \mathcal{E}^m_n+ TC_f\mathcal{E}^m_n, 
+    TK^e_f \mathcal{E}^m_n= TR^e_f \mathcal{E}^m_n+ TC_f\mathcal{E}^m_n
+\end{equation*}
+
+Ces espaces tangents on une dimension infinie en général... définit donc 
+
+\begin{equation*}
+    d(f,G)=\dim_\R(\mathcal{M}_n\cdot \Gamma(f^*T\R^m)/T _fG\mathcal{E}^m_n)
+\end{equation*}
+bien sûr, $d_e(f,G)$ se définit de façon similaire (avec l'espace tangent étendu)
+
+Nous avons besoin de quelques lemmes techniques avant de pouvoir caractériser la détermination finie
+\begin{lemme}
+    Si $f$,$g\in\mathcal{E}_n^m$ sont tels que $j^{k-1}_0f=j^{k-1}_0g$ alors
+    \begin{itemize}
+        \item pour toute germe de champ de vecteurs  de $\R^n$ $v$, $tf(v)-tg(v)\in \mathcal{M}^{k-1}\cdot V(f)$
+        \item si $\lambda\in\mathcal{E}_n$, $f^*\lambda-g^{*}\lambda\in\mathcal{M}^k_n$
+        \item Pour toute germe de champ de vecteurs  de $\R^m$ $v$, $wf(v)-wg(v)\in \mathcal{M}^{k-1}\cdot V(f)$
+    \end{itemize}
+\end{lemme}
+\begin{preuve}
+    
+\end{preuve}
+
+\begin{corollaire}
+Dans les hypothèses du lemme précédent, on a 
+\begin{equation*}
+    \rightane{f}{n}{m}+\mathcal{M}^{k-1}_n\cdot V(f)=\rightane{g}{n}{m}+\mathcal{M}^{k-1}_n\cdot V(g)
+\end{equation*}
+et , si $G$ est un des groupes habituels,
+\begin{equation*}
+        \gentan{f}{n}{m}+\mathcal{M}^{k}_n\cdot V(f)=\gentan{g}{n}{m}+\mathcal{M}^{k}_n\cdot V(g)
+\end{equation*}
+\end{corollaire}
+\begin{lemme}
+    Feurfeurfeur
+\end{lemme}
+\section{Classification de Montaldi}
+
+
+
+
+
+\part{Méthodes topologiques globales}
+
+Jusqu'ici, nous avons supposé l'existence d'une bifurcation acquise (ou très facile à déterminer) et travaillé localement pour identifier son type et se ramener à une forme normale. Question : comment obtenir des résultats globaux ? Souvenez vous: à la section [SECTION] nous avons que le fait d'être un opérateur de Fredholm était une propriété constante sur un voisinnage connexe, l'indice de Fredholm est alors un \text{invariant} topologique, nous détaillons alors ce genre de méthode.
+
+\section{Approche par théorie du degré}
+
+\begin{theorem}(Rabinowitz)
+    
+\end{theorem}
+
+
+\todo{Lire \cite{Feckan2008Topological}}
+
+\subsection{Le degré orienté}
+
+\begin{theorem}(Furi)
+    Soit $F: $
+\end{theorem}
+
+\section{Approche $K$-théorique}\label{K-th}
+
+En ce qui que concerne la $K$-théorie, nous suivons, dans les grande lignes, \cite{Karoubi1978KTheory}
+
+
+\subsection{Fibrés et fibrés vectoriels}
+
+L'idée derrière la notion d'espace fibré est d'avoir une généralisation des
+espaces qui "ressemblent localement" à des espaces produits.
+
+\begin{definition}
+    Un \textit{fibré} est la donnée d'un 4-uple $(E,B,\pi,F)$ où
+    \begin{itemize}
+        \item $E$ est un espace topologique appelé \textit{l'espace total}
+        \item $B$ est un espace topologique appelé \textit{l'espace de base}, souvent supposé connexe (sinon, on étudie juste chaque composante connexe séparement)
+        \item $F$ est un espace topologique, appelé \textit{modèle des fibres}
+    \end{itemize}
+    Qui respecte la \textit{condition de trivialisation locale} suivante: Il exist un recouvrement d'ouverts $(U_i)_{i\in\mathcal{I}}$ de $B$ et des $(\varphi_i)_{i\in\mathcal{I}}$ tels que
+    \begin{equation*}
+        \forall i\in\mathcal{I}, \varphi_i\in\operatorname*{HomTop}(\pi^{-1}(U_i),U_i\times F)
+    \end{equation*}
+    et le diagramme suivant commute:\\
+    \begin{center}
+        \[\begin{tikzcd}
+	{\pi^{-1}(U)} && {U\times F} \\
+	\\
+	U
+	\arrow[from=1-1, to=1-3]
+	\arrow["\pi"', from=1-1, to=3-1]
+	\arrow["{\pi_1}", from=1-3, to=3-1]
+    \end{tikzcd}\]
+    \end{center}
+la famille de paire $(U_i,\varphi_i)_{i\in\mathcal{I}}$ est appelé la trivialisation du fibré.
+Lorsque $E=B\times F$ et $\pi=\pi_1$, le fibré est qualifié de \textit{trivial}
+\end{definition}
+\begin{remarque}
+    Si $\Lambda$ est un \text{complexe cellulaire contractile} (voir [SECTION]), et si $E$ est un fibré ayant pour base un tel complexe cellulaire, alors $E$ est trivial
+\end{remarque}
+Ainsi, alors qu'un fibré en général est "localement un produit cartésien", un fibiré trivial est globalement un produit. Ci-dessous, un exemple de fibré non trivial
+\begin{exemple}
+    Un des plus viel exemple de l'occurence de tel structures est la \textit{fibration de Hopf}. Ici, le modèle des fibres est le cerlce $S^1$, l'espace total la $3$-sphère $S^3$ et l'espace de base la sphère $S^2$ et le $\pi$ est donné par l'\textit{application de Hopf}, qu'on décrit ci dessous à titre indicatif (en identiant $\R^4$ et $\mathbb{C}^2$  et $\R^3$ avec $\mathbb{C}\times \R$)
+    \begin{equation*}
+        p: S^3\rightarrow S^2, (x+iy,z+iw)\mapsto (2(x+iy)(z-iw),||x+iy||^2-||z+iw||^2)
+    \end{equation*}
+\end{exemple}
+\begin{remarque}
+    Ici, on a supposé que le modèle de la fibre, l'espace $F$ était le même partout. L'étude de fibrés à "modèle variable" peut être aussi intéressante en soi, nous n'iront pas aussi loin dans ce travail.
+\end{remarque}
+
+\begin{definition}
+    Un \textit{fibré} vectoriel est un fibré où suppose $F$ être un espace vectoriel. Bien sûr, on demande aussi à ce que les  $\varphi_i^{-1}(\cdot,v)$ soient linéaire.
+\end{definition}
+
+\begin{remarque}
+    On peut se demander ce qu'il se passe lorsqu'on veut une autre structure algébrique que celle de l'espace vectoriel. Cela conduit naturellement à la notion de $G$-fibré, ou on prend $G$ comme étant (par exemple) un groupe de Lie. Ainsi, les fibrés vectoriels sont un cas particulier des $G$-fibrés, qui sont un cas particulier des fibrés. Vous aurez sans doute remarqué que la fibration de hopf est un $S^1$-fibré ! Il existe des fibrés encore plus "méchants", voir par exemple la Fibration de Lefschetz.
+\end{remarque}
+
+\begin{exemple}
+    L'espace tanget d'une variété $M$ , $TM$ l'exemple canonique d'un fibré vectoriel. L'espace total est l'ensemble des unions disjointes, les fibres sont modellées sur $\R^k$ où $k$ est la dimension de $M$. On munit $TM$ de la topologie initiale relative aux projections sur $M$
+\end{exemple}
+
+\begin{definition}
+    Soient $F'=(E',B',\pi',F')$ et $F=(E,B,\pi,F)$ des fibrés, un \textit{morphisme de fibrés} entre entre $F$ et $F'$ est la donnée 
+    d'une paire de fontion $(f,g)\in \operatorname{IsoTop}(B,B')
+    \times\operatorname{IsoTop}(E,E')$ telles que le diagramme suivant 
+    commute: \\
+    \begin{center}
+        \[\begin{tikzcd}
+	E && {E'} \\
+	\\
+	B && B
+	\arrow["g", from=1-1, to=1-3]
+	\arrow["\pi"', from=1-1, to=3-1]
+	\arrow["{\pi'}", from=1-3, to=3-3]
+	\arrow["f"', from=3-1, to=3-3]
+\end{tikzcd}\]
+    \end{center}
+\end{definition}
+
+\subsection{La catégorie $\mathfrak{F}(X)$}
+\subsection{Introduction à la K-théorie}
+\todo{Ajouter texte d'intro/motivation}
+\subsubsection{Le groupe de Grothendieck K(X)}
+\begin{definition}
+    Soit $(H,+)$ un monoide commutatif, on lui associe une paire $(S(H),s)$ où $S(H)$ est un groupe abélien, $s:H\rightarrow S(H)$ un homomorphisme de groupe abélien qui répond au problème universel suivant: 
+    \begin{center}
+        \[\begin{tikzcd}
+        H && {S(H)} \\
+        & G
+        \arrow["s", from=1-1, to=1-3]
+        \arrow["f"', from=1-1, to=2-2]
+        \arrow["{\bar{f}}", dashed, from=1-3, to=2-2]
+        \end{tikzcd}\]
+    \end{center}
+\end{definition}
+
+\subsection{application à la détection globale d'une bifurcation}
+
+\begin{theorem}
+Soit $\Lambda$ un CW-complexe fini connexe, $f : \Lambda \times O \to Y$ une famille $C^1$ d'applications de Fredholm d'indice $0$ et soit $L$ la linéarisation de $f$ le long de la branche triviale. Supposons que, pour $\delta$ suffisamment petit, les seules solutions de l'équation $f(\lambda, x) = 0$ avec $\|x\| \leq \delta$ soient celles de la forme $(\lambda, 0)$. Si, pour un certain (et donc pour tout) $\nu \in \Lambda$, la multiplicité $k = |\mathrm{mult}(f_\nu, 0)| \neq 0$, alors
+\begin{itemize}
+    \item[(a)] la première classe de Stiefel-Whitney $w_1(\mathrm{Ind}\, L) = 0$,
+    \item[(b)] pour un certain $i \in \mathbb{N}$, $k^i J(\mathrm{Ind}\, L) = 0$ dans $J(\Lambda)$.
+\end{itemize}
+\end{theorem}
+
+\noindent En particulier, nous avons :
+
+\begin{corollaire}
+Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$ soit défini. Si $k \neq 0$, alors une bifurcation apparaît dès que soit le fibré d'indice $\mathrm{Ind}\, L$ est non orientable, soit $J(\mathrm{Ind}\, L) \neq 0$ et $k = |\mathrm{mult}(f_\nu, 0)|$ est premier avec l'ordre de $J(\Lambda)$.
+\end{corollaire}
+
+
+\part{Bifurcations équivariantes et symétries}
+
+\cite{golubitsky1985sgb1}
+\cite{golubitsky1988sgb2}
+\cite{montaldi2021sbc}
+\printbibliography
+
+\end{document}
