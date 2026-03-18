@@ -328,7 +328,7 @@ Quand on a une suite exacte, le noyau du premier morphisme est trivial, il est d
 
 On obtient, de façon purement algébrique, le résultat suivant
 \begin{lemme}\label{lemma-compo}
-    Soint $E,F,G$ des espaces Banach, $D_1:E\rightarrow F, D_2: F\rightarrow G$ si 2 des 3 opérateurs $D_1$,$D_2$ et $D_1\circ D_2$ est de Fredholm alors le 3ème l'est aussi et on a 
+    Soint $E,F,G$ des espaces Banach, $D_1:E\rightarrow F, D_2: F\rightarrow G$ si 2 des 3 opérateurs $D_1$,$D_2$ et $D_2\circ D_1$ est de Fredholm alors le 3ème l'est aussi et on a 
     \begin{equation*}
         \operatorname{Ind}(D_2\circ D_1)= \operatorname{Ind}(D_1)+\operatorname{Ind}(D_2)
     \end{equation*}
@@ -517,7 +517,7 @@ Ainsi, $U_1\times V_1$ et
 \begin{equation}\label{fonctionproj}
     \Phi(v,y): U_1\times V_1\rightarrow Y_0, (v,\lambda)\mapsto \pi_2 F(v+\varphi(v,\lambda),\lambda)
 \end{equation}
-répondent à la quesiton
+répondent à la question
 \end{preuve}
 On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une fonction définie entre deux espaces de dimension finie. la fonction $\Phi$ du résultat précédent est appelée la fonction de \textit{bifurcation}.
 Des calculs simples nous peremettent d'obtenir
@@ -616,14 +616,60 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
     Il existe alors un voisinnage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
 \end{theorem}
 \begin{preuve}
-    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi$ la fonction de Bifurcation
+    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi: U_1\times V_1\rightarrow Y_0$ la fonction de Bifurcation, par hypothèses
+    \begin{equation*}
+        \forall \lambda\in V_1 ,\Phi(0,\lambda)=0
+    \end{equation*}
+    et donc
+    \begin{equation*}
+        \Phi(v,\lambda)=\int_0^1 \frac{\partial}{\partial t} \Phi(tv,\lambda)dt=\int_0^1 D_1\Phi(tv,\lambda)(v) dt
+    \end{equation*}
+    considèrons alors $\delta>0$ tel que $sx_1\in U_1$ si $|s|<\delta$ posons alors
+    \begin{equation*}
+        \tilde{\Phi}:\left] -\delta,\delta \right[\times V_2\rightarrow Y_0,(s,\lambda)\mapsto \int_0^1 D_1\Phi(tsx_1,\lambda)(x_1) dt
+    \end{equation*}
+    Par hypothèses, $\tilde{\Phi}$ est $C^1$, et via \ref{corr-deriv-o}, $\tilde{\Phi}(0,\lambda_0)=0$.
+    On a 
+    \begin{align*}
+        &D_{2}(D_1 \Phi(v,\lambda)x_1)\\
+        &= D_{2}(\pi_2 D_1 F(v+\varphi(v,\lambda),\lambda))(x_1+ D_1\varphi(v,\lambda)x_1)\\
+        &=\pi_2 D^2_{11}F(v+\varphi(v,\lambda),\lambda) [x_1+D_1\varphi(v,\lambda)x_1,D_2\varphi(v,\lambda)]\\
+        &+\pi_2(D_1 F(v+\varphi(v,\lambda),\lambda))D^2_{21}\varphi(v,\lambda)x_1\\
+        &+\pi_2 D^2_{12}F(v+\varphi(v,\lambda),\lambda)(x_1+D_1\varphi(v,\lambda)x_1)
+    \end{align*}
+    En évaluant cett expression en $(0,\lambda_0)=0$, et via \ref{corr-deriv-o}, le premier terme s'annule,  au de la définition de $\pi_2$, le second s'annule aussi. Et donc, encore via \ref{corr-deriv-o} et par hypothèses on a \todo{JUSTIF DERIVATION INTEGRALE}
+    \begin{equation*}
+        D_{\lambda}\tilde{\Phi}(0,\lambda_0)=\pi_2 D^2_{12}F(0,\lambda_0)x_1\neq 0
+    \end{equation*}
+    De façon similaire à \ref{fold}, on applique le théorème des fonctions implicites, donc quit à reduire l'intervalle $]-\delta,+\delta[$, on peut supposer l'existance d'une fonction 
+        \begin{equation*}
+        \psi : ]-\delta,\delta [\rightarrow V_1\text{ telle que} 
+        \begin{cases}
+            \psi(0)=\lambda_0
+            \\ \forall s\in ]-\delta,\delta [, \tilde{\Phi}(s,\psi(s))=0 
+        \end{cases}
+    \end{equation*}
+et, du fait que 
+\begin{equation*}
+    \Phi(sx_1,\psi(s))=s\tilde{\Phi}(s,psi(s))=0 
+\end{equation*}
+La courbe
+    \begin{equation*}
+        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R ,t\mapsto
+                    \begin{pmatrix}
+                    sx_1+\varphi(sx_1,\psi(s))\\
+                    \psi(s)
+                    \end{pmatrix}
+    \end{equation*}
+Répond à la question
+
 \end{preuve}
 \begin{remarque}
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. Les méthodes analytiques présentées ci-dessus gèrent assez mal les situations ou l'index est non nul. Dans la section \ref{K-th}, nous verrons une façon particulièrement élégente de gérer l'index de fredholm
 \end{remarque}
-
+Notez comme les calculs deviennent déjà un peu lourd alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la suite. 
 \subsection{Cas où $\dim \Lambda=\infty$}
-Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonct est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibres). Nous présentons alors quelques résultats de [SOURCE].
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors quelques résultats de [SOURCE].
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
 \begin{definition}
