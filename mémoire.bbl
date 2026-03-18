@@ -1,0 +1,335 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{dieudonne1969fma8}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=220bc514e73e9aaea5d0232c0e714118}{%
+           family={Dieudonné},
+           familyi={D\bibinitperiod},
+           given={Jean\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{fullhash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{fullhashraw}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{bibnamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authorbibnamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authornamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authorfullhash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authorfullhashraw}{220bc514e73e9aaea5d0232c0e714118}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{9780124947501}
+      \field{series}{Pure and Applied Mathematics}
+      \field{title}{Foundations of Modern Analysis, Volume 8}
+      \field{year}{1969}
+    \endentry
+    \entry{Feckan2008Topological}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=4eeb34ee37144c8cf6fb7e425dd2a959}{%
+           family={Fečkan},
+           familyi={F\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{fullhash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{fullhashraw}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{bibnamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authorbibnamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authornamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authorfullhash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authorfullhashraw}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4020-8723-3}
+      \field{series}{Topological Fixed Point Theory and Its Applications}
+      \field{title}{Topological Degree Approach to Bifurcation Problems}
+      \field{volume}{5}
+      \field{year}{2008}
+      \field{pages}{ix + 261}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-1-4020-8724-0
+      \endverb
+    \endentry
+    \entry{golubitsky1985sgb1}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=3126448e2c6d96a97f230599a870abe5}{%
+           family={Golubitsky},
+           familyi={G\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d965e3e37786aecdd3d6da98978dadbe}{%
+           family={Schaeffer},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{fullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{fullhashraw}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{bibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorbibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authornamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorfullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorfullhashraw}{a40fd770b09115ab0a98388e31efb8b5}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{978-0-387-96217-1}
+      \field{series}{Applied Mathematical Sciences}
+      \field{title}{Singularities and Groups in Bifurcation Theory, Volume I}
+      \field{volume}{51}
+      \field{year}{1985}
+    \endentry
+    \entry{golubitsky1988sgb2}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=3126448e2c6d96a97f230599a870abe5}{%
+           family={Golubitsky},
+           familyi={G\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d965e3e37786aecdd3d6da98978dadbe}{%
+           family={Schaeffer},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{fullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{fullhashraw}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{bibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorbibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authornamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorfullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorfullhashraw}{a40fd770b09115ab0a98388e31efb8b5}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{978-0-387-96218-8}
+      \field{series}{Applied Mathematical Sciences}
+      \field{title}{Singularities and Groups in Bifurcation Theory, Volume II}
+      \field{volume}{69}
+      \field{year}{1988}
+    \endentry
+    \entry{Karoubi1978KTheory}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=bd2038c32c40af7dd9d3259e956868e7}{%
+           family={Karoubi},
+           familyi={K\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg, New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{fullhash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{fullhashraw}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{bibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authorbibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authornamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authorfullhash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authorfullhashraw}{bd2038c32c40af7dd9d3259e956868e7}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-540-08090-9}
+      \field{series}{Grundlehren der mathematischen Wissenschaften}
+      \field{title}{K-Theory: An Introduction}
+      \field{volume}{226}
+      \field{year}{1978}
+    \endentry
+    \entry{Kawanago2023HopfBanach}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=404e2474ee279edb543365fda14adbdd}{%
+           family={Kawanago},
+           familyi={K\bibinitperiod},
+           given={Tadashi},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{404e2474ee279edb543365fda14adbdd}
+      \strng{fullhash}{404e2474ee279edb543365fda14adbdd}
+      \strng{fullhashraw}{404e2474ee279edb543365fda14adbdd}
+      \strng{bibnamehash}{404e2474ee279edb543365fda14adbdd}
+      \strng{authorbibnamehash}{404e2474ee279edb543365fda14adbdd}
+      \strng{authornamehash}{404e2474ee279edb543365fda14adbdd}
+      \strng{authorfullhash}{404e2474ee279edb543365fda14adbdd}
+      \strng{authorfullhashraw}{404e2474ee279edb543365fda14adbdd}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.AP}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv preprint arXiv:2303.18000}
+      \field{title}{The Hopf bifurcation theorem in Banach spaces}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2303.18000
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2303.18000
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2303.18000
+      \endverb
+    \endentry
+    \entry{Marcut2009FredholmNotes}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=78a333f1d7cc8b0f9aa3680da4c22320}{%
+           family={Mărcuț},
+           familyi={M\bibinitperiod},
+           given={Ioan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Utrecht University}%
+      }
+      \strng{namehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{fullhash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{fullhashraw}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{bibnamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authorbibnamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authornamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authorfullhash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authorfullhashraw}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture notes for the course ``Analysis on Manifolds''}
+      \field{month}{10}
+      \field{note}{Accessed: 2026}
+      \field{title}{Notes on Fredholm (and Compact) Operators}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://webspace.science.uu.nl/~ban00101/anman2009/notes-Fredholm.pdf
+      \endverb
+      \verb{url}
+      \verb https://webspace.science.uu.nl/~ban00101/anman2009/notes-Fredholm.pdf
+      \endverb
+    \endentry
+    \entry{montaldi2021sbc}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=23cc2def7903dcb201647ec74b4aa317}{%
+           family={Montaldi},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{fullhash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{fullhashraw}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{bibnamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authorbibnamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authornamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authorfullhash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authorfullhashraw}{23cc2def7903dcb201647ec74b4aa317}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{9781107151642}
+      \field{title}{Singularities, Bifurcations and Catastrophes}
+      \field{year}{2021}
+    \endentry
+    \entry{Wall1981FiniteDeterminacy}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9d400e4c4f6267e6520de667fca8a151}{%
+           family={Wall},
+           familyi={W\bibinitperiod},
+           given={C.\bibnamedelimi T.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{fullhash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{fullhashraw}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{bibnamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authorbibnamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authornamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authorfullhash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authorfullhashraw}{9d400e4c4f6267e6520de667fca8a151}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the London Mathematical Society}
+      \field{title}{Finite Determinacy of Smooth Map-Germs}
+      \field{volume}{13}
+      \field{year}{1981}
+      \field{pages}{481\bibrangedash 539}
+      \range{pages}{59}
+      \verb{doi}
+      \verb 10.1112/blms/13.6.481
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

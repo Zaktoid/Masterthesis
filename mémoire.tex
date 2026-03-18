@@ -468,7 +468,7 @@ Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm, Il est possible de s
 \begin{theorem}(Lyapunov-Schmidt)\label{LP-redux}
 Soient $X,\Lambda,Y$ des espaces de 
 Banach, $U\subset X$,$V\subset \Lambda$ 
-des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $D_1F(x_0,\lambda_0)$ est de fredholm. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et 
+des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $D_1F(x_0,\lambda_0)$ est de fredholm. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et $V_2$ un ouvert de $V$ 
 tels que le problème
 \begin{equation*}
     F(x,\lambda)=0 
@@ -493,7 +493,7 @@ Se ramène à un problème en dimension finie sur $U_2\times V_2$
         \psi : \ker D\times X_0\rightarrow X\times \Lambda , (v,w)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
     \end{equation*}
     Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$). De plus, on a 
-    \begin{equation*}
+    \begin{equation*} 
         \tilde{F}(v,w, \lambda) = 0 \iff 
 \begin{cases} 
     \pi_2 \tilde{F}(v,w,\lambda) = 0 \\ 
@@ -508,7 +508,7 @@ Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
 \begin{equation*}
     G(v_0,w_0,\lambda_0)=0\text{ et } D_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) D_1  F (x_0,\lambda_0)
 \end{equation*}
-Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_0$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
+Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_1\times V_1$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
 \begin{equation*}
     \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,y)=0\Leftrightarrow w = \varphi(v,\lambda)
 \end{equation*}
@@ -519,9 +519,9 @@ Ainsi, $U_1\times V_1$ et
 \end{equation}
 répondent à la quesiton
 \end{preuve}
-On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une
+On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une fonction définie entre deux espaces de dimension finie. la fonction $\Phi$ du résultat précédent est appelée la fonction de \textit{bifurcation}.
 Des calculs simples nous peremettent d'obtenir
-\begin{corollaire}
+\begin{corollaire}\label{corr-deriv-o}
     Avec les notations de la preuve précédente, 
     \begin{equation*}
         D\varphi(v)(v_0,\lambda_0)=0\text{ et }    D\Phi(v)(v_0,\lambda_0)=0
@@ -534,7 +534,7 @@ Des calculs simples nous peremettent d'obtenir
 \subsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
-On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold}(repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite.
+On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite.
 \begin{proposition} \textit{(Fold)} \label{fold}
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
     supposons que
@@ -559,7 +559,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold}(re
     \begin{equation*}
         D_2\Phi(v_0,\lambda_0)=\pi_2 D_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 D_2 F(x_0,\lambda_0)
     \end{equation*}
-    or, étant donné que $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à reduire $U_1\times V_1$, on peut supposer l'existance d'une fonction 
+    or, étant donné que $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à reduire $U_1\times V_1$, on peut supposer l'existence d'une fonction 
     \begin{equation*}
         \psi : U_1\rightarrow V_1\text{ telle que} 
         \begin{cases}
@@ -616,7 +616,7 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
     Il existe alors un voisinnage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
 \end{theorem}
 \begin{preuve}
-    \todo{PREUVE}
+    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi$ la fonction de Bifurcation
 \end{preuve}
 \begin{remarque}
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. Les méthodes analytiques présentées ci-dessus gèrent assez mal les situations ou l'index est non nul. Dans la section \ref{K-th}, nous verrons une façon particulièrement élégente de gérer l'index de fredholm

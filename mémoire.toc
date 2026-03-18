@@ -1,0 +1,26 @@
+\babel@toc {french}{}\relax 
+\contentsline {part}{I\hspace {1em}Rappels et prérequis}{3}{part.1}%
+\contentsline {section}{\numberline {1}Notions de calcul différentiel dans des Espaces de Banachs}{3}{section.1}%
+\contentsline {section}{\numberline {2}Notions de théorie des opérateurs}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Opérateurs de Fredholm}{7}{subsection.2.1}%
+\contentsline {part}{II\hspace {1em}Réductions de Lyapunov–Schmidt et classification locale}{10}{part.2}%
+\contentsline {section}{\numberline {3}Réductions de Lyapunov-Schmidt}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Cas Fredholm}{10}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Quelques résultats dans des espaces de Banach}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Cas où $\dim \Lambda =1$}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Cas où $\dim \Lambda =\infty $}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {5}La bifurcation de Hopf}{14}{section.5}%
+\contentsline {section}{\numberline {6}Théorie des singularités en dimension finie}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}L'anneau $\mathcal {E}_n$}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Détermination finie}{18}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Classification de Montaldi}{21}{section.7}%
+\contentsline {part}{III\hspace {1em}Méthodes topologiques globales}{21}{part.3}%
+\contentsline {section}{\numberline {8}Approche par théorie du degré}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Le degré orienté}{21}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Approche $K$-théorique}{21}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Fibrés et fibrés vectoriels}{21}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}La catégorie $\mathfrak {F}(X)$}{23}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Introduction à la K-théorie}{23}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Le groupe de Grothendieck K(X)}{23}{subsubsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.4}application à la détection globale d'une bifurcation}{23}{subsection.9.4}%
+\contentsline {part}{IV\hspace {1em}Bifurcations équivariantes et symétries}{24}{part.4}%
