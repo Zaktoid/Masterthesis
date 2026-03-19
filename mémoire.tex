@@ -225,7 +225,11 @@ Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f
 \todomaybe{Inverse local analytique}
 \\
 
-
+On termine par une petite remarque sur les dérivées d'ordre supérieur. On définit les fonctions $C^k$ comme pour les fonctions rééels, mais remarquez que, avec les notations habituelles,
+\begin{equation*}
+    F\in C^2(U,Y)\Rightarrow D(DF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
+\end{equation*}
+Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ de $X$ et  $D^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, 
 \newpage
 \section{Opérateurs de Fredholm}
 
@@ -411,7 +415,7 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
 
 
 
-
+\newpage
 
 
 
@@ -596,7 +600,7 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
     \begin{equation*}
         D_{\lambda}\tilde{\Phi}(0,\lambda_0)=\pi_2 D^2_{12}F(0,\lambda_0)x_1\neq 0
     \end{equation*}
-    De façon similaire à \ref{fold}, on applique le théorème des fonctions implicites, donc quit à reduire l'intervalle $]-\delta,+\delta[$, on peut supposer l'existance d'une fonction 
+    De façon similaire à \ref{fold}, on applique le théorème des fonctions implicites, donc quitte à reduire l'intervalle $]-\delta,+\delta[$, on peut supposer l'existance d'une fonction 
         \begin{equation*}
         \psi : ]-\delta,\delta [\rightarrow V_1\text{ telle que} 
         \begin{cases}

@@ -1,0 +1,6 @@
+->cas dim Lambda = +/infty
+->Preuves determinatation finie
+->Relier les différentes définitions de codimensions
+->Lire tout Montaldi 
+->Faire l'orientation des Fredholm maps
+
