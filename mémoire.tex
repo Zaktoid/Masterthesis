@@ -353,7 +353,7 @@ et donc
 \end{equation*}
 Ce qui nous permet de controller la dimension du noyau du troisième si on contrôle celle des deux autres ! Maintenant, le conoyau: remarquez d'abord qu'on a
 \begin{equation*}
-    \im(D_1\circ D_2)\subseteq \im(D_1)\subseteq G
+    \im(D_2\circ D_1)\subseteq \im(D_2)\subseteq G
 \end{equation*}
 (Ce sont bien entendu des sous groupes normaux vis à vis de l'addition de $G$) on défini alors une projection naturelle
 
@@ -376,7 +376,7 @@ On a alors la suite exacte suivante
 \end{tikzcd}\]
 Vu ce qui précède, le 4ème élément de la suite est de dimension finie, les 2ème et 4ème éléments le sont par hypothèse  et donc le troisième doit l'être aussi et
 \begin{equation*}
-    \dim(G/\im(D_2\circ D_1)) = \dim(G/\dim D_2) + \dim(F/\im D_1) - \dim(\ker(D_2)) + \dim(\ker(D_2)\cap \im(D_1))
+    \dim(G/\im(D_2\circ D_1)) = \dim(G/\im D_2) + \dim(F/\im D_1) - \dim(\ker(D_2)) + \dim(\ker(D_2)\cap \im(D_1))
 \end{equation*}
 Ce qui permet de conclure. Les autres cas se montrent de façon similaire
 \end{proof}
@@ -397,13 +397,13 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des transfo
         \sum_{n\in\mathbb{N}} D^n
     \end{equation*}
     Est absolument convergente, étant donné que $\mathcal{L}(X)$ est un banach, $D'=\sum_{n\in\mathbb{N}} D^n$ est dans $\mathcal{L}(X)$. 
-    Montrons alors que $D'$ est l'inverse de $D$.
+    Montrons alors que $D'$ est l'inverse de $\operatorname{Id} -D$.
     On a
     \begin{equation*}
         D\circ\big( \sum_{0\leq n\leq k} D^n\big)=\sum_{0\leq n\leq k} D^{n+1}=\big( \sum_{0\leq n\leq k} D^n\big)\circ D = \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
     \end{equation*}
 
-    En posant $S_k=\sum_{0\leq n\leq k} D^k$
+    En posant $S_k=\sum_{0\leq n\leq k} D^n$
     \begin{equation*}
         \lim_{k\rightarrow \infty} ||S_kD -SD||\leq 
         ||D||\lim_{k\rightarrow \infty}  ||S_k-D'||< \lim_{k\rightarrow \infty}  ||S_k-D'||=0
@@ -490,7 +490,7 @@ Se ramène à un problème en dimension finie sur $U_2\times V_2$
     Elle sont continues via la théorème du graphe fermé.
     Posons alors
     \begin{equation*}
-        \psi : \ker D\times X_0\rightarrow X\times \Lambda , (v,w)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
+        \psi : \ker D\times X_0\times \Lambda \rightarrow X\times \Lambda , (v,w)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
     \end{equation*}
     Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$). De plus, on a 
     \begin{equation*} 
@@ -524,7 +524,7 @@ Des calculs simples nous peremettent d'obtenir
 \begin{corollaire}\label{corr-deriv-o}
     Avec les notations de la preuve précédente, 
     \begin{equation*}
-        D\varphi(v)(v_0,\lambda_0)=0\text{ et }    D\Phi(v)(v_0,\lambda_0)=0
+        D_1\varphi(v_0,\lambda_0)=0\text{ et }    D_1\Phi(v_0,\lambda_0)=0
     \end{equation*}
 \end{corollaire}
 
@@ -539,7 +539,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
     supposons que
     \begin{itemize}
-        \item $F\in C^1(U\times V,Z)$
+        \item $F\in C^1(U\times V,Y)$
         \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1(x_0,\lambda_0))=\dim (Y/ \im D_1(x_0,\lambda_0))=1$
         \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$
     \end{itemize}
@@ -547,7 +547,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
     \begin{equation*}
         \gamma:   \left] -\delta,\delta\right[ \rightarrow X\times\R 
     \end{equation*}
-    Telle que $\gamma(0,0)=(x_0,\lambda_0)$
+    Telle que $\gamma(0)=(x_0,\lambda_0)$
     \begin{equation*}
         F(\gamma(\left] -\delta,\delta\right[))= \{0\}
     \end{equation*}
@@ -569,15 +569,15 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
     \end{equation*}
     On construit alors $\gamma$: considérons
     \begin{equation*}
-        x_1\in X : ||x_1||=1 \text{ et } \ker D_1 F(x_0,\lambda)=\rangle x_1\langle_{\R}
+        x_1\in X : ||x_1||=1 \text{ et } \ker D_1 F(x_0,\lambda_0)=\rangle x_1\langle_{\R}
     \end{equation*}
-    Soit $u_0\in U_1$, il existe $\delta>0$ tel que $u_0+t x_0\in U_1$ si $|t|<\delta $ 
+    Soit $\delta>0$ tel que $v_0+t x_1\in U_1$ si $|t|<\delta $ 
     et 
     \begin{equation*}
         \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R ,t\mapsto
                     \begin{pmatrix}
-                    u_0+t x_1+\varphi(u_0+tx_1,\psi(u_0+tx_1)) \\
-                    \psi(u_0+tx_1)
+                    v_0+t x_1+\varphi(v_0+tx_1,\psi(v_0+tx_1)) \\
+                    \psi(v_0+tx_1)
                     \end{pmatrix}
     \end{equation*}
     Répond à la question.
@@ -608,7 +608,7 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
         \item $F(0,\lambda_0)=0$ et $\dim (\ker D_1(0,\lambda_0))=\dim (Y/ \im D_1(0,\lambda_0))=1$
         \item $F(0,\R)={0}$ (branche triviale)
         \item On peut supposer  $\ker(D_1 F(0,\lambda_0))=\rangle x_1 \langle_{\R} $ 
-        avec $||x_1||=1$ et on impose alors \\ $D^2_{12} F(0,\lambda_0)x_0\notin \im D_1 F
+        avec $||x_1||=1$ et on impose alors \\ $D^2_{12} F(0,\lambda_0)x_1\notin \im D_1 F
         (0,\lambda_0)$
     \end{itemize}
     Alors il existe une courbe de solutions non triviale 
@@ -651,11 +651,11 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
     \end{equation*}
 et, du fait que 
 \begin{equation*}
-    \Phi(sx_1,\psi(s))=s\tilde{\Phi}(s,psi(s))=0 
+    \Phi(sx_1,\psi(s))=s\tilde{\Phi}(s,\psi(s))=0 
 \end{equation*}
 La courbe
     \begin{equation*}
-        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R ,t\mapsto
+        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R ,s\mapsto
                     \begin{pmatrix}
                     sx_1+\varphi(sx_1,\psi(s))\\
                     \psi(s)
@@ -773,10 +773,10 @@ Un corollaire particulièrement utile
 \end{corollaire}
 \begin{preuve}
     cas $r=1$: il s'agit du résultat précédent.
-    Supposons le résultat établit pour $n\leq m$ il vient alors
+    Supposons le résultat établit pour $n\leq r$ il vient alors
     \begin{equation*}
-        f\in\mathcal{M}_n^{m+1}\Leftrightarrow 
-        \exists n\in\mathbb{N} , g_1,\cdots,g_n \in \mathcal{M}_n^{m}: f=\sum_{j=1}^nx_j g_j
+        f\in\mathcal{M}_n^{r+1}\Leftrightarrow 
+        \exists n\in\mathbb{N} , g_1,\cdots,g_n \in \mathcal{M}_n^{r}: f=\sum_{j=1}^nx_j g_j
     \end{equation*}
     or les $g_j$ sont dans l'idéal généré par les monômes de degré $r$.
     Et donc
@@ -908,7 +908,7 @@ et que
 le corrolaire [corollaire] nous permet aussi de dire que
 
 \begin{equation*}
-    J^k(n,m)\cong \mathcal{E}_n /\mathcal{M}_n^{m+1}
+    J^k(n,m)\cong ()\mathcal{E}_n /\mathcal{M}_n^{m+1})^m
 \end{equation*}
 
 
