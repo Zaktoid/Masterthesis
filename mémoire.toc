@@ -6,13 +6,13 @@
 \contentsline {section}{\numberline {3}Approche analytique}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Cas où $\dim \Lambda =1$}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Cas où $\dim \Lambda =\infty $}{15}{subsection.3.2}%
-\contentsline {section}{\numberline {4}La bifurcation de Hopf}{16}{section.4}%
+\contentsline {section}{\numberline {4}La bifurcation de Hopf}{17}{section.4}%
 \contentsline {section}{\numberline {5}Approche via la thoérie des singularités}{17}{section.5}%
 \contentsline {subsection}{\numberline {5.1}L'anneau $\mathcal {E}_n$}{17}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Détermination finie}{20}{subsection.5.2}%
 \contentsline {section}{\numberline {6}Classification de Montaldi}{23}{section.6}%
 \contentsline {part}{III\hspace {1em}Méthodes topologiques globales}{23}{part.3}%
-\contentsline {section}{\numberline {7}Approche par théorie du degré}{23}{section.7}%
+\contentsline {section}{\numberline {7}Approche par théorie du degré}{24}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Le degré orienté}{24}{subsection.7.1}%
 \contentsline {section}{\numberline {8}Approche $K$-théorique}{24}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Fibrés et fibrés vectoriels}{24}{subsection.8.1}%

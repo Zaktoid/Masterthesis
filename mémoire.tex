@@ -498,7 +498,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
     supposons que
     \begin{itemize}
         \item $F\in C^1(U\times V,Y)$
-        \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1(x_0,\lambda_0))=\dim (Y/ \im D_1(x_0,\lambda_0))=1$
+        \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1F(x_0,\lambda_0))=\dim (Y/ \im D_1F(x_0,\lambda_0))=1$
         \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$
     \end{itemize}
     Alors il existe une courbe $C^1$
@@ -638,11 +638,11 @@ Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
     Avec les notations habituelle, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \textit{élément de bifurcation}  si il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles qu'elles ne coïncident jamais, convergent vers $(x_0,\lambda_0)$ et 
     $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élémént de bifurcation est dit \textit{perpendiculaire} si il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ tell que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
 \end{definition}
-Dans la suite de cette section, nous suppons $F$ $C^1$ sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0})
+Dans la suite de cette section, nous suppons $F$ $C^1$ sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0}). Posons également $D_1=D_1F(x_0,\lambda_0)$ et $D_2=D_2F(x_0,\lambda_0)$
 \begin{definition}
     Avec les notations habituelles, si $F$ est $C^1$, on note 
     \begin{equation*}
-        \alpha_{F}(x_0,\lambda_0)= \dim \big(\ker (D_2 F(x_0,\lambda_0)^{*})\cap ker (D_1 F(x_0,\lambda_0)^{*})\big)
+        \alpha_{F}(x_0,\lambda_0)= \dim \big(\ker (D_2^{*})\cap \ker (D_1^{*})\big)
     \end{equation*}
 \end{definition} 
 Notez qu'étant donné qu'on suppose l'index nul, si  $\dim \ker(D_1 F)=n$ on a $0\leq \alpha\leq n$
@@ -650,17 +650,17 @@ Notez qu'étant donné qu'on suppose l'index nul, si  $\dim \ker(D_1 F)=n$ on a 
 \begin{definition}
     Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ est un de type $(\alpha,n)$ si
     \begin{equation*}
-        \dim \ker D_1 F(x_0,\lambda_0)=n=\dim \ker(D_1 F^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)=\alpha
+        \dim \ker D_1=n=\dim \ker(D_1 F^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)<n
     \end{equation*}
 \end{definition}
 
 Considérons alors 
 \begin{equation*}
-    x_1,\cdots,x_n\in X : \rangle x_1,\cdots,x_n\langle_{\R}=\ker(D_1 F(x_0,\lambda_0))
+    x_1,\cdots,x_n\in X : \rangle x_1,\cdots,x_n\langle_{\R}=\ker(D_1)
 \end{equation*}
 et, 
 \begin{equation*}
-     y^{*}_1,\cdots,y^{*}_n\in Y^{*}: \rangle y^{*}_1,\cdots, y^{*}_{n}  \langle_{\R}=\ker(D_1 F(x_0,\lambda_0)^{*})
+     y^{*}_1,\cdots,y^{*}_n\in Y^{*}: \rangle y^{*}_1,\cdots, y^{*}_{n}  \langle_{\R}=\ker(D_1^{*})
 \end{equation*}
 Grâce au théorème de Hanh-Banach, on complète bi-orthonogalement, i.e 
 \begin{equation}\label{BasebiOrtho}
@@ -669,20 +669,36 @@ Grâce au théorème de Hanh-Banach, on complète bi-orthonogalement, i.e
 On obtient alors une caractérisation algébrique pour être un zéro de type $(0,n)$
 
 \begin{proposition}
-    $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ si et seulement si les $D_2 F(x_0,\lambda_0)^{*}y_j^{*}$ sont linéairement indépendants
+    $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ si et seulement si les $D_2^{*}y_j^{*}$ sont linéairement indépendants
 \end{proposition}
 \begin{preuve}
-    Supposons d'abord que $\alpha=0$ et que les $D_2 F(x_0,\lambda_0)^{*}y_j^{*}$ sont linéairement dépendants,
+    Supposons d'abord que $\alpha=0$ et que les $D_2^{*}y_j^{*}$ sont linéairement dépendants,
     on a alors 
     \begin{equation*}
-        \exists c_1,\cdots,c_n\in\R: \sum_{i=1}^n D_2 F(x_0,\lambda_0)^{*}y_j^{*}=0\text{ et } \sum_{i=1}^n |c_j|>0
+        \exists c_1,\cdots,c_n\in\R: \sum_{i=1}^n D_2^{*}y_j^{*}=0\text{ et } \sum_{i=1}^n |c_j|>0
     \end{equation*}
-    et donc du fait que les $y^{*}_j$ sont linéairement indépendants, on  a 
+    et donc du fait que les $y^{*}_j$ sont linéairement indépendants et qu'ils sont dans $\ker D_1^{*}$, on  a 
     \begin{equation*}
-        D_2 F(x_0,\lambda_0)^{*} \Bigg(\sum_{i=1}^n y_j^{*}\Bigg)=0\text{ et } \sum_{i=1}^n c_jy_j^{*}\neq 0\Rightarrow  \ker (D_2 F(x_0,\lambda_0)^{*})\cap ker (D_1 F(x_0,\lambda_0)^{*})\neq {0}
+        D_2^{*} \Bigg(\sum_{i=1}^n y_j^{*}
+        \Bigg)=0\text{ et } \sum_{i=1}^n c_jy_j^{*}\neq 
+        0\Rightarrow  \ker (D_2^{*})\cap ker 
+        (D_1^{*})\neq {0}
     \end{equation*}
     une contradiction.\\
-    Supposons désormais que 
+    Supposons désormais que les 
+    $D_2^{*}y_j^{*}$ sont linéairement indépendants et que $\alpha\geq 1$. On sait alors que 
+    \begin{equation*}
+    \exists d_1,\cdots,d_n\in\R:
+    y^{*}_0=\sum_{j=1}^n d_j y^{*}_j\in\ker (D_2^{*})
+    \cap ker (D_1^{*})\text{ et } \sum_{j=1}^n |
+    d_j|>0
+    \end{equation*}
+    Il vient alors
+    \begin{equation*}
+        D_2^{*}y^{*}_0=\sum_ {j=1}^n d_jD_2^{*}  y^{*}_j=0
+    \end{equation*} 
+    donc tous, étant donné que les  $D_2^{*}  y^{*}_j$ sont indépendants, les $d_j$ sont nuls, contradiction.
+
 \end{preuve}
 \begin{theorem}
     Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
