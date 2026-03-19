@@ -19,6 +19,40 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{coleman2012calculus}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=bd3a932e88e9a48977cd36f59acf2d7e}{%
+           family={Coleman},
+           familyi={C\bibinitperiod},
+           given={Rodney},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{fullhash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{fullhashraw}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{bibnamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authorbibnamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authornamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authorfullhash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authorfullhashraw}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4614-3893-9}
+      \field{series}{Springer Undergraduate Mathematics Series}
+      \field{title}{Calculus on Normed Vector Spaces}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-3894-6
+      \endverb
+    \endentry
     \entry{dieudonne1969fma8}{book}{}{}
       \name{author}{1}{}{%
         {{hash=220bc514e73e9aaea5d0232c0e714118}{%

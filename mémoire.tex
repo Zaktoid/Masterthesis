@@ -84,29 +84,28 @@
 
 \section{Notions de calcul différentiel dans des Espaces de Banachs}
 
-\todo{cette section est à restructurer et à retravailler, et complétée}\\
-Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Les plus importants seront démontrés en détail et afin de ne pas alourdir le manuscrit, nous renvoyons le lecteur vers \cite{dieudonne1969fma8} pour les preuves détaillées des autres.
+Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir démontrer les théorème des fonctions implicites, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}
 
 \begin{definition}
-Soient $E,F$ des espaces de Banach (réels ou complexes) et $U$ un ouvert de $E$ et $f,g\in C^0(E,F)$. $f$ et $g$ sont \textit{tangents} en $x_0\in A$ si 
+Soient $X,Y$ des espaces de Banach (réels ou complexes) et $U$ un ouvert de $X$ et $f,g\in C^0(X,Y)$. $f$ et $g$ sont \textit{tangents} en $x_0\in A$ si 
 \begin{equation*}
-    \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_F}{||x-x_0||_E}=0
+    \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_Y}{||x-x_0||_X}=0
 \end{equation*}
 \end{definition}
 Il est clair que le relation "être tangent en un point" est une relation d'équivalence.
 \begin{lemme}
-Dans les conditions de la définition précédente, si il existe un élément $h$ de $C^0(A,F)$ tangent à $f$ en $x_0$ tel qu'il existe il existe $u\in L(E,F)$ tel que
-\begin{equation}
+Dans les conditions de la définition précédente, si il existe un élément $h$ de $C^0(X,Y)$ tangent à $f$ en $x_0$ et  $u\in L(X,Y)$ tels que
+\begin{equation}\label{equ1}
     h(x)=f(x_0)+u(x-x_0)
 \end{equation}
 alors il est unique
 \end{lemme}
 \begin{preuve}
-   Supposons avoir $h$ et $h'$ satisfaisant $(1)$ et notons $u_1,u_2$ les éléments de $L(E,F)$ correspondant, on a alors 
+   Supposons avoir $h$ et $h'$ satisfaisant \ref{equ1} et notons $u_1,u_2$ les éléments de $L(X,Y)$ correspondant, on a alors 
    \begin{equation*}
-           \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||h(x)-h'(x)||_F}{||x-x_0||_E}
-           = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x)-u_2(x)||_F}{||x-x_0||_E}
-           =           \lim_{y\rightarrow{0},y\neq 0}  \frac{||v(y)||_F}{||y||_E}=0
+           \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||h(x)-h'(x)||_Y}{||x-x_0||_X}
+           = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x)-u_2(x)||_Y}{||x-x_0||}
+           =           \lim_{y\rightarrow{0},y\neq 0}  \frac{||v(y)||}{||y||}=0
    \end{equation*}
    où on a posé $y=x-x_0$ et $v=u_1-u_2$. Soit $\varepsilon>0$, il existe $r>0$ tel que $||v(y)||\leq \varepsilon||y||$ si $||y||\leq r$, si $x\neq 0$, on récupère $||v(x)||\leq \varepsilon  ||x||$ en choisissant $y=\frac{r x}{||x||}$, ce qui permet d'affirmer que $v=0$, et donc $h=h'$
 \end{preuve}
@@ -114,58 +113,56 @@ Il est donc licite d'introduire la définition suivante
 \begin{definition}
     Si $E$ et $F$ sont des espaces de Banach, et si $A$ est un ouvert de $E$, alors $f\in C^0(A,F)$ est \textit{dérivable} en $x_0\in A$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$  , ce $u$ est alors la \textit{la dérivée de $f$ en $x_0$} qu'on notera $Df(x_0)$. Naturellement, $f$ est dérivable sur $A$ si elle est dérivable en chaque point
 \end{definition}
-
+Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme.
 \begin{proposition}
-    Dans les conditions de la définition précédente, $Df(x_0)\in \mathcal{L}(E,F)$
+    Dans les conditions de la définition précédente, $Df(x_0)\in \mathcal{L}(X,Y)$
 \end{proposition}
 \begin{preuve}
     Pour tout $\varepsilon>0$, il existe $0<r<1$ tel que
     \begin{equation*}
-        ||t||_E<r\Rightarrow ||f(x_0+t) - f(x_0)||_F\leq 
-        \frac{\varepsilon}{2}\text{ et } ||f(x_0+t)-(f(x_0)+u(t))||_F\leq\frac{\varepsilon}{2} ||t||_E
+        ||t||<r\Rightarrow ||f(x_0+t) - f(x_0)||\leq 
+        \frac{\varepsilon}{2}\text{ et } ||f(x_0+t)-(f(x_0)+u(t))||\leq\frac{\varepsilon}{2} ||t||
     \end{equation*}
 Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclure.
 \end{preuve}
-On vérifie facilement que si $f$ est constante sur $A$, alors $f$ est dérivable sur $A$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(E,F)$ alors $u$ est dérivable et $Du(x) =u(x)$ sur $E$.
+On vérifie facilement que si $f$ est constante sur $A$, alors $f$ est dérivable sur $A$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $Du(x) =u(x)$ sur $X$.
 \begin{remarque}
 On pourrait se demander s'il est possible de relaxer les hypothèses d'avantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme 1.2, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant , par exemple, [SOURCE]. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement
 \end{remarque}
 \begin{remarque}
-On pourrait également se demander "pourquoi $\mathbb{R}$ ou $\mathbb{C}$ ? N'est-il pas possible de travailler avec des champs plus généraux ?". D'une part, notons d'abord qu'il faut pouvoir définir une notion de limite intéressante, ce qui exclue d'emblée les champs finis. Il est possible de faire de l'analyse avec les p-adique, mais la "rigidité" de leur topologie fait qu'il n'est pas vraiment intéressant d'y étudier les bifurcation. Le lecteur intéressé par l'analyse dans des champs plus généraux pourra consulter [Source]. 
+Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quand aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y'aie une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicite à d'autres champs ! Voir par exemple [SOURCE]
 \end{remarque}
-Rappelons que l'espace $\mathcal{L}(E,F)$ muni de la norme $||u||=\sup_{t\in B(1)} u(x)$  est un espace de Banach et que $|| u(x) ||_F\leq ||u||\cdot||x||_E$. 
+Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{t\in B(1)} u(x)$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
 
 \begin{proposition}
-Si $E,F,G$ sont des espaces de Banach et si $B\in C^0(E\times F,G)$ est 
+Si $X,Y,Z$ sont des espaces de Banach et si $B\in C^0(X\times Y,Z)$ est 
 bilinéaire, alors B est dérivable et $DB(x_0,y_0)(x,y)= B(x_0,y)+B(x,y_0)$ 
-pour tous $(x_0,y_0),(x,y)\in E\times F$
+pour tous $(x_0,y_0),(x,y)\in X\times Y$
 \end{proposition}
 \begin{preuve}
-     Par hypothèse, il existe $C>0$ tel que $||B(x,y)||_G\leq ||x||_E ||y||_F$. Et donc, si $\varepsilon>0$ est fixé et si $\sup(||s||_E,||t||_F)=||(s,t)||_{E\times F}\leq \frac{\varepsilon}{C}$, on a 
+     Par hypothèse, il existe $C>0$ tel que $||B(x,y)||\leq ||x|| ||y||$. Et donc, si $\varepsilon>0$ est fixé et si $\sup(||s||,||t||)=||(s,t)||\leq \frac{\varepsilon}{C}$, on a 
      \begin{equation*}
          || B(x_0+x,y_0+y)-B(x_0,y_0)-
-         B(x_0,y)-B(x,y_0)||_F= ||B(x,y)||_F\leq\varepsilon ||(x,y)||
+         B(x_0,y)-B(x,y_0)||= ||B(x,y)||\leq\varepsilon ||(x,y)||
      \end{equation*}
 \end{preuve}
 
 On obtient facilement le résultat suivant:
 \begin{proposition}
-    Si $(F_i)_{i=0}^m$ est une suite finie d'espaces de Banach,$A$ un ouvert d'un espace de Banach $E$ , $F=\prod_{i=0}^m F_i$ 
-    et si $f\in C^0(A,F)$ alors, pour tout $x_0\in E$
+    Si $(Y_i)_{i=0}^m$ est une suite finie d'espaces de Banach,$U$ un ouvert d'un espace de Banach $X$ , $Y=\prod_{i=0}^m Y_i$ 
+    et si $f\in C^0(U,Y)$ alors, pour tout $x_0\in U$
     \begin{equation*}
     f \text{ est dérivable en $x_0$ }
     \Leftrightarrow \forall 0\leq i \leq m\quad  \pi_i(f) \text{ est dérivable en $x_0$} 
     \end{equation*}
 \end{proposition}
-On écrira $Df(x_0)=(Df(x_0)_1,\cdots,Df(x_0)_m)$ où $f_i=\pi_i(f)$
+On écrira $Df(x_0)=(Df_1(x_0),\cdots,Df_m(x_0))$ où $f_i=\pi_i(f)$
 \\
 On récupère alors le théorème de dérivation des fonctions composées. La preuve est assez similaire au cas $\mathbb{R}^n$
 \begin{proposition}
+    Soient $X,Y,Z$ des espaces de Banach, $U$ un ouvert de $X$,$x_0\in U$, $f\in C^0(U,Y)$, $y_0=f(x_0)$, $V$ un ouvert de $Y$ contenant $y_0$ et enfin  $g\in C^0(V,Z)$ alors 
     \begin{equation*}
-        \forall E,F,G \text{ espaces de Banach},x_0\in E, A\in\mathcal{V}_{x_0},f\in C^0(A,F),y_0\in F ,B\in \mathcal{V}_{y_0},g\in C^0(B,G)
-    \end{equation*}
-    \begin{equation*}
-        f\text{ dérivable en  $x_0$ et g dérivable en $y_0$ et  $f(x_0)=y_0$}\Rightarrow g\circ f \text{ dérivable en $x_0$}  
+        f\text{ dérivable en  $x_0$ et g dérivable en $y_0$ et }\Rightarrow g\circ f \text{ dérivable en $x_0$}  
     \end{equation*}
 Et on a l'expression habituelle
 \begin{equation*}
@@ -182,41 +179,10 @@ De ce qui précède, on déduit immédiatement que l'ensemble des fonctions dér
 $D (f+g)(x_0)=Df(x_0)+Dg(x_0)$ et si $\alpha$ est un scalaire,
 $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{remarque}\label{remarque 1-dim}
-    Avec les notations qui précèdent, si $E$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(E,F)$ est isomorphe à $F$ via $f\mapsto (\xi\mapsto f\xi)$
+    Avec les notations qui précèdent, si $X$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(X,Y)$ est isomorphe à $Y$ via $f\mapsto (\xi\mapsto f\xi)$
     $Df(x_0)$ est alors un élément de l'espace d'arrivée $F$
 \end{remarque}
-    \begin{proposition}
-        Soit $I=[\alpha,\beta]$ un intervalle compact de $\mathbb{R}$,  $F$ un espace de banach, $f\in C^0(I,F)$,$\varphi\in C^0(I,\mathbb{R})$, supposons que $D\subset I$ soit dénombrable, et que $\varphi$ et $f$ soient dérivables sur $I\setminus D$ et que
-    $||Df||\leq ||D\varphi||$ sur $I$ alors $||f(\beta)-f(\alpha)||\leq \varphi(\beta)-\varphi(\alpha)$
-\end{proposition}
-\begin{preuve}
-    \todomaybe{écrire la preuve}
-\end{preuve}
-On obtient immédiatement le corollaire suivant
-\begin{corollaire}
-dans les conditions de la proposition précédente, si $||Df||\leq M$ sur  alors
-$||f(\beta)-f(\alpha)||\leq M(\beta-\alpha)$
-\end{corollaire}
-Comme conséquence naturelle, le résultat suivant
-\begin{proposition}
-    Soient $E,F$ des espaces de Banach,
-    $f$ une fonction continue entre $I=\{x_0+st|s\in[0,1]\}$
-    où $x_0,t$ sont des éléments de $E$.
-    Si $f$ est dérivable sur $I$ , alors
-    \begin{equation*}
-        ||f(x_0+t) -f(x_0)||\leq ||t||\cdot \sup_{s\in[0,1]}||D_{x_0+ts}f||
-    \end{equation*}
-\end{proposition}
-\begin{preuve}
-    \todomaybe{ écrire la preuve}
-\end{preuve}
-\begin{corollaire}
-    Soient $E,F$ des espaces de Banach, soient $a,b$ des points de $E$ et $I$ un segment les joignant, $A$ un ouvert de $F$ et $f\in C^0(I,A)$ dérivable sur $I$, on a 
-    \begin{equation*}
-        ||f(b)-f(a)- Df(x_0)(b-a) ||
-        \leq ||b-a||\cdot \sup_{x\in I} ||Df(x)-Df(x_0)||
-    \end{equation*}
-\end{corollaire}
+   
 \begin{definition}
     Soient $E,F$ des espaces de Banach, soit $A$ un ouvert de $E$.
     $f\in C^1(A,F)$ si $Df\in C^0(A,\mathcal{L}(E,f))$
@@ -263,17 +229,10 @@ De plus,
 \todo{Inverse local analytique}
 \\
 
-On peut maintenant poser proprement le problème général de la théorie de la bifurcation.
-Etant donné un espace d'état $X$, un espace de paramètre $\Lambda$ et une fonction $F:X\times \Lambda\rightarrow{ Y}$ (où $X$,$\Lambda$,$Y$ sont des espaces Banach réels). Considérons maintenant $(x_0,\lambda_0)$ 
-tel que 
-\begin{equation}
-    F(x_0,\lambda_0)=0
-\end{equation}
-Si $D^{(1)}_{(x_0,\lambda_0)}f$ est un homéomorphisme linéaire, alors le problème est entièrement réglé par le théorème précédent. On s'intéresse alors aux situations où $D^{(1)}_{(x_0,\lambda_0)}f$ n'est pas inversible sur un voisinage de $(x_0,y_0)$.
-\newpage
-\section{Notions de théorie des opérateurs}
 
-\subsection{Opérateurs de Fredholm}
+\newpage
+\section{Opérateurs de Fredholm}
+
 Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons:
 \begin{definition}
     Soient $E,F$ des espaces de Banach et soit $D\in  \mathcal{L}(E,F)$. \textit{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  F / \text{im } D=\text{codim } \text{im }D$ sont finis, et il vaut, dans ce cas
@@ -400,7 +359,7 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des transfo
     Montrons alors que $D'$ est l'inverse de $\operatorname{Id} -D$.
     On a
     \begin{equation*}
-        D\circ\big( \sum_{0\leq n\leq k} D^n\big)=\sum_{0\leq n\leq k} D^{n+1}=\big( \sum_{0\leq n\leq k} D^n\big)\circ D = \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
+        D\circ\big( \sum_{0\leq n\leq k} D^n\big)=\sum_{0\leq n\leq k} D^{n+1}=\big( \sum_{0\leq n\leq k} D^n\big)\circ D = \sum_{1\leq n\leq k+1} D^n- \operatorname{Id}
     \end{equation*}
 
     En posant $S_k=\sum_{0\leq n\leq k} D^n$

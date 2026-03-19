@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.15)  18 MAR 2026 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.15)  19 MAR 2026 09:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,7 +996,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./mémoire.toc
-LaTeX Font Info:    Trying to load font information for U+euf on input line 22.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ))
@@ -1009,187 +1009,182 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.80 \newpage
               [1] [2] [3]
-Overfull \hbox (15.7477pt too wide) in paragraph at lines 139--142
+Overfull \hbox (15.7477pt too wide) in paragraph at lines 138--141
 \T1/cmr/m/n/12 n�aire, alors B est d�-ri-vable et $\OML/cmm/m/it/12 DB\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y[]\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 pour tous $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--213
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 240--243
+Underfull \hbox (badness 10000) in paragraph at lines 206--209
 
  []
 
 
-Overfull \hbox (38.08958pt too wide) detected at line 248
+Overfull \hbox (38.08958pt too wide) detected at line 214
 \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 U \OMS/cmsy/m/n/12 2 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 U[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ V[][]9\OT1/cmr/m/n/12 !\OML/cmm/m/it/12 u \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 U; F\OT1/cmr/m/n/12 ) : []\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 b[][]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 U; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A; f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )) = 0[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--258
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 [7]
-Overfull \hbox (16.7018pt too wide) detected at line 380
+Overfull \hbox (16.7018pt too wide) detected at line 339
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G= []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[] \OMS/cmsy/m/n/12 ^^N \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) = [](\OML/cmm/m/it/12 G= [] D[]\OT1/cmr/m/n/12 ) + [](\OML/cmm/m/it/12 F= [] D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) + []([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ))
  []
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 452--454
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
 
  []
 
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 534.
+(hyperref)                removing `math shift' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dim' on input line 534.
+(hyperref)                removing `\dim' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 534.
+(hyperref)                removing `\Lambda' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 534.
+(hyperref)                removing `math shift' on input line 493.
 
 [11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 671.
+(hyperref)                removing `math shift' on input line 630.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dim' on input line 671.
+(hyperref)                removing `\dim' on input line 630.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 671.
+(hyperref)                removing `\Lambda' on input line 630.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 671.
+(hyperref)                removing `\infty' on input line 630.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 671.
+(hyperref)                removing `math shift' on input line 630.
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 685.
+(hyperref)                removing `math shift' on input line 644.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 685.
+(hyperref)                removing `subscript' on input line 644.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 685.
+(hyperref)                removing `math shift' on input line 644.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 747--750
+Underfull \hbox (badness 10000) in paragraph at lines 706--709
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 785--788
+Underfull \hbox (badness 10000) in paragraph at lines 744--747
 
  []
 
 [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 988--989
+Underfull \hbox (badness 10000) in paragraph at lines 947--948
 
  []
 
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 987.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 987.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1050
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1009
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1090--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1053
 
  []
 
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1107.
+(hyperref)                removing `math shift' on input line 1066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1107.
+(hyperref)                removing `math shift' on input line 1066.
 
 [24]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1146.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1105.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [25] (./mémoire.aux)
+) [25] [26] (./mémoire.aux)
 Package rerunfilecheck Info: File `mémoire.out' has not changed.
-(rerunfilecheck)             Checksum: AF0980EDF7ADC0721F0BC8F9000E71A5;5210.
+(rerunfilecheck)             Checksum: 5D9D87DE6795CB8A25BD1B6FFACE0561;4969.
 Package logreq Info: Writing requests to 'mémoire.run.xml'.
 \openout1 = `mémoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41850 strings out of 476034
- 866130 string characters out of 5792864
- 1873388 words of memory out of 6000000
- 61549 multiletter control sequences out of 15000+600000
+ 41849 strings out of 476034
+ 866228 string characters out of 5792864
+ 1874388 words of memory out of 6000000
+ 61552 multiletter control sequences out of 15000+600000
  535798 words of font info for 95 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  116i,16n,118p,964b,1871s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfcc0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on mémoire.pdf (26 pages, 494850 bytes).
+Output written on mémoire.pdf (27 pages, 493198 bytes).
 PDF statistics:
- 565 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 451 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

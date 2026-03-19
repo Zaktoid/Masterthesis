@@ -1,8 +1,7 @@
 \babel@toc {french}{}\relax 
 \contentsline {part}{I\hspace {1em}Rappels et prérequis}{3}{part.1}%
 \contentsline {section}{\numberline {1}Notions de calcul différentiel dans des Espaces de Banachs}{3}{section.1}%
-\contentsline {section}{\numberline {2}Notions de théorie des opérateurs}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Opérateurs de Fredholm}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {2}Opérateurs de Fredholm}{7}{section.2}%
 \contentsline {part}{II\hspace {1em}Réductions de Lyapunov–Schmidt et classification locale}{10}{part.2}%
 \contentsline {section}{\numberline {3}Réductions de Lyapunov-Schmidt}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Cas Fredholm}{10}{subsection.3.1}%
