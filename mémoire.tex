@@ -246,9 +246,9 @@ Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0
     Dans les conditions de la définition précédente, $D$ est un \textit{opérateur de Fredholm} si son index est défini. On pose $\mathcal{F}(E,F)$ l'ensemble des opérateurs de Fredholm de $E$ vers $F$
 \end{definition}
 Remarquons que dans ce cas, $D^*$ est de Fredholm aussi et 
-\begin{equation*}
+\begin{equation}\label{adjointfred}
     \operatorname*{Ind} D^*=- \operatorname*{Ind} D
-\end{equation*}
+\end{equation}
 Où $D^{*}$ est l'opérateur adjoint, défini comme
 \begin{eqnarray*}
     D^{*}: F^{*}\rightarrow E^{*}, f\mapsto  f\circ D
@@ -418,12 +418,11 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
 \newpage
 
 
+\part{Réduction de Lyapunov-Schmidt et étude locale}
 
-\part{Réductions de Lyapunov–Schmidt et classification locale}
+\section{Approche analytique}
 
-\section{Réductions de Lyapunov-Schmidt}
 Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm, Il est possible de se ramener à un problème en dimension finie
-\subsection{Cas Fredholm}
 \begin{theorem}(Lyapunov-Schmidt)\label{LP-redux}
 Soient $X,\Lambda,Y$ des espaces de 
 Banach, $U\subset X$,$V\subset \Lambda$ 
@@ -489,7 +488,7 @@ Des calculs simples nous peremettent d'obtenir
 
 
 
-\section{Quelques résultats dans des espaces de Banach}
+
 \subsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
@@ -502,7 +501,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
         \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1(x_0,\lambda_0))=\dim (Y/ \im D_1(x_0,\lambda_0))=1$
         \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$
     \end{itemize}
-    Alors il existe $\delta>0$ une une courbe $C^1$
+    Alors il existe une courbe $C^1$
     \begin{equation*}
         \gamma:   \left] -\delta,\delta\right[ \rightarrow X\times\R 
     \end{equation*}
@@ -623,24 +622,82 @@ La courbe
 Répond à la question
 
 \end{preuve}
-\begin{remarque}
-    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. Les méthodes analytiques présentées ci-dessus gèrent assez mal les situations ou l'index est non nul. Dans la section \ref{K-th}, nous verrons une façon particulièrement élégente de gérer l'index de fredholm
+\begin{remarque}\label{remarque IND=0}
+    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas, nous traiterons du cas plus général dans \ref{K-th}
 \end{remarque}
 Notez comme les calculs deviennent déjà un peu lourd alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la suite. 
 \subsection{Cas où $\dim \Lambda=\infty$}
-Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors quelques résultats de [SOURCE].
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de Bifurcation tiré de [SOURCE].
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
 \begin{definition}
-    Si $(x_0,\lambda_0)$ est une zéro de $F(x\,\lambda)$ alors et si $U$ est un ouvert non vide de $X$, alors $\gamma\in C^0(U,X\times\Lambda)$ est une poursuite de $(x_0,\lambda_0)$ si $F(\gamma(U))=\{0\}$
+    Si $(x_0,\lambda_0)$ est une zéro de $F(x\,\lambda)$ alors et si $U$ est un ouvert non vide de $X$, alors $\gamma\in C^0(U,X\times\Lambda)$ est une poursuite de $(x_0,\lambda_0)$ si $F(\gamma(U))=\{0\}$ 
 \end{definition}
+
+\begin{definition}
+    Avec les notations habituelle, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \textit{élément de bifurcation}  si il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles qu'elles ne coïncident jamais, convergent vers $(x_0,\lambda_0)$ et 
+    $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élémént de bifurcation est dit \textit{perpendiculaire} si il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ tell que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
+\end{definition}
+Dans la suite de cette section, nous suppons $F$ $C^1$ sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0})
+\begin{definition}
+    Avec les notations habituelles, si $F$ est $C^1$, on note 
+    \begin{equation*}
+        \alpha_{F}(x_0,\lambda_0)= \dim \big(\ker (D_2 F(x_0,\lambda_0)^{*})\cap ker (D_1 F(x_0,\lambda_0)^{*})\big)
+    \end{equation*}
+\end{definition} 
+Notez qu'étant donné qu'on suppose l'index nul, si  $\dim \ker(D_1 F)=n$ on a $0\leq \alpha\leq n$
+
+\begin{definition}
+    Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ est un de type $(\alpha,n)$ si
+    \begin{equation*}
+        \dim \ker D_1 F(x_0,\lambda_0)=n=\dim \ker(D_1 F^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)=\alpha
+    \end{equation*}
+\end{definition}
+
+Considérons alors 
+\begin{equation*}
+    x_1,\cdots,x_n\in X : \rangle x_1,\cdots,x_n\langle_{\R}=\ker(D_1 F(x_0,\lambda_0))
+\end{equation*}
+et, 
+\begin{equation*}
+     y^{*}_1,\cdots,y^{*}_n\in Y^{*}: \rangle y^{*}_1,\cdots, y^{*}_{n}  \langle_{\R}=\ker(D_1 F(x_0,\lambda_0)^{*})
+\end{equation*}
+Grâce au théorème de Hanh-Banach, on complète bi-orthonogalement, i.e 
+\begin{equation}\label{BasebiOrtho}
+    \exists x^{*}_1,\cdots,x^{*}_n\in X^{*}, y_1,\cdots,y_n\in Y : \forall 1\leq i,j,k,l\leq n,\text{  } x_i^{*}(x_j)=\delta_{ij}\text{ et } y_l^{*}(y_k)=\delta_{kl}
+\end{equation}
+On obtient alors une caractérisation algébrique pour être un zéro de type $(0,n)$
+
+\begin{proposition}
+    $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ si et seulement si les $D_2 F(x_0,\lambda_0)^{*}y_j^{*}$ sont linéairement indépendants
+\end{proposition}
+\begin{preuve}
+    Supposons d'abord que $\alpha=0$ et que les $D_2 F(x_0,\lambda_0)^{*}y_j^{*}$ sont linéairement dépendants,
+    on a alors 
+    \begin{equation*}
+        \exists c_1,\cdots,c_n\in\R: \sum_{i=1}^n D_2 F(x_0,\lambda_0)^{*}y_j^{*}=0\text{ et } \sum_{i=1}^n |c_j|>0
+    \end{equation*}
+    et donc du fait que les $y^{*}_j$ sont linéairement indépendants, on  a 
+    \begin{equation*}
+        D_2 F(x_0,\lambda_0)^{*} \Bigg(\sum_{i=1}^n y_j^{*}\Bigg)=0\text{ et } \sum_{i=1}^n c_jy_j^{*}\neq 0\Rightarrow  \ker (D_2 F(x_0,\lambda_0)^{*})\cap ker (D_1 F(x_0,\lambda_0)^{*})\neq {0}
+    \end{equation*}
+    une contradiction.\\
+    Supposons désormais que 
+\end{preuve}
+\begin{theorem}
+    Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
+    \begin{equation*}
+        D^2_{11}F(p,q)(q^{*})\neq 0
+    \end{equation*}
+    alors c'est un élément de bifurcation non perpendiculaire
+\end{theorem}
 \section{La bifurcation de Hopf}
 Plusieurs version du théorème de la bifurcation de Hopf existent, nous montrons celle de \cite{Kawanago2023HopfBanach}
 \begin{theorem}(Hopf)
     
 \end{theorem}
 
-\section{Théorie des singularités en dimension finie}
+\section{Approche via la thoérie des singularités}
 \subsection{L'anneau $\mathcal{E}_n$}
 Le but de cette section est d'exposer la classification proposée par Montaldi dans \cite{montaldi2021sbc}. Il utilise des outils de théorie des singularité et de théorie des catastrophes pour ramemener le problème de classification à un problème \textit{algébrique}, cette approche a été initée par Golubitsky dans \cite{golubitsky1985sgb1}. Cependant, Montaldi propose une approche plus moderne et en un certain sens, plus puissante. Nous allons donc introduire le minimum vital de théorie des singularités et des catastrophes et nous en servir pour obtenir un catalogue des problèmes de bifurcation qui ne sont pas "trop compliqués" (dans un sens que nous allons préciser).
 
@@ -719,10 +776,10 @@ Soient $a,b$ des naturels, on a, en considérant $\R^{a+b}=\R^a\times\R^b$
 Posons $P=\langle \pi_1,\cdots,\pi_a\rangle$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
 Soit $\eta\in I_a$ et soit $f\in\eta$. $f$ est alors définie sur $B(0,\varepsilon)$ pour un certain $ \varepsilon>0$. En appliquant successivement le théorème de variations des primitives et de dérivation des fonctions composées, on obtient
 \begin{equation*}
-    f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D^{(i)}_{(tx,y)}f\space dt=\sum_{i=1}^n \pi_i(x)
-    \int_0^1 D^{(i)}_{(tx,y)}f \space dt
+    f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D_{i}f(tx,y)\space dt=\sum_{i=1}^n \pi_i(x)
+    \int_0^1 D_if(tx,y) \space dt
 \end{equation*}
-or les fonctions $(x,y)\mapsto \int_0^1D^{(i)}_{(tx,y)}f$ sont lisses (dérivée d'une fonction lisse et intégration sur un compact) ,ce qui permet de conclure.
+or les fonctions $(x,y)\mapsto \int_0^1D_i f(tx,y)$ sont lisses (dérivée d'une fonction lisse et intégration sur un compact) ,ce qui permet de conclure.
 \end{preuve}
 Un corollaire particulièrement utile 
 \begin{corollaire}
