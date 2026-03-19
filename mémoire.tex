@@ -180,27 +180,28 @@ $D (f+g)(x_0)=Df(x_0)+Dg(x_0)$ et si $\alpha$ est un scalaire,
 $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{remarque}\label{remarque 1-dim}
     Avec les notations qui précèdent, si $X$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(X,Y)$ est isomorphe à $Y$ via $f\mapsto (\xi\mapsto f\xi)$
-    $Df(x_0)$ est alors un élément de l'espace d'arrivée $F$
+    $Df(x_0)$ est alors un élément de l'espace d'arrivée $Y$
 \end{remarque}
    
 \begin{definition}
-    Soient $E,F$ des espaces de Banach, soit $A$ un ouvert de $E$.
-    $f\in C^1(A,F)$ si $Df\in C^0(A,\mathcal{L}(E,f))$
+    Soient $X,Y$ des espaces de Banach, soit $U$ un ouvert de $X$.
+    $f\in C^1(U,Y)$ si $Df\in C^0(U,\mathcal{L}(X,Y))$
 \end{definition}
 \begin{definition}
-    Dans les conditions de la définition précédente, si $E=\prod_{i=1}^n E_i$ où les $E_i$ sont des espaces de Banach. 
-    $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
-    est dérivable. On la note  $D^{(i)}_{a} f$
+    Si $X=\prod_{i=1}^n X_i$ où les $X_i$ sont des espaces 
+    de Banach, si $a=(a_1,\cdots,a_m)\in\prod_{i=1}^n X_i$,  
+    et si $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
+    est dérivable, on note  $D_{i}f(a)$ se dérivée.
 \end{definition}
 \begin{proposition}
     Dans les conditions des définitions précédentes, 
     \begin{equation*}
-        f\in C^1(A,F)\Leftrightarrow \forall a\in A, \space
-        \forall 1\leq i \leq n \quad  D^{(i)}_a f\text{ est défini et continu}
+        f\in C^1(U,Y)\Leftrightarrow \forall a\in U, \space
+        \forall 1\leq i \leq n \quad  D_i f(a)\text{ est défini et continu}
     \end{equation*}
-    la dérivée est alors donné par
+    la dérivée est alors donnée par
     \begin{equation*}
-        Df(x)(t)=\sum_{i=1}^n D_i f(a)(t)
+        Df(a)(t)=\sum_{i=1}^n D_i f(a)(t)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
@@ -208,14 +209,9 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \end{preuve}
 
 \begin{theorem}
-Soient $X,\Lambda,Y$ des espaces de Banach, $U$ un ouvert de $X\times \Lambda$ et $f\in C^1(A,G)$. Soit $(x_0,\lambda_0)\in Z_Af$ tel que $D_1 f(x_0,y_0)$ est un homéomorphisme linéaire de $\Lambda$ vers $Y$, alors il existe  $U_0\in \mathcal{V}_{a_0}$ tel que pour 
+Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(U,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme linéaire et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
-    \forall U\in\mathcal{P}(U_0)\cap\mathcal{V}_{a_0} \text{ connexe, }\exists ! u\in C^0(U,F) :\bigg( u(a_0)=b_0\text{ et  } \forall x\in U , (x,u(x))\in A ,f(x,u(x))=0 \bigg)
-\end{equation*}
-De plus,
-\begin{equation*}
-    u\in C^1(U,F)  \text{ et } Du(x)=-(D_{1}f(x,u(x)))^{-1}\circ 
-    D^{(2)}_{(x,u(x))}f
+    \forall (x,\lambda)\in V, F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
 \end{equation*}
 \end{theorem}
 \begin{preuve}
@@ -223,10 +219,10 @@ De plus,
 \end{preuve}
 
 
-\todo{Rajouter une partie sur les fonctions analytiques dans des Banachs}
+\todomaybe{Rajouter une partie sur les fonctions analytiques dans des Banachs}
 \\
 
-\todo{Inverse local analytique}
+\todomaybe{Inverse local analytique}
 \\
 
 
