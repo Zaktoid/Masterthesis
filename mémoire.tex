@@ -56,6 +56,42 @@
 \newcommand{\de}[0]{\operatorname{def}}
 
 
+\tcbuselibrary{theorems,breakable}
+
+
+\newtcbtheorem[number within=section]{theobox}{Théorème}%
+{colback=blue!5,
+ colframe=blue!50!black,
+ fonttitle=\bfseries,
+ breakable,
+ enhanced,
+ attach boxed title to top left={xshift=2mm,yshift=-2mm},
+ boxed title style={colback=blue!50!black},
+ separator sign none,
+ description delimiters={(}{)},
+}{th}
+
+\newtcbtheorem[number within=section]{defbox}{Définition}%
+{colback=green!5,
+ colframe=green!40!black,
+ fonttitle=\bfseries,
+ breakable,
+ enhanced,
+ attach boxed title to top left={xshift=2mm,yshift=-2mm},
+ boxed title style={colback=green!40!black},
+ title={#2 \ifstrempty{#1}{}{~(#1)}}
+}{def}
+
+\newtcbtheorem[number within=section]{propbox}{Proposition}%
+{colback=purple!5,
+ colframe=purple!50!black,
+ fonttitle=\bfseries,
+ breakable,
+ enhanced,
+ attach boxed title to top left={xshift=2mm,yshift=-2mm},
+ boxed title style={colback=purple!50!black},
+ title={#2 \ifstrempty{#1}{}{~(#1)}}
+}{prop}
 
 \title{Quelques techniques d'étude de problèmes de bifurcation}
 \author{Zakaria Elmi Roble }
@@ -71,7 +107,9 @@
 \theoremstyle{plain}
 \newtheorem{theorem}[definition]{Théorème}
 \newtheorem{corollaire}[definition]{Corollaire}
-\newenvironment{preuve}{\textit{Preuve} }{\hfill$\square$\vspace{\baselineskip} \\}
+\newenvironment{preuve}
+{\par\noindent\textit{Preuve.}\ }
+{\hfill$\square$\par}
 
 \begin{document}
 
@@ -208,12 +246,12 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
     voir \cite{dieudonne1969fma8}
 \end{preuve}
 
-\begin{theorem}
+\begin{theobox}
 Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(U,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme linéaire et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
     \forall (x,\lambda)\in V, F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
 \end{equation*}
-\end{theorem}
+\end{theobox}
 \begin{preuve}
     \todo{Preuve complète}
 \end{preuve}
@@ -385,13 +423,13 @@ On en tire immédiatement le résultat suivant
     $\mathcal{GL}(X)$ est un ouvert de $\mathcal{L}(X)$
 \end{corollaire}
 Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomorphismes linéaires entre $E$ et $F$, c'est aussi un ouvert: soit il est vide, soit il ne l'est pas et dans ce cas on identifie $E$ à $F$ et on applique le corollaire ci-dessus.
-\begin{theorem}(Atkinson)
+\begin{theobox}{Atkinson}{}
     La fonction 
     \begin{equation*}
         \operatorname{Ind}: \mathcal{F}(E,F)\rightarrow \mathbb{Z}
     \end{equation*}
     est localement constante. En particulier, $\mathcal{F}(E,F)$ est ouvert
-\end{theorem}
+\end{theobox}
 
 \begin{preuve}
     Soit $D$ de Fredholm,
@@ -423,7 +461,7 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
 \section{Approche analytique}
 
 Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm, Il est possible de se ramener à un problème en dimension finie
-\begin{theorem}(Lyapunov-Schmidt)\label{LP-redux}
+\begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
 Soient $X,\Lambda,Y$ des espaces de 
 Banach, $U\subset X$,$V\subset \Lambda$ 
 des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $D_1F(x_0,\lambda_0)$ est de fredholm. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et $V_2$ un ouvert de $V$ 
@@ -432,7 +470,7 @@ tels que le problème
     F(x,\lambda)=0 
 \end{equation*} 
 Se ramène à un problème en dimension finie sur $U_2\times V_2$
-\end{theorem}
+\end{theobox}
 \begin{preuve}
     Posons $D=D_1f(x_0,\lambda_0)$,
     par hypothèses, il existe des compléments fermés $X_0$  et $Y_0$ tels que
@@ -493,7 +531,7 @@ Des calculs simples nous peremettent d'obtenir
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
 On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite.
-\begin{proposition} \textit{(Fold)} \label{fold}
+\begin{theobox} {Fold}{}\label{fold}
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
     supposons que
     \begin{itemize}
@@ -510,7 +548,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
         F(\gamma(\left] -\delta,\delta\right[))= \{0\}
     \end{equation*}
     De plus, sur un voisinage de $(x_0,\lambda_0)$, toutes les solutions sont sur la courbe
-\end{proposition}
+\end{theobox}
 \begin{preuve}
     En applicant \ref{LP-redux}, et avec les notations de ce théorème, on sait qu'il existe un voisinage de $(x_0,\lambda_0)$, $U_1\times V_1$ sur lequel le problème se ramène résoudre $\Phi(v,\lambda)=0$.
     Par hypothèses et via [thm], cette fonction est continument dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
@@ -559,7 +597,7 @@ Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe,
 Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \textit{bifurcation simple}, ou encore \textit{bifurcation depuis une branche princiaple}
 Dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
 dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
-\begin{theorem}(Crandall-Rabinowitz, bifurcation simple) 
+\begin{theobox}{Crandall-Rabinowitz, bifurcation simple}{} 
     Avec les notations de $\ref{fold}$, suppons que 
     \begin{itemize}
         \item $F\in C^2(U\times V,Y)$
@@ -572,7 +610,7 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
     Alors il existe une courbe de solutions non triviale 
          $\gamma :\left] -\delta,\delta\right[ \rightarrow X\times\R $ telle que $\gamma(0)=(0,\lambda_0)$
     Il existe alors un voisinnage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
-\end{theorem}
+\end{theobox}
 \begin{preuve}
     Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi: U_1\times V_1\rightarrow Y_0$ la fonction de Bifurcation, par hypothèses
     \begin{equation*}
@@ -700,18 +738,19 @@ On obtient alors une caractérisation algébrique pour être un zéro de type $(
     donc tous, étant donné que les  $D_2^{*}  y^{*}_j$ sont indépendants, les $d_j$ sont nuls, contradiction.
 
 \end{preuve}
-\begin{theorem}
+
+\begin{theobox}{}{}
     Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
     \begin{equation*}
         D^2_{11}F(p,q)(q^{*})\neq 0
     \end{equation*}
     alors c'est un élément de bifurcation non perpendiculaire
-\end{theorem}
+\end{theobox}
 \section{La bifurcation de Hopf}
 Plusieurs version du théorème de la bifurcation de Hopf existent, nous montrons celle de \cite{Kawanago2023HopfBanach}
-\begin{theorem}(Hopf)
+\begin{theobox}{Hopf}{}
     
-\end{theorem}
+\end{theobox}
 
 \section{Approche via la thoérie des singularités}
 \subsection{L'anneau $\mathcal{E}_n$}
@@ -920,12 +959,12 @@ Si $f\in\mathcal{E}(0,\R^n,\R^m)$ alors on défini
     (\varphi_{\lambda})_{\lambda\in\Lambda}\cdot f= x\mapsto \varphi_x(f(x))
 \end{equation*}
 C'est action induit \textit{l'équivalence fibrée gauche}. Enfin, on pose $K(n,m)= D(n)\ltimes C(n,m) $, son action induit \textit{l'équivalence de contact}. Dans la suite,on écrira $G$ pour signifier un des groupes décrits ci dessus, et $E$ la relation d'équivalence induite par l'aciton de $G$. On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
-\begin{theorem}
+\begin{theobox}{}{}
     Si $G$ est un groupe de lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la droite et si $V$ est une sous variété connexe et lisse de $M$ alors 
     \begin{equation*}
         \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est toujours la même }
     \end{equation*}
-\end{theorem}
+\end{theobox}
 la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symmétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que celà revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e , si on pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
 \begin{equation*}
     \Bigl\{G\cdot v | v\in V\Bigr\}  
@@ -1036,26 +1075,26 @@ et , si $G$ est un des groupes habituels,
 
 
 
+\newpage
 
-
-\part{Méthodes topologiques globales}
+\part{Méthodes topologiques}
 
 Jusqu'ici, nous avons supposé l'existence d'une bifurcation acquise (ou très facile à déterminer) et travaillé localement pour identifier son type et se ramener à une forme normale. Question : comment obtenir des résultats globaux ? Souvenez vous: à la section [SECTION] nous avons que le fait d'être un opérateur de Fredholm était une propriété constante sur un voisinnage connexe, l'indice de Fredholm est alors un \text{invariant} topologique, nous détaillons alors ce genre de méthode.
 
 \section{Approche par théorie du degré}
 
-\begin{theorem}(Rabinowitz)
+\begin{theobox}{Rabinowitz}{}
     
-\end{theorem}
+\end{theobox}
 
 
 \todo{Lire \cite{Feckan2008Topological}}
 
 \subsection{Le degré orienté}
 
-\begin{theorem}(Furi)
+\begin{theobox}{Furi}{}
     Soit $F: $
-\end{theorem}
+\end{theobox}
 
 \section{Approche $K$-théorique}\label{K-th}
 
@@ -1155,13 +1194,13 @@ Ainsi, alors qu'un fibré en général est "localement un produit cartésien", u
 
 \subsection{application à la détection globale d'une bifurcation}
 
-\begin{theorem}
+\begin{theobox}{}{}
 Soit $\Lambda$ un CW-complexe fini connexe, $f : \Lambda \times O \to Y$ une famille $C^1$ d'applications de Fredholm d'indice $0$ et soit $L$ la linéarisation de $f$ le long de la branche triviale. Supposons que, pour $\delta$ suffisamment petit, les seules solutions de l'équation $f(\lambda, x) = 0$ avec $\|x\| \leq \delta$ soient celles de la forme $(\lambda, 0)$. Si, pour un certain (et donc pour tout) $\nu \in \Lambda$, la multiplicité $k = |\mathrm{mult}(f_\nu, 0)| \neq 0$, alors
 \begin{itemize}
     \item[(a)] la première classe de Stiefel-Whitney $w_1(\mathrm{Ind}\, L) = 0$,
     \item[(b)] pour un certain $i \in \mathbb{N}$, $k^i J(\mathrm{Ind}\, L) = 0$ dans $J(\Lambda)$.
 \end{itemize}
-\end{theorem}
+\end{theobox}
 
 \noindent En particulier, nous avons :
 
