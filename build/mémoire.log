@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.15)  20 MAR 2026 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.15)  21 MAR 2026 00:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -919,7 +919,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
- (./mémoire.aux)
+ (build/mémoire.aux)
 \openout1 = `mémoire.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
@@ -966,7 +966,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 114.
- (./mémoire.out) (./mémoire.out)
+ (build/mémoire.out) (build/mémoire.out)
 \@outlinefile=\write5
 \openout5 = `mémoire.out'.
 
@@ -985,7 +985,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'mémoire.bbl' found.
- (./mémoire.bbl)
+ (build/mémoire.bbl)
 Package biblatex Info: Reference section=0 on input line 114.
 Package biblatex Info: Reference segment=0 on input line 114.
 \c@lstlisting=\count483
@@ -998,7 +998,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./mémoire.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (build/mémoire.toc
 LaTeX Font Info:    Trying to load font information for U+euf on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1031,17 +1031,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--265
 
  []
 
-[5] [6]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
-[7]
+[6]
 Overfull \hbox (16.7018pt too wide) detected at line 377
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G= []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[] \OMS/cmsy/m/n/12 ^^N \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) = [](\OML/cmm/m/it/12 G= [] D[]\OT1/cmr/m/n/12 ) + [](\OML/cmm/m/it/12 F= [] D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) + []([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ))
  []
 
-[8] [9] [10] [11]
+[7] [8] [9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 530.
@@ -1058,7 +1058,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 530.
 
-[12] [13] [14]
+[11] [12] [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 667.
@@ -1079,7 +1079,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 667.
 
-[15] [16]
+[14] [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 756.
@@ -1092,44 +1092,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 756.
 
-[17] [18] [19] [20]
+[16] [17] [18] [19]
 Overfull \hbox (14.21861pt too wide) detected at line 966
 \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 M \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ^^R \OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 , 8\OML/cmm/m/it/12 v \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V; T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 v\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^S \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 )[] [] \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 v\OT1/cmr/m/n/12 )[]
  []
 
-[21] [22] [23]
+[20] [21] [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1099.
+(hyperref)                removing `math shift' on input line 1101.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1099.
+(hyperref)                removing `math shift' on input line 1101.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1119--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1123
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1167
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1165
 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1180.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1180.
 
 [25]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1178.
-
-[26]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1217.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1219.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [27] [28] (./mémoire.aux)
+) [26] [27] (build/mémoire.aux)
 Package rerunfilecheck Info: File `mémoire.out' has not changed.
 (rerunfilecheck)             Checksum: A89F78C67EA489A39D9057240419027B;4378.
 Package logreq Info: Writing requests to 'mémoire.run.xml'.
@@ -1137,18 +1137,18 @@ Package logreq Info: Writing requests to 'mémoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42017 strings out of 476034
- 869526 string characters out of 5792864
- 1874388 words of memory out of 6000000
- 61713 multiletter control sequences out of 15000+600000
+ 42019 strings out of 476034
+ 869622 string characters out of 5792864
+ 1878388 words of memory out of 6000000
+ 61715 multiletter control sequences out of 15000+600000
  535798 words of font info for 95 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  116i,16n,118p,964b,1871s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfcc0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on mémoire.pdf (29 pages, 494790 bytes).
+Output written on build/mémoire.pdf (28 pages, 497871 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
- 456 compressed objects within 5 object streams
- 136 named destinations out of 1000 (max. 500000)
+ 567 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 135 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

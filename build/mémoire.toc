@@ -1,0 +1,23 @@
+\babel@toc {french}{}\relax 
+\contentsline {part}{I\hspace {1em}Rappels et prérequis}{3}{part.1}%
+\contentsline {section}{\numberline {1}Notions de calcul différentiel dans des Espaces de Banachs}{3}{section.1}%
+\contentsline {section}{\numberline {2}Opérateurs de Fredholm}{6}{section.2}%
+\contentsline {part}{II\hspace {1em}Réduction de Lyapunov-Schmidt et étude locale}{10}{part.2}%
+\contentsline {section}{\numberline {3}Approche analytique}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Cas où $\dim \Lambda =1$}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Cas où $\dim \Lambda =\infty $}{14}{subsection.3.2}%
+\contentsline {section}{\numberline {4}La bifurcation de Hopf}{16}{section.4}%
+\contentsline {section}{\numberline {5}Approche via la thoérie des singularités}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}L'anneau $\mathcal {E}_n$}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Détermination finie}{19}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Classification de Montaldi}{22}{section.6}%
+\contentsline {part}{III\hspace {1em}Méthodes topologiques}{23}{part.3}%
+\contentsline {section}{\numberline {7}Approche par théorie du degré}{23}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Le degré orienté}{23}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Approche $K$-théorique}{23}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Fibrés et fibrés vectoriels}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}La catégorie $\mathfrak {F}(X)$}{25}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Introduction à la K-théorie}{25}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Le groupe de Grothendieck K(X)}{25}{subsubsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.4}application à la détection globale d'une bifurcation}{25}{subsection.8.4}%
+\contentsline {part}{IV\hspace {1em}Bifurcations équivariantes et symétries}{26}{part.4}%

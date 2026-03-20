@@ -35,14 +35,14 @@
 }
 
 
-\newcommand{\rightan}[3]{TR_{#1}\mathcal{E}^{#2}_{#3}}
-\newcommand{\rightane}[3]{TR_{#1}^e\mathcal{E}^{#2}_{#3}}
-\newcommand{\lefttan}[3]{TL_{#1}\mathcal{E}^{#2}_{#3}}
-\newcommand{\lefttane}[3]{TL_{#1}^e\mathcal{E}^{#2}_{#3}}
-\newcommand{\conttan}[3]{TK_{#1}\mathcal{E}^{#2}_{#3}}
-\newcommand{\conttane}[3]{TK_{#1}^{e}\mathcal{E}^{#2}_{#3}}
-\newcommand{\fibltan}[3]{TC_{#1}\mathcal{E}^{#2}_{#3}}
-\newcommand{\gentan}[3]{TG_{#1}\mathcal{E}^{#2}_{#3}}
+\newcommand{\rightan}[3]{TR_{#1}}
+\newcommand{\rightane}[3]{TR_{#1}^e}
+\newcommand{\lefttan}[3]{TL_{#1}}
+\newcommand{\lefttane}[3]{TL_{#1}^e}
+\newcommand{\conttan}[3]{TK_{#1}}
+\newcommand{\conttane}[3]{TK_{#1}^{e}}
+\newcommand{\fibltan}[3]{TC_{#1}}
+\newcommand{\gentan}[3]{TG_{#1}}
 \newcommand{\todo}[1]{\textcolor{red}{TO DO [}#1\textcolor{red}{]}}
 
 \newcommand{\todomaybe}[1]{\textcolor{orange}{TO DO ? [}#1\textcolor{orange}{]}}
@@ -93,7 +93,7 @@
  title={#2 \ifstrempty{#1}{}{~(#1)}}
 }{prop}
 
-\title{Quelques techniques d'étude de problèmes de bifurcation}
+\title{Bifurcations de fonctions de fredholm d'indice 0 sur des espaces de Banach}
 \author{Zakaria Elmi Roble }
 \date{Décembre 2025}
 \theoremstyle{definition}
@@ -267,8 +267,7 @@ On termine par une petite remarque sur les dérivées d'ordre supérieur. On dé
 \begin{equation*}
     F\in C^2(U,Y)\Rightarrow D(DF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
 \end{equation*}
-Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ de $X$ et  $D^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, 
-\newpage
+Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ de $X$ et  $D^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
 \section{Opérateurs de Fredholm}
 
 Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons:
@@ -281,7 +280,8 @@ Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0
 \end{definition}
 
 \begin{definition}
-    Dans les conditions de la définition précédente, $D$ est un \textit{opérateur de Fredholm} si son index est défini. On pose $\mathcal{F}(E,F)$ l'ensemble des opérateurs de Fredholm de $E$ vers $F$
+    Dans les conditions de la définition précédente, $D$ est un \textit{opérateur de Fredholm} si son index est défini. On pose $\mathcal{F}(E,F)$ l'ensemble des opérateurs de Fredholm de $E$ vers $F$. On notera $\mathcal{F}(E,F)$ l'ensemble des opérateur de fredholm et 
+    $\mathcal{F}_n(E,F)$  l'ensemble des opérateur de fredholm d'indice $n$. Enfin, on dit qu'une fonction $f: E\rightarrow F$ est \textit{de Fredholm en } $e\in E$ si elle est $C^1$ et si $DF(e)$ est de fredholm.
 \end{definition}
 Remarquons que dans ce cas, $D^*$ est de Fredholm aussi et 
 \begin{equation}\label{adjointfred}
@@ -460,16 +460,16 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
 
 \section{Approche analytique}
 
-Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm, Il est possible de se ramener à un problème en dimension finie
+Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
 \begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
 Soient $X,\Lambda,Y$ des espaces de 
 Banach, $U\subset X$,$V\subset \Lambda$ 
-des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $D_1F(x_0,\lambda_0)$ est de fredholm. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et $V_2$ un ouvert de $V$ 
-tels que le problème
+des ouverts, $F\in C^1(U\times V,Y)$ , $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $F(\cdot ,\lambda_0)$ est de fredholm en $x_0$. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$ , $U_2$ un ouvert de $\ker D$ et $V_2$ un ouvert de $V$ 
+tels que sur $U_1\times V_1$, le problème
 \begin{equation*}
     F(x,\lambda)=0 
 \end{equation*} 
-Se ramène à un problème en dimension finie sur $U_2\times V_2$
+Se ramène à un problème  sur $U_2\times V_2$
 \end{theobox}
 \begin{preuve}
     Posons $D=D_1f(x_0,\lambda_0)$,
@@ -784,7 +784,7 @@ On est dans une théorie locale, les définitions suivantes retranscrivent cet a
     On pose  $\mathcal{E}_n=\mathcal{E}_n(\R^n,\R)$
 \end{definition}
 
-\begin{remarque}
+\begin{remarque}\label{remsheaf}
     La notion moderne généralisant ce genre de structure est appelé \textit{faisceau}.
     Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, U\subseteq V}$ respectant les axiomes suivants :
     \begin{itemize}
@@ -985,9 +985,9 @@ le corrolaire [corollaire] nous permet aussi de dire que
 
 Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de définir une notion d'espace tangent. Etant donné qu'il s'agit d'un espace de fonctions, il est naturel de considérer la notion de vecteurs \textit{le long} d'une fonction 
 
-\begin{definition}
-    si $M$ et $N$ sont des $C^1$-variétés, 
-\end{definition}
+
+si $M$ et $N$ sont des $C^1$-variétés, et si $f\in C^1(M,N)$, on pose
+
 
 
 \begin{equation*}
@@ -995,14 +995,14 @@ Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de
 \end{equation*}
 
 
-Intuitivement: On regarde un champ de vecteurs sur $M$, pour chaque vecteur lié $(x,v(x))$ On transporte la base sur $f(x)$ et le vecteur $v(x)$ sur $D_xf(v(x))$ ! 
+Intuitivement: On regarde un champ de vecteurs sur $M$, pour chaque vecteur lié $(x,v(x))$ On transporte la base sur $f(x)$ et le vecteur $v(x)$ sur $D_xf(v(x))$ !  Cette définition s'applique naturellement aux germes, la façon la plus propre de l'écrire serait via les faisceaux (cf. remarque \ref{remsheaf} ).
 On définit alors les espace tangent droits et droits étendus : 
 
 \begin{equation*}
-    TR_f\mathcal{E}^m_n =tf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{ et }
-    TR^e_f\mathcal{E}_n^m  = tf(\mathcal{V}(\R^n))
+    TR_f=tf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{ et }
+    TR^e_f  = tf(\mathcal{V}(\R^n))
 \end{equation*}
-On notera $\gentan{f}{n}{m}$ un de ces espaces tangents, et toute affirmation sur $\gentan{f}{n}{m}$ est à comprendre comme une affirmation sur l'ensemble des espaces tangents si dessus
+
 Ces espaces sont associés à l'équivalence droite. Pour le premier, on fixe l'image de zéro à zéro, pour l'autre, on la laisse libre.\\
 On pose, de plus
 
@@ -1017,34 +1017,34 @@ On définit alors les espaces tangents gauches, gauches étendus et gauche-droit
 
 
 \begin{equation*}
-    TL_f\mathcal{E}^m_n =wf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{,   }
-    TL^e_f\mathcal{E}_n^m  = wf(\mathcal{V}(\R^n))
+    TL_f=wf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{,   }
+    TL^e_f  = wf(\mathcal{V}(\R^n))
 \end{equation*}
 
 \begin{equation*}
-    TA_f\mathcal{E}^m_n =TR_f\mathcal{E}_n^m +TL_f\mathcal{E}_n^m  \text{,   }
-    TA^e_f\mathcal{E}_n^m  = TR^e_f\mathcal{E}_n^m +TL^e_f\mathcal{E}_n^m
+    TA_f=TR_f +TL_f  \text{,   }
+    TA^e_f  = TR^e_f +TL^e_f
 \end{equation*}
 
 
 On définit enfin 
 
 \begin{equation*}
-    TC_f \mathcal{E}^m_n= f^*(\mathcal{M}_n\cdot \mathcal{V}(R^n))
+    TC_f = f^*(\mathcal{M}_n\cdot \mathcal{V}(R^n))
 \end{equation*}
 et 
 \begin{equation*}
-    TK_f \mathcal{E}^m_n= TR_f \mathcal{E}^m_n+ TC_f\mathcal{E}^m_n, 
-    TK^e_f \mathcal{E}^m_n= TR^e_f \mathcal{E}^m_n+ TC_f\mathcal{E}^m_n
+    TK_f= TR_f + TC_f, 
+    TK^e_f= TR^e_f+ TC_f
 \end{equation*}
 
 Ces espaces tangents on une dimension infinie en général... définit donc 
 
 \begin{equation*}
-    d(f,G)=\dim_\R(\mathcal{M}_n\cdot \Gamma(f^*T\R^m)/T _fG\mathcal{E}^m_n)
+    d(f,G)=\dim_\R(\mathcal{M}_n\cdot \Gamma(f^*T\R^m)/T _fG)
 \end{equation*}
-bien sûr, $d_e(f,G)$ se définit de façon similaire (avec l'espace tangent étendu)
-
+bien sûr, $d_e(f,G)$ se définit de façon similaire (avec l'espace tangent étendu).
+On notera $\gentan{f}{n}{m}$ un de ces espaces tangents, et toute affirmation sur $\gentan{f}{n}{m}$ est à comprendre comme une affirmation sur l'ensemble des espaces tangents ci-dessus
 Nous avons besoin de quelques lemmes techniques avant de pouvoir caractériser la détermination finie
 \begin{lemme}
     Si $f$,$g\in\mathcal{E}_n^m$ sont tels que $j^{k-1}_0f=j^{k-1}_0g$ alors
@@ -1091,7 +1091,9 @@ Jusqu'ici, nous avons supposé l'existence d'une bifurcation acquise (ou très f
 \todo{Lire \cite{Feckan2008Topological}}
 
 \subsection{Le degré orienté}
-
+\begin{definition}
+    Si $X,Y$ sont des espaces de Banach, 
+\end{definition}
 \begin{theobox}{Furi}{}
     Soit $F: $
 \end{theobox}
