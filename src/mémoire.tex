@@ -488,7 +488,7 @@ Se ramène à un problème  sur $U_2\times V_2$
     Elle sont continues via la théorème du graphe fermé.
     Posons alors
     \begin{equation*}
-        \psi : \ker D\times X_0\times \Lambda \rightarrow X\times \Lambda , (v,w)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
+        \psi : \ker D\times X_0\times \Lambda \rightarrow X\times \Lambda , (v,w,\lambda)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
     \end{equation*}
     Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$). De plus, on a 
     \begin{equation*} 
@@ -517,7 +517,7 @@ Ainsi, $U_1\times V_1$ et
 \end{equation}
 répondent à la question
 \end{preuve}
-On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une fonction définie entre deux espaces de dimension finie. la fonction $\Phi$ du résultat précédent est appelée la fonction de \textit{bifurcation}.
+On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm et que l'espace de paramètres est de dimension finie, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une fonction définie entre deux espaces de dimension finie. la fonction $\Phi$ du résultat précédent est appelée la fonction de \textit{bifurcation}.
 Des calculs simples nous peremettent d'obtenir
 \begin{corollaire}\label{corr-deriv-o}
     Avec les notations de la preuve précédente, 
@@ -525,14 +525,19 @@ Des calculs simples nous peremettent d'obtenir
         D_1\varphi(v_0,\lambda_0)=0\text{ et }    D_1\Phi(v_0,\lambda_0)=0
     \end{equation*}
 \end{corollaire}
-
+\begin{remarque}
+    Notez que lors de la procédure précédente, le choix des espaces compléments $X_0$ et $Y_0$ est arbitraire. Ainsi, à un problème de bifurcation donné, il existe potentiellement plusieurs fonction de bifurcation associées... Cela motive déjà l'approche proposée lors de la section \ref{detfin} où on introduit la notion d'équivalence entre problèmes de bifurcation. C'est Golubitsky dans 
+    \cite{golubitsky1985sgb1} qui remarqua qu'on peut relier le choix arbitraire fait lors de la réduction de Lyapunov-Schmidt avec la notion d'équivalence entre bifurcation : i.e , on veux que deux façon de réduire donnent des fonctions de bifurcation équivalente. 
+\end{remarque}
 
 
 
 \subsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
-On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite.
+On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
+
+\newpage
 \begin{theobox} {Fold}{}\label{fold}
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
     supposons que
@@ -929,7 +934,7 @@ Rappelons le lemme de Nakayama
 
 
 
-\subsection{Détermination finie}
+\subsection{Détermination finie}\label{detfin}
 C'est le coeur du sujet: on veut 
 pouvoir se ramemener à l'étude d'un nombre fini de termes du dévellopement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
 
@@ -1165,6 +1170,9 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
     \end{equation*}
     où $E_1\in c$ et $E_2\in c'$. La composition de deux opérateurs orientés sera, sauf si mention du contraire, la précédénte.
 \end{definition}
+
+
+
 \begin{theobox}{Furi}{}
     Soit $F: $
 \end{theobox}
