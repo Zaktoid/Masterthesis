@@ -248,7 +248,7 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
     voir \cite{dieudonne1969fma8}
 \end{preuve}
 
-\begin{theobox}
+\begin{theobox}{}{}\label{FI}
 Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(U,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme linéaire et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
     \forall (x,\lambda)\in V, F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
@@ -508,7 +508,7 @@ Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
 \end{equation*}
 Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_1\times V_1$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
 \begin{equation*}
-    \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,y)=0\Leftrightarrow w = \varphi(v,\lambda)
+    \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,\lambda)=0\Leftrightarrow w = \varphi(v,\lambda)
 \end{equation*}
 
 Ainsi, $U_1\times V_1$ et 
@@ -558,7 +558,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
 \end{theobox}
 \begin{preuve}
     En applicant \ref{LP-redux}, et avec les notations de ce théorème, on sait qu'il existe un voisinage de $(x_0,\lambda_0)$, $U_1\times V_1$ sur lequel le problème se ramène résoudre $\Phi(v,\lambda)=0$.
-    Par hypothèses et via [thm], cette fonction est continument dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
+    Par hypothèses et via \ref{FI}, cette fonction est continument dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
     \begin{equation*}
         D_2\Phi(v_0,\lambda_0)=\pi_2 D_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 D_2 F(x_0,\lambda_0)
     \end{equation*}
@@ -601,7 +601,7 @@ La plupart des articles de théorie de la bifurcation supposent l'existence d'un
 \tilde{F}(x,\lambda)=F(\gamma_1(\lambda)+x,\gamma_2(\lambda))
 \end{equation*}
 Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinnage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale.On peut bien sûr supposer que celà à lieu en $(0,0)$
-Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \textit{bifurcation simple}, ou encore \textit{bifurcation depuis une branche princiaple}
+Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \textit{bifurcation simple}, ou encore \textit{bifurcation depuis une branche princiaple}.
 Dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
 dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
 \begin{theobox}{Crandall-Rabinowitz, bifurcation simple}{} 
@@ -672,7 +672,7 @@ Répond à la question
 \end{remarque}
 Notez comme les calculs deviennent déjà un peu lourd alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la suite. 
 \subsection{Cas où $\dim \Lambda=\infty$}
-Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de Bifurcation tiré de [SOURCE].
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de Bifurcation tiré de \cite{Marx1994Bifurcation}.
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
 \begin{definition}
