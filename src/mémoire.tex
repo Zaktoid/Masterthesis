@@ -17,6 +17,8 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage[backend=biber,style=numeric]{biblatex}
+\DeclareBibliographyCategory{utilises}
+\DeclareBibliographyCategory{plusloin}
 \addbibresource{refs.bib}
 \renewcommand{\tilde}[1]{\widetilde{#1}}
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
@@ -165,10 +167,10 @@ Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclur
 \end{preuve}
 On vérifie facilement que si $f$ est constante sur $A$, alors $f$ est dérivable sur $A$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $Du(x) =u(x)$ sur $X$.
 \begin{remarque}
-On pourrait se demander s'il est possible de relaxer les hypothèses d'avantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme 1.2, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant , par exemple, [SOURCE]. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement
+On pourrait se demander s'il est possible de relaxer les hypothèses d'avantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme 1.2, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant , par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement
 \end{remarque}
 \begin{remarque}
-Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quand aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y'aie une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicite à d'autres champs ! Voir par exemple [SOURCE]
+Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quand aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y'aie une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicite à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
 \end{remarque}
 Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{t\in B(1)} u(x)$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
 
@@ -1071,7 +1073,7 @@ et , si $G$ est un des groupes habituels,
 \begin{lemme}
     
 \end{lemme}
-\section{Classification de Montaldi}
+\section{Classification en dimension finie}
 
 
 
@@ -1122,9 +1124,10 @@ Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la m�
     \begin{equation*}
         \det (I-F)|_{X_0}= \det (I-F)|_{X_1}
     \end{equation*}
+    avec la convention que si $X_0=\{0\}$ ,  $\det (I-F)|_{X_0}=1$
 \end{lemme}
 \begin{preuve}
-    Notez que $I-F$ est un isomorphisme, que $(I-F)(X_0)\subseteq X_0$ , alors $(I-F)|_{X_0}: X_0\rightarrow X_0$ est un automorphisme d'un espace vectoriel de dimension finie, la notion de déterminant à donc un sens. Supposons d'abord avoir $X_0\subseteq X_1$, on le complémnete par $X'_0$, i.e 
+    Notez que $I-F$ est un isomorphisme, que $(I-F)(X_0)\subseteq X_0$, donc $(I-F)|_{X_0}: X_0\rightarrow X_0$ est un automorphisme d'un espace vectoriel de dimension finie, la notion de déterminant à donc un sens. Supposons d'abord avoir $X_0\subseteq X_1$, on le complémnete par $X'_0$, i.e 
     \begin{equation*}
         X_1=X_0\oplus X'_0
     \end{equation*}
@@ -1144,10 +1147,23 @@ où  $\pi_F$ est la projection sur $X_0$ de  $F_{X'_0}$  , on conlut immédiatem
     Dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont \textit{équivalents} si $\det (I-F)|_{X_0}>0$
 \end{definition}
 Il est facile de montrer que c'est bel et bien une relation d'équivalence, voir \cite{BenevieriFuri1998} pour les détails. Il est de plus clair que cette relation d'équivalence partitionne 
-$\mathcal{C}(D)$ en deux classes d'équivalence
+$\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peuvent être composés et que si $E_1$ et $E_2$ sont des correcteurs de $D_1$ et $D_2$ respectivement, alors $D_2E_1+ E_2E_1+ E_2D_1$ est un correcteur de $D_2D_1$ , de fait 
+
+\begin{equation*}
+    D_2D_1+ D_2E_1+ E_2E_1+ E_2D_1 =(D_1+E_1)(D_2 + E_2)
+\end{equation*}
+
 
 \begin{definition}
-    Une \textit{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$
+    Une \textit{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \textit{opérateur orienté} est une paire $(D,c)$ où $c$ est une des classes d'équivalence de $\mathcal{C}(D)$. Si $(D,c)$ est orienté, un correcteur sera dit \textit{positif} si il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \textit{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D',c)$ est isomorphisme orienté, on pose $\operatorname{Sign}D=1$ si $0\in c $, et $-1$ sinon 
+\end{definition}
+\begin{definition}
+    Si $(D,c)$ et $(D',c')$ sont des opérateurs orientés, l'orientation 
+    $c\circ c'$ de $D\circ D'$ est définie telle que
+    \begin{equation*}
+        D_2E_1+ E_2E_1+ E_2D_1\in  c\circ c'
+    \end{equation*}
+    où $E_1\in c$ et $E_2\in c'$. La composition de deux opérateurs orientés sera, sauf si mention du contraire, la précédénte.
 \end{definition}
 \begin{theobox}{Furi}{}
     Soit $F: $
@@ -1271,6 +1287,16 @@ Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$
 \cite{golubitsky1985sgb1}
 \cite{golubitsky1988sgb2}
 \cite{montaldi2021sbc}
-\printbibliography
+\addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,scha}
+\addtocategory{plusloin}{schwartz1960nash,glockner2006implicit}
+\printbibliography[
+  category=utilises,
+  title={Références utilisées}
+]
+
+\printbibliography[
+  category=plusloin,
+  title={Pour aller plus loin}
+]
 
 \end{document}
