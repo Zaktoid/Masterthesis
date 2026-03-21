@@ -1091,8 +1091,63 @@ Jusqu'ici, nous avons supposé l'existence d'une bifurcation acquise (ou très f
 \todo{Lire \cite{Feckan2008Topological}}
 
 \subsection{Le degré orienté}
+Nous allons introduire une notion d'orientation pour les fonctions de Fredholm. Cette dernière, proposée par Furi dans \cite{BenevieriFuri1998}, a ensuite été mobilisée dans \cite{BenevieriFuri2001} pour obtenir des résultats de Bifurcation. Nous présentons ainsi les idées de ces 2 papiers.
 \begin{definition}
-    Si $X,Y$ sont des espaces de Banach, $D\in\mathcal{F}_0(X,Y)$
+    Si $X,Y$ sont des espaces de Banach et  $D\in\mathcal{F}_0(X,Y)$ alors $E$ est une \textit{correcteur } de $D$ si $D+E$ est un isomorphisme et si son image est de dimension finie. On pose $\mathcal{C}(D)$ l'ensemble des correcteurs de $D$
+\end{definition}
+
+Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la même orientation", on fait ça en définissant une relation d'équivalence sur $\mathcal{C}(D)$
+
+\begin{lemme}
+    Soient $D\in\mathcal{F}_0(X,Y)$ et $E,E'\in \mathcal{C}(D)$
+    l'opérateur
+    \begin{equation*}
+        F= \operatorname{Id}_X -(D+E')^{-1}(D+E)
+    \end{equation*}
+    a une image de dimension finie
+\end{lemme}
+
+\begin{preuve}
+   Bien sûr, $(D+E)^{-1}$ et $(D+E')^{-1}$ sont des automorphismes
+   il vient alors
+   \begin{equation*}
+        (D+E')F= (D+E')-(D+E)=E'-E
+   \end{equation*}
+   donc $\im F=\im (E-E')$
+\end{preuve}
+
+\begin{lemme}
+    Soit $F$ comme dans le lemme précédent, alors pour tous $X_0,X_1\subseteq  X$ sous vectoriels de dimension 
+    finie contenant $\im F$
+    \begin{equation*}
+        \det (I-F)|_{X_0}= \det (I-F)|_{X_1}
+    \end{equation*}
+\end{lemme}
+\begin{preuve}
+    Notez que $I-F$ est un isomorphisme, que $(I-F)(X_0)\subseteq X_0$ , alors $(I-F)|_{X_0}: X_0\rightarrow X_0$ est un automorphisme d'un espace vectoriel de dimension finie, la notion de déterminant à donc un sens. Supposons d'abord avoir $X_0\subseteq X_1$, on le complémnete par $X'_0$, i.e 
+    \begin{equation*}
+        X_1=X_0\oplus X'_0
+    \end{equation*}
+    On décompose alors $(I-F)_{X_1}$ comme ceci
+    \begin{equation*}
+            \begin{pmatrix}
+        \operatorname{Id}_{X'_0} & 0 \\
+        -\pi_F & (I-F)_{E_0} 
+        \end{pmatrix}
+    \end{equation*}
+où  $\pi_F$ est la projection sur $X_0$ de  $F_{X'_0}$  , on conlut immédiatement. Maintenant, dans le cas général, notez que $X_0\cap X_1$ contient $\im F$ et est de dimension finie. On applique alors le résultat obtenu deux fois 
+\begin{equation*}
+    \det (I-F)|_{X_0}= \det (I-F)|_{X_1\cap X_0}=\det (I-F)|_{X_1}
+\end{equation*}
+\end{preuve}
+\begin{definition}
+    Dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont \textit{équivalents} si $\det (I-F)|_{X_0}>0$
+\end{definition}
+Il est facile de montrer que c'est bel et bien une relation d'équivalence, voir \cite{BenevieriFuri1998} pour les détails. Il est de plus clair que cette relation d'équivalence partitionne 
+$\mathcal{C}(D)$ en deux classes d'équivalence
+
+\begin{definition}
+    Une \textit{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$
 \end{definition}
 \begin{theobox}{Furi}{}
     Soit $F: $
