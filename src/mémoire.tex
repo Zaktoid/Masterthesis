@@ -451,6 +451,13 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
     \end{equation*} 
 \end{preuve}
 
+Nous présentons un cas particulier d'operateur de fredholm qui sera utile dans la section $\ref{LambdainfDim}$
+\begin{definition}
+    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$. Considérons alors une base $x_1,\cdots,x_n$ de $\ker DF(0)$ et  $y^{*}_1,\cdots,y^{*}_n$ un base de $\ker{ DF(0)}^{*}$. Le théorème de Hanh-Banach nous assure l'existance d'une complétion bi-orthonogale, i.e, 
+    \begin{equation*}
+        \exists
+    \end{equation*}
+\end{definition}
 
 
 
@@ -490,34 +497,34 @@ Se ramène à un problème  sur $U_2\times V_2$
     \begin{equation*}
         \psi : \ker D\times X_0\times \Lambda \rightarrow X\times \Lambda , (v,w,\lambda)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
     \end{equation*}
-    Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$). De plus, on a 
-    \begin{equation*} 
+    Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$)
+    \begin{equation} \label{SysteLP}
         \tilde{F}(v,w, \lambda) = 0 \iff 
 \begin{cases} 
     \pi_2 \tilde{F}(v,w,\lambda) = 0 \\ 
     (\operatorname*{Id} - \pi_2) \tilde{F}(v,w, \lambda) = 0 
 \end{cases}
-    \end{equation*}
+    \end{equation}
 Considérons alors   $U_2,W_2$  des ouverts de $\ker D$  de et $X_0$ respectivement tels que $U_2+W_2\subseteq U$ et la fonction 
 \begin{eqnarray*}
     G: U_2\times W_2\times V\rightarrow \im D: (v,w,\lambda)\mapsto (\operatorname*{Id}-\pi_2) \tilde{F}(v,w,\lambda)
 \end{eqnarray*}
 Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
 \begin{equation*}
-    G(v_0,w_0,\lambda_0)=0\text{ et } D_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) D_1  F (x_0,\lambda_0)
+    G(v_0,w_0,\lambda_0)=0\text{ et } D_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) D_1  F (x_0,\lambda_0): X_0\rightarrow \im D
 \end{equation*}
-Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_1\times V_1$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
+Ainsi,  $D_2G(v_0,w_0,\lambda_0)$ est bijectif et continu, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e , il existe un voisinnage $U_1\times V_1$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
 \begin{equation*}
     \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,\lambda)=0\Leftrightarrow w = \varphi(v,\lambda)
 \end{equation*}
 
 Ainsi, $U_1\times V_1$ et 
 \begin{equation}\label{fonctionproj}
-    \Phi(v,y): U_1\times V_1\rightarrow Y_0, (v,\lambda)\mapsto \pi_2 F(v+\varphi(v,\lambda),\lambda)
+    \Phi(v,\lambda): U_1\times V_1\rightarrow Y_0, (v,\lambda)\mapsto \pi_2 F(v+\varphi(v,\lambda),\lambda)
 \end{equation}
 répondent à la question
 \end{preuve}
-On peut interpréter ce résultat de la façon suivante: lorsque l'opérateur dérivée est de Fredholm et que l'espace de paramètres est de dimension finie, le lieu d'annulation de $F$ est en bijection avec le lieu d'annulation d'une fonction définie entre deux espaces de dimension finie. la fonction $\Phi$ du résultat précédent est appelée la fonction de \textit{bifurcation}.
+On résume la procédure ci-dessus: On scinde l'espace d'arrivée en 2 grâce à $\pi_2$, ensuite on obtient une description (sur un certain sous voisinnage) des solution de la partie $\im D$, et on applique la seconde projection pour avoir une solution du système \ref{SysteLP}.
 Des calculs simples nous peremettent d'obtenir
 \begin{corollaire}\label{corr-deriv-o}
     Avec les notations de la preuve précédente, 
@@ -544,7 +551,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (r
     \begin{itemize}
         \item $F\in C^1(U\times V,Y)$
         \item $F(x_0,\lambda_0)=0$ et $\dim (\ker D_1F(x_0,\lambda_0))=\dim (Y/ \im D_1F(x_0,\lambda_0))=1$
-        \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$
+        \item $D_2F(x_0,\lambda_0)\notin \im(D_1F(x_0,\lambda_0))$ (Traversabilité)
     \end{itemize}
     Alors il existe une courbe $C^1$
     \begin{equation*}
@@ -612,7 +619,7 @@ dans ce cas , on peut identifier $D^2_{12} F$ avec un élément de $\mathcal{L}(
         \item $F(0,\R)={0}$ (branche triviale)
         \item On peut supposer  $\ker(D_1 F(0,\lambda_0))=\rangle x_1 \langle_{\R} $ 
         avec $||x_1||=1$ et on impose alors \\ $D^2_{12} F(0,\lambda_0)x_1\notin \im D_1 F
-        (0,\lambda_0)$
+        (0,\lambda_0)$ (Traversabilité)
     \end{itemize}
     Alors il existe une courbe de solutions non triviale 
          $\gamma :\left] -\delta,\delta\right[ \rightarrow X\times\R $ telle que $\gamma(0)=(0,\lambda_0)$
@@ -670,9 +677,9 @@ Répond à la question
 \begin{remarque}\label{remarque IND=0}
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'inex non-nul
 \end{remarque}
-Notez comme les calculs deviennent déjà un peu lourd alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la suite. 
-\subsection{Cas où $\dim \Lambda=\infty$}
-Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de Bifurcation tiré de \cite{Marx1994Bifurcation}.
+Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramemener en dimension finie, ça ne marche pas si l'espace des paramètres en dimension infinie ! D'où la sous-section suivante.
+\subsection{Cas où $\dim \Lambda=\infty$}\label{LambdainfDim}
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
 \begin{definition}
@@ -684,18 +691,20 @@ Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
     $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élémént de bifurcation est dit \textit{perpendiculaire} si il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ tell que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
 \end{definition}
 Dans la suite de cette section, nous suppons $F$ $C^1$ sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0}). Posons également $D_1=D_1F(x_0,\lambda_0)$ et $D_2=D_2F(x_0,\lambda_0)$
+
 \begin{definition}
     Avec les notations habituelles, si $F$ est $C^1$, on note 
     \begin{equation*}
         \alpha_{F}(x_0,\lambda_0)= \dim \big(\ker (D_2^{*})\cap \ker (D_1^{*})\big)
     \end{equation*}
 \end{definition} 
+C'est vraiment \textbf{la} bonne idée de P. Marx qui permet de gérer le cas $\dim \Lambda =\infty $: imposer des conditons sur les opérateurs duaux.
 Notez qu'étant donné qu'on suppose l'index nul, si  $\dim \ker(D_1 F)=n$ on a $0\leq \alpha\leq n$
 
 \begin{definition}
     Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ est un de type $(\alpha,n)$ si
     \begin{equation*}
-        \dim \ker D_1=n=\dim \ker(D_1 F^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)<n
+        \dim \ker D_1=n=\dim \ker(D_1^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)<n
     \end{equation*}
 \end{definition}
 
@@ -713,7 +722,7 @@ Grâce au théorème de Hanh-Banach, on complète bi-orthonogalement, i.e
 \end{equation}
 On obtient alors une caractérisation algébrique pour être un zéro de type $(0,n)$
 
-\begin{proposition}
+\begin{proposition}\label{zeronlinIND}
     $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ si et seulement si les $D_2^{*}y_j^{*}$ sont linéairement indépendants
 \end{proposition}
 \begin{preuve}
@@ -745,10 +754,21 @@ On obtient alors une caractérisation algébrique pour être un zéro de type $(
     donc tous, étant donné que les  $D_2^{*}  y^{*}_j$ sont indépendants, les $d_j$ sont nuls, contradiction.
 
 \end{preuve}
-    
+On a immédiatement le lemme suivant 
 \begin{lemme}
 $\alpha=n$ si et seulement si tous les $D_2^{*} y_j^{*}$ sont nuls
 \end{lemme}
+\begin{remarque}
+    La notion de zéro de type $(\alpha,n)$ généralise les conditions de travaersabilité du type de celle de \ref{fold} ! 
+    On peut montrer le résultat suivant : 
+    \begin{lemme}
+        Dans les conditions présentes, si $\dim \Lambda=1$, $(x_0,\lambda_0)$ est un zéro de type $(\alpha,n)$ si et seulement si $D_2\notin \im D_2$ 
+    \end{lemme}
+\end{remarque}
+
+La proposition \ref{zeronlinIND} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $D_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthonogalement par $(\lambda)_{0\leq j\leq n}$ 
+
+
 
 \begin{theobox}{}{}
     Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
@@ -757,13 +777,10 @@ $\alpha=n$ si et seulement si tous les $D_2^{*} y_j^{*}$ sont nuls
     \end{equation*}
     alors c'est un élément de bifurcation non perpendiculaire
 \end{theobox}
-\section{La bifurcation de Hopf}
-Plusieurs version du théorème de la bifurcation de Hopf existent, nous montrons celle de \cite{Kawanago2023HopfBanach}
-\begin{theobox}{Hopf}{}
-    
-\end{theobox}
 
-\section{Approche via la thoérie des singularités}
+    
+
+\section{Approche via la thoérie des singularités}\label{SINGsection}
 \subsection{L'anneau $\mathcal{E}_n$}
 Le but de cette section est d'exposer la classification proposée par Montaldi dans \cite{montaldi2021sbc}. Il utilise des outils de théorie des singularité et de théorie des catastrophes pour ramemener le problème de classification à un problème \textit{algébrique}, cette approche a été initée par Golubitsky dans \cite{golubitsky1985sgb1}. Cependant, Montaldi propose une approche plus moderne et en un certain sens, plus puissante. Nous allons donc introduire le minimum vital de théorie des singularités et des catastrophes et nous en servir pour obtenir un catalogue des problèmes de bifurcation qui ne sont pas "trop compliqués" (dans un sens que nous allons préciser).
 
@@ -1296,9 +1313,13 @@ Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$
 
 \part{Bifurcations équivariantes et symétries}
 
+
+
 \cite{golubitsky1985sgb1}
 \cite{golubitsky1988sgb2}
 \cite{montaldi2021sbc}
+
+\part{Introduction aux bifurcations dynamiques}
 \addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,scha}
 \addtocategory{plusloin}{schwartz1960nash,glockner2006implicit}
 \printbibliography[
