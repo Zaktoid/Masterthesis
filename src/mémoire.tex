@@ -247,11 +247,15 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{preuve}
     voir \cite{dieudonne1969fma8}
 \end{preuve}
-
+\newpage
 \begin{theobox}{}{}\label{FI}
 Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(V,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
     \forall (x,\lambda)\in V', F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
+\end{equation*}
+et 
+\begin{equation*}
+    D\varphi(x_0)=D_2(x_0,\lambda_0)^{-1}D_1(x_0,\lambda_0)
 \end{equation*}
 \end{theobox}
 \begin{preuve}
@@ -821,20 +825,41 @@ On annule $G$, et pareil, si on suppose $S(x,\lambda,\mu)=0$, on  a que $F(x,\la
 Et on a alors calculé son inverse, un corollaire du théorème de l'application ouverte permet de conclure. (voir, par exemple, [SOURCE, ça doit être fait dans Rudin ou dans le cours d'Esser...])
 \end{preuve}
 
-En applique le théorème des fonctions implicites, on en tire  immédiatement le résultat suivant :
+En appliquant le théorème des fonctions implicites, on en tire  immédiatement le résultat suivant :
 \begin{proposition}
-    Si $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ alors il existe $V_1\ni \lambda_0$ un ouvert de $\Lambda$ et $U_1$ un ouvert de $X\times \Lambda\in (x_0,\lambda_0)$
+    Si $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ alors il existe $V_1\ni \lambda_0$ un ouvert de $\Lambda$ et $U_1$ un ouvert de $X\times \Lambda\ni (x_0,\lambda_0)$
     \begin{align*}
-        \varphi_1 : V\rightarrow \Lambda \text{ et } \varphi_2 : V\rightarrow  X 
+        \varphi_1 : V_1\rightarrow \Lambda \text{ et } \varphi_2 : V_1\rightarrow  X 
     \end{align*}
-    telles que
+    tels que
     \begin{itemize}
-        \item $\varphi_1,\varphi_2\in C^(V)k$
+        \item $\varphi_1,\varphi_2\in C^k(V)$
         \item $\varphi_1(0)=\lambda_0$ et $\varphi_2(0)=x_0$
-        \item $F(\varphi_2(v),\varphi_1(v))$
+        \item $F(\varphi_2(\mu),\varphi_1(\mu))=0$ et $-\mu +\varphi(\lambda)-\lambda_0 + \sum_{i=1}^n x_i^{*}(\psi(\mu)-x_0)\lambda_i=0$ si $\mu\in V_1$
+        \item $(\varphi_2(V_1),\varphi(V_1))\subseteq U_1$
     \end{itemize}
 \end{proposition}
+On peut obtenir une description explicite de $\varphi_1$ et $\varphi_2$. La preuve consistant en des calculs ennuyeux, on l'admet
+\begin{corollaire}
+    Dans les condition de la proposition précédente, et en exigent $F$ au moins $C^2$. Si on pose $T(\mu)=\mu-\sum_{i=1}^n (D_2^{*}y_i^{*})(\mu)\lambda_i$
+    \begin{align*}
+        W: \Lambda\rightarrow Y: \mu\mapsto 
+        D^2_{22}F\bigg(T(\mu),T(\mu)\bigg)
+        +2D_{21}^2\bigg(T(\mu), U^{-1}\big(D_2\mu\big) \bigg)
+        +D^2_{11}\bigg( U^{-1}\big(D_2\mu\big),U^{-1}\big
+        (D_2\mu\big)\bigg)
+    \end{align*}
+    Et  
+    \begin{equation*}
+        R: V\rightarrow X\text{, } ||R(\mu)||=o(||\mu||^2) \text{ si } \mu\rightarrow 0
+    \end{equation*}
+    Alors,
+    \begin{align*}
+        &\varphi_1(\mu)=\lambda_0+\mu-\sum_{i=1}^n\bigg(D_2^{*}y_i^{*}(\mu)-y_i^{*}\big(\frac{1}{2}W(\mu)+U(R(\mu))\big)\bigg)\lambda_i\\
+        &\varphi_2(\mu)=x_0+ U^{-1}\bigg(D_2\mu+\frac{1}{2}W(\mu)+U(R(\mu))\bigg)
+    \end{align*}
 
+\end{corollaire}
 \begin{theobox}{}{}
     Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
     \begin{equation*}
