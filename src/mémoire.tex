@@ -153,7 +153,7 @@ Il est donc licite d'introduire la définition suivante
 \begin{definition}
     Si $E$ et $F$ sont des espaces de Banach, et si $A$ est un ouvert de $E$, alors $f\in C^0(A,F)$ est \textit{dérivable} en $x_0\in A$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$  , ce $u$ est alors la \textit{la dérivée de $f$ en $x_0$} qu'on notera $Df(x_0)$. Naturellement, $f$ est dérivable sur $A$ si elle est dérivable en chaque point
 \end{definition}
-Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme.
+Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
     Dans les conditions de la définition précédente, $Df(x_0)\in \mathcal{L}(X,Y)$
 \end{proposition}
@@ -231,7 +231,7 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
     Si $X=\prod_{i=1}^n X_i$ où les $X_i$ sont des espaces 
     de Banach, si $a=(a_1,\cdots,a_m)\in\prod_{i=1}^n X_i$,  
     et si $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
-    est dérivable, on note  $D_{i}f(a)$ se dérivée.
+    est dérivable, on note  $D_{i}f(a)$ se dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{f}$ comme étant $f$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $D_{k,\cdots,j }f=D_2 \tilde{f}$ 
 \end{definition}
 \begin{proposition}
     Dans les conditions des définitions précédentes, 
@@ -249,9 +249,9 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \end{preuve}
 
 \begin{theobox}{}{}\label{FI}
-Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(U,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme linéaire et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
+Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(V,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F$ est un homéomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage ouvert ouvert $V'\subseteq V$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
-    \forall (x,\lambda)\in V, F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
+    \forall (x,\lambda)\in V', F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } y=\varphi(x)
 \end{equation*}
 \end{theobox}
 \begin{preuve}
@@ -453,11 +453,18 @@ Si on pose $\operatorname*{IsoBanach}(E,F)$ comme étant l'ensemble des homéomo
 
 Nous présentons un cas particulier d'operateur de fredholm qui sera utile dans la section $\ref{LambdainfDim}$
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$. Considérons alors une base $x_1,\cdots,x_n$ de $\ker DF(0)$ et  $y^{*}_1,\cdots,y^{*}_n$ un base de $\ker{ DF(0)}^{*}$. Le théorème de Hanh-Banach nous assure l'existance d'une complétion bi-orthonogale, i.e, 
+    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker DF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ un base de $\ker{ DF(0)}^{*}$. Le théorème de Hanh-Banach nous assure l'existance d'une complétion bi-orthonogale, i.e, 
     \begin{equation*}
-        \exists y_1,\cdots 
+        \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n,\in Y:\forall 0\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)
     \end{equation*}
 \end{definition}
+
+On défini alors \textit{l'opérateur de Schmidt associé à}  $(B,B^{*})$
+\begin{equation}\label{OpSCHimdt}
+    U : X\rightarrow Y, x\mapsto -DF(0)(x)+\sum_{i=0}^n x_i^{*}(x)y_i
+\end{equation}
+
+On peut montrer que c'est un élément de $\mathcal{L}(X,Y)$,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
 
 
@@ -506,9 +513,9 @@ Se ramène à un problème  sur $U_2\times V_2$
 \end{cases}
     \end{equation}
 Considérons alors   $U_2,W_2$  des ouverts de $\ker D$  de et $X_0$ respectivement tels que $U_2+W_2\subseteq U$ et la fonction 
-\begin{eqnarray*}
+\begin{eqnarray}\label{Dépliage}
     G: U_2\times W_2\times V\rightarrow \im D: (v,w,\lambda)\mapsto (\operatorname*{Id}-\pi_2) \tilde{F}(v,w,\lambda)
-\end{eqnarray*}
+\end{eqnarray}
 Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
 \begin{equation*}
     G(v_0,w_0,\lambda_0)=0\text{ et } D_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) D_1  F (x_0,\lambda_0): X_0\rightarrow \im D
@@ -690,7 +697,7 @@ Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
     Avec les notations habituelle, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \textit{élément de bifurcation}  si il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles qu'elles ne coïncident jamais, convergent vers $(x_0,\lambda_0)$ et 
     $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élémént de bifurcation est dit \textit{perpendiculaire} si il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ tell que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
 \end{definition}
-Dans la suite de cette section, nous suppons $F$ $C^1$ sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0}). Posons également $D_1=D_1F(x_0,\lambda_0)$ et $D_2=D_2F(x_0,\lambda_0)$
+Dans la suite de cette section, nous suppons $F$ $C^k$ ($k\geq 1$) sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(D_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque IND=0}). Posons également $D_1=D_1F(x_0,\lambda_0)$ et $D_2=D_2F(x_0,\lambda_0)$
 
 \begin{definition}
     Avec les notations habituelles, si $F$ est $C^1$, on note 
@@ -766,9 +773,67 @@ $\alpha=n$ si et seulement si tous les $D_2^{*} y_j^{*}$ sont nuls
     \end{lemme}
 \end{remarque}
 
-La proposition \ref{zeronlinIND} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $D_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthonogalement par $(\lambda)_{0\leq j\leq n}$ 
+La proposition \ref{zeronlinIND} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $D_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthonogalement par $(\lambda)_{0\leq j\leq n}$. On a également la bi-orthonogalité des $y^{*}_j$ et des $D_2\lambda_i$, on considère l'opérateur associé de Schmidt associé (voir \ref{OpSCHimdt}), qui s'écrit donc
 
+\begin{equation}\label{SCHMIDTopreminder}
+    U=-D_1+ \sum_{i=1}^n x_i^{*} D_2 \lambda_i
+\end{equation}
 
+Si $(x_0,\lambda_0)$ est un zéro du type $(0,n)$
+\begin{equation*}
+    G: X\times\Lambda^2\rightarrow Y\times\Lambda : (x,\lambda,\mu) \mapsto 
+    \begin{pmatrix}
+        F(x,\lambda) \\
+        -\mu +\lambda-\lambda_0 + \sum_{i=1}^n x_i^{*}(x-x_0)\lambda_i
+    \end{pmatrix}
+\end{equation*}
+Le nom n'est pas choisi au hasard, c'est exactement le même genre d'idée que \ref{Dépliage}: on regarde une fonction dans un espace plus gros, dont la dérivée est non-singulière, on applique le théorème de dérivation des fonctions implicites et on espère pouvoir en tirer des résultat sur le problème de départ.
+Remarquons d'abord qu'à chaque zéro de $F$ correspond un zéro de $G$. En effet, si $F(x_1,\lambda_1)=0$ alors, en prenant 
+\begin{equation*}
+    \mu =\lambda_1-\lambda_0 + \sum_{i=1}^n x_i^{*}(x_1-x_0)\lambda_i
+\end{equation*}
+On annule $G$, et pareil, si on suppose $S(x,\lambda,\mu)=0$, on  a que $F(x,\lambda)=0$. On a donc une bijection entre les zéros de $G$ et de $F$. Si $F$ est $C^k$ alors clairement $G$ est $C^k$. Montrons alors qu'on peut appliquer le théorème des fonctions implicites
+\begin{lemme}
+    Si $(x_0,\lambda_0)$ est de type $(0,n)$, alors 
+    \begin{equation*}
+        D_{1,2} G(x_0,\lambda_0,0) :  X\times\Lambda\rightarrow Y\times \Lambda
+    \end{equation*}
+    Est inversible d'inverse continu
+\end{lemme}
+\begin{preuve}
+    Fixons un élément $(y_1,\lambda_1)$ dans $Y\times \Lambda$ et considérons le système 
+    \begin{equation*}
+        D_{1,2}(x_0,\lambda_0,0)(\bar{x},\bar{\lambda})=
+        \begin{pmatrix}
+                D_1\bar{\lambda}+D_2\bar{x}\\
+                \bar{\lambda}+ \sum_{i}^n x_i^{*}(\bar{x})\lambda_i
+        \end{pmatrix}
+        = \begin{pmatrix}
+                y\\
+                \lambda
+        \end{pmatrix}
+    \end{equation*}
+    Il a l'unique solution
+    \begin{align*}
+        &\bar{\lambda}= \lambda + \sum_{i=1}^n x^{*}_i(y-D_2\lambda)\lambda_i\\
+        &\bar{x}= U^{-1}(D_2 \lambda - y)
+    \end{align*}
+Et on a alors calculé son inverse, un corollaire du théorème de l'application ouverte permet de conclure. (voir, par exemple, [SOURCE, ça doit être fait dans Rudin ou dans le cours d'Esser...])
+\end{preuve}
+
+En applique le théorème des fonctions implicites, on en tire  immédiatement le résultat suivant :
+\begin{proposition}
+    Si $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ alors il existe $V_1\ni \lambda_0$ un ouvert de $\Lambda$ et $U_1$ un ouvert de $X\times \Lambda\in (x_0,\lambda_0)$
+    \begin{align*}
+        \varphi_1 : V\rightarrow \Lambda \text{ et } \varphi_2 : V\rightarrow  X 
+    \end{align*}
+    telles que
+    \begin{itemize}
+        \item $\varphi_1,\varphi_2\in C^(V)k$
+        \item $\varphi_1(0)=\lambda_0$ et $\varphi_2(0)=x_0$
+        \item $F(\varphi_2(v),\varphi_1(v))$
+    \end{itemize}
+\end{proposition}
 
 \begin{theobox}{}{}
     Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$,et si on suppose $F$ $C^2$ sur un voisinnage de $(x_0,\lambda_0)$, d'index de fredholm nul en $(x_0,\lambda_0)$ et telle que
@@ -777,7 +842,7 @@ La proposition \ref{zeronlinIND} nous suggère de considérer le cas particulier
     \end{equation*}
     alors c'est un élément de bifurcation non perpendiculaire
 \end{theobox}
-
+\newpage
     
 
 \section{Approche via la thoérie des singularités}\label{SINGsection}
