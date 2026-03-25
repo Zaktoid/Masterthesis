@@ -127,14 +127,14 @@
 Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir démontrer les théorème des fonctions implicites, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}
 
 \begin{definition}
-Soient $X,Y$ des espaces de Banach (réels ou complexes) et $U$ un ouvert de $X$ et $f,g\in C^0(X,Y)$. $f$ et $g$ sont \textit{tangents} en $x_0\in A$ si 
+Soient $X,Y$ des espaces de Banach (réels ou complexes) et $U$ un ouvert de $X$ et $f,g\in C^0(U,Y)$. $f$ et $g$ sont \textit{tangents} en $x_0\in A$ si 
 \begin{equation*}
     \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_Y}{||x-x_0||_X}=0
 \end{equation*}
 \end{definition}
 Il est clair que le relation "être tangent en un point" est une relation d'équivalence.
 \begin{lemme}
-Dans les conditions de la définition précédente, si il existe un élément $h$ de $C^0(X,Y)$ tangent à $f$ en $x_0$ et  $u\in L(X,Y)$ tels que
+Dans les conditions de la définition précédente, si il existe un élément $h$ de $C^0(U,Y)$ tangent à $f$ en $x_0$ et  $u\in L(X,Y)$ tels que
 \begin{equation}\label{equ1}
     h(x)=f(x_0)+u(x-x_0)
 \end{equation}
@@ -172,7 +172,7 @@ On pourrait se demander s'il est possible de relaxer les hypothèses d'avantage.
 \begin{remarque}
 Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quand aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y'aie une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicite à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
 \end{remarque}
-Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{x\in B(1)} u(x)$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
+Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{x\in B(1)} ||u(x)||$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
 
 \begin{proposition}
 Si $X,Y,Z$ sont des espaces de Banach et si $B\in C^0(X\times Y,Z)$ est 
