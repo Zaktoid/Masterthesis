@@ -119,6 +119,28 @@
 \tableofcontents
 \newpage
 \section*{Introduction}
+Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mise en place pour répondre à la question suivante : Etant donnée deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
+\begin{equation*}
+    (f_{\lambda}: X\rightarrow Y)_{\lambda\in\Lambda}
+\end{equation*} comment le lieu $f^{-1}_{\lambda}(0)$ change-t-il quand $\lambda$ varie ? Bien sûr, on peut récrire cette famille de fonction comme une fonction 
+$F: X\times\Lambda\rightarrow Y$. Il faut bien sûr préciser un peu ce que sont ces espaces, sans quoi, on ne peut rien dire.\\ Il semblerait que l'outil approprié pour étudier le problème dans sa forme la plus générale soit \textit{la théorie de morse paramétrique}, voir [SOURCE] pour cette théorie, et [SOURCE] pour les liens tissés entre cette dernière et la théorie de la bifurcation. Nous n'iront pas dans cette direction là pour ce travail et supposerons que les outils de base du calcul différentiel s'appliquent confortablement à $X$ et $Y$ et nous verrons que pour ce-faire, il faut supposer que ce sont des espaces de Banach.\\
+Historiquement, ce type de problème apparu lors de l'étude de systèmes dynamiques dont la loi d'évolution dépend d'un paramètre, précisons:
+considérez l'équation différentielle suivate :
+\begin{equation}\label{equanewton}
+    \frac{\partial^2  x}{\partial t^2 }= F(x,\lambda)
+\end{equation}
+en suposant, par exemple $v:\R\rightarrow \R^n$. On peut s'intéresser, dans un premier temps, aux \textit{équilibres} de ce système, naturellement, cela correspond à étudier 
+$F_{\lambda}^{-1}(0)$. Consiérons le cas très simple d'un mobile ayant un seul degré de liberté, et 
+\begin{equation*}
+    F(x,\lambda)= x^3-\lambda x
+\end{equation*}
+On constate immédiatement que le nombre de points d'équilibres passe de 1 à 2 quand $\lambda$ devient positif. Remarquon déjà qu'ici une partie du lieu d'annulation de $F$ est assez inintéressante. En effet, il est évident que si $x=0$ alors $F(x,\lambda)=0$, dans la suite, cette branche de solution intéressante sera qualifiée de branche triviale et la majorité de travail consitera à étudier les \textit{bifurcations depuis une branche triviale}, i.e ,  si $(x_0,\lambda_0)\in X\times \Lambda$ dans quelle conditions est-ce que tout voisinnage de $(x_0,\lambda_0)$ contient des solutions \textit{non triviales}, c'est à dire des zéros de de $F$ ne se trouvant pas sur la branche triviale.\\
+ La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus \textit{self contained} que possible. La seconde partie introduit la \textit{réduction} de Lyapunov-Schmidt, qui ,dans des conditions que nous allons préciser, permet de se ramaner à un problème en dimension finie. Ensuite, nous introduirons l'approche par \textit{théorie la  des singularité} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \textit{classifier} les bifurcation, i.e , étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utilise de se poser la question suivante: si je m'intéresser à une propriété quelconque $P$, quelles sont les $T$ transformations qui laisse $P$ invariante ? Le but étant de bien sûr de se ramaener dans un cas \textit{plus simple} sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des \textit{actions de groupes} et étudierons leur orbites\\
+ La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter \textit{globalement } les bifurcation (depuis une branche triviale). D'abord, nous exposons les approches par théorie du degré topologique classiques, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des dévellopements plus modernes: le degré \textit{orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
+ \todo{PARAGRAPHE SYMMETRIE}
+ \\
+ La dernière partie, quand à elle constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un sysème dynamique (donc l'étude d'une equation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamique changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle corespsond à un passage d'un régime présenant des \textit{ point d'attraction ou de répulsion} à un régime présenant \textit{orbite périodie attractives ou répulsives}, nous en profiterons également pour introduire quelques notions de stabilité.
+
 \newpage
 \part{Rappels et prérequis}
 
@@ -1367,11 +1389,32 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 \end{definition}
 
 
+\todo{Propriétés de base du degré orienté, lien avec les autres notions de degré}
 
-\begin{theobox}{Furi}{}
-    Soit $F: $
+
+\begin{theobox}{}{}
+    Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(F(x_0,\lambda_0)) $ si la fonction 
+    \begin{equation*}
+        f: \R\rightarrow\R, \lambda\mapsto \det ((DF(0,\lambda)+A)^{-1}DF(0,\lambda))
+    \end{equation*}
+    change de signe en $\lambda_0$, alors c'est un point de bifurcation. 
 \end{theobox}
-
+\begin{preuve}
+    \todo{PREUVE complete}
+\end{preuve}
+\subsection{Un résultat global via le degré orienté}
+\todo{LEMMES}
+\begin{theobox}{Furi}{}
+    Dans les conditions du théorème précédent, si $F$ est 
+    orientable alors il existe un ensemble connexe de 
+    solutions non-triviales $S$ tell que son adhérence dans 
+    $U$ contienent $(0,\lambda_0)$ et est soit non-compacte, 
+    soit contient $(0,\lambda_1)$ avec $\lambda_0\neq 
+    \lambda_1$
+\end{theobox}
+\begin{preuve}
+    \todo{PREUVE complete}
+\end{preuve}
 \section{Approche $K$-théorique}\label{K-th}
 
 En ce qui que concerne la $K$-théorie, nous suivons, dans les grande lignes, \cite{Karoubi1978KTheory}
