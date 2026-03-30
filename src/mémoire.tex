@@ -142,9 +142,9 @@ On constate immédiatement que le nombre de points d'équilibres passe de 1 à 2
  La dernière partie, quand à elle constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un sysème dynamique (donc l'étude d'une equation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamique changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle corespsond à un passage d'un régime présenant des \textit{ point d'attraction ou de répulsion} à un régime présenant des \textit{orbites périodiques attractives ou répulsives}, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcation correspondant à un passage entre un système non chaotique à un système chaotique (voire par exemple la fameuse "logistic map").
 
 \newpage
-\part{Rappels et prérequis}
+\section{Rappels et prérequis}
 
-\section{Notions de calcul différentiel dans des Espaces de Banachs}
+\subsection{Notions de calcul différentiel dans des Espaces de Banachs}
 
 Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir démontrer les théorème des fonctions implicites, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}
 
@@ -296,7 +296,7 @@ On termine par une petite remarque sur les dérivées d'ordre supérieur. On dé
     F\in C^2(U,Y)\Rightarrow D(DF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
 \end{equation*}
 Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ de $X$ et  $D^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
-\section{Opérateurs de Fredholm}
+\subsection{Opérateurs de Fredholm}
 
 Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons:
 \begin{definition}
@@ -492,7 +492,7 @@ On défini alors \textit{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 
 On peut montrer qu'il inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
-\section{Elements de théorie des EDP}
+\subsection{Elements de théorie des EDP}
 
 \todo{Introduire le minimum vital pour pouvoir faire les applications}
 
@@ -502,9 +502,9 @@ On peut montrer qu'il inversible d'inverse continu,nous renvoyons le lecteur ver
 \newpage
 
 
-\part{Réduction de Lyapunov-Schmidt et étude locale}
+\section{Réduction de Lyapunov-Schmidt et étude locale}
 
-\section{Approche analytique}
+\subsection{Approche analytique}
 
 Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
 \begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
@@ -576,7 +576,7 @@ Des calculs simples nous peremettent d'obtenir
 
 
 
-\subsection{Cas où $\dim \Lambda=1$}
+\subsubsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $D_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
 On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
@@ -715,7 +715,7 @@ Répond à la question
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'inex non-nul
 \end{remarque}
 Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramemener en dimension finie, ça ne marche pas si l'espace des paramètres en dimension infinie ! D'où la sous-section suivante.
-\subsection{Cas où $\dim \Lambda=\infty$}\label{LambdainfDim}
+\subsubsection{Cas où $\dim \Lambda=\infty$}\label{LambdainfDim}
 Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
@@ -979,8 +979,8 @@ Avant de présentez la preuve, résumons un peu la situation sur un diagramme
 \newpage
     
 
-\section{Approche via la thoérie des singularités}\label{SINGsection}
-\subsection{L'anneau $\mathcal{E}_n$}
+\subsection{Approche via la thoérie des singularités}\label{SINGsection}
+\subsubsection{L'anneau $\mathcal{E}_n$}
 Le but de cette section est d'exposer la classification proposée par Montaldi dans \cite{montaldi2021sbc}. Il utilise des outils de théorie des singularité et de théorie des catastrophes pour ramemener le problème de classification à un problème \textit{algébrique}, cette approche a été initée par Golubitsky dans \cite{golubitsky1985sgb1}. Cependant, Montaldi propose une approche plus moderne et en un certain sens, plus puissante. Nous allons donc introduire le minimum vital de théorie des singularités et des catastrophes et nous en servir pour obtenir un catalogue des problèmes de bifurcation qui ne sont pas "trop compliqués" (dans un sens que nous allons préciser).
 
 On est dans une théorie locale, les définitions suivantes retranscrivent cet aspect : 
@@ -1154,7 +1154,7 @@ Rappelons le lemme de Nakayama
 
 
 
-\subsection{Détermination finie}\label{detfin}
+\subsubsection{Détermination finie}\label{detfin}
 C'est le coeur du sujet: on veut 
 pouvoir se ramemener à l'étude d'un nombre fini de termes du dévellopement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
 
@@ -1298,21 +1298,21 @@ et , si $G$ est un des groupes habituels,
 \begin{lemme}
     
 \end{lemme}
-\section{Classification en dimension finie}
+\subsubsection{Classification en dimension finie}
 
 
 
 \newpage
 
-\part{Méthodes topologiques}
+\section{Méthodes topologiques}
 
-Jusqu'ici, nous avons supposé l'existence d'une bifurcation acquise (ou très facile à déterminer) et travaillé localement pour identifier son type et se ramener à une forme normale. Question : comment obtenir des résultats globaux ? Souvenez vous: à la section [SECTION] nous avons que le fait d'être un opérateur de Fredholm était une propriété constante sur un voisinnage connexe, l'indice de Fredholm est alors un \text{invariant} topologique, nous détaillons alors ce genre de méthode.
+\todo{paragraphe introductif}
 
-\section{Approche par théorie du degré}
-\subsection{Premières notions}
+\subsection{Approche par théorie du degré}
+\subsubsection{Premières notions}
 
 
-\subsection{2 théorèmes classiques}
+\subsubsection{2 théorèmes classiques}
 
 
 \begin{theobox}{Krasnosel’ski}{}
@@ -1411,7 +1411,7 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 \begin{preuve}
     \todo{PREUVE complete}
 \end{preuve}
-\subsection{Un résultat global via le degré orienté}
+\subsubsection{Un résultat global via le degré orienté}
 \todo{LEMMES}
 \begin{theobox}{Furi}{}
     Dans les conditions du théorème précédent, si $F$ est 
@@ -1424,12 +1424,12 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 \begin{preuve}
     \todo{PREUVE complete}
 \end{preuve}
-\section{Approche $K$-théorique}\label{K-th}
+\subsection{Approche $K$-théorique}\label{K-th}
 
 En ce qui que concerne la $K$-théorie, nous suivons, dans les grande lignes, \cite{Karoubi1978KTheory}
 
 
-\subsection{Fibrés et fibrés vectoriels}
+\subsubsection{Fibrés et fibrés vectoriels}
 
 L'idée derrière la notion d'espace fibré est d'avoir une généralisation des
 espaces qui "ressemblent localement" à des espaces produits.
@@ -1503,10 +1503,10 @@ Ainsi, alors qu'un fibré en général est "localement un produit cartésien", u
     \end{center}
 \end{definition}
 
-\subsection{La catégorie $\mathfrak{F}(X)$}
-\subsection{Introduction à la K-théorie}
+\subsubsection{La catégorie $\mathfrak{F}(X)$}
+\subsubsection{Introduction à la K-théorie}
 \todo{Ajouter texte d'intro/motivation}
-\subsubsection{Le groupe de Grothendieck K(X)}
+
 \begin{definition}
     Soit $(H,+)$ un monoide commutatif, on lui associe une paire $(S(H),s)$ où $S(H)$ est un groupe abélien, $s:H\rightarrow S(H)$ un homomorphisme de groupe abélien qui répond au problème universel suivant: 
     \begin{center}
@@ -1520,7 +1520,7 @@ Ainsi, alors qu'un fibré en général est "localement un produit cartésien", u
     \end{center}
 \end{definition}
 
-\subsection{application à la détection globale d'une bifurcation}
+\subsubsection{application à la détection globale d'une bifurcation}
 
 \begin{theobox}{}{}
 Soit $\Lambda$ un CW-complexe fini connexe, $f : \Lambda \times O \to Y$ une famille $C^1$ d'applications de Fredholm d'indice $0$ et soit $L$ la linéarisation de $f$ le long de la branche triviale. Supposons que, pour $\delta$ suffisamment petit, les seules solutions de l'équation $f(\lambda, x) = 0$ avec $\|x\| \leq \delta$ soient celles de la forme $(\lambda, 0)$. Si, pour un certain (et donc pour tout) $\nu \in \Lambda$, la multiplicité $k = |\mathrm{mult}(f_\nu, 0)| \neq 0$, alors
@@ -1537,12 +1537,12 @@ Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$
 \end{corollaire}
 
 \newpage
-\part{Bifurcations équivariantes et symétries}
+\section{Bifurcations équivariantes et symétries}
 <
 
 
 \newpage
-\part{Introduction aux bifurcations dynamiques}
+\section{Introduction aux bifurcations dynamiques}
 \newpage
 
 \addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,scha}
