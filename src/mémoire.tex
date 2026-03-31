@@ -494,8 +494,17 @@ On peut montrer qu'il inversible d'inverse continu,nous renvoyons le lecteur ver
 
 \subsection{Elements de théorie des EDP}
 
-\todo{Introduire le minimum vital pour pouvoir faire les applications}
+\subsubsection{Opérteurs elliptiques}
 
+Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombre $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1\cdots\alpha_n$.
+\begin{definition}
+    Si $U$ est un ouvert de $\R^n$, un \textit{opérateur diférentiel partiel} est un operateur de la forme 
+    \begin{equation*}
+        F=\sum_{|\alpha|\leq m} a_{\alpha}(x)D^{\alpha}
+    \end{equation*}
+    où les $a_{\alpha}$ sont des fonctions de $U$ vers $\R$ (ou $\mathbb{C}$)
+    Si il existe $a_\alpha$ non-identiquement nul avec $\alpha=n$ alors l'opérateur
+\end{definition}
 
 
 
@@ -636,6 +645,7 @@ Des calculs simples  permettent de montrer que
         (x_1,0)
     \end{equation*}
 \end{corollaire}
+
 On a alors simplement la situation "vecteur tangent vertical"
 \begin{remarque}
     On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'obersevables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variable d'état
@@ -1339,7 +1349,7 @@ alors  on voudrait que
     \operatorname{deg}(H(t,\cdot),U,y(t))
 \end{equation*}
 Soit toujours le même. Notez qu'en plus la fonction, on s'autorise aussi à bouger la "cible", mais on s'interdit de toucher la frontière !
-De façon remarquable, en dimension finie, il y'a qu'une seule fonction qui possède ces proriétés ! On peut donc parler "du" degré. Nous donnons directement la définition, la construction (qui est faite via le lemme de Sard et des résultats d'approximation)
+De façon remarquable, en dimension finie, il y'a qu'une seule fonction qui possède ces proriétés ! On peut donc parler "du" degré.
 
 \begin{definition}
     Si $U\subseteq \R^n$ est ouvert et bornée, si $f\in C^0(\bar{U})\cap C^1(U)$ et $y\in \R^n\setminus f(\partial U \cup S_f(U))$ alors on pose 
@@ -1350,8 +1360,50 @@ De façon remarquable, en dimension finie, il y'a qu'une seule fonction qui poss
 On peut montrer que cette fonction remplit bien les 3 conditions et que c'est la seule. Ensuite, via le théorème de Morse-Sard et quelques techniques d'approximation classiques, on peut généraliser cette fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour les détails.
 
 \subsubsection{Construction du degré de Leray-Schauder}
-L'espoir de généraliser entièrement la notion de degré aux fonction définie sur $U$ un ouvert d'un espace de Banach $X$ et à valeur dans $X$ s'effondre à l'instant où on constate qu'on peut montrer le théorème du point fixe de Brouwer \textit{uniquement} avec ce dernier, mais qu'il n'est pas vrai en dimension infinie ! \\
-\todo{Construction du degré en dimension infinie et propriétés de base}
+Il est impossible de généraliser la notion du degré de Brouwer aux espaces de Banach. Pour le voir, nous montrons un cas particulier du théorème du point fixe en utilisant uniquement les propriétés du degré et montrons ensuite qu'il ne s'applique pas en dimension infinie
+\begin{proposition}
+    si $r>0$ et $f\in C^0(\bar{B(0,r)},\bar{B(0,r)})$ alors $f$ admet un point fixe
+\end{proposition}
+\begin{preuve}
+    Si il existe $x\in\partial \bar{B(0,r)}$ tel que $f(x)=x$, on a terminé. Sinon,
+    Considérons 
+    \begin{equation*}
+        H: [0,1]\times \bar{B(0,r)}\rightarrow \R^n: (t,x)
+        \mapsto x-tf(x)\text{ et } y(t)=0
+    \end{equation*}
+    C'est une homotopie entre $\operatorname{Id}-f$ et 
+    l'identité et $0\notin H([0,1]\times\partial \bar{B(0,r)})
+    $ car, si $x\in\partial \bar{B(0,r)}$, $H(t,x)=x-f(x)\neq 
+    0$ par hypothèse et si $0\leq t<1$
+    \begin{equation*}
+        |H(t,x)|\geq |x|-t|f(x)|\geq (1-t)r>0
+    \end{equation*}
+    et donc
+    \begin{equation*}
+        \operatorname*{deg}(\operatorname{Id}-f,B(0,r),0)
+        =\operatorname*{deg}(\operatorname{Id},B(0,r),0)=1
+    \end{equation*}
+    et donc il existe $x\in B(0,r)$ tel que $x-f(x)=0$
+\end{preuve}
+
+Un petit contre exemple en dimension infinie
+\begin{exemple}
+    Considérons $X=l_\infty$ 
+    \begin{equation*}
+        f: B(0,1)_{\infty}\rightarrow B(0,1)_{\infty}
+        , (x_i)_{i\in\mathbb{N}}\mapsto 
+        (1-||x||_{\infty},\sqrt{|x_1|},\sqrt{|x_2|},\cdots)
+    \end{equation*}
+    On vérifie facilement que $f$ est continue. Supposons donc qu'elle a un point fixe $y$, on aurait alors 
+    \begin{equation*}
+        y_1= 1- ||y||_{\infty}\text{ et, si $k\geq 2$  } y_k = |y_1|^{\frac{1}{2^{k-1}}}
+    \end{equation*}
+    Si $||y||_\infty=1$,  alors tous les $y_k$ sont nuls, absurdité. Si $||y||_\infty<1$, alors $y_1$ et la suite converge vers 1, absurdité car celà impliquerait $||y||_{\infty}=1$
+\end{exemple}
+\begin{corollaire}
+    Il n'existe pas d'équivalent au degré de Brouwer en dimension infinie.
+\end{corollaire}
+Il faut alors restreindre l'ensemble des fonctions sur lequel on va travailler si on veut espérer définir une notion de degré. C'est le travail effectué par  Juliusz Schauder et  Jean Leray pendant les années 30, nous consacrons les prochaines paragraphes à en faire la synthèse
 
 \newpage
 \subsubsection{2 théorèmes classiques}
@@ -1446,7 +1498,7 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 
 
 \begin{theobox}{}{}
-    Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(F(x_0,\lambda_0)) $ si la fonction 
+    Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(DF(x_0,\lambda_0)) $ si la fonction 
     \begin{equation*}
         f: \R\rightarrow\R, \lambda\mapsto \det ((DF(0,\lambda)+A)^{-1}DF(0,\lambda))
     \end{equation*}
