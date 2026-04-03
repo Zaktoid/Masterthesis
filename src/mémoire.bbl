@@ -1,0 +1,494 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{BenevieriFuri1998}{article}{}
+      \name{author}{2}{}{%
+        {{hash=36dcbf32b3c8dc9a7d1ce1632971f188}{%
+           family={Benevieri},
+           familyi={B\bibinitperiod},
+           given={Pierluigi},
+           giveni={P\bibinitperiod}}}%
+        {{hash=63f2d1e9cf833aabe42fa121e6b3d91f}{%
+           family={Furi},
+           familyi={F\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{fullhash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{bibnamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authorbibnamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authornamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authorfullhash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annales des Sciences Mathématiques du Québec}
+      \field{number}{2}
+      \field{title}{A simple notion of orientability for Fredholm maps of index zero between Banach manifolds and degree theory}
+      \field{volume}{22}
+      \field{year}{1998}
+      \field{pages}{131\bibrangedash 148}
+      \range{pages}{18}
+    \endentry
+    \entry{BenevieriFuri2001}{article}{}
+      \name{author}{2}{}{%
+        {{hash=36dcbf32b3c8dc9a7d1ce1632971f188}{%
+           family={Benevieri},
+           familyi={B\bibinitperiod},
+           given={Pierluigi},
+           giveni={P\bibinitperiod}}}%
+        {{hash=63f2d1e9cf833aabe42fa121e6b3d91f}{%
+           family={Furi},
+           familyi={F\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{fullhash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{bibnamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authorbibnamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authornamehash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \strng{authorfullhash}{de2e88cdfb2a3bcd4a4bc2fdffe455ca}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nonlinear Analysis Forum}
+      \field{number}{1}
+      \field{title}{Bifurcation Results for Families of Fredholm Maps of Index Zero Between Banach Spaces}
+      \field{volume}{6}
+      \field{year}{2001}
+      \field{pages}{35\bibrangedash 47}
+      \range{pages}{13}
+    \endentry
+    \entry{coleman2012calculus}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bd3a932e88e9a48977cd36f59acf2d7e}{%
+           family={Coleman},
+           familyi={C\bibinitperiod},
+           given={Rodney},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{fullhash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{bibnamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authorbibnamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authornamehash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \strng{authorfullhash}{bd3a932e88e9a48977cd36f59acf2d7e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Springer Undergraduate Mathematics Series}
+      \field{title}{Calculus on Normed Vector Spaces}
+      \field{year}{2012}
+    \endentry
+    \entry{KlausNonLin85}{book}{}
+      \name{author}{1}{}{%
+        {{hash=84744ef4453256cbf9ea1e471cd6992f}{%
+           family={Deimling},
+           familyi={D\bibinitperiod},
+           given={Klaus},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{84744ef4453256cbf9ea1e471cd6992f}
+      \strng{fullhash}{84744ef4453256cbf9ea1e471cd6992f}
+      \strng{bibnamehash}{84744ef4453256cbf9ea1e471cd6992f}
+      \strng{authorbibnamehash}{84744ef4453256cbf9ea1e471cd6992f}
+      \strng{authornamehash}{84744ef4453256cbf9ea1e471cd6992f}
+      \strng{authorfullhash}{84744ef4453256cbf9ea1e471cd6992f}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Springer Books}
+      \field{title}{Nonlinear Functional Analysis}
+      \field{year}{1985}
+    \endentry
+    \entry{dieudonne1969fma8}{book}{}
+      \name{author}{1}{}{%
+        {{hash=220bc514e73e9aaea5d0232c0e714118}{%
+           family={Dieudonné},
+           familyi={D\bibinitperiod},
+           given={Jean\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{fullhash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{bibnamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authorbibnamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authornamehash}{220bc514e73e9aaea5d0232c0e714118}
+      \strng{authorfullhash}{220bc514e73e9aaea5d0232c0e714118}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{series}{Pure and Applied Mathematics}
+      \field{title}{Foundations of Modern Analysis, Volume 8}
+      \field{year}{1969}
+    \endentry
+    \entry{Feckan2008Topological}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4eeb34ee37144c8cf6fb7e425dd2a959}{%
+           family={Fečkan},
+           familyi={F\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{fullhash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{bibnamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authorbibnamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authornamehash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \strng{authorfullhash}{4eeb34ee37144c8cf6fb7e425dd2a959}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Topological Fixed Point Theory and Its Applications}
+      \field{title}{Topological Degree Approach to Bifurcation Problems}
+      \field{volume}{5}
+      \field{year}{2008}
+      \field{pages}{ix + 261}
+      \range{pages}{-1}
+    \endentry
+    \entry{friedmanpartial}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1ee56a407427396e0489f3ea4de79aca}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Dover Publications}%
+      }
+      \strng{namehash}{1ee56a407427396e0489f3ea4de79aca}
+      \strng{fullhash}{1ee56a407427396e0489f3ea4de79aca}
+      \strng{bibnamehash}{1ee56a407427396e0489f3ea4de79aca}
+      \strng{authorbibnamehash}{1ee56a407427396e0489f3ea4de79aca}
+      \strng{authornamehash}{1ee56a407427396e0489f3ea4de79aca}
+      \strng{authorfullhash}{1ee56a407427396e0489f3ea4de79aca}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Partial Differential Equations}
+      \field{year}{1969}
+    \endentry
+    \entry{glockner2006implicit}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2abd39bd211418d6584f7a380dec5154}{%
+           family={Glöckner},
+           familyi={G\bibinitperiod},
+           given={Helge},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{2abd39bd211418d6584f7a380dec5154}
+      \strng{fullhash}{2abd39bd211418d6584f7a380dec5154}
+      \strng{bibnamehash}{2abd39bd211418d6584f7a380dec5154}
+      \strng{authorbibnamehash}{2abd39bd211418d6584f7a380dec5154}
+      \strng{authornamehash}{2abd39bd211418d6584f7a380dec5154}
+      \strng{authorfullhash}{2abd39bd211418d6584f7a380dec5154}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Israel Journal of Mathematics}
+      \field{title}{Implicit Functions from Topological Vector Spaces to Banach Spaces}
+      \field{volume}{155}
+      \field{year}{2006}
+      \field{pages}{205\bibrangedash 252}
+      \range{pages}{48}
+    \endentry
+    \entry{golubitsky1985sgb1}{book}{}
+      \name{author}{2}{}{%
+        {{hash=3126448e2c6d96a97f230599a870abe5}{%
+           family={Golubitsky},
+           familyi={G\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d965e3e37786aecdd3d6da98978dadbe}{%
+           family={Schaeffer},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{fullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{bibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorbibnamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authornamehash}{a40fd770b09115ab0a98388e31efb8b5}
+      \strng{authorfullhash}{a40fd770b09115ab0a98388e31efb8b5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{series}{Applied Mathematical Sciences}
+      \field{title}{Singularities and Groups in Bifurcation Theory, Volume I}
+      \field{volume}{51}
+      \field{year}{1985}
+    \endentry
+    \entry{Karoubi1978KTheory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bd2038c32c40af7dd9d3259e956868e7}{%
+           family={Karoubi},
+           familyi={K\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg, New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{fullhash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{bibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authorbibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authornamehash}{bd2038c32c40af7dd9d3259e956868e7}
+      \strng{authorfullhash}{bd2038c32c40af7dd9d3259e956868e7}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Grundlehren der mathematischen Wissenschaften}
+      \field{title}{K-Theory: An Introduction}
+      \field{volume}{226}
+      \field{year}{1978}
+    \endentry
+    \entry{Marcut2009FredholmNotes}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=78a333f1d7cc8b0f9aa3680da4c22320}{%
+           family={Mărcuț},
+           familyi={M\bibinitperiod},
+           given={Ioan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Utrecht University}%
+      }
+      \strng{namehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{fullhash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{bibnamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authorbibnamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authornamehash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \strng{authorfullhash}{78a333f1d7cc8b0f9aa3680da4c22320}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture notes for the course ``Analysis on Manifolds''}
+      \field{month}{10}
+      \field{title}{Notes on Fredholm (and Compact) Operators}
+      \field{year}{2009}
+    \endentry
+    \entry{Marx1994Bifurcation}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fc4fa666a9497ca29f326bbd9c943fd4}{%
+           family={Marx},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \strng{fullhash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \strng{bibnamehash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \strng{authorbibnamehash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \strng{authornamehash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \strng{authorfullhash}{fc4fa666a9497ca29f326bbd9c943fd4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für Analysis und ihre Anwendungen}
+      \field{number}{3}
+      \field{title}{Some Bifurcation Results Including Banach Space Valued Parameters}
+      \field{volume}{13}
+      \field{year}{1994}
+      \field{pages}{493\bibrangedash 512}
+      \range{pages}{20}
+    \endentry
+    \entry{montaldi2021sbc}{book}{}
+      \name{author}{1}{}{%
+        {{hash=23cc2def7903dcb201647ec74b4aa317}{%
+           family={Montaldi},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{fullhash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{bibnamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authorbibnamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authornamehash}{23cc2def7903dcb201647ec74b4aa317}
+      \strng{authorfullhash}{23cc2def7903dcb201647ec74b4aa317}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{title}{Singularities, Bifurcations and Catastrophes}
+      \field{year}{2021}
+    \endentry
+    \entry{Pejsachowicz2011Index}{article}{}
+      \name{author}{1}{}{%
+        {{hash=eb5bbba11d71b36bfa78baf44163d97d}{%
+           family={Pejsachowicz},
+           familyi={P\bibinitperiod},
+           given={Jacobo},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \strng{fullhash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \strng{bibnamehash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \strng{authorbibnamehash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \strng{authornamehash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \strng{authorfullhash}{eb5bbba11d71b36bfa78baf44163d97d}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bifurcation of Fredholm Maps I; The Index Bundle and Bifurcation}
+      \field{year}{2011}
+    \endentry
+    \entry{schwartz1960nash}{article}{}
+      \name{author}{1}{}{%
+        {{hash=decbfb97c97d619d96936c9ce79a98da}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{decbfb97c97d619d96936c9ce79a98da}
+      \strng{fullhash}{decbfb97c97d619d96936c9ce79a98da}
+      \strng{bibnamehash}{decbfb97c97d619d96936c9ce79a98da}
+      \strng{authorbibnamehash}{decbfb97c97d619d96936c9ce79a98da}
+      \strng{authornamehash}{decbfb97c97d619d96936c9ce79a98da}
+      \strng{authorfullhash}{decbfb97c97d619d96936c9ce79a98da}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications on Pure and Applied Mathematics}
+      \field{number}{4}
+      \field{title}{On Nash's Implicit Functional Theorem}
+      \field{volume}{13}
+      \field{year}{1960}
+      \field{pages}{509\bibrangedash 530}
+      \range{pages}{22}
+    \endentry
+    \entry{Wall1981FiniteDeterminacy}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9d400e4c4f6267e6520de667fca8a151}{%
+           family={Wall},
+           familyi={W\bibinitperiod},
+           given={C.\bibnamedelimi T.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{fullhash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{bibnamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authorbibnamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authornamehash}{9d400e4c4f6267e6520de667fca8a151}
+      \strng{authorfullhash}{9d400e4c4f6267e6520de667fca8a151}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the London Mathematical Society}
+      \field{title}{Finite Determinacy of Smooth Map-Germs}
+      \field{volume}{13}
+      \field{year}{1981}
+      \field{pages}{481\bibrangedash 539}
+      \range{pages}{59}
+    \endentry
+    \entry{zeidler1986nonlinear}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e5dd60c57c03396873eeeae45f1f9f51}{%
+           family={Zeidler},
+           familyi={Z\bibinitperiod},
+           given={Eberhard},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \strng{fullhash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \strng{bibnamehash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \strng{authorbibnamehash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \strng{authornamehash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \strng{authorfullhash}{e5dd60c57c03396873eeeae45f1f9f51}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nonlinear Functional Analysis and its Applications I: Fixed-Point Theorems}
+      \field{year}{1986}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

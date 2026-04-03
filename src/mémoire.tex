@@ -1547,7 +1547,62 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
     \todo{PREUVE complete}
 \end{preuve}
 \subsection{Approche $K$-théorique}\label{K-th}
+\subsection{Rappels et compléments de topologie algébrique}
+Rappelons très brièvement les bases de la topologie algébrique. Nous donnons également un bref exposé sur la cohomologie. Le lecteur intéressé par les détails pourra simplement consulter un cours de topologie algébrique ([SOURCE], pour n'en citer qu'un).
 
+\begin{definition}
+    Si $X$ est un espace 
+    topologique, et 
+    $\Delta_p$ le simplexe 
+    standard de $\R^n$, on appele \textit{p-simplexe singulier} un élément $\sigma$ de $C^0(\Delta_p,X)$. On pose $\Sigma_p(X)$ l'ensemble des simplexes singuliers
+\end{definition}
+par exemple , les 1-simplexes sont les chemins, certains 2-simplexes sont des surfaces (lorsque $\sigma$ est injectif),etc... Maintenant, on va faire une construction similaire (et plus simple) à ce qu'on fera en $K$-théorie. Etant donné un ensemble $E$, on veut trouver le "plus petit groupe abélien qui contient $E$", ou plutôt, comment étendre $E$ et munir cette extension d'une structure de groupe abélien et ce de la façon la \textit{plus naturelle possible}. Il y'a plusieurs façon de faire équivalentes, on peut par exemple considérer 
+\begin{equation*}
+    \mathbb{Z}^{(E)} =\left\{ f\in \mathbb{Z}^{E} |\operatorname{card}(e\in E : n(e)=0)\leq \infty \right\}
+\end{equation*}
+On peut voir ça comme une somme formelle, en effet si $\forall e\in E$ on pose 
+\begin{equation}\label{gpablibre}
+    \delta_e\in\mathbb{Z}^{(E)}:e'\mapsto \delta_{e,e'}
+\end{equation}
+Il est clair que tout élément de $\mathbb{Z}^{(E)}$ s'écrit comme une combinaison linéaire finie de $\delta_e$. En un certain sens, \ref{gpablibre} est la façon "la plus naturelle" de faire, voir [SOURCE] pour les détails. On pose alors 
+\begin{equation*}
+    C_p(X)=\mathbb{Z}^{(\Sigma_p(X))}
+\end{equation*}
+Si $x_0,\cdots,x_p\in\R^n$, on pose 
+\begin{equation*}
+    \sigma_{(x_0,\cdots,
+    x_p)}: 
+    \Delta_p\rightarrow\R^n:
+    (\lambda_1,\cdots,
+    \lambda_p)\mapsto x_0+
+    \sum_{i=1}^p\lambda_i
+    (x_i-x_0)
+\end{equation*}
+Et on défini alors l'opérateur de bord, si $p\geq 1$
+\begin{equation*}
+    \partial^X_p: C_p(X)\rightarrow C_{p-1}(X):
+    \sigma\mapsto \sum_{j=0}^{p}(-1)^j \sigma\circ \sigma_{(e_0,\cdots,\hat{e_j},\cdots e_p)}
+\end{equation*}
+En pose $\partial_p=0$ si $p\leq 0$. On peut montrer que $\partial^X_{p+1}\circ\partial^X_p=0$ et on définie le \textit{complexe singulier} comme la donnée des bords et des esembles $C_p(X)$, on le résume avec le diagramme suivant
+\[\begin{tikzcd}
+	\cdots & {C_p(X)} & {C_{p-1}(X)} & \cdots
+	\arrow["{\partial^X_{p+1}}", from=1-1, to=1-2]
+	\arrow["{\partial^X_{p}}", from=1-2, to=1-3]
+	\arrow["{\partial^X_{p-1}}", from=1-3, to=1-4]
+\end{tikzcd}\]
+On définit enfin les \textit{groupes d'homologie} comme suit:
+\begin{equation*}
+    H_p(X)=\ker \partial^X_p/\im \partial^X_{p+1}, p\geq 0
+\end{equation*}
+Maintenant, la cohomologie !
+On choisit un groupe abélien $A$, et considère les groupes duaux des $C_p(X)$ (par rapport à A) comme étant l'ensemble des homomorphismes de groupe ablien entre $C_p(X)$ et $A$, i.e $C_p(X)^*=\operatorname{Hom}(C_i,A)$ et on remplace alors l'opérateur bord par son dual
+\begin{equation*}
+    \partial_p^{*}: C_p(X)^{*}\rightarrow C_{p+1}(X)^{*}| \varphi\mapsto \varphi\circ \partial_{p+1}
+\end{equation*}
+et on définit enfin 
+\begin{equation*}
+    H^p(X,A)=\ker \partial^*_{p+1}/\im \partial^*_p, p\geq 0
+\end{equation*}
 En ce qui que concerne la $K$-théorie, nous suivons, dans les grande lignes, \cite{Karoubi1978KTheory}
 
 
