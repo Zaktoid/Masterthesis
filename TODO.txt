@@ -1,6 +1,24 @@
-->cas dim Lambda = +/infty
-->Preuves determinatation finie
-->Relier les différentes définitions de codimensions
-->Lire tout Montaldi 
-->Faire l'orientation des Fredholm maps
+Partie théorie de la singualirté et classificaton: 
+->Relier le travail de Golubitsky, Montaldi et C.T Wall et en faire une synthèse clean.
+Partie théorie du degré:
+->Faire les rappels de théorie des espaces de Banach, Construire le degré de Leray-Schauder + les 2 résultats principaux
+->Degré orienté de Furi
+->Résultat global
+Approche K-théorique 
+->Bases de la K-théorie
+->Prérequis 
+->Fibré virtuel d'index
+    ->parité: parity and generalized multiplicity
+    ->first Stiefel–Whitney class
+    -> Nonorientability of the index bundle and several-parameter bifurcation
+    ->Fiberwise Homotopy Theory
+    ->Degree theory for C1-Fredholm mappings of in-dex
+Introduction aux bifurcations dynamiques: 
+->Comprendre la stabilité
+->Bases de la bifurcation de Hopf
+->Bases de séries de volterra
+->bifurcation de hopf via les séries de volterra
+Applications : 
+Bases des EDP, quelques résultats, ajouter des exemples avec des ODE avec des boundary conditions simples pour illustrer la théorie
+FIN ! :-)
 
