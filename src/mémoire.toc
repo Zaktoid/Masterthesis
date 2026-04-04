@@ -2,10 +2,9 @@
 \contentsline {section}{\numberline {1}Rappels et prérequis}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Rappels et compléments d'analyse fonctionnelle}{4}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Compacité}{4}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Notions de calcul différentiel dans des Espaces de Banachs}{4}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Opérateurs de Fredholm}{7}{subsubsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.2}Elements de théorie des EDP}{11}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Rappels et compléments de topologie algébrique}{12}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.2}Notions de calcul différentiel dans des Espaces de Banachs}{5}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Opérateurs de Fredholm}{8}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Elements de théorie des EDP}{12}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Réduction de Lyapunov-Schmidt et étude locale}{13}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Approche analytique}{13}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Cas où $\qopname \relax o{dim}\Lambda =1$}{14}{subsubsection.2.1.1}%
@@ -15,21 +14,21 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Détermination finie}{27}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Classification en dimension finie}{30}{subsubsection.2.2.3}%
 \contentsline {section}{\numberline {3}Méthodes topologiques}{31}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Approche par théorie du degré}{31}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Le degré de Leray-Schauder}{31}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Premières notions}{31}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Construction du degré de Leray-Schauder}{32}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}2 théorèmes classiques}{33}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Le degré orienté}{33}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Construction}{33}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Un résultat global via le degré orienté}{35}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Approche $K$-théorique}{35}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Rappels et compléments de topologie algébrique}{35}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Fibrés et fibrés vectoriels}{36}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Classes de Stiefel-Whitney }{38}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}La catégorie $\mathfrak {F}(X)$}{38}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Introduction à la K-théorie}{38}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}application à la détection globale d'une bifurcation}{38}{subsubsection.3.4.5}%
-\contentsline {section}{\numberline {4}Introduction aux bifurcations équivariantes et symétries}{40}{section.4}%
-\contentsline {section}{\numberline {5}Introduction aux bifurcations dynamiques}{41}{section.5}%
-\contentsline {subsection}{\numberline {5.1}quelques notions de stabilité}{41}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}La bifurcation de Hopf}{41}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}Construction}{32}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}2 théorèmes classiques}{34}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Le degré orienté}{34}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Construction}{34}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Un résultat global via le degré orienté}{36}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Approche $K$-théorique}{36}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Rappels et compléments de topologie algébrique}{36}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Fibrés et fibrés vectoriels}{37}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Classes de Stiefel-Whitney }{39}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}La catégorie $\mathfrak {F}(X)$}{39}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Introduction à la K-théorie}{39}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}application à la détection globale d'une bifurcation}{39}{subsubsection.3.3.6}%
+\contentsline {section}{\numberline {4}Introduction aux bifurcations équivariantes et symétries}{41}{section.4}%
+\contentsline {section}{\numberline {5}Introduction aux bifurcations dynamiques}{42}{section.5}%
+\contentsline {subsection}{\numberline {5.1}quelques notions de stabilité}{42}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}La bifurcation de Hopf}{42}{subsection.5.2}%

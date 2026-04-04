@@ -134,7 +134,27 @@ $F_{\lambda}^{-1}(0)$. Consiérons le cas très simple d'un mobile ayant un seul
 \begin{equation*}
     F(x,\lambda)= x^3-\lambda x
 \end{equation*}
-On constate immédiatement que le nombre de points d'équilibres passe de 1 à 2 quand $\lambda$ devient positif. Remarquon déjà qu'ici une partie du lieu d'annulation de $F$ est assez inintéressante. En effet, il est évident que si $x=0$ alors $F(x,\lambda)=0$, dans la suite, cette branche de solution inintéressante sera qualifiée de branche triviale et la majorité de travail consitera à étudier les \textit{bifurcations depuis une branche triviale}, i.e ,  si $(x_0,\lambda_0)\in X\times \Lambda$ dans quelle conditions est-ce que tout voisinnage de $(x_0,\lambda_0)$ contient des solutions \textit{non triviales}, c'est à dire des zéros de de $F$ ne se trouvant pas sur la branche triviale.\\
+On constate immédiatement 
+que le nombre de points 
+d'équilibres passe de 1 à 2 
+quand $\lambda$ devient 
+positif. Remarquon déjà 
+qu'ici une partie du lieu 
+d'annulation de $F$ est 
+assez inintéressante. En 
+effet, il est évident que 
+si $x=0$ alors $F(x,\lambda)
+=0$, dans la suite, cette 
+branche de solution 
+inintéressante sera 
+qualifiée de branche 
+triviale et la majorité de 
+travail consitera à étudier 
+les \textit{bifurcations 
+depuis une branche 
+triviale}, i.e ,  si $(x_0,
+\lambda_0)\in X\times 
+\Lambda$ dans quelle conditions est-ce que tout voisinnage de $(x_0,\lambda_0)$ contient des solutions \textit{non triviales}, c'est à dire des zéros de de $F$ ne se trouvant pas sur la branche triviale.\\
  La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus \textit{self contained} que possible. La seconde partie introduit la \textit{réduction} de Lyapunov-Schmidt, qui ,dans des conditions que nous allons préciser, permet de se ramaner à un problème en dimension finie. Ensuite, nous introduirons l'approche par \textit{théorie la  des singularité} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \textit{classifier} les bifurcation, i.e , étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utilise de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les $T$ transformations qui laisse $P$ invariante ? Le but étant de bien sûr de se ramaener dans un cas \textit{plus simple} sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des \textit{actions de groupes} et étudierons leur orbites\\
  La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter \textit{globalement } les bifurcation (depuis une branche triviale). D'abord, nous exposons les approches par théorie du degré topologique classiques, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des dévellopements plus modernes: le degré \textit{orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
  La dernière partie, quand à elle constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un sysème dynamique (donc l'étude d'une equation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamique changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle corespsond à un passage d'un régime présenant des \textit{ point d'attraction ou de répulsion} à un régime présenant des \textit{orbites périodiques attractives ou répulsives}, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage entre un système non chaotique à un système chaotique (voire par exemple la fameuse "logistic map").
@@ -144,7 +164,49 @@ On constate immédiatement que le nombre de points d'équilibres passe de 1 à 2
 
 \subsection{Rappels et compléments d'analyse fonctionnelle}
 \subsubsection{Compacité}
-\todo{Lire la partie compacité de \cite{KlausNonLin85}}
+Nous rappelons brièvement quelques notions de compacité dans les espaces de Banach et introduisons les mesures de non-compacité, cette section est adaptée de \cite{KlausNonLin85}. Rappelons qu'un sous ensemble $K$ d'un espace de Banach $X$ est \textit{relativement compact} si $\bar{K}$ est compact et précompacte si pour tout $\varepsilon>0$ il existe un nombre fini de boules de rayon $\varepsilon$ recouvrant $K$, notez qu'étant donné que les espaces de Banach sont complets, être précompact ou relativement compact c'est la même chose.
+Mainenant, on introduit deux mesures de non-compacité: posons $\mathcal{B}(X)$ l'ensemble des parties bornées de $X$, on pose
+\begin{equation*}
+    \beta: \mathcal{B}(X)\rightarrow \R^{+}, A\mapsto \inf 
+    \left\{\varepsilon>0 | \exists {x_1,\cdot,x_n}\in X: A\subseteq \bigcup_{i=1}^n B(x_i,\varepsilon) \right\} 
+\end{equation*}
+et 
+\begin{equation*}
+    \alpha: \mathcal{B}(X)\rightarrow \R^{+}, A\mapsto \inf 
+    \left\{ d>0 | \exists E_1,\cdots E_n\in X: \forall 1\leq i \leq n \operatorname{diam}(E_i)\leq d\text{ et } A\subseteq \bigcup_{i=1}^n E_i  \right\} 
+\end{equation*}
+
+Le résultat suivant est une conséquence directe de la définition et s'applique aussi à $\beta$
+\begin{proposition}
+    Soit $A,B\in\mathcal{B}(X)$
+    \begin{itemize}
+        \item $\alpha(A)=0\Leftrightarrow$ $A$ est compact
+        \item $\alpha$ est une semi norme
+        \item $\alpha$ est croissant pour l'inclusion
+        \item $\alpha(A\cup B)=\max\{ \alpha(A),\alpha(B)\}$
+    \end{itemize}
+\end{proposition}
+
+On définit la distance de Hausdorff comme 
+\begin{equation}\label{HausdorffDist}
+    d_H : \mathcal{B}(X)^2\rightarrow \R^+ , (A,B)\mapsto \max\{ \sup_{x\in A} d(x,B),\sup_{x\in B} d(x,A)\}
+\end{equation}
+
+\begin{proposition}
+    $\alpha$ et $\beta$ sont continues pour la topologie engendrée par \ref{HausdorffDist}
+\end{proposition}
+\begin{preuve}
+    On le fait pour $\beta$, la preuve est similaire pour $\alpha$.\todo{finir la preuve}
+\end{preuve}
+
+\begin{proposition}
+    Si $A\in\mathbb{B}(X)$
+    \begin{equation*}
+        \alpha(\operatorname{conv}(A))=\alpha(A)
+        \text{ et }\beta(\operatorname{conv}(A))=\beta(A)
+    \end{equation*}
+\end{proposition}
+
 \subsubsection{Notions de calcul différentiel dans des Espaces de Banachs}
 
 Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir démontrer les théorème des fonctions implicites, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}
@@ -531,7 +593,6 @@ Notez que dans la définition précédente, si les $a_\alpha$ sont réels, alors
     et si les coeficients principaux sont uniformément bornés dans $U$ alors l'operateur $E$ est \textit{Uniformément fortement elliptique }
 \end{definition}
 \todo{Adjoint formel et formule de green,condition de bordure lisse et première propriétés}
-\subsection{Rappels et compléments de topologie algébrique}
 \newpage
 
 
@@ -1345,7 +1406,7 @@ et , si $G$ est un des groupes habituels,
 
 \todo{paragraphe introductif}
 
-\subsection{Approche par théorie du degré}
+\subsection{Le degré de Leray-Schauder}
 
 \subsubsection{Premières notions}
 Plaçons nous, dans un premier temps, en dimension finie et considérons un ouvert $U$ de $\R^n$, $f\in C^0(\bar{U},\R^n)$ et $y\notin f(\partial U)$ et suppsons qu'on veuille construire une fonction $\operatorname{deg}$ qui "compte" le nombre de de solutions de l'équation $f(x)=y$ dans $U$. Faisons une petite analyse de la situation: remarquons d'abord qu'on doit avoir la \textit{normalité}
@@ -1385,7 +1446,7 @@ De façon remarquable, en dimension finie, il y'a qu'une seule fonction qui poss
 On peut montrer que cette fonction remplit bien les 3 conditions et que c'est la seule. Ensuite, via le théorème de Morse-Sard et quelques techniques d'approximation classiques, on peut généraliser cette fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour les détails. Notez que les 3 conditions mènent à une fonction qui ne compte pas vraiment le nombre de solutions , mais associe un \textit{signe} à chacune d'entre elle. Si on voit l'ensemble $f^{-1}(y)$ comme une hypersurface, le signe est positif si on en "sort" et négatif si on "rentre" 
 
 
-\subsubsection{Construction du degré de Leray-Schauder}
+\subsubsection{Construction}
 Il est impossible de généraliser la notion du degré de Brouwer aux espaces de Banach. Pour le voir, nous montrons un cas particulier du théorème du point fixe en utilisant uniquement les propriétés du degré et montrons ensuite qu'il ne s'applique pas en dimension infinie
 \begin{proposition}
     si $r>0$ et $f\in C^0(\bar{B(0,r)},\bar{B(0,r)})$ alors $f$ admet un point fixe
@@ -1430,7 +1491,25 @@ Un petit contre exemple en dimension infinie
     Il n'existe pas d'équivalent au degré de Brouwer en dimension infinie.
 \end{corollaire}
 Il faut alors restreindre l'ensemble des fonctions sur lequel on va travailler si on veut espérer définir une notion de degré. C'est le travail effectué par  Juliusz Schauder et  Jean Leray pendant les années 30, nous consacrons les prochaines paragraphes à en faire la synthèse.
+Le degré de Leray-Schauder est défini sur les \textit{ perturbations compactes de l'identité} i.e on suppose $F$ de la forme $I-G$ avec $G$ une application compacte 
 
+\begin{theobox}{Leray-Schauder}{}
+    Soit $X$ un espace de Banach et 
+    \begin{equation*}
+        A=\left\{
+            (I-G,U,y): U \subseteq\mathcal{B}(X)\text{ et ouvert },G\in\mathbb{K}(\bar{U}),y\notin (I-G)(\partial U)
+        \right \}
+    \end{equation*}
+    l'ensemble des \textit{triplets admissibles}
+    il existe une unique fonction 
+    \begin{equation*}
+        \operatorname{deg}: A\rightarrow \mathbb{Z}
+    \end{equation*}
+    satisfaisant la normalité, l'invariance par homotopie et l'additivité.
+\end{theobox}
+\begin{preuve}
+    \todo{faire les lemmes techniques et faire la preuve en détails}
+\end{preuve}
 \newpage
 \subsubsection{2 théorèmes classiques}
 
@@ -1446,7 +1525,7 @@ Il faut alors restreindre l'ensemble des fonctions sur lequel on va travailler s
 
 \subsection{Le degré orienté}
 \subsubsection{Construction}
-Nous allons introduire une notion d'orientation pour les fonctions de Fredholm. Cette dernière, proposée par Furi dans \cite{BenevieriFuri1998}, a ensuite été mobilisée dans \cite{BenevieriFuri2001} pour obtenir des résultats de Bifurcation. Nous présentons ainsi les idées de ces 2 papiers.
+Nous allons introduire une notion d'orientation pour les fonctions de Fredholm. Cette dernière, proposée par Furi dans \cite{BenevieriFuri1998}, a ensuite été mobilisée dans \cite{BenevieriFuri2001} pour obtenir des résultats de bifurcation. Nous présentons ainsi les idées de ces 2 papiers.
 \begin{definition}
     Si $X,Y$ sont des espaces de Banach et  $D\in\mathcal{F}_0(X,Y)$ alors $E$ est une \textit{correcteur } de $D$ si $D+E$ est un isomorphisme et si son image est de dimension finie. On pose $\mathcal{C}(D)$ l'ensemble des correcteurs de $D$
 \end{definition}
@@ -1547,7 +1626,7 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
     \todo{PREUVE complete}
 \end{preuve}
 \subsection{Approche $K$-théorique}\label{K-th}
-\subsection{Rappels et compléments de topologie algébrique}
+\subsubsection{Rappels et compléments de topologie algébrique}
 Rappelons très brièvement les bases de la topologie algébrique. Nous donnons également un bref exposé sur la cohomologie. Le lecteur intéressé par les détails pourra simplement consulter un cours de topologie algébrique ([SOURCE], pour n'en citer qu'un).
 
 \begin{definition}
@@ -1599,10 +1678,19 @@ On choisit un groupe abélien $A$, et considère les groupes duaux des $C_p(X)$ 
 \begin{equation*}
     \partial_p^{*}: C_p(X)^{*}\rightarrow C_{p+1}(X)^{*}| \varphi\mapsto \varphi\circ \partial_{p+1}
 \end{equation*}
+On alors le complexe suivant
+\[\begin{tikzcd}
+	\cdots & {C_p(X)^{*}} & {C_{p-1}(X)^{*}} & \cdots
+	\arrow["{\partial^*_{p+1}}"', from=1-2, to=1-1]
+	\arrow["{\partial^*_{p}}"', from=1-3, to=1-2]
+	\arrow["{\partial^*_{p-1}}"', from=1-4, to=1-3]
+\end{tikzcd}\]
 et on définit enfin 
 \begin{equation*}
     H^p(X,A)=\ker \partial^*_{p+1}/\im \partial^*_p, p\geq 0
 \end{equation*}
+
+
 En ce qui que concerne la $K$-théorie, nous suivons, dans les grande lignes, \cite{Karoubi1978KTheory}
 
 
@@ -1730,7 +1818,7 @@ Bien sûr, celà ne fonctionne que si on suppose $X$ plongé continument dans $Y
 \subsection{La bifurcation de Hopf}
 \newpage
 
-\addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,KlausNonLin8,friedmanpartial}
+\addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,KlausNonLin85,friedmanpartial}
 \addtocategory{plusloin}{schwartz1960nash,glockner2006implicit}
 \printbibliography[
   category=utilises,
