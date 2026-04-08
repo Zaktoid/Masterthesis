@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {1.2}Elements de théorie des EDP}{12}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Réduction de Lyapunov-Schmidt et étude locale}{13}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Approche analytique}{13}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Cas où $\qopname \relax o{dim}\Lambda =1$}{14}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Cas où $\qopname \relax o{dim}\Lambda =\infty $}{17}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Cas où $\qopname \relax o{dim}\Lambda =1$}{15}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Cas où $\qopname \relax o{dim}\Lambda =\infty $}{18}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Approche via la théorie des singularités}{24}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}L'anneau $\mathcal {E}_n$}{24}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Détermination finie}{27}{subsubsection.2.2.2}%
@@ -24,11 +24,7 @@
 \contentsline {subsection}{\numberline {3.3}Approche $K$-théorique}{36}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Rappels et compléments de topologie algébrique}{36}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Fibrés et fibrés vectoriels}{37}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Classes de Stiefel-Whitney }{39}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}La catégorie $\mathfrak {F}(X)$}{39}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}Introduction à la K-théorie}{39}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}application à la détection globale d'une bifurcation}{39}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.3}Introduction à la K-théorie}{39}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}application à la détection globale d'une bifurcation}{40}{subsubsection.3.3.4}%
 \contentsline {section}{\numberline {4}Introduction aux bifurcations équivariantes et symétries}{41}{section.4}%
-\contentsline {section}{\numberline {5}Introduction aux bifurcations dynamiques}{42}{section.5}%
-\contentsline {subsection}{\numberline {5.1}quelques notions de stabilité}{42}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}La bifurcation de Hopf}{42}{subsection.5.2}%
+\contentsline {section}{\numberline {5}Bifurcation de systèmes dynamiques}{42}{section.5}%

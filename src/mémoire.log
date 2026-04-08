@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.6)  4 APR 2026 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.6)  8 APR 2026 12:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -892,30 +892,30 @@ Package csquotes Info: Redefining alias 'default' -> 'french'.
  (./mémoire.aux)
 \openout1 = `mémoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Info: Redefining \degres on input line 116.
-LaTeX Info: Redefining \up on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Info: Redefining \degres on input line 115.
+LaTeX Info: Redefining \up on input line 115.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count474
@@ -935,7 +935,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 115.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -945,9 +945,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count480
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 115.
+LaTeX Info: Redefining \pageref on input line 115.
+LaTeX Info: Redefining \nameref on input line 115.
  (./mémoire.out) (./mémoire.out)
 \@outlinefile=\write5
 \openout5 = `mémoire.out'.
@@ -968,171 +968,168 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'mémoire.bbl' found.
  (./mémoire.bbl)
-Package biblatex Info: Reference section=0 on input line 116.
-Package biblatex Info: Reference segment=0 on input line 116.
+Package biblatex Info: Reference section=0 on input line 115.
+Package biblatex Info: Reference segment=0 on input line 115.
 \c@lstlisting=\count481
-LaTeX Font Info:    Trying to load font information for U+msa on input line 119.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 119.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./mémoire.toc
-LaTeX Font Info:    Trying to load font information for U+euf on input line 28.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-))
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./mémoire.toc)
 \tf@toc=\write6
 \openout6 = `mémoire.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.120 \newpage
+l.119 \newpage
                [1] [2] [3]
-Overfull \hbox (6.35318pt too wide) detected at line 177
+Overfull \hbox (6.35318pt too wide) detected at line 176
 \OML/cmm/m/it/12  \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \U/msb/m/n/12 R[]\OML/cmm/m/it/12 ; A \OMS/cmsy/m/n/12 7! [] []
  []
 
 [4] [5] [6]
-Overfull \hbox (8.90062pt too wide) in paragraph at lines 316--320
+Overfull \hbox (8.90062pt too wide) in paragraph at lines 315--319
 [][]\T1/cmr/bx/n/12 D�finition 1.15. []\T1/cmr/m/n/12 Si $\OML/cmm/m/it/12 X \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 X[]$ \T1/cmr/m/n/12 o� les $\OML/cmm/m/it/12 X[]$ \T1/cmr/m/n/12 sont des es-paces de Ba-nach, si $\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 a[]; []  ; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 351--353
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--356
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
 [9]
-Overfull \hbox (16.7018pt too wide) detected at line 468
+Overfull \hbox (16.7018pt too wide) detected at line 467
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G= []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[] \OMS/cmsy/m/n/12 ^^N \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) = [](\OML/cmm/m/it/12 G= [] D[]\OT1/cmr/m/n/12 ) + [](\OML/cmm/m/it/12 F= [] D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 )) + []([](\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ))
  []
 
 [10] [11] [12] [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 673.
+(hyperref)                removing `math shift' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 673.
+(hyperref)                removing `\mathop' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 673.
+(hyperref)                removing `\mathgroup' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 673.
+(hyperref)                removing `\symoperators' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 673.
+(hyperref)                removing `\@ifnextchar' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 673.
+(hyperref)                removing `\Lambda' on input line 684.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 673.
+(hyperref)                removing `math shift' on input line 684.
 
-[14] [15] [16]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 813.
-
+[14] [15] [16] [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 813.
+(hyperref)                removing `math shift' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 813.
+(hyperref)                removing `\mathop' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 813.
+(hyperref)                removing `\mathgroup' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 813.
+(hyperref)                removing `\symoperators' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 813.
+(hyperref)                removing `\@ifnextchar' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 813.
+(hyperref)                removing `\Lambda' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 813.
+(hyperref)                removing `\infty' on input line 848.
 
-[17] [18] [19]
-Overfull \hbox (27.41995pt too wide) detected at line 975
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 848.
+
+[18] [19] [20]
+Overfull \hbox (27.41995pt too wide) detected at line 1010
 []
  []
 
-[20] [21] [22] [23]
+[21] [22] [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1082.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1082.
+(hyperref)                removing `math shift' on input line 1117.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1082.
+(hyperref)                removing `subscript' on input line 1117.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1117.
 
 [24] [25] [26] [27]
-Overfull \hbox (14.21861pt too wide) detected at line 1289
+Overfull \hbox (14.21861pt too wide) detected at line 1324
 \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 M \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ^^R \OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 , 8\OML/cmm/m/it/12 v \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V; T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 v\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^S \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 )[] [] \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 v\OT1/cmr/m/n/12 )[]
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1628.
+(hyperref)                removing `math shift' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1628.
+(hyperref)                removing `math shift' on input line 1663.
 
-[36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1714
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1746--1748
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1788--1792
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1754--1758
-
+LaTeX Font Info:    Trying to load font information for U+euf on input line 1827.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (12.6577pt too wide) in paragraph at lines 1829--1830
+[][]\T1/cmr/bx/n/12 D�finition 3.21. []\T1/cmr/m/n/12 Une ca-t�-go-rie $\U/euf/m/n/12 C$ \T1/cmr/m/n/12 est \T1/cmr/m/it/12 pr�-additive \T1/cmr/m/n/12 si tout en-semble de mor-phismes $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A; B\OT1/cmr/m/n/12 )$
  []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1771.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1771.
 
 [39] [40] [41] [42]
 
@@ -1155,28 +1152,28 @@ Package biblatex Warning: Split bibliography detected.
 
 [43] (./mémoire.aux)
 Package rerunfilecheck Info: File `mémoire.out' has not changed.
-(rerunfilecheck)             Checksum: 28823997CA4A1E4885BF8F293939CBE1;6915.
+(rerunfilecheck)             Checksum: A83BAE113E64E55930FD43E05D5D4326;6116.
 Package logreq Info: Writing requests to 'mémoire.run.xml'.
 \openout1 = `mémoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41279 strings out of 478287
- 847510 string characters out of 5849290
- 1554254 words of memory out of 5000000
- 58658 multiletter control sequences out of 15000+600000
- 489901 words of font info for 82 fonts, out of 8000000 for 9000
+ 41302 strings out of 478287
+ 848069 string characters out of 5849290
+ 1552188 words of memory out of 5000000
+ 58680 multiletter control sequences out of 15000+600000
+ 488957 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,16n,118p,1351b,1860s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 114i,16n,118p,1351b,1833s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.0@zeidler1986nonlinear} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.0@Pejsachowicz2011Index} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on mémoire.pdf (44 pages, 498226 bytes).
+Output written on mémoire.pdf (44 pages, 503108 bytes).
 PDF statistics:
- 761 PDF objects out of 1000 (max. 8388607)
- 636 compressed objects within 7 object streams
- 210 named destinations out of 1000 (max. 500000)
- 421 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 748 PDF objects out of 1000 (max. 8388607)
+ 623 compressed objects within 7 object streams
+ 212 named destinations out of 1000 (max. 500000)
+ 389 words of extra memory for PDF output out of 10000 (max. 10000000)
 

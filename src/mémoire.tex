@@ -675,9 +675,9 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     On fixe également des \textit{conditions de bord} $D_1 \theta(0)=D_1 \theta(1)$ (on suppose que le cylindre a une longueur 1 et qu'on a fixé les extêmités). Si on pose $Y=C^0([0,1])$, et $X=\left\{ f\in C^2([0,1])| f'(0)=f'(1)=0\right\}$ alors $Y$ est un espace de banach (avec la norme habituelle) et $X$ est un espace de banach avec la norme $||f||_2= ||f||_{[0,1]}+||f'||_{[0,1]}+||f''||_{[0,1]}$
     posons $\lambda=P-P_{crit}$ avec $P_{crit}$ la valeure critique , on écrit alors
     \begin{equation*}
-        F: X\times \R\rightarrow Y| (\theta,\lambda)\mapsto D^2 \theta + \lambda \sin\theta
+        F: X\times \R\rightarrow Y| (\theta,\lambda)\mapsto D^2 \theta + (\lambda+P_{crit}) \sin\theta
     \end{equation*}
-    
+    On calcule alors
 \end{exemple}
 
 
@@ -686,7 +686,6 @@ dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on pe
 
 On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
 
-\newpage
 \begin{theobox} {Fold}{}\label{fold}
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
     supposons que
@@ -764,7 +763,10 @@ On a alors simplement la situation "vecteur tangent vertical"
     On aura une bifurcation "fold"
     \todo{ Calculs}
 \end{exemple}
-Un exemple plus intéressant: con
+Un exemple plus intéressant:
+\begin{exemple}
+    \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
+\end{exemple}
 \begin{remarque}
     On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'obersevables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variable d'état
 \end{remarque}

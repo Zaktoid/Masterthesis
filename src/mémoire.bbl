@@ -280,35 +280,6 @@
       \field{volume}{51}
       \field{year}{1985}
     \endentry
-    \entry{Karoubi1978KTheory}{book}{}
-      \name{author}{1}{}{%
-        {{hash=bd2038c32c40af7dd9d3259e956868e7}{%
-           family={Karoubi},
-           familyi={K\bibinitperiod},
-           given={Max},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Berlin, Heidelberg, New York}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag}%
-      }
-      \strng{namehash}{bd2038c32c40af7dd9d3259e956868e7}
-      \strng{fullhash}{bd2038c32c40af7dd9d3259e956868e7}
-      \strng{bibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
-      \strng{authorbibnamehash}{bd2038c32c40af7dd9d3259e956868e7}
-      \strng{authornamehash}{bd2038c32c40af7dd9d3259e956868e7}
-      \strng{authorfullhash}{bd2038c32c40af7dd9d3259e956868e7}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{series}{Grundlehren der mathematischen Wissenschaften}
-      \field{title}{K-Theory: An Introduction}
-      \field{volume}{226}
-      \field{year}{1978}
-    \endentry
     \entry{Marcut2009FredholmNotes}{misc}{}
       \name{author}{1}{}{%
         {{hash=78a333f1d7cc8b0f9aa3680da4c22320}{%
