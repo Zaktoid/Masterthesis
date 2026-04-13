@@ -331,7 +331,6 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{preuve}
     voir \cite{dieudonne1969fma8}
 \end{preuve}
-\newpage
 \begin{theobox}{}{}\label{FI}
 Soient $X,\Lambda,Y$ des espaces de Banach, $V$ un ouvert $X\times\Lambda$ et $f\in C^1(V,Y)$. Suposons de plus que $F^{-1}(0)$ est non vide. Alors si $D_2 F(x_0,\lambda_0)$ est un isomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinnage  ouvert $V'\subseteq V$ de $(x_0,\lambda_0)$, $U$ un voisinage de $(x_0)$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
@@ -677,7 +676,11 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     \begin{equation*}
         F: X\times \R\rightarrow Y| (\theta,\lambda)\mapsto D^2 \theta + (\lambda+P_{crit}) \sin\theta
     \end{equation*}
-    On calcule alors
+    On calcule alors la dérivée de Fréchet de $F$
+    \begin{equation*}
+        DF = D^2 + (\lambda+ P_{crit})\cos
+    \end{equation*}
+    et donc, $DF(0,0)=0$
 \end{exemple}
 
 
@@ -1168,7 +1171,7 @@ On munit $\mathcal{E}_n$ d'une structure d'anneau de la façon suivante: si $\et
 
 On vérifie facilement que ces opérations sont bien définies et que $(\mathcal{E}_n,+,\cdot)$ est un anneau commutatif, et que l'évaluation en 0 ainsi que la dérivée en 0 sont bien définies. Nous consacrons les paragraphes suivants à l'étude de cet anneau. Nous commençons par remarquer que c'est un anneau local
 \begin{remarque}
-    Des notions similaires existent en dimension infini. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt. Le lecteur intéressé est invité à consulter \todomaybe{SOURCE qui cite le truc , ou annexe, on verra si j'ai le temps}
+    Des notions similaires existent en dimension infini. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt.
 \end{remarque}
 \begin{proposition}
     l'ensemble $\mathcal{M}_n=\{\eta\in\mathcal{E}_n | \eta(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
@@ -1297,7 +1300,7 @@ Nous introduisons la notion suivante
         \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
     \end{equation*}
 \end{definition}
-A la façon de Wall dans \cite{Wall1981FiniteDeterminacy} nous allons considérer des relations d'équivalence induites par des actions de groupes sur l'espace des germes. Cela nous évite de traiter les différentes notions d'équivalence "une par une" comme le fait Montaldi dans \cite{montaldi2021sbc} et d'obtenir rapidement un résultat assez puissant et général\\
+A la façon de Wall dans \cite{Wall1981FiniteDeterminacy} nous allons considérer des relations d'équivalence induites par des actions de groupes sur l'espace des germes. Cela nous évite de traiter les différentes notions d'équivalence "une par une" comme le fait Montaldi dans \cite{montaldi2021sbc} et d'obtenir rapidement un résultat assez puissant et généra. \\
  Plus précesimment:  on rappelle que si $G$ agit à droite sur $E$, alors on a la relation d'équivalence naturelle 
  \begin{equation*}
     \sim_G : e \sim_Gf \Leftrightarrow \exists g\in G : g\cdot e=f
@@ -1337,19 +1340,29 @@ et que
 le corrolaire [corollaire] nous permet aussi de dire que
 
 \begin{equation*}
-    J^k(n,m)\cong (\mathcal{E}_n /\mathcal{M}_n^{m+1})^m
+    J^k(n,m)\cong (\mathcal{E}_n /\mathcal{M}_n^{m+1})^k
 \end{equation*}
 
 
-Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de définir une notion d'espace tangent. Etant donné qu'il s'agit d'un espace de fonctions, il est naturel de considérer la notion de vecteurs \textit{le long} d'une fonction 
-
-
-si $M$ et $N$ sont des $C^1$-variétés, et si $f\in C^1(M,N)$, on pose
-
-
-
+Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de définir une notion d'espace tangent. Etant donné qu'il s'agit d'un espace de fonctions, il est naturel de considérer la notion de vecteurs \textit{le long} d'une fonction: si $M$ et $N$ sont des $C^1$-variétés,
+et si $f\in C^1(M,N)$, on voudrait que le champ de vecteur $V$ "le long de $f$" soit défini sur on espace de départ $M$ et à valeurs dans $TM$, si on représente la situation sur un diagramme:
+\[\begin{tikzcd}
+	TM & TN \\
+	M & N
+	\arrow["Tf", from=1-1, to=1-2]
+	\arrow["\pi"{description}, from=1-1, to=2-1]
+	\arrow["{\pi'}"{description}, from=1-2, to=2-2]
+	\arrow["V"{description}, from=2-1, to=1-2]
+	\arrow["f", from=2-1, to=2-2]
+\end{tikzcd}\]
+Cela nous suggère d'exiger que $\pi'\circ V=f$.
+si on pose 
 \begin{equation*}
-    tf: \Gamma(TM)\rightarrow \Gamma (f^*TN) ,\space v\mapsto Tf\circ v
+    f^{*} TN=\left\{ (m,p)\in M\times TN |f(m)=\pi'(p)\right\}
+\end{equation*}
+le pullback de $f$ du fibré tangent de $N$ et
+\begin{equation*}
+    \Gamma(f^{*} TN)=\left\{ \sigma\in C^0(M,f^{*} TN) \big| \pi_1(\sigma(m))=m\right\}
 \end{equation*}
 
 
