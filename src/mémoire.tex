@@ -681,7 +681,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     \begin{equation*}
         DF = D^2 + (\lambda+ P_{crit})\cos 
     \end{equation*}
-    et donc, $DF(0,0)=D^2+$
+\todo{Terminer l'exemple}
 \end{exemple}
 
 
@@ -1143,9 +1143,12 @@ d'appliquer des techniques de théorie des singularités et de théorie des grou
     \begin{equation*}
         \mathcal{E}(x_0,X,Y)=\mathcal{G}_{\infty}(x_0,X,Y)/\sim_{x_0}
     \end{equation*}
-    On pose  $\mathcal{E}_n=\mathcal{E}_n(\R^n,\R)$
+    On pose  $\mathcal{E}_n=\mathcal{E}(0,\R^n,\R)$
 \end{definition}
-De façon naturelle, si $\mathcal{F}$ est un espace fonctionnel quelconque on parlera "de germe de $\mathcal{F}$" pour parler des germes qui ont un élément de de $\mathcal{F}$ parmis leur représentant (germes de difféomorphismes entre deux espaces, etc...)
+\begin{definition}
+    Une germe de difféomorphisme de $\mathcal{E}(0,\R^n,\R^n)$ est un élément de $\mathcal{E}(0,\R^n,\R^n,0)$ (on fixe la cible à zéro) ayant un difféomorphisme d'un ouvert de $\R^n$ contenant zéro dans ses représentants.
+\end{definition}
+
 \begin{remarque}\label{remsheaf}
     La notion moderne généralisant ce genre de structure est appelé \textit{faisceau}.
     Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, U\subseteq V}$ respectant les axiomes suivants :
@@ -1155,7 +1158,7 @@ De façon naturelle, si $\mathcal{F}$ est un espace fonctionnel quelconque on pa
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$ si $s,t\in\mathcal{F}(U)$ sont telles que \\$ \forall i\in\mathcal{I} ,\rho^U_{U_i}(s)=\rho^U_{U_i}(t)$ alors $s=t$ (localité )
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^U_{U_i\cap U_j}(s_j)=\rho^U_{U_i\cap U_j}(s_i)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
     \end{itemize}
-    Les deux axiomes sont des axiomes purement structurel (voir la section sur la théorie des catégorie). Les deux autres permettent de capturer les propriétés désirés. Ainsi,si $Y$ alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on défini enfin la \textit{fibre} d'un faisceau en un point $x\in X$ comme étant
+    Les deux axiomes sont des axiomes purement structurel (voir la section sur la théorie des catégorie). Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y$ est un espace de Banach alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on défini enfin la \textit{germe} d'un faisceau en un point $x\in X$ comme étant
     \begin{equation*}
         \mathcal{F}_x=\varinjlim_{U \ni x} F(U)
     \end{equation*}
@@ -1240,7 +1243,7 @@ en effet,
 \end{equation*}
 correspond  à prendre le jet d'ordre $r$, cela se déduit du corollaire suivant:
 
-\begin{corollaire}
+\begin{corollaire}\label{corrJets}
     \begin{equation*}
         f\in\mathcal{M}_n^r\Leftrightarrow
         \forall \alpha\in\mathbb{N}^n : |\alpha|< r, D_0^{(\alpha)}f=0 
@@ -1287,11 +1290,11 @@ Rappelons le lemme de Nakayama
     On conclut , grâce à Nakayama, que $\mathcal{M}_n^k\subset I$ comme exigé
 \end{proof}
 
-\subsubsection{Relations d'équivalences}
-Dans cette section, nous précisons les relations  d'équivalences les plus communes en théorie des singularités et nous introduisons un formalisme pour traiter des équivalences de déformations de germes. 
-Tout d'abord, un petit exemple pour motiver les constructions qui vont suivre: introduisons les équivalences faibles et fortes entre problèmes de bifurcation proposées par Golubitsky et Shaeffer dans \cite{golubitsky1985sgb1}\\
-Soient 
-$f,g\in\mathcal{E}_{\infty}(\R^n\times \Lambda,\R^p)$ où $\Lambda$ est un ouvert de $\R^m$ (par exemple) on dira que les problèmes de bifurcation
+\subsubsection{relations d'équivalences: exemple introductif} 
+.\\
+\todo{paragraphe introductif}
+.\\
+$f,g\in\mathcal{E}(\R^n\times \Lambda,\R^p)$ où $\Lambda$ est un ouvert de $\R^m$ (par exemple) on dira que les problèmes de bifurcation
 \begin{equation*}
     f(x,\lambda)=0\text{ et } g(x,\lambda)=0
 \end{equation*}
@@ -1300,10 +1303,10 @@ sont faiblement équivalents si il existe une germe de difféomorphisme  $\phi\i
      (x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes de difféomorphismes }
 \end{equation*}
 Et $S\in\mathcal{E}_{\infty}(\R^n\times \Lambda,\operatorname*{GL}(\R^p))$ tels que
-\begin{equation*}
+\begin{equation}\label{GolubEQ}
     f\circ\phi= S\cdot g
-\end{equation*}
-On peut interpréter ça de la façon suivante: avant d'appliquer $f$ on s'autorise à modifier l'espace de départ $\R^n\times\Lambda$ mais on veut que les sous espaces de la forme $\R^n\times \{\lambda_0\}$ avec soient envoyé sur des espaces similaires, $\R^n\times \{\lambda_1\}$, cette restriction traduit le fait que le paramètre $\lambda$ décrit une influence externe et la transformation doit préserver cet aspect. si $h=Id$ on dira qu'ils sont \textit{fortement équivalents}
+\end{equation}
+ si $h=\operatorname*{Id}$ on dira qu'ils sont \textit{fortement équivalents}
 \begin{exemple}
     reprenons encore la bifurcation "trident"
     \begin{equation*}
@@ -1311,7 +1314,7 @@ On peut interpréter ça de la façon suivante: avant d'appliquer $f$ on s'autor
     \end{equation*}
     On peut, par exemple, considérer
     \begin{equation*}
-        H(x,\lambda)=-x-\lambda\text{ et } h(\lambda)=\lambda^3+\frac{1}{2}
+        H(x,\lambda)=-x-\lambda\text{ et } h(\lambda)=\lambda^3+\frac{1}{2}\lambda
     \end{equation*}
     On vérifie facilement que $(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))$ est une germe de difféomorphisme
 \end{exemple}
@@ -1332,62 +1335,28 @@ inversible, ne change pas l'ensemble
 d'annulation, de plus, si on a un certaine 
 nombre de solutions en $\lambda_0$, par 
 exemple 
-$(x_1,\lambda_0)$,...,$(x_1,\lambda_n)$ alors 
+$(x_1,\lambda_0)$,...,$(x_n,\lambda_0)$ alors 
 cet ensemble va être transpoté, via $\phi$ sur 
 $(H(x_1,\lambda_0),h(\lambda_0)),\cdots, (H
 (x_1,\lambda_0),h(\lambda_0))$ et donc,grâce à 
 la structure de $\phi$, elles sont trouvent 
 sur la même "tranche" $\R^n\times \{h
-(\lambda_0)\}$. Mainenant, on voudrait bien 
-comprendre quelles sont les perturbations qui 
-conserve la structure d'une problème de 
-bifurcation. On introduit naturellement la 
-notion de déformation: Soit $U$ une partie de 
-$\R^k$ contenant $0$, $F\in\mathcal{E}(X\times 
-\Lambda\times U,\R^p)$ est une déformation de 
-$f$ si $F(\cdot,0)=f$. Dans \cite
-{golubitsky1985sgb1}, Golubitsky a commencé 
-par considérer des déformations très simples: 
-on considère $U=[0,1]$, $p\in\mathcal{E}(\R^n\times \Lambda,\R^p)$ et 
+(\lambda_0)\}$. Si on a une germe 
+$g(x,\lambda)$ un peut se demander quelles sont les perturbations qui conserve sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équilavence pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ une germe, considérons la famille $h_t=(g+tp)_{t\in [0,1]}$ 
+pour que $p$ soit une transformation qui conserve la strucutre, on veux deux choses: d'une part que
 \begin{equation*}
-    F(x,\lambda,t)=f(x,\lambda)+tp
-\end{equation*}
-pour que $p$ soit une perturbation qui ne détruise pas la structure de $f$, on peut par exemple exiger que 
+    \forall t\in [0,1], h_t\text{ est équivalent à} 
+\end{equation*}  
+et d'autre part, on veut que \textit{l'équivalence soit lisse}. Souvenez vous,la relationd d'équilavence \ref{GolubEQ} exige l'existence de  germes difféomorphismes, ainsi, pour tous $t\in ]0,1[$, on aura des germes difféomorphisme $\phi_t$  et $S_t$, on va naturellement exiger que 
 \begin{equation*}
-    \forall t\in [0,1], F(\cdot,\lambda,t)\text{ est (fortement) équivalent à } f
-\end{equation*}
-  \\
-Plaçons nous dans un cadre abstrait dans un premier temps: considérons l'espace des germes en un point entre deux espaces topologiques : $\mathcal{E}(X,Y)_{x_0}$. Soit 
-$\mathcal{F}=(\mathcal{F}_i\in\mathcal{P}(\mathcal{E}(V_i,V_i')))_{0\leq i\leq n}$ une suite d'ensemble de germes, avec $V_i$ et $V_i'$ des ouverts d'espaces de Banach, on pose
-\begin{equation*}
-    \mathfrak{R}(\mathcal{F};X,Y,x_0)
-\end{equation*}
-L'ensemble des relations d'équivalences sur
- $\mathcal{E}(X,Y)_{x_0}$ de la forme 
-\begin{equation*}
-    f\sim_{\mathcal{G}}g\text{ si }\exists \phi_1\in \mathcal{F}_1,\cdots,\phi_n\in\mathcal{F}_n: \verb|condition|
-\end{equation*}
-où $ \verb|condition|$ est une condition algébrique quelconque (égalité de compositions, produit, ...).
-on notera alors $f\sim_{\mathcal{G},\phi_1,\cdots,\phi_n} g$
-\begin{definition}
-    Soit $f\in\mathcal{E}(X,Y)_{x_0}$, soit $U$ un ouver connexe par arcs d'un espace de Banach , et $u_0\in U$ on pose 
-    \begin{equation*}
-        \mathcal{W}(U,u_0,f)=\left\{ F\in \mathcal{E}(X\times U,Y)_{x_0,u_0} | F(\cdot,u_0)=f\right\}
-    \end{equation*}
-    l'ensemble des $U$-déformations de $f$ en $u_0$. Bien sûr, si on a une notion de fonction $C^k$, on défini $\mathcal{W}_k(U,u_0,f)$ de façon similaire
-\end{definition}
-Mainenant, on remarque qu'un élément $\mathcal{G}$ de $\mathfrak{R}(\mathcal{F};X,Y,x_0)$ induit une relation d'équivalence entre déformations
-\begin{definition}
-    Soient $U_1$,$U_2$ des ouverts connexes par arcs d'espace de Banach $F_1\in\mathcal{W}(U_1,u_0,f)$ et $F_2\in\mathcal{W}(U_2,u_1,f)$  et $\mathcal{G}\in \mathfrak{R}(\mathcal{F};X,Y,x_0)$ , on dit que $F_1$ et $F_2$ sont $\mathcal{G}_{un}$-équivalents si il existe une germe de difféomorphisme lisse $h:U_1\rightarrow U_2$ tel que 
-    \begin{equation*}
-        \forall u\in U_1, F_1(\cdot,u)\sim_{\mathcal{G},\phi^u_1,\cdots,\phi^u_n} F_2(\cdot,h(u))
-    \end{equation*}
-    et telle que 
-    \begin{equation*}
-        (\phi_i : (u,v)\mapsto \phi_i^u(v))\in\mathcal{E}_{\infty}(U\times V_i,V'_i)
-    \end{equation*}
-\end{definition}
-\subsubsection{Détermination finie}\label{detfin}
+    (x,\lambda,t)\mapsto \phi(x,\lambda,t)\text{ et } (x,\lambda,t)\mapsto S(x,\lambda,t)
+\end{equation*} 
+définissent des germes \textit{lisses}
+\begin{remarque}
+    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé \textit{à priori } ([0,1]) alors qu'on travaille avec des \text{germes}. Cette imprécision sera levée par lemme de Mather [LEMME]
+\end{remarque}
+
+\subsubsection{Détermination finie: généralités}\label{detfin}
 C'est le coeur du sujet: on veut 
 pouvoir se ramemener à l'étude d'un nombre fini de termes du dévellopement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
 Nous introduisons la notion suivante
@@ -1398,26 +1367,16 @@ Nous introduisons la notion suivante
         \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
     \end{equation*}
 \end{definition}
-A la façon de Wall dans \cite{Wall1981FiniteDeterminacy} nous allons considérer des relations d'équivalence induites par des actions de groupes sur l'espace des germes. Cela nous évite de traiter les différentes notions d'équivalence "une par une" comme le fait Montaldi dans \cite{montaldi2021sbc} et d'obtenir rapidement un résultat assez puissant et généra. \\
- Plus précesimment:  on rappelle que si $G$ agit à droite sur $E$, alors on a la relation d'équivalence naturelle 
+Les relations d'équilavences qui nous intéressent
  \begin{equation*}
     \sim_G : e \sim_Gf \Leftrightarrow \exists g\in G : g\cdot e=f
  \end{equation*}
  Si $G$ agit à droite et $H$ agit à gauche, on définit naturellement l'action de $G\times H$ sur $E$
  \begin{equation*}
-    (g,h)\cdot x = g\cdot x \cdot h
+    (g,h)\cdot x = g\cdot x \cdot h^{-1}
  \end{equation*}
-Le groupe le plus naturel est $D(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $D(n)\times D(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
-On considère  $C(n,m)$  les familles de germes de difféomorphismes  $\Phi=(\varphi_{\lambda})_{\lambda\in\Lambda}$ où $\Lambda$ est un voisinnage ouvert de l'origine de $\R^n$ et les $\varphi_{\lambda}$ sont dans $DL(m)$, on impose aussi que la dépendance en $\lambda$ soit lisse. Il est clair qu'on peut identifier l'ensemble de telles familles à l'ensemble des éléments de $D(n+m)$ $\Phi$ tels que
-\begin{equation*}
-    \pi_n \circ \Phi=\pi_n\text{ et } \Phi(\cdot, 0)= (\cdot, 0)
-\end{equation*}
-C'est clairement un groupe.
-Si $f\in\mathcal{E}(0,\R^n,\R^m)$ alors on défini
-\begin{equation*}
-    (\varphi_{\lambda})_{\lambda\in\Lambda}\cdot f= x\mapsto \varphi_x(f(x))
-\end{equation*}
-C'est action induit \textit{l'équivalence fibrée gauche}. Enfin, on pose $K(n,m)= D(n)\ltimes C(n,m) $, son action induit \textit{l'équivalence de contact}. Dans la suite,on écrira $G$ pour signifier un des groupes décrits ci dessus, et $E$ la relation d'équivalence induite par l'aciton de $G$. On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
+Le groupe le plus naturel est $D(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $\mathcal{A}=D(n)\times D(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
+ On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
 \begin{theobox}{}{}
     Si $G$ est un groupe de lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la gauche et si $V$ est une sous variété connexe et lisse de $M$ alors 
     \begin{equation*}
@@ -1435,118 +1394,19 @@ et que
     \mathcal{E}(0,\R^n,\R^m)\cong \mathcal{E}_n^m
 \end{equation*}
 
-le corrolaire [corollaire] nous permet aussi de dire que
+le corrolaire \ref{corrJets} nous permet aussi de dire que
 
 \begin{equation*}
     J^k(n,m)\cong (\mathcal{E}_n /\mathcal{M}_n^{m+1})^k
 \end{equation*}
 
+Dans \cite{damon1984unfolding}, James Damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équilavences sur les germes les "sous groupes géométriques de $\mathcal{A}$ (qu'on a déjà introduit) et $\mathcal{K}$ (que nous introduirons dans la suite). Nous allons passer paragraphes à en exposer les idées
 
-Si on voit ces ensembles comme des variétés, il est alors naturel de tenter de définir une notion d'espace tangent. Etant donné qu'il s'agit d'un espace de fonctions, il est naturel de considérer la notion de vecteurs \textit{le long} d'une fonction: si $M$ et $N$ sont des $C^1$-variétés,
-et si $f\in C^1(M,N)$, on voudrait que le champ de vecteur $V$ "le long de $f$" soit défini sur on espace de départ $M$ et à valeurs dans $TM$, si on représente la situation sur un diagramme: 
-\[\begin{tikzcd}
-	TM & TN \\
-	M & N
-	\arrow["Tf", from=1-1, to=1-2]
-	\arrow["\pi"{description}, from=1-1, to=2-1]
-	\arrow["{\pi'}"{description}, from=1-2, to=2-2]
-	\arrow["V"{description}, from=2-1, to=1-2]
-	\arrow["f", from=2-1, to=2-2]
-\end{tikzcd}\]
-Cela nous suggère d'exiger que $\pi'\circ V=f$.
-si on pose 
-\begin{equation*}
-    f^{*} TN=\left\{ (m,p)\in M\times TN |f(m)=\pi'(p)\right\}
-\end{equation*}
-le pullback de $f$ du fibré tangent de $N$ et
-\begin{equation*}
-    \Gamma(f^{*} TN)=\left\{ \sigma\in C^0(M,f^{*} TN) \big| \pi_1(\sigma(m))=m\right\}
-\end{equation*}
+\subsubsection{Déploiments et espaces tangents}
 
-
-Intuitivement: On regarde un champ de vecteurs sur $M$, pour chaque vecteur lié $(x,v(x))$ On transporte la base sur $f(x)$ et le vecteur $v(x)$ sur $D_xf(v(x))$ !  Cette définition s'applique naturellement aux germes, la façon la plus propre de l'écrire serait via les faisceaux (cf. remarque \ref{remsheaf} ).
-On définit alors les espace tangent droits et droits étendus : 
-
-\begin{equation*}
-    TR_f=tf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{ et }
-    TR^e_f  = tf(\mathcal{V}(\R^n))
-\end{equation*}
-
-Ces espaces sont associés à l'équivalence droite. Pour le premier, on fixe l'image de zéro à zéro, pour l'autre, on la laisse libre.\\
-On pose, de plus
-
-
-\begin{equation*}
-    wf: \Gamma(TN)\rightarrow \Gamma(f^*(TN)),\space v\mapsto  v\circ f
-\end{equation*}
-
-
-On définit alors les espaces tangents gauches, gauches étendus et gauche-droite
-
-
-
-\begin{equation*}
-    TL_f=wf(\mathcal{M}_n\cdot \mathcal{V}(\R^n))\text{,   }
-    TL^e_f  = wf(\mathcal{V}(\R^n))
-\end{equation*}
-
-\begin{equation*}
-    TA_f=TR_f +TL_f  \text{,   }
-    TA^e_f  = TR^e_f +TL^e_f
-\end{equation*}
-
-
-On définit enfin 
-
-\begin{equation*}
-    TC_f = f^*(\mathcal{M}_n\cdot \mathcal{V}(R^n))
-\end{equation*}
-et 
-\begin{equation*}
-    TK_f= TR_f + TC_f, 
-    TK^e_f= TR^e_f+ TC_f
-\end{equation*}
-
-Ces espaces tangents on une dimension infinie en général... définit donc 
-
-\begin{equation*}
-    d(f,G)=\dim_\R(\mathcal{M}_n\cdot \Gamma(f^*T\R^m)/T _fG)
-\end{equation*}
-bien sûr, $d_e(f,G)$ se définit de façon similaire (avec l'espace tangent étendu).
-On notera $\gentan{f}{n}{m}$ un de ces espaces tangents, et toute affirmation sur $\gentan{f}{n}{m}$ est à comprendre comme une affirmation sur l'ensemble des espaces tangents ci-dessus.
-Nous avons besoin de quelques lemmes techniques avant de pouvoir caractériser la détermination finie
-\begin{lemme}
-    Si $f$,$g\in\mathcal{E}_n^m$ sont tels que $j^{k-1}_0f=j^{k-1}_0g$ alors
-    \begin{itemize}
-        \item pour toute germe de champ de vecteurs  de $\R^n$ $v$, $tf(v)-tg(v)\in \mathcal{M}^{k-1}\cdot V(f)$
-        \item si $\lambda\in\mathcal{E}_n$, $f^*\lambda-g^{*}\lambda\in\mathcal{M}^k_n$
-        \item Pour toute germe de champ de vecteurs  de $\R^m$ $v$, $wf(v)-wg(v)\in \mathcal{M}^{k-1}\cdot V(f)$
-    \end{itemize}
-\end{lemme}
-\begin{preuve}
-    
-\end{preuve}
-
-\begin{corollaire}
-Dans les hypothèses du lemme précédent, on a 
-\begin{equation*}
-    \rightane{f}{n}{m}+\mathcal{M}^{k-1}_n\cdot V(f)=\rightane{g}{n}{m}+\mathcal{M}^{k-1}_n\cdot V(g)
-\end{equation*}
-et , si $G$ est un des groupes habituels,
-\begin{equation*}
-        \gentan{f}{n}{m}+\mathcal{M}^{k}_n\cdot V(f)=\gentan{g}{n}{m}+\mathcal{M}^{k}_n\cdot V(g)
-\end{equation*}
-\end{corollaire}
-\begin{lemme}
-    
-\end{lemme}
-\subsubsection{Classification en dimension finie}
-\begin{definition}
-    si $U$ est un ouvert de $R^n$ et $f\in C^0(U,\R^m)$ alors $x_0\in U$ est un point critique si $Df(x_0)$ n'est pas de rang maximal. On pose $S_f(U)$ l'ensemble des points critiques de $f$ dans $U$. $y\in f(U)$ est une valeur régulière si $f^{-1}(y)\cap S_f(U)=\emptyset$ et est une valeur singulière sinon.
-\end{definition}
-
-
+\todo{Compléter, définitions usuelles}
 \newpage
+
 
 \section{Méthodes topologiques}
 
