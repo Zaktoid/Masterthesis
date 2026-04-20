@@ -772,7 +772,7 @@ Un exemple plus intéressant:
     \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
 \end{exemple}
 \begin{remarque}
-    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'obersevables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variable d'état
+    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'obersevables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variable d'état.
 \end{remarque}
 La plupart des articles de théorie de la bifurcation supposent l'existence d'une \textit{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
 \begin{equation*}
@@ -848,7 +848,7 @@ Répond à la question
 \begin{remarque}\label{remarque IND=0}
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'inex non-nul
 \end{remarque}
-Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramemener en dimension finie, ça ne marche pas si l'espace des paramètres en dimension infinie ! D'où la sous-section suivante.
+Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramemener en dimension finie, ça ne marche pas si l'espace des paramètres est de dimension infinie ! D'où la sous-section suivante.
 \subsubsection{Cas où $\dim \Lambda=\infty$}\label{LambdainfDim}
 Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
@@ -1126,14 +1126,14 @@ d'appliquer des techniques de théorie des singularités et de théorie des grou
         &\mathcal{G}(x_0,X,Y,y_0)=\{ f\in C^0(U,Y) | U\in\mathcal{V}_{x_0},f(x_0)=y_0\} \\
         & \mathcal{G}(x_0,X,Y)=\{ f\in C^0(U,Y) | U\in\mathcal{V}_{x_0}\}
     \end{align*}
-    Si de plus, on a une notion de fonction $C^k$ sur $X$ et $Y$ (par exemple, si ce sont des espaces de Banach) on défini naturellement $\mathcal{G}_k(x_0,X,Y,y_0)$ et $\mathcal{G}_k(x_0,X,Y)$ en imposant que les fonctions soient $C^k$ sur leur domaines.
+    Si de plus, on a une notion de fonction $C^k$ sur $X$ et $Y$ (par exemple, si ce sont des espaces de Banach) on défini naturellement $\mathcal{G}_k(x_0,X,Y,y_0)$ et $\mathcal{G}_k(x_0,X,Y)$ en imposant que les fonctions soient $C^k$ sur leur domaines. $x_0$ est appelé la source  et $y_0$ la cible
 \end{definition}
 
 \begin{definition}
     Soient $X,Y$ des espaces topologiques, $f,g\in \mathcal{G}(x_0,X,Y)$ on définit la relation d'équivalence suivante
     \begin{equation*}
         f\sim_{x_0} g \Leftrightarrow \exists U\in \operatorname{dom}(f)
-        \cap \operatorname{dom}(g) : f_{|_{U}}=g_{|_{U}}
+        \cap \operatorname{dom}(g)\cap \mathcal{V}_{x_0} : f_{|_{U}}=g_{|_{U}}
     \end{equation*}
 
 \end{definition}
@@ -1146,11 +1146,17 @@ d'appliquer des techniques de théorie des singularités et de théorie des grou
     On pose  $\mathcal{E}_n=\mathcal{E}(0,\R^n,\R)$
 \end{definition}
 \begin{definition}
-    Une germe de difféomorphisme de $\mathcal{E}(0,\R^n,\R^n)$ est un élément de $\mathcal{E}(0,\R^n,\R^n,0)$ (on fixe la cible à zéro) ayant un difféomorphisme d'un ouvert de $\R^n$ contenant zéro dans ses représentants.
+    Une germe de difféomorphisme de $\mathcal{E}(0,\R^n,\R^n)$ est un élément de $\mathcal{E}(0,\R^n,\R^n,0)$ (on fixe la cible à zéro) ayant un difféomorphisme d'un ouvert de $\R^n$ contenant zéro dans ses représentants. Cet ensemble est noté $\mathcal{D}_n$
 \end{definition}
 
+On utilisera parfois la notation 
+\begin{equation*}
+    f : (x_0,X)\rightarrow (y_0,Y)
+\end{equation*}
+Pour spécifier que $f$ est le représentant d'une germe de source $x_0$ et de cible $y_0$
+
 \begin{remarque}\label{remsheaf}
-    La notion moderne généralisant ce genre de structure est appelé \textit{faisceau}.
+    C'est un cas particulier\textit{faisceau}, cette formulation nous sera utile dans la suite.
     Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, U\subseteq V}$ respectant les axiomes suivants :
     \begin{itemize}
         \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
@@ -1175,7 +1181,13 @@ On munit $\mathcal{E}_n$ d'une structure d'anneau de la façon suivante: si $\et
 
 On vérifie facilement que ces opérations sont bien définies et que $(\mathcal{E}_n,+,\cdot)$ est un anneau commutatif, et que l'évaluation en 0 ainsi que la dérivée en 0 sont bien définies. Nous consacrons les paragraphes suivants à l'étude de cet anneau. Nous commençons par remarquer que c'est un anneau local
 \begin{remarque}
-    Des notions similaires existent en dimension infini. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt.
+    Des notions similaires existent en dimension infinie. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt.
+\end{remarque}
+
+
+
+\begin{remarque}
+    Lorsqu'on définira des sous ensembles de germe via une certaine propriété, il faut comprendre "Il existe un un représentant telle que la propriété est vraie sur un voisinage de $0$". Et la propriété sera alors vraie peu importe le représentant (en prenant l'instersection des voisinages)
 \end{remarque}
 \begin{proposition}
     l'ensemble $\mathcal{M}_n=\{\eta\in\mathcal{E}_n | \eta(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
@@ -1184,16 +1196,16 @@ On vérifie facilement que ces opérations sont bien définies et que $(\mathcal
 Il suffit d'observer que si $\eta\in\mathcal{E}_n\setminus\mathcal{M}_n$, alors il inversible. En effet, si $f\in\eta$ alors $1/f$ est défini sur un voisinage de zéro et $\xi=[1/f]_{\sim_0}$ est l'inverse de $\eta$
 \end{preuve}
 
-On peut trouver un ensemble de générateurs pour $\mathcal{M}_n$. Rappelons que $\pi_i$ est la projection sur la $i$-ième composante
-\begin{proposition}(Lemme Hadamard)
+On peut trouver un ensemble de générateurs pour $\mathcal{M}_n$. Rappelons que $\pi_i$ est la projection sur la $i$-ième composante.
+\begin{proposition}(Lemme d'Hadamard)\label{Hadamard}
 Soient $a,b$ des naturels, on a, en considérant $\R^{a+b}=\R^a\times\R^b$
     \begin{equation*}
         I_A=\{[f]_{\sim_0}\in \mathcal{E}_{a+b} | f(0_a,y)=0\}=
-         \langle \pi_1,\cdots, \pi_a\rangle
+     \rangle \pi_1,\cdots, \pi_a\langle_{\mathcal{E}_n}
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-Posons $P=\langle \pi_1,\cdots,\pi_a\rangle$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
+Posons $P=\rangle \pi_1,\cdots,\pi_a\langle_{\mathcal{E}_n}$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
 Soit $\eta\in I_a$ et soit $f\in\eta$. $f$ est alors définie sur $B(0,\varepsilon)$ pour un certain $ \varepsilon>0$. En appliquant successivement le théorème de variations des primitives et de dérivation des fonctions composées, on obtient
 \begin{equation*}
     f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D_{i}f(tx,y)\space dt=\sum_{i=1}^n \pi_i(x)
@@ -1204,7 +1216,7 @@ or les fonctions $(x,y)\mapsto \int_0^1D_i f(tx,y)$ sont lisses (dérivée d'une
 Un corollaire particulièrement utile 
 \begin{corollaire}
     \begin{equation*}
-        \mathcal{M}_n^r=\bigg<\{x^{\alpha} :|\alpha|=r, \alpha\in\mathbb{N}^n\}\bigg>
+        \mathcal{M}_n^r=\bigg>\{x^{\alpha} :|\alpha|=r, \alpha\in\mathbb{N}^n\}\bigg<_{\mathcal{E}_n}
     \end{equation*}
 \end{corollaire}
 \begin{preuve}
@@ -1217,7 +1229,7 @@ Un corollaire particulièrement utile
     or les $g_j$ sont dans l'idéal généré par les monômes de degré $r$.
     Et donc
     \begin{equation*}
-                \mathcal{M}_n^{r+1}\subseteq \bigg<\{x^{\alpha} :|\alpha|=r+1, \alpha\in\mathbb{N}^n\}\bigg>
+                \mathcal{M}_n^{r+1}\subseteq \bigg>\{x^{\alpha} :|\alpha|=r+1, \alpha\in\mathbb{N}^n\}\bigg<_{\mathcal{E}_n}
     \end{equation*}
 L'autre inclusion étant évidente, on conclut.
 \end{preuve}
@@ -1345,15 +1357,15 @@ sur la même "tranche" $\R^n\times \{h
 $g(x,\lambda)$ un peut se demander quelles sont les perturbations qui conserve sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équilavence pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ une germe, considérons la famille $h_t=(g+tp)_{t\in [0,1]}$ 
 pour que $p$ soit une transformation qui conserve la strucutre, on veux deux choses: d'une part que
 \begin{equation*}
-    \forall t\in [0,1], h_t\text{ est équivalent à} 
+    \forall t\in [0,1], h_t\text{ est équivalent à } g 
 \end{equation*}  
-et d'autre part, on veut que \textit{l'équivalence soit lisse}. Souvenez vous,la relationd d'équilavence \ref{GolubEQ} exige l'existence de  germes difféomorphismes, ainsi, pour tous $t\in ]0,1[$, on aura des germes difféomorphisme $\phi_t$  et $S_t$, on va naturellement exiger que 
+et d'autre part, on veut que \textit{l'équivalence soit lisse}. Souvenez vous,la relationd d'équilavence \ref{GolubEQ} exige l'existence de  germes difféomorphismes, ainsi, pour tous $t\in [0,1]$, on aura des germes difféomorphisme $\phi_t$  et $S_t$, on va naturellement exiger que 
 \begin{equation*}
     (x,\lambda,t)\mapsto \phi(x,\lambda,t)\text{ et } (x,\lambda,t)\mapsto S(x,\lambda,t)
 \end{equation*} 
 définissent des germes \textit{lisses}
 \begin{remarque}
-    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé \textit{à priori } ([0,1]) alors qu'on travaille avec des \text{germes}. Cette imprécision sera levée par lemme de Mather [LEMME]
+    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé \textit{à priori } alors qu'on travaille avec des \text{germes}. Cette imprécision sera levée par lemme de Mather [LEMME]
 \end{remarque}
 
 \subsubsection{Détermination finie: généralités}\label{detfin}
@@ -1376,6 +1388,80 @@ Les relations d'équilavences qui nous intéressent
     (g,h)\cdot x = g\cdot x \cdot h^{-1}
  \end{equation*}
 Le groupe le plus naturel est $D(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $\mathcal{A}=D(n)\times D(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
+ On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{D}_{n+m}$ telles qu'il existe une $h\in\mathcal{D}_n$ respectant le  diagramme suivant:
+\[\begin{tikzcd}
+	{(0,\R^{n+m})} & {(0,\R^{n+m})} & \\
+	{(0,\R^n)} & {(0,\R^n)} & {\text{avec }\iota(x)=(x,0)}
+	\arrow["H", from=1-1, to=1-2]
+	\arrow["\pi", from=1-1, to=2-1]
+	\arrow["\pi", from=1-2, to=2-2]
+	\arrow["\iota", shift left=3, from=2-1, to=1-1]
+	\arrow["h", from=2-1, to=2-2]
+	\arrow["\iota", shift left=3, from=2-2, to=1-2]
+\end{tikzcd}\]
+remarquez cela impose que $H$ est de la forme $H(x,y)=(h(x),H_1(x,y))$ en effet 
+$H(x,y)=(H_0(x,y),H_1(x,y))$ avec $H_0\in\mathcal{E}^n_{n+m}$, et donc 
+\begin{equation*}\label{Structpi}
+    \pi\circ H(x,y)= H_0(x,y)=h\circ\pi(x,y)=h(x)
+\end{equation*} et que, du fait que 
+\begin{equation*}
+    H\circ \iota(x)=H(x,0)=(h(x),H_1(x,0))=\iota(h(x))=(h(x),0)
+\end{equation*}
+
+On doit avoir que 
+\begin{equation}\label{Projo}
+    H_1(x,0)=0
+\end{equation}
+On définit $H\cdot f$ comme étant l'unique germe respectant la condition suivante 
+\begin{equation}\label{GraphK}
+    (h(x),H\cdot f(h(x)))=H(x,f(x))=(h(x),H_1(x,f(x)))
+\end{equation}
+Et donc 
+\begin{equation}\label{Kequ}
+    (H\cdot f)(x)=(H\cdot f)(h (h^{-1}(x)))=H_1(h^{-1}(x),f(h^{-1}(x))) 
+\end{equation}
+
+
+L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ agit sur $f$ via son \textit{graphe}. Il est fort possible que vous trouviez dans la litérature une définition différente  de $\mathcal{K}$, montrons qu'elles sont équivalentes
+\begin{proposition}
+    $f,g$ sont $\mathcal{K}$-équivalentes si et seulement si il existe $S\in\mathcal{E}(0,\R^n,\operatorname{GL_{p}(\R)}) $  et $\phi\in\mathcal{D}_{n}$ une  tels que 
+    \begin{equation*}
+        f\circ \phi= S\cdot g
+    \end{equation*}
+\end{proposition} 
+\begin{preuve}
+    Bien sûr, si il existe $\phi$ et $S$ 
+    verifiant la conditon de l'énoncé, 
+    alors $f,g$ sont $\mathcal{K}
+    $-équivalentes. 
+    Mainenant supposons qu'elles sont 
+    $\mathcal{K}$-équivalentes,via \ref{Kequ}, il existe 
+    $H\in\mathcal{D}_{n+p}$ tel que 
+    \begin{equation}\label{Proprecr}
+        g(h(x))=H_1(x,f(x))
+    \end{equation}
+    via \ref{Projo}, on sait que 
+    $H_1(x,0)=(H_{1,1}(x,0),\cdots,H_{1,n
+    +m}(x,0))^T=0$. On applique alors 
+    \ref{Hadamard} aux $(H_{1,i})_{1\leq i \leq n+m}$
+    \begin{equation*}
+        H_{1,i}(x,0)=0\Rightarrow \exists \lambda_{i,1}\cdots \lambda_{i,n}\in\mathcal{E}_{n+m} :H_{1,i}=\sum_{j=1}^m \lambda_{i,j}\pi_j 
+    \end{equation*}
+    Ainsi, $H_1(x,y)=M(x,y)\cdot y$ avec $M$ une matrice de germe lisses. Le fait que $M$ est inversible découle du fait que $H$ est un difféomorphisme et que sa matrice jacobienne est donnée par 
+    \begin{equation*}
+        \begin{pmatrix}
+        \frac{\partial h}{\partial x} & 0 \\
+        \frac{\partial H_1}{\partial x} & \frac{\partial H_1}{\partial y}  \\
+        \end{pmatrix} 
+    \end{equation*}
+    On réécrit \ref{Proprecr} 
+    \begin{equation*}
+        g(h(x))=M(x,f(x))\cdot f(x)\Leftrightarrow g(x)=M(h^{-1}(x),f(h^{-1}(x)))\cdot f(h^{-1}(x))
+    \end{equation*}
+    Ce qui permet de conclure
+\end{preuve}
+
+
  On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
 \begin{theobox}{}{}
     Si $G$ est un groupe de lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la gauche et si $V$ est une sous variété connexe et lisse de $M$ alors 
@@ -1383,7 +1469,7 @@ Le groupe le plus naturel est $D(n)$ l'ensemble des germes de difféomorphismes 
         \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est toujours la même }
     \end{equation*}
 \end{theobox}
-la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symmétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que celà revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e , si on pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
+la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symmétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que celà revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e , si on a pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
 \begin{equation*}
     \Bigl\{G\cdot v | v\in V\Bigr\}  
 \end{equation*}
@@ -1400,11 +1486,101 @@ le corrolaire \ref{corrJets} nous permet aussi de dire que
     J^k(n,m)\cong (\mathcal{E}_n /\mathcal{M}_n^{m+1})^k
 \end{equation*}
 
-Dans \cite{damon1984unfolding}, James Damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équilavences sur les germes les "sous groupes géométriques de $\mathcal{A}$ (qu'on a déjà introduit) et $\mathcal{K}$ (que nous introduirons dans la suite). Nous allons passer paragraphes à en exposer les idées
+Dans \cite{damon1984unfolding}, James Damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équilavences sur les germes les "sous groupes géométriques de $\mathcal{A}$ et $\mathcal{K}$ . Nous allons passer les prochains paragraphes à en exposer les idées
 
 \subsubsection{Déploiments et espaces tangents}
 
-\todo{Compléter, définitions usuelles}
+La notion de déploiment remonte à 
+René Thom [SOURCE]. Notez que dans la 
+suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifiera les calculs et ce n'est pas une vraie restriction. Ainsi, dans la suite
+\begin{definition} 
+    $G\in\mathcal{E}^{m+d}_{n+d}\cdot \mathcal{M}_{n+d}$ est  \textit{un déploiment à $d$ paramètres} de $f$
+    si elle respecte le diagramme suivant:
+    \[\begin{tikzcd}
+	{(0,\R^n)} & {(0,\R^m)} \\
+	{(0,\R^{m+d})} & {(0,\R^{m+d})} \\
+	{(0,\R^d)}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\iota"', from=1-1, to=2-1]
+	\arrow["\iota", from=1-2, to=2-2]
+	\arrow["G"', from=2-1, to=2-2]
+	\arrow["\pi"', from=2-1, to=3-1]
+	\arrow["\pi", from=2-2, to=3-1]
+    \end{tikzcd}\]
+    Des calculs similaires à\ref{Structpi} permettre de voir que cela impose à $G$ d'être de la forme $G(x,u)=(g(x,u),u)$ et 
+    $G_1(\cdot,)=f$
+    On pose $\mathcal{U}_d(f)$ l'ensemble des déploiments à $d$ paramètres de $f$.
+\end{definition}
+
+\begin{remarque}
+    Dans la litérature, la notion de déploiment et parfois interchangée avec la notion de \textit{déformation}. Une déformation $F$ de $f$ est simplement une germe de $\mathcal{E}^{m}_{n+d}$ telle que $F(\cdot,0)=f$. En quelque sorte, le déploiment "mémorise" le paramètre mais pas la déformation.
+\end{remarque}
+
+\begin{definition}
+    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel que $g(\cdot,u)\in V$, l'ensemble de tel déploiments sera noté $\mathcal{U}(v,V)$
+\end{definition}
+
+\begin{exemple}
+    Si $V=\mathcal{M}^2_1$ et $v(x)=x^3$, alors 
+    \begin{equation*}
+        G_1(x,u)=x^3+ux^2
+    \end{equation*}
+    est une famille à 1 paramètres à travers $v$ dans $V$. Mais par exemple 
+    \begin{equation*}
+        G_2(x,u)=x^3+ux
+    \end{equation*}
+    ne l'est pas.
+\end{exemple}
+On va s'intéresser particulièrement aux famille à 1 seul paramètre, c'est à dire les \textit{chemin lisses} dans une sous "variété"  $V$ de $\mathcal{E}^n_m$.
+
+
+Rappelons que si $M$ est $N$ sont des variétés lisses et si $f\in C^{\infty}(M,N)$ alors l'ensemble des champs de vecteurs lisses \textit{le long} de $f$, $\mathcal{V}(f)$ est donné par l'ensemble des $\xi: M\rightarrow TN$
+respectant le diagramme suivant: 
+
+\[\begin{tikzcd}
+	TM & TN \\
+	M & N
+	\arrow["Tf", from=1-1, to=1-2]
+	\arrow["\pi"', from=1-1, to=2-1]
+	\arrow["\pi", from=1-2, to=2-2]
+	\arrow["\xi", from=2-1, to=1-2]
+	\arrow["f", from=2-1, to=2-2]
+\end{tikzcd}\]
+On remarque alors que
+\begin{equation*}
+    \mathcal{V}(f)=\Gamma f^{*} T\R^m
+\end{equation*}
+Considérons alors le faisceau (c.f remarque \ref{remsheaf} )
+des sections locales lisses 
+$\Gamma(\cdot,TM)$, l'ensemble des germes de champ de vecteurs en un point $x\in M$ est simplement $\Gamma(\cdot,TM)_x$ et l'enseble des germes de champ de vecteurs le long de $f$ en $x$ est $\Gamma(\cdot, f^{*}T\R^m)_{x}$
+
+Mainenant, si $f\in\mathcal{E}^m_n$, on entend par $\mathcal{V}(f)$ la germe en $0$ des champs de vecteurs le long d'un représentant de $f$.
+Du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que 
+\begin{equation*}
+    \mathcal{V}(f)=
+    \biggr>\frac{\partial }{\partial y_1},\cdots, \frac{\partial  }{\partial y_m}  \biggl<_{\mathcal{E}_n}
+\end{equation*}
+
+
+
+\begin{definition}
+    Soit $V\subseteq \mathcal{E}^m_n$ et $f\in V$ on définit \textit{l'espace tangent de $v$}
+    comme 
+    \begin{equation*}
+        T_f V =\left\{\frac{\partial \tilde{G}}{\partial u}(0) \biggr| G\in\mathcal{U}(f,V) \right\}
+    \end{equation*}
+\end{definition}
+
+On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteurs le long de $f$.
+
+
+
+
+\todo{Calculs explicites pour $A$ et $K$}\\
+\todo{Un théorème de détermination finie}\\
+\todo{Le groupe de montaldi}\\
+\todo{Classification explicite}\\
+\todomaybe{Notion de sous groupe géométrique}
 \newpage
 
 
@@ -1841,11 +2017,11 @@ Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$
 
 
 \newpage
-\section{Bifurcation de systèmes dynamiques}
+\section{Introduction aux bifurcations dynamiques}
 
 \newpage
 
-\addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,KlausNonLin85,friedmanpartial}
+\addtocategory{utilises}{dieudonne1969fma8,BenevieriFuri1998,BenevieriFuri2001,kato1995pto,coleman2012calculus,kielhoefer2012bta,golubitsky1985sgb1,golubitsky1988sgb2,montaldi2021sbc,Feckan2008Topological,Kawanago2023HopfBanach,Marx1994Bifurcation,Karoubi1978KTheory,Wall1981FiniteDeterminacy,Marcut2009FredholmNotes,KlausNonLin85,friedmanpartial,Damon}
 \addtocategory{plusloin}{schwartz1960nash,glockner2006implicit}
 \printbibliography[
   category=utilises,
