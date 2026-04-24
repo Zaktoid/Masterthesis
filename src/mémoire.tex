@@ -1303,13 +1303,12 @@ Avec $\mathcal{T}''$ la topologie induite sur l'intersection des domaines de $f$
 \end{definition}
  Bien sûr, si $f\sim_{S} g$ alors $f_{|_{S}}=g_{|_{S}}$, la définition suivante est donc licite
 \begin{definition}
-    Soient $X,Y$ des espaces topologiques sur lesquels on a une notion de fonctions $C^k$, \textit{l'espace des germes lisses} est donné par
+    Soient $X,Y$ des espaces de Banach, \textit{l'espace des germes} $C^k$ est donné par
     \begin{equation*}
-        \mathcal{E}_{k}(S,X,Y,T)=\mathcal{G}_{k}(S,X,Y,T)/\sim_{S}
+        \mathcal{E}(S,X,Y,T)=\mathcal{G}_{\infty}(S,X,Y,T)/\sim_{S}
     \end{equation*}
-    On pose  $\mathcal{E}_n=\mathcal{E}_{\infty}(\{0\},\R^n,\R)$
 \end{definition}
-Si $f\in\mathcal{E}_{0}(S,X,Y,T)$, on notera
+Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
 \begin{equation*}
     f : (S,X)\rightarrow (Y,T)\text{ et }f : (S,X)\rightarrow Y\text{ si }T=Y
 \end{equation*}
@@ -1335,7 +1334,7 @@ Si $f\in\mathcal{E}_{0}(S,X,Y,T)$, on notera
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_1))
     \end{equation*}
 \end{definition}
-L'opération de composition entre germes est clairement bien définie. On défini naturellement les germes de sous ensemble d'un espace topologique.
+L'opération de composition entre germes est clairement bien définie. Pour définir les germes de sous ensemble, on identifie simplement une partie $S$ à $\chi_{S}$ et considère la germe de fonction correspondante
 \begin{definition}
     Une germe de difféomorphisme de $\mathcal{E}(\{0\},\R^n,
     \R^n)$ est un élément de $\mathcal{E}(\{0\},\R^n,\R^n,\{0\})$ 
@@ -1366,13 +1365,7 @@ de cible $T$
         \mathcal{E}(S,X,Y)=C^{\infty}(\cdot,Y)_{S}
     \end{equation*} 
 \end{remarque}
-
-On munit $\mathcal{E}_n$ d'une structure d'anneau de la façon suivante: si $\eta_1,\eta_2$ sont des germes et si $f\in\eta_1$ et $g\in\eta_2$, on considère $U=\operatorname{dom}(f)\cap \operatorname{dom}(g)$ 
-\begin{equation*}
-    \eta_1+\eta_2= [f_{|_U}+g_{|_U}]_{\sim_{0}} \text{ et } \eta_1\cdot\eta_2= [f_{|_U}g_{|_U}]_{\sim_{0}}
-\end{equation*}
-
-On vérifie facilement que ces opérations sont bien définies et que $(\mathcal{E}_n,+,\cdot)$ est un anneau commutatif, et que l'évaluation en 0 ainsi que la dérivée en 0 sont bien définies. Nous consacrons les paragraphes suivants à l'étude de cet anneau. Nous commençons par remarquer que c'est un anneau local
+On pose $\mathcal{E}_n=\mathcal{E}(\left\{0\right\},\R^n,\left\{0\right\})$. On remarque que les opérations de multiplication et d'addition passent au quotient, ce qui fait de $\mathcal{E}_n$ un anneau commutatif. On remarque également que l'évaluation en $0$ et la dérivée passent aussi au quotient
 \begin{remarque}
     des notions similaires existent en dimension infinie. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt.
 \end{remarque}
@@ -1383,10 +1376,10 @@ On vérifie facilement que ces opérations sont bien définies et que $(\mathcal
     Lorsqu'on définira des sous ensembles de germe via une certaine propriété, il faut comprendre "Il existe un un représentant telle que la propriété est vraie sur un voisinage de $0$". Et la propriété sera alors vraie peu importe le représentant (en prenant l'instersection des voisinages)
 \end{remarque}
 \begin{proposition}
-    l'ensemble $\mathcal{M}_n=\{\eta\in\mathcal{E}_n | \eta(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
+    l'ensemble $\mathcal{M}_n=\{f\in\mathcal{E}_n | f(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
 \end{proposition}
 \begin{preuve}
-Il suffit d'observer que si $\eta\in\mathcal{E}_n\setminus\mathcal{M}_n$, alors il inversible. En effet, si $f\in\eta$ alors $1/f$ est défini sur un voisinage de zéro et $\xi=[1/f]_{\sim_0}$ est l'inverse de $\eta$
+Il suffit d'observer que si $f\in\mathcal{E}_n\setminus\mathcal{M}_n$, alors il inversible. En effet, si $\tilde{f}\in f$ alors $1/\tilde{f}$ est défini sur un voisinage de zéro et $g=[1/\tilde{f}]_{\sim_0}$ est l'inverse de $f$
 \end{preuve}
 
 On peut trouver un ensemble de générateurs pour $\mathcal{M}_n$. Rappelons que $\pi_i$ est la projection sur la $i$-ième composante.
@@ -1401,8 +1394,8 @@ Soient $a,b$ des naturels, on a, en considérant $\R^{a+b}=\R^a\times\R^b$
 Posons $P=\rangle \pi_1,\cdots,\pi_a\langle_{\mathcal{E}_n}$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
 Soit $\eta\in I_a$ et soit $f\in\eta$. $f$ est alors définie sur $B(0,\varepsilon)$ pour un certain $ \varepsilon>0$. En appliquant successivement le théorème de variations des primitives et de dérivation des fonctions composées, on obtient
 \begin{equation*}
-    f(x,y)=\int_0^1 d_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) d_{i}f(tx,y)\space dt=\sum_{i=1}^n \pi_i(x)
-    \int_0^1 d_if(tx,y) \space dt
+    f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D_{i}f(tx,y)\space dt=\sum_{i=1}^n \pi_i(x)
+    \int_0^1 D_if(tx,y) \space dt
 \end{equation*}
 or les fonctions $(x,y)\mapsto \int_0^1d_i f(tx,y)$ sont lisses (dérivée d'une fonction lisse et intégration sur un compact) ,ce qui permet de conclure.
 \end{preuve}
@@ -1698,8 +1691,8 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 	\arrow["\pi"', from=2-1, to=3-1]
 	\arrow["\pi", from=2-2, to=3-1]
     \end{tikzcd}\]
-    des calculs similaires à\ref{Structpi} permettre de voir que cela impose à $G$ d'être de la forme $G(x,u)=(g(x,u),u)$ et 
-    $G_1(\cdot,)=f$
+    des calculs similaires à\ref{Structpi} permettre de voir que cela impose à $G$ d'être de la forme $G(x,u)=(\tilde{G}(x,u),u)$ et 
+    $\tilde{G}(\cdot,0)=f$
     On pose $\mathcal{U}_d(f)$ l'ensemble des déploiments à $d$ paramètres de $f$.
 \end{definition}
 
@@ -1708,7 +1701,7 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel que $g(\cdot,u)\in V$, l'ensemble de tel déploiments sera noté $\mathcal{U}(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel que $\tilde{G}(\cdot,u)\in V$, l'ensemble de tel déploiments sera noté $\mathcal{U}(v,V)$
 \end{definition}
 
 \begin{exemple}
@@ -1764,7 +1757,7 @@ du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que
 
 On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteurs le long de $f$.
 
-
+Nous procédons maintenant 
 
 
 \todo{Calculs explicites pour $A$ et $K$}\\
