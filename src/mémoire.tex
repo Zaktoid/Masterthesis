@@ -718,10 +718,8 @@ Où on a posé $B_j=\sum_{|\alpha|\leq m}
 \newpage
 
 
-\section{Réduction de Lyapunov-Schmidt et étude locale}
-
-\subsection{Approche analytique}
-
+\section{Approche analytique}
+\subsection{La réduction le Lyapunov-Schmidt}
 Lorsque l'opérateur $d_1f(x_0,\lambda_0)$ est de fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
 \begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
 Soient $X,\Lambda,Y$ des espaces de 
@@ -849,7 +847,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
 \end{remarque}
 
 
-\subsubsection{Cas où $\dim \Lambda=1$}
+\subsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposon $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $d_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
 On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliment), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
@@ -1013,7 +1011,7 @@ Répond à la question
     Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'inex non-nul
 \end{remarque}
 Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramemener en dimension finie, ça ne marche pas si l'espace des paramètres est de dimension infinie ! d'où la sous-section suivante.
-\subsubsection{Cas où $\dim \Lambda=\infty$}\label{Lambdainfdim}
+\subsection{Cas où $\dim \Lambda=\infty$}\label{Lambdainfdim}
 Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont iterprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
 Généralison un peu le $\gamma$ qui apparaît dans les résultats précédents:
 
@@ -1277,12 +1275,12 @@ Avant de présentez la preuve, résumons un peu la situation sur un diagramme
 \newpage
     
 
-\subsection{Approche via la théorie des singularités}\label{SINGsection}
+\section{Approche via la théorie des singularités}\label{SINGsection}
 dans les années 80 Golubitsky dans \cite{golubitsky1985sgb1} 
 introduisit deux approches révolutionnaire pour traier des 
 problèmes de bifurcations : il eu la brillante idée 
 d'appliquer des techniques de théorie des singularités et de théorie des groupes, ce qui lui permit d'entreprendre un travail de Classification. En 2021, James Monteldi reprit le travail de Golubitsky et étendit son travail de classification dans \cite{montaldi2021sbc}. Dans les prochains paragraphes, nous proposons une synthèse de leurs idées
-\subsubsection{Germes de fonctions : généralités}
+\subsection{Germes de fonctions : généralités}
 Etant donné qu'on s'intéresse uniquement au comportement des fonctions au voisinage d'un certain ensemble singulier $S$ (les points pour lequels on ne peut appliquer le théorème des fonctions implicites) il est naturel de considérer deux fonctions comme étant "égales" si elle le sont au voisinage de $S$, nous rendons cette idée précise dans la suite 
 \begin{definition}
     Soient $(X,\mathcal{T}),(Y,\mathcal{T}')$ des espaces topologiques, $S\subseteq X$ et $T\subseteq Y$
@@ -1451,7 +1449,7 @@ ce qui nous permet de conclure quand $r=1$. Maintenant, si $f\in I(k,r)$, alors 
 
 Ce résultat nous permet d'affirmer que 
 \begin{equation*}
-    \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle
+    \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle_{\mathcal{E}_s(N)}
 \end{equation*}
 et que $\mathcal{M}_x(N)^r$ est exactement égale aux germes dont les dérives d'ordre $<k$ sont nulles en $0$.\\
 
@@ -1489,18 +1487,89 @@ que celle d'application linéaire.
 Nous rappelons (sans preuve) le lemme de Nakayama, qui est 
 central dans l'étude des $\mathcal{E}_S(N)$-modules 
 
-\begin{theobox}{Lemme de Nakayama}{}
-    Soit $R$ un anneau commutatif, $u:E\rightarrow F$ un homomorphisme de $R$ modules, $I$ un ideal de $R$ tel que $1_{R}+z$ est inversible pour tout $z\in I$.
+\begin{theobox}{Lemme de Nakayama}{}\label{Nakayama}
+    Soit $R$ un anneau commutatif, $u:E\rightarrow F$ un homomorphisme de $R$-modules, $I$ un ideal de $R$ tel que $1_{R}+z$ est inversible pour tout $z\in I$.
     Si $F$ est finiment généré, on a 
     \begin{equation*}
         u(E)+ IF=F\Rightarrow u(E)=F
     \end{equation*}
 \end{theobox}
 par $IF$ on entend l'ensemble des sommes finis d'élements $if$ où $i\in I$, $f\in F$.\\
+\begin{definition}
+    Si $M$ est un $R$-module et $N$ un sous module, on défini le module quotient de la façon habituelle:
+    \begin{equation*}
+        M/N=\left\{ m+N | m\in M \right\}
+    \end{equation*}
+\end{definition}
+ Rappelons également que le "troisième théorème 
+ d'isomorphisme" ou "théorème C" est vrai pour les modules. 
+ On a donc, pour un module $M$, et $T$, $S$ des sous 
+ modules tels que $T\subseteq S\subseteq M$,
+\begin{equation*}
+    (M/T)/(S/T)\cong M/S
+\end{equation*}
 
-\begin{corollaire}
-    Si $S$ est fini, $M$ est un 
-\end{corollaire}
+Vous remarquerez qu'on a pas mis d'hypothèses pour le sous 
+module (contrairement aux quotient de groupes). C'est parce 
+qu'on en a pas besoin pour que les opérations soient bien 
+définies ! Ainsi, on vérifie facilement que $M/N$ est bien 
+un sous module.Notez que le quotient d'un $\mathcal{E}_S(N)
+$-module par un sous module est, en particulier, un espace 
+vectoriel sur $\R$ (en identifiant  les gemres constantes à 
+leur constantes). Donc dans la suite, $\dim (M/N)$ 
+signifiera la dimension de $M/N$ en tant que $\R$-vectoriel.
+\\
+
+Les résultats nous permettent de controller le nombre de 
+générateurs d'un sous module d'un $\mathcal{E}_S(N)$-module 
+finiment généré
+\begin{lemme}
+    Soient $S$ un ensemble fini, $M$ un un 
+    $\mathcal{E}_S(N)$-module finiment généré et $V$ un 
+    sous module de $M$, on a 
+    \begin{equation*}
+        \dim_{\R}( M/(\mathcal{M}_S(N)^{l+1}M+V))\leq 
+        l\Rightarrow \mathcal{M}_S(N)^{l}M\subseteq V
+    \end{equation*}
+\end{lemme}
+\begin{preuve}
+    Par le théorème C, il vient, en posant $M'=M/V$
+    \begin{equation*}
+        \dim_{\R}( M/(\mathcal{M}_S(N)^{l+1}M+V))=\dim_{\R}
+        ( M'/(\mathcal{M}_S(N)^{l+1}M'))\leq l
+    \end{equation*}
+    Remarquez qu'on a 
+    \begin{equation*}
+        M'\supseteq M'\mathcal{M}_S(N)\supseteq M'\mathcal{M}^2_S(N)\supseteq \cdots \supseteq M'\mathcal{M}^{l+1}_S(N)
+    \end{equation*}
+    et donc 
+    \begin{equation*}
+        0=\dim_{\R} M'/M'\leq \dim_{\R} M'/( M'\mathcal{M}_S(N))\leq\cdots \leq  \dim_\R M'/(M'\mathcal{M}_S(N)^{l+1})\leq l
+    \end{equation*}
+    et donc il existe $0\leq k \leq l$ tel que 
+    \begin{equation*}
+        \mathcal{M}_S^{k+1}M'=\mathcal{M}_S^{k}M'
+    \end{equation*}
+    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S(N)$, $I=\mathcal{M}_S(N)$ et $F=\mathcal{M}_S(M)^kM'$, ce qui permet d'affirmer que $\mathcal{M}_S^k M'=\mathcal{M}_S^k (M'/V)=0$ ce qui permet de conclure.
+\end{preuve}
+
+
+
+\begin{proposition}
+    Dans les hypothèses du lemme précédent, $M'$ est finiment généré (en tant que $\mathcal{E}_S(N)$-module) 
+    il existe un ensemble de générateurs ayant au plus $m$$ 
+    {\dim(N)+l}\choose {l}$ où $m$ est la taille du plus petit ensemble de générateurs de $M$,
+    \todo{TERMINER PREUVE}
+\end{proposition}
+
+\begin{preuve}
+    Montrons d'abord le résultat si $S=\{s\}$. Du fait que $\mathcal{M}_S(N)^lM$ est finiment généré et 
+    $M/(\mathcal{M}_S(N)^lM)$ est de dimension finie, 
+\end{preuve}
+\begin{remarque}
+    On vient de montrer que tout $\mathcal{E}_S(N)$-module
+    finiment génré avec $S$ fini est un module \textit{Noetherien}
+\end{remarque}
 
 \begin{definition}
     Soient deux fonction $f,g$
@@ -1561,7 +1630,7 @@ Rappelons le lemme de Nakayama
     On conclut , grâce à Nakayama, que $\mathcal{M}_n^k\subset I$ comme exigé
 \end{proof}
 
-\subsubsection{relations d'équivalences: exemple introductif} 
+\subsection{relations d'équivalences: exemple introductif} 
 Pour pouvoir classifier les bifurcations, il nous faut une notion d'équilavence ! Le travail serait alors de lister les différentes classes d'équilavences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \textit{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équilavence entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
 Soient $f,g\in\mathcal{E}(\R^n\times \Lambda,\R^p)$ où $\Lambda$ est un ouvert de $\R^m$ (par exemple) on dira que les problèmes de bifurcation
 \begin{equation*}
@@ -1625,7 +1694,7 @@ définissent des germes \textit{lisses}
     Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé \textit{à priori } alors qu'on travaille avec des \text{germes}. Cette imprécision sera levée par lemme de Mather [LEMME]
 \end{remarque}
 
-\subsubsection{détermination finie: généralités}\label{detfin}
+\subsection{détermination finie: généralités}\label{detfin}
 C'est le coeur du sujet: on veut 
 pouvoir se ramemener à l'étude d'un nombre fini de termes du dévellopement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
 Nous introduisons la notion suivante
@@ -1735,7 +1804,7 @@ n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orb
 
 dans \cite{damon1984unfolding}, James damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équilavences sur les germes les "sous groupes géométriques de $\mathcal{A}$ et $\mathcal{K}$ . Nous allons passer les prochains paragraphes à en exposer les idées
 
-\subsubsection{déploiments et espaces tangents}
+\subsection{déploiments et espaces tangents}
 
 La notion de déploiment remonte à 
 René Thom [SOURCE]. Notez que dans la 
