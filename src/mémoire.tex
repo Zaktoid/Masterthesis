@@ -98,7 +98,7 @@
 \author{Zakaria Elmi Roble}
 \date{décembre 2025}
 \theoremstyle{definition}
-\newtheorem{definition}{définition}[section]
+\newtheorem{definition}{Définition}[section]
 \newtheorem{proposition}[definition]{Proposition} 
 \newtheorem{remarque}[definition]{Remarque}
 \newtheorem{exemple}[definition]{Exemple}
@@ -1283,6 +1283,7 @@ introduisit deux approches révolutionnaire pour traier des
 problèmes de bifurcations : il eu la brillante idée 
 d'appliquer des techniques de théorie des singularités et de théorie des groupes, ce qui lui permit d'entreprendre un travail de Classification. En 2021, James Monteldi reprit le travail de Golubitsky et étendit son travail de classification dans \cite{montaldi2021sbc}. Dans les prochains paragraphes, nous proposons une synthèse de leurs idées
 \subsubsection{Germes de fonctions : généralités}
+Etant donné qu'on s'intéresse uniquement au comportement des fonctions au voisinage d'un certain ensemble singulier $S$ (les points pour lequels on ne peut appliquer le théorème des fonctions implicites) il est naturel de considérer deux fonctions comme étant "égales" si elle le sont au voisinage de $S$, nous rendons cette idée précise dans la suite 
 \begin{definition}
     Soient $(X,\mathcal{T}),(Y,\mathcal{T}')$ des espaces topologiques, $S\subseteq X$ et $T\subseteq Y$
     on pose 
@@ -1303,7 +1304,7 @@ Avec $\mathcal{T}''$ la topologie induite sur l'intersection des domaines de $f$
 \end{definition}
  Bien sûr, si $f\sim_{S} g$ alors $f_{|_{S}}=g_{|_{S}}$, la définition suivante est donc licite
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach, \textit{l'espace des germes} $C^k$ est donné par
+    Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \textit{l'espace des germes} $C^k$ est donné par
     \begin{equation*}
         \mathcal{E}(S,X,Y,T)=\mathcal{G}_{\infty}(S,X,Y,T)/\sim_{S}
     \end{equation*}
@@ -1329,7 +1330,7 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
         f\times g: (X_1\times X_2,S_1\times S_2)\rightarrow 
         (Y_1\times Y_2,S_1\times S_2)
     \end{equation*}
-    Comme étant la classe d'équivalence 
+    Comme étant la classe d'équivalence de
     \begin{equation*}
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_1))
     \end{equation*}
@@ -1344,8 +1345,7 @@ L'opération de composition entre germes est clairement bien définie. Pour déf
 \end{definition}
 
 
-Pour spécifier que $f$ est le représentant d'une germe de source $S$ et 
-de cible $T$
+
 
 \begin{remarque}\label{remsheaf}
     C'est un cas particulier de \textit{faisceau}, cette formulation nous sera utile dans la suite.
@@ -1356,7 +1356,7 @@ de cible $T$
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$ si $s,t\in\mathcal{F}(U)$ sont telles que \\$ \forall i\in\mathcal{I} ,\rho^U_{U_i}(s)=\rho^U_{U_i}(t)$ alors $s=t$ (localité )
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^U_{U_i\cap U_j}(s_j)=\rho^U_{U_i\cap U_j}(s_i)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
     \end{itemize}
-    Les deux axiomes sont des axiomes purement structurel. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y$ est un espace de Banach alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on défini enfin la \textit{germe} d'un faisceau en un sous ensemble $S\supseteq X$ comme étant
+    Les deux axiomes sont des axiomes purement structurels. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y,X$ sont des variétés lisses alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on défini enfin la \textit{germe} d'un faisceau en un sous ensemble $S\supseteq X$ comme étant
     \begin{equation*}
         \mathcal{F}_S=\varinjlim_{U \supseteq S} F(U)
     \end{equation*}
@@ -1365,71 +1365,151 @@ de cible $T$
         \mathcal{E}(S,X,Y)=C^{\infty}(\cdot,Y)_{S}
     \end{equation*} 
 \end{remarque}
-On pose $\mathcal{E}_n=\mathcal{E}(\left\{0\right\},\R^n,\left\{0\right\})$. On remarque que les opérations de multiplication et d'addition passent au quotient, ce qui fait de $\mathcal{E}_n$ un anneau commutatif. On remarque également que l'évaluation en $0$ et la dérivée passent aussi au quotient
+Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{E}_S(N)
+=\mathcal{E}_S(S,N,\R)$. On 
+remarque que les opérations de multiplication et d'addition 
+passent au quotient, ce qui en fait un 
+anneau commutatif. On remarque également que l'évaluation 
+en $0$ et la dérivée passent aussi au quotient. Dans les prochains paragraphes, on étudie un peu cet anneau
 \begin{remarque}
-    des notions similaires existent en dimension infinie. C'est assez marginal car en pratique, l'approche par théorie des singularités suppose qu'on a effectué la réduction de  Lyapunov–Schmidt.
+    des notions similaires existent en dimension infinie. 
+    C'est assez marginal car en pratique, l'approche par 
+    théorie des singularités suppose qu'on a effectué la 
+    réduction de  Lyapunov–Schmidt.
 \end{remarque}
 
 
 
-\begin{remarque}
-    Lorsqu'on définira des sous ensembles de germe via une certaine propriété, il faut comprendre "Il existe un un représentant telle que la propriété est vraie sur un voisinage de $0$". Et la propriété sera alors vraie peu importe le représentant (en prenant l'instersection des voisinages)
-\end{remarque}
+
+On rappelle la notion d'anneau local 
+\begin{definition}
+    Un anneau commutatif $R$ est local si il a un unique ideal maximal. Il est semi local si il a un nombre fini d'ideaux maximaux
+\end{definition}
+
 \begin{proposition}
-    l'ensemble $\mathcal{M}_n=\{f\in\mathcal{E}_n | f(0)=0\}$ est l'unique idéal maximal de $\mathcal{E}_n$
+    Si $S=\left\{s\right\}$ est un singleton,
+    l'ensemble $\mathcal{M}_s(N)=\mathcal{E}_s(s,M,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s(N)$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
 \end{proposition}
 \begin{preuve}
-Il suffit d'observer que si $f\in\mathcal{E}_n\setminus\mathcal{M}_n$, alors il inversible. En effet, si $\tilde{f}\in f$ alors $1/\tilde{f}$ est défini sur un voisinage de zéro et $g=[1/\tilde{f}]_{\sim_0}$ est l'inverse de $f$
+Il suffit d'observer que si $f\in\mathcal{E}_s(N)
+\setminus\mathcal{M}_s(N)$, alors il inversible. En effet, 
+si $\tilde{f}\in f$ alors $1/\tilde{f}$ est défini sur un 
+voisinage de $s$ et $g=[1/\tilde{f}]_{\sim_s}$ est 
+l'inverse de $f$
 \end{preuve}
-
-On peut trouver un ensemble de générateurs pour $\mathcal{M}_n$. Rappelons que $\pi_i$ est la projection sur la $i$-ième composante.
-\begin{proposition}(Lemme d'Hadamard)\label{Hadamard}
-Soient $a,b$ des naturels, on a, en considérant $\R^{a+b}=\R^a\times\R^b$
+Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
+\begin{proposition}
+    Soit $N$ une variété lisse $S\subseteq N$
     \begin{equation*}
-        I_A=\{[f]_{\sim_0}\in \mathcal{E}_{a+b} | f(0_a,y)=0\}=
-     \rangle \pi_1,\cdots, \pi_a\langle_{\mathcal{E}_n}
+        S=\bigcup_{j=1}^p S_j\text{ et } \bar{S_i}\cap 
+        \bar{S_{i'}}=\emptyset\text{ si } i\neq i'\Rightarrow \mathcal{E}_S(N)\cong \prod_{j=1}^p \mathcal{E}_{S_i}(N)\text{ et }\mathcal{M}_S(N)=\prod_{j=1}^p \mathcal{M}_{S_j}(N)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-Posons $P=\rangle \pi_1,\cdots,\pi_a\langle_{\mathcal{E}_n}$, il est clair que $P\subseteq I_A$, montrons l'autre inclusion.
-Soit $\eta\in I_a$ et soit $f\in\eta$. $f$ est alors définie sur $B(0,\varepsilon)$ pour un certain $ \varepsilon>0$. En appliquant successivement le théorème de variations des primitives et de dérivation des fonctions composées, on obtient
-\begin{equation*}
-    f(x,y)=\int_0^1 D_tf(xt,y) dt=\int_0^1\sum_{i=1}^n \pi_i(x) D_{i}f(tx,y)\space dt=\sum_{i=1}^n \pi_i(x)
-    \int_0^1 D_if(tx,y) \space dt
-\end{equation*}
-or les fonctions $(x,y)\mapsto \int_0^1d_i f(tx,y)$ sont lisses (dérivée d'une fonction lisse et intégration sur un compact) ,ce qui permet de conclure.
+    Souvenez vous qu'on suppose que les variété sont des espace topologiques séparés, il existe donc $U_1,\cdots,U_p$ des voisinnages de $S_1,\cdots,S_p$. Soit maintenant une germe $f\in\mathcal{E}_S(N)$, c'est la classe d'équilavence d'une fonction $\tilde{f}$ défini sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
+    $\tilde{f}_{|_{V'}}\sim_{S} \tilde{f}$
+    et donc on vérifie facilement que 
+    \begin{equation*}
+        \Phi : \mathcal{E}_S(N)\rightarrow \prod_{j=1}^p 
+        \mathcal{E}_{S_i}(N), [f]_S\mapsto ([f|_{V_1}]_{S_1},\cdots [f|_{V_p}]_{S_p} )
+    \end{equation*}
+    est un isomorphisme d'anneau. La décomposition de l'idéal $\mathcal{M}_S(N)$ en découle immédiatement.
 \end{preuve}
-Un corollaire particulièrement utile 
 \begin{corollaire}
-    \begin{equation*}
-        \mathcal{M}_n^r=\bigg>\{x^{\alpha} :|\alpha|=r, \alpha\in\mathbb{N}^n\}\bigg<_{\mathcal{E}_n}
-    \end{equation*}
+    Si $S$ est fini, $\mathcal{E}_S(N)$ est un anneau semi-local.
 \end{corollaire}
+
+\begin{remarque}
+    Dans la litérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \textit{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S(N)$ n'est pas un anneau local, ou même semi-local. Les choses deviennet incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
+\end{remarque}
+
+Dans la suite, si $R$ est anneau, on notera $R^r[x_1,\cdots,x_n]$ les polynômes en polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes de homogènes de degré $r$.
+Le lemme suivant mobilise le fait que $N$ est de dimension finie, et nous permettera de décomposer $\mathcal{M}_N(S)$
+
+
+\begin{proposition}(Lemme d'Hadamard)\label{Hadamard}
+Soit $x\in N$, $(\tilde{x}_1,\cdots,\tilde{x}_n)$ un sysème de coordonées 
+locales qui s'annule en $x$. Considérons l'idéal $I(k,r)\subseteq \mathcal{E}_x(N)$ 
+des germes ayant un représntant $\tilde{f}: U\rightarrow R$ 
+dont les dérivées d'ordre $<r$ s'annulent sur $ 
+U\cap(\tilde{x}_1,\cdots,\tilde{x}_k)^{-1}(0)$ et $x_1,\cdots,x_n$ les germes  ayant pour représentants $\tilde{x}_1,\cdots,\tilde{x}_n$
+    \begin{equation*}
+     \rangle \mathbb{Z}[x_1,\cdots,x_k]_{r} \langle_{\mathcal{E}_x(N)}=I(k,r)
+    \end{equation*}
+\end{proposition}
 \begin{preuve}
-    cas $r=1$: il s'agit du résultat précédent.
-    Supposons le résultat établit pour $n\leq r$ il vient alors
-    \begin{equation*}
-        f\in\mathcal{M}_n^{r+1}\Leftrightarrow 
-        \exists n\in\mathbb{N} , g_1,\cdots,g_n \in \mathcal{M}_n^{r}: f=\sum_{j=1}^nx_j g_j
-    \end{equation*}
-    or les $g_j$ sont dans l'idéal généré par les monômes de degré $r$.
-    Et donc
-    \begin{equation*}
-                \mathcal{M}_n^{r+1}\subseteq \bigg>\{x^{\alpha} :|\alpha|=r+1, \alpha\in\mathbb{N}^n\}\bigg<_{\mathcal{E}_n}
-    \end{equation*}
-L'autre inclusion étant évidente, on conclut.
+Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons l'autre inclusion en procédant par récurrence. Soit alors $f\in I(k,r)$, pour $1\leq i\leq k$, on pose 
+\begin{equation*}
+    \tilde{f}_i(\tilde{x_1},\cdots,\tilde{x_n})=\int_{0}^{1}  D_i \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i+1},\cdots,\tilde{x}_n)dt
+\end{equation*}
+si $f_i=[\tilde{f}_i]$, le théorème de variation des primitives et de dérivation des fonctions composées nous permettent d'écrire
+\begin{equation*}
+    f=\sum_{i=1}^{k}x_i f_i
+\end{equation*}
+ce qui nous permet de conclure quand $r=1$. Maintenant, si $f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de récurrence, $f_i\in  \mathbb{Z}[x_1,\cdots,x_k]_{r-1}$, et $f=\sum_{i=1}^{n}x_i f_i$, on conlut.
 \end{preuve}
 
+Ce résultat nous permet d'affirmer que 
+\begin{equation*}
+    \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle
+\end{equation*}
+et que $\mathcal{M}_x(N)^r$ est exactement égale aux germes dont les dérives d'ordre $<k$ sont nulles en $0$.\\
 
+On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S(N)$ avec $S$ fini, on rappelle que 
 
 \begin{definition}
-    Le jet d'ordre $r$ d'une germe $f\in\mathcal{E}(0,\R^n,\R^m)$ à l'origine est donné par
+    Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à droite est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un sclaire" $\cdot:R\times G\rightarrow G$ qui respecte les axiomes même axiomes que pour un espace un vectoriel, i.e, $\forall r,s\in R,x,y\in G$
+    \begin{align*}
+        &r\cdot(x+_{G}y)= r\cdot x+_{G}r\cdot y\\
+        &(r+_{R} s)\cdot x = r\cdot x+_{G} s\cdot x\\
+        &(r\cdot_{R}s)\cdot x=r\cdot(s\cdot x)\\
+        &1_{R}\cdot x =x
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    Un module est dit \textit{libre} si il possède une base. Un module est \textit{finiment généré} si il possède une partie génératrice finie. Enfin, un module libre est à \textit{rang constant} si toutes les bases ont le même nombre d'éléments
+\end{definition}
+Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
+\begin{exemple}
+    Considérons par exemple $S=\left\{ (x,y,z)\in\R^3| x=0,
+    z=0\right\}$, $\mathcal{E}_S(\R^3)$. L'ideal $I_S$ 
+    constitué des fonctions qui s'annulent sur $S$ est bien 
+    sûr un $\mathcal{E}_S(\R^3)$-module. Par \ref{Hadamard}, on a $I_S= \rangle x,y \langle$. Mais on peut écrire 
     \begin{equation*}
-        j^r_{0}f(x)=\sum_{ |\alpha|\leq r} \frac{1}{\alpha !} d^{(\alpha)}f(0)x^{\alpha}
+        z\cdot y + (-y)\cdot z= 0
+    \end{equation*}
+    et les  germes fonctions $x$ et $-y$ ne sont pas nulles sur $\mathcal{E}_S(N)$. Il est donc impossible d'avoir une base
+\end{exemple}
+
+On peut aussi avoir la situation où $r\cdot x=0$ avec $r$ 
+et $x$ non nuls, c'est ce qu'on appelle un module à \textit
+{torsion}. La notion d'homomorphisme de module est la même 
+que celle d'application linéaire.
+Nous rappelons (sans preuve) le lemme de Nakayama, qui est 
+central dans l'étude des $\mathcal{E}_S(N)$-modules 
+
+\begin{theobox}{Lemme de Nakayama}{}
+    Soit $R$ un anneau commutatif, $u:E\rightarrow F$ un homomorphisme de $R$ modules, $I$ un ideal de $R$ tel que $1_{R}+z$ est inversible pour tout $z\in I$.
+    Si $F$ est finiment généré, on a 
+    \begin{equation*}
+        u(E)+ IF=F\Rightarrow u(E)=F
+    \end{equation*}
+\end{theobox}
+par $IF$ on entend l'ensemble des sommes finis d'élements $if$ où $i\in I$, $f\in F$.\\
+
+\begin{corollaire}
+    Si $S$ est fini, $M$ est un 
+\end{corollaire}
+
+\begin{definition}
+    Soient deux fonction $f,g$
+    \begin{equation*} 
+        j^r_{x}f(x)=\sum_{ |\alpha|\leq r} \frac{1}{\alpha !} D^{(\alpha)}f(0)x^{\alpha}
     \end{equation*}
     L'espace de jet  $J^k(n,m)$ défini comme
     \begin{equation*}
-        \{j^k_0 f | f\in \mathcal{E}(0,\R^n,\R^m)\}
+        \{j^k_0 f | f\in \mathcal{E}_x(N)\}
     \end{equation*}
     et alors un espace vectoriel
 \end{definition}
@@ -1437,16 +1517,9 @@ L'autre inclusion étant évidente, on conclut.
 Notons que la fonction qui à une germe $[f]_{\sim_0}$ associe $[j_0^rf]_{\sim_0}$  est en fait une projection ! 
 en effet,
 \begin{equation*}
-    \pi_r :\mathcal{E}_n\rightarrow \mathcal{E}_n/\mathcal{M}_n^{r+1}
+    \pi_r :\mathcal{E}_n\rightarrow \mathcal{E}_n/\mathcal{M}_n^{r+1}, [f]
 \end{equation*}
-correspond  à prendre le jet d'ordre $r$, cela se déduit du corollaire suivant:
 
-\begin{corollaire}\label{corrJets}
-    \begin{equation*}
-        f\in\mathcal{M}_n^r\Leftrightarrow
-        \forall \alpha\in\mathbb{N}^n : |\alpha|< r, d_0^{(\alpha)}f=0 
-    \end{equation*}
-\end{corollaire}
 
 \begin{definition}
     Un idéal $I\triangleleft \mathcal{E}_n$ est de codimension finie si $\mathcal{E}_n/I$ est un espace vectoriel de dimension finie. Ce qui revient à demander qu'on puisse complémenter $I$ par un espace vectoriel de dimension fini, i.e il existe $J$ un sous vectoriel de dimension fini tel que 
@@ -1658,17 +1731,7 @@ la première condition est assez intuitive: en effet si on prend l'exemple d'une
     \Bigl\{G\cdot v | v\in V\Bigr\}  
 \end{equation*}
 n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orbites induites par les actions décrites ci-dessus.\\
-Rappelons qu'un module est simplement un espace vectoriel mais sur anneau à la place d'un champ, il est important de noter que cette relaxation fait qu'on peut trouver des modules qui ne possèdent pas de bases (modules dits "à torsion"), un module libre est alors un module qui possède une base. On remarque assez facilement que $\mathcal{E}_n^m$ est un module libre sur $\mathcal{E}_n$
-et que
-\begin{equation*}
-    \mathcal{E}(0,\R^n,\R^m)\cong \mathcal{E}_n^m
-\end{equation*}
 
-le corrolaire \ref{corrJets} nous permet aussi de dire que
-
-\begin{equation*}
-    J^k(n,m)\cong (\mathcal{E}_n /\mathcal{M}_n^{m+1})^k
-\end{equation*}
 
 dans \cite{damon1984unfolding}, James damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équilavences sur les germes les "sous groupes géométriques de $\mathcal{A}$ et $\mathcal{K}$ . Nous allons passer les prochains paragraphes à en exposer les idées
 
@@ -1691,8 +1754,8 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 	\arrow["\pi"', from=2-1, to=3-1]
 	\arrow["\pi", from=2-2, to=3-1]
     \end{tikzcd}\]
-    des calculs similaires à\ref{Structpi} permettre de voir que cela impose à $G$ d'être de la forme $G(x,u)=(\tilde{G}(x,u),u)$ et 
-    $\tilde{G}(\cdot,0)=f$
+    des calculs similaires à\ref{Structpi} permettent de voir que cela impose à $G$ d'être de la forme $G(x,u)=(G_1(x,u),u)$ et 
+    $G_1(\cdot,0)=f$
     On pose $\mathcal{U}_d(f)$ l'ensemble des déploiments à $d$ paramètres de $f$.
 \end{definition}
 
@@ -1701,7 +1764,7 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel que $\tilde{G}(\cdot,u)\in V$, l'ensemble de tel déploiments sera noté $\mathcal{U}(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinnage de 0 $U$ tel que $G(u,\cdot)\in V$ si $u\in U$. L'ensemble de tel déploiments sera noté $\mathcal{U}(v,V)$
 \end{definition}
 
 \begin{exemple}
