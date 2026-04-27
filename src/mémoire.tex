@@ -1280,7 +1280,7 @@ dans les années 80 Golubitsky dans \cite{golubitsky1985sgb1}
 introduisit deux approches révolutionnaire pour traier des 
 problèmes de bifurcations : il eu la brillante idée 
 d'appliquer des techniques de théorie des singularités et de théorie des groupes, ce qui lui permit d'entreprendre un travail de Classification. En 2021, James Monteldi reprit le travail de Golubitsky et étendit son travail de classification dans \cite{montaldi2021sbc}. Dans les prochains paragraphes, nous proposons une synthèse de leurs idées
-\subsection{Germes de fonctions : généralités}
+\subsection{Structure algébrique des germes de fonctions lisse}
 Etant donné qu'on s'intéresse uniquement au comportement des fonctions au voisinage d'un certain ensemble singulier $S$ (les points pour lequels on ne peut appliquer le théorème des fonctions implicites) il est naturel de considérer deux fonctions comme étant "égales" si elle le sont au voisinage de $S$, nous rendons cette idée précise dans la suite 
 \begin{definition}
     Soient $(X,\mathcal{T}),(Y,\mathcal{T}')$ des espaces topologiques, $S\subseteq X$ et $T\subseteq Y$
@@ -1363,8 +1363,8 @@ L'opération de composition entre germes est clairement bien définie. Pour déf
         \mathcal{E}(S,X,Y)=C^{\infty}(\cdot,Y)_{S}
     \end{equation*} 
 \end{remarque}
-Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{E}_S(N)
-=\mathcal{E}_S(S,N,\R)$. On 
+Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{E}(N)_S
+=\mathcal{E}_S(S,N,\R)$, si le contexte est clair, on notera $\mathcal{E}_S$. On 
 remarque que les opérations de multiplication et d'addition 
 passent au quotient, ce qui en fait un 
 anneau commutatif. On remarque également que l'évaluation 
@@ -1386,39 +1386,39 @@ On rappelle la notion d'anneau local
 
 \begin{proposition}
     Si $S=\left\{s\right\}$ est un singleton,
-    l'ensemble $\mathcal{M}_s(N)=\mathcal{E}_s(s,M,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s(N)$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
+    l'ensemble $\mathcal{M}_S=\mathcal{E}_s(s,M,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
 \end{proposition}
 \begin{preuve}
-Il suffit d'observer que si $f\in\mathcal{E}_s(N)
-\setminus\mathcal{M}_s(N)$, alors il inversible. En effet, 
+Il suffit d'observer que si $f\in\mathcal{E}_S
+\setminus\mathcal{M}_s$, alors il inversible. En effet, 
 si $\tilde{f}\in f$ alors $1/\tilde{f}$ est défini sur un 
 voisinage de $s$ et $g=[1/\tilde{f}]_{\sim_s}$ est 
 l'inverse de $f$
 \end{preuve}
 Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
-\begin{proposition}
+\begin{proposition}\label{décomposition}
     Soit $N$ une variété lisse $S\subseteq N$
     \begin{equation*}
         S=\bigcup_{j=1}^p S_j\text{ et } \bar{S_i}\cap 
-        \bar{S_{i'}}=\emptyset\text{ si } i\neq i'\Rightarrow \mathcal{E}_S(N)\cong \prod_{j=1}^p \mathcal{E}_{S_i}(N)\text{ et }\mathcal{M}_S(N)=\prod_{j=1}^p \mathcal{M}_{S_j}(N)
+        \bar{S_{i'}}=\emptyset\text{ si } i\neq i'\Rightarrow \mathcal{E}_S\cong \prod_{j=1}^p \mathcal{E}_{S_i}(N)\text{ et }\mathcal{M}_S=\prod_{j=1}^p \mathcal{M}_{S_j}(N)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-    Souvenez vous qu'on suppose que les variété sont des espace topologiques séparés, il existe donc $U_1,\cdots,U_p$ des voisinnages de $S_1,\cdots,S_p$. Soit maintenant une germe $f\in\mathcal{E}_S(N)$, c'est la classe d'équilavence d'une fonction $\tilde{f}$ défini sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
+    Souvenez vous qu'on suppose que les variété sont des espace topologiques séparés, il existe donc $U_1,\cdots,U_p$ des voisinnages de $S_1,\cdots,S_p$. Soit maintenant une germe $f\in\mathcal{E}_S$, c'est la classe d'équilavence d'une fonction $\tilde{f}$ défini sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
     $\tilde{f}_{|_{V'}}\sim_{S} \tilde{f}$
     et donc on vérifie facilement que 
     \begin{equation*}
-        \Phi : \mathcal{E}_S(N)\rightarrow \prod_{j=1}^p 
+        \Phi : \mathcal{E}_S\rightarrow \prod_{j=1}^p 
         \mathcal{E}_{S_i}(N), [f]_S\mapsto ([f|_{V_1}]_{S_1},\cdots [f|_{V_p}]_{S_p} )
     \end{equation*}
-    est un isomorphisme d'anneau. La décomposition de l'idéal $\mathcal{M}_S(N)$ en découle immédiatement.
+    est un isomorphisme d'anneau. La décomposition de l'idéal $\mathcal{M}_S$ en découle immédiatement.
 \end{preuve}
 \begin{corollaire}
-    Si $S$ est fini, $\mathcal{E}_S(N)$ est un anneau semi-local.
+    Si $S$ est fini, $\mathcal{E}_S$ est un anneau semi-local.
 \end{corollaire}
 
 \begin{remarque}
-    Dans la litérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \textit{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S(N)$ n'est pas un anneau local, ou même semi-local. Les choses deviennet incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
+    Dans la litérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \textit{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennet incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
 \end{remarque}
 
 Dans la suite, si $R$ est anneau, on notera $R^r[x_1,\cdots,x_n]$ les polynômes en polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes de homogènes de degré $r$.
@@ -1438,22 +1438,79 @@ U\cap(\tilde{x}_1,\cdots,\tilde{x}_k)^{-1}(0)$ et $x_1,\cdots,x_n$ les germes  a
 \begin{preuve}
 Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons l'autre inclusion en procédant par récurrence. Soit alors $f\in I(k,r)$, pour $1\leq i\leq k$, on pose 
 \begin{equation*}
-    \tilde{f}_i(\tilde{x_1},\cdots,\tilde{x_n})=\int_{0}^{1}  D_i \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i+1},\cdots,\tilde{x}_n)dt
+    \tilde{f}_i(\tilde{x_1},\cdots,\tilde{x_n})=\int_{0}^
+    {1}  D_i \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i
+    +1},\cdots,\tilde{x}_n)dt
 \end{equation*}
-si $f_i=[\tilde{f}_i]$, le théorème de variation des primitives et de dérivation des fonctions composées nous permettent d'écrire
+si $f_i=[\tilde{f}_i]$, le théorème de variation des 
+primitives et de dérivation des fonctions composées nous 
+permettent d'écrire
 \begin{equation*}
     f=\sum_{i=1}^{k}x_i f_i
 \end{equation*}
-ce qui nous permet de conclure quand $r=1$. Maintenant, si $f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de récurrence, $f_i\in  \mathbb{Z}[x_1,\cdots,x_k]_{r-1}$, et $f=\sum_{i=1}^{n}x_i f_i$, on conlut.
+ce qui nous permet de conclure quand $r=1$. Maintenant, si 
+$f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de 
+récurrence, $f_i\in  \mathbb{Z}[x_1,\cdots,x_k]_{r-1}$, et 
+$f=\sum_{i=1}^{n}x_i f_i$, on conlut.
 \end{preuve}
 
 Ce résultat nous permet d'affirmer que 
 \begin{equation*}
-    \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle_{\mathcal{E}_s(N)}
+    \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle_
+    {\mathcal{E}_S}
 \end{equation*}
-et que $\mathcal{M}_x(N)^r$ est exactement égale aux germes dont les dérives d'ordre $<k$ sont nulles en $0$.\\
+et que $\mathcal{M}_x(N)^r$ est exactement égale aux germes 
+dont les dérives d'ordre $<r$ sont nulles en $0$.\\
+Si $R$ est un  anneau, on note $R[[X_1,\cdots,X_n]]$ 
+l'ensemble 
+des séries formelles à $n$ variables\footnote{ On pourrait 
+tout à fait avoir un nombre infni de variable}. Rappelons 
+qu'une série formelle peut être vue comme une fonction qui 
+à un  
+multi-indice $\alpha\in\mathbb{N}^n$ associe un  élément 
+$c_{\alpha}\in R$, appelé le coeficient de $X^{\alpha}$, et 
+on représente $f\in R[[X_1,\cdots,X_n]]$ de la façon 
+suivante
+\begin{equation*}
+    f=\sum_{\alpha\in\mathbb{N}^n} c_{\alpha}X^{\alpha}\text
+    { avec } c_{\alpha}=f(\alpha)
+\end{equation*}
+On munit $R[[X_1,\cdots,X_n]]$ d'une structure d'anneau via 
+\begin{align*}
+    &\sum_{\alpha\in\mathbb{N}^n} c_{\alpha}X^{\alpha}+\sum_
+    {\alpha\in\mathbb{N}^n} b_{\alpha}X^{\alpha}= \sum_
+    {\alpha\in\mathbb{N}^n}(c_{\alpha}+b_{\alpha})X^{\alpha}
+    \\
+    &(\sum_{\alpha\in\mathbb{N}^n} c_{\alpha}X^{\alpha})
+    \cdot (\sum_{\alpha\in\mathbb{N}^n} b_{\beta}X^{\beta})
+    =\sum_{\alpha,\beta\in\mathbb{N}^n}c_{\alpha}b_{\beta}X^
+    {\alpha+\beta}
+\end{align*}
+On Rappelle également que ce nouvel anneau hérite de 
+certaines propriétés de l'anneau $R$, en particulier si $R$ 
+est local, $R[[X_1,\cdots,X_n]]$ l'est aussi, et l'unique 
+ideal maximal $\mathcal{M}$ est l'ensemble des séries dont 
+le terme constant est dans $\mathcal{M}$.
 
-On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S(N)$ avec $S$ fini, on rappelle que 
+\begin{corollaire}\label{Isopoly}
+    Avec les notations du résultat précédent, 
+    \begin{equation*}
+        \mathcal{E}_x(N)/\mathcal{M}_x(N)^r\cong \mathbb{R}
+        [[x_1,\cdots,x_n]]/\mathcal{M}^r
+    \end{equation*}
+    avec $\mathcal{M}$ l'unique idéal maximal de $\mathbb{R}
+    [[x_1,\cdots,x_n]]$
+\end{corollaire}
+\begin{preuve}
+    Considérons 
+    \begin{equation*}
+        J_{x}^{r-1}: \mathcal{E}_x(N)\rightarrow \R[[x_1,\cdots,x_n]]/\mathcal{M}^r
+    \end{equation*}
+    qui à $f$ associe son dévellopement de Taylor à l'ordre 
+    $r-1$, via \ref{Hadamard}, on sait que $\ker J_{x}^{r-1}
+    =\mathcal{M}_x(N)^r$ en $x$, et il est évidemment surjectif. On conclut en appliquant le premier théorème d'isomorphisme.
+\end{preuve}
+On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S$ avec $S$ fini, on rappelle que 
 
 \begin{definition}
     Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à droite est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un sclaire" $\cdot:R\times G\rightarrow G$ qui respecte les axiomes même axiomes que pour un espace un vectoriel, i.e, $\forall r,s\in R,x,y\in G$
@@ -1477,7 +1534,7 @@ Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
     \begin{equation*}
         z\cdot y + (-y)\cdot z= 0
     \end{equation*}
-    et les  germes fonctions $x$ et $-y$ ne sont pas nulles sur $\mathcal{E}_S(N)$. Il est donc impossible d'avoir une base
+    et les  germes fonctions $x$ et $-y$ ne sont pas nulles sur $\mathcal{E}_S$. Il est donc impossible d'avoir une base
 \end{exemple}
 
 On peut aussi avoir la situation où $r\cdot x=0$ avec $r$ 
@@ -1485,7 +1542,7 @@ et $x$ non nuls, c'est ce qu'on appelle un module à \textit
 {torsion}. La notion d'homomorphisme de module est la même 
 que celle d'application linéaire.
 Nous rappelons (sans preuve) le lemme de Nakayama, qui est 
-central dans l'étude des $\mathcal{E}_S(N)$-modules 
+central dans l'étude des $\mathcal{E}_S$-modules 
 
 \begin{theobox}{Lemme de Nakayama}{}\label{Nakayama}
     Soit $R$ un anneau commutatif, $u:E\rightarrow F$ un homomorphisme de $R$-modules, $I$ un ideal de $R$ tel que $1_{R}+z$ est inversible pour tout $z\in I$.
@@ -1495,6 +1552,11 @@ central dans l'étude des $\mathcal{E}_S(N)$-modules
     \end{equation*}
 \end{theobox}
 par $IF$ on entend l'ensemble des sommes finis d'élements $if$ où $i\in I$, $f\in F$.\\
+On aura également besoin de ce petit corollaire
+\begin{corollaire}\label{corrNakayama}
+    Soit $M$ est un $R$-module finiment généré avec $R$ un anneau local d'ideal maximal $\mathcal{M}$. Si $[m_1],\cdots,[m_k]$ génèrent $M/\mathcal{M}M$, alors 
+    $m_1,\cdots,m_k$ génèrent $M$.
+\end{corollaire}
 \begin{definition}
     Si $M$ est un $R$-module et $N$ un sous module, on défini le module quotient de la façon habituelle:
     \begin{equation*}
@@ -1513,7 +1575,7 @@ Vous remarquerez qu'on a pas mis d'hypothèses pour le sous
 module (contrairement aux quotient de groupes). C'est parce 
 qu'on en a pas besoin pour que les opérations soient bien 
 définies ! Ainsi, on vérifie facilement que $M/N$ est bien 
-un sous module.Notez que le quotient d'un $\mathcal{E}_S(N)
+un sous module.Notez que le quotient d'un $\mathcal{E}_S
 $-module par un sous module est, en particulier, un espace 
 vectoriel sur $\R$ (en identifiant  les gemres constantes à 
 leur constantes). Donc dans la suite, $\dim (M/N)$ 
@@ -1521,114 +1583,108 @@ signifiera la dimension de $M/N$ en tant que $\R$-vectoriel.
 \\
 
 Les résultats nous permettent de controller le nombre de 
-générateurs d'un sous module d'un $\mathcal{E}_S(N)$-module 
+générateurs d'un sous module d'un $\mathcal{E}_S$-module 
 finiment généré
-\begin{lemme}
+\begin{lemme}\label{Lemme inclusion}
     Soient $S$ un ensemble fini, $M$ un un 
-    $\mathcal{E}_S(N)$-module finiment généré et $V$ un 
+    $\mathcal{E}_S$-module finiment généré et $V$ un 
     sous module de $M$, on a 
     \begin{equation*}
-        \dim_{\R}( M/(\mathcal{M}_S(N)^{l+1}M+V))\leq 
-        l\Rightarrow \mathcal{M}_S(N)^{l}M\subseteq V
+        \dim_{\R}( M/(\mathcal{M}_S^{l+1}M+V))\leq 
+        l\Rightarrow \mathcal{M}_S^{l}M\subseteq V
     \end{equation*}
 \end{lemme}
 \begin{preuve}
     Par le théorème C, il vient, en posant $M'=M/V$
     \begin{equation*}
-        \dim_{\R}( M/(\mathcal{M}_S(N)^{l+1}M+V))=\dim_{\R}
-        ( M'/(\mathcal{M}_S(N)^{l+1}M'))\leq l
+        \dim_{\R}( M/(\mathcal{M}_S^{l+1}M+V))=\dim_{\R}
+        ( M'/(\mathcal{M}_S^{l+1}M'))\leq l
     \end{equation*}
     Remarquez qu'on a 
     \begin{equation*}
-        M'\supseteq M'\mathcal{M}_S(N)\supseteq M'\mathcal{M}^2_S(N)\supseteq \cdots \supseteq M'\mathcal{M}^{l+1}_S(N)
+        M'\supseteq M'\mathcal{M}_S\supseteq M'\mathcal{M}^2_S(N)\supseteq \cdots \supseteq M'\mathcal{M}^{l+1}_S(N)
     \end{equation*}
     et donc 
     \begin{equation*}
-        0=\dim_{\R} M'/M'\leq \dim_{\R} M'/( M'\mathcal{M}_S(N))\leq\cdots \leq  \dim_\R M'/(M'\mathcal{M}_S(N)^{l+1})\leq l
+        0=\dim_{\R} M'/M'\leq \dim_{\R} M'/( M'\mathcal{M}_S)\leq\cdots \leq  \dim_\R M'/(M'\mathcal{M}_S^{l+1})\leq l
     \end{equation*}
     et donc il existe $0\leq k \leq l$ tel que 
     \begin{equation*}
         \mathcal{M}_S^{k+1}M'=\mathcal{M}_S^{k}M'
     \end{equation*}
-    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S(N)$, $I=\mathcal{M}_S(N)$ et $F=\mathcal{M}_S(M)^kM'$, ce qui permet d'affirmer que $\mathcal{M}_S^k M'=\mathcal{M}_S^k (M'/V)=0$ ce qui permet de conclure.
+    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S$, $I=\mathcal{M}_S$ et $F=\mathcal{M}_S(M)^kM'$, ce qui permet d'affirmer que $\mathcal{M}_S^k M'=\mathcal{M}_S^k (M'/V)=0$ ce qui permet de conclure.
 \end{preuve}
 
 
 
 \begin{proposition}
-    Dans les hypothèses du lemme précédent, $M'$ est finiment généré (en tant que $\mathcal{E}_S(N)$-module) 
+    Dans les hypothèses du lemme précédent, si $S=\left\{s\right\}$ alors $M'$ est finiment généré (en tant que $\mathcal{E}_S$-module) 
     il existe un ensemble de générateurs ayant au plus $m$$ 
-    {\dim(N)+l}\choose {l}$ où $m$ est la taille du plus petit ensemble de générateurs de $M$,
-    \todo{TERMINER PREUVE}
+    {\dim(N)+l}\choose {l}$ où $m$ est la taille du plus petit ensemble de générateurs de $M$
 \end{proposition}
 
 \begin{preuve}
-    Montrons d'abord le résultat si $S=\{s\}$. Du fait que $\mathcal{M}_S(N)^lM$ est finiment généré et 
-    $M/(\mathcal{M}_S(N)^lM)$ est de dimension finie, 
+    Du fait que 
+    $\mathcal{M}_S^lM$ est finiment généré et 
+    $M/(\mathcal{M}_S^lM)$ est de dimension finie (via 
+    \ref{Isopoly}), $\mathcal{M}_S^{l}M+V$ est finiment 
+    généré et , via le résultat précédent, 
+    $V=\mathcal{M}_S^{l}M+V$ donc $V$ est finiment généré. 
+    Via le corollaire \ref{corrNakayama}, un ensemble de 
+    générateurs de   $V/\mathcal{M}_SV$ donne un ensemble de générateurs de $V$. Il vient alors 
+    \begin{equation*}
+        \dim_{\R} V/\mathcal{M}_SV\underset{\text{via \ref{Lemme inclusion}}}{\leq}\dim_{\R} V/\mathcal{M}^{l+1}_SM\leq \dim_{\R} M/\mathcal{M}^{l+1}_SM\underset{via \ref{Isopoly}}{\leq}  m{\dim(N)+l\choose l}
+    \end{equation*}
 \end{preuve}
+
 \begin{remarque}
-    On vient de montrer que tout $\mathcal{E}_S(N)$-module
-    finiment génré avec $S$ fini est un module \textit{Noetherien}
+    On vient de montrer que tout $\mathcal{E}_S$-module
+    finiment génré avec $S=\left\{s\right\}$ est un module \textit{Noetherien}, i.e un module dont tous les sous-modules sont finiment générés
 \end{remarque}
 
-\begin{definition}
-    Soient deux fonction $f,g$
-    \begin{equation*} 
-        j^r_{x}f(x)=\sum_{ |\alpha|\leq r} \frac{1}{\alpha !} D^{(\alpha)}f(0)x^{\alpha}
-    \end{equation*}
-    L'espace de jet  $J^k(n,m)$ défini comme
-    \begin{equation*}
-        \{j^k_0 f | f\in \mathcal{E}_x(N)\}
-    \end{equation*}
-    et alors un espace vectoriel
-\end{definition}
 
-Notons que la fonction qui à une germe $[f]_{\sim_0}$ associe $[j_0^rf]_{\sim_0}$  est en fait une projection ! 
-en effet,
+\begin{corollaire}
+    Tout $\mathcal{E}_S$-module finiment généré, avec $S$ fini, est un module Noetherien
+\end{corollaire}
+\begin{preuve}
+    C'est une simple application du résultat précédent et de \ref{décomposition}
+\end{preuve}
+
+\subsection{Le théorème de préparation de Malgrange}
+
+\todo{Texte introductif}.\\
+Soient $P$ une variété et $y\in P$,
+on considère alors les projections 
+$\pi_1:((y,0),P\times \R)\rightarrow P$ et $t:((y,0),
+P\times \R)\rightarrow \R$. Remarquez que l'espace des germes $\mathcal{E}(y,P,\R^m)$ est isomorphe à  $\mathcal{E}_{y}(P)^m$, on pose alors
+
 \begin{equation*}
-    \pi_r :\mathcal{E}_n\rightarrow \mathcal{E}_n/\mathcal{M}_n^{r+1}, [f]
+    R_{\cdot}:\mathcal{E}_y(P)^m\rightarrow \mathcal{E}_{(y,0)}(P\times \R),u\mapsto \sum_{i=1}^{m}(u_i\circ \pi)t^{m-i}
 \end{equation*}
 
+et 
 
-\begin{definition}
-    Un idéal $I\triangleleft \mathcal{E}_n$ est de codimension finie si $\mathcal{E}_n/I$ est un espace vectoriel de dimension finie. Ce qui revient à demander qu'on puisse complémenter $I$ par un espace vectoriel de dimension fini, i.e il existe $J$ un sous vectoriel de dimension fini tel que 
-    \begin{equation*}
-        \mathcal{E}_n=I+J
-    \end{equation*}
-    Une cobase pour un tel idéal est une suite finie $(e_1,\cdots,e_r)$ de $\mathcal{E}_n$ telle que
-    \begin{equation*}
-        \mathcal{E}_n=\big> e_1,\cdots,e_r\big<_{\R}\oplus I
-    \end{equation*}
-\end{definition}
-Rappelons le lemme de Nakayama
-\begin{lemme}(Nakayama)
-    Soit $R$ un anneau et $M$ un idéal tel que si $a\in M$ alors $a+1$ est un inversible. Soient de plus $I$,$J$ des ideéaux de $R$ avec 
-    $I=\langle i_1,\cdots,i_n\rangle $, on a 
-    \begin{equation*}
-        I\subset J+\mathcal{M}I \Rightarrow I\subseteq J 
-    \end{equation*}
+\begin{equation*}
+    \Gamma_{\cdot}:\mathcal{E}_y(P)^m\rightarrow \mathcal{E}_{(y,0)}(P\times \R),u\mapsto t^m+R_u
+\end{equation*}
+
+Le résultat suivant est une conséquence du \textit{théorème 
+de division de Mather}, la preuve étant assez lourde et 
+calculatoire, il est simplement rappelé
+
+\begin{lemme}
+Soient $g\in\mathcal{E}_{(y,0)}(P\times \R)$ et 
+$u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
+^m$ telle que
+\begin{equation*}
+    g=\Gamma_u q +R_h
+\end{equation*}
 \end{lemme}
 
 
-\begin{proposition}
-    \begin{equation*}
-        \operatorname{codim} I<\infty \Leftrightarrow \; \exists r\in\mathbb{N}: \mathcal{M}_n^{r}\subset I
-    \end{equation*}
-\end{proposition}
-\begin{proof}
-    Si $M_n^r\subseteq I$ alors considérons $W=\rangle \{ x^\alpha | \alpha\in\mathbb{N}^n, |\alpha|<r \}\langle_{\mathbb{R}}$
-    on remarque alors que
-    \begin{equation*}
-        \forall f\in\mathcal{E}_n, f=j_0^{r-1}f+(f-j_0^{r-1}f)\in W+ I
-    \end{equation*}
-    et donc $\mathcal{E}_n=W+I$ ce qui montre le premier sens.
-    Pour l'autre implication, on commence par définir la suite d'ideaux $(I_r)_{r>0}=(I+\mathcal{M}_n^r)_{r>0}$ on vient de montrer qu'ils sont tous de codimension finie, on remarque, de plus, que cette suite est décroissante (pour l'inclusion). Posons $c_r=\dim(\mathcal{E}_n/I_r)$ avec $I_0=I$, il vient alors que la suite $(c)_{r>1}$ est croissante et majorée par $c_0$ qui est un entier fini : la suite doit stabiliser.
-    ainsi, on peut trouver $k$ tel que $c_k=c_{k+1}$ donc $\operatorname{codim}(I_k)=\operatorname{codim}(I_{k+1})$ or $I_k\supseteq I_{k+1}$ donc
-    \begin{equation*}
-        I+\mathcal{M}_n^k=I+\mathcal{M}_n^{k+1}
-    \end{equation*}
-    On conclut , grâce à Nakayama, que $\mathcal{M}_n^k\subset I$ comme exigé
-\end{proof}
+
+
+
 
 \subsection{relations d'équivalences: exemple introductif} 
 Pour pouvoir classifier les bifurcations, il nous faut une notion d'équilavence ! Le travail serait alors de lister les différentes classes d'équilavences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \textit{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équilavence entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
@@ -1714,7 +1770,7 @@ Les relations d'équilavences qui nous intéressent seront définies par l'actio
     (g,h)\cdot x = g\cdot x \cdot h^{-1}
  \end{equation*}
 Le groupe le plus naturel est $d(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $\mathcal{A}=d(n)\times d(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
- On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{d}_{n+m}$ telles qu'il existe une $h\in\mathcal{d}_n$ respectant le  diagramme suivant:
+ On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{D}_{n+m}$ telles qu'il existe une $h\in\mathcal{D}_n$ respectant le  diagramme suivant:
 \[\begin{tikzcd}
 	{(0,\R^{n+m})} & {(0,\R^{n+m})} & \\
 	{(0,\R^n)} & {(0,\R^n)} & {\text{avec }\iota(x)=(x,0)}
