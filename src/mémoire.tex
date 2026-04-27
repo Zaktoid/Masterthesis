@@ -1332,11 +1332,16 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     \begin{equation*}
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_1))
     \end{equation*}
+    Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(X',S')}}$ est simplement la germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
 \end{definition}
-L'opération de composition entre germes est clairement bien définie. Pour définir les germes de sous ensemble, on identifie simplement une partie $S$ à $\chi_{S}$ et considère la germe de fonction correspondante
+L'opération de composition entre germes est clairement bien 
+définie. Pour définir les germes de sous ensemble, on 
+identifie simplement une partie $S$ à $\chi_{S}$ et 
+considère la germe de fonction correspondante
 \begin{definition}
     Une germe de difféomorphisme de $\mathcal{E}(\{0\},\R^n,
-    \R^n)$ est un élément de $\mathcal{E}(\{0\},\R^n,\R^n,\{0\})$ 
+    \R^n)$ est un élément de $\mathcal{E}(\{0\},\R^n,\R^n,
+    \{0\})$ 
     (on fixe la cible à zéro) ayant un difféomorphisme d'un 
     ouvert de $\R^n$ contenant zéro dans ses représentants. 
     Cet ensemble est noté $\mathcal{D}_n$
@@ -1680,6 +1685,48 @@ $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
     g=\Gamma_u q +R_h
 \end{equation*}
 \end{lemme}
+\begin{definition}
+    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulière si la germe $f|_{(y\times \R, (y,0) )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
+\end{definition}
+
+Le théorème suivant montre que le "terme de reste" du lemme précédent disparaît si $f$ est régulière
+
+\begin{theorem}
+    Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulière, alors il existe une germe inversible 
+    $q\in\mathcal{E}_{(y,0)}$ et $u\in\mathcal{E}_y(P)^{m}$
+    \begin{equation*}
+        f=q\Gamma_u
+    \end{equation*}
+\end{theorem}
+\begin{preuve}
+    Le résultat précédent nous assure l'existence de 
+    germes 
+    $q_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times\R)$
+    et $h\in\mathcal{E}_{(y,0)}(P\times\R^m)^m$ telles que
+    \begin{equation*}
+        f=\Gamma_u q_1 +R_h
+    \end{equation*}
+    considérons alors $P_0\subseteq P$,$U\subseteq \R^m$ et 
+    $V\subseteq \R$,
+    \begin{equation*}
+        \tilde{f}: P_0\times V \rightarrow \R\text{, }
+        \tilde{q}_1:P_0\times U\times V\rightarrow \R\text{ 
+            et }\tilde{h}:P_0\times U\rightarrow \R^m
+    \end{equation*}
+    On écrit alors
+    \begin{equation*}
+        \forall z\in P_0,a\in U,b\in V,\quad \tilde{f}(z,b)=(b^m+\sum_{i=1}^m a_ib^{m-i})\tilde{q}_1(z,a,b)+\sum_{i=1}^m\tilde{h}_i(z,a)b^{m-i}
+    \end{equation*}
+    \todo{TERMINER Calculs}
+
+\end{preuve}
+
+\begin{corollaire}
+    Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulière, il existe $q\in\mathcal{E}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
+    \begin{equation*}
+        g=fq+R_h
+    \end{equation*}
+\end{corollaire}
 
 
 
