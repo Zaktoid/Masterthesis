@@ -348,7 +348,8 @@ On termine par une petite remarque sur les dérivées d'ordre supérieur. On dé
     F\in C^2(U,Y)\Rightarrow d(dF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
 \end{equation*}
 Ainsi, $d^2F$ prend en entrée un point $x$ de $U$, $d^2F(x)$ une direction $h$ de $X$ et  $d^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
-\subsubsection{Opérateurs de Fredholm}
+\subsection{Opérateurs de Fredholm}
+\subsubsection{Définition et théorème d'Atkinson}
 
 Nous étudierons la situation où la "non-bijectivité" de $d_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons:
 \begin{definition}
@@ -623,19 +624,19 @@ On défini alors \textit{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 
 On peut montrer qu'il inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
-\subsection{Elements de théorie des EdP}
+\subsection{Elements de théorie des EDP}
 Nous introduisons le minimum vital de théorie des equations différentielles aux dérivées partielles pour pouvoir illustrer la théorie, cette section est adaptée de \cite{friedmanpartial}
 
-Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $d^{\alpha}=d^{\alpha_1}_1\cdots d^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$.
+Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
     Si $U$ est un ouvert de $\R^n$, et $l\geq m\geq 1$ un \textit{opérateur diférentiel partiel} est un operateur de la forme 
     \begin{equation}\label{ellipticop}
-        E: C^{l}(U)\rightarrow C^{l-m}(U), f \mapsto \sum_{|\alpha|\leq m} a_{\alpha}d^{\alpha}f
+        E: C^{l}(U)\rightarrow C^{l-m}(U), f \mapsto \sum_{|\alpha|\leq m} a_{\alpha}D^{\alpha}f
     \end{equation}
     où les $a_{\alpha}$ sont des fonctions de $U$ vers $\R$ 
     telle qu'il existe $a_\alpha$ non-identiquement nul avec $|\alpha|=m$ l'opérateur 
     \begin{equation}\label{principalpart}
-        f\mapsto \sum_{|\alpha|= m} a_{\alpha}d^{\alpha}f
+        f\mapsto \sum_{|\alpha|= m} a_{\alpha}D^{\alpha}f
     \end{equation}
     est la partie princiaple de  $F$ et les coeficients $a_
     {\alpha}$ avec $|\alpha|=m$ sont appelées coeficients 
@@ -669,25 +670,25 @@ résultat suivant
     et leur dérivées jusqu'à l'ordre 
     $k-1$  $B(f,g)$
     \begin{equation*}
-        fd^kg - (-1)^kgd^kf =dB(f,g)
+        fD^kg - (-1)^kgD^kf =DB(f,g)
     \end{equation*}
     Et pour tout multi-indice 
     $|\alpha|=k$
     \begin{equation*}
-        fd^\alpha g - (-1)^{|\alpha|}g d^{\alpha} f=\sum_{j=1}^{n} d_j B_j(f,g)
+        fD^\alpha g - (-1)^{|\alpha|}g D^{\alpha} f=\sum_{j=1}^{n} d_j B_j(f,g)
     \end{equation*}
 \end{lemme}
 
 \begin{proposition}(L'identité de Green)
     Soit
     \begin{equation*}
-        E= f \mapsto \sum_{|\alpha|\leq m}a_{\alpha}d^{\alpha}f
+        E= f \mapsto \sum_{|\alpha|\leq m}a_{\alpha}D^{\alpha}f
     \end{equation*}
     avec les $a_{\alpha}\in C^{|\alpha|}
     (U)$. On pose 
     \begin{equation*}
         E^{\dagger}= f\mapsto \sum_{|\alpha|\leq m}
-        (-1)^{|\alpha|}d^{\alpha}(a_{\alpha}f)
+        (-1)^{|\alpha|}D^{\alpha}(a_{\alpha}f)
     \end{equation*}
     On a 
     \begin{equation*}
@@ -1276,10 +1277,20 @@ Avant de présentez la preuve, résumons un peu la situation sur un diagramme
     
 
 \section{Approche via la théorie des singularités}\label{SINGsection}
-dans les années 80 Golubitsky dans \cite{golubitsky1985sgb1} 
-introduisit deux approches révolutionnaire pour traier des 
-problèmes de bifurcations : il eu la brillante idée 
-d'appliquer des techniques de théorie des singularités et de théorie des groupes, ce qui lui permit d'entreprendre un travail de Classification. En 2021, James Monteldi reprit le travail de Golubitsky et étendit son travail de classification dans \cite{montaldi2021sbc}. Dans les prochains paragraphes, nous proposons une synthèse de leurs idées
+
+Le lien entre l'étude des bifurcation et la théorie des 
+singularités et théorie des catastrophes peut être aperçu 
+dans "Stabilité structurelle et morphogenèse" de René Thom.
+Ce qu'il entend par "stabilité structurelle d'un modèle 
+mathématique" c'est la "persistence par rapport aux petites 
+perturbations", plus précisemment, pour qu'un modèle du 
+monde soit prédictif, étant donné qu'il existe toujours un 
+"bruit de fond" qui échappe à notre contrôle, il faut qu'il 
+y soit resistant. Bien que ce soit un ouvrage plutôt 
+philosophique que mathématique, les idées introduites 
+furent extrêmement fécondes, si bien qu'il impossible de 
+plonger dans la théorie des singularités, ou des 
+catastrophes sans croiser le nom de Thom.
 \subsection{Structure algébrique des germes de fonctions lisse}
 Etant donné qu'on s'intéresse uniquement au comportement des fonctions au voisinage d'un certain ensemble singulier $S$ (les points pour lequels on ne peut appliquer le théorème des fonctions implicites) il est naturel de considérer deux fonctions comme étant "égales" si elle le sont au voisinage de $S$, nous rendons cette idée précise dans la suite 
 \begin{definition}
@@ -1332,7 +1343,7 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     \begin{equation*}
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_1))
     \end{equation*}
-    Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(X',S')}}$ est simplement la germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
+    Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est simplement la germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
 \end{definition}
 L'opération de composition entre germes est clairement bien 
 définie. Pour définir les germes de sous ensemble, on 
@@ -1351,8 +1362,8 @@ considère la germe de fonction correspondante
 
 
 \begin{remarque}\label{remsheaf}
-    C'est un cas particulier de \textit{faisceau}, cette formulation nous sera utile dans la suite.
-    Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, U\subseteq V}$ respectant les axiomes suivants :
+    C'est un cas particulier de \textit{faisceau}\footnote{Le lecteur familier avec la théorie des catégories ne manquera pas de remarquer qu'un faisceau est un cas particulier de foncteur contravariant de la catégorie des ouverts (dont les morphismes sont les inclusions) et la catégorie des ensembles.}
+    Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, V\subseteq U}$ respectant les axiomes suivants :
     \begin{itemize}
         \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
         \item $\forall U,V,W\in\mathcal{T}: U\subseteq V\subseteq W$, $\rho^V_U\circ \rho^W_V=\rho^W_U$. (fonctorialité 2)
@@ -1373,9 +1384,9 @@ Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{
 remarque que les opérations de multiplication et d'addition 
 passent au quotient, ce qui en fait un 
 anneau commutatif. On remarque également que l'évaluation 
-en $0$ et la dérivée passent aussi au quotient. Dans les prochains paragraphes, on étudie un peu cet anneau
+en $0$ et la dérivée passent aussi au quotient. Dans les prochaines pages, on étudie cet anneau ainsi que les modules qu'on peut construire dessus. Pour ce faire, nous adaptons le travail de John Mather \cite{Mather1968vol3}
 \begin{remarque}
-    des notions similaires existent en dimension infinie. 
+    Des notions similaires existent en dimension infinie. 
     C'est assez marginal car en pratique, l'approche par 
     théorie des singularités suppose qu'on a effectué la 
     réduction de  Lyapunov–Schmidt.
@@ -1391,7 +1402,7 @@ On rappelle la notion d'anneau local
 
 \begin{proposition}
     Si $S=\left\{s\right\}$ est un singleton,
-    l'ensemble $\mathcal{M}_S=\mathcal{E}_s(s,M,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
+    l'ensemble $\mathcal{M}_S=\mathcal{E}_s(s,N,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
 \end{proposition}
 \begin{preuve}
 Il suffit d'observer que si $f\in\mathcal{E}_S
@@ -1580,14 +1591,14 @@ Vous remarquerez qu'on a pas mis d'hypothèses pour le sous
 module (contrairement aux quotient de groupes). C'est parce 
 qu'on en a pas besoin pour que les opérations soient bien 
 définies ! Ainsi, on vérifie facilement que $M/N$ est bien 
-un sous module.Notez que le quotient d'un $\mathcal{E}_S
+un sous module. Notez que le quotient d'un $\mathcal{E}_S
 $-module par un sous module est, en particulier, un espace 
 vectoriel sur $\R$ (en identifiant  les gemres constantes à 
-leur constantes). Donc dans la suite, $\dim (M/N)$ 
+leur constantes). Donc dans la suite, $\dim_{\R} (M/N)$ 
 signifiera la dimension de $M/N$ en tant que $\R$-vectoriel.
 \\
 
-Les résultats nous permettent de controller le nombre de 
+Les résultats suivants nous permettent de controller le nombre de 
 générateurs d'un sous module d'un $\mathcal{E}_S$-module 
 finiment généré
 \begin{lemme}\label{Lemme inclusion}
@@ -1617,7 +1628,7 @@ finiment généré
     \begin{equation*}
         \mathcal{M}_S^{k+1}M'=\mathcal{M}_S^{k}M'
     \end{equation*}
-    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S$, $I=\mathcal{M}_S$ et $F=\mathcal{M}_S(M)^kM'$, ce qui permet d'affirmer que $\mathcal{M}_S^k M'=\mathcal{M}_S^k (M'/V)=0$ ce qui permet de conclure.
+    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S$, $I=\mathcal{M}_S$ et $F=\mathcal{M}_S(M)^kM'$, ce qui permet d'affirmer que $\mathcal{M}_S^k M'=\mathcal{M}_S^k (M/V)=0$ ce qui permet de conclure.
 \end{preuve}
 
 
@@ -1625,7 +1636,7 @@ finiment généré
 \begin{proposition}
     Dans les hypothèses du lemme précédent, si $S=\left\{s\right\}$ alors $M'$ est finiment généré (en tant que $\mathcal{E}_S$-module) 
     il existe un ensemble de générateurs ayant au plus $m$$ 
-    {\dim(N)+l}\choose {l}$ où $m$ est la taille du plus petit ensemble de générateurs de $M$
+    {n+l}\choose {l}$ où $m$ est la taille du plus petit ensemble de générateurs de $M$
 \end{proposition}
 
 \begin{preuve}
@@ -1638,7 +1649,7 @@ finiment généré
     Via le corollaire \ref{corrNakayama}, un ensemble de 
     générateurs de   $V/\mathcal{M}_SV$ donne un ensemble de générateurs de $V$. Il vient alors 
     \begin{equation*}
-        \dim_{\R} V/\mathcal{M}_SV\underset{\text{via \ref{Lemme inclusion}}}{\leq}\dim_{\R} V/\mathcal{M}^{l+1}_SM\leq \dim_{\R} M/\mathcal{M}^{l+1}_SM\underset{via \ref{Isopoly}}{\leq}  m{\dim(N)+l\choose l}
+        \dim_{\R} V/\mathcal{M}_SV\underset{\text{via \ref{Lemme inclusion}}}{\leq}\dim_{\R} V/\mathcal{M}^{l+1}_SM\leq \dim_{\R} M/\mathcal{M}^{l+1}_SM\underset{\text{via} \ref{Isopoly}}{\leq}  m{n+l\choose l}
     \end{equation*}
 \end{preuve}
 
@@ -1649,18 +1660,12 @@ finiment généré
 
 
 \begin{corollaire}
-    Tout $\mathcal{E}_S$-module finiment généré, avec $S$ fini, est un module Noetherien
+    Tout $\mathcal{E}_S$-module $M$ finiment généré, avec $S$ fini, est un module Noetherien
 \end{corollaire}
-\begin{preuve}
-    C'est une simple application du résultat précédent et de \ref{décomposition}
-\end{preuve}
 
-\subsection{Le théorème de préparation de Malgrange}
-
-\todo{Texte introductif}.\\
 Soient $P$ une variété et $y\in P$,
 on considère alors les projections 
-$\pi_1:((y,0),P\times \R)\rightarrow P$ et $t:((y,0),
+$\pi:((y,0),P\times \R)\rightarrow P$ et $t:((y,0),
 P\times \R)\rightarrow \R$. Remarquez que l'espace des germes $\mathcal{E}(y,P,\R^m)$ est isomorphe à  $\mathcal{E}_{y}(P)^m$, on pose alors
 
 \begin{equation*}
@@ -1677,7 +1682,7 @@ Le résultat suivant est une conséquence du \textit{théorème
 de division de Mather}, la preuve étant assez lourde et 
 calculatoire, il est simplement rappelé
 
-\begin{lemme}
+\begin{lemme}\label{DivMather}
 Soient $g\in\mathcal{E}_{(y,0)}(P\times \R)$ et 
 $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
 ^m$ telle que
@@ -1693,45 +1698,167 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
 
 \begin{theorem}
     Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulière, alors il existe une germe inversible 
-    $q\in\mathcal{E}_{(y,0)}$ et $u\in\mathcal{E}_y(P)^{m}$
+    $q\in\mathcal{E}_{(y,0)}(P\times \R)$ et $u\in\mathcal{E}_y(P)^{m}$
     \begin{equation*}
         f=q\Gamma_u
     \end{equation*}
 \end{theorem}
 \begin{preuve}
+    Soit $\tilde{f}$ un représentant de $f$,considérons la germe $f_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times \R)$ ayant pour représentant $(z,a,b)\mapsto \tilde{f}(z,b) $ et $v\in\mathcal{E}_{(y,0)}(P\times\R^m)^m$ ayant pour représentant $(z,a)\mapsto a$.
     Le résultat précédent nous assure l'existence de 
     germes 
     $q_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times\R)$
     et $h\in\mathcal{E}_{(y,0)}(P\times\R^m)^m$ telles que
     \begin{equation*}
-        f=\Gamma_u q_1 +R_h
+        f_1=\Gamma_v q_1 +R_h
     \end{equation*}
     considérons alors $P_0\subseteq P$,$U\subseteq \R^m$ et 
-    $V\subseteq \R$,
+    $V\subseteq \R$, et des représentants
     \begin{equation*}
-        \tilde{f}: P_0\times V \rightarrow \R\text{, }
+        \tilde{f}_1: P_0\times U\times V \rightarrow \R\text{, }
         \tilde{q}_1:P_0\times U\times V\rightarrow \R\text{ 
             et }\tilde{h}:P_0\times U\rightarrow \R^m
     \end{equation*}
     On écrit alors
     \begin{equation*}
-        \forall z\in P_0,a\in U,b\in V,\quad \tilde{f}(z,b)=(b^m+\sum_{i=1}^m a_ib^{m-i})\tilde{q}_1(z,a,b)+\sum_{i=1}^m\tilde{h}_i(z,a)b^{m-i}
+        \forall z\in P_0,a\in U,b\in V,\quad \tilde{f}_1(z,a,b)=(b^m+\sum_{i=1}^m a_ib^{m-i})\tilde{q}_1(z,a,b)+\sum_{i=1}^m\tilde{h}_i(z,a)b^{m-i}
     \end{equation*}
-    \todo{TERMINER Calculs}
-
+    or 
+    \begin{equation*}
+        \frac{\partial^m }{\partial b^m}\widetilde{f}_1(z,a,b) = m! \, \widetilde{q}_1(z, a, b) + \sum_{k=1}^m \binom{m}{k} \left[ \frac{\partial^{m-k}}{\partial b^{m-k}} \left(b^m + \sum_{i=1}^m a_i b^{m-i}\right) \right] \frac{\partial^k \widetilde{q}_1}{\partial b^k}(z, a, b)
+    \end{equation*}
+    et donc 
+    \begin{equation*}
+        \frac{\partial^m }{\partial b^m}\widetilde{f}_1(y,0,0)=m! \widetilde{q}_1(y, 0, 0)
+    \end{equation*}
+    $f$ étant $m$-régulière, on a que $\tilde{q}_1(y,0,0)\neq 0$. Des calculs similaires permettent de montrer que 
+    \begin{align*}
+        &\forall 1\leq i\leq m,\space  h_i(y,0)=0\\
+        &\forall 1\leq j<i\leq m,\space \frac{\partial }{\partial a_j}\tilde{h}_i(y,0)=0\\
+        &\forall 1\leq i\leq m,\space \frac{\partial }{\partial a_i}\tilde{h}_i(y,0)\neq 0
+    \end{align*}
+    Ainsi, la matrice $(\frac{\partial}{\partial a_j}h_j(0))_{1\leq i,j\leq m}$ est inversible. Via le théorème des fonctions implicites, il existe $P_1\in\mathcal{V}^{P_0}_{y}$ et  $\tilde{u}:P_1\rightarrow \R^m$ tels que $\tilde{h}(z,\tilde{u}(z))$. Posons enfin $\tilde{q}(z,b)=\tilde{q}_1(z,\tilde{u}(z),b)$, les germes ayant pour représentants $\tilde{u}$ et $\tilde{q}$ répondent à la question.
 \end{preuve}
 
-\begin{corollaire}
+
+\begin{corollaire}\label{ThmDIV}("Divison euclidienne")
     Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulière, il existe $q\in\mathcal{E}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
     \begin{equation*}
         g=fq+R_h
     \end{equation*}
 \end{corollaire}
+\begin{preuve}
+    Soit $u,q_1$ comme le résultat précédents, on a $f=q_1\Gamma_u$. On conclut en appliquant \ref{DivMather}
+\end{preuve}
 
+\begin{definition}
+    Soit $f:(N,S)\rightarrow (P,T)$ une germe lisse, on pose
+    \begin{equation*}
+        f^*: \mathcal{E}_T(P)\rightarrow \mathcal{E}_S(N), f^{*}(u)=u\circ f
+    \end{equation*}
+    Bien sûr, $f^{*}$ est un homomorphisme d'algèbre 
+\end{definition}
+Si $M$ est un $\mathcal{E}_S(N)$-module, alors $f^{*}$ induit une structure de $\mathcal{E}_T(P)$-module sur $M$
+via 
+\begin{equation*}
+    \forall r_1\in\mathcal{E}_T(P),x\in M, r_1\cdot_{f^*} x=f^{*}(r_1)x
+\end{equation*}
+On commence par montrer un cas particulier :
 
+\begin{lemme}
+    Soient $N=P\times \R$, $S=(y,0),y\in P$ et $M$ un $\mathcal{E}_S(N)$-module finiment généré, on a 
+\begin{equation*}
+    \dim_{\R} M/(\pi^{*}(\mathcal{M}_y(P))M)< 
+    \infty\Rightarrow M \text{ est finiment génré en tant que $\mathcal{E}_y(P)$-module}
+\end{equation*}
+\end{lemme}
+\begin{preuve}
+    considérons $m_1,\cdots,m_q\in M$ tels que 
+    \begin{equation*}
+    \rangle [m_1],\cdots,[m_q] \langle_{\R}= M/(\pi^{*}(\mathcal{M}_y(P))M)\text{ et } \rangle m_1,\cdots m_q \langle_{\mathcal{E}_S(N)}=M
+    \end{equation*}
+    Ainsi, pour tout élément $m$ on a 
+    \begin{equation*}
+        [m]=\sum_{i=1}^{q}c_i [m_i]\Rightarrow \exists r\in \pi^{*}(\mathcal{M}_y(P))M : a=\sum_{i=1}^q c_ia_i+r
+    \end{equation*}
+    or $r$ s'écrit comme une somme de produits finis d'élements de $\pi^{*}(\mathcal{M}_y(P))M$ et $M$, il vient alors qu'on peut écrire
+    \begin{equation*}
+        m=\sum_{i=1}^{q} c_i m_i +\sum_{i=1}^{q} d_i m_i\text{ avec les $c_i\in\ \R $ et les $d_i\in\pi^{*}(\mathcal{M}_y(P))\mathcal{E}_S(N)$}
+    \end{equation*}
+    on rappelle que la projection $t: ((0,y)P\times \R)\rightarrow \R$ est un scalaire de $M$ ! en particulier 
+    \begin{equation*}
+        \forall 1\leq i\leq q,\exists c_{i,j}\in R,z_{ij}\in\pi^{*}(\mathcal{M}_y(P))\mathcal{E}_S(N): tm_i=\sum_{j=1}^q (c_{ij}+z_{ij})m_j
+    \end{equation*}
+    On écrit cette identité de manière matricielle:
+    \begin{equation}\label{equationMatrice1}
+        A\cdot \begin{pmatrix}
+           m_{1} \\
+           m_{2} \\
+           \vdots \\
+           m_{q}
+         \end{pmatrix}
+         =0
+    \end{equation}
+    où $A_{ij}=t\delta_{ij}-c_{ij}-z_{ij}$. Posons $\Delta=\det A$, via la règle de Kramer, on sait que $\Delta m_i=0$ si $1\leq i\leq q$. On remarque que $-\Delta$ est en réalité le polynôme charactéristique de la matrice $(c_{ij}+z_{ij})$ évalué en $t$, ainsi, 
+    $\Delta\in\mathcal{E}_{(y,0)}(P\times\R)$ et $\Delta|_
+    {((y,0),y\times \R)}$ est alors un polynôme monique 
+    d'ordre $q$ , et donc $\Delta$ 
+    régulière d'ordre $q'\leq q$. Mais, par 
+    \ref{equationMatrice1}, $\Delta\cdot M=0$ donc $M$  est un $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$-module.
+    Montrons que le module $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$ est finiment généré en tant que $\mathcal{E}_y(P)$-module. Par \ref{ThmDIV}, pour tous $g\in\mathcal{E}_S(N)$, il existe $h\in\mathcal{E}_y(P)^{q'}$ et $q\in\mathcal{E}_S(N)$
+    \begin{equation*}
+        g=\Delta q +R_h
+    \end{equation*}
+    En passant au quotient, le terme de gauche disparait et on  on note églament que
+    \begin{equation*}
+        R_h = \sum_{i=1}^{q'} \underbrace{(h_i \circ \pi)}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_y(P)}} \underbrace{t^{m-1}}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_S(N)}}
+    \end{equation*}
+    Ce qui suffit.\\
+    Etant donné que $M$ est un $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$-module finiment généré, il est finiment généré en tant que $\mathcal{E}_y(P)$-module
+\end{preuve}
 
-
-
+\begin{lemme}
+    Soient $x\in N$,$y\in P$, $f:(N,x)\rightarrow (P,y)$ une germe lisse  et $M$ un $\mathcal{E}_x$-module finiment généré, on a 
+\begin{equation*}
+    \dim_{\R} M/(f^{*}(\mathcal{M}_y(P))M)< 
+    \infty\Rightarrow M \text{ est finiment généré en tant que $\mathcal{E}_y(P)$-module}
+\end{equation*}
+\end{lemme}
+\begin{preuve}
+    Soit $\varphi\in\mathcal{E}(x,N,\R^n,0)$ une germe inversible, et posons 
+    \begin{equation*}
+        \pi_k: (P\times\R^k,(y,0))\rightarrow (P\times\R^{k-1},(y,0))
+    \end{equation*}
+    On remarque alors que 
+    \begin{equation*}
+        f=\bigcirc_{i=1}^n\pi_i\circ(f,\varphi)
+    \end{equation*}
+    Si $0\leq k\leq n$, on munit $M$ de la structure de 
+    $\mathcal{E}_{(y,0)}(P\times \R^k)$ induite par 
+    $\bigcirc_{i=k+1}^n\pi_i\circ(f,\varphi)^{*}$ pour $k=0$, ça donne juste la structure de  $\mathcal{E}_{y}(P)$-module induite par $f^{*}$. Remarquez que, du fait que $(f,\varphi)$ est une immersion locale,
+    \begin{equation*}
+        (f,\varphi)^*:\mathcal{E}_{(y,0)}(P\times\R^n)\rightarrow \mathcal{E}_{x}(N)
+    \end{equation*}
+    Ce qui permet d'affirmer que $M$ est finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^n)$-module.\\
+    Supposons maintenant que $M$ soit finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^k)$-module. Notons qu'on a 
+    \begin{equation}\label{equation1}
+        f^*(\mathcal{M}_y(P))M=(\pi^{*}_{k+1}\circ\cdots \circ \pi^{*}_1)(\mathcal{M}_y(P))M
+    \end{equation}
+    Où, dans l'expression de gauche, $M$ est vu comme un $\mathcal{E}_x(N)$-module et comme un $\mathcal{E}_{(y,0}(P\times\R^{k+1})$-module dans l'expression de droite. En effet, si $m\in f^*(\mathcal{M}_y(P))M$ alors 
+    \begin{equation*}
+        m=\sum_{i=1}^{k} f^*(p_i)m_i=\sum_{i=1}^{k} p_i(f_i)m_i
+    \end{equation*}
+\end{preuve}
+\begin{theobox}{Théorème de préparation de Malgrange}{}
+Soient $f:(N,S)\rightarrow (P,y)$ une germe lisse $S$ une partie finie de $N$ et $y\in P$ et $M$ un $\mathcal{E}_S$-module finiment généré, on a 
+\begin{equation*}
+    \dim_{\R} M/(f^{*}(\mathcal{M}_y(P))M)< 
+    \infty\Rightarrow M \text{ est finiment génré en tant que $\mathcal{E}_y(P)$-module}
+\end{equation*}
+\end{theobox}
+\begin{preuve}
+    
+\end{preuve}
 
 \subsection{relations d'équivalences: exemple introductif} 
 Pour pouvoir classifier les bifurcations, il nous faut une notion d'équilavence ! Le travail serait alors de lister les différentes classes d'équilavences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \textit{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équilavence entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
@@ -1911,7 +2038,7 @@ dans \cite{damon1984unfolding}, James damon a obtenu a obtenu des résultats de 
 
 La notion de déploiment remonte à 
 René Thom [SOURCE]. Notez que dans la 
-suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifiera les calculs et ce n'est pas une vraie restriction. Ainsi, dans la suite
+suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifiera les calculs et ce n'est pas une vraie restriction.
 \begin{definition} 
     $G\in\mathcal{E}^{m+d}_{n+d}\cdot \mathcal{M}_{n+d}$ est  \textit{un déploiment à $d$ paramètres} de $f$
     si elle respecte le diagramme suivant:
@@ -1926,7 +2053,7 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 	\arrow["\pi"', from=2-1, to=3-1]
 	\arrow["\pi", from=2-2, to=3-1]
     \end{tikzcd}\]
-    des calculs similaires à\ref{Structpi} permettent de voir que cela impose à $G$ d'être de la forme $G(x,u)=(G_1(x,u),u)$ et 
+    des calculs similaires à \ref{Structpi} permettent de voir que cela impose à $G$ d'être de la forme $G(x,u)=(G_1(x,u),u)$ et 
     $G_1(\cdot,0)=f$
     On pose $\mathcal{U}_d(f)$ l'ensemble des déploiments à $d$ paramètres de $f$.
 \end{definition}
@@ -1992,7 +2119,7 @@ du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que
 
 On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteurs le long de $f$.
 
-Nous procédons maintenant 
+Nous procédons maintenant au calcul explicite des espaces tangents pour $\mathcal{A}$ et $\mathcal{K}$
 
 
 \todo{Calculs explicites pour $A$ et $K$}\\
@@ -2226,209 +2353,6 @@ $\mathcal{C}(d)$ en deux classes d'équivalence. Notez que si $d_1$ et $d_2$ peu
 \begin{preuve}
     \todo{PREUVE complete}
 \end{preuve}
-\subsection{Approche $K$-théorique}\label{K-th}
-\subsubsection{Rappels et compléments de topologie algébrique}
-Rappelons très brièvement les bases de la topologie algébrique. Nous donnons également un bref exposé sur la cohomologie. Le lecteur intéressé par les détails pourra simplement consulter un cours de topologie algébrique ([SOURCE], pour n'en citer qu'un).
-
-\begin{definition}
-    Si $X$ est un espace 
-    topologique, et 
-    $\delta_p$ le simplexe 
-    standard de $\R^n$, on appele \textit{p-simplexe singulier} un élément $\sigma$ de $C^0(\delta_p,X)$. On pose $\Sigma_p(X)$ l'ensemble des simplexes singuliers
-\end{definition}
-par exemple , les 1-simplexes sont les chemins, certains 2-simplexes sont des surfaces (lorsque $\sigma$ est injectif),etc... Maintenant, on va faire une construction similaire (et plus simple) à ce qu'on fera en $K$-théorie. Etant donné un ensemble $E$, on veut trouver le "plus petit groupe abélien qui contient $E$", ou plutôt, comment étendre $E$ et munir cette extension d'une structure de groupe abélien et ce de la façon la \textit{plus naturelle possible}. Il y'a plusieurs façon de faire équivalentes, on peut par exemple considérer 
-\begin{equation*}
-    \mathbb{Z}^{(E)} =\left\{ f\in \mathbb{Z}^{E} |\operatorname{card}(e\in E : n(e)=0)\leq \infty \right\}
-\end{equation*}
-On peut voir ça comme une somme formelle, en effet si $\forall e\in E$ on pose 
-\begin{equation}\label{gpablibre}
-    \delta_e\in\mathbb{Z}^{(E)}:e'\mapsto \delta_{e,e'}
-\end{equation}
-Il est clair que tout élément de $\mathbb{Z}^{(E)}$ s'écrit comme une combinaison linéaire finie de $\delta_e$. En un certain sens, \ref{gpablibre} est la façon "la plus naturelle" de faire, voir [SOURCE] pour les détails. On pose alors 
-\begin{equation*}
-    C_p(X)=\mathbb{Z}^{(\Sigma_p(X))}
-\end{equation*}
-Si $x_0,\cdots,x_p\in\R^n$, on pose 
-\begin{equation*}
-    \sigma_{(x_0,\cdots,
-    x_p)}: 
-    \delta_p\rightarrow\R^n:
-    (\lambda_1,\cdots,
-    \lambda_p)\mapsto x_0+
-    \sum_{i=1}^p\lambda_i
-    (x_i-x_0)
-\end{equation*}
-Et on défini alors l'opérateur de bord, si $p\geq 1$
-\begin{equation*}
-    \partial^X_p: C_p(X)\rightarrow C_{p-1}(X):
-    \sigma\mapsto \sum_{j=0}^{p}(-1)^j \sigma\circ \sigma_{(e_0,\cdots,\hat{e_j},\cdots e_p)}
-\end{equation*}
-En pose $\partial_p=0$ si $p\leq 0$. On peut montrer que $\partial^X_{p+1}\circ\partial^X_p=0$ et on définie le \textit{complexe singulier} comme la donnée des bords et des esembles $C_p(X)$, on le résume avec le diagramme suivant
-\[\begin{tikzcd}
-	\cdots & {C_p(X)} & {C_{p-1}(X)} & \cdots
-	\arrow["{\partial^X_{p+1}}", from=1-1, to=1-2]
-	\arrow["{\partial^X_{p}}", from=1-2, to=1-3]
-	\arrow["{\partial^X_{p-1}}", from=1-3, to=1-4]
-\end{tikzcd}\]
-On définit enfin les \textit{groupes d'homologie} comme suit:
-\begin{equation*}
-    H_p(X)=\ker \partial^X_p/\im \partial^X_{p+1}, p\geq 0
-\end{equation*}
-Maintenant, la cohomologie !
-On choisit un groupe abélien $A$, et considère les groupes duaux des $C_p(X)$ (par rapport à A) comme étant l'ensemble des homomorphismes de groupe ablien entre $C_p(X)$ et $A$, i.e $C_p(X,A)^*=\operatorname{Hom}(C_i,A)$ et on remplace alors l'opérateur bord par son dual
-\begin{equation*}
-    \partial_p^{*}: C_p(X,A)^{*}\rightarrow C_{p+1}(X,A)^{*}| \varphi\mapsto \varphi\circ \partial_{p+1}
-\end{equation*}
-On alors le complexe suivant
-\[\begin{tikzcd}
-	\cdots & {C_p(X,A)^{*}} & {C_{p-1}(X,A)^{*}} & \cdots
-	\arrow["{\partial^*_{p+1}}"', from=1-2, to=1-1]
-	\arrow["{\partial^*_{p}}"', from=1-3, to=1-2]
-	\arrow["{\partial^*_{p-1}}"', from=1-4, to=1-3]
-\end{tikzcd}\]
-et on définit enfin 
-\begin{equation*}
-    H^p(X,A)=\ker \partial^*_{p+1}/\im \partial^*_p, p\geq 0
-\end{equation*}
-
-
-
-
-\subsubsection{Fibrés et fibrés vectoriels}
-
-L'idée derrière la notion d'espace fibré est d'avoir une généralisation des
-espaces qui "ressemblent localement" à des espaces produits.
-
-\begin{definition}
-    Un \textit{fibré} est la donnée d'un 4-uple $(E,B,\pi,F)$ où
-    \begin{itemize}
-        \item $E$ est un espace topologique appelé \textit{l'espace total}
-        \item $B$ est un espace topologique appelé \textit{l'espace de base}, souvent supposé connexe (sinon, on étudie juste chaque composante connexe séparement)
-        \item $F$ est un espace topologique, appelé \textit{modèle des fibres}
-    \end{itemize}
-    Qui respecte la \textit{condition de trivialisation locale} suivante: Il exist un recouvrement d'ouverts $(U_i)_{i\in\mathcal{I}}$ de $B$ et des $(\varphi_i)_{i\in\mathcal{I}}$ tels que
-    \begin{equation*}
-        \forall i\in\mathcal{I}, \varphi_i\in\operatorname*{HomTop}(\pi^{-1}(U_i),U_i\times F)
-    \end{equation*}
-    et le diagramme suivant commute:\\
-    \begin{center}
-        \[\begin{tikzcd}
-	{\pi^{-1}(U)} && {U\times F} \\
-	\\
-	U
-	\arrow[from=1-1, to=1-3]
-	\arrow["\pi"', from=1-1, to=3-1]
-	\arrow["{\pi_1}", from=1-3, to=3-1]
-    \end{tikzcd}\]
-    \end{center}
-la famille de paire $(U_i,\varphi_i)_{i\in\mathcal{I}}$ est appelé la trivialisation du fibré.
-Lorsque $E=B\times F$ et $\pi=\pi_1$, le fibré est qualifié de \textit{trivial}
-\end{definition}
-\begin{remarque}
-    Si $\Lambda$ est un \text{complexe cellulaire contractile} (voir [SECTION]), et si $E$ est un fibré ayant pour base un tel complexe cellulaire, alors $E$ est trivial
-\end{remarque}
-Ainsi, alors qu'un fibré en général est "localement un produit cartésien", un fibiré trivial est globalement un produit. Ci-dessous, un exemple de fibré non trivial
-\begin{exemple}
-    Un des plus viel exemple de l'occurence de tel structures est la \textit{fibration de Hopf}. Ici, le modèle des fibres est le cerlce $S^1$, l'espace total la $3$-sphère $S^3$ et l'espace de base la sphère $S^2$ et le $\pi$ est donné par l'\textit{application de Hopf}, qu'on décrit ci dessous à titre indicatif (en identiant $\R^4$ et $\mathbb{C}^2$  et $\R^3$ avec $\mathbb{C}\times \R$)
-    \begin{equation*}
-        p: S^3\rightarrow S^2, (x+iy,z+iw)\mapsto (2(x+iy)(z-iw),||x+iy||^2-||z+iw||^2)
-    \end{equation*}
-\end{exemple}
-\begin{remarque}
-    Ici, on a supposé que le modèle de la fibre, l'espace $F$ était le même partout. L'étude de fibrés à "modèle variable" peut être aussi intéressante en soi, nous n'iront pas aussi loin dans ce travail.
-\end{remarque}
-
-\begin{definition}
-    Un \textit{fibré} vectoriel est un fibré où suppose $F$ être un espace vectoriel. Bien sûr, on demande aussi à ce que les  $\varphi_i^{-1}(\cdot,v)$ soient linéaire.
-\end{definition}
-
-\begin{remarque}
-    On peut se demander ce qu'il se passe lorsqu'on veut une autre structure algébrique que celle de l'espace vectoriel. Cela conduit naturellement à la notion de $G$-fibré, ou on prend $G$ comme étant (par exemple) un groupe de Lie. Ainsi, les fibrés vectoriels sont un cas particulier des $G$-fibrés, qui sont un cas particulier des fibrés. Vous aurez sans doute remarqué que la fibration de hopf est un $S^1$-fibré ! Il existe des fibrés encore plus "méchants", voir par exemple la Fibration de Lefschetz.
-\end{remarque}
-
-\begin{exemple}
-    L'espace tanget d'une variété $M$ , $TM$ l'exemple canonique d'un fibré vectoriel. L'espace total est l'ensemble des unions disjointes, les fibres sont modellées sur $\R^k$ où $k$ est la dimension de $M$. On munit $TM$ de la topologie initiale relative aux projections sur $M$
-\end{exemple}
-
-\begin{definition}
-    Soient $A=(E',B',\pi',F')$ et $B=(E,B,\pi,F)$ des fibrés, un \textit{morphisme de fibrés} entre entre $F$ et $F'$ est la donnée 
-    d'une paire de fontion $(f,g)\in \operatorname{IsoTop}(B,B')
-    \times\operatorname{IsoTop}(E,E')$ telles que le diagramme suivant 
-    commute: \\
-    \begin{center}
-        \[\begin{tikzcd}
-	E && {E'} \\
-	\\
-	B && B
-	\arrow["g", from=1-1, to=1-3]
-	\arrow["\pi"', from=1-1, to=3-1]
-	\arrow["{\pi'}", from=1-3, to=3-3]
-	\arrow["f"', from=3-1, to=3-3]
-\end{tikzcd}\]
-    \end{center}
-\end{definition}
-Quelques façons de construire des fibrés à partir d'autres
-\begin{definition}
-    Soit $A=(E,B,\pi,F)$ un fibré, $B'$ un espace topologique et $f:B'\rightarrow B$ une application continue, on défini le fibré "pullback" comme 
-    \begin{equation*}
-        (A',B',\pi',F)\text{ avec }A'=\left\{ (b,a)\in B'\times E:f(e)=\pi(e)\right\}\text{ et }\pi'=\pi_1
-    \end{equation*}
-     on a le diagramme commutatif ci-dessous 
-     \[\begin{tikzcd}
-	{A'} & A \\
-	{B'} & B
-	\arrow["{\pi_2}", from=1-1, to=1-2]
-	\arrow["{\pi_1}"', from=1-1, to=2-1]
-	\arrow["\pi", from=1-2, to=2-2]
-	\arrow["f"', from=2-1, to=2-2]
-    \end{tikzcd}\]
-    
-  
-    Le produit cartésien de deux fibrés se définit simplement en prenant les produits cartésiens des objets qui les composent. Et enfin, si $V_1=(E,B,\pi,F_1)$ et  $V_2=(E',B,\pi',F_1)$ sont des fibrés vectoriels de même base , et $d:B\rightarrow B^2$ telle que $d(b)=(b,b)$ alors on définit la \textit{somme de Whitney} comme 
-    \begin{equation*}
-         V_1\oplus V_2=d^{*}(V_1\times V_2)
-    \end{equation*}
-\end{definition}
-
-Si on se fixe un espace topologique $X$, on pose $\mathfrak{F}(X)$ la catégorie des fibirés vectoriels réels de dimension finie. Les morphismes sont les morphismes de fibrés
-\begin{definition}
-    Une catégorie $\mathfrak{C}$ est \textit{pré-additive} si tout ensemble de morphismes $\operatorname{Hom}(A,B)$ admet une structure de groupe abélien
-\end{definition}
-
-\begin{definition}
-    Une catégorie additive 
-\end{definition}
-\subsubsection{Introduction à la K-théorie}
-\todo{Ajouter texte d'intro/motivation}
-
-\begin{definition}
-    Soit $(H,+)$ un monoide commutatif, on lui associe une paire $(S(H),s)$ où $S(H)$ est un groupe abélien, $s:H\rightarrow S(H)$ un homomorphisme de groupe abélien qui répond au problème universel suivant: 
-    \begin{center}
-        \[\begin{tikzcd}
-        H && {S(H)} \\
-        & G
-        \arrow["s", from=1-1, to=1-3]
-        \arrow["f"', from=1-1, to=2-2]
-        \arrow["{\bar{f}}", dashed, from=1-3, to=2-2]
-        \end{tikzcd}\]
-    \end{center}
-\end{definition}
-
-\subsubsection{application à la détection globale d'une bifurcation}
-
-\begin{theobox}{}{}
-Soit $\Lambda$ un CW-complexe fini connexe, $f : \Lambda \times O \to Y$ une famille $C^1$ d'applications de Fredholm d'indice $0$ et soit $L$ la linéarisation de $f$ le long de la branche triviale. Supposons que, pour $\delta$ suffisamment petit, les seules solutions de l'équation $f(\lambda, x) = 0$ avec $\|x\| \leq \delta$ soient celles de la forme $(\lambda, 0)$. Si, pour un certain (et donc pour tout) $\nu \in \Lambda$, la multiplicité $k = |\mathrm{mult}(f_\nu, 0)| \neq 0$, alors
-\begin{itemize}
-    \item[(a)] la première classe de Stiefel-Whitney $w_1(\mathrm{Ind}\, L) = 0$,
-    \item[(b)] pour un certain $i \in \mathbb{N}$, $k^i J(\mathrm{Ind}\, L) = 0$ dans $J(\Lambda)$.
-\end{itemize}
-\end{theobox}
-
-\noindent En particulier, nous avons :
-
-\begin{corollaire}
-Supposons que pour un certain $\nu \in \Lambda$, $k = |\mathrm{mult}(f_\nu, 0)|$ soit défini. Si $k \neq 0$, alors une bifurcation apparaît dès que soit le fibré d'indice $\mathrm{Ind}\, L$ est non orientable, soit $J(\mathrm{Ind}\, L) \neq 0$ et $k = |\mathrm{mult}(f_\nu, 0)|$ est premier avec l'ordre de $J(\Lambda)$.
-\end{corollaire}
 
 \newpage
 \section{Introduction aux bifurcations dynamiques}
