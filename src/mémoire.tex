@@ -14,7 +14,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{yfonts}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,allcolors=blue!50!black]{hyperref}
 \usepackage{subcaption}
 \usepackage[backend=biber,style=numeric]{biblatex}
 \DeclareBibliographyCategory{utilises}
@@ -24,7 +24,6 @@
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
 \renewcommand{\bar}[1]{\overline{#1}}
 \renewcommand{\underbar}[1]{\underline{#1}}
-
 \usepackage[most]{tcolorbox}
 
 \newtcolorbox{equivbox}[1]{
@@ -35,7 +34,7 @@
   boxrule=0.8pt,
   arc=2pt
 }
-
+\renewcommand{\familydefault}{qhv}
 
 \newcommand{\rightan}[3]{TR_{#1}}
 \newcommand{\rightane}[3]{TR_{#1}^e}
@@ -55,6 +54,8 @@
 
 \newcommand{\im}[0]{\operatorname{im}}
 \newcommand{\coker}[0]{\operatorname{coker}}
+\newcommand{\coim}[0]{\operatorname{coim}}
+\newcommand{\id}[0]{\operatorname{Id}}
 \newcommand{\de}[0]{\operatorname{def}}
 
 
@@ -93,8 +94,9 @@
 
 \begin{document}
 
+
 \maketitle
-\tableofcontents
+{\hypersetup{linkcolor=.}\tableofcontents}
 \newpage
 \section*{Introduction}
 Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : Étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
@@ -888,28 +890,7 @@ des calculs simples  permettent de montrer que
 \end{corollaire}
 
 On a alors simplement la situation "vecteur tangent vertical"
-\begin{exemple}
-    Un exemple d'application en dimension finie,tiré de [SOURCE]. Considérons un modèle climatique (très) simple, posons $C$ la capacité thermique de la terre, $T$ la température de surface moyenne et $E_{1}$, $E_{2}$ les énergies entrantes et sortantes, respectivement, on écrit d'abord
-    \begin{equation*}
-        Cd_1 T=E_1-E_2
-    \end{equation*}
-    Pour calculer $E_2$, on applique simplement la loi de Stefan-Boltzmann 
-    pour $E_1$, ça va être l'énergie reçue par le soleil à laquelle on soustrait l'énergie reflétée par la terre, ainsi, en posant $\alpha$ l'albédo de la terre et $Q$ l’énergie reçue par le soleil, 
-    \begin{equation*}
-        Cd_1 T=E_1-E_2=(1-\alpha)Q-C_2T^4
-    \end{equation*}
-    où $C_2$ est simplement une constante. Bien sûr, la glace qui se trouve près des pôles reflète bien plus la lumière que l'océan et donc $\alpha$ va diminuer si la température augmente, on peut, par exemple, écrire
-    \begin{equation*}
-        \alpha=a-bT\text{ ou } a>1 \text{ et } b>0\text{ sont des constantes}
-    \end{equation*}
-    on a alors 
-    \begin{equation*}
-        Cd_1 T=E_1-E_2=(1-a+bT)Q-C_2T^4=F(T,Q)
-    \end{equation*}
-    On aura une bifurcation "fold"
-    \todo{ Calculs}
-\end{exemple}
-Un exemple plus intéressant:
+
 \begin{exemple}
     \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
 \end{exemple}
@@ -1371,7 +1352,7 @@ en $0$ et la dérivée passent aussi au quotient. Dans les prochaines pages, on 
 
 On rappelle la notion d'anneau local 
 \begin{definition}
-    Un anneau commutatif $R$ est local s'il a un unique idéal maximal. Il est semi local s'il aun nombre fini d'idéaux maximaux
+    Un anneau commutatif $R$ est local s'il a un unique idéal maximal. Il est semi local s'il a un nombre fini d'idéaux maximaux
 \end{definition}
 
 \begin{proposition}
@@ -1418,7 +1399,7 @@ Le lemme suivant mobilise le fait que $N$ est de dimension finie, et nous permet
 \begin{proposition}(Lemme d'Hadamard)\label{Hadamard}
 Soit $x\in N$, $(\tilde{x}_1,\cdots,\tilde{x}_n)$ un système de coordonnées 
 locales qui s'annule en $x$. Considérons l'idéal $I(k,r)\subseteq \mathcal{E}_x(N)$ 
-des germes ayant un représentant $\tilde{f}: U\rightarrow R$ 
+des germes ayant un représentant $\tilde{f}: U\rightarrow \R$ 
 dont les dérivées d'ordre $<r$ s'annulent sur $ 
 U\cap(\tilde{x}_1,\cdots,\tilde{x}_k)^{-1}(0)$ et $x_1,\cdots,x_n$ les germes  ayant pour représentants $\tilde{x}_1,\cdots,\tilde{x}_n$
     \begin{equation*}
@@ -1432,9 +1413,7 @@ Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons
     {1}  D_i \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i
     +1},\cdots,\tilde{x}_n)dt
 \end{equation*}
-si $f_i=[\tilde{f}_i]$, le théorème de variation des 
-primitives et de dérivation des fonctions composées nous 
-permettent d'écrire
+si $f_i=[\tilde{f}_i]$, on a alors
 \begin{equation*}
     f=\sum_{i=1}^{k}x_i f_i
 \end{equation*}
@@ -1503,7 +1482,7 @@ le terme constant est dans $\mathcal{M}$.
 On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S$ avec $S$ fini, on rappelle que 
 
 \begin{definition}
-    Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à droite est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un scalaire" $\cdot:R\times G\rightarrow G$ qui respecte les mêmes axiomes que pour un espace vectoriel, i.e, $\forall r,s\in R,x,y\in G$
+    Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à gauche est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un scalaire" $\cdot:R\times G\rightarrow G$ qui respecte les mêmes axiomes que pour un espace vectoriel, i.e, $\forall r,s\in R,x,y\in G$
     \begin{align*}
         &r\cdot(x+_{G}y)= r\cdot x+_{G}r\cdot y\\
         &(r+_{R} s)\cdot x = r\cdot x+_{G} s\cdot x\\
@@ -1522,7 +1501,7 @@ Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
     x=0,z=0\right\}$, $\mathcal
     {E}_S(\R^3)$. L'idéal $I_S$ 
     constitué des fonctions qui s'annulent sur $S$ est bien 
-    sûr un $\mathcal{E}_S(\R^3)$-module. Par \ref{Hadamard}, on a $I_S= \rangle x,y \langle$. Mais on peut écrire 
+    sûr un $\mathcal{E}_S(\R^3)$-module. Par \ref{Hadamard}, on a $I_S= \rangle x,z \langle$. Mais on peut écrire 
     \begin{equation*}
         z\cdot y + (-y)\cdot z= 0
     \end{equation*}
@@ -1976,13 +1955,13 @@ Et donc
 
 
 L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ agit sur $f$ via son \textit{graphe}. Il est fort possible que vous trouviez dans la littérature une définition différente  de $\mathcal{K}$, montrons qu'elles sont équivalentes
-\begin{proposition}
+\begin{proposition}\label{MATRIXform}
     $f,g$ sont $\mathcal{K}
     $-équivalentes si et 
     seulement s'il existe 
     $S\in\mathcal{E}(0,\R^n,
     \operatorname{GL_{p}(\R)}) 
-    $  et $\phi\in\mathcal{d}_
+    $  et $\phi\in\mathcal{D}_
     {n}$ une  tels que 
     \begin{equation*}
         f\circ \phi= S\cdot g
@@ -1995,7 +1974,7 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     $-équivalentes. 
     Maintenant supposons qu'elles sont 
     $\mathcal{K}$-équivalentes,via \ref{Kequ}, il existe 
-    $H\in\mathcal{d}_{n+p}$ tel que 
+    $H\in\mathcal{D}_{n+p}$ tel que 
     \begin{equation}\label{Proprecr}
         g(h(x))=H_1(x,f(x))
     \end{equation}
@@ -2047,7 +2026,7 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
     si elle respecte le diagramme suivant:
     \[\begin{tikzcd}
 	{(0,\R^n)} & {(0,\R^m)} \\
-	{(0,\R^{m+d})} & {(0,\R^{m+d})} \\
+	{(0,\R^{n+d})} & {(0,\R^{m+d})} \\
 	{(0,\R^d)}
 	\arrow["f", from=1-1, to=1-2]
 	\arrow["\iota"', from=1-1, to=2-1]
@@ -2066,7 +2045,7 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $G(u,\cdot)\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(u,\cdot)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
 \end{definition}
 
 \begin{exemple}
@@ -2097,7 +2076,7 @@ respectant le diagramme suivant:
 \end{tikzcd}\]
 On remarque alors que
 \begin{equation*}
-    \mathcal{V}(f)=\Gamma f^{*} T\R^m
+    \mathcal{V}(f)=\Gamma f^{*} TN
 \end{equation*}
 Considérons alors le faisceau (c.f remarque \ref{remsheaf} )
 des sections locales lisses 
@@ -2116,22 +2095,38 @@ du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que
     Soit $V\subseteq \mathcal{E}^m_n$ et $f\in V$ on définit \textit{l'espace tangent de $v$}
     comme 
     \begin{equation*}
-        T_f V =\left\{\frac{\partial \tilde{G}}{\partial u}(0) \biggr| G\in\mathcal{U}(f,V) \right\}
+        T_f V =\left\{\frac{\partial G}{\partial u}(0) \biggr| G\in\mathcal{U}_1(f,V) \right\}
     \end{equation*}
 \end{definition}
 
 On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteurs le long de $f$.
 
-Nous procédons maintenant au calcul explicite des espaces tangents pour $\mathcal{A}$ et $\mathcal{K}$
+\begin{proposition}
+    \begin{equation*}
+        T_f \mathcal{K}\cdot f=\cdots
+    \end{equation*}
+\end{proposition}
+\begin{preuve}
+    Soit $G\in\mathcal{U}_1(f,\mathcal{K}\cdot f)$, c'est à dire une germe de le forme
+    \begin{equation*}
+        G(x,u)= (H_u\cdot f(x),u)\text{ avec $H_u\in \mathcal{K}$}
+    \end{equation*}
+    On peut supposer sans perte de généralité que $H_{0}=\operatorname{Id}$. Via \ref{MATRIXform} et \ref{GraphK}, on écrit 
+    \begin{equation*}
+        H_u\cdot f(x)=M_u(h_u^{-1}(x),f(h_{u}^{-1}(x)))\cdot f(h_u^{-1}(x))
+    \end{equation*}
+    Et on calcule alors 
+    \begin{equation}
+        \frac{\partial G}{\partial u}(0)= 
+    \end{equation}
 
+\end{preuve}
 
-\todo{Calculs explicites pour $A$ et $K$}\\
 \todo{Un théorème de détermination finie}\\
 \todo{Le groupe de montaldi}\\
 \todo{Classification explicite}\\
 \todomaybe{Notion de sous-groupe géométrique}
 \newpage
-
 
 \section{Méthodes topologiques}
 
@@ -2158,7 +2153,7 @@ Le lecteur familier avec la topologie trouvera particulièrement naturel d'exige
 \end{equation*}
 Informellement, on déforme continûment $f$ vers $g$. Attention, on ne peut pas déformer comme on veut, il faut que cette déformation n'affecte pas l'ensemble des solutions. On formule alors une troisième condition, ainsi, si on a 
 \begin{equation*}
-    H\in C^0([0,1]\times,\R^n), y\in C^0([0,1],\R^n): \forall t\in [0,1], y(t)\notin H(t,\partial U)
+    H\in C^0([0,1]\times \bar{U},\R^n), y\in C^0([0,1],\R^n): \forall t\in [0,1], y(t)\notin H(t,\partial U)
 \end{equation*}
 alors  on voudrait que 
 
@@ -2174,7 +2169,7 @@ de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui po
         \operatorname{deg}(f,U,y)=\sum_{x\in f^{-1}(y)} \operatorname*{sign} \det df(x)
     \end{equation*}
 \end{definition}
-On peut montrer que cette fonction remplit bien les 3 conditions et que c'est la seule. Ensuite, via le théorème de Morse-Sard et quelques techniques d'approximation classiques, on peut généraliser cette fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour les détails. Notez que les 3 conditions mènent à une fonction qui ne compte pas vraiment le nombre de solutions, mais associe un \textit{signe} à chacune d'entre elles. Si on voit l'ensemble $f^{-1}(y)$ comme une hypersurface, le signe est positif si on en "sort" et négatif si on "rentre" 
+On peut montrer que cette fonction remplit bien les 3 conditions et que c'est la seule. Ensuite, via le théorème de Morse-Sard et quelques techniques d'approximation classiques, on peut généraliser cette fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour les détails. Notez que les 3 conditions mènent à une fonction qui ne compte pas vraiment le nombre de solutions, mais associe un \textit{signe} à chacune d'entre elles. 
 
 
 \subsubsection{Construction}
@@ -2258,39 +2253,50 @@ Le degré de Leray-Schauder est défini sur les \textit{ perturbations compactes
 \subsubsection{Construction}
 Nous allons introduire une notion d'orientation pour les fonctions de Fredholm. Cette dernière, proposée par Furi dans \cite{BenevieriFuri1998}, a ensuite été mobilisée dans \cite{BenevieriFuri2001} pour obtenir des résultats de bifurcation. Nous présentons ainsi les idées de ces 2 papiers.
 \begin{definition}
-    Si $X,Y$ sont des espaces de Banach et  $d\in\mathcal{F}_0(X,Y)$ alors $E$ est un \textit{correcteur } de $d$ si $d+E$ est un isomorphisme et si son image est de dimension finie. On pose $\mathcal{C}(d)$ l'ensemble des correcteurs de $d$
+    Si $X,Y$ sont des espaces de Banach et  $D\in\mathcal{F}_0(X,Y)$ alors $E\in L(X,Y)$ est un \textit{correcteur } de $D$ si $D+E$ est un isomorphisme et si son image est de dimension finie. On pose $\mathcal{C}(D)$ l'ensemble des correcteurs de $D$
 \end{definition}
-
-Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la même orientation", on fait ça en définissant une relation d'équivalence sur $\mathcal{C}(d)$
+On remarque que $\mathcal{C}(D)$ n'est jamais vide, en effet, si on écrit $X=\ker D\oplus X_0$ et $Y=\operatorname*{im} D \oplus Y_0$, on sait que $\ker D$ et $Y_0$ sont isomorphes, notons $A_0$ l'isomorphisme, on remarque alors que 
+\begin{equation*}
+    A:  X\rightarrow Y, x_1+x_2\mapsto A_0(x_1)
+\end{equation*}
+répond à la question. En effet, il est injectif car $Y_0\oplus \operatorname*{im} D$ et il est surjectif car une perturbation de rang fini d'un opérateur de Fredholm ne change pas l'indice.
+Dans la suite de cette section on suppose $D$ comme dans la définition précédente.
+Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la même orientation", on fait ça en définissant une relation d'équivalence sur $\mathcal{C}(D)$
 
 \begin{lemme}
-    Soient $d\in\mathcal{F}_0(X,Y)$ et $E,E'\in \mathcal{C}(d)$
+    Soient $D\in\mathcal{F}_0(X,Y)$ et $E,E'\in \mathcal{C}(D)$. Si on pose $\phi_{E,E'}=(D+E')^{-1}(D+E)$
     l'opérateur
     \begin{equation*}
-        F= \operatorname{Id}_X -(d+E')^{-1}(d+E)
+        F= \operatorname{Id}_X -\phi_{E,E'}
     \end{equation*}
     a une image de dimension finie
 \end{lemme}
 
 \begin{preuve}
-   Bien sûr, $(d+E)^{-1}$ et $(d+E')^{-1}$ sont des automorphismes
-   il vient alors
+   Notons d'abord que 
    \begin{equation*}
-        (d+E')F= (d+E')-(d+E)=E'-E
+        (D+E')F= (D+E')-(D+E)=E'-E
    \end{equation*}
-   donc $\im F=\im (E-E')$
+   donc $\im F=\im (E-E')$. Et du fait que 
+   \begin{equation*}
+        \dim \im (E-E')\leq \dim (E+E')\leq \dim(E)+\dim(E'),
+   \end{equation*}
+   on conclut.
 \end{preuve}
+
+
+
 
 \begin{lemme}
     Soit $F$ comme dans le lemme précédent, alors pour tous $X_0,X_1\subseteq  X$ sous-vectoriels de dimension 
     finie contenant $\im F$
     \begin{equation*}
-        \det (I-F)|_{X_0}= \det (I-F)|_{X_1}
+        \det \phi_{E,E'}|_{X_0}= \det \phi_{E,E'}|_{X_1}
     \end{equation*}
-    avec la convention que si $X_0=\{0\}$,  $\det (I-F)|_{X_0}=1$
+    avec la convention que si $X_0=\{0\}$,  $\det \phi_{E,E'}|_{X_0}=1$
 \end{lemme}
 \begin{preuve}
-    Notez que $I-F$ est un isomorphisme, que $(I-F)(X_0)\subseteq X_0$, donc $(I-F)|_{X_0}: X_0\rightarrow X_0$ est un automorphisme d'un espace vectoriel de dimension finie, la notion de déterminant à donc un sens. Supposons d'abord avoir $X_0\subseteq X_1$, on le complémente par $X'_0$, i.e 
+    Notez que $\phi_{E,E'} =I-F$ est un isomorphisme, que $(I-F)(X_0)\subseteq X_0$, donc $(I-F)|_{X_0}: X_0\rightarrow X_0$ est un automorphisme d'un espace vectoriel de dimension finie, la notion de déterminant à donc un sens. Supposons d'abord avoir $X_0\subseteq X_1$, on le complémente par $X'_0$, i.e 
     \begin{equation*}
         X_1=X_0\oplus X'_0
     \end{equation*}
@@ -2306,28 +2312,68 @@ où  $\pi_F$ est la projection sur $X_0$ de  $F_{X'_0}$, on conclut immédiateme
     \det (I-F)|_{X_0}= \det (I-F)|_{X_1\cap X_0}=\det (I-F)|_{X_1}
 \end{equation*}
 \end{preuve}
+
+
+
 \begin{definition}
-    dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont \textit{équivalents} si $\det (I-F)|_{X_0}>0$
+    dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont $D$-\textit{équivalents} si $\det (\phi_{E,E'})|_{X_0}>0$, on écrira  $E\sim_{D} E'$
 \end{definition}
-Il est facile de montrer que c'est bel et bien une relation d'équivalence, voir \cite{BenevieriFuri1998} pour les détails. Il est de plus clair que cette relation d'équivalence partitionne 
-$\mathcal{C}(d)$ en deux classes d'équivalence. Notez que si $d_1$ et $d_2$ peuvent être composés et que si $E_1$ et $E_2$ sont des correcteurs de $d_1$ et $d_2$ respectivement, alors $d_2E_1+ E_2E_1+ E_2d_1$ est un correcteur de $d_2d_1$, de fait 
+\begin{proposition}
+    $\sim_D$ est une relation d'équivalence sur $\mathcal{C}(D)$
+\end{proposition}
+\begin{preuve}
+    La réfléxivité et la transitivité sont évidentes,on montre alors la transitivité. Soient donc $E,F,G\in\mathcal{C}(D)$ tels que $E\sim_D F$ et $F\sim_D G$ on considère alors un sous vectoriel de dimension fini $X_0$ content les images de $I-\phi_{E,F},I-\phi_{F,G},I-\phi_{E,G}$ , il suifft alors de remarquer que 
+    \begin{equation*}
+        \det \phi_{E,G}|_{X_0}=
+        \det \phi_{F,G}\phi_{E,F}|_
+        {X_0}=
+        \det \phi_{F,G}|_{X_0}
+        \cdot \det \phi_{E,F}|_
+        {X_0}>0
+    \end{equation*}
+    donc $E\sim_{D} G$ 
+\end{preuve}
+
+Il  de plus clair que cette relation d'équivalence partitionne 
+$\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peuvent être composés et que si $E_1$ et $E_2$ sont des correcteurs de $D_1$ et $D_2$ respectivement, alors $D_2E_1+ E_2E_1+ E_2D_1$ est un correcteur de $D_2D_1$, de fait 
 
 \begin{equation*}
-    d_2d_1+ d_2E_1+ E_2E_1+ E_2d_1 =(d_1+E_1)(d_2 + E_2)
+    D_2D_1+ D_2E_1+ E_2E_1+ E_2D_1 =(D_1+E_1)(D_2 + E_2)
 \end{equation*}
 
 
 \begin{definition}
-    Une \textit{orientation} de $d\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(d)$. Un \textit{opérateur orienté} est une paire $(d,c)$ où $c$ est une des classes d'équivalence de $\mathcal{C}(d)$. Si $(d,c)$ est orienté, un correcteur sera dit \textit{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(d)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(d)$ les négatifs. Lorsque $d$ est un isomorphisme, $0$ est un correcteur, on définit alors \textit{l'orientation naturelle} $\nu(d)$ de $d$ comme étant la classe d'équivalence contenant $0$. Si $(d',c)$ est isomorphisme orienté, on pose $\operatorname{Sign}d=1$ si $0\in c $, et $-1$ sinon 
+    Une \textit{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \textit{opérateur orienté} est une paire $(D,c)$ où $c$ est une oreitnation. Si $(D,c)$ est orienté, un correcteur sera dit \textit{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \textit{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D,c)$ est isomorphisme orienté, on pose $\operatorname{Sign}D=1$ si $0\in c $, et $-1$ sinon 
 \end{definition}
 \begin{definition}
-    Si $(d,c)$ et $(d',c')$ sont des opérateurs orientés, l'orientation 
-    $c\circ c'$ de $d\circ d'$ est définie telle que
+    Si $(D_1,c_1)$ et $(D_2,c_2)$ sont des opérateurs orientés, on note $c_2\circ c_1$ l'orientation de $D_2\circ D_1$ telle que
     \begin{equation*}
-        d_2E_1+ E_2E_1+ E_2d_1\in  c\circ c'
+        D_2E_1+ E_2E_1+ E_2D_1\in  c_2\circ c_1
     \end{equation*}
-    où $E_1\in c$ et $E_2\in c'$. La composition de deux opérateurs orientés sera, sauf si mention du contraire, la précédente.
+    où $E_1\in c_1$ et $E_2\in c_2$. On vérifie 
+    facilement que ça ne dépend pas du choix des 
+    $E_1$, $E_2$ La composition de deux opérateurs 
+    orientés sera, sauf si mention du contraire, 
+    la précédente. 
 \end{definition}
+
+Il est enrichissant de remarquer 
+que la catégorie $\mathcal{G}(D)$ 
+ayant pour objets les éléments de 
+$\mathcal{C}(D)$ et comme 
+morphismes les $(\phi_{E,F})_{E,F\in\mathcal{C}(D)}$ est un groupoïde. Si on considère la catégorie correspondant à $\mathbb{Z}_2$, i.e la catégorie n'ayant qu'un seul objet $o$ , $+1,-1$ comme morphismes et la multiplication comme loi de composition , qu'on note $\mathbf{B}\mathbb{Z}_2$
+\footnote{C'est le "delooping" du groupe $\mathbb{Z}_2$, le lecteur intéressé peut consulter l'article nLab \url{ https://ncatlab.org/nlab/show/delooping} }
+alors 
+
+\begin{equation*}
+    \operatorname*{Sign}: \mathcal{G}(D)\rightarrow \mathbf{B}\mathbb{Z}_2, E\mapsto o, \phi_{E,E'}\mapsto \operatorname*{sgn}\det \phi_{E,E'}|_{X_0}
+\end{equation*}
+
+est un foncteur donc $\mathcal{G}^+(D)$, la catégorie $\mathcal{G}(D)$ ou on retire les les morphismes dont le determinant restreint est négatif, est un sous groupoïde (c'est même un sous groupoïde normal) de $\mathcal{G}(D)$. Il est clair que ce groupoïde à axactement deux composantes connexes
+
+
+
+
 
 
 \todo{Propriétés de base du degré orienté, lien avec les autres notions de degré}
@@ -2343,7 +2389,7 @@ $\mathcal{C}(d)$ en deux classes d'équivalence. Notez que si $d_1$ et $d_2$ peu
 \begin{preuve}
     \todo{PREUVE complete}
 \end{preuve}
-\subsubsection{Un résultat global via le degré orienté}
+\subsubsection{Applications aux variétés de Banach}
 \todo{LEMMES}
 \begin{theobox}{Furi}{}
     dans les conditions du théorème précédent, si $F$ est 
