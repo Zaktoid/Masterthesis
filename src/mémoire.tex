@@ -9,12 +9,15 @@
 \usetikzlibrary{babel}
 \usepackage{xcolor}
 \usepackage{csquotes}
+\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage[a4paper,margin=2cm]{geometry}
+\pagestyle{headings}
 \usepackage{yfonts}
-\usepackage[colorlinks=true,allcolors=blue!50!black]{hyperref}
+\usepackage[colorlinks=true,allcolors=black]{hyperref}
 \usepackage{subcaption}
 \usepackage[backend=biber,style=numeric]{biblatex}
 \DeclareBibliographyCategory{utilises}
@@ -62,41 +65,101 @@
 \tcbuselibrary{theorems,breakable}
 
 
-\newtcbtheorem[number within=section]{theobox}{Théorème}%
-{colback=blue!5,
- colframe=blue!50!black,
+\newtcbtheorem[number within=section]{theobox}{Théorème}
+{colback=white,
+ colframe=color-prop,
  fonttitle=\bfseries,
  enhanced,
  attach boxed title to top left={xshift=2mm,yshift=-2mm},
- boxed title style={colback=blue!50!black},
+ boxed title style={colback=color-prop},
  separator sign none,
  description delimiters={(}{)},
 }{th}
+
+\colorlet{color-def}{pink!50!black}
+\colorlet{color-rem}{orange!50!black}
+\colorlet{color-prop}{red!50!black}
+\newtheoremstyle{style-def}{-0.75em}{0.5em}{}{}{\bfseries\color{color-def}}{}{1em}{}
+\newtheoremstyle{style-prop}{-0.75em}{0.5em}{}{}{\bfseries\color{color-prop}}{}{1em}{}
+\newtheoremstyle{style-rem}{-0.75em}{0.5em}{}{}{\bfseries\color{color-rem}}{}{1em}{}
+\mdfsetup{innertopmargin=0.75em,skipabove=0.5em,skipbelow=0.5em,nobreak=true,roundcorner=10pt}
+\mdfdefinestyle{leftline}{linecolor=black,innerleftmargin=0.5em,innertopmargin=0.75em,innerbottommargin=0.25em,innerrightmargin=0,rightline=false,topline=false,bottomline=false,nobreak=false}
+\theoremstyle{style-def}
+\newmdtheoremenv[linecolor=color-def]{definition}{Définition}[subsection]
+\theoremstyle{style-prop}
+\newmdtheoremenv[linecolor=color-prop]{proposition}[definition]{Proposition}
+\newmdtheoremenv[linecolor=color-prop]{lemme}[definition]{Lemme}
+\newmdtheoremenv[linecolor=color-prop]{corollaire}[definition]{Corollaire}
+\newmdtheoremenv{theorem}[definition]{Théorème}
+\theoremstyle{style-rem}
+\newmdtheoremenv[style=leftline,linecolor=color-rem]{remarque}[definition]{Remarque}
+\newmdtheoremenv[style=leftline,linecolor=color-rem]{exemple}[definition]{Exemple}
+
+
+\DeclareMathOperator\supp{supp}
+
+\newenvironment{preuve}
+{\par\noindent\textcolor{color-prop}{\textit{Preuve.}}\ }
+{\hfill\textcolor{color-prop}{$\clubsuit$}\par}
 
 
 \title{Bifurcations de familles de fonctions entre espaces de Banach et quelques applications}
 \author{Zakaria Elmi Roble}
 \date{décembre 2025}
-\theoremstyle{definition}
-\newtheorem{definition}{Définition}[section]
-\newtheorem{proposition}[definition]{Proposition} 
-\newtheorem{remarque}[definition]{Remarque}
-\newtheorem{exemple}[definition]{Exemple}
-\newtheorem{lemme}[definition]{Lemme}
 
-\DeclareMathOperator\supp{supp}
-\theoremstyle{plain}
-\newtheorem{theorem}[definition]{Théorème}
-\newtheorem{corollaire}[definition]{Corollaire}
-\newenvironment{preuve}
-{\par\noindent\textit{Preuve.}\ }
-{\hfill$\square$\par}
+
 
 \begin{document}
+\begin{titlepage}
+\centering
+\includegraphics[width=8cm]{uliege_logo}
 
+\textsc{\LARGE Faculté des Sciences}
 
-\maketitle
+\bigskip
+
+\textsc{\Large Département de Mathématique}
+
+\vfill
+
+% Title
+{\huge\bfseries
+\rule{\linewidth}{0.5mm}\\[1ex]
+Titre du Mémoire\\[1ex]
+\rule{\linewidth}{0.5mm}
+}
+
+\bigskip
+\bigskip
+
+% Bottom of the page
+{\large Mémoire de fin d'études présenté en vue de l'obtention du titre de\\[1ex]
+\emph{Master en Sciences Mathématiques, à finalité approfondie/didactique}}
+
+\vfill
+
+{\large Année académique 20??-20??}
+
+\vfill
+
+% Author and supervisor
+\noindent\large
+\begin{tabular}{l}
+\emph{Auteur :}\\
+Zakaria \textsc{Elmi Roble}
+\end{tabular}%
+\hfill
+\begin{tabular}{l}
+\emph{Promoteur :}\\
+Samuel \textsc{Nicolay}
+\end{tabular}
+\end{titlepage}
+
 {\hypersetup{linkcolor=.}\tableofcontents}
+\newpage
+\section*{Remerciements}
+\newpage
+\section*{Liste des symboles utilisés}
 \newpage
 \section*{Introduction}
 Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : Étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
@@ -1053,10 +1116,10 @@ $\alpha=n$ si et seulement si tous les $d_2^{*} y_j^{*}$ sont nuls
 \begin{remarque}
     La notion de zéro de type $(\alpha,n)$ généralise les conditions de transversalité du type de celle de \ref{fold} ! 
     On peut montrer le résultat suivant : 
-    \begin{lemme}
-        dans les conditions présentes, si $\dim \Lambda=1$, $(x_0,\lambda_0)$ est un zéro de type $(\alpha,n)$ si et seulement si $d_2\notin \im d_1$ 
-    \end{lemme}
 \end{remarque}
+\begin{lemme}
+    dans les conditions présentes, si $\dim \Lambda=1$, $(x_0,\lambda_0)$ est un zéro de type $(\alpha,n)$ si et seulement si $d_2\notin \im d_1$ 
+\end{lemme}
 
 La proposition \ref{zeronlinINd} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $d_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthogonalement par $(\lambda)_{0\leq j\leq n}$. On a également la bi-orthogonalité des $y^{*}_j$ et des $d_2\lambda_i$, on considère l'opérateur associé de Schmidt associé (voir \ref{OpSCHimdt}), qui s'écrit donc
 
