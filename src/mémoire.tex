@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,oneside,titlepage]{article}
+\documentclass[a4paper,11pt,oneside,titlepage]{article}
 \usepackage{a4wide}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -14,7 +14,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \pagestyle{headings}
 \usepackage{yfonts}
 \usepackage[colorlinks=true,allcolors=black]{hyperref}
@@ -28,6 +28,8 @@
 \renewcommand{\bar}[1]{\overline{#1}}
 \renewcommand{\underbar}[1]{\underline{#1}}
 \usepackage[most]{tcolorbox}
+
+
 
 \newtcolorbox{equivbox}[1]{
   colback=gray!5,
@@ -48,6 +50,7 @@
 \newcommand{\fibltan}[3]{TC_{#1}}
 \newcommand{\gentan}[3]{TG_{#1}}
 \newcommand{\todo}[1]{\textcolor{red}{TO DO [}#1\textcolor{red}{]}}
+
 
 \newcommand{\todomaybe}[1]{\textcolor{orange}{TO DO ? [}#1\textcolor{orange}{]}}
 
@@ -79,6 +82,8 @@
 \colorlet{color-def}{pink!50!black}
 \colorlet{color-rem}{orange!50!black}
 \colorlet{color-prop}{red!50!black}
+\newcommand{\coldef}[1]{\textcolor{color-def}{#1}}
+\newcommand{\colprop}[1]{\textcolor{color-prop}{#1}}
 \newtheoremstyle{style-def}{-0.75em}{0.5em}{}{}{\bfseries\color{color-def}}{}{1em}{}
 \newtheoremstyle{style-prop}{-0.75em}{0.5em}{}{}{\bfseries\color{color-prop}}{}{1em}{}
 \newtheoremstyle{style-rem}{-0.75em}{0.5em}{}{}{\bfseries\color{color-rem}}{}{1em}{}
@@ -100,7 +105,7 @@
 
 \newenvironment{preuve}
 {\par\noindent\textcolor{color-prop}{\textit{Preuve.}}\ }
-{\hfill\textcolor{color-prop}{$\clubsuit$}\par}
+{\hfill\textcolor{color-prop}{$\blacksquare$}\par}
 
 
 \title{Bifurcations de familles de fonctions entre espaces de Banach et quelques applications}
@@ -125,7 +130,7 @@
 % Title
 {\huge\bfseries
 \rule{\linewidth}{0.5mm}\\[1ex]
-Titre du Mémoire\\[1ex]
+Bifurcations de familles de fonctions entre espaces de Banach et quelques applications\\[1ex]
 \rule{\linewidth}{0.5mm}
 }
 
@@ -134,11 +139,11 @@ Titre du Mémoire\\[1ex]
 
 % Bottom of the page
 {\large Mémoire de fin d'études présenté en vue de l'obtention du titre de\\[1ex]
-\emph{Master en Sciences Mathématiques, à finalité approfondie/didactique}}
+\emph{Master en Sciences Mathématiques, à finalité approfondie}}
 
 \vfill
 
-{\large Année académique 20??-20??}
+{\large Année académique 2025-2026}
 
 \vfill
 
@@ -193,69 +198,24 @@ inintéressante sera
 qualifiée de branche 
 triviale et la majorité du 
 travail consistera à étudier 
-les \textit{bifurcations 
+les \coldef{bifurcations 
 depuis une branche 
 triviale}, i.e,  si $(x_0,
 \lambda_0)\in X\times 
-\Lambda$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \textit{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
- La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus \textit{self contained} que possible. La seconde partie introduit la \textit{réduction} de Lyapunov-Schmidt, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \textit{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \textit{classifier} les bifurcations, i.e, étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utile de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les  transformations $T$ qui laissent $P$ invariante ? Le but étant bien sûr de se ramener dans un cas \textit{plus simple} sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des \textit{actions de groupes} et étudierons leurs orbites.\\
- La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter \textit{globalement } les bifurcations (depuis une branche triviale). D'abord, nous exposons les approches classiques par théorie du degré topologique, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des développements plus modernes: le degré \textit{orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
- La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des \textit{ points d'attraction ou de répulsion} à un régime présentant des \textit{orbites périodiques attractives ou répulsives}, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
+\Lambda$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \coldef{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
+ La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \coldef{classifier} les bifurcations, i.e, étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utile de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les  transformations $T$ qui laissent $P$ invariante ? Le but étant bien sûr de se ramener dans un cas plus simple sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des actions de groupes et étudierons leurs orbites.\\
+ La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter globalement  les bifurcations (depuis une branche triviale). D'abord, nous exposons les approches classiques par théorie du degré topologique, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des développements plus modernes: \coldef{le degré orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
+ La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
 
 \newpage
 \section{Rappels et prérequis}
 
-\subsection{Rappels et compléments d'analyse fonctionnelle}
-\subsubsection{Compacité}
-Nous rappelons brièvement quelques notions de compacité dans les espaces de Banach et introduisons les mesures de non-compacité, cette section est adaptée de \cite{KlausNonLin85}. Rappelons qu'un sous-ensemble $K$ d'un espace de Banach $X$ est \textit{relativement compact} si $\bar{K}$ est compact et précompact si pour tout $\varepsilon>0$ il existe un nombre fini de boules de rayon $\varepsilon$ recouvrant $K$, notez qu'étant donné que les espaces de Banach sont complets, être précompact ou relativement compact c'est la même chose.
-Maintenant, on introduit deux mesures de non-compacité: posons $\mathcal{B}(X)$ l'ensemble des parties bornées de $X$, on pose
-\begin{equation*}
-    \beta: \mathcal{B}(X)\rightarrow \R^{+}, A\mapsto \inf 
-    \left\{\varepsilon>0 | \exists {x_1,\cdots,x_n}\in X: A\subseteq \bigcup_{i=1}^n B(x_i,\varepsilon) \right\} 
-\end{equation*}
-et 
-\begin{equation*}
-    \alpha: \mathcal{B}(X)\rightarrow \R^{+}, A\mapsto \inf 
-    \left\{ d>0 | \exists E_1,\cdots E_n\in X: \forall 1\leq i \leq n \operatorname{diam}(E_i)\leq d\text{ et } A\subseteq \bigcup_{i=1}^n E_i  \right\} 
-\end{equation*}
+\subsection{Notions de calcul différentiel dans des Espaces de Banach}
 
-Le résultat suivant est une conséquence directe de la définition et s'applique aussi à $\beta$
-\begin{proposition}
-    Soit $A,B\in\mathcal{B}(X)$
-    \begin{itemize}
-        \item $\alpha(A)=0\Leftrightarrow$ $A$ est compact
-        \item $\alpha$ est une semi norme
-        \item $\alpha$ est croissant pour l'inclusion
-        \item $\alpha(A\cup B)=\max\{ \alpha(A),\alpha(B)\}$
-    \end{itemize}
-\end{proposition}
-
-On définit la distance de Hausdorff comme 
-\begin{equation}\label{Hausdorffdist}
-    d_H : \mathcal{B}(X)^2\rightarrow \R^+, (A,B)\mapsto \max\{ \sup_{x\in A} d(x,B),\sup_{x\in B} d(x,A)\}
-\end{equation}
-
-\begin{proposition}
-    $\alpha$ et $\beta$ sont continues pour la topologie engendrée par \ref{Hausdorffdist}
-\end{proposition}
-\begin{preuve}
-    On le fait pour $\beta$, la preuve est similaire pour $\alpha$.\todo{finir la preuve}
-\end{preuve}
-
-\begin{proposition}
-    Si $A\in\mathbb{B}(X)$
-    \begin{equation*}
-        \alpha(\operatorname{conv}(A))=\alpha(A)
-        \text{ et }\beta(\operatorname{conv}(A))=\beta(A)
-    \end{equation*}
-\end{proposition}
-
-\subsubsection{Notions de calcul différentiel dans des Espaces de Banach}
-
-dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir présenter le théorème des fonctions implicites, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach
+dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir présenter le \colprop{théorème des fonctions implicites}, un des outils principaux de la théorie de la bifurcation, nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach
 
 \begin{definition}
-Soit $U$ un ouvert de $X$ et $F,G\in C^0(U,Y)$, $F$ et $G$ sont \textit{tangents} en $x_0\in U$ si 
+Soit $U$ un ouvert de $X$ et $F,G\in C^0(U,Y)$, $F$ et $G$ sont \coldef{tangents} en $x_0\in U$ si 
 \begin{equation*}
     \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_Y}{||x-x_0||_X}=0
 \end{equation*}
@@ -280,11 +240,11 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(A,Y)$ est \textit{dérivable} en $x_0\in U$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \textit{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $A$ si elle est dérivable en chaque point
+$F\in C^0(A,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $A$ si elle est dérivable en chaque point
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
-    dans les conditions de la définition précédente, $dF(x_0)\in \mathcal{L}(X,Y)$
+    dans les conditions de la définition précédente, $DF(x_0)\in \mathcal{L}(X,Y)$
 \end{proposition}
 \begin{preuve}
     Pour tout $\varepsilon>0$, il existe $0<r<1$ tel que
@@ -327,7 +287,7 @@ On obtient facilement le résultat suivant:
 \end{proposition}
 On écrira $dF(x_0)=(dF_1(x_0),\cdots,dF_m(x_0))$ où $F_i=\pi_i(f)$
 \\
-On récupère alors le théorème de dérivation des fonctions composées. La preuve est assez similaire au cas $\mathbb{R}^n$
+On récupère alors le \colprop{théorème de dérivation des fonctions composées}. La preuve est assez similaire au cas $\mathbb{R}^n$
 \begin{proposition}
     Soit $U$ un ouvert de $X$,$x_0\in U$, $F\in C^0(U,Y)$, $y_0=F(x_0)$, $V$ un ouvert de $Y$ contenant $y_0$ et enfin  $G\in C^0(V,Z)$ alors 
     \begin{equation*}
@@ -360,7 +320,7 @@ $d(\alpha f)(x_0)=\alpha df(x_0)$.
     Si $X=\prod_{i=1}^n X_i$ où les $X_i$ sont des espaces 
     de Banach, si $a=(a_1,\cdots,a_m)\in\prod_{i=1}^n X_i$,  
     et si $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
-    est dérivable, on note  $d_{i}f(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{f}$ comme étant $f$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $d_{k,\cdots,j }f=d_2 \tilde{f}$ 
+    est dérivable en $a_i$ , on note  $d_{i}f(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{f}$ comme étant $f$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $d_{k,\cdots,j }f=d_2 \tilde{f}$ 
 \end{definition}
 \begin{proposition}
     dans les conditions des définitions précédentes, 
@@ -377,13 +337,13 @@ $d(\alpha f)(x_0)=\alpha df(x_0)$.
     voir \cite{dieudonne1969fma8}
 \end{preuve}
 \begin{theobox}{}{}\label{FI}
-Soit $V$ un ouvert de $X\times\Lambda$ et $F\in C^1(V,Y)$. Alors si $d_2 F(x_0,\lambda_0)$ est un isomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinage  ouvert $V'\subseteq V$ de $(x_0,\lambda_0)$, $U$ un voisinage de $x_0$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
+Soit $V$ un ouvert de $X\times\Lambda$ et $F\in C^1(V,Y)$. Alors si $D_2 F(x_0,\lambda_0)$ est un isomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinage  ouvert $V'\subseteq V$ de $(x_0,\lambda_0)$, $U$ un voisinage de $x_0$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
 \begin{equation*}
     \forall (x,\lambda)\in V', F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } \lambda=\varphi(x)
 \end{equation*}
 et 
 \begin{equation*}
-    d\varphi(x_0)=-d_2F(x_0,\lambda_0)^{-1}d_1F(x_0,\lambda_0)
+    D\varphi(x_0)=-D_2F(x_0,\lambda_0)^{-1}D_1F(x_0,\lambda_0)
 \end{equation*}
 \end{theobox}
 
@@ -392,21 +352,20 @@ On termine par une petite remarque sur les dérivées d'ordre supérieur. On dé
     F\in C^2(U,Y)\Rightarrow d(dF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
 \end{equation*}
 Ainsi, $d^2F$ prend en entrée un point $x$ de $U$, $d^2F(x)$ une direction $h$ de $X$ et  $d^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
-\subsection{Opérateurs de Fredholm}
-\subsubsection{Définition et théorème d'Atkinson}
+\subsection{Opérateurs et fonctions de Fredholm}
 
 Nous étudierons la situation où la "non-bijectivité" de $d_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons :
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach et soit $d\in  \mathcal{L}(X,Y)$. \textit{l'index de  Fredholm de $d$} est défini si $\dim \ker d$ et $\dim  Y / \text{im } d=\text{codim } \text{im }d$ sont finis, et il vaut, dans ce cas
+    Soient $X,Y$ des espaces de Banach et soit $D\in  \mathcal{L}(X,Y)$. \coldef{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  Y / \text{im } D=\text{codim } \text{im }d$ sont finis, et il vaut, dans ce cas
     \begin{equation*}
-        \text{Ind }  d= \dim \ker d -\text{codim } \text{im }d
+        \text{Ind }  D= \dim \ker D -\operatorname*{codim } \im D
     \end{equation*}
 
 \end{definition}
 
 \begin{definition}
-    dans les conditions de la définition précédente, $d$ est un \textit{opérateur de Fredholm} si son index est défini. On notera 
-    $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. Enfin, on dit qu'une fonction $F: X\rightarrow Y$ est \textit{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $df(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$
+    dans les conditions de la définition précédente, $D$ est un \coldef{opérateur de Fredholm} si son index est défini. On notera 
+    $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. On dit qu'une fonction $F: X\rightarrow Y$ est \coldef{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $Df(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$, si l'indice de la dérivée est constant sur $U$ (on verra que c 'est le cas si $U$ est connexe) alors l'indice de $F$ est simplement l'indice de la dérivée en un point
 \end{definition}
 Nous verrons plus tard que si $f$ est de Fredholm en un point de $U$  et que $U$ est connexe, alors elle l'est sur $U$.
 Remarquons que dans ce cas, $d^*$ est de Fredholm aussi et 
@@ -489,9 +448,9 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
     \end{equation*}
     du fait qu'un sous-vectoriel de dimension finie est fermé, et que $\im d \oplus\rangle y_1,\cdots,y_n\langle_{\R}\ =Y $, on conclut par la proposition précédente.
 \end{preuve}
-Le résultat suivant est un corollaire direct du théorème de Hahn-Banach, on l'admet.
+Le résultat suivant est un corollaire direct du théorème de Hahn-Banach
 \begin{lemme}
-Si $X_0$ est  sous espace de dimension finie de $X$ alors il est \textit{complémenté},i.e, il existe un sous espace fermé $X_1$ tel que $X_1\oplus X_0=X$
+Si $X_0$ est  sous espace de dimension finie de $X$ alors il est \coldef{complémenté},i.e, il existe un sous espace fermé $X_1$ tel que $X_1\oplus X_0=X$
 \end{lemme}
 de ce qui précède, on déduit le résultat suivant
 \begin{proposition}
@@ -511,8 +470,8 @@ Rappelons les notions de suite exacte et de suite exacte courte
     \begin{equation*}
        G_0 \xrightarrow{J_1} G_1 \xrightarrow{J_2} G_2 \xrightarrow{J_3} \cdots \xrightarrow{J_n} G_n
     \end{equation*}
-    est \textit{exacte} si $\im(j_i)=\ker(j_{i+1})$
-    Une suite \textit{exacte courte} est une suite de la forme
+    est \coldef{exacte} si $\im(j_i)=\ker(j_{i+1})$
+    Une suite \coldef{exacte courte} est une suite de la forme
     \[\begin{tikzcd}
 	0 & A & B & C & 0
 	\arrow["0", from=1-1, to=1-2]
@@ -661,19 +620,69 @@ Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile da
     \end{equation*}
 \end{definition}
 
-On définit alors \textit{l'opérateur de Schmidt associé à}  $(B,B^{*})$
+On définit alors \coldef{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 \begin{equation}\label{OpSCHimdt}
     U : X\rightarrow Y, x\mapsto -dF(0)(x)+\sum_{i=0}^n x_i^{*}(x)y_i
 \end{equation}
 
 On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
+Nous montrons maintenant quelques propriétés utiles des opérateurs de Fredholm. 
+ Rappelons qu'une fonction continue entre deux espaces topologique $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ et $V\ni x$ un voisinage, il existe un autre voisinage de $x$ $V'$ tel que $V'\subseteq V$ et un voisinage $U$ de $f(x)$ tel que $f':A\rightarrow U$ avec soit propre
+
+\begin{proposition}\label{propre-fred}
+    Si $F:X\rightarrow Y$ est de Fredholm, alors $F$ est localement propre
+\end{proposition}
+\begin{preuve}
+    \todo{écrire la preuve}
+\end{preuve}
+
+
+Nous montrons désormais qu'on peut déjà écarter les opérateurs ayant un indice négatif à l'aide du résultat suivant: il s'agit d'une généralisation du \colprop{théorème de Morse-Sard}, que nous rappelons ici 
+\begin{theobox}{Morse-Sard}{}
+    Si $U$ un ouvert de $\R^p$ et $F\in C^k(U,\R^q)$ où $k>\max(p-q,0)$ alors l'ensemble des valeurs critiques a une mesure nulle 
+\end{theobox}
+
+Etant donné qu'on est en dimension infinie on remplace donc la mesure par une notion topologique
+    
+\begin{definition}
+    Soit $F\in C^1(X,Y)$, un point $x\in X$ est 
+    \coldef{régulier} si $DF(x)$ est surjective et \coldef{singulier} sinon. L'image d'un point singulier est une \coldef{valeur singulière} et $y\in Y$ est une \coldef{valeur régulière} si ce n'est pas une valeur singulière
+\end{definition}
+\begin{definition}
+    Si $(E,\mathcal{T})$ est un espace topologique, un sous ensemble de $E$ est dit \textcolor{color-def}{dense nulle part} si son adhérence  a un intérieur vide. Un ensemble est dit \textcolor{color-def}{maigre} si c'est une union dénombrable d'ensembles denses nulle part
+\end{definition}
+\begin{proposition}
+    Si $X,Y$ sont des espaces de Banach séparables et si $F\in C^k(X,Y)$ est une fonction de 
+    Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$
+    alors l'ensemble des valeurs singulières est maigre
+\end{proposition}
+\begin{preuve}
+    Soit $x_0\in X$, étant donné que $F$ est de Fredholm, on peut écrire $X=X_0\oplus \ker D F(x_0)$ avec $X_0$ fermé, en particulier $X\cong X_0\times \ker D F(x_0) $ avec $X_0$ un espace de Banach, on pose $x_0=(p_0,q_0)\in E$\\
+    \todo{Terminer preuve}
+\end{preuve}
+\begin{corollaire}
+    Si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
+\end{corollaire}
+
+\todo{Rajouter discussion fonction vs famille}
+
+\begin{corollaire}
+     Si $X,Y$ sont des espaces de Banach séparables et si $F\in C^k(X,Y)$ avec $k>max(\operatorname*{Ind}(f),0)$ alors il existe un sous ensemble $V$ de $Y$, dont le complémentaire est maigre tel que si $y\in V$, alors $F^{-1}(y)$ est une variété de dimension $\operatorname*{Ind}(f)$ ou est vide
+\end{corollaire}
+
+\todo{Commenter}
+
+
+
+
+
 \subsection{Éléments de théorie des EDP}
 Nous introduisons le minimum vital de théorie des équations différentielles aux dérivées partielles pour pouvoir illustrer la théorie, cette section est adaptée de \cite{friedmanpartial}
 
 Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
-    Si $U$ est un ouvert de $\R^n$, et $l\geq m\geq 1$ un \textit{opérateur différentiel partiel} est un opérateur de la forme 
+    Si $U$ est un ouvert de $\R^n$, et $l\geq m\geq 1$ un \coldef{opérateur différentiel partiel} est un opérateur de la forme 
     \begin{equation}\label{ellipticop}
         E: C^{l}(U)\rightarrow C^{l-m}(U), f \mapsto \sum_{|\alpha|\leq m} a_{\alpha}D^{\alpha}f
     \end{equation}
@@ -688,13 +697,13 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
 \end{definition}
 
 \begin{definition}
-    L'opérateur \ref{ellipticop} est dit \textit{elliptique} si
+    L'opérateur \ref{ellipticop} est dit \coldef{elliptique} si
     pour tout réel $\xi\neq 0$ et tout $x_0\in U$, $\sum_{|\alpha|=m} a_{\alpha}(x_0) \xi^{\alpha}\neq 0$.
 \end{definition}
 Notez que dans la définition précédente, si les $a_\alpha$ sont réels, alors $m$ doit être pair.
 \begin{definition}
     L'opérateur \ref{ellipticop} de partie principale 
-    \ref{principalpart} est \textit{fortement elliptique } en $x_0\in U$. Si $m=2p$
+    \ref{principalpart} est \coldef{fortement elliptique } en $x_0\in U$. Si $m=2p$
     \begin{equation*}
         (-1)^{p}\sum_{|\alpha|=2p}a_{\alpha}(x_0)\xi^{\alpha}>0
     \end{equation*}
@@ -703,7 +712,7 @@ Notez que dans la définition précédente, si les $a_\alpha$ sont réels, alors
         \forall x\in U, \xi\in\R, \exists c_0>0 : 
         (-1)^{p}\sum_{|\alpha|=2p}a_{\alpha}(x_0)\xi^{\alpha}\geq c_0 |\xi|^{2p}
     \end{equation*}
-    et si les coefficients principaux sont uniformément bornés dans $U$ alors l’opérateur $E$ est \textit{Uniformément fortement elliptique }
+    et si les coefficients principaux sont uniformément bornés dans $U$ alors l’opérateur $E$ est \coldef{Uniformément fortement elliptique }
 \end{definition}
 On obtient facilement par récurrence le 
 résultat suivant  
@@ -839,11 +848,11 @@ des calculs simples nous permettent d'obtenir
 
 Un exemple classique, la formulation est inspirée de [SOURCE]. 
 \begin{exemple}\label{Poutre}
-    Supposons avoir une  poutre élastique parfaitement cylindrique fixée verticalement à un support et à laquelle on soumet une charge $P$, tant que $P$ est faible, il ne se passe rien, si $P$ excède une certaine valeur critique, alors la poutre va se \textit{tordre}, cette valeur critique sera une bifurcation ! On suppose la poutre très fine par rapport à sa taille, et que la déformation est planaire i.e, la poutre se courbe dans un plan. Pour le choix des coordonnées, on va prendre l’abscisse curviligne, et on note alors $\theta(s)$ l'angle fait par la tangente en l’abscisse curviligne $s$, l'équation s'écrit alors 
+    Supposons avoir une  poutre élastique parfaitement cylindrique fixée verticalement à un support et à laquelle on soumet une charge $P$, tant que $P$ est faible, il ne se passe rien, si $P$ excède une certaine valeur critique, alors la poutre va se tordre, cette valeur critique sera une bifurcation ! On suppose la poutre très fine par rapport à sa taille, et que la déformation est planaire i.e, la poutre se courbe dans un plan. Pour le choix des coordonnées, on va prendre l’abscisse curviligne, et on note alors $\theta(s)$ l'angle fait par la tangente en l’abscisse curviligne $s$, l'équation s'écrit alors 
     \begin{equation*}
         D^2 \theta + P \sin\theta=0\footnote{C'est Euler qui a obtenu cette équation en premier}
     \end{equation*}
-    On fixe également des \textit{conditions de bord} $D_1 
+    On fixe également des \coldef{conditions de bord} $D_1 
     \theta(0)=D_1 \theta(1)=0$ (on suppose que le cylindre a 
     une longueur 1 et qu'on a fixé les extrémités). Ici, la 
     branche de solution triviale est $\left\{ (0,P)|
@@ -895,7 +904,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
 \subsection{Cas où $\dim \Lambda=1$}
 dans la suite, nous supposons $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $d_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
-On peut déjà présenter un cas très simple, la "bifurcation" \textit{fold} (repliement), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
+On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (repliement), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
 
 \begin{theobox} {Fold}{}\label{fold}
     Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
@@ -958,14 +967,14 @@ On a alors simplement la situation "vecteur tangent vertical"
     \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
 \end{exemple}
 \begin{remarque}
-    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'observables, et on voit lambda comme une perturbation \textit{externe } du système. On peut donc pas mélanger le paramètre avec les variables d'état.
+    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'observables, et on voit lambda comme une perturbation externe du système. On peut donc pas mélanger le paramètre avec les variables d'état.
 \end{remarque}
-La plupart des articles de théorie de la bifurcation supposent l'existence d'une \textit{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
+La plupart des articles de théorie de la bifurcation supposent l'existence d'une \coldef{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
 \begin{equation*}
 \tilde{F}(x,\lambda)=F(\gamma_1(\lambda)+x,\gamma_2(\lambda))
 \end{equation*}
 Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale.On peut bien sûr supposer que cela à lieu en $(0,0)$
-Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \textit{bifurcation simple}, ou encore \textit{bifurcation depuis une branche principale}.
+Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \coldef{bifurcation simple}, ou encore \coldef{bifurcation depuis une branche principale}.
 dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
 dans ce cas, on peut identifier $d^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
 \begin{theobox}{Crandall-Rabinowitz, bifurcation simple}{} 
@@ -1032,15 +1041,15 @@ Répond à la question
 
 \end{preuve}
 \begin{remarque}\label{remarque INd=0}
-    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'index non nul
+    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'index positif 
 \end{remarque}
-Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \textit{théorie des singularités} que nous exposons dans la section \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramener en dimension finie, ça ne marche pas si l'espace des paramètres est de dimension infinie ! d'où la sous-section suivante.
+Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \coldef{théorie des singularités} que nous exposons dans la section \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramener en dimension finie, ça ne marche pas si l'espace des paramètres est de dimension infinie ! d'où la sous-section suivante.
 \subsection{Cas où $\dim \Lambda=\infty$}\label{Lambdainfdim}
 Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont interprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
 
 \begin{definition}
-    Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \textit{élément de bifurcation}  s'il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles que $x'_i\neq x_i$ pour tous $i\in\mathbb{N}$, convergent vers $(x_0,\lambda_0)$ et 
-    $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élément de bifurcation est dit \textit{perpendiculaire} s'il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ telle que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
+    Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \coldef{élément de bifurcation}  s'il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles que $x'_i\neq x_i$ pour tous $i\in\mathbb{N}$, convergent vers $(x_0,\lambda_0)$ et 
+    $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élément de bifurcation est dit \coldef{perpendiculaire} s'il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ telle que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
 \end{definition}
 \begin{remarque}
     Remarquez qu'une bifurcation depuis la branche triviale est un élément de bifurcation mais que l'inverse n'est pas vrai.
@@ -1331,7 +1340,7 @@ Avec $\mathcal{T}''$ la topologie induite sur l'intersection des domaines de $f$
 \end{definition}
  Bien sûr, si $f\sim_{S} g$ alors $f_{|_{S}}=g_{|_{S}}$, la définition suivante est donc licite
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \textit{l'espace des germes} $C^k$ est donné par
+    Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \coldef{l'espace des germes} $C^k$ est donné par
     \begin{equation*}
         \mathcal{E}(S,X,Y,T)=\mathcal{G}_{\infty}(S,X,Y,T)/\sim_{S}
     \end{equation*}
@@ -1380,15 +1389,15 @@ considère la germe de fonction correspondante
 
 
 \begin{remarque}\label{remsheaf}
-    C'est un cas particulier de \textit{faisceau}\footnote{Le lecteur familier avec la théorie des catégories ne manquera pas de remarquer qu'un faisceau est un cas particulier de foncteur contravariant de la catégorie des ouverts (dont les morphismes sont les inclusions) et la catégorie des ensembles.}
-    Si $(X,\mathcal{T})$ est un espace topologique, un \textit{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, V\subseteq U}$ respectant les axiomes suivants :
+    C'est un cas particulier de \coldef{faisceau}\footnote{Le lecteur familier avec la théorie des catégories ne manquera pas de remarquer qu'un faisceau est un cas particulier de foncteur contravariant de la catégorie des ouverts (dont les morphismes sont les inclusions) et la catégorie des ensembles.}
+    Si $(X,\mathcal{T})$ est un espace topologique, un \coldef{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, V\subseteq U}$ respectant les axiomes suivants :
     \begin{itemize}
         \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
         \item $\forall U,V,W\in\mathcal{T}: U\subseteq V\subseteq W$, $\rho^V_U\circ \rho^W_V=\rho^W_U$. (fonctorialité 2)
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$ si $s,t\in\mathcal{F}(U)$ sont telles que \\$ \forall i\in\mathcal{I},\rho^U_{U_i}(s)=\rho^U_{U_i}(t)$ alors $s=t$ (localité )
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^U_{U_i\cap U_j}(s_j)=\rho^U_{U_i\cap U_j}(s_i)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
     \end{itemize}
-    Les deux axiomes sont des axiomes purement structurels. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y,X$ sont des variétés lisses alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on définit enfin la \textit{germe} d'un faisceau en un sous-ensemble $S\supseteq X$ comme étant
+    Les deux axiomes sont des axiomes purement structurels. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y,X$ sont des variétés lisses alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on définit enfin la \coldef{germe} d'un faisceau en un sous-ensemble $S\supseteq X$ comme étant
     \begin{equation*}
         \mathcal{F}_S=\varinjlim_{U \supseteq S} F(U)
     \end{equation*}
@@ -1452,7 +1461,7 @@ Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
 \end{corollaire}
 
 \begin{remarque}
-    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \textit{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
+    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \coldef{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
 \end{remarque}
 
 Dans la suite, si $R$ est anneau, on notera $R^r[x_1,\cdots,x_n]$ le polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes homogènes de degré $r$.
@@ -1542,7 +1551,7 @@ le terme constant est dans $\mathcal{M}$.
     $r-1$, via \ref{Hadamard}, on sait que $\ker J_{x}^{r-1}
     =\mathcal{M}_x(N)^r$ en $x$, et il est évidemment surjectif. On conclut en appliquant le premier théorème d'isomorphisme.
 \end{preuve}
-On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S$ avec $S$ fini, on rappelle que 
+On va désormais s'intéresser aux modules sur l'anneau $\mathcal{E}_S$ avec $S$ fini, on rappelle que 
 
 \begin{definition}
     Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à gauche est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un scalaire" $\cdot:R\times G\rightarrow G$ qui respecte les mêmes axiomes que pour un espace vectoriel, i.e, $\forall r,s\in R,x,y\in G$
@@ -1555,7 +1564,7 @@ On va désormais s'intéresser aux \textit{modules} sur l'anneau $\mathcal{E}_S$
 \end{definition}
 
 \begin{definition}
-    Un module est dit \textit{libre} s'il possède une base. Un module est \textit{finiment généré} s'il possède une partie génératrice finie. Enfin, un module libre est à \textit{rang constant} si toutes les bases ont le même nombre d'éléments
+    Un module est dit \coldef{libre} s'il possède une base. Un module est \coldef{finiment généré} s'il possède une partie génératrice finie. Enfin, un module libre est à \coldef{rang constant} si toutes les bases ont le même nombre d'éléments
 \end{definition}
 Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
 \begin{exemple}
@@ -1572,7 +1581,7 @@ Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
 \end{exemple}
 
 On peut aussi avoir la situation où $r\cdot x=0$ avec $r$ 
-et $x$ non nuls, c'est ce qu'on appelle un module à \textit
+et $x$ non nuls, c'est ce qu'on appelle un module à \coldef
 {torsion}. La notion d'homomorphisme de module est la même 
 que celle d'application linéaire.
 Nous rappelons (sans preuve) le lemme de Nakayama, qui est 
@@ -1678,7 +1687,7 @@ finiment généré
 
 \begin{remarque}
     On vient de montrer que tout $\mathcal{E}_S$-module
-    finiment généré avec $S=\left\{s\right\}$ est un module \textit{noethérien}, i.e un module dont tous les sous-modules sont finiment générés
+    finiment généré avec $S=\left\{s\right\}$ est un module \coldef{noethérien}, i.e un module dont tous les sous-modules sont finiment générés
 \end{remarque}
 
 
@@ -1701,7 +1710,7 @@ et
     \Gamma_{\cdot}:\mathcal{E}_y(P)^m\rightarrow \mathcal{E}_{(y,0)}(P\times \R),u\mapsto t^m+R_u
 \end{equation*}
 
-Le résultat suivant est une conséquence du \textit{théorème 
+Le résultat suivant est une conséquence du \colprop{théorème 
 de division de Mather}, la preuve étant assez lourde et 
 calculatoire, il est simplement rappelé
 
@@ -1771,7 +1780,7 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
     \end{equation*}
 \end{corollaire}
 \begin{preuve}
-    Soit $u,q_1$ comme le résultat précédents, on a $f=q_1\Gamma_u$. On conclut en appliquant \ref{DivMather}
+    Soit $u,q_1$ comme le résultat précédents, on a $f=q_1\Gamma_u$. On conclut en appliquant \ref{DivMather}.\\
 \end{preuve}
 
 \begin{definition}
@@ -1914,7 +1923,7 @@ Et $S\in\mathcal{E}_{\infty}(\R^n\times \Lambda,\operatorname*{GL}(\R^p))$ tels 
 \begin{equation}\label{GolubEQ}
     f\circ\phi= S\cdot g
 \end{equation}
- si $h=\operatorname*{Id}$ on dira qu'ils sont \textit{fortement équivalents}
+ si $h=\operatorname*{Id}$ on dira qu'ils sont \coldef{fortement équivalents}
 \begin{exemple}
     reprenons encore la bifurcation "trident"
     \begin{equation*}
@@ -1945,8 +1954,8 @@ nombre de solutions en $\lambda_0$, par
 exemple 
 $(x_1,\lambda_0)$,...,$(x_n,\lambda_0)$ alors 
 cet ensemble va être transporté, via $\phi$ sur 
-$(H(x_1,\lambda_0),h(\lambda_0)),\cdots, (H
-(x_1,\lambda_0),h(\lambda_0))$ et donc,grâce à la structure de $\phi$, elles se trouvent 
+$(H(x_1,\lambda_0),h(\lambda_0)),\cdots,\\
+(H(x_1,\lambda_0),h(\lambda_0))$ et donc,grâce à la structure de $\phi$, elles se trouvent 
 sur la même "tranche" $\R^n\times \{h
 (\lambda_0)\}$. Si on a une germe 
 $g(x,\lambda)$ un peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ une germe, considérons la famille $h_t=(g+tp)_{t\in [0,1]}$ 
@@ -1969,7 +1978,7 @@ pouvoir se ramener à l'étude d'un nombre fini de termes du développement de T
 Nous introduisons la notion suivante
 \begin{definition}
     Si $\mathcal{R}$ est une relation 
-    d'équivalence sur $\mathcal{E}(0,\R^n,\R^m)$, on dit que $f$ est $k$-$\mathcal{R}$-\textit{déterminée} si 
+    d'équivalence sur $\mathcal{E}(0,\R^n,\R^m)$, on dit que $f$ est $k$-$\mathcal{R}$-\coldef{déterminée} si 
     \begin{equation*}
         \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
     \end{equation*}
@@ -1982,7 +1991,7 @@ Les relations d'équivalences qui nous intéressent seront définies par l'actio
  \begin{equation*}
     (g,h)\cdot x = g\cdot x \cdot h^{-1}
  \end{equation*}
-Le groupe le plus naturel est $d(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \textit{l'équivalence droite} (resp. gauche). L'action de $\mathcal{A}=d(n)\times d(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
+Le groupe le plus naturel est $d(n)$ l'ensemble des germes de difféomorphismes de $\mathcal{E}(0,\R^n)$, son action sur $\mathcal{E}(0,\R^n,\R^m)$  par composition à droite (resp. à gauche) induit \coldef{l'équivalence droite} (resp. gauche). L'action de $\mathcal{A}=d(n)\times d(m)$ sur $\mathcal{E}(0,\R^n,\R^m)$ induit l'équivalence gauche droite.\\
  On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{D}_{n+m}$ telles qu'il existe une $h\in\mathcal{D}_n$ respectant le  diagramme suivant:
 \[\begin{tikzcd}
 	{(0,\R^{n+m})} & {(0,\R^{n+m})} & \\
@@ -2085,7 +2094,7 @@ La notion de déploiement remonte à
 René Thom [SOURCE]. Notez que dans la 
 suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifiera les calculs et ce n'est pas une vraie restriction.
 \begin{definition} 
-    $G\in\mathcal{E}^{m+d}_{n+d}\cdot \mathcal{M}_{n+d}$ est  \textit{un déploiement à $d$ paramètres} de $f$
+    $G\in\mathcal{E}^{m+d}_{n+d}\cdot \mathcal{M}_{n+d}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
     si elle respecte le diagramme suivant:
     \[\begin{tikzcd}
 	{(0,\R^n)} & {(0,\R^m)} \\
@@ -2104,11 +2113,11 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
 \end{definition}
 
 \begin{remarque}
-    dans la littérature, la notion de déploiement et parfois interchangée avec la notion de \textit{déformation}. Une déformation $F$ de $f$ est simplement une germe de $\mathcal{E}^{m}_{n+d}$ telle que $F(\cdot,0)=f$. En quelque sorte, le déploiement "mémorise" le paramètre mais pas la déformation.
+    dans la littérature, la notion de déploiement et parfois interchangée avec la notion de \coldef{déformation}. Une déformation $F$ de $f$ est simplement une germe de $\mathcal{E}^{m}_{n+d}$ telle que $F(\cdot,0)=f$. En quelque sorte, le déploiement "mémorise" le paramètre mais pas la déformation.
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \textit{famille à $d$-paramètres}  $G$   \textit{ à travers} $v$ \textit{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(u,\cdot)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n\cdot \mathcal{M}_n$  et $v\in V$ une \coldef{famille à $d$-paramètres}  $G$   \coldef{ à travers} $v$ \coldef{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(u,\cdot)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
 \end{definition}
 
 \begin{exemple}
@@ -2122,10 +2131,10 @@ suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifier
     \end{equation*}
     ne l'est pas.
 \end{exemple}
-On va s'intéresser particulièrement aux famille à 1 seul paramètre, c'est à dire les \textit{chemin lisses} dans une sous "variété"  $V$ de $\mathcal{E}^n_m$.
+On va s'intéresser particulièrement aux famille à 1 seul paramètre, c'est à dire les \coldef{chemin lisses} dans une sous "variété"  $V$ de $\mathcal{E}^n_m$.
 
 
-Rappelons que si $M$ est $N$ sont des variétés lisses et si $f\in C^{\infty}(M,N)$ alors l'ensemble des champs de vecteurs lisses \textit{le long} de $f$, $\mathcal{V}(f)$ est donné par l'ensemble des $\xi: M\rightarrow TN$
+Rappelons que si $M$ est $N$ sont des variétés lisses et si $f\in C^{\infty}(M,N)$ alors l'ensemble des champs de vecteurs lisses \coldef{le long} de $f$, $\mathcal{V}(f)$ est donné par l'ensemble des $\xi: M\rightarrow TN$
 respectant le diagramme suivant: 
 
 \[\begin{tikzcd}
@@ -2155,7 +2164,7 @@ du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que
 
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n$ et $f\in V$ on définit \textit{l'espace tangent de $v$}
+    Soit $V\subseteq \mathcal{E}^m_n$ et $f\in V$ on définit \coldef{l'espace tangent de $v$}
     comme 
     \begin{equation*}
         T_f V =\left\{\frac{\partial G}{\partial u}(0) \biggr| G\in\mathcal{U}_1(f,V) \right\}
@@ -2195,21 +2204,20 @@ On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteur
 
 \todo{paragraphe introductif}
 
-\subsection{Le degré de Leray-Schauder}
+\subsection{Introduction à la théorie du degré}
 
-\subsubsection{Premières notions}
-Plaçons nous, dans un premier temps, en dimension finie et considérons un ouvert $U$ de $\R^n$, $f\in C^0(\bar{U},\R^n)$ et $y\notin f(\partial U)$ et supposons qu'on veuille construire une fonction $\operatorname{deg}$ qui "compte" le nombre de de solutions de l'équation $f(x)=y$ dans $U$. Faisons une petite analyse de la situation: remarquons d'abord qu'on doit avoir la \textit{normalité}
+Plaçons nous, dans un premier temps, en dimension finie et considérons un ouvert $U$ de $\R^n$, $f\in C^0(\bar{U},\R^n)$ et $y\notin f(\partial U)$ et supposons qu'on veuille construire une fonction $\operatorname{deg}$ qui "compte" le nombre de de solutions de l'équation $f(x)=y$ dans $U$. Faisons une petite analyse de la situation: remarquons d'abord qu'on doit avoir la \coldef{normalité}
 \begin{equation*}
     \forall y\in U,\operatorname{deg}(\operatorname{Id},U,y)=1
 \end{equation*}
 
-En effet, dans ce cas la seule solution est $x=y$. Mainenant, si on a deux sous ensembles ouverts de $U$, $V_1$ et $V_2$ et qu'ils sont disjoints. Supposons de plus que toutes les solutions soient dans $V_1$ ou $V_2$ et qu'elles sont en nombre fini, alors on aimerait bien avoir \textit{l'additivité}
+En effet, dans ce cas la seule solution est $x=y$. Mainenant, si on a deux sous ensembles ouverts de $U$, $V_1$ et $V_2$ et qu'ils sont disjoints. Supposons de plus que toutes les solutions soient dans $V_1$ ou $V_2$ et qu'elles sont en nombre fini, alors on aimerait bien avoir \coldef{l'additivité}
 
 \begin{equation*}
     \operatorname{deg}(f,U,y)=\operatorname{deg}(f,V_1,y)+\operatorname{deg}(f,V_2,y)
 \end{equation*}
 
-Le lecteur familier avec la topologie trouvera particulièrement naturel d'exiger une notion \textit{d'invariance par homotopie}. Précisons: on dira que $f$ et $g\in C^0(\bar{U},\R^n)$ sont homotopes si on peut trouver
+Le lecteur familier avec la topologie trouvera particulièrement naturel d'exiger une notion \coldef{d'invariance par homotopie}. Précisons: on dira que $f$ et $g\in C^0(\bar{U},\R^n)$ sont homotopes si on peut trouver
 
 \begin{equation*}
     H\in C^0([0,1]\times\bar{U},\R^n): H(0,\cdot)=f \text{ et } H(1,\cdot)=g
@@ -2224,7 +2232,7 @@ alors  on voudrait que
     \operatorname{deg}(H(t,\cdot),U,y(t))
 \end{equation*}
 Soit toujours le même. Notez qu'en plus la fonction, on s'autorise aussi à bouger la "cible", mais on s'interdit de toucher la frontière !
-de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui possède ces propriétés ! On peut donc parler "du" degré. On l'appelle le \textit{degré de Brouwer}
+de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui possède ces propriétés ! On peut donc parler "du" degré. On l'appelle le \coldef{degré de Brouwer}
 
 \begin{definition}
     Si $U\subseteq \R^n$ est ouvert et borné, si $f\in C^0(\bar{U})\cap C^1(U)$ et $y\in \R^n\setminus f(\partial U \cup S_f(U))$ alors on pose 
@@ -2232,10 +2240,17 @@ de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui po
         \operatorname{deg}(f,U,y)=\sum_{x\in f^{-1}(y)} \operatorname*{sign} \det df(x)
     \end{equation*}
 \end{definition}
-On peut montrer que cette fonction remplit bien les 3 conditions et que c'est la seule. Ensuite, via le théorème de Morse-Sard et quelques techniques d'approximation classiques, on peut généraliser cette fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour les détails. Notez que les 3 conditions mènent à une fonction qui ne compte pas vraiment le nombre de solutions, mais associe un \textit{signe} à chacune d'entre elles. 
+On peut montrer que cette fonction remplit bien les 3 
+conditions et que c'est la seule. Ensuite, via le 
+\colprop{théorème de Morse-Sard} et quelques techniques 
+d'approximation classiques, on peut généraliser cette 
+fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour 
+les détails. Notez que les 3 conditions mènent à une 
+fonction qui ne compte pas vraiment le nombre de 
+solutions, mais associe un \textit{signe} à chacune d'entre elles. 
 
 
-\subsubsection{Construction}
+\subsection{Approche historique: le degré de Leray-Schauder}
 Il est impossible de généraliser la notion du degré de Brouwer aux espaces de Banach. Pour le voir, nous montrons un cas particulier du théorème du point fixe en utilisant uniquement les propriétés du degré et montrons ensuite qu'il ne s'applique pas en dimension infinie
 \begin{proposition}
     si $r>0$ et $f\in C^0(\bar{B(0,r)},\bar{B(0,r)})$ alors $f$ admet un point fixe
@@ -2280,7 +2295,8 @@ Un petit contre exemple en dimension infinie
     Il n'existe pas d'équivalent au degré de Brouwer en dimension infinie.
 \end{corollaire}
 Il faut alors restreindre l'ensemble des fonctions sur lequel on va travailler si on veut espérer définir une notion de degré. C'est le travail effectué par  Juliusz Schauder et  Jean Leray pendant les années 30, nous consacrons les prochaines paragraphes à en faire la synthèse.
-Le degré de Leray-Schauder est défini sur les \textit{ perturbations compactes de l'identité} i.e on suppose $F$ de la forme $I-G$ avec $G$ une application compacte 
+Le degré de Leray-Schauder est défini sur les \coldef{ perturbations compactes de l'identité} i.e on suppose $F$ de la forme $I-G$ avec $G$ une application compacte , il a alors obtenu le résultat suivant
+(qu'on énonce sans preuve) 
 
 \begin{theobox}{Leray-Schauder}{}
     Soit $X$ un espace de Banach et 
@@ -2289,40 +2305,28 @@ Le degré de Leray-Schauder est défini sur les \textit{ perturbations compactes
             (I-G,U,y): U \subseteq\mathcal{B}(X)\text{ et ouvert },G\in\mathbb{K}(\bar{U}),y\notin (I-G)(\partial U)
         \right \}
     \end{equation*}
-    l'ensemble des \textit{triplets admissibles}
+    l'ensemble des \coldef{triplets admissibles}
     il existe une unique fonction 
     \begin{equation*}
         \operatorname{deg}: A\rightarrow \mathbb{Z}
     \end{equation*}
     satisfaisant la normalité, l'invariance par homotopie et l'additivité.
 \end{theobox}
-\begin{preuve}
-    \todo{faire les lemmes techniques et faire la preuve en détails}
-\end{preuve}
-\newpage
-\subsubsection{2 théorèmes classiques}
 
 
+Avec ce degré, on peut obtenir des résultats globaux de Bifurcation sa construction nécéssite pas mal de lemmes techniques, les démonstrations sont laborieuse et les résultats sont plus faibles que ceux obtenus avec la notion de degré plus récente présentée ci-dessous
 
-\begin{theobox}{Krasnosel’ski}{}
-    
-\end{theobox}
-
-\begin{theobox}{Rabinowitz}{}
-    
-\end{theobox}
-
-\subsection{Le degré orienté}
-\subsubsection{Construction}
+\subsection{Le degré de Furi}
+\subsubsection{Orientation de fonction de Fredholm d'indice nul}
 Nous allons introduire une notion d'orientation pour les fonctions de Fredholm. Cette dernière, proposée par Furi dans \cite{BenevieriFuri1998}, a ensuite été mobilisée dans \cite{BenevieriFuri2001} pour obtenir des résultats de bifurcation. Nous présentons ainsi les idées de ces 2 papiers.
 \begin{definition}
-    Si $X,Y$ sont des espaces de Banach et  $D\in\mathcal{F}_0(X,Y)$ alors $E\in L(X,Y)$ est un \textit{correcteur } de $D$ si $D+E$ est un isomorphisme et si son image est de dimension finie. On pose $\mathcal{C}(D)$ l'ensemble des correcteurs de $D$
+    Si $X,Y$ sont des espaces de Banach et  $D\in\mathcal{F}_0(X,Y)$ alors $E\in L(X,Y)$ est un \coldef{correcteur } de $D$ si $D+E$ est un isomorphisme d'espace vectoriel et si son image est de dimension finie. On pose $\mathcal{C}(D)$ l'ensemble des correcteurs de $D$
 \end{definition}
 On remarque que $\mathcal{C}(D)$ n'est jamais vide, en effet, si on écrit $X=\ker D\oplus X_0$ et $Y=\operatorname*{im} D \oplus Y_0$, on sait que $\ker D$ et $Y_0$ sont isomorphes, notons $A_0$ l'isomorphisme, on remarque alors que 
-\begin{equation*}
+\begin{equation}\label{correcteur-exemple}
     A:  X\rightarrow Y, x_1+x_2\mapsto A_0(x_1)
-\end{equation*}
-répond à la question. En effet, il est injectif car $Y_0\oplus \operatorname*{im} D$ et il est surjectif car une perturbation de rang fini d'un opérateur de Fredholm ne change pas l'indice.
+\end{equation}
+répond à la question. En effet, il est injectif car $Y_0\oplus \operatorname*{im} D=Y$ et il est surjectif car une perturbation de rang fini d'un opérateur de Fredholm ne change pas l'indice.
 Dans la suite de cette section on suppose $D$ comme dans la définition précédente.
 Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la même orientation", on fait ça en définissant une relation d'équivalence sur $\mathcal{C}(D)$
 
@@ -2379,7 +2383,7 @@ où  $\pi_F$ est la projection sur $X_0$ de  $F_{X'_0}$, on conclut immédiateme
 
 
 \begin{definition}
-    dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont $D$-\textit{équivalents} si $\det (\phi_{E,E'})|_{X_0}>0$, on écrira  $E\sim_{D} E'$
+    dans les conditions des deux lemmes précédents, on dit que les correcteurs  $E$ et  $E'$  sont $D$-\coldef{équivalents} si $\det (\phi_{E,E'})|_{X_0}>0$, on écrira  $E\sim_{D} E'$
 \end{definition}
 \begin{proposition}
     $\sim_D$ est une relation d'équivalence sur $\mathcal{C}(D)$
@@ -2406,7 +2410,7 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 
 
 \begin{definition}
-    Une \textit{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \textit{opérateur orienté} est une paire $(D,c)$ où $c$ est une oreitnation. Si $(D,c)$ est orienté, un correcteur sera dit \textit{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \textit{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D,c)$ est isomorphisme orienté, on pose $\operatorname{Sign}D=1$ si $0\in c $, et $-1$ sinon 
+    Une \coldef{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \coldef{opérateur orienté} est une paire $(D,c)$ où $c$ est une oreitnation. Si $(D,c)$ est orienté, un correcteur sera dit \coldef{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \coldef{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D,c)$ est isomorphisme orienté, on pose $\operatorname{Sign}D=1$ si $0\in c $, et $-1$ sinon 
 \end{definition}
 \begin{definition}
     Si $(D_1,c_1)$ et $(D_2,c_2)$ sont des opérateurs orientés, on note $c_2\circ c_1$ l'orientation de $D_2\circ D_1$ telle que
@@ -2432,27 +2436,89 @@ alors
     \operatorname*{Sign}: \mathcal{G}(D)\rightarrow \mathbf{B}\mathbb{Z}_2, E\mapsto o, \phi_{E,E'}\mapsto \operatorname*{sgn}\det \phi_{E,E'}|_{X_0}
 \end{equation*}
 
-est un foncteur donc $\mathcal{G}^+(D)$, la catégorie $\mathcal{G}(D)$ ou on retire les les morphismes dont le determinant restreint est négatif, est un sous groupoïde (c'est même un sous groupoïde normal) de $\mathcal{G}(D)$. Il est clair que ce groupoïde à axactement deux composantes connexes
+est un foncteur donc $\mathcal{G}^+(D)$, la catégorie $\mathcal{G}(D)$ ou on retire les les morphismes dont le determinant restreint est négatif, est un sous groupoïde (c'est même un sous groupoïde normal) de $\mathcal{G}(D)$. Il est clair que ce groupoïde à axactement deux composantes connexes, qui correspondent donc aux choix possibles d'orientation\\
+Soit $(D,c)$ un opérateur orienté, via Hanh-Banach, on peut supposer que le correcteur $A$ donné en \ref{correcteur-exemple} est continu, on peut de plus supposer qu'il est positif. Maintenant, $D+A$ est un isomorphisme d'espaces de Banach et il existe un voisinage (pour la topologie des opérateurs) $V_D$ tel que si $D'\in V_D$, alors $A$ est un correcteur de $D'$, on appelle alors \textcolor{color-def}{l'orientation induite par $(D,c)$} sur $D'$ celle qui fait de $A$ un correcteur positif \\
+On définit maintenant l'orientation pour une famille continue d'opérateurs de Fredholm
+\begin{definition}
+    Soit $(\Lambda,\mathcal{T})$ un espace topologique et $h\in C^0(\Lambda,\mathcal{F}_0(X,Y))$,
+    $\alpha_{\lambda}$
+    est une 
+     \textcolor{color-def}{orientation} 
+    si  pour tout $\lambda\in\Lambda$, $\alpha_{\lambda}\in\mathcal{C}(h(\lambda))/\sim_{h(\lambda)}$ et il existe $A_{\lambda}\in\alpha_\lambda$ qui est correcteur positif (pour l'orientation induite) de $h(\lambda')$ si $\lambda'$ est dans un voisinnage de $\lambda$. Une famille est alors dite \textcolor{color-def}{orientable} si il existe une orientation. Un sous ensemble $\mathcal{D}$ d'opérateurs de Fredholm d'indice 0 est orientable si l'inclusion $\iota : \mathcal{D}\rightarrow \mathcal{F}_0(X,Y)$ est orientable
+\end{definition}
 
+\begin{lemme}
+    Dans les condition de la définition précédente, si $\Lambda$ est connexe, et si $h$ est orientable, alors $h$ admet exactement deux orietations 
+\end{lemme}
 
+\begin{preuve}
+    Soit $\alpha_\lambda$ une orientation de $h$, et supposons que $\alpha'_\lambda$ coïncident avec $\alpha$ sur une partie $\Omega$ de $\Lambda$ et montrons qu' $\Omega$ est ouvert. Soit alors $\lambda_0\in\Omega$, par définition, il existe des voisinages de $\lambda_0$ $V_1$,$V_2$ et $A_1\in\alpha'(\lambda_0)$, 
+    $A_2\in\alpha'(\lambda_1)$ qui sont des correcteurs positifs pour $h(\lambda')$ si $\lambda'$ est dans $V_1$ ou $V_2$, respectivement. Il suffit alors de remarquer que $\alpha$ et $\alpha'$ coïncident sur $V_1\cap V_2$. De façon identique, l'ensemble sur lesquels les orientations sont opposées est un ouvert, on conclut immédiatement
+\end{preuve}
 
-
-
-
-\todo{Propriétés de base du degré orienté, lien avec les autres notions de degré}
-
-
-\begin{theobox}{}{}
-    Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(dF(x_0,\lambda_0)) $ si la fonction 
+\begin{remarque}
+    Notez que cette notion d'orientabilité est une généralisation de la notion d'orientabilité d'une variété plongée $M$ de dimension finie $n$: en effet, il suffit de considérer
     \begin{equation*}
-        f: \R\rightarrow\R, \lambda\mapsto \det ((dF(0,\lambda)+A)^{-1}dF(0,\lambda))
+        h: M\rightarrow L(\R^n,\R^n), x\mapsto \pi^{N_x} 
+    \end{equation*}
+    avec  $\pi^{N_x}$ la projection sur l'espace normal $N_xM$
+\end{remarque}
+
+\begin{definition}
+    Soit $U\subseteq X$ un ouvert et $F: U\rightarrow X$ une fonction de Fredholm d'indice zéro. Une \textcolor{color-def}{orientation} de $F$ est simplement une orientation de $DF$ , et $F$ est \textcolor{color-def}{orientable} si $DF$ l'est. Si $F$ est un difféomorphisme, alors $F$ possède une orientation naturelle, notée $\nu$
+\end{definition}
+
+\subsubsection{Construction du degré de Furi}
+
+On peut maintenant construire le degré de Furi 
+\begin{definition}
+    Soit $F:X\rightarrow Y$ une fonction orientable et $y\in Y$, le triplet $(F,X,y)$ est 
+    \textcolor{color-def}{admissible} si $F^{-1}(y)$ est compact. Si $U$ est un ouvert de $X$, on dit que le triplet $(F,U,y)$ est
+    \textcolor{color-def}{admissible} si $F^{-1}(y)\cap U$ est compact et \textcolor{color-def}{fortement admissible } si $F$ admet une extension $F'$ continue $\bar{U}$, propre, et telle que $y\notin F(\partial U)$
+\end{definition}
+
+Du fait que les fonctions de Fredholm sont localement propre \ref{propre-fred}, l'admissiblité du triplet $(F,X,y)$ implique l'existance d'un voisinnage ouvert de $F^{-1}$ qui rend le triplet $(F,U,y)$ fortement admissible 
+
+\begin{definition}
+    Soit $U\subseteq X$ un ouvert et  $H\in C^0(U\times [0,1])$ continûment dérivable par rapport à la première variable. $(H,\alpha)$ est une \coldef{homotopie orientée} si $\alpha$ est une orientation de $D_1 H$
+\end{definition}
+
+On adapte alors les propriétés qu'on voudrait avoir pour  le degré \\
+Les conditions d'\coldef{additivité} et de \coldef
+{normalité} restent les mêmes que pour le degré de Brouver \coldef{L'invariance par 
+homotopie} devient une \coldef{invariance par homotopie 
+orientée}:\\  Soit $H: X\times [0,1]\rightarrow Y$ une homotopie orientée et $y\in C^0([0,1],Y)$, si l'ensemble 
+\begin{equation*}
+    \left\{(x,t)\in X\times [0,1]: H(x,t)=y(t) \right\}
+\end{equation*}
+est compact alors $\deg (H_t,X,y(t))$ est bien défini pour et ne dépend pas de $t\in [0,1]$\\
+La propriété suivante est évidente pour le degré de Brouwer, mais à expliciter  en dimension infinie, il s'agit de \coldef{l'invariance topologique}: Si $(F,X,y)$ est admissible et $\varphi: W\rightarrow X$, $\psi: Y\rightarrow Z$ sont des difféomorphismes naturellement orientés alors 
+\begin{equation*}
+    \deg(F,X,y)=\deg(\psi F \varphi, W, \psi(y))
+\end{equation*}
+
+Enfin, une propriété qui nous permet de faire l'analogue de l'analogue de la réduction de Lyapunov-Schmidt, nous la donnons à titre indicatif
+\begin{definition}
+   Sit $Y_0$ est un sous espace de $Y$,  $F:X\rightarrow Y$ est \coldef{transverse} à $Y_0$ si 
+   \begin{equation*}
+    \forall x\in F^{-1}(Y_0), Y_0+\im DF(x)=N.
+   \end{equation*}
+\end{definition}
+\coldef{Réduction}: si $F:X\rightarrow Y$ est orientée, et si $Y_0$ est transverse, alors on pose  $f_1$ la restriction de $f$ à $X_0=f^{-1}(Y_0)$, alors on veut que
+\begin{equation*}
+    \deg (f,X,y)=\deg(f_1,X_0,y)
+\end{equation*}
+\begin{theobox}{}{}
+    Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(DF(x_0,\lambda_0)) $ si la fonction 
+    \begin{equation*}
+        f: \R\rightarrow\R, \lambda\mapsto \det ((dF(0,\lambda)+A)^{-1}DF(0,\lambda))
     \end{equation*}
     change de signe en $\lambda_0$, alors c'est un point de bifurcation. 
 \end{theobox}
 \begin{preuve}
     \todo{PREUVE complete}
 \end{preuve}
-\subsubsection{Applications aux variétés de Banach}
+\subsubsection{Un résultat global via le degré orienté}
 \todo{LEMMES}
 \begin{theobox}{Furi}{}
     dans les conditions du théorème précédent, si $F$ est 
@@ -2486,7 +2552,7 @@ triviale, une fois la valeur critique dépassée, sont
 \textit{instables}. Nous allons maintenant donner un sens précis à la notion de stabilité et comprendre comment l'utiliser pour des problèmes de bifurcation. Nous verrons que pour ce faire, il faudra étudier le spectre de la dérivée de Fréchet.\\
 Bien qu'on travaille avec des espaces de Banach  réels, il est très courant de passer par le complexifié pour l'étude du spectre. Cette section est adaptée de \cite{henry1981geometric}. Dans ce qui suit, $D:X\rightarrow X$ est un endomorphisme d'espace de Banach.
 \begin{definition}
-    Si $V$ est un espace vectoriel, le \textit{complexifié} $V^{\mathbb{C}}$ de $V$ est donné par 
+    Si $V$ est un espace vectoriel, le \coldef{complexifié} $V^{\mathbb{C}}$ de $V$ est donné par 
     \begin{equation*}
         V^{\mathbb{C}}=V\otimes_{\R}\mathbb{C}\cong V\oplus i V=\left\{ v_1+iv_2\big| v_1,v_2\in V\right\}
     \end{equation*}
@@ -2502,13 +2568,13 @@ de Banach. Quand on parle du spectre de l'opérateur $D$, on parle en réalité 
 , x+iy\mapsto Dx +iDy
 \end{equation*}
 \begin{definition}
-    On définit $\sigma(D)$ \textit{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D$ n'est pas inversible. On décompose ce dernier en trois composantes : 
+    On définit $\sigma(D)$ \coldef{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D$ n'est pas inversible. On décompose ce dernier en trois composantes : 
     \begin{itemize}
         \item le spectre ponctuel $\sigma_p(D)$
         \item le spectre continu $\sigma_c(D)$
         \item le spectre résiduel $\sigma_r(D)$
     \end{itemize}
-    on définit enfin \textit{résolvant} comme étant le complémentaire  $\rho(D)$ du spectre.
+    on définit enfin \coldef{résolvant} comme étant le complémentaire  $\rho(D)$ du spectre.
 \end{definition}
 
 \begin{definition}
@@ -2518,7 +2584,7 @@ de Banach. Quand on parle du spectre de l'opérateur $D$, on parle en réalité 
         \omega\leq |\arg(\lambda-c)|\leq \pi,\lambda\neq c\right\}
     \end{equation*}
     le secteur de centre $c$ et d'ouverture $\omega$.
-    $D$ est $\omega,c$-\textit{sectoriel} avec $a$ réel et $\omega\in ]0,\frac{\pi}{2}[$ si 
+    $D$ est $\omega,c$-\coldef{sectoriel} avec $a$ réel et $\omega\in ]0,\frac{\pi}{2}[$ si 
     \begin{equation*}
         \Sigma_{\omega,c}\subseteq \rho(D)\text{ et } 
         \sup_{\lambda\in\Sigma_{\omega,c}}\frac{||(\lambda-D)^{-1}||}{|\lambda-c|} < \infty
