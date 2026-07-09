@@ -177,7 +177,7 @@ considérons l'équation différentielle suivante :
 \begin{equation}\label{equanewton}
     \frac{\partial  x}{\partial t }= F(x,\lambda)
 \end{equation}
-en supposant, par exemple $x:\R\rightarrow \R^n$ et $\lambda\in\R$. On peut s'intéresser, dans un premier temps, aux \textit{équilibres} de ce système, naturellement, cela correspond à étudier 
+en supposant, par exemple $x:\R\rightarrow \R^n$ et $\lambda\in\R$. On peut s'intéresser, dans un premier temps, aux \coldef{équilibres} de ce système, naturellement, cela correspond à étudier 
 $F_{\lambda}^{-1}(0)$. Considérons le cas très simple d'un mobile ayant un seul degré de liberté, et 
 \begin{equation*}
     F(x,\lambda)= x^3-\lambda x
@@ -1910,7 +1910,7 @@ Soient $f:(N,S)\rightarrow (P,y)$ une germe lisse $S$ une partie finie de $N$ et
 \end{preuve}
 
 \subsection{relations d'équivalences: exemple introductif} 
-Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \textit{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
+Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
 Soient $f,g\in\mathcal{E}(\R^n\times \Lambda,\R^p)$ où $\Lambda$ est un ouvert de $\R^m$ (par exemple) on dira que les problèmes de bifurcation
 \begin{equation*}
     f(x,\lambda)=0\text{ et } g(x,\lambda)=0
@@ -1963,13 +1963,13 @@ pour que $p$ soit une perturbation qui conserve la structure, on veut deux chose
 \begin{equation*}
     \forall t\in [0,1], h_t\text{ est équivalent à } g 
 \end{equation*}  
-et d'autre part, on veut que \textit{l'équivalence soit lisse}. Souvenez vous,la relation d'équivalence  \ref{GolubEQ} exige l'existence de  germes difféomorphismes, ainsi, pour tous $t\in [0,1]$, on aura des germes de difféomorphismes $\phi_t$  et $S_t$, on va naturellement exiger que 
+et d'autre part, on veut que l'équivalence soit lisse. Souvenez vous,la relation d'équivalence  \ref{GolubEQ} exige l'existence de  germes difféomorphismes, ainsi, pour tous $t\in [0,1]$, on aura des germes de difféomorphismes $\phi_t$  et $S_t$, on va naturellement exiger que 
 \begin{equation*}
     (x,\lambda,t)\mapsto \phi(x,\lambda,t)\text{ et } (x,\lambda,t)\mapsto S(x,\lambda,t)
 \end{equation*} 
-définissent des germes \textit{lisses}
+définissent des germes lisses
 \begin{remarque}
-    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé \textit{à priori } alors qu'on travaille avec des \text{germes}. Cette imprécision sera levée par lemme de Mather [LEMME]
+    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé à priori  alors qu'on travaille avec des germes. Cette imprécision sera levée par lemme de Mather [LEMME]
 \end{remarque}
 
 \subsection{détermination finie: généralités}\label{detfin}
@@ -2026,7 +2026,7 @@ Et donc
 \end{equation}
 
 
-L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ agit sur $f$ via son \textit{graphe}. Il est fort possible que vous trouviez dans la littérature une définition différente  de $\mathcal{K}$, montrons qu'elles sont équivalentes
+L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ agit sur $f$ via son graphe. Il est fort possible que vous trouviez dans la littérature une définition différente  de $\mathcal{K}$, montrons qu'elles sont équivalentes
 \begin{proposition}\label{MATRIXform}
     $f,g$ sont $\mathcal{K}
     $-équivalentes si et 
@@ -2237,7 +2237,7 @@ de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui po
 \begin{definition}
     Si $U\subseteq \R^n$ est ouvert et borné, si $f\in C^0(\bar{U})\cap C^1(U)$ et $y\in \R^n\setminus f(\partial U \cup S_f(U))$ alors on pose 
     \begin{equation*}
-        \operatorname{deg}(f,U,y)=\sum_{x\in f^{-1}(y)} \operatorname*{sign} \det df(x)
+        \operatorname{deg}_B(f,U,y)=\sum_{x\in f^{-1}(y)} \operatorname*{sign} \det df(x)
     \end{equation*}
 \end{definition}
 On peut montrer que cette fonction remplit bien les 3 
@@ -2247,7 +2247,7 @@ d'approximation classiques, on peut généraliser cette
 fonction à $C^0(\bar{U})$, voir \cite{KlausNonLin85} pour 
 les détails. Notez que les 3 conditions mènent à une 
 fonction qui ne compte pas vraiment le nombre de 
-solutions, mais associe un \textit{signe} à chacune d'entre elles. 
+solutions, mais associe un signe à chacune d'entre elles. 
 
 
 \subsection{Approche historique: le degré de Leray-Schauder}
@@ -2410,7 +2410,7 @@ $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peu
 
 
 \begin{definition}
-    Une \coldef{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \coldef{opérateur orienté} est une paire $(D,c)$ où $c$ est une oreitnation. Si $(D,c)$ est orienté, un correcteur sera dit \coldef{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \coldef{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D,c)$ est isomorphisme orienté, on pose $\operatorname{Sign}D=1$ si $0\in c $, et $-1$ sinon 
+    Une \coldef{orientation} de $D\in\mathcal{F}_0(X,Y)$ est une des 2 classes d'équivalence de $\mathcal{C}(D)$. Un \coldef{opérateur orienté} est une paire $(D,c)$ où $c$ est une oreitnation. Si $(D,c)$ est orienté, un correcteur sera dit \coldef{positif} s'il est dans $c$ et négatif sinon. On pose alors $\mathcal{C}_{+}(D)$ l'ensemble des correcteurs positifs et $\mathcal{C}_{-}(D)$ les négatifs. Lorsque $D$ est un isomorphisme, $0$ est un correcteur, on définit alors \coldef{l'orientation naturelle} $\nu(D)$ de $D$ comme étant la classe d'équivalence contenant $0$. Si $(D,c)$ est isomorphisme orienté, on pose $\operatorname{sgn}D=1$ si $0\in c $, et $-1$ sinon 
 \end{definition}
 \begin{definition}
     Si $(D_1,c_1)$ et $(D_2,c_2)$ sont des opérateurs orientés, on note $c_2\circ c_1$ l'orientation de $D_2\circ D_1$ telle que
@@ -2470,14 +2470,14 @@ On définit maintenant l'orientation pour une famille continue d'opérateurs de 
 
 \subsubsection{Construction du degré de Furi}
 
-On peut maintenant construire le degré de Furi 
+On peut maintenant construire le degré de Furi
 \begin{definition}
     Soit $F:X\rightarrow Y$ une fonction orientable et $y\in Y$, le triplet $(F,X,y)$ est 
     \textcolor{color-def}{admissible} si $F^{-1}(y)$ est compact. Si $U$ est un ouvert de $X$, on dit que le triplet $(F,U,y)$ est
     \textcolor{color-def}{admissible} si $F^{-1}(y)\cap U$ est compact et \textcolor{color-def}{fortement admissible } si $F$ admet une extension $F'$ continue $\bar{U}$, propre, et telle que $y\notin F(\partial U)$
 \end{definition}
 
-Du fait que les fonctions de Fredholm sont localement propre \ref{propre-fred}, l'admissiblité du triplet $(F,X,y)$ implique l'existance d'un voisinnage ouvert de $F^{-1}$ qui rend le triplet $(F,U,y)$ fortement admissible 
+Dans la suite, on suppose $F$ orientée.Du fait que les fonctions de Fredholm sont localement propre \ref{propre-fred}, l'admissiblité du triplet $(F,X,y)$ implique l'existance d'un voisinnage ouvert de $F^{-1}(y)$ qui rend le triplet $(F,U,y)$ fortement admissible 
 
 \begin{definition}
     Soit $U\subseteq X$ un ouvert et  $H\in C^0(U\times [0,1])$ continûment dérivable par rapport à la première variable. $(H,\alpha)$ est une \coldef{homotopie orientée} si $\alpha$ est une orientation de $D_1 H$
@@ -2497,17 +2497,88 @@ La propriété suivante est évidente pour le degré de Brouwer, mais à explici
     \deg(F,X,y)=\deg(\psi F \varphi, W, \psi(y))
 \end{equation*}
 
-Enfin, une propriété qui nous permet de faire l'analogue de l'analogue de la réduction de Lyapunov-Schmidt, nous la donnons à titre indicatif
+Enfin, une propriété qui nous permet de faire l'analogue de l'analogue de la réduction de Lyapunov-Schmidt
 \begin{definition}
-   Sit $Y_0$ est un sous espace de $Y$,  $F:X\rightarrow Y$ est \coldef{transverse} à $Y_0$ si 
+   Si $Y_0$ est un sous espace de $Y$,  $F:X\rightarrow Y$ est \coldef{transverse à $Y_0$ en $x$ }
    \begin{equation*}
-    \forall x\in F^{-1}(Y_0), Y_0+\im DF(x)=N.
+    Y_0+\im DF(x)=Y.
    \end{equation*}
+   On dit qu'elle est \coldef{transverse à $Y_0$} si elle est transverse en tout point de $F^{-1}(Y_0)$
+   on notera dans ce cas $F\pitchfork Y_0$
 \end{definition}
-\coldef{Réduction}: si $F:X\rightarrow Y$ est orientée, et si $Y_0$ est transverse, alors on pose  $f_1$ la restriction de $f$ à $X_0=f^{-1}(Y_0)$, alors on veut que
+\begin{remarque}\label{rem-trans}
+    Si $G:X\rightarrow Y$ est de 
+    Fredholm en $x_0$ alors il 
+    existe un sous espace de 
+    dimension finie $Y_0$ tel que 
+    $G$ est transverse à $Y_0$. 
+    L'ensemble des applications 
+    surjectives continues entre 
+    deux espaces de Banach étant 
+    un ouvert (conséquence directe 
+    du théorème de l'application 
+    ouverte), $G$ est transversale 
+    à $Y_0$ sur un ouvert 
+    contenant $x_0$. En fait, 
+    $D\in\mathcal{L}(X,Y)$ est de 
+    Fredholm si et seulement si il 
+    existe $X_0^{*}\subseteq X^*$ 
+    et $Y_0\subseteq Y$ de 
+    dimensions finis tels que 
+    $D\pitchfork Y_0$ et $D^{*}
+    \pitchfork X_0^{*}$ 
+\end{remarque}
+\coldef{Réduction}: si $F:X\rightarrow Y$ est orientée et $F\pitchfork Y_0$, alors on pose  $F_1$ la restriction de $F$ à $X_0=F^{-1}(Y_0)$, alors on veut que
 \begin{equation*}
     \deg (f,X,y)=\deg(f_1,X_0,y)
 \end{equation*}
+On aussi la propriété \coldef{d'excision} qui découle directement de l'additivité:
+ si $(F,X,y)$ est admissible et $U$ est un voisinage ouvert de $F^{-1}(y)$ alors 
+\begin{equation*}
+    \deg(F,X,y)=\deg(F,U,y)
+\end{equation*}
+
+\begin{definition}
+    Si $(F,X,y)$ est $y$ est une valeure régulière de $F$. alors on pose
+    \begin{equation*}
+        \deg_f(F,X,y)=\sum_{x\in f^{-1}(y)} \operatorname{sgn}DF(x)
+    \end{equation*}
+    la quantité ci-dessus est bien définie car $F^{-1}(y)$ est un ensemble discret et fini
+\end{definition}
+
+
+On vérifie facilement que la 
+fonction ci-dessus respecte les 
+conditions attendues.\\
+
+
+\begin{lemme}
+    Soit $(F,X,y)$ un triplet 
+    admissible et $V$ un ouvert de 
+    $Y$ contenant $y$, il  existent 
+    $Y_0\subseteq Y$ de dimension 
+    finie et $U\subseteq F^{-1}(V)
+    $ un ouvert contenant 
+    $F^{-1}(y)$ tel que $F$ est 
+    transverse à $Y_0$ sur $U$
+\end{lemme}
+\begin{preuve}
+    Soit $x\in F^{-1}(y)$, 
+    considérons $Y_x$ un sous 
+    espace de dimension fini de 
+    $Y$ tel que $F$ est transerse 
+    $Y_x$ en $x$. Au vu de la remarque \ref{rem-trans}, il existe alors un ouvert $U_x$ sur 
+    lequel $F$  est transverse à 
+    $Y_x$. Du fait que $F^{-1}(y)$ est compact, on peut trouver $U_1,\cdots, U_k$ des ouverts inclus dans $F^{-1}(V)$ 
+\end{preuve}
+
+
+\begin{definition}
+    
+\end{definition}
+
+
+
 \begin{theobox}{}{}
     Soit $U$ un ouvert de $X\times\Lambda$, $F:U\rightarrow Y$ une famille d'index zéro et ayant une branche triviale de solutions et soit $A\in\mathcal{C}(DF(x_0,\lambda_0)) $ si la fonction 
     \begin{equation*}
@@ -2533,24 +2604,28 @@ Enfin, une propriété qui nous permet de faire l'analogue de l'analogue de la r
 \end{preuve}
 
 \newpage
-\section{Introduction aux bifurcations dynamiques}
-\subsection{Quelques notions de stabilité}
+\section{Notions de dynamique}
+\subsection{Introduction}
 Jusqu'ici, on s'intéressait au changement du lieu d'annulation d'une fonction $F$. Dans un contexte de dynamique, ça correspond à étudier la façon dont les points d'équilibre changent lorsqu'un paramètre varie, et on "oubliait" en quelque sorte la dynamique dont était originaire la fonction, ce qui invisibilise certaines propriétés de ces équilibres. Reprenons la dynamique de l'exemple \ref{Poutre}, en considérant le premier mode de flambement
 \begin{equation*}
     F(\theta,\lambda)=D^2 \theta + (\lambda+n^2\pi^2) \sin\theta =0
 \end{equation*}
 
 Intuitivement, on sent bien que si on dépasse la valeur 
-critique, alors la poutre va \textit{forcément} se tordre 
+critique, alors la poutre va forcément se tordre 
 (dans une des 2 directions !) et qu'il est impossible que 
 le système reste sur la ligne triviale. On a donc bien 
 envie de pouvoir distinguer les "vrais" équilibres, 
 physiquement réalistes, et ces équilibres "fantômes" qui 
 n'existent que mathématiquement. C'est là que la notion de 
-\textit{stabilité} intervient : les solutions de la branche 
+\coldef{stabilité} intervient : les solutions de la branche 
 triviale, une fois la valeur critique dépassée, sont 
-\textit{instables}. Nous allons maintenant donner un sens précis à la notion de stabilité et comprendre comment l'utiliser pour des problèmes de bifurcation. Nous verrons que pour ce faire, il faudra étudier le spectre de la dérivée de Fréchet.\\
-Bien qu'on travaille avec des espaces de Banach  réels, il est très courant de passer par le complexifié pour l'étude du spectre. Cette section est adaptée de \cite{henry1981geometric}. Dans ce qui suit, $D:X\rightarrow X$ est un endomorphisme d'espace de Banach.
+\coldef{instables}. Cette section est adaptée de \cite{kielhoefer2012bta}\\
+On se place dans un contexte dynamique: on suppose que que $F$ apparaît dans une équation du type
+\begin{equation*}
+    \frac{dx}{dt}=F(x,\lambda)
+\end{equation*}
+On suppose bien sûr que $X\subseteq Y$ (ou s'y plonge continûment)
 \begin{definition}
     Si $V$ est un espace vectoriel, le \coldef{complexifié} $V^{\mathbb{C}}$ de $V$ est donné par 
     \begin{equation*}
@@ -2568,29 +2643,35 @@ de Banach. Quand on parle du spectre de l'opérateur $D$, on parle en réalité 
 , x+iy\mapsto Dx +iDy
 \end{equation*}
 \begin{definition}
-    On définit $\sigma(D)$ \coldef{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D$ n'est pas inversible. On décompose ce dernier en trois composantes : 
-    \begin{itemize}
-        \item le spectre ponctuel $\sigma_p(D)$
-        \item le spectre continu $\sigma_c(D)$
-        \item le spectre résiduel $\sigma_r(D)$
-    \end{itemize}
-    on définit enfin \coldef{résolvant} comme étant le complémentaire  $\rho(D)$ du spectre.
+    On définit $\sigma(D)$ \coldef{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D-\lambda I$ n'est pas inversible
 \end{definition}
 
 \begin{definition}
-    Soit
-    \begin{equation*}
-        \Sigma_{\omega,c}=\left\{ \lambda\in\mathbb{C}\big|
-        \omega\leq |\arg(\lambda-c)|\leq \pi,\lambda\neq c\right\}
-    \end{equation*}
-    le secteur de centre $c$ et d'ouverture $\omega$.
-    $D$ est $\omega,c$-\coldef{sectoriel} avec $a$ réel et $\omega\in ]0,\frac{\pi}{2}[$ si 
-    \begin{equation*}
-        \Sigma_{\omega,c}\subseteq \rho(D)\text{ et } 
-        \sup_{\lambda\in\Sigma_{\omega,c}}\frac{||(\lambda-D)^{-1}||}{|\lambda-c|} < \infty
-    \end{equation*}
-
+    $x_0$ est un \coldef{point d'équilibre} pour $\lambda_0$ si $F(x_0,\lambda_0)=0$ et c'est un \coldef{équilibre stable} si le spectre de $D_x F(x_0,\lambda_0)$ est dans le demi plan complexe gauche
 \end{definition}
+
+La définition suivante peut paraître bien 
+arbitraire, mais il s'avère que dans la plupart 
+des problèmes pratiques elle se traduit en une 
+"vraie" stabilité dynamique. Préciser les 
+conditions dans lesquelles ce principe est correct 
+et démontrer les résultats associés alourdirait 
+le texte, mais il a été montré dans \cite
+{henry1981geometric} qu'il est vérifié pour une 
+large classe d'opérateurs (dits "sectoriels"). On se contente alors de donner une justification intuitive dans un cas simple : supposons $X=\R^n$ et supposons que la dynamique se décrit de la façon suivante: 
+
+\begin{equation*}
+    \frac{dx}{dt}=-\nabla V(x,\lambda)=F(x,\lambda).
+\end{equation*}
+C'est extrêmement courant dans le cadre de problème issus de la physique ($V$ est alors le potentiel). Si par exemple $V:\R^2\rightarrow \R$
+alors l'équation ci dessus correspond à étudier la vitesse d'un mobile qu'on aurait "déposé" sur la surface décrite par $V$.
+On a alors
+\begin{equation*}
+    D(-\nabla V)(x_0,\lambda_0)=-\operatorname*{Hess}(V)(x_0,\lambda_0).
+\end{equation*}
+Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" i.e que la courbure soit totalement positive, donc que toutes les valeurs propres de la Hessienne soit positives et donc que toutes les valeur propre de $DF$ soit négatives. On peut déjà noter, et ça sera crucial pour la suite, que $DF$ est alors une matrice symétrique, donc toutes ses valeurs propres sont réelles.\\
+
+\subsection{Le principe d'échange de stabilité}
 
 \newpage
 \subsection{La bifurcation de Hopf}
