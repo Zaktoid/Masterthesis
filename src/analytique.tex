@@ -1,0 +1,536 @@
+\documentclass[mémoire.tex]{subfiles}
+\begin{document}
+
+
+
+\section{Approche analytique}
+\subsection{La réduction de Lyapunov-Schmidt}
+Lorsque l'opérateur $d_1f(x_0,\lambda_0)$ est de Fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
+\begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
+Soient $X,\Lambda,Y$ des espaces de 
+Banach, $U\subset X$,$V\subset \Lambda$ 
+des ouverts, $F\in C^1(U\times V,Y)$, $(x_0,\lambda_0)\in U\times V$ tel que $F(x_0,\lambda_0)=0$ et tel que $F(\cdot,\lambda_0)$ est de Fredholm en $x_0$. Il existe $U_1\times V_1 \in\mathcal{V}_{(x_0,\lambda_0)}$, $U_2$ un ouvert de $\ker d_1F(x_0,\lambda_0)$ et $V_2$ un ouvert de $V$ 
+tels que sur $U_1\times V_1$, le problème
+\begin{equation*}
+    F(x,\lambda)=0 
+\end{equation*} 
+Se ramène à un problème  sur $U_2\times V_2$
+\end{theobox}
+\begin{preuve}
+    Posons $d=d_1f(x_0,\lambda_0)$,
+    par hypothèses, il existe des compléments fermés $X_0$  et $Y_0$ tels que
+    \begin{align*}
+        &X=\ker d\oplus X_0\\
+        &Y=\im d \oplus Y_0
+    \end{align*}
+    Ces derniers induisent des projections naturelles
+    \begin{align*}
+        &\pi_1 : X\rightarrow \ker d\\
+        &\pi_2 : Y\rightarrow Y_0
+    \end{align*}
+    Elles sont continues via le théorème du graphe fermé.
+    Posons alors
+    \begin{equation*}
+        \psi : \ker d\times X_0\times \Lambda \rightarrow X\times \Lambda, (v,w,\lambda)\mapsto (v+w,\lambda) \text{ et } \tilde{F}(v,w,\lambda)= F(\psi(v,w,\lambda))
+    \end{equation*}
+    Il est clair que l'on peut simplement travailler avec $\tilde{F}$ (via $\pi_1$)
+    \begin{equation} \label{SysteLP}
+        \tilde{F}(v,w, \lambda) = 0 \iff 
+\begin{cases} 
+    \pi_2 \tilde{F}(v,w,\lambda) = 0 \\ 
+    (\operatorname*{Id} - \pi_2) \tilde{F}(v,w, \lambda) = 0 
+\end{cases}
+    \end{equation}
+Considérons alors   $U_2,W_2$  des ouverts de $\ker d$ et de $X_0$ respectivement tels que $U_2+W_2\subseteq U$ et la fonction 
+\begin{eqnarray}\label{dépliage}
+    G: U_2\times W_2\times V\rightarrow \im d: (v,w,\lambda)\mapsto (\operatorname*{Id}-\pi_2) \tilde{F}(v,w,\lambda)
+\end{eqnarray}
+Si $v_0=\pi_1(x_0)$ et $w_0=(\operatorname{Id}-\pi_1)(x_0)$ alors
+\begin{equation*}
+    G(v_0,w_0,\lambda_0)=0\text{ et } d_2G(v_0,w_0,\lambda_0)= (\operatorname*{Id}-\pi_2) d_1  F (x_0,\lambda_0): X_0\rightarrow \im d
+\end{equation*}
+Ainsi,  $d_2G(v_0,w_0,\lambda_0)$ est bijectif et continu, ce qui nous permet d'appliquer le théorème des fonctions implicites, i.e, il existe un voisinage $U_1\times V_1$ de $(v_0,\lambda_0)$ dans $U_2\times V$ une fonction $\varphi\in C^1(U_1\times V_1,W_2)$ telle que $\varphi(v_0,\lambda_0)=w_0$
+\begin{equation*}
+    \forall (x,w,\lambda)\in U_1\times W_2\times V_1,\space G(v,w,\lambda)=0\Leftrightarrow w = \varphi(v,\lambda)
+\end{equation*}
+
+Ainsi, $U_1\times V_1$ et 
+\begin{equation}\label{fonctionproj}
+    \Phi(v,\lambda): U_1\times V_1\rightarrow Y_0, (v,\lambda)\mapsto \pi_2 F(v+\varphi(v,\lambda),\lambda)
+\end{equation}
+répondent à la question
+\end{preuve}
+On résume la procédure ci-dessus: On scinde l'espace d'arrivée en 2 grâce à $\pi_2$, ensuite on obtient une description (sur un certain sous voisinage) des solutions de la partie $\im d$, et on applique la seconde projection pour avoir une solution du système \ref{SysteLP}.
+des calculs simples nous permettent d'obtenir
+\begin{corollaire}\label{corr-deriv-o}
+    Avec les notations de la preuve précédente, 
+    \begin{equation*}
+        d_1\varphi(v_0,\lambda_0)=0\text{ et }    d_1\Phi(v_0,\lambda_0)=0
+    \end{equation*}
+\end{corollaire}
+\begin{remarque}
+    Notez que lors de la procédure précédente, le choix des espaces compléments $X_0$ et $Y_0$ est arbitraire. Ainsi, à un problème de bifurcation donné, il existe potentiellement plusieurs fonctions de bifurcation associées... Cela motive déjà l'approche proposée lors de la section \ref{detfin} où on introduit la notion d'équivalence entre problèmes de bifurcation. C'est Golubitsky dans 
+    \cite{golubitsky1985sgb1} qui remarqua qu'on peut relier le choix arbitraire fait lors de la réduction de Lyapunov-Schmidt avec la notion d'équivalence entre bifurcation : i.e, on veut que deux façons de réduire donnent des fonctions de bifurcation équivalente. 
+\end{remarque}
+
+\todo{DISCUSSION}
+
+
+
+Un exemple classique, la formulation est inspirée de [SOURCE]. 
+\begin{exemple}\label{Poutre}
+    Supposons avoir une  poutre élastique parfaitement cylindrique fixée verticalement à un support et à laquelle on soumet une charge $P$, tant que $P$ est faible, il ne se passe rien, si $P$ excède une certaine valeur critique, alors la poutre va se tordre, cette valeur critique sera une bifurcation ! On suppose la poutre très fine par rapport à sa taille, et que la déformation est planaire i.e, la poutre se courbe dans un plan. Pour le choix des coordonnées, on va prendre l’abscisse curviligne, et on note alors $\theta(s)$ l'angle fait par la tangente en l’abscisse curviligne $s$, l'équation s'écrit alors 
+    \begin{equation*}
+        D^2 \theta + P \sin\theta=0\footnote{C'est Euler qui a obtenu cette équation en premier}
+    \end{equation*}
+    On fixe également des \coldef{conditions de bord} $D_1 
+    \theta(0)=D_1 \theta(1)=0$ (on suppose que le cylindre a 
+    une longueur 1 et qu'on a fixé les extrémités). Ici, la 
+    branche de solution triviale est $\left\{ (0,P)|
+    P\in\R\right\}$ Si on pose $Y=C^0([0,1])$, et 
+    $X=\left\{ f\in C^2([0,1])| f'(0)=f'(1)=0\right\}$ 
+    alors $Y$ est un espace de Banach (avec la norme 
+    habituelle) et $X$ est un espace de Banach avec la 
+    norme $||f||_2= ||f||_{[0,1]}+||f'||_{[0,1]}+||f''||_
+    {[0,1]}$
+    posons $\lambda=P-P_{crit}$ avec $P_{crit}$ la valeur 
+    critique, on écrit alors
+    \begin{equation*}
+        F: X\times \R\rightarrow Y| (\theta,\lambda)\mapsto D^2 \theta + (\lambda+P_{crit}) \sin\theta 
+    \end{equation*}
+    On calcule alors la dérivée de Fréchet de $F$ par rapport à $\theta$
+    \begin{equation*}
+        d_1F: (\theta,\lambda)\mapsto
+        D^2 + P_{crit}\cos(\theta)\text{ donc } d_1F(0,0): h\mapsto D^2h +P_{crit}h
+    \end{equation*}
+    On remarque que les fonctions vérifiant $D^2h +P_{crit}h$ sont de la forme 
+    \begin{equation*}
+        h: s\mapsto A\cos(\sqrt{P_{crit}}s)+B\cos(\sqrt{P_
+        {crit}}s)\text{ avec } A,B\in \R
+    \end{equation*}
+    les conditions de bord imposent $B=0$ et $-\sqrt{P_{crit}}A\sin(\sqrt{P_{crit}})=0$, maintenant, pour avoir une solution non triviale, il faut que $A\neq 0$, $P_{crit}\neq 0$, et donc 
+    \begin{equation}\label{modes}
+        P_{crit}=n^2\pi^2\text{ avec } n\in\mathbb{N}_{0}
+    \end{equation}
+    si on fixe un $n\in\mathbb{N}_0$ (voir remarque suivante), le noyau est alors la droite générée par $\phi_{n}(s)=cos(n\pi )$, il est de dimension $1$.
+    On calcule alors l'ensemble image: soit $g$ tel qu'il existe $h\in X$ tel que 
+    \begin{align*}
+        &D^2 h + P_{crit}h=g \Rightarrow \int_{0}^1 (D^2 h + P_{crit}h)\phi_n(s)ds=\int_{0}^1g(s)\phi_n(s)ds
+        &
+    \end{align*}
+    Des calculs simples permettent de montrer qu'on a 
+    \begin{equation*}
+        \int_{0}^{1} g(s)\phi_n(s)ds=0
+    \end{equation*}
+    et donc $g$ est dans le noyau de la forme linéaire $h\mapsto\int_{0}^{1}h(s)\phi_n(s)=0$. 
+    Via [PROPOSITION] on sait que l'indice de Fredholm est nul
+    \todo{TERMINER EXEMPLE}
+\end{exemple}
+
+\begin{remarque}
+    Les entiers dans \ref{modes} sont appelés modes de flambement !
+\end{remarque}
+
+
+\subsection{Cas où $\dim \Lambda=1$}
+dans la suite, nous supposons $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $d_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
+
+On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (repliement), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
+
+\begin{theobox} {Fold}{}\label{fold}
+    Soient $X,Y$ des espaces de Banach, $U\times V$ un ouvert de $X\times \R$ et $(x_0,\lambda_0)\in U\times V $
+    supposons que
+    \begin{itemize}
+        \item $F\in C^1(U\times V,Y)$
+        \item $F(x_0,\lambda_0)=0$ et $\dim (\ker d_1F(x_0,\lambda_0))=\dim (Y/ \im d_1F(x_0,\lambda_0))=1$
+        \item $d_2F(x_0,\lambda_0)\notin \im(d_1F(x_0,\lambda_0))$ (Transversalité)
+    \end{itemize}
+    Alors il existe une courbe $C^1$
+    \begin{equation*}
+        \gamma:   \left] -\delta,\delta\right[ \rightarrow X\times\R 
+    \end{equation*}
+    Telle que $\gamma(0)=(x_0,\lambda_0)$
+    \begin{equation*}
+        F(\gamma(\left] -\delta,\delta\right[))= \{0\}
+    \end{equation*}
+    de plus, sur un voisinage de $(x_0,\lambda_0)$, toutes les solutions sont sur la courbe
+\end{theobox}
+\begin{preuve}
+    En appliquant \ref{LP-redux}, et avec les notations de ce théorème, on sait qu'il existe un voisinage de $(x_0,\lambda_0)$, $U_1\times V_1$ sur lequel le problème se ramène à résoudre $\Phi(v,\lambda)=0$.
+    Par hypothèses et via \ref{FI}, cette fonction est continûment dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
+    \begin{equation*}
+        d_2\Phi(v_0,\lambda_0)=\pi_2 d_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 d_2 F(x_0,\lambda_0)
+    \end{equation*}
+    or, étant donné que $d_2F(x_0,\lambda_0)\notin \im(d_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à reduire $U_1\times V_1$, on peut supposer l'existence d'une fonction 
+    \begin{equation*}
+        \psi : U_1\rightarrow V_1\text{ telle que} 
+        \begin{cases}
+            \psi(v_0)=\lambda_0
+            \\ \forall v\in U_1, \Phi(v,\psi(v))=0 
+        \end{cases}
+    \end{equation*}
+    On construit alors $\gamma$: considérons
+    \begin{equation*}
+        x_1\in X : ||x_1||=1 \text{ et } \ker d_1 F(x_0,\lambda_0)=\rangle x_1\langle_{\R}
+    \end{equation*}
+    Soit $\delta>0$ tel que $v_0+t x_1\in U_1$ si $|t|<\delta $ 
+    et 
+    \begin{equation*}
+        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R,t\mapsto
+                    \begin{pmatrix}
+                    v_0+t x_1+\varphi(v_0+tx_1,\psi(v_0+tx_1)) \\
+                    \psi(v_0+tx_1)
+                    \end{pmatrix}
+    \end{equation*}
+    Répond à la question.
+\end{preuve}
+des calculs simples  permettent de montrer que 
+\begin{corollaire}
+    avec les notations du théorème précédent, vecteur tangent en $(x_0,\lambda_0)$ est donné par
+    \begin{equation*}
+        (x_1,0)
+    \end{equation*}
+\end{corollaire}
+
+On a alors simplement la situation "vecteur tangent vertical"
+
+\begin{exemple}
+    \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
+\end{exemple}
+\begin{remarque}
+    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'observables, et on voit lambda comme une perturbation externe du système. On peut donc pas mélanger le paramètre avec les variables d'état.
+\end{remarque}
+La plupart des articles de théorie de la bifurcation supposent l'existence d'une \coldef{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
+\begin{equation*}
+\tilde{F}(x,\lambda)=F(\gamma_1(\lambda)+x,\gamma_2(\lambda))
+\end{equation*}
+Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale.On peut bien sûr supposer que cela à lieu en $(0,0)$
+Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \coldef{bifurcation simple}, ou encore \coldef{bifurcation depuis une branche principale}.
+dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
+dans ce cas, on peut identifier $d^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
+\begin{theobox}{Crandall-Rabinowitz, bifurcation simple}{} 
+    Avec les notations de $\ref{fold}$, supposons que 
+    \begin{itemize}
+        \item $F\in C^2(U\times V,Y)$
+        \item $F(0,\lambda_0)=0$ et $\dim (\ker d_1(0,\lambda_0))=\dim (Y/ \im d_1(0,\lambda_0))=1$
+        \item $F(0,\R)={0}$ (branche triviale)
+        \item On peut supposer  $\ker(d_1 F(0,\lambda_0))=\rangle x_1 \langle_{\R} $ 
+        avec $||x_1||=1$ et on impose alors \\ $d^2_{12} F(0,\lambda_0)x_1\notin \im d_1 F
+        (0,\lambda_0)$ (Transversalité)
+    \end{itemize}
+    Alors il existe une courbe de solutions non triviale 
+         $\gamma :\left] -\delta,\delta\right[ \rightarrow X\times\R $ telle que $\gamma(0)=(0,\lambda_0)$.
+    Il existe alors un voisinage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
+\end{theobox}
+\begin{preuve}
+    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi: U_1\times V_1\rightarrow Y_0$ la fonction de Bifurcation, par hypothèses
+    \begin{equation*}
+        \forall \lambda\in V_1,\Phi(0,\lambda)=0
+    \end{equation*}
+    et donc
+    \begin{equation*}
+        \Phi(v,\lambda)=\int_0^1 \frac{\partial}{\partial t} \Phi(tv,\lambda)dt=\int_0^1 d_1\Phi(tv,\lambda)(v) dt
+    \end{equation*}
+    considèrons alors $\delta>0$ tel que $sx_1\in U_1$ si $|s|<\delta$ posons alors
+    \begin{equation*}
+        \tilde{\Phi}:\left] -\delta,\delta \right[\times V_2\rightarrow Y_0,(s,\lambda)\mapsto \int_0^1 d_1\Phi(tsx_1,\lambda)(x_1) dt
+    \end{equation*}
+    Par hypothèses, $\tilde{\Phi}$ est $C^1$, et via \ref{corr-deriv-o}, $\tilde{\Phi}(0,\lambda_0)=0$.
+    On a 
+    \begin{align*}
+        &d_{2}(d_1 \Phi(v,\lambda)x_1)\\
+        &= d_{2}(\pi_2 d_1 F(v+\varphi(v,\lambda),\lambda))(x_1+ d_1\varphi(v,\lambda)x_1)\\
+        &=\pi_2 d^2_{11}F(v+\varphi(v,\lambda),\lambda) [x_1+d_1\varphi(v,\lambda)x_1,d_2\varphi(v,\lambda)]\\
+        &+\pi_2(d_1 F(v+\varphi(v,\lambda),\lambda))d^2_{21}\varphi(v,\lambda)x_1\\
+        &+\pi_2 d^2_{12}F(v+\varphi(v,\lambda),\lambda)(x_1+d_1\varphi(v,\lambda)x_1)
+    \end{align*}
+    En évaluant cette expression en $(0,\lambda_0)=0$, et via \ref{corr-deriv-o}, le premier terme s'annule. Au vu de la définition de $\pi_2$, le second s'annule aussi. Et donc, encore via \ref{corr-deriv-o} et par hypothèses on a \todo{JUSTIF dERIVATION INTEGRALE}
+    \begin{equation*}
+        d_{\lambda}\tilde{\Phi}(0,\lambda_0)=\pi_2 d^2_{12}F(0,\lambda_0)x_1\neq 0
+    \end{equation*}
+    de façon similaire à \ref{fold}, on applique le théorème des fonctions implicites, donc quitte à réduire l'intervalle $]-\delta,+\delta[$, on peut supposer l'existence d'une fonction 
+        \begin{equation*}
+        \psi : ]-\delta,\delta [\rightarrow V_1\text{ telle que} 
+        \begin{cases}
+            \psi(0)=\lambda_0
+            \\ \forall s\in ]-\delta,\delta [, \tilde{\Phi}(s,\psi(s))=0 
+        \end{cases}
+    \end{equation*}
+et, du fait que 
+\begin{equation*}
+    \Phi(sx_1,\psi(s))=s\tilde{\Phi}(s,\psi(s))=0 
+\end{equation*}
+La courbe
+    \begin{equation*}
+        \gamma : \left] -\delta,\delta\right[\rightarrow X\times \R,s\mapsto
+                    \begin{pmatrix}
+                    sx_1+\varphi(sx_1,\psi(s))\\
+                    \psi(s)
+                    \end{pmatrix}
+    \end{equation*}
+Répond à la question
+
+\end{preuve}
+\begin{remarque}\label{remarque INd=0}
+    Notez que dans les deux cas, on a supposé que l'index de Fredholm était nul. La plupart des théorèmes classiques de bifurcation se placent dans ce cas. La théorie devient beaucoup plus compliquée si on suppose l'index positif 
+\end{remarque}
+Notez comme les calculs deviennent déjà un peu lourds alors qu'il s'agit de la bifurcation la plus simple ! Ainsi, nous motivons déjà l'approche par \coldef{théorie des singularités} que nous exposons dans la section \ref{SINGsection}. Cependant, cette approche suppose qu'on a réussi à se ramener en dimension finie, ça ne marche pas si l'espace des paramètres est de dimension infinie ! d'où la sous-section suivante.
+\subsection{Cas où $\dim \Lambda=\infty$}\label{Lambdainfdim}
+Il est possible d'obtenir quelques résultats quand la dimension de l'espace de paramètre est infinie. Notez que ça n'a pas été très souvent fait, car en général les paramètres sont interprétés comme une "perturbation" du système dynamique (rappelez vous que souvent, la fonction est un genre de potentiel,  et l'annuler revient à trouver des points d'équilibre). Nous présentons alors un théorème de bifurcation tiré de \cite{Marx1994Bifurcation}.
+
+\begin{definition}
+    Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ de $F(x,\lambda)$ est un \coldef{élément de bifurcation}  s'il existe deux suites $(x_i,\lambda_i)_{i\in\mathbb{N}},(x'_i,\lambda'_i)_{i\in\mathbb{N}}$ telles que $x'_i\neq x_i$ pour tous $i\in\mathbb{N}$, convergent vers $(x_0,\lambda_0)$ et 
+    $F(x_i,\lambda_i)=F(x'_i,\lambda'_i)=0$ pour tout $i\in\mathbb{N}$. Un élément de bifurcation est dit \coldef{perpendiculaire} s'il existe une suite de $X$ $(x_i)_i$ qui tend vers $x_0$ telle que $F(x_i,\lambda_0)=0$ pour tout $i\in\mathbb{N}$
+\end{definition}
+\begin{remarque}
+    Remarquez qu'une bifurcation depuis la branche triviale est un élément de bifurcation mais que l'inverse n'est pas vrai.
+\end{remarque}
+dans la suite de cette section, nous supposons $F$ $C^k$ ($k\geq 1$) sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(d_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque INd=0}). Posons également $d_1=d_1F(x_0,\lambda_0)$ et $d_2=d_2F(x_0,\lambda_0)$
+
+\begin{definition}
+    Avec les notations habituelles, si $F$ est $C^1$, on note 
+    \begin{equation*}
+        \alpha_{F}(x_0,\lambda_0)= \dim \big(\ker (d_2^{*})\cap \ker (d_1^{*})\big)
+    \end{equation*}
+\end{definition} 
+C'est vraiment \textbf{la} bonne idée de P. Marx qui permet de gérer le cas $\dim \Lambda =\infty $: imposer des conditions sur les opérateurs duaux.
+Notez qu'étant donné qu'on suppose l'index nul, si  $\dim \ker(d_1 F)=n$ on a $0\leq \alpha\leq n$
+
+\begin{definition}
+    Avec les notations habituelles, un zéro $(x_0,\lambda_0)$ est de type $(\alpha,n)$ si
+    \begin{equation*}
+        \dim \ker d_1=n=\dim \ker(d_1^{*})\qquad  \text{et}\qquad   \alpha_F(x_0,\lambda_0)<n
+    \end{equation*}
+\end{definition}
+
+Considérons alors 
+\begin{equation*}
+    x_1,\cdots,x_n\in X : \rangle x_1,\cdots,x_n\langle_{\R}=\ker(d_1)
+\end{equation*}
+et, 
+\begin{equation*}
+     y^{*}_1,\cdots,y^{*}_n\in Y^{*}: \rangle y^{*}_1,\cdots, y^{*}_{n}  \langle_{\R}=\ker(d_1^{*})
+\end{equation*}
+Grâce au théorème de Hahn-Banach, on complète bi-orthogonalement, i.e 
+\begin{equation}\label{BasebiOrtho}
+    \exists x^{*}_1,\cdots,x^{*}_n\in X^{*}, y_1,\cdots,y_n\in Y : \forall 1\leq i,j,k,l\leq n,\text{  } x_i^{*}(x_j)=\delta_{ij}\text{ et } y_l^{*}(y_k)=\delta_{kl}
+\end{equation}
+On obtient alors une caractérisation algébrique pour être un zéro de type $(0,n)$
+
+\begin{proposition}\label{zeronlinINd}
+    $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ si et seulement si les $d_2^{*}y_j^{*}$ sont linéairement indépendants
+\end{proposition}
+\begin{preuve}
+    Supposons d'abord que $\alpha=0$ et que les $d_2^{*}y_j^{*}$ sont linéairement dépendants,
+    on a alors 
+    \begin{equation*}
+        \exists c_1,\cdots,c_n\in\R: \sum_{j=1}^n c_jd_2^{*}y_j^{*}=0\text{ et } \sum_{j=1}^n |c_j|>0
+    \end{equation*}
+    et donc du fait que les $y^{*}_j$ sont linéairement indépendants et qu'ils sont dans $\ker d_1^{*}$, on  a 
+    \begin{equation*}
+        d_2^{*} \Bigg(\sum_{j=1}^n c_jy_j^{*}
+        \Bigg)=0\text{ et } \sum_{j=1}^n c_jy_j^{*}\neq 
+        0\Rightarrow  \ker (d_2^{*})\cap ker 
+        (d_1^{*})\neq {0}
+    \end{equation*}
+    une contradiction.\\
+    Supposons désormais que les 
+    $d_2^{*}y_j^{*}$ sont linéairement indépendants et que $\alpha\geq 1$. On sait alors que 
+    \begin{equation*}
+    \exists d_1,\cdots,d_n\in\R:
+    y^{*}_0=\sum_{j=1}^n d_j y^{*}_j\in\ker (d_2^{*})
+    \cap ker (d_1^{*})\text{ et } \sum_{j=1}^n |
+    d_j|>0
+    \end{equation*}
+    Il vient alors
+    \begin{equation*}
+        d_2^{*}y^{*}_0=\sum_ {j=1}^n d_jd_2^{*}  y^{*}_j=0
+    \end{equation*} 
+    donc tous, étant donné que les  $d_2^{*}  y^{*}_j$ sont indépendants, les $d_j$ sont nuls, contradiction.
+
+\end{preuve}
+On a immédiatement le lemme suivant 
+\begin{lemme}
+$\alpha=n$ si et seulement si tous les $d_2^{*} y_j^{*}$ sont nuls
+\end{lemme}
+\begin{remarque}
+    La notion de zéro de type $(\alpha,n)$ généralise les conditions de transversalité du type de celle de \ref{fold} ! 
+    On peut montrer le résultat suivant : 
+\end{remarque}
+\begin{lemme}
+    dans les conditions présentes, si $\dim \Lambda=1$, $(x_0,\lambda_0)$ est un zéro de type $(\alpha,n)$ si et seulement si $d_2\notin \im d_1$ 
+\end{lemme}
+
+La proposition \ref{zeronlinINd} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $d_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthogonalement par $(\lambda)_{0\leq j\leq n}$. On a également la bi-orthogonalité des $y^{*}_j$ et des $d_2\lambda_i$, on considère l'opérateur associé de Schmidt associé (voir \ref{OpSCHimdt}), qui s'écrit donc
+
+\begin{equation}\label{SCHMIdTopreminder}
+    U=-d_1+ \sum_{i=1}^n x_i^{*}(\cdot) d_2 \lambda_i
+\end{equation}
+
+Si $(x_0,\lambda_0)$ est un zéro du type $(0,n)$
+\begin{equation*}
+    G: X\times\Lambda^2\rightarrow Y\times\Lambda : (x,\lambda,\mu) \mapsto 
+    \begin{pmatrix}
+        F(x,\lambda) \\
+        -\mu +\lambda-\lambda_0 + \sum_{i=1}^n x_i^{*}(x-x_0)\lambda_i
+    \end{pmatrix}
+\end{equation*}
+Le nom n'est pas choisi au hasard, c'est exactement le même genre d'idée que \ref{dépliage}: on regarde une fonction dans un espace plus gros, dont la dérivée est non-singulière, on applique le théorème de dérivation des fonctions implicites et on espère pouvoir en tirer des résultat sur le problème de départ.
+Remarquons d'abord qu'à chaque zéro de $F$ correspond un zéro de $G$. En effet, si $F(x_1,\lambda_1)=0$ alors, en prenant 
+\begin{equation*}
+    \mu =\lambda_1-\lambda_0 + \sum_{i=1}^n x_i^{*}(x_1-x_0)\lambda_i
+\end{equation*}
+On annule $G$, et pareil, si on suppose $S(x,\lambda,\mu)=0$, on  a que $F(x,\lambda)=0$. On a donc une bijection entre les zéros de $G$ et de $F$. Si $F$ est $C^k$ alors clairement $G$ est $C^k$. Montrons alors qu'on peut appliquer le théorème des fonctions implicites
+\begin{lemme}
+    Si $(x_0,\lambda_0)$ est de type $(0,n)$, alors 
+    \begin{equation*}
+        d_{1,2} G(x_0,\lambda_0,0) :  X\times\Lambda\rightarrow Y\times \Lambda
+    \end{equation*}
+    Est inversible d'inverse continu
+\end{lemme}
+\begin{preuve}
+    Fixons un élément $(y_1,\lambda_1)$ dans $Y\times \Lambda$ et considérons le système 
+    \begin{equation*}
+        d_{1,2}(x_0,\lambda_0,0)(\bar{x},\bar{\lambda})=
+        \begin{pmatrix}
+                d_2\bar{\lambda}+d_1\bar{x}\\
+                \bar{\lambda}+ \sum_{i}^n x_i^{*}(\bar{x})\lambda_i
+        \end{pmatrix}
+        = \begin{pmatrix}
+                y\\
+                \lambda
+        \end{pmatrix}
+    \end{equation*}
+    Il a l'unique solution
+    \begin{align*}
+        &\bar{\lambda}= \lambda + \sum_{i=1}^n x^{*}_i(y-d_2\lambda)\lambda_i\\
+        &\bar{x}= U^{-1}(d_2 \lambda - y)
+    \end{align*}
+Et on a alors calculé son inverse, un corollaire du théorème de l'application ouverte permet de conclure. (voir, par exemple, [SOURCE, ça doit être fait dans Rudin ou dans le cours d'Esser...])
+\end{preuve}
+
+En appliquant le théorème des fonctions implicites, on en tire  immédiatement le résultat suivant :
+\begin{proposition}\label{ApplicationFI}
+    Si $(x_0,\lambda_0)$ est un zéro de type $(0,n)$ alors il existe $V_1\ni \lambda_0$ un ouvert de $\Lambda$ et $U_1$ un ouvert de $X\times \Lambda\ni (x_0,\lambda_0)$
+    \begin{align*}
+        \varphi_1 : V_1\rightarrow \Lambda \text{ et } \varphi_2 : V_1\rightarrow  X 
+    \end{align*}
+    tels que
+    \begin{itemize}
+        \item $\varphi_1,\varphi_2\in C^k(V_1)$
+        \item $\varphi_1(0)=\lambda_0$ et $\varphi_2(0)=x_0$
+        \item $F(\varphi_2(\mu),\varphi_1(\mu))=0$ et $-\mu +\varphi_1(\mu)-\lambda_0 + \sum_{i=1}^n x_i^{*}(\varphi_2(\mu)-x_0)\lambda_i=0$ si $\mu\in V_1$
+        \item $(\varphi_2(V_1),\varphi_1(V_1))\subseteq U_1$
+    \end{itemize}
+\end{proposition}
+On peut obtenir une description explicite de $\varphi_1$ et $\varphi_2$. La preuve consistant en des calculs ennuyeux, on l'admet
+\begin{corollaire}
+    dans les condition de la proposition précédente, et en exigeant $F$ au moins $C^2$. Si on pose $T(\mu)=\mu-\sum_{i=1}^n (d_2^{*}y_i^{*})(\mu)\lambda_i$
+    \begin{align*}
+        W: \Lambda\rightarrow Y: \mu\mapsto 
+        d^2_{22}\bigg(T(\mu),T(\mu)\bigg)
+        +2d_{21}^2\bigg(T(\mu), U^{-1}\big(d_2\mu\big) \bigg)
+        +d^2_{11}\bigg( U^{-1}\big(d_2\mu\big),U^{-1}\big
+        (d_2\mu\big)\bigg)
+    \end{align*}
+    Et  
+    \begin{equation*}
+        R: V\rightarrow X\text{, } ||R(\mu)||=o(||\mu||^2) \text{ si } \mu\rightarrow 0
+    \end{equation*}
+    Alors,
+    \begin{align}\label{réécrituresPHI}
+        &\varphi_1(\mu)=\lambda_0+\mu-\sum_{i=1}^n\bigg(d_2^{*}y_i^{*}(\mu)+y_i^{*}\big(\frac{1}{2}W(\mu)+U(R(\mu))\big)\bigg)\lambda_i\\
+        &\varphi_2(\mu)=x_0+ U^{-1}\bigg(d_2\mu+\frac{1}{2}W(\mu)+U(R(\mu))\bigg)
+    \end{align}
+
+\end{corollaire}
+
+Nous allons maintenant obtenir un critère de bifurcation pour le cas d'un zéro de type $(0,1)$ .
+Avant de présenter la preuve, résumons un peu la situation sur un diagramme
+\[\begin{tikzcd}
+	& {X\times\Lambda} & \\
+	X & Y & \Lambda \\
+	& {V_1} \\
+	{X^{*}} & {Y^{*}} & {\Lambda^{*}}
+	\arrow["{{\pi_1}}"', from=1-2, to=2-1]
+	\arrow["F", from=1-2, to=2-2]
+	\arrow["{{\pi_2}}", from=1-2, to=2-3]
+	\arrow["{{d_1}}"', from=2-1, to=2-2]
+	\arrow["{{d_2}}", from=2-3, to=2-2]
+	\arrow["{\varphi_2}", from=3-2, to=2-1]
+	\arrow["{\varphi_1}"', from=3-2, to=2-3]
+	\arrow["{{d_1^{*}}}"', from=4-2, to=4-1]
+	\arrow["{{d_2^{*}}}", from=4-2, to=4-3]
+\end{tikzcd}\]
+
+\begin{theobox}{B. Marx, 1994}{}
+    Si $(x_0,\lambda_0)$ est un zéro de $F(x,\lambda)$ type $(0,1)$, si on suppose $F$ $C^2$ sur un voisinage de $(x_0,\lambda_0)$, d'index de Fredholm nul en $(x_0,\lambda_0)$ et telle que
+    \begin{equation*}
+        y_1^{*}\left(d^2_{11}F(x_1,x_1)\right)\neq 0
+    \end{equation*}
+    alors c'est un élément de bifurcation non perpendiculaire
+\end{theobox}
+\begin{preuve}
+    On va supposer $\mu$ et $\lambda_1$ alignés, i.e $\mu=t\lambda_1$ avec $t\in\R$ tel que $t\lambda_1\in V_1$. Au vu  de \ref{réécrituresPHI} et la proposition  \ref{ApplicationFI} on doit résoudre $\lambda=\varphi_1(t\lambda_1)$, par bi-orthogonalité, on a
+    \begin{align*}
+        \lambda
+        = \varphi_1(t\lambda_1)&=\lambda_0+t\lambda_1-\bigg(d_2^{*}y_1^{*}(t\lambda_1)+y_1^{*}\big(\frac{1}{2}W(t\lambda_1)+U(R(t\lambda_1))\big)\bigg)\lambda_1\\
+        &=\lambda_0-\bigg(y_1^{*}\big(\frac{1}{2}W(t\lambda_1)+U(R(t\lambda_1))\big)\bigg)\lambda_1
+    \end{align*}
+    Remarquons que, encore une fois par bi-orthogonalité, on a 
+    \begin{equation*}
+        T(t\lambda_1)=t\lambda_1-\sum_{i=1}^n (d_2^{*}y_i^{*})(t\lambda_1)\lambda_i=0
+    \end{equation*}
+    et donc 
+    \begin{equation*}
+        W(t\lambda_1)=t^2d^2_{11}(U^{-1}(d_2 \lambda_1),U^{-1}(d_2 \lambda_1))
+    \end{equation*}
+    On remarque que, par hypothèses (rappelez vous que les $x_i$ c'est une base de $\ker d_1$)
+    \begin{equation*}
+        U(x_1)=d_2\lambda_1
+    \end{equation*}
+    et enfin, en posant $g(t)=\frac{1}{2}y^{*}_1(d^2_{11}F(x_1,
+    x_1))t^2+y_1^{*}(U(R(t\lambda_1)))$, on écrit
+    \begin{equation*}
+        \lambda=\lambda_0-g(t)\lambda_1
+    \end{equation*}
+    Notons que $g$ est $C^2$, $g(0)=0$, $g'(0)=0$ et $g''(0)=y_1^{*}\left(d^2_{11}F(x_1,x_1)\right)\neq 0$, on applique alors le lemme de morse et pour réécrire $g$
+    \begin{equation*}
+        g(\Phi(r))=\frac{1}{2}y_1^{*}d^2_{11}(x_1,x_1)r^2
+    \end{equation*}
+    avec $\Phi$ un $C^1$ difféomorphisme sur $V_1$, on peut sans perte de généralité supposer $\Phi(0)$. Cela 
+    étant, Soit 
+    $(u_n)_{n\in\mathbb{N}}\in (\im g)^{\mathbb{N}}$ et telle que $u_n\rightarrow 0$, il existe alors $(v_n)_{n\in\mathbb{N}}$ telle que
+    \begin{equation*}
+        u_n=\frac{1}{2} y_1^{*}(d^2_{11}F(x_1,x_1))v^2_n
+    \end{equation*}
+    on pose alors $v^{+}_n=\sqrt{2u_ny_1^{*}(d^2_{11}(x_1,x_1))^{-1}}$ et $v^{-}_n=-\sqrt{2u_ny_1^{*}(d^2_{11}(x_1,x_1))^{-1}}$. Bien sûr, $v^{-}_n\neq v^{+}_n $ pour tout $n\in\mathbb{N}$, posons également 
+    \begin{equation*}
+        \lambda_n = \lambda_0 -g(\Phi(v_n))
+    \end{equation*}
+    Par construction, $\lambda_n\rightarrow \lambda_0$.
+    On construit également
+    \begin{align*}
+        x_n{\pm}=\varphi_2(\Phi(v^\pm_n)\lambda_1)
+    \end{align*}
+    Notez que $\Phi(v_n^\pm)$ tendent vers zéro, donc 
+    $F(x_n^{\pm},\lambda_n)$ tendent vers zéro. Montrons qu'il existe $n_0$ tels que $x_n^-\neq x_n^+$ si $n\geq n_0$, cela revient à demander que si $t_1$ et $t_2$ sont assez petits, $\varphi_2(t_1)\neq\varphi_2(t_2)$. Supposons que ça ne soit pas le cas, on pose
+    \begin{equation*}
+        \psi(t\lambda_1)=\frac{1}{2}U^{-1}d^2_{11}(x_1,x_1)t^2+R(t\lambda_1)
+    \end{equation*}
+    On a alors, utilisant la définition de $\varphi_2$ \ref{réécrituresPHI}
+    \begin{equation*}
+        \psi(t_2\lambda_1)-\psi(t_1\lambda_1)=(t_1-t_2)
+    \end{equation*}
+    On applique alors le théorème de la moyenne sur $h(t)=\psi(t\lambda_1)$, et on récupère
+    \begin{equation*}
+        0<||\lambda_1||\leq \sup_{l\in [0,1]} ||h'(t_1+l(t_2-t_1))||
+    \end{equation*}
+    mais $h'(0)=0$ et est continue, contradiction.
+\end{preuve}
+\begin{remarque}
+    B. Marx dans \cite{Marx1994Bifurcation}, a montré un résultat pour le cas d'un zéro de type $(0,2)$. La preuve est encore plus calculatoire que la précédente : le cas des autre type de zéros est un problème ouvert. Il est assez clair que pour travailler avec des zéros $(\alpha,n)$ généraux, il faudrait changer de méthode... 
+\end{remarque}
+\newpage
+
+\end{document}

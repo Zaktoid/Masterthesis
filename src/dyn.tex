@@ -1,0 +1,75 @@
+\documentclass[mémoire.tex]{subfiles}
+\begin{document}
+\section{Notions de dynamique}
+\subsection{Introduction}
+Jusqu'ici, on s'intéressait au changement du lieu d'annulation d'une fonction $F$. Dans un contexte de dynamique, ça correspond à étudier la façon dont les points d'équilibre changent lorsqu'un paramètre varie, et on "oubliait" en quelque sorte la dynamique dont était originaire la fonction, ce qui invisibilise certaines propriétés de ces équilibres. Reprenons la dynamique de l'exemple \ref{Poutre}, en considérant le premier mode de flambement
+\begin{equation*}
+    F(\theta,\lambda)=D^2 \theta + (\lambda+n^2\pi^2) \sin\theta =0
+\end{equation*}
+
+Intuitivement, on sent bien que si on dépasse la valeur 
+critique, alors la poutre va forcément se tordre 
+(dans une des 2 directions !) et qu'il est impossible que 
+le système reste sur la ligne triviale. On a donc bien 
+envie de pouvoir distinguer les "vrais" équilibres, 
+physiquement réalistes, et ces équilibres "fantômes" qui 
+n'existent que mathématiquement. C'est là que la notion de 
+\coldef{stabilité} intervient : les solutions de la branche 
+triviale, une fois la valeur critique dépassée, sont 
+\coldef{instables}. Cette section est adaptée de \cite{kielhoefer2012bta}\\
+On se place dans un contexte dynamique: on suppose que que $F$ apparaît dans une équation du type
+\begin{equation*}
+    \frac{dx}{dt}=F(x,\lambda)
+\end{equation*}
+On suppose bien sûr que $X\subseteq Y$ (ou s'y plonge continûment)
+\begin{definition}
+    Si $V$ est un espace vectoriel, le \coldef{complexifié} $V^{\mathbb{C}}$ de $V$ est donné par 
+    \begin{equation*}
+        V^{\mathbb{C}}=V\otimes_{\R}\mathbb{C}\cong V\oplus i V=\left\{ v_1+iv_2\big| v_1,v_2\in V\right\}
+    \end{equation*}
+\end{definition}
+Si $X$ est un espace de Banach, on munit habituellement son complexifié de la norme 
+\begin{equation*}
+    ||x+iy||_{X^\mathbb{C}}= \sup_{\theta\in[0,2\pi]} ||x\cos\theta + y\sin \theta ||
+\end{equation*}
+On vérifie facilement que cette dernière en fait un espace 
+de Banach. Quand on parle du spectre de l'opérateur $D$, on parle en réalité de l'opérateur complexifié 
+\begin{equation*}
+    D^{\mathbb{C}}: X^{\mathbb{C}}\rightarrow X^{\mathbb{C}}
+, x+iy\mapsto Dx +iDy
+\end{equation*}
+\begin{definition}
+    On définit $\sigma(D)$ \coldef{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D-\lambda I$ n'est pas inversible
+\end{definition}
+
+\begin{definition}
+    $x_0$ est un \coldef{point d'équilibre} pour $\lambda_0$ si $F(x_0,\lambda_0)=0$ et c'est un \coldef{équilibre stable} si le spectre de $D_x F(x_0,\lambda_0)$ est dans le demi plan complexe gauche
+\end{definition}
+
+La définition suivante peut paraître bien 
+arbitraire, mais il s'avère que dans la plupart 
+des problèmes pratiques elle se traduit en une 
+"vraie" stabilité dynamique. Préciser les 
+conditions dans lesquelles ce principe est correct 
+et démontrer les résultats associés alourdirait 
+le texte, mais il a été montré dans \cite
+{henry1981geometric} qu'il est vérifié pour une 
+large classe d'opérateurs (dits "sectoriels"). On se contente alors de donner une justification intuitive dans un cas simple : supposons $X=\R^n$ et supposons que la dynamique se décrit de la façon suivante: 
+
+\begin{equation*}
+    \frac{dx}{dt}=-\nabla V(x,\lambda)=F(x,\lambda).
+\end{equation*}
+C'est extrêmement courant dans le cadre de problème issus de la physique ($V$ est alors le potentiel). Si par exemple $V:\R^2\rightarrow \R$
+alors l'équation ci dessus correspond à étudier la vitesse d'un mobile qu'on aurait "déposé" sur la surface décrite par $V$.
+On a alors
+\begin{equation*}
+    D(-\nabla V)(x_0,\lambda_0)=-\operatorname*{Hess}(V)(x_0,\lambda_0).
+\end{equation*}
+Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" i.e que la courbure soit totalement positive, donc que toutes les valeurs propres de la Hessienne soit positives et donc que toutes les valeur propre de $DF$ soit négatives. On peut déjà noter, et ça sera crucial pour la suite, que $DF$ est alors une matrice symétrique, donc toutes ses valeurs propres sont réelles.\\
+
+\subsection{Le principe d'échange de stabilité}
+
+\newpage
+\subsection{La bifurcation de Hopf}
+\newpage
+\end{document}
