@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'intro_et_rappels.blg'
+[82] biber:340> INFO - === ma jul 13, 2026, 11:27:32
+[100] Biber.pm:418> INFO - Reading 'intro_et_rappels.bcf'
+[168] Biber.pm:972> INFO - Found 15 citekeys in bib section 0
+[179] Biber.pm:4383> INFO - Processing section 0
+[189] Biber.pm:4574> INFO - Looking for bibtex file 'refs.bib' for section 0
+[190] bibtex.pm:1713> INFO - LaTeX decoding ...
+[216] bibtex.pm:1518> INFO - Found BibTeX data source 'refs.bib'
+[317] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[317] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[317] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'fr-FR'
+[317] Biber.pm:4209> INFO - No sort tailoring available for locale 'fr-FR'
+[327] bbl.pm:654> INFO - Writing 'intro_et_rappels.bbl' with encoding 'UTF-8'
+[332] bbl.pm:757> INFO - Output to intro_et_rappels.bbl

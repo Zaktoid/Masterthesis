@@ -1,4 +1,4 @@
-\documentclass[mémoire.tex]{subfiles}
+\documentclass[memoire.tex]{subfiles}
 \begin{document}
 
 
@@ -174,13 +174,16 @@ $d(\alpha f)(x_0)=\alpha df(x_0)$.
     voir \cite{dieudonne1969fma8}
 \end{preuve}
 \begin{theobox}{}{}\label{FI}
-Soit $V$ un ouvert de $X\times\Lambda$ et $F\in C^1(V,Y)$. Alors si $D_2 F(x_0,\lambda_0)$ est un isomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinage  ouvert $V'\subseteq V$ de $(x_0,\lambda_0)$, $U$ un voisinage de $x_0$ dans $X$ et $\varphi\in C^1(U,\Lambda)$ tels que 
+Soit $U\times V$ un ouvert de $X\times\Lambda$ et $F\in C^1(U\times V,Y)$. Alors si $D_1 F(x_0,\lambda_0)$ est un isomorphisme et si $(x_0,\lambda_0)\in F^{-1}(0)$ alors il existe un voisinage  ouvert $V'\subseteq V$ de $\lambda_0$, $U'\subseteq U$ un voisinage ouvert de $x_0$ dans $X$ et $\varphi\in C^1(V',U')$ tels que 
 \begin{equation*}
-    \forall (x,\lambda)\in V', F(x,\lambda)=0\Leftrightarrow x\in U \text{ et } \lambda=\varphi(x)
+    \forall (x,\lambda)\in 
+    U'\times V', F(x,\lambda)
+    =0\Leftrightarrow x=\varphi
+    (\lambda)
 \end{equation*}
 et 
 \begin{equation*}
-    D\varphi(x_0)=-D_2F(x_0,\lambda_0)^{-1}D_1F(x_0,\lambda_0)
+    D\varphi(\lambda_0)=-D_1F(x_0,\lambda_0)^{-1}D_2F(x_0,\lambda_0)
 \end{equation*}
 \end{theobox}
 

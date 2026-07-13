@@ -1,4 +1,4 @@
-\documentclass[mémoire.tex]{subfiles}
+\documentclass[memoire.tex]{subfiles}
 \begin{document}
 
 
@@ -60,17 +60,25 @@ répondent à la question
 \end{preuve}
 On résume la procédure ci-dessus: On scinde l'espace d'arrivée en 2 grâce à $\pi_2$, ensuite on obtient une description (sur un certain sous voisinage) des solutions de la partie $\im D$, et on applique la seconde projection pour avoir une solution du système \ref{SysteLP}.
 \begin{corollaire}\label{corr-deriv-o}
-    Avec les notations de la preuve précédente, si $F\in C^1(U\times V,Y)$, alors $\phi$ et $\Phi$ sont $C^1$ sur leur domaines et
+    Avec les notations de la preuve précédente, si $F\in C^1(U\times V,Y)$, alors $\varphi$ et $\Phi$ sont $C^1$ sur leur domaines et
     \begin{equation*}
         D_1\varphi(v_0,\lambda_0)=0\text{ et }    D_1\Phi(v_0,\lambda_0)=0
     \end{equation*}
 \end{corollaire}
+\begin{preuve}
+    La régularité est une conséquence directe de [COROLLAIRE]
+\end{preuve}
 \begin{remarque}
     Notez que lors de la procédure précédente, le choix des espaces compléments $X_0$ et $Y_0$ est arbitraire. Ainsi, à un problème de bifurcation donné, il existe potentiellement plusieurs fonctions de bifurcation associées... Cela motive déjà l'approche proposée lors de la section \ref{detfin} où on introduit la notion d'équivalence entre problèmes de bifurcation. C'est Golubitsky dans 
     \cite{golubitsky1985sgb1} qui remarqua qu'on peut relier le choix arbitraire fait lors de la réduction de Lyapunov-Schmidt avec la notion d'équivalence entre bifurcation : i.e, on veut que deux façons de réduire donnent des fonctions de bifurcation équivalente. 
 \end{remarque}
 
-\todo{DISCUSSION}
+Pour être plus précis, La 
+procédure ci-dessus réduit le 
+problème en un problème de la 
+même dimension que le "défaut 
+à être bijectif" de $DF(x_0,
+\lambda_0)$. 
 
 Un exemple classique, la formulation est inspirée de [SOURCE]. 
 \begin{exemple}\label{Poutre}
