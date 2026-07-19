@@ -1,4 +1,4 @@
-\documentclass[mémoire.tex]{subfiles}
+\documentclass[memoire.tex]{subfiles}
 \begin{document}
 \section{Approche via la théorie des singularités}\label{SINGsection}
 
@@ -193,10 +193,10 @@ $f=\sum_{i=1}^{n}x_i f_i$, on conclut.
 \end{preuve}
 
 Ce résultat nous permet d'affirmer que 
-\begin{equation*}
+\begin{equation}\label{Hadamard-corr}
     \mathcal{M}_x(N)=\rangle x_1,\cdots,x_n \langle_
     {\mathcal{E}_S}
-\end{equation*}
+\end{equation}
 et que $\mathcal{M}_x(N)^r$ est exactement égale aux germes 
 dont les dérivées d'ordres $<r$ sont nulles en $0$.\\
 Si $R$ est un  anneau, on note $R[[X_1,\cdots,X_n]]$ 
@@ -607,7 +607,7 @@ Soient $f:(N,S)\rightarrow (P,y)$ une germe lisse $S$ une partie finie de $N$ et
 \end{preuve}
 
 \subsection{relations d'équivalences: exemple introductif} 
-Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.\\
+Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.Dans la suite, on pose $\mathcal{E}^m_{n}=\mathcal{E}(0,\R^{n},\R^m)$\\
 Soient $f,g\in\mathcal{E}(\R^n\times \Lambda,\R^p)$ où $\Lambda$ est un ouvert de $\R^m$ (par exemple) on dira que les problèmes de bifurcation
 \begin{equation*}
     f(x,\lambda)=0\text{ et } g(x,\lambda)=0
@@ -655,7 +655,7 @@ $(H(x_1,\lambda_0),h(\lambda_0)),\cdots,\\
 (H(x_1,\lambda_0),h(\lambda_0))$ et donc,grâce à la structure de $\phi$, elles se trouvent 
 sur la même "tranche" $\R^n\times \{h
 (\lambda_0)\}$. Si on a une germe 
-$g(x,\lambda)$ un peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ une germe, considérons la famille $h_t=(g+tp)_{t\in [0,1]}$ 
+$g(x,\lambda)$ un peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ une germe, considérons la germe $h(t,x,\lambda)=(g(x,\lambda)+tp(x,\lambda))$ 
 pour que $p$ soit une perturbation qui conserve la structure, on veut deux choses: d'une part que
 \begin{equation*}
     \forall t\in [0,1], h_t\text{ est équivalent à } g 
@@ -664,10 +664,7 @@ et d'autre part, on veut que l'équivalence soit lisse. Souvenez vous,la relatio
 \begin{equation*}
     (x,\lambda,t)\mapsto \phi(x,\lambda,t)\text{ et } (x,\lambda,t)\mapsto S(x,\lambda,t)
 \end{equation*} 
-définissent des germes lisses
-\begin{remarque}
-    Le lecteur attentif pourrait se demander comment il est possible de travailler avec un intervalle fixé à priori  alors qu'on travaille avec des germes. Cette imprécision sera levée par lemme de Mather [LEMME]
-\end{remarque}
+
 
 \subsection{détermination finie: généralités}\label{detfin}
 C'est le coeur du sujet: on veut 
@@ -679,6 +676,7 @@ Nous introduisons la notion suivante
     \begin{equation*}
         \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
     \end{equation*}
+    où $j^k f$ est la série de taylor de $f$ en $0$ tronquée à l'ordre $k$, on l'appelle le $k$-jet de $f$.
 \end{definition}
 Les relations d'équivalences qui nous intéressent seront définies par l'action d'un certain groupe $G$
  \begin{equation*}
@@ -728,10 +726,10 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     $f,g$ sont $\mathcal{K}
     $-équivalentes si et 
     seulement s'il existe 
-    $S\in\mathcal{E}(0,\R^n,
+    \\$S\in\mathcal{E}(0,\R^n,
     \operatorname{GL_{p}(\R)}) 
     $  et $\phi\in\mathcal{D}_
-    {n}$ une  tels que 
+    {n}$  tels que 
     \begin{equation*}
         f\circ \phi= S\cdot g
     \end{equation*}
@@ -767,13 +765,12 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     \end{equation*}
     Ce qui permet de conclure
 \end{preuve}
-
-
- On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce magnifique résultat de théorie des groupes de Lie 
+La relation d'équivalence \ref{GolubEQ} peut aussi s'écrire comme une action de groupe: Si on pose $\mathcal{C}$ comme étant l'ensemble des germes de 
+ On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminée si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce  résultat de théorie des groupes de Lie 
 \begin{theobox}{}{}
     Si $G$ est un groupe de Lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la gauche et si $V$ est une sous variété connexe et lisse de $M$ alors 
     \begin{equation*}
-        \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est toujours la même }
+        \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est constante }
     \end{equation*}
 \end{theobox}
 la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que cela revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e, si on a pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
@@ -783,13 +780,12 @@ la première condition est assez intuitive: en effet si on prend l'exemple d'une
 n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orbites induites par les actions décrites ci-dessus.\\
 
 
-dans \cite{damon1984unfolding}, James damon a obtenu a obtenu des résultats de détermination finie pour une large classe d'équivalences sur les germes les "sous-groupes géométriques de $\mathcal{A}$ et $\mathcal{K}$ . Nous allons passer les prochains paragraphes à en exposer les idées
+
 
 \subsection{déploiements et espaces tangents}
 
 La notion de déploiement remonte à 
-René Thom [SOURCE]. Notez que dans la 
-suite, nous supposerons $f\in\mathcal{E}^m_n\cdot \mathcal{M}_n$: ça simplifiera les calculs et ce n'est pas une vraie restriction.
+René Thom [SOURCE].
 \begin{definition} 
     $G\in\mathcal{E}^{m+d}_{n+d}\cdot \mathcal{M}_{n+d}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
     si elle respecte le diagramme suivant:
@@ -851,49 +847,314 @@ Considérons alors le faisceau (c.f remarque \ref{remsheaf} )
 des sections locales lisses 
 $\Gamma(\cdot,TM)$, l'ensemble des germes de champ de vecteurs en un point $x\in M$ est simplement $\Gamma(\cdot,TM)_x$ et l'ensemble des germes de champ de vecteurs le long de $f$ en $x$ est $\Gamma(\cdot, f^{*}T\R^m)_{x}$
 
-Maintenant, si $f\in\mathcal{E}^m_n$, on entend par $\mathcal{V}(f)$ la germe en $0$ des champs de vecteurs le long d'un représentant de $f$.
-du fait que $T \R^m\cong \R^{2m} $, on vérifie facilement que 
-\begin{equation*}
-    \mathcal{V}(f)=
-    \biggr>\frac{\partial }{\partial y_1},\cdots, \frac{\partial  }{\partial y_m}  \biggl<_{\mathcal{E}_n}
-\end{equation*}
+Maintenant, si $f\in\mathcal{E}^m_n$, on 
+entend par $\mathcal{V}(f)$ la germe en $0$ 
+des champs de vecteurs le long d'un 
+représentant de $f$.
 
-
+On va maintenant définir l'espace tangent de 
+l'orbite d'une fonciton par l'action d'un 
+groupe de germes (en cette fonction). Il faut 
+d'abord supposer qu'on a un chemin regulier qui 
+passe par la fonction et qui reste dans 
+l'orbite, d'où la définition suivante
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n$ et $f\in V$ on définit \coldef{l'espace tangent de $v$}
+    Soient $f\in\mathcal{E}^m_n$ et $\mathcal{G}
+    \cdot f\subseteq \mathcal{E}^m_n$ l'orbite 
+    d'une action de groupe. Un élément $g\in\mathcal{U}_d(f,\mathcal{G}\cdot f)$ est \coldef{un chemin lisse} dans   $\mathcal{G}
+    \cdot f\subseteq \mathcal{E}^m_n$ si
+    \begin{equation*}
+        g_0\cdot f=f
+    \end{equation*}
+    et si l'action dépend de façon lisse en $u$.
+\end{definition}
+La condition "dépendre de façon lisse" est légèrement floue, cela deviendra clair quand on calculera des espaces tangents.
+\begin{definition}
+    Soient $f\in \mathcal{E}^m_n$ et  $\mathcal{G}$ un groupe de germes. On définit \coldef{l'espace tangent de $f$}
     comme 
     \begin{equation*}
-        T_f V =\left\{\frac{\partial G}{\partial u}(0) \biggr| G\in\mathcal{U}_1(f,V) \right\}
+        T_f (\mathcal{G}\cdot f) =\left\{\frac{\partial G_1}{\partial u}(\cdot,0) \biggr| G\in\mathcal{U}_1(f,\mathcal{G}\cdot f)\text{ et est un chemin lisse} \right\}
     \end{equation*}
 \end{definition}
 
-On vérifie aussi facilement que les éléments de $T_f V$ sont bien des vecteurs le long de $f$.
+Dans la suite, on écrira $T_f \mathcal{G}$ pour alléger les notations. On remarque alors que $T_f\mathcal{G}$ est un champ de vecteur le long de $f$. En effet, si on fixe $x$, l'application
+\begin{equation*}
+    \gamma: u\mapsto G(x,u)
+\end{equation*}
+Trace une courbe passant par $f(x)$ en zéro, 
+et la dérivée $\partial_u G(x,0)$ est bien un 
+vecteur tangent à $\R^m$, attaché au point $f
+(x)$. C'est donc bien une section de $f^* T\R^m$
 
-\begin{proposition}
+\begin{exemple}
+    Calculons l'espace tangent pour 
+    l'équivalence restreinte, on suppose qu'on 
+    a $k$ paramètres et $p$ variables d'état: 
+    soit alors $f\in\mathcal{E}^m_{p+k}$, un 
+    chemin lisse $G$ dans $\mathcal{RB}\cdot f$ 
+    est simplement une germe lisse de la forme
     \begin{equation*}
-        T_f \mathcal{K}\cdot f=\cdots
+        (x,\lambda,u)\mapsto f(H(x,\lambda,u),
+        \lambda)\cdot S(x,\lambda,u)
     \end{equation*}
-\end{proposition}
-\begin{preuve}
-    Soit $G\in\mathcal{U}_1(f,\mathcal{K}\cdot f)$, c'est à dire une germe de le forme
+    où les germes $H$ et $S$ sont lisses aussi, 
+    avec $S(x,\lambda,0)=I_m$, 
+    $X(x,\lambda,0)=x$
+    On calcule alors
     \begin{equation*}
-        G(x,u)= (H_u\cdot f(x),u)\text{ avec $H_u\in \mathcal{K}$}
+        \partial_u G(0)  = 
+         \partial_u S(x,\lambda,0)f(x,\lambda)+
+         {\partial_x f}(x,\lambda) 
+         \cdot {\partial_u H}(x,\lambda,0)
     \end{equation*}
-    On peut supposer sans perte de généralité que $H_{0}=\operatorname{Id}$. Via \ref{MATRIXform} et \ref{GraphK}, on écrit 
+    et donc,
     \begin{equation*}
-        H_u\cdot f(x)=M_u(h_u^{-1}(x),f(h_{u}^{-1}(x)))\cdot f(h_u^{-1}(x))
+        T_f\mathcal{RB}=\left\{ a(x,\lambda)f(x,\lambda)+ \partial_x f b(x,\lambda)
+        \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathcal{E}^p_{p+k}\mathcal{M}_{p+k} \right\}
     \end{equation*}
-    Et on calcule alors 
-    \begin{equation}
-        \frac{\partial G}{\partial u}(0)= 
+    On a alors
+    \begin{equation*}
+        T_f \mathcal{RB}=\rangle f_1,\cdots, f_m\langle_{\mathcal{E}_{p+k}}\cdot\mathcal{E}^m_{p+k}+\rangle  \partial_{x_1}f,\cdots,\partial_{x_p}f\langle_{\mathcal{E}_{p+k}}
+    \end{equation*}
+    De la même façon, on obtient l'espace tangent du groupe non restreint
+    \begin{equation*}
+        T_f\mathcal{B}=\left\{ a(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) b(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathcal{E}^p_{p+k}, c\in\mathcal{E}^k_k \right\}
+    \end{equation*}
+    Qu'on réécrit comme
+    \begin{equation*}
+        T_f \mathcal{B}=T_f\mathcal{RB} + \rangle \partial_{\lambda_1}f,\cdots,\partial_{\lambda_k}f\langle_{\mathcal{E}_{k}}
+    \end{equation*}
+    Qui correspond bien à l'idée qu'il s'agit du groupe restreint mais où on s'autorise à modifier
+\end{exemple}
+
+Notez que $T_f\mathcal{RB}$ est sous module, tandis que $T_f\mathcal{B}$ ne l'est pas.
+
+\begin{exemple}
+    De façon similaire, on calcule l'espace tangent par rapport aux groupes $\mathcal{K}$ et $\mathcal{A}$
+    \begin{equation*}
+       T_f\mathcal{A} = \rangle \partial_{x_1}f, \cdots, \partial_{x_n}f \langle_{\mathcal{E}_n} + f^*(\mathcal{E}_m) \cdot \mathcal{E}_m^m
+    \end{equation*}
+    \begin{equation*}
+        T_f\mathcal{K} = \rangle f_1, \cdots, f_m \langle_{\mathcal{E}_{p+k}} \cdot \mathcal{E}_{p+k}^m + \rangle \partial_{x_1}f, \cdots, \partial_{x_p}f, \partial_{\lambda_1}f, \cdots, \partial_{\lambda_k}f \langle_{\mathcal{E}_{p+k}}
+    \end{equation*}
+\end{exemple}
+
+\subsection{Etude du groupe $\mathcal{RB}$}
+\subsubsection{Etude de l'esapce tangent}
+Le but de cette section est de comprendre le groupe restreint, qui permet d'obtenir des résultats intéressants de façon assez naturelle. Et nous pointerons, via l'étude d'exemples, les limite de cet outil. Les pages qui suivent sont adaptées de \cite{golubitsky1985sgb1}\\
+On commence par une charactérisation de l'appartenance à l'espace tangent. Posons $\mathcal{E}_{p+k}^{m\times n}=\mathcal{E}(0,\R^{p+k},\R^m_n)$
+\begin{lemme}\label{Lemm-tg-reecriture}
+    Soit $f\in\mathcal{E}_{p+k}^m$, $g$ est dans l'espace tangent $T_f \mathcal{RB}$ si et seulement si il existe $A\in\mathcal{E}_{p+k}^{m\times m},B\in\mathcal{E}^{p\times p}_{p+k},C\in\mathcal{E}^{p\times k}_{p+k}$ telles que
+    \begin{equation}\label{eq-RT}
+        g=Af+\partial_x f(Bx+C\lambda)
     \end{equation}
-
+\end{lemme}
+\begin{preuve}
+    Si $g$ est de la forme \ref{eq-RT} alors il est clair qu'elle est dans l'espace tangent. Maintenant, supposons $g$ est dans l'espace tangent, alors 
+    \begin{equation*}
+        g=a(x,\lambda)f(x,\lambda)+ \partial_x f b(x,\lambda)\text{ avec }a\in\mathcal{E}_{p+k}^{m\times m}\text{ et }b\in\mathcal{E}^p_{p+k}\mathcal{M}_{p+k}
+    \end{equation*}
+    On termine via \ref{Hadamard}
 \end{preuve}
+
+Le corollaire \ref{Isopoly} permet d'affirmer que si $f\in\mathcal{E}_n^m$, alors pour tout entier $k\geq 0$, il existe des germes $(c_{\alpha})_{|\alpha|=k+1}$ telles que
+
+\begin{equation}\label{taylor}
+    f(x)=J^kf +\sum_{|\alpha|=k+1}c_{\alpha}x^
+    {\alpha}\text{ et } f = J^kf\pmod {\mathcal{M}_n^{k+1}}
+\end{equation}
+
+Calculons explicitement les espaces tangents de bifurcations simples
+
+\begin{exemple}
+    On calcul l'espace tangent d'une 
+    bifurcation de type "fold": soit $E=T_{x^2
+    +\lambda}\mathcal{RB}$. Le lemme précédent 
+    nous permet d'affirmer que les éléments 
+    sont de la forme
+    \begin{equation*}
+        a(x^2+\lambda)+2x(bx+\lambda c)=(a+2b)x^2 + (a+2xc)\lambda
+    \end{equation*}
+    où $a,b,c\in\mathcal{E}_2^1$.
+    On montre alors que $x^2,\lambda$ sont les générateurs de $E$, i.e $\rangle x^2,\lambda\langle_{\mathcal{E}_2^1}$. On a clairement $E\subseteq \rangle x^2,\lambda\langle_{\mathcal{E}_2^1} $. De plus, si $c_1,c_2\in\mathcal{E}_2^1$, alors en posant
+    \begin{equation*}
+        a=c_2, b=(c_1-c_2)/2, c=0
+    \end{equation*}
+    On remarque que les gemres de la forme $c_1 x^2+c_2\lambda$ sont dans $E$.
+    On peut maintenant montrer que
+    \begin{equation}\label{FORME-COOL}
+        E=\left\{f\in\mathcal{E}_2^1: f(0)=\partial_x f(0)=0\right\}
+    \end{equation}
+    L'inclusion $\subseteq$ étant évidente, on montre, $\supseteq$. Si $f$ est elle que $f(0)=\partial_x f(0)=0$ alors en applicant la formule \ref{taylor}  on a , avec des notations évidentes,
+    \begin{equation*}
+        f(x,\lambda)=\partial_\lambda f(0,0)\lambda +a_{20}x^2+a_{11}\lambda x+a_{02}\lambda^2= a_{20}x^2+(\partial_\lambda f(0,0)+a_{11}x+a_{02}\lambda)\lambda
+    \end{equation*}
+    Ce qui suffit
+\end{exemple}
+
+
+Tout l'enjeu, c'est d'obtenir une forme du type \ref{FORME-COOL} pour l'espace tangent, car il est ensuite trivial de vérifier l'appartenance d'une fonction donnée à cet espace. L'idéal, serait d'avoir une telle expression pour la classe d'équivalence elle même.
+\begin{exemple}
+    On calcule l'espace tangent de de la bifurcation trident: $E=T_{x^3-\lambda x}\mathcal{RB}$. On applique encore une fois le lemme: les éléments de $E$ s'écrivent, avec des notations évidentes,
+    \begin{equation*}
+        (a+3b)x^3-(a+2b-3xc)\lambda x - c\lambda^2
+    \end{equation*}
+    du fait que le système
+    \begin{align*}
+        a+3b&=c_1\\
+        -a-2b+3xc=c_2\\
+        -c=c_3
+    \end{align*}
+    est inversible, on déduit immédiatement que $E$ est généré par $x^3,\lambda x, \lambda^2$. En applicant \ref{taylor} comme l'exemple précédent, on montre que
+    \begin{equation*}
+        E=\left\{f\in\mathcal{E}_2^1: f(0)=\partial_x f(0)=\partial_\lambda f(0)=\partial^2_{\lambda,\lambda} f(0)=\partial^2_{x,x} f(0)=0\right\}
+    \end{equation*}
+\end{exemple}
+
+\begin{exemple}
+    Enfin, on calcule l'espace tangent dans un cas "pathologique". Reprenons la fonction 
+        \begin{equation*}
+        F: \R^2\rightarrow \R, (x,\lambda)\mapsto g(x)\lambda^2
+    \end{equation*}
+    avec $g(x)=e^{-\frac{1}{x}}\chi_{x>0}$ et calculons $T_F\mathcal{RB}$\\
+    Si $v\in T_F\mathcal{RB}$, on a
+    \begin{equation*}
+        v(x,\lambda)=g(x)a(x,\lambda)\lambda^2
+        +g'(x)b(x,\lambda)x\lambda^2+g'(x)c(x,\lambda)\lambda^3
+    \end{equation*}
+    remarquons déjà que toutes les dérivées de $v$ s'annulent en $0$. On ne peut donc pas 
+    charactériser le tangent avec des conditions sur un nombre fini de dérivées de $F$, contrairement aux 2 autres.
+\end{exemple}
+
+\begin{remarque}
+    Nous remarquons déjà une différence nette entre la géométrie de la variété $\mathcal{RB}\cdot f$ et ce qui se passe en dimension finie. Prenons un élément du tangent de la bifurcation trident, $v=x^3-\lambda^2$, par exemple. Dans la suite, on prouvera (en autre) que $f+\epsilon v\in\mathcal{RB}\cdot f$  si $\epsilon>-1$, et de même, pour tout vecteur du tangent, on va avoir $f+\epsilon v$ qui reste dans l'orbite si $v$ assez petit.
+\end{remarque}
+
+
+Une idée importante apparait déjà sur ces 
+3 exemples. Notez déjà le fait que 
+$T_F\mathcal{RB}$ est "petit", dans le sens ou il est contenu dans les espaces tangents de la pitchfork et de la fold. On a plus précisemment
+
+\begin{equation*}
+    \left\{0\right\}=T_0 \mathcal{RB}\subsetneq T_F\mathcal{RB}\subsetneq T_{x^3-\lambda x}\mathcal{RB}\subsetneq T_{x^2+\lambda}\mathcal{RB}
+\end{equation*}
+
+On remarque alors que les fonctions "plus 
+dégénérées" on un espace tangent plus petit, 
+on introduit donc naturellement le concept 
+suivant
+
+\begin{definition}
+    Soit $f\in\mathcal{E}_{p+q}^m$, la \coldef{codimension} de $f$ par rapport à un groupe agissant sur $\mathcal{E}_{p+q}^m$  est définie comme la quantité
+    \begin{equation*}
+       \codim(f,\mathcal{G})=\codim T_f\mathcal{G}= \dim_{\R} \mathcal{E}^{m}_{p+q}/T_f\mathcal{G}
+    \end{equation*}
+\end{definition}
+On montre facilement que
+\begin{equation*}
+    \mathcal{E}_2=T_{x^2+\lambda}\mathcal{RB}\oplus \rangle 1,x\langle_{\R}=
+    T_{x^3-\lambda x}\mathcal{RB}\oplus \rangle 1,x,\lambda,x^2\langle_{\R}
+\end{equation*}
+donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda)$
+
+
+
+\begin{remarque}
+    On définit la codimension de façon tout à fait analogue pour les autres groupes rencontrés. Notez qu'on a
+    pour toute germe $f$ 
+    \begin{equation*}
+        T_f \mathcal{RB}\subseteq T_f\mathcal{B}\subseteq T_f\mathcal{K}
+    \end{equation*}
+    Et donc
+    \begin{equation*}
+        \codim(f,\mathcal{K})
+        \leq  \codim(f,\mathcal{B})
+        \leq  \codim(f,\mathcal{RB})
+    \end{equation*}
+\end{remarque}
+
+
+
+
+Le but de ce qui suit va être de généraliser 
+la procédure du calcul de l'espace tangent. Le résultat 
+suivant est une conséquence directe de la continuité du determinant:
+\begin{lemme}
+    Soient 
+    $f^{(1)},\cdots,f^{(k)}\in\mathcal{E} ^m_n$  et $V=\rangle f^{(1)},\cdots,f^{(k)}\langle_{\mathcal{E}_n}$. Pour tous $1\leq i\leq k,1\leq l\leq m$, on pose
+    \begin{equation*}
+        g^{(i)}=\sum_{j=1}^{k}a_{i,j}(x)f^{(j)}\text{ avec }a_{i,j}\in\mathcal{E}_n
+    \end{equation*}
+Si la matrices $A=(a_{i,j}(0))_{i,j}$ est inversible alors $V$ est également généré par les $g^{(i)}$
+\end{lemme}
+Maintenant, on formalise l'étape finale: 
+supposons avoir trouvé les générateurs, 
+comment obtenir une charactérisation en qui ne 
+fait intervenir que les valeurs des dérivées 
+partielles?
+
+\begin{lemme}
+    Si $f\in\mathcal{E}^m_{p+q}$ et pour un certain $k\geq 0$, $\mathcal{M}^{k+1}_{p+q}\cdot \mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}$. Alors $g\in T_f\mathcal{RB} $ si et seulement si il exste des germes de matrices à éléments polynômiaux de  degré au plus $k$ telles que
+    $A\in\mathcal{E}^{m\times m}_{p+q},
+    B\in\mathcal{E}^{p\times p}_{p+q},C \in\mathcal{E}^{q\times q}_{p+q}$ telles que
+    \begin{equation*}
+        \forall |\alpha|\leq k,
+        \partial^{\alpha}\left( g- \left( Af+\partial_x fB x+ \partial_\lambda f C\lambda \right)\right)(0,0)=0
+    \end{equation*}
+\end{lemme}
+\begin{preuve}
+    Via le lemme \ref{Lemm-tg-reecriture}, si $g\in T_f\mathcal{RB}$ alors il existe des germes de matrices $A',B',C'$ telles que
+    \begin{equation*}
+        g-(A'f+\partial_x fB'x+ \partial_x fC'\lambda)=0
+    \end{equation*}
+    On vérifie facilement que $J^k A,J^kB, J^k C$ conviennent.\\
+    Maintenant,supposons que $g$ satisfait la condition de l'énoncé pour $A,B,C$. Via \ref{Hadamard-corr}, on a 
+    \begin{equation*}
+        r=\left( g- \left( Af+\partial_x fB x+ 
+        \partial_\lambda f C\lambda \right)
+        \right)\in\mathcal{M}^{k+1}_{p+q}\cdot\mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}.         
+    \end{equation*}
+    Et $g$ s'écrit alors comme la somme de deux éléments du tangent, ce qui suffit.
+\end{preuve}
+
+Ainsi, si l'espace tangent est "suffisemment gros", on a une procédure explicite pour charactériser ses éléments en terme de dérivées. Evaluons la difficulté de cette procédure en fonction de cette quantité $k$. Il faut pour commencer compter le nombre de $\alpha_1,\cdots,\alpha_{p+q}\in\mathbb{N}$ tels que
+\begin{equation*}
+    \sum_{l=1}^{p+q}\alpha_l\leq k
+\end{equation*}
+Un raisonnement combinatoire rapide permet de montrer que ça vaut
+\begin{equation}\label{Nbeq}
+    E_1=\binom{p+q+k}{p+q}.
+\end{equation}
+Maintenant, regardons le nombre de coefficients des polynômes, il vaut
+\begin{equation}\label{nbVer}
+    E_2=(p^2+q^2+m^2)\binom{p+q+k}{p+q}
+\end{equation}
+On a donc (à priori) $mE_1$ équations (pour 
+chaque composante de $g$) à $E_2$ variables.\\
+On en tire deux choses: d'une part, on a une 
+explosion combinatoire en les dimensions du 
+problème. D'autre part, le système est sous 
+déterminé, et ce niveau de sous détermination 
+explose également quand on augmente les 
+dimensions.\\
+Cependant, il faut noter que $E_1,E_2$ représente le maximum d'équations et de variables, en pratique, il est souvent bien plus petit, mais ça ne sauvera pas cette approche si le nombre de paramètres et les dimensions deviennetnt trop élevés.
+\begin{exemple}
+    \todo{Exemple à 2 paramètres avec calculs}
+\end{exemple}
+Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est le sujet de la proposition suivante:
+\begin{proposition}
+    Soit $M$ un sous module de 
+    $\mathcal{E}^m_{p+q}$. Il existe un entier $k$ tel que $\mathcal{M}_{p+q}^k\cdot\mathcal{E}^m_{p+q}\subseteq M$ si et seulement si $M$ est de codimension finie
+\end{proposition}
+\subsection{Etude du groupe $\mathcal{B}$}
+
+
+
+\subsection{Approche via les chemins}
 
 \todo{Un théorème de détermination finie}\\
 \todo{Le groupe de montaldi}\\
 \todo{Classification explicite}\\
-\todomaybe{Notion de sous-groupe géométrique}
 \newpage
 \end{document}
