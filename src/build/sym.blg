@@ -1,0 +1,9 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'build/sym.blg'
+[39] biber:342> INFO - === Mon Jul 13, 2026, 21:10:54
+[46] Biber.pm:421> INFO - Reading 'build/sym.bcf'
+[83] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[89] bbl.pm:676> INFO - Writing 'build/sym.bbl' with encoding 'UTF-8'
+[89] bbl.pm:779> INFO - Output to build/sym.bbl
+[90] Biber.pm:132> WARN - The file 'build/sym.bcf' does not contain any citations!
+[90] Biber.pm:134> INFO - WARNINGS: 1

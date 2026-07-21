@@ -1,0 +1,31 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Théorie des opérateurs de Fredholm}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Calcul différentiel dans des Espaces de Banach}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Opérateurs et fonctions de Fredholm}{9}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Quelques remarques géométriques }{14}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Opérateurs de Fredholm différentiels}{16}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Approche analytique}{18}{section.2}%
+\contentsline {subsection}{\numberline {2.1}La réduction de Lyapunov-Schmidt}{18}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Cas où $\dim \Lambda =1$}{20}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Cas où $\dim \Lambda =\infty $}{23}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Approche via la théorie des singularités}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Structure algébrique des germes de fonctions lisses}{29}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Relations d'équivalences: exemple introductif}{39}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}détermination finie: généralités}{40}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}déploiements et espaces tangents}{42}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Etude du groupe $\mathcal {RB}$}{45}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Etude de l'espace tangent}{45}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.6}Etude du groupe $\mathcal {B}$}{49}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Approche via les chemins}{49}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Approche topologiques}{50}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction à la théorie du degré}{50}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Approche historique: le degré de Leray-Schauder}{51}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Le degré de Furi}{52}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Orientation de fonction de Fredholm d'indice nul}{52}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Construction du degré de Furi}{55}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Un résultat global via le degré de Furi}{58}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {5}Notions de dynamique}{61}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduction}{61}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Le principe d'échange de stabilité}{62}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}La bifurcation de Hopf}{63}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Applications}{64}{section.6}%
