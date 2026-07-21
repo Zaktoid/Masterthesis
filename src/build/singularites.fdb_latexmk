@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber build/singularites"] 0 "build/singularites.bcf" "build/singularites.bbl" "build/singularites" 1784626305.48683 -1
-  "build/singularites.bcf" 1784626305.38384 108438 b04a77bbf58cf183649ede538d2fcaac "pdflatex"
+["biber build/singularites"] 0 "build/singularites.bcf" "build/singularites.bbl" "build/singularites" 1784641348.98795 -1
+  "build/singularites.bcf" 1784641348.88482 108438 b04a77bbf58cf183649ede538d2fcaac "pdflatex"
   "refs.bib" 1777536141.08318 6898 e76d9ec7c87205b74d0d5694886d4eeb ""
   (generated)
   "build/singularites.bbl"
   "build/singularites.blg"
   (rewritten before read)
-["pdflatex"] 1784626303.56926 "/home/spookyscaryskibidi/Cours M2/Github_memoire/Masterthesis/src/singularites.tex" "build/singularites.pdf" "singularites" 1784626305.48708 0
-  "/home/spookyscaryskibidi/Cours M2/Github_memoire/Masterthesis/src/singularites.tex" 1784626301.41859 61741 c7e971c431ae9933e55e95bee200d5a0 ""
+["pdflatex"] 1784641347.02076 "/home/spookyscaryskibidi/Cours M2/Github_memoire/Masterthesis/src/singularites.tex" "build/singularites.pdf" "singularites" 1784641348.98818 0
+  "/home/spookyscaryskibidi/Cours M2/Github_memoire/Masterthesis/src/singularites.tex" 1784641346.80052 61741 c7e971c431ae9933e55e95bee200d5a0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -277,15 +277,15 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1770681600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1773588810.98393 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1773588568 7758660 b8774ae0dd6a06d8326f6fc02ee9dc8c ""
-  "build/singularites.aux" 1784626305.38184 7515 5a67f537adbb2fd8469d467a6bc27eb7 "pdflatex"
+  "build/singularites.aux" 1784641348.88282 7515 5a67f537adbb2fd8469d467a6bc27eb7 "pdflatex"
   "build/singularites.bbl" 1784387696.56578 5465 ee7944207b5e0c549959b5947c318502 "biber build/singularites"
-  "build/singularites.out" 1784626305.38284 2049 0a9659641b79da7d0839ea133198f630 "pdflatex"
-  "build/singularites.run.xml" 1784626305.38547 2354 8c1bf0c417a48bcc1a83c1fffb43c534 "pdflatex"
+  "build/singularites.out" 1784641348.88382 2049 0a9659641b79da7d0839ea133198f630 "pdflatex"
+  "build/singularites.run.xml" 1784641348.88631 2354 8c1bf0c417a48bcc1a83c1fffb43c534 "pdflatex"
   "figures/pitchfork_1.png" 1776197110.14237 6086 5b23ba513c2b62c83ef961ab7457b652 ""
   "figures/pitchfork_2.png" 1776197161.03849 9473 c458730ef982962148166222ba17ee5e ""
-  "memoire.tex" 1784564635.51962 5580 96682b6ef885dfe7bc236a6bc3b1d6be ""
+  "memoire.tex" 1784641163.81288 5580 20f4cb0991ae6a806f62bd253e571100 ""
   "quiver.sty" 1774082553.49962 2014 91dd7068f0068fd65392211f3f7ebba1 ""
-  "singularites.tex" 1784626301.41859 61741 c7e971c431ae9933e55e95bee200d5a0 ""
+  "singularites.tex" 1784641346.80052 61741 c7e971c431ae9933e55e95bee200d5a0 ""
   (generated)
   "build/singularites.aux"
   "build/singularites.bcf"
