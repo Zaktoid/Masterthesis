@@ -1,2 +1,2 @@
-build/*
-!build/*.pdf
+src/build/*
+!src/build/*.pdf
