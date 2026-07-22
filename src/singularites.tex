@@ -1347,10 +1347,19 @@ Pour ce-faire, on montre deux lemmes intermédiaires
     \begin{equation}
         S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)= S_0(x,\lambda,0)G(X(x,\lambda,0),\lambda,0)=f(x,\lambda)
     \end{equation}
-    Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et \ref{equa-diff-2}
+    Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et 
+    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
 \end{preuve}
-{\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
+
+{\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
 On définit une relation d'équivalence sur $[0,1]$ en disant que $t_1\sim t_2$ si $f+t_1p\sim_{\mathcal{RB}} f+t_2p$. On montre que les classes d'équivalences sont ouvertes dans $[0,1]$ et on conclura alors par la connexité de $[0,1]$. Soit $h=f+t_0p$,
+alors on a
+\begin{equation*}
+    T_{h+ts}\mathcal{RB}
+    =T_{f+(s+t_0)}\mathcal{RB}
+    =T_f\mathcal{RB}=T_h\mathcal{RB}
+\end{equation*}
+si $s$ est assez petit. On conclut
 
 {\hfill\textcolor{color-prop}{$\blacksquare$}\par}
 
