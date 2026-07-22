@@ -963,7 +963,7 @@ Notez que $T_f\mathcal{RB}$ est sous module, tandis que $T_f\mathcal{B}$ ne l'es
 \end{exemple}
 
 \subsection{Etude du groupe $\mathcal{RB}$}
-\subsubsection{Etude de l'espace tangent}
+\subsubsection{Espace tangent et détermination finie}
 Le but de cette section est de comprendre le groupe restreint, qui permet d'obtenir des résultats intéressants de façon assez naturelle. Et nous pointerons, via l'étude d'exemples, les limite de cet outil. Les pages qui suivent sont adaptées de \cite{golubitsky1985sgb1}\\
 On commence par une caractérisation de l'appartenance à l'espace tangent. Posons $\mathcal{E}_{p+k}^{m\times n}=\mathcal{E}(0,\R^{p+k},\R^m_n)$
 \begin{lemme}\label{Lemm-tg-reecriture}
@@ -1096,6 +1096,14 @@ donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda)=4$
     \end{equation*}
 \end{remarque}
 
+\begin{exemple}
+    Attention, on peut tout à fait avoir des germes de polynômes qui ont une codimension infinie ! Par exemple $g(x,\lambda)=x^2$, on calcule comme pour les exemples précédents l'espace tangent
+    \begin{equation*}
+        T_{x^2}\mathcal{RB}=\rangle x^2,x\lambda \langle_{\mathcal{E}_2}.
+    \end{equation*}
+    Notez comme toutes les dérivées par rapport à $\lambda$ doivent être nulles
+\end{exemple}
+
 
 
 
@@ -1171,7 +1179,11 @@ Cependant, il faut noter que $E_1,E_2$ représente le maximum d'équations et de
     \end{proposition}
     \todo{Terminer l'exemple}
 \end{exemple}
-Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est le sujet de la proposition suivante:
+Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est le sujet du résultat suivant. On va utiliser  ce corollaire direct du lemme de Nakayama
+\begin{corollaire}
+    Soient $M,N$ des sous modules de $\mathcal{E}^m_n$, et supposons $M$ finiment généré. Alors $M\subseteq N$ si et seulement si $M\subseteq N+
+    \mathfrak{m}_n\cdot M$
+\end{corollaire} 
 \begin{proposition}
     Soit $M$ un sous module de 
     $\mathcal{E}^m_{p+q}$. Il existe un entier $k$ tel que $(\mathfrak{m}^k_{p+q})^{\times m}\subseteq M$ si et seulement si $M$ est de codimension finie
@@ -1201,18 +1213,163 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     il doit exister un entier $k\leq 
     l$ tel que
     \begin{equation*}
-        \codim(M+(\mathfrak{m}^k)^
+        \codim(M+(\mathfrak{m}_{p+q}^k)^
         {\times m})=
-        \codim(M+(\mathfrak{m}^{k+1})^
+        \codim(M+(\mathfrak{m}_{p+q}^{k+1})^
         {\times m}).
     \end{equation*}
     ce qui implique
+    \begin{equation*}
+        M+(\mathfrak{m}_{p+q}^k)^
+        {\times m_{p+q}}=M+(\mathfrak{m}_{p+q}^{k+1})^
+        {\times m}
+    \end{equation*}
+    Et donc, $(\mathfrak{m}_{p+q}^k)^
+    {\times m}\subseteq  M+ \mathfrak{m}_{p+q}\cdot(\mathfrak{m}_{p+q}^k)^
+    {\times m} $.
+    Et conclut via la corollaire ci-dessus
 \end{preuve}
-\subsection{Etude du groupe $\mathcal{B}$}
+On a donc obtenu une caractérisation des modules de codimension finie
 
-\todo{Un théorème de détermination finie}\\
-\todo{Classification explicite}\\
-\subsection{Approche via les chemins}
+\subsubsection{Lien entre la codimension et la détermination finie}
+
+Avant d'établir la caractérisation, on a besoin d'établir le résultat suivant:
+\begin{theorem}\label{segment-inclus}
+    Soient $f,p\in\mathcal{E}_{p+q}^m$ des germes, si pour tout $t\in[0,1]$
+    \begin{equation}\label{segment}
+        T_{f+tp}\mathcal{RB}=T_f \mathcal{RB}
+    \end{equation}
+    alors le segment $(f+tp)_{t\in[0,1]}$ est inclus dans l'orbite de $f$
+\end{theorem}
+Pour ce-faire, on montre deux lemmes intermédiaires
+
+
+\begin{lemme}
+    Si \ref{segment} est correct quand $t$ est dans un voisinage de $0$ alors en posant il existe des germes
+     $A\in\mathcal{E}_{p+q+1}^{m\times m},b\in\mathcal{E}_{p+q+1}^{ m }$ telles que $B(0,0,t)=0$ et 
+    \begin{equation}\label{eq-locale}
+        p(x,\lambda)= A(x,\lambda,t)G(x,\lambda,t) + \partial_x G b(x,\lambda,t)\text{ avec } G(x,\lambda,t)= f(x,\lambda)+ tp(x,\lambda)
+    \end{equation}
+\end{lemme}
+\begin{preuve}
+    Pour éviter d'alourdir les notations, on prouve le résultat dans le cas $p=q=n=1$, la généralisation en dimensions arbitraires est directe. Cela étant, supposons que \ref{segment} est valide en $t_0\neq 0$. Dans ce cas, les générateurs de $T_{f+t_0p} \mathcal{RB}$ peuvent s'écrire comme combinaison linéaire des générateurs de $T_f \mathcal{RB}$. En appliquant \ref{Lemm-tg-reecriture} on sait qu'il existe alors des germes $A_i,B_i,C_i$, $1\leq i\leq 3$ telle que
+    \begin{align*}
+        f+t_0 p&=A_1 f +B_1 x\partial_x f +C_1\lambda \partial_x f\\
+        x\partial_x f+t_0 x\partial_x p&
+        =A_2 f +B_2 x\partial_x f +C_2\lambda \partial_x f\\
+        \lambda \partial_x +t_0 \lambda \partial_x &=A_3 f +B_3 x\partial_x f +C_3\lambda \partial_x f
+    \end{align*}
+    On peut obtenir une germe $Q\in\mathcal{E}_2^{3\times 3}$
+    telle que
+    \begin{equation*}
+        \begin{pmatrix}
+            p \\ x\partial_x p \\ \lambda \partial_xp
+        \end{pmatrix}
+        = Q
+            \begin{pmatrix}
+            f \\ x\partial_x f \\ \lambda \partial_x f
+        \end{pmatrix}
+    \end{equation*}
+    On considère la fonction
+    \begin{equation*}
+        v: \mathcal{E}_2\rightarrow \mathcal{E}_{2}^3, h\mapsto
+        \begin{pmatrix}
+            h\\ x \partial_x h\\  \lambda \partial_x h
+        \end{pmatrix}
+    \end{equation*}
+    On réécrit alors le sytème comme
+    \begin{equation*}
+        v(p)= Qv(f).
+    \end{equation*}
+    $v$ étant bien sûr linéaire, on a, par définition de $G$
+    \begin{equation*}
+        v(f)=v(G)-tv(p).
+    \end{equation*}
+    On en tire 
+    \begin{equation*}
+        (I+t Q)v(p)= Qv(G).
+    \end{equation*}
+    $I$ étant bien sûr inversible, la germe de matrice $I+t Q$ est inversible, on a alors
+    \begin{equation*}
+        v(h)=(I+t Q)^{-1} Qv(G).
+    \end{equation*}
+    Si on regarde la premère composante, il vient enfin
+    \begin{equation*}
+        p= ag +bx\partial_x G +c\lambda \partial_x G
+    \end{equation*}
+    Ce qui suffit.
+\end{preuve}
+
+\begin{lemme}
+        Si \ref{segment} est correct si $t$ est dans un voisinage de $0$, alors $f+tp$ est fortement équivalent à $f$ si $t$ assez proche de zéro.
+\end{lemme}
+\begin{preuve}
+    Comme pour le lemme précédent, on supponse que toute les dimensions valent 1.
+    On commence par prendre un représentant de 
+    la germe $f+tp$ qu'on note $\tilde{G}$. Le 
+    lemme précédent nous donne une égalité de 
+    germe, on peut donc choisir un voisinage 
+    $V=K\times L\times M$ de $(0,0,0)$ sur lequel 
+    \ref{eq-locale} est vérifié (en ayant bien sûr pris les représentants appropriés). On cherche alors des fonctions lisses $X$, $S$ telles que
+    \begin{equation}\label{Big-syst}
+    \begin{aligned}
+        &S(x,\lambda,t)G(X(x,\lambda,t),\lambda,t)=\tilde{f}(x,\lambda)\\
+        &X(0,0,t)=0,\quad X(x,\lambda,0)=x \\
+        & S(x,\lambda,0)=1
+    \end{aligned}
+    \end{equation}
+    Remarquons que résoudre les équations différentielles ordinaires suivantes nous permettent n'obtenir un $X$ et $S$ pour la première équation
+    \begin{equation}\label{equa-diff-1}
+        \partial_t X (x,\lambda,t)=-b(X(x,\lambda,t),\lambda,t)\text{ avec } X(x,\lambda,0)=x
+    \end{equation}
+    et
+    \begin{equation}\label{equa-diff-2}
+        \partial_t S (x,\lambda,t)=-a(X(x,\lambda,t),\lambda,t) S(x,\lambda,t)\text{ avec } S(x,\lambda,0)=1.
+    \end{equation}
+    Avec $a,b$ donnés par \ref{eq-locale}. En effet, supposons avoir des solutions $X_0$ et $S_0$, et dérivons le membre gauche de la première équation du sytème, on a 
+    \begin{equation}\label{sol-syst}
+    \begin{aligned}
+        \partial_t\left( S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)\right)
+        &=\partial_t S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)\\
+        &+ S_0(x,\lambda,t)\partial_x G(X_0(x,\lambda,t),\lambda,t)\partial_t X_0(x,\lambda,t)\\
+        &+S_0(x,\lambda,t)\partial_t G(X_0(x,\lambda,t),\lambda,t)
+    \end{aligned}
+    \end{equation}
+    En posant $y=X_0(x,\lambda,t)$, on récupère
+    \begin{equation}
+    \begin{aligned}      
+        \partial_t\left( S_0(x,\lambda,t)G(y,\lambda,t)\right)= S_0(x,\lambda,t)
+            \big(&-a(y,\lambda,t)G(y,\lambda,t)\\
+            &-b(y,\lambda,t)\partial_x G(y,\lambda,t)+p(y,\lambda,t)\big)
+    \end{aligned}
+    \end{equation}
+    De \ref{sol-syst} il découle que le membre de droite de l'équation ci-dessus est nul, donc
+    \begin{equation}
+        S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)= S_0(x,\lambda,0)G(X(x,\lambda,0),\lambda,0)=f(x,\lambda)
+    \end{equation}
+    Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et \ref{equa-diff-2}
+\end{preuve}
+{\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
+On définit une relation d'équivalence sur $[0,1]$ en disant que $t_1\sim t_2$ si $f+t_1p\sim_{\mathcal{RB}} f+t_2p$. On montre que les classes d'équivalences sont ouvertes dans $[0,1]$ et on conclura alors par la connexité de $[0,1]$. Soit $h=f+t_0p$
+
+
+{\hfill\textcolor{color-prop}{$\blacksquare$}\par}
+
+
+
+
+
+
+
+\begin{theorem}
+    Si une germe $f$ est de codimension finie, alors il est $\mathcal{RB}$-équivalent à $j^k f$
+\end{theorem}
+\begin{preuve}
+    
+\end{preuve}
+
+
+
 
 
 \newpage
