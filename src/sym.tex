@@ -1,6 +1,23 @@
 \documentclass[memoire.tex]{subfiles}
 \begin{document}
 \section{Applications}
+Dans ce chapitre final, nous donnons quelques applications pratiques des outils mathématiques développés. Lorsque ça sera nécessaire, nous énonceront des résultats supplémentaires que nous admettrons sans preuve afin de pas alourdir le manuscrit.
+\subsection{Réacteur continu parfaitement agité}
+Cet application est tiré de \cite{golubitsky1985sgb1}.\\
+Supposons avoir un récipient de volume unitaire dans lequel on injecte un réactant à un taux $\tau$ et que celui si subisse une réaction exothermique (qui rejette de la chaleur) et se transforme en produit inerte. On suppose le récipient \coldef{parfaitement agité}, ce qui signifie que la température $T$ et la concentration $c$ du réactant sont constantes partout (hautement irréaliste, mais faisons simple). Le réactant non utilisé et le produit inerte sont retirés du récipient au même taux $r$. La concentration du réactant et la température dans le flux de sortie sont celle du récipient et la chaleur est retirée du système par un fluide de refroidissement à température $T_c$. On décrit les équations différentielles suivantes:
+\begin{align*}
+    &\partial_t c= r(c_f-c)-ZcA(T)\\
+    &\partial_t T=r(T_f-T)+k(T_c-T)+hZcA(T)
+\end{align*}
+\subsection{Systèmes de réaction diffusion}
+
+\subsection{Convection de Rayleigh-Bénard}
+
+\subsection{Équation de Nekrasov}
+
+\subsection{Réseau de neurones récurrents}
+
+\subsection{Modèle climatique simple}
 
 \newpage
 \end{document}

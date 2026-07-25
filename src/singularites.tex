@@ -939,7 +939,12 @@ vecteur tangent à $\R^m$, attaché au point $f
     \begin{equation*}
         T_f \mathcal{RB}=\rangle f_1,\cdots, f_m\langle_{\mathcal{E}_{p+k}}\cdot\mathcal{E}^m_{p+k}+\rangle  \partial_{x_1}f,\cdots,\partial_{x_p}f\langle_{\mathcal{E}_{p+k}}\cdot \mathfrak{m}_{p+k} .
     \end{equation*}
-    De la même façon, on obtient l'espace tangent du groupe non restreint
+    De la même façon, on obtient l'espace tangent du groupe non restreint: un chemin lisse dans $\mathcal{B}\cdot f$ s'écrit comme
+    \begin{equation*}
+        (x,\lambda,u)\mapsto 
+        S(x,\lambda,u)f(H(x,\lambda,u),
+        h(\lambda,u))
+    \end{equation*}
     \begin{equation*}
         T_f\mathcal{B}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) B(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathcal{E}^p_{p+k}, C\in\mathcal{E}^k_k \right\}
     \end{equation*}
@@ -1440,9 +1445,9 @@ $G(x,\lambda,u)=(G_1(x,\lambda,u),u)$ à $G_1$.
 \end{definition}
 
 Notez qu'une perturbation du type $f+tp$ est un déploiement ! Un déploiement contient donc "plusieurs façon de déformer la germe". Si on particularise la définition ci-dessus à $\mathcal{RB}$, cela revient à demander l'existence de germes lisses $S,X,\Lambda, A$ telles que
-\begin{equation*}
+\begin{equation}\label{Factor-unfold}
     H(x,\lambda,\beta)=S(x,\lambda,\beta)G(X(x,\lambda,\beta),\Lambda(b),A(\beta)).
-\end{equation*}
+\end{equation}
 Pour simplifier les choses, on pose 
 \begin{equation*}
     S(x,\lambda,0)=1,X(x,\lambda,0)=x,\Lambda(\lambda,0)=\lambda,A(0)=0.
@@ -1470,9 +1475,6 @@ Naturellement, on va se demander si on peut trouver un déploiement qui "contien
     Un déploiement $G$ de $f$ est dit \coldef{universel} si tout autre déploiement de $f$ est un facteur de $G$. Il est dit \coldef{miniversel} si il est universel et tout autre déploiement universel a un nombre de paramètres plus grand ou égal. Le nombre de paramètres d'un déploiement miniversel de $f$ est appelée la \coldef{D-codimension}
 \end{definition}
 
-\begin{exemple}
-    
-\end{exemple}
 
 \begin{remarque}
     Notez que "dans la nature", on ne verra absolument jamais de diagramme de bifurcation qui ressemble parfaitement à une pitchfork. Mais, les mesures étant constamment influencées par du bruit, on verra une version déformée. On parle de "bifurcation imparfaite". Mais souvenez que le lieu d'annulation, est "de façon générique" une variété lisse ! Ainsi, si on perturbe légèrement une germe présentant un singularité, on est "certains" que le lieu d'annulation redevienne une variété lisse
@@ -1493,12 +1495,60 @@ Naturellement, on va se demander si on peut trouver un déploiement qui "contien
 
 Le but de cette section va être de démontrer le résultat suivant 
 \begin{theobox}{Théorème du déploiment universel}{}
-Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est universel est universel si et seulement si
+Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est  universel si et seulement si
 \begin{equation*}
     \mathcal{E}^m_{p+q}=T_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
 \end{equation*}
 Autrement dit, la $D$-codimension et la codimension (par rapport à $\mathcal{B}$) coïncident.
 \end{theobox}
+{\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition nécessaire}}\ }
 
+
+Supposons que $G$ est un 
+déploiement universel de $f$, et 
+considérons 
+$g\in\mathcal{E}^m_{p+q}$ un germe quelconque. Remarquez que 
+
+\begin{equation*}
+    H(x,\lambda,\varepsilon)=f(x,\lambda)+
+    \varepsilon g(x,\lambda)
+\end{equation*}
+Est un déploiement à $1$ paramètres de $f$. Par définition, on a $H \preccurlyeq  G$ il existe donc des germes $A,\Lambda,X,S$ comme celle de \ref{Factor-unfold} telles que
+\begin{equation*}
+    H(x,\lambda,\varepsilon)=S(x,\lambda,\varepsilon)G(X(x,\lambda,\varepsilon),\Lambda(x,\varepsilon),A(\varepsilon))
+\end{equation*}
+En dérivant par rapport à $\varepsilon$ et en évaluant à zéro, on récupère
+\begin{equation*}
+    g(x,\lambda)
+    =\partial_\varepsilon (S(x,
+    \lambda,\varepsilon)g(X(x,
+    \lambda,\varepsilon),\Lambda(x,
+    \varepsilon)))(0)+\sum_{i=1}^
+    {k} (\partial_\varepsilon A_i)
+    (0)\partial_{\alpha_i}G(x,
+    \lambda,0)
+\end{equation*}
+Le premier terme appartient à 
+l'espace tangent $T_f\mathcal{B}$, 
+car c'est la dérivée en $0$ d'un 
+chemin lisse qui passe par $f$ , et le second terme est une combinaison linéaire des dérivées de $G$ par rapport aux paramètres, ce qui suffit.
+{\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
+Pour la preuve de la suffisance, on se base sur \cite{golubitsky1979theory}. On prouve alors quelques résultats préliminaires 
+\begin{proposition}
+    Soit $N$ un module finiment 
+    généré sur 
+    $\mathcal{E}_{p+q+k}$. Si on pose $N_0=N/\mathfrak{m}_{k}N$ alors
+    \begin{equation*}
+    \rangle n_1,\cdots, n_l \langle_{\mathcal{E}_k}=N
+    \text{ si et seulement si } \rangle [n_1],\cdots [n_l]\langle_{\R}=N_0
+    \end{equation*}
+\end{proposition}
+\begin{preuve}
+    \todo{écrire
+     la preuve}
+\end{preuve}
+\begin{proposition}
+    Soit $G\in\mathcal{E}^m_{p+q+1+k}$ un déploiement d'un germe $f\in\mathcal{E}_{p+q+1}^m$. Supposons que $G$ soit de codimension finie. Soient de plus $q_1$
+\end{proposition}
 \newpage
 \end{document}
