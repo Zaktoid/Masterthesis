@@ -810,7 +810,7 @@ La notion de déploiement remonte à
 René Thom [SOURCE].
 \begin{definition} 
     $G\in \mathfrak{m}_{n+d}^{\times (m+d)}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
-    si elle respecte le diagramme suivant:
+    si il respecte le diagramme suivant:
     \[\begin{tikzcd}
 	{(0,\R^n)} & {(0,\R^m)} \\
 	{(0,\R^{n+d})} & {(0,\R^{m+d})} \\
@@ -1096,13 +1096,7 @@ donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda)=4$
     \end{equation*}
 \end{remarque}
 
-\begin{exemple}
-    Attention, on peut tout à fait avoir des germes de polynômes qui ont une codimension infinie ! Par exemple $g(x,\lambda)=x^2$, on calcule comme pour les exemples précédents l'espace tangent
-    \begin{equation*}
-        T_{x^2}\mathcal{RB}=\rangle x^2,x\lambda \langle_{\mathcal{E}_2}.
-    \end{equation*}
-    Notez comme toutes les dérivées par rapport à $\lambda$ doivent être nulles
-\end{exemple}
+
 
 
 
@@ -1168,17 +1162,7 @@ problème. D'autre part, le système est sous
 déterminé, et ce niveau de sous détermination 
 explose également quand on augmente les 
 dimensions.\\
-Cependant, il faut noter que $E_1,E_2$ représente le maximum d'équations et de variables, en pratique, il est souvent bien plus petit, mais ça ne sauvera pas cette approche si le nombre de paramètres et les dimensions deviennetnt trop élevées.Cependant,en codimension élevée certains outils de géométrie algébrique peuvent grandement simplifer les choses:
-\begin{exemple}
-    Considérons le germe
-    \begin{equation*}
-        g(x,\lambda)=x\prod_{k=1}^{n}(x^2-k\lambda)
-    \end{equation*}
-    \begin{proposition}
-        
-    \end{proposition}
-    \todo{Terminer l'exemple}
-\end{exemple}
+Cependant, il faut noter que $E_1,E_2$ représente le maximum d'équations et de variables, en pratique, il est souvent bien plus petit, mais ça ne sauvera pas cette approche si le nombre de paramètres et les dimensions deviennetnt trop élevées.Cependant,en codimension élevée certains outils de géométrie algébrique peuvent grandement simplifer les choses, c'est ce qu'on verra à la section suivante.
 Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est le sujet du résultat suivant. On va utiliser  ce corollaire direct du lemme de Nakayama
 \begin{corollaire}
     Soient $M,N$ des sous modules de $\mathcal{E}^m_n$, et supposons $M$ finiment généré. Alors $M\subseteq N$ si et seulement si $M\subseteq N+
@@ -1221,7 +1205,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     ce qui implique
     \begin{equation*}
         M+(\mathfrak{m}_{p+q}^k)^
-        {\times m_{p+q}}=M+(\mathfrak{m}_{p+q}^{k+1})^
+        {\times m}=M+(\mathfrak{m}_{p+q}^{k+1})^
         {\times m}
     \end{equation*}
     Et donc, $(\mathfrak{m}_{p+q}^k)^
@@ -1229,7 +1213,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     {\times m} $.
     Et conclut via la corollaire ci-dessus
 \end{preuve}
-On a donc obtenu une caractérisation des modules de codimension finie
+On a donc obtenu une caractérisation des modules de codimension finie. Notez que par le 
 
 \subsubsection{Lien entre la codimension et la détermination finie}
 
@@ -1348,7 +1332,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
         S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)= S_0(x,\lambda,0)G(X(x,\lambda,0),\lambda,0)=f(x,\lambda)
     \end{equation}
     Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et 
-    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
+    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques [SOURCE] permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
 \end{preuve}
 
 {\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
@@ -1365,20 +1349,156 @@ si $s$ est assez petit. On conclut
 
 
 
-
-
-
-
 \begin{theorem}
-    Si une germe $f$ est de codimension finie, alors il est $\mathcal{RB}$-équivalent à $j^k f$
+    Si un germe $f$ est de codimension finie, alors il est $\mathcal{RB}$-équivalent à 
+    $j^k f$
 \end{theorem}
 \begin{preuve}
-    
+    Montrons d'abord qui si $M=\rangle v_1,\cdots, v_n\langle _{\mathcal{E}_n}$ est un sous module $\mathcal{E}_n^m$ et si $q_1,\cdots,q_l$ sont dans $\mathfrak{m}_n\cdot M$ alors $M$ est également généré par les $v_i+w_i$, $1\leq i\leq l$. Bien sûr, $\rangle v_1 +w_1,\cdots v_l +w_l \langle_{\mathcal{E}_n}\subseteq M$. Or, $v_j=(v_j+w_j)-w_j$ donc
+    \begin{equation*}
+        M\subseteq \rangle v_1+w_1,\cdots, v_l+w_l\langle_{\mathcal{E}_n}+\mathfrak{m}_n\cdot M
+    \end{equation*}
+    Et le lemme de Nakayama nous assure alors que $M\subseteq \rangle v_1+w_1,\cdots, v_l+w_l\langle$, et on conlut.\\
+    Celà étant, on peut écrire $f=j^kf-r$ avec $r\in(\mathfrak{m}^{k+1}_n)^{\times m}$ au vu du théorème \ref{segment-inclus}, il suffit alors de montrer
+    \begin{equation*}
+        T_{f}\mathcal{RB}=T_{f+tr}\mathcal{RB}
+    \end{equation*}
+    pour tout $t\in [0,1]$. Mais étant donné que $T_{f+tr}\mathcal{RB}$ est généré par 
+    \todo{TERMINER preuve, avec générateurs mutlivariés}
 \end{preuve}
 
+\begin{exemple}
+    Attention, on peut tout à fait avoir des germes de polynômes qui ont une codimension infinie ! Par exemple $g(x,\lambda)=x^2$, on calcule comme pour les exemples précédents l'espace tangent
+    \begin{equation*}
+        T_{x^2}\mathcal{RB}=\rangle x^2,x\lambda \langle_{\mathcal{E}_2}.
+    \end{equation*}
+    Notez comme toutes les dérivées par rapport à $\lambda$ doivent être nulles
+\end{exemple}
+On a donc obtenu un critère pour pouvoir tronquer la série de Taylor, mais pas de caractérisation totale de la détermination finie. Notez que
+la méthode employée ci-dessus n'a 
+rien de spécifique au groupe $\mathcal
+{RB}$, on peut adapter la plupart des 
+résultats aux autres groupe agissant 
+sur le germe. Cependant, notez que 
+les résultats qui dépendent du fait 
+que l'espace tangent est un module ne 
+s'appliquent pas en toute généralité.
+Le théorème \ref{segment-inclus} nous permet de comprendre comment calculer l'orbite d'un germe donné, on regarde l'espace tangent, on prend les générateurs et on regarde les petites perturbations par ces générateurs qui ne change pas l'espace tangent et on dévoile ainsi petit à petit l'orbite.
+
+\subsubsection{Un exemple avancé: la bifurcation à $n$ branches}
+
+On illustre la théorie développée ci-dessus, ainsi que quelques autres outils sur un exemple. Considérons le germe
+
+\begin{equation*}
+    g(x,\lambda)=x\prod_{k=1}^{m}(x^2-k\lambda).
+\end{equation*}
+Pour $m=1$ c'est juste une bifurcation trident et augment $m$ rajoute des nouvelles branches. 
+
+On sait que l'espace tangent est donné par
+\begin{equation*}
+    T_g\mathcal{RB}=\rangle g,x\partial_x g,\lambda \partial_x g\langle
+\end{equation*}
+
+On introduit la fonction une fonction de poids de la façon suivante
+
+\begin{equation*}
+    w(x)=1, w(\lambda)=2\text{ et }
+    w(p_1 p_2)=w(p_1)+w(p_2).
+\end{equation*}
+De plus, si $p_1$ et $p_2$ sont des 
+polynômes de même poids, alors $w(p_1
++p_2)$ est bien défini vaut $w(p_1)$ 
+et enfin, $w(\partial x h)=w(h)-w(x)$.
+Avec cette astuce, le germe $g$ peut 
+être vu comme un polynôme homogène 
+vis à vis de $w$, de poids $2m+1$.\\
+Regardons maintenant le poids des générateurs, $w(g)=w(\partial_x g)=2m+1$ et $w(\lambda\partial_x g)=2m+2$.
+On comprend déjà que la codimension 
+augmente avec $m$: un germe de monôme, pour faire partie du tangent, ne peut pas avoir un poids plus petit que $2m+1$. Le nombre de monôme de la forme $x^j\lambda^i$ dont le poids est $\leq 2m$ est $(m+1)^2$. On doit donc montrer que
+\begin{equation*}
+    \mathcal{E}_2=T_g \mathcal{RB} \oplus \left\{ x^i\lambda^j| i+2j\leq 2m\right\} 
+\end{equation*}
+\todo{Suite: developper avec taylor et montrer que tout marche, regarder un peu la méthode des chemins}
+
+On peut bien sûr généraliser ce genre d'approches, et la combiner avec d'autres (idéaux intrasèques de Golubitsky, bases de Gröbner, etc... voir [SOURCE])
+\subsection{Déploiements versels et universels} 
+
+On s'inspire encore de Golubitsky 
+\cite{golubitsky1988sgb2} pour cette 
+section. Dans la suite, on identifie un déploiement de la forme 
+$G(x,\lambda,u)=(G_1(x,\lambda,u),u)$ à $G_1$. 
+\begin{definition}
+    Soient $G\in\mathcal{E}_{p+q+a_1}^m$ et $H\in\mathcal{E}_{p+q+a_2}^m$ des déploiement d'un germe $f$, et $\mathcal{G}$ un groupe qui agit sur les germes. On dit que $H$ est un \coldef{facteur} de $G$   si il existe un représentant 
+    $\tilde{H}$ tel que pour tout $\beta\in \R^{p_2}$ tels que
+    $\tilde{H}(\cdot,\cdot,\beta)$ est défini, il existe un représentant $\tilde{G}$ et $A(\beta)$ tels que
+    \begin{equation*}
+        H(\cdot,\cdot,\beta)
+        \sim_{\mathcal{G}} G(\cdot,\cdot,A(\beta))
+    \end{equation*}
+    On veut bien sûr que la dépendance soit lisse. On notera dans ce cas $H \preccurlyeq G$, et si $G \preccurlyeq H$ et $H \preccurlyeq G$ alors les déploiements sont dits \coldef{équivalents}, et on appelle 
+    $\mathcal{G}_{un}$ cette relation d'équivalence
+\end{definition}
+
+Notez qu'une perturbation du type $f+tp$ est un déploiement ! Un déploiement contient donc "plusieurs façon de déformer la germe". Si on particularise la définition ci-dessus à $\mathcal{RB}$, cela revient à demander l'existence de germes lisses $S,X,\Lambda, A$ telles que
+\begin{equation*}
+    H(x,\lambda,\beta)=S(x,\lambda,\beta)G(X(x,\lambda,\beta),\Lambda(b),A(\beta)).
+\end{equation*}
+Pour simplifier les choses, on pose 
+\begin{equation*}
+    S(x,\lambda,0)=1,X(x,\lambda,0)=x,\Lambda(\lambda,0)=\lambda,A(0)=0.
+\end{equation*}
+En effet, étant donné que $H(x,\lambda,0)=G(x,\lambda,0)=f$, il est 
+naturel d'exiger que l'équivalence 
+soit donnée par l'identité.\\
+Il est intéressant de noter que si applique la définition avec $\mathcal{G}=\mathcal{K}$ alors on exige alors des germes lisses $S(x,\lambda,\beta)$, $\phi(x,\lambda,\beta),A(\beta)$ telles que
+
+\begin{equation*}
+    S(x,\lambda,\beta)G(\phi(x,\lambda,\beta),A(\beta))=H(x,\lambda,\beta)
+\end{equation*}
+Et on remarque alors que $\mathcal{K}_{un}$ n'est nul autre que $\mathcal{B}$.
+
+\begin{exemple}
+    La relation $\preccurlyeq$ n'est pas particulièrement liée au nombre de paramètres. Considérez par exemple les déploiements de la pitchfork suivants:
+    \begin{equation*}
+        H(x,\lambda,\beta)=x^3-\lambda x+\beta x, G(x,\lambda)=x^3-\lambda x.
+    \end{equation*}
+    On remarque alors que $H\preccurlyeq G$, via $\Lambda(\lambda,\beta)=\lambda-\beta$, $S=I$ et $X=\operatorname{Id}$.
+\end{exemple}
+
+Naturellement, on va se demander si on peut trouver un déploiement qui "contient tous les autres", dans le sens suivant:
+\begin{definition}
+    Un déploiement $G$ de $f$ est dit \coldef{universel} si tout autre déploiement de $f$ est un facteur de $G$. Il est dit \coldef{miniversel} si il est universel et tout autre déploiement universel a un nombre de paramètres plus grand ou égal. Le nombre de paramètres d'un déploiement miniversel de $f$ est appelée la \coldef{D-codimension}
+\end{definition}
+
+\begin{exemple}
+    
+\end{exemple}
+
+\begin{remarque}
+    Notez que "dans la nature", on ne verra absolument jamais de diagramme de bifurcation qui ressemble parfaitement à une pitchfork. Mais, les mesures étant constamment influencées par du bruit, on verra une version déformée. On parle de "bifurcation imparfaite". Mais souvenez que le lieu d'annulation, est "de façon générique" une variété lisse ! Ainsi, si on perturbe légèrement une germe présentant un singularité, on est "certains" que le lieu d'annulation redevienne une variété lisse
+\end{remarque}
+
+\begin{remarque}
+    On considère les déploiements 
+    comme des germes sur $\R^{p+q+p_1}
+    $. On pourrait croire que c'est la même chose que demander l'existence d'un voisinage $V$ de zéro dans $\R^{p_1}$ tel que
+    \begin{equation*}
+        \forall \alpha\in V,G(\cdot,\cdot,\alpha)\in\mathcal{E}^m_{p+q}.
+    \end{equation*}
+    Il y'a cependant une différence cruciale: dans le premier cas, il existe un représentant définie sur un voisinage $W_0$ de $0$ dans $\R^{p+q+p_1}$. Et donc on récupère un voisinage fixé $\pi(W_0)$ de zéro dans $\R^{p+q}$, tandis que la seconde version \todo{TERMINER REMARQUE}
+\end{remarque}
 
 
 
+
+Le but de cette section va être de démontrer le résultat suivant 
+\begin{theobox}{Théorème du déploiment universel}{}
+Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est universel est universel si et seulement si
+\begin{equation*}
+    \mathcal{E}^m_{p+q}=T_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
+\end{equation*}
+Autrement dit, la $D$-codimension et la codimension (par rapport à $\mathcal{B}$) coïncident.
+\end{theobox}
 
 \newpage
 \end{document}
