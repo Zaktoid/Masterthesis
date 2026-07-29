@@ -318,7 +318,7 @@ quotient de groupes). C'est
 parce 
 qu'on en a pas besoin pour que les opérations soient bien 
 définies ! Ainsi, on vérifie facilement que $M/N$ est bien 
-un sous module. Notez que le quotient d'un $\mathcal{E}_S
+un module. Notez que le quotient d'un $\mathcal{E}_S
 $-module par un sous module est, en 
 particulier, un espace 
 vectoriel sur $\R$ (en identifiant  les 
@@ -382,15 +382,6 @@ finiment généré
     \end{equation*}
 \end{preuve}
 
-\begin{remarque}
-    On vient de montrer que tout $\mathcal{E}_S$-module
-    finiment généré avec $S=\left\{s\right\}$ est un module \coldef{noethérien}, i.e un module dont tous les sous-modules sont finiment générés
-\end{remarque}
-
-
-\begin{corollaire}
-    Tout $\mathcal{E}_S$-module $M$ finiment généré, avec $S$ fini, est un module Noetherien
-\end{corollaire}
 
 Soient $P$ une variété et $y\in P$,
 on considère alors les projections 
@@ -599,7 +590,11 @@ On commence par montrer un cas particulier :
 Soient $f:(N,S)\rightarrow (P,y)$ un germe  lisse $S$ une partie finie de $N$ et $y\in P$ et $M$ un $\mathcal{E}_S$-module finiment généré, on a 
 \begin{equation*}
     \dim_{\R} M/(f^{*}(\mathfrak{m}_y(P))M)< 
-    \infty\Rightarrow M \text{ est finiment généré en tant que $\mathcal{E}_y(P)$-module}
+    \infty\Leftrightarrow M \text{ est finiment généré en tant que $\mathcal{E}_y(P)$-module}
+\end{equation*}
+En particulier, si $\pi:M\rightarrow   M/(f^{*}(\mathfrak{m}_y(P))M)$ est la projection canonique
+\begin{equation*}
+    M=\rangle a_1,\cdots a_l \langle_{\mathcal{E}_S}\Leftrightarrow M/(f^{*}(\mathfrak{m}_y(P))M)=\rangle \pi(a_1),\cdots,\pi(a_l)\langle_{\R}
 \end{equation*}
 \end{theobox}
 \begin{preuve}
@@ -889,7 +884,7 @@ l'orbite, d'où la définition suivante
     \begin{equation*}
         g_0\cdot f=f
     \end{equation*}
-    et si l'action dépend de façon lisse en $u$.
+    et si l'action dépend de façon lisse en $u$. Si de plus $G(0,0,t)=0$
 \end{definition}
 La condition "dépendre de façon lisse" est légèrement floue, cela deviendra clair quand on calculera des espaces tangents.
 \begin{definition}
@@ -907,8 +902,14 @@ Dans la suite, on écrira $T_f \mathcal{G}$ pour alléger les notations. On rema
 Trace une courbe passant par $f(x)$ en zéro, 
 et la dérivée $\partial_u G(x,0)$ est bien un 
 vecteur tangent à $\R^m$, attaché au point $f
-(x)$. C'est donc bien une section de $f^* T\R^m$
-
+(x)$. C'est donc bien une section de $f^* T\R^m$.
+Notez que pour tout $m$ et $n$ naturels, $\mathcal{E}_m$ s'injecte naturellement dans $\mathcal{E}_{n+m}$ via
+\begin{equation*}
+    f\mapsto ((x_1,\cdots,x_{n
+    +m})\mapsto f(x_1,\cdots,
+    x_m)).
+\end{equation*}
+On peut donc multiplier des germes de $\mathcal{E}_{n_1}$ et $\mathcal{E}_{n_2}$ avec $n_1$ et $n_2$ quelconques.
 \begin{exemple}
     Calculons l'espace tangent pour 
     l'équivalence restreinte, on suppose qu'on 
@@ -922,10 +923,10 @@ vecteur tangent à $\R^m$, attaché au point $f
     \end{equation*}
     où les germes $H$ et $S$ sont lisses aussi, 
     avec $S(x,\lambda,0)=I_m$, 
-    $H(x,\lambda,0)=x$
+    $H(x,\lambda,0)=x$. Notez qu'on doit avoir $H(0,0,u)=0$.
     On calcule alors
     \begin{equation*}
-        \partial_u G(0)  = 
+        \partial_u G(0,x,\lambda)= 
          \partial_u S(x,\lambda,0)f(x,\lambda)+
          {\partial_x f}(x,\lambda) 
          \cdot {\partial_u H}(x,\lambda,0)
@@ -935,9 +936,11 @@ vecteur tangent à $\R^m$, attaché au point $f
         T_f\mathcal{RB}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f B(x,\lambda)
         \mid A\in\mathcal{E}(0,\R^{p+k},\R^m_m), B\in\mathfrak{m}^{\times p}_{p+k} \right\}
     \end{equation*}
-    On a alors
+    En posant $\rangle f_1,\cdots, f_m\langle_{\mathcal{E}_{p+k}}\cdot\mathcal{E}^m_{p+k}=\rangle f \langle^m$ et 
+    $\rangle  \partial_{x_1}f,\cdots,\partial_{x_p}f\langle_{\mathcal{E}_{p+k}}=\rangle \partial_x f\langle_{\mathcal{E}_{p+k}}$
+    on a
     \begin{equation*}
-        T_f \mathcal{RB}=\rangle f_1,\cdots, f_m\langle_{\mathcal{E}_{p+k}}\cdot\mathcal{E}^m_{p+k}+\rangle  \partial_{x_1}f,\cdots,\partial_{x_p}f\langle_{\mathcal{E}_{p+k}}\cdot \mathfrak{m}_{p+k} .
+        T_f \mathcal{RB}=\rangle f \langle^m+\rangle \partial_x f\langle_{\mathcal{E}_{p+k}}\cdot\mathfrak{m}_{p+k} .
     \end{equation*}
     De la même façon, on obtient l'espace tangent du groupe non restreint: un chemin lisse dans $\mathcal{B}\cdot f$ s'écrit comme
     \begin{equation*}
@@ -950,7 +953,9 @@ vecteur tangent à $\R^m$, attaché au point $f
     \end{equation*}
     Qu'on réécrit comme
     \begin{equation*}
-        T_f \mathcal{B}=T_f\mathcal{RB} + \rangle \partial_{\lambda_1}f,\cdots,\partial_{\lambda_k}f\langle_{\mathcal{E}_{k}}
+        T_f \mathcal{B}
+        =T_f\mathcal{RB} + 
+        \rangle \partial_{\lambda} f\langle_{\mathcal{E}_{k}}\cdot\mathfrak{m}_{k}
     \end{equation*}
     Qui correspond bien à l'idée qu'il s'agit du groupe restreint mais où on s'autorise à modifier
 \end{exemple}
@@ -1436,12 +1441,12 @@ $G(x,\lambda,u)=(G_1(x,\lambda,u),u)$ à $G_1$.
     Soient $G\in\mathcal{E}_{p+q+a_1}^m$ et $H\in\mathcal{E}_{p+q+a_2}^m$ des déploiement d'un germe $f$, et $\mathcal{G}$ un groupe qui agit sur les germes. On dit que $H$ est un \coldef{facteur} de $G$   si il existe un représentant 
     $\tilde{H}$ tel que pour tout $\beta\in \R^{p_2}$ tels que
     $\tilde{H}(\cdot,\cdot,\beta)$ est défini, il existe un représentant $\tilde{G}$ et $A(\beta)$ tels que
-    \begin{equation*}
+    \begin{equation}\label{def-fact}
         H(\cdot,\cdot,\beta)
         \sim_{\mathcal{G}} G(\cdot,\cdot,A(\beta))
-    \end{equation*}
+    \end{equation}
     On veut bien sûr que la dépendance soit lisse. On notera dans ce cas $H \preccurlyeq G$, et si $G \preccurlyeq H$ et $H \preccurlyeq G$ alors les déploiements sont dits \coldef{équivalents}, et on appelle 
-    $\mathcal{G}_{un}$ cette relation d'équivalence
+    $\mathcal{G}_{un}$ cette relation d'équivalence. La fonction $A$ est appelée \coldef{la fonction de factorisation}
 \end{definition}
 
 Notez qu'une perturbation du type $f+tp$ est un déploiement ! Un déploiement contient donc "plusieurs façon de déformer la germe". Si on particularise la définition ci-dessus à $\mathcal{RB}$, cela revient à demander l'existence de germes lisses $S,X,\Lambda, A$ telles que
@@ -1490,14 +1495,31 @@ Naturellement, on va se demander si on peut trouver un déploiement qui "contien
     Il y'a cependant une différence cruciale: dans le premier cas, il existe un représentant définie sur un voisinage $W_0$ de $0$ dans $\R^{p+q+p_1}$. Et donc on récupère un voisinage fixé $\pi(W_0)$ de zéro dans $\R^{p+q}$, tandis que la seconde version \todo{TERMINER REMARQUE}
 \end{remarque}
 
+Remarquez que jusqu'à 
+présent, on a supposé que les 
+germes de difféomorphisme 
+renvoyait zéro sur zéro, ce 
+qui a influencé les calculs 
+des espaces tangents. Dans ce qui suit, on va utiliser la notion d'espace tangent étendu, ça veut simplement dire que retire cette restriction. On a par exemple
+\begin{equation*}
+    T^{(e)}_f\mathcal{B}=\rangle f\langle^m+\rangle 
+    \partial_{x}f\langle
+    _{\mathcal{E}_{p+q}}+ 
+    \rangle \partial_{\lambda}f\langle_{\mathcal{E}_q}
+\end{equation*}
 
+Du fait que $\mathcal{E}_n=\R^n\oplus\mathfrak{m}_n$ 
+(en identifiant les fonctions 
+constantes à leur 
+constantes), et on vérifie 
+facilement que la 
+codimension du tangent est finie si et seulement ci celle du tangent étendu est finie.
 
-
-Le but de cette section va être de démontrer le résultat suivant 
-\begin{theobox}{Théorème du déploiment universel}{}
+Le but de ce qui suit  va être de démontrer le résultat suivant 
+\begin{theobox}{Théorème du déploiment universel}{}\label{unif-depl}
 Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est  universel si et seulement si
 \begin{equation*}
-    \mathcal{E}^m_{p+q}=T_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
+    \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
 \end{equation*}
 Autrement dit, la $D$-codimension et la codimension (par rapport à $\mathcal{B}$) coïncident.
 \end{theobox}
@@ -1529,26 +1551,152 @@ En dérivant par rapport à $\varepsilon$ et en évaluant à zéro, on récupèr
     \lambda,0)
 \end{equation*}
 Le premier terme appartient à 
-l'espace tangent $T_f\mathcal{B}$, 
+l'espace tangent $T^{(e)}_f\mathcal{B}$, 
 car c'est la dérivée en $0$ d'un 
 chemin lisse qui passe par $f$ , et le second terme est une combinaison linéaire des dérivées de $G$ par rapport aux paramètres, ce qui suffit.
 {\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
-Pour la preuve de la suffisance, on se base sur \cite{golubitsky1979theory}. On prouve alors quelques résultats préliminaires 
+Pour la preuve de la 
+suffisance, on se base sur 
+\cite{golubitsky1979theory}. 
+On prouve alors quelques 
+résultats préliminaires, on 
+commence par un corollaire 
+immédiat du théorème de 
+préparation
 \begin{proposition}
-    Soit $N$ un module finiment 
+    Soit $M$ un module finiment 
     généré sur 
-    $\mathcal{E}_{p+q+k}$. Si on pose $N_0=N/\mathfrak{m}_{k}N$ alors
+    $\mathcal{E}_{p+q}$, $\pi: \R^{p+q}\rightarrow \R^p$ la projection habituelle, $N$ un sous module de $M$ et $m_1,\cdots,m_r\in M$. On pose également $M_0=M/(\pi^{*}(\mathfrak{m}_p)M)$ (c'est un $\mathcal{E}_p$-module via $\pi^{*}$) et $N_0,\tilde{m}_{1},\cdots \tilde{m}_{r}$ les projections de $N$ et $m_1,\cdots,m_r$ dans $M_0$. On a alors
     \begin{equation*}
-    \rangle n_1,\cdots, n_l \langle_{\mathcal{E}_k}=N
-    \text{ si et seulement si } \rangle [n_1],\cdots [n_l]\langle_{\R}=N_0
+        N+\rangle m_1,\cdots,m_r\langle_{\mathcal{E}_p}=M \Leftrightarrow N_0+\rangle 
+        \tilde{m}_{1},\cdots \tilde{m}_{r}
+        \langle_{\R}=M_0
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-    \todo{écrire
-     la preuve}
+    Le premier sens étant évident, on prouve l'autre. On considère le module $P=M/N$, il est finement généré, et on a
+    \begin{equation*}
+        P/(\pi^{*}(\mathfrak{m_p})P)\cong M_0/N_0
+    \end{equation*}
+    Et on conclut en appliquant le théorème de preparation
 \end{preuve}
+
 \begin{proposition}
-    Soit $G\in\mathcal{E}^m_{p+q+1+k}$ un déploiement d'un germe $f\in\mathcal{E}_{p+q+1}^m$. Supposons que $G$ soit de codimension finie. Soient de plus $q_1$
+    Soit $G\in\mathcal{E}^m_{p
+    +q+k}$ un déploiement 
+    d'un germe $f\in\mathcal
+    {E}_{p+q+1}^m$. Supposons 
+    que $f$ soit de 
+    codimension finie. Soient 
+    de plus $q_1,\cdots,q_r$ 
+    des germes de $\mathcal{E}
+    _{p+q+k}^m$ et $q_{i,0}
+    =q_i(\cdot,\cdot,0)$.
+    On a
+    \begin{equation}\label{eq-1}
+        T_f^{(e)}\mathcal{B}+\rangle q_{1,0},\cdots q_{r,0}\langle_\R=\mathcal{E}^m_{p+q}
+    \end{equation}
+    si et seulement si
+    \begin{equation}\label{eq-2}
+        \rangle G\langle^m+ 
+        \rangle \partial_{x}G
+        \langle_{\mathcal{E}_{p+q+k}} 
+        +\rangle \partial_{\lambda}G
+        \langle_{\mathcal{E}_{p+k}}
+        +\rangle q_1 \cdots q_r\langle_{\mathcal{E}_{k}}=\mathcal{E}_{p+q+k}^m
+    \end{equation}
 \end{proposition}
+\begin{preuve}
+    $f$ étant de codimension finie, il existe des germes $p_1,\cdots,p_s$ telles que
+    \begin{equation*}
+        T^{(e)}_f\mathcal{B}=T^{(e)}_f\mathcal{RB}+\rangle p_1,\cdots,p_s\langle_{\R}.
+    \end{equation*}
+    considérons alors le 
+    module $M=\mathcal{E}^{m}_
+    {p+q+k}/(\rangle 
+    G\langle^m+ \rangle 
+    \partial_x G\langle_
+    {\mathcal{E}_{p+q+k}})$. 
+    Maintenant, remarquez que quotienter $M$ par $\pi^{*}(\mathfrak{m}_k)M$ revient simplement à évaluer $\alpha=0$, en effet
+    \begin{equation*}
+        [H]
+        =\underbrace{[H-H(\cdot,\cdot,0)]}_{\in\pi^{*}(\mathfrak{m}_kM)}+[H(\cdot,\cdot,0)].
+    \end{equation*}
+    Du fait que $G$ est un déploiement de $f$
+    \begin{equation*}
+        [H]=0_{M/\pi^{*}(\mathfrak{m}_k)M}
+        \Leftrightarrow [H(\cdot,\cdot,0)]=0_{M}\Leftrightarrow H(\cdot,\cdot,0)\in\
+    \rangle 
+    f\langle^m+ \rangle 
+    \partial_x f\langle_
+    {\mathcal{E}_{p+q}}=T^{(e)}_f\mathcal{RB}
+    \end{equation*}
+    et donc
+    \begin{equation*}
+        M/\pi^{*}(\mathfrak{m}_k)\cong \mathcal{E}^{m}_{p+q}/T^{(e)}_f\mathcal{RB}
+    \end{equation*}
+    Et on applique alors la proposition précédente aux générateurs $p_1,\cdots,p_s,q_1,\cdots q_r$ pour obtenir $\ref{eq-1}\Rightarrow \ref{eq-2}$. L'autre sens s'obtient facilement en fixant $\alpha=0$
+
+\end{preuve}
+Soit $h\in\mathcal{E}_{l}^k$ et $G$ un déploiment à $k$ paramètres de $f$, on pose
+\begin{equation*}
+    (h_{*}G)(x,\lambda,\beta)=
+    G(x,\lambda,h(\alpha))
+\end{equation*}
+
+
+
+\begin{lemme}\colprop{(lemme de réduction)}
+Soit $G$ un déploiement à $k$ paramètres de $f$ et $E=G|_{\R^{p+q}\times\R^{k-1}}$. Si il existe un champ de vecteur $V$ sur $\R^{p+q}\times \R^k$ de la forme
+\begin{equation*}
+    V=\partial_{\alpha_k}+
+    \sum_{i=1}^{k-1}a_i(\alpha)\partial_{\alpha_i}+
+    \sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}
+    +\sum_{j=1}^{p}V_j(x,\lambda,\alpha)\partial_{x_j}
+\end{equation*}
+Et $Y(x,\lambda,\alpha)$ une famille de champ de vecteurs sur $\R^m$ telle que
+\begin{equation}\label{vect-field}
+    dG(V)(x,\lambda,\alpha)=
+    Y(x,\lambda,\alpha)\circ G(x,\lambda,\alpha)
+\end{equation}
+Alors il existe une germe de submersion $h$ telle que $G$ est facteur de $h_{*}E$ via l'identité.
+\end{lemme}
+\begin{preuve}
+    Considérons une courbe intégrale de $V$, i.e  $\gamma: I\subseteq \R \rightarrow \R^{p+q+k}$une solution du systèmes d'équations différentielles
+    \begin{align*}
+        &\gamma'_j=V_j\text{ pour }1\leq j\leq p\\
+        &\gamma'_i=b_{i-p}\text{ pour }{p+1}\leq i\leq p+q\\
+        &\gamma'_i=a_{i-(p+q)}\text{ pour }{p+q+1}\leq i\leq p+q+k-1\\
+        &\gamma'_{p+q+k}=1
+    \end{align*}
+    Grâce à la dernière équation, on a que  
+    \begin{equation*}
+        \gamma_{p+q+k}(t)=\gamma_{p+q+k}(0)+t.
+    \end{equation*}
+    Et le temps d'intégration est alors simplement la variation du dernier paramètre. On peut donc voir cette courbe comme un ensemble de difféomorphisme indexé sur le dernier paramètre:
+    \begin{equation*}
+        (\rho_{\alpha_k}(x,\lambda,\alpha),\Lambda_{\alpha_k}(\lambda),h_{\alpha_k}(\alpha)).
+    \end{equation*}
+    Clairement, les courbes intégrales de $V$ sont transverse au plan 
+    $\left\{\alpha_k=0\right\}$.\\
+    Maintenant, on pose
+    \begin{equation*}
+        \Gamma: \R^{p+q+k}\rightarrow \R^{p+q+k-1},(x,\lambda,\alpha)\rightarrow (\rho_{0}(x,\lambda,\alpha),\Lambda_0(\lambda,\alpha),h_0(\alpha))
+    \end{equation*}
+    $h_0$ est une submersion de $\R^k$ vers $\R^{k-1}$ ,$\rho(\cdot,\lambda,\alpha)$ un difféomorphisme de $\R^p$ et $\Lambda(\cdot,\alpha)$ un difféomorphisme de $\R^q$. Maintenant, on intègre les $Y(x,\lambda,\alpha)$ et on récupère une famille $Y(x,\lambda,\alpha,t)$ de difféomorphisme de $\R^m$.
+    \todo{Terminer la preuve}
+\end{preuve}
+{\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition suffisante du théorème \ref{unif-depl}.}}\ }
+FEUR
+{\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
+
+
+
+
+
+
+\subsection{Approche des chemins de Montaldi}
+Bien que l'approche de Golubitsky propose des outils très concrets pour appréhender les singularités ainsi que leur perturbations, cette dernière devient particulièrement difficile à mettre en place lorsque le nombre de paramètres devient grand. En fait la classification complète des bifurcations à 2 paramètres avec la méthode de Golubitsky est si complexe qu'elle fut le sujet d'une thèse de doctorat ! [SOURCE]\\
+
 \newpage
 \end{document}
