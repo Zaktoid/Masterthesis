@@ -42,11 +42,11 @@ de Banach. Quand on parle du spectre de l'opérateur $D$, on parle en réalité 
     On définit $\sigma(D)$ \coldef{le spectre} de $D$ comme étant l'ensemble des complexes $\lambda$ pour lesquels $D-\lambda I$ n'est pas inversible
 \end{definition}
 
-\begin{definition}
-    $x_0$ est un \coldef{point d'équilibre} pour $\lambda_0$ si $F(x_0,\lambda_0)=0$ et c'est un \coldef{équilibre stable} si le spectre de $D_x F(x_0,\lambda_0)$ est dans le demi plan complexe gauche
+\begin{definition}\label{def-stab}
+    $x_0$ est un \coldef{point d'équilibre} pour $\lambda_0$ si $F(x_0,\lambda_0)=0$ et c'est un \coldef{équilibre stable} si le spectre de $D_1 F(x_0,\lambda_0)$ est dans le demi plan complexe gauche et si zéro n'est pas valeur propre de $D_1 F(x_0,\lambda_0)$
 \end{definition}
 
-La définition suivante peut paraître bien 
+La définition précédente peut paraître bien 
 arbitraire, mais il s'avère que dans la plupart 
 des problèmes pratiques elle se traduit en une 
 "vraie" stabilité dynamique. Préciser les 
@@ -69,8 +69,50 @@ Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" 
 
 \subsection{Le principe d'échange de stabilité}
 
+Si on se place dans une situation de bifurcation simple alors l'équilibre qui se trouve au croisement $(x_0,\lambda_0)$ des deux courbes n'est pas stable. Le but de cette section est alors de comprendre la stabilité des équilibres qui sont proches, et donc de comprendre comment le spectre, et spécifiquement la valeur propre $0$ se comporte au voisinage de $(x_0,\lambda_0)$.\\
+
+
+
+\begin{proposition}
+    Soit $F\in C^2(U\times V,Y)$ une fonction de Fredholm d'indice nul.
+    Posons $N=\ker D_1F(x_0,\lambda_0)$
+    et $R=\im D_1F(x_0,\lambda_0)$ et 
+    supposons que
+    \begin{equation}\label{transvers-ker}
+        N=\rangle v_0\langle_\R\Rightarrow v_0\notin R.
+    \end{equation}
+    Il existe alors une courbe de solution $\gamma\in C^1(]-\delta,\delta[,X\times \R)$, $\mu\in C^1(]-\delta,\delta [, \R)$ et $w\in C^1(]-\delta,\delta[,X\cap R)$ tels que $w(0)=0$ et
+    \begin{equation*}
+        D_1F(x_0,\lambda_0)(v_0+w(s))=\mu(s)(v_0+w(s)).
+    \end{equation*}
+    On dit que $\mu$ est une courbe de valeurs propres perturbées
+\end{proposition}
+\begin{preuve}
+    Posons
+    \begin{equation*}
+        G: U\times V\times (R\cap X)\times \R\rightarrow Y, (x,\lambda,w,\mu)\mapsto D_1 F(x,\lambda)(v_0+w)-\mu(v_0+w)
+    \end{equation*}
+    Notez que $G(x_0,\lambda_0,0,0)=0$ et 
+    \begin{align*}
+        &D_3 G(x_0,\lambda_0,0,0)=D_1 F(x_0,\lambda_0)\\
+        &D_4(x_0,\lambda_0,0,0)=-v_0
+    \end{align*}
+    L'équation \ref{transvers-ker} permet d'affirmer que
+    \begin{equation*}
+        D_{(2,3)}G(x_0,\lambda_0,0,0): R\cap X\times \R\rightarrow U
+    \end{equation*}
+    est un isomorphisme, le théorème des fonctions implicites nous donne alors des fonctions $w:U_1\times V_1\rightarrow R\cap X$, $\mu: U_1\times V_1\rightarrow \R$ telles que $x_0\in U_1\subseteq U$ $\lambda_0\in V_1\subseteq V$,  $w(x_0,\lambda_0)=0$, $\mu(x_0,\lambda_0)=0$ et 
+    \begin{equation*}
+        \forall (x,\lambda)\in U_1\times V_1,G(x,\lambda,w(x,\lambda),\mu(x,\lambda))=0
+    \end{equation*}
+    qui à réduire $\delta$, on peut supposer 
+    $\gamma(]-\delta,\delta[)\subseteq U_1\times V_1$, et
+    $\mu\circ \gamma$, $w\circ\gamma$ répondent à la question.
+\end{preuve}
+
 \newpage
 \subsection{La bifurcation de Hopf}
+On comprend, avec ce qui précède que l'apparition de nouvelle branche stables depuis $(x_0,\lambda_0)$ peut s'expliquer par le fait que la branche principale devient instable et cette perte de stabilité s'explique par le fait qu'une valeur propre réelle simple de $D_1F(0,\lambda)$ quitte la partie gauche du plan complexe pour aller dans celle de droite, en passant par zéro "assez vite". Maintenant,  on s'intéresse à une paire de valeur propre complexes  conjuguées entre elle quittant la partie gauche du plan complexe quand $\lambda$ atteint une valeur critique $\lambda_0$. Et on montrera que dans ce cas, même si zéro n'est pas valeur propre de $D_1 F(0,\lambda_0)$, des nouvelles solutions périodiques peuvent apparaître (mais bien sûr, pas de nouveaux équilibres vu le théorème des fonctions implicites).
 \newpage
 \subsection{Bifurcations d'attracteurs}
 \end{document}

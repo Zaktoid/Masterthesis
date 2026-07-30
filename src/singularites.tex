@@ -1581,7 +1581,7 @@ préparation
     Et on conclut en appliquant le théorème de preparation
 \end{preuve}
 
-\begin{proposition}
+\begin{proposition}\label{Lemme-unif-depl}
     Soit $G\in\mathcal{E}^m_{p
     +q+k}$ un déploiement 
     d'un germe $f\in\mathcal
@@ -1644,7 +1644,15 @@ Soit $h\in\mathcal{E}_{l}^k$ et $G$ un déploiment à $k$ paramètres de $f$, on
     G(x,\lambda,h(\alpha))
 \end{equation*}
 
-
+Pour ne pas alourdir 
+l'exposé, on admet le lemme 
+suivant. La preuve est 
+classique est faite dans 
+[SOURCE] pour le cas 
+particulier du groupe 
+$\mathcal{B}$ et dans 
+[SOURCE] pour le cas plus 
+général.
 
 \begin{lemme}\colprop{(lemme de réduction)}
 Soit $G$ un déploiement à $k$ paramètres de $f$ et $E=G|_{\R^{p+q}\times\R^{k-1}}$. Si il existe un champ de vecteur $V$ sur $\R^{p+q}\times \R^k$ de la forme
@@ -1652,42 +1660,54 @@ Soit $G$ un déploiement à $k$ paramètres de $f$ et $E=G|_{\R^{p+q}\times\R^{k
     V=\partial_{\alpha_k}+
     \sum_{i=1}^{k-1}a_i(\alpha)\partial_{\alpha_i}+
     \sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}
-    +\sum_{j=1}^{p}V_j(x,\lambda,\alpha)\partial_{x_j}
+    +\sum_{j=1}^{p}V_j(x,\lambda,\alpha)\partial_{x_j},
 \end{equation*}
-Et $Y(x,\lambda,\alpha)$ une famille de champ de vecteurs sur $\R^m$ telle que
+ Et une familles de champs de vecteurs
+\begin{equation*}
+    \mathcal{Y}: \R^{p+q+k}\rightarrow \Gamma T\R^m
+\end{equation*}
+tels que
 \begin{equation}\label{vect-field}
     dG(V)(x,\lambda,\alpha)=
-    Y(x,\lambda,\alpha)\circ G(x,\lambda,\alpha)
+    \mathcal{Y}(x,\lambda,\alpha)\circ G(x,\lambda,\alpha)
 \end{equation}
-Alors il existe une germe de submersion $h$ telle que $G$ est facteur de $h_{*}E$ via l'identité.
+Alors il existe une submersion $h$ telle que $G$ est facteur de $h_{*}E$ via l'identité.
 \end{lemme}
-\begin{preuve}
-    Considérons une courbe intégrale de $V$, i.e  $\gamma: I\subseteq \R \rightarrow \R^{p+q+k}$une solution du systèmes d'équations différentielles
-    \begin{align*}
-        &\gamma'_j=V_j\text{ pour }1\leq j\leq p\\
-        &\gamma'_i=b_{i-p}\text{ pour }{p+1}\leq i\leq p+q\\
-        &\gamma'_i=a_{i-(p+q)}\text{ pour }{p+q+1}\leq i\leq p+q+k-1\\
-        &\gamma'_{p+q+k}=1
-    \end{align*}
-    Grâce à la dernière équation, on a que  
-    \begin{equation*}
-        \gamma_{p+q+k}(t)=\gamma_{p+q+k}(0)+t.
-    \end{equation*}
-    Et le temps d'intégration est alors simplement la variation du dernier paramètre. On peut donc voir cette courbe comme un ensemble de difféomorphisme indexé sur le dernier paramètre:
-    \begin{equation*}
-        (\rho_{\alpha_k}(x,\lambda,\alpha),\Lambda_{\alpha_k}(\lambda),h_{\alpha_k}(\alpha)).
-    \end{equation*}
-    Clairement, les courbes intégrales de $V$ sont transverse au plan 
-    $\left\{\alpha_k=0\right\}$.\\
-    Maintenant, on pose
-    \begin{equation*}
-        \Gamma: \R^{p+q+k}\rightarrow \R^{p+q+k-1},(x,\lambda,\alpha)\rightarrow (\rho_{0}(x,\lambda,\alpha),\Lambda_0(\lambda,\alpha),h_0(\alpha))
-    \end{equation*}
-    $h_0$ est une submersion de $\R^k$ vers $\R^{k-1}$ ,$\rho(\cdot,\lambda,\alpha)$ un difféomorphisme de $\R^p$ et $\Lambda(\cdot,\alpha)$ un difféomorphisme de $\R^q$. Maintenant, on intègre les $Y(x,\lambda,\alpha)$ et on récupère une famille $Y(x,\lambda,\alpha,t)$ de difféomorphisme de $\R^m$.
-    \todo{Terminer la preuve}
-\end{preuve}
-{\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition suffisante du théorème \ref{unif-depl}.}}\ }
-FEUR
+{\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition suffisante du théorème \ref{unif-depl}.}}\ }\\
+supposons que $    \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}$ et soit $H\in\mathcal{E}_{p+q+l}^m$ un autre déploiment de $f$. Considérons le déploiement à $k+l$ paramètres
+\begin{equation*}
+    J(x,\lambda,\alpha,\beta)=G(x,\lambda,\alpha)+H(x,\lambda,\beta)-f(x,\lambda)
+\end{equation*}
+Supposons disposer d'un germe $h\in\mathcal{E}_{k+l}^k$ telle que $J$ est facteur se $h_{*}G$ via l'identité. On a alors
+\begin{equation*}
+    J(x, \lambda, \alpha, \beta) = G(x, \lambda, h(\alpha, \beta)).
+\end{equation*}
+Ce qui donne en $\beta=0$
+\begin{equation*}
+    G(x, \lambda, \alpha) = G(x, \lambda, h(\alpha, 0))
+\end{equation*}
+et donc $h(\alpha,0)=\alpha$, ce qui impose à $h$ d'être une submersion. En évaluant en $\alpha=0$, on a
+\begin{equation*}
+    H(x,\lambda,\beta)=G(x,\lambda,h(0,\beta)).
+\end{equation*}
+Ce qui montre qu'il suffit de trouver une sumbersion $h$ telle que $J$ est facteur de $h_{*}G$ via l'identité. On procède par récurrence sur $l$. Le cas $l=0$ étant évident, on montre l'induction.\\
+On pose $m_i(x,\lambda,\alpha,\beta)=\partial_{\alpha_i} J(x,\lambda,\alpha,\beta)$. Avec les notations de \ref{unif-depl},$m_{i,0}=\partial_{\alpha_i}G(\cdot,\cdot,0)$ et applique alors ce dernier à $J$, ce qui nous donne
+\begin{equation*}
+    \rangle J\langle^m+\rangle  \partial_x J\langle_{\mathcal{E}_{p+q+k+l}}
+    +\rangle  \partial_\lambda J\langle_{\mathcal{E}_{q+k+l}}
+    +\rangle m_1,\cdots,m_k\langle_{\mathcal{E}_{k+l}}=\mathcal{E}_{p+q+k+l}
+\end{equation*}
+En particulier, on peut écrire, avec les notations du lemme précédent
+\begin{equation*}
+    \partial_{\beta_{l}}J=
+    \mathcal{Y}(x,\lambda,
+    \alpha,\beta)(J)+\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}J+\sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}J+\sum_{j=1}^{k}\xi(\alpha,\beta)\partial_{\alpha_i} J.
+\end{equation*}
+Enfin, on pose 
+\begin{equation*}
+    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi(\alpha,s)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}.
+\end{equation*}
+On a que $(dS)(X)=\mathcal{Y}\circ S$, et on applique alors le lemme précédent.
 {\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
 
 
@@ -1697,6 +1717,7 @@ FEUR
 
 \subsection{Approche des chemins de Montaldi}
 Bien que l'approche de Golubitsky propose des outils très concrets pour appréhender les singularités ainsi que leur perturbations, cette dernière devient particulièrement difficile à mettre en place lorsque le nombre de paramètres devient grand. En fait la classification complète des bifurcations à 2 paramètres avec la méthode de Golubitsky est si complexe qu'elle fut le sujet d'une thèse de doctorat ! [SOURCE]\\
+\todomaybe{Pas sûr d'avoir le temps de finir, on verra !}
 
 \newpage
 \end{document}
