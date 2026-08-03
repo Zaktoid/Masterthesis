@@ -41,7 +41,7 @@ triviale}, i.e,  si $(x_0,
 \lambda_0)\in F^{-1}(0)$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \coldef{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
  La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \coldef{classifier} les bifurcations, i.e, étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utile de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les  transformations $T$ qui laissent $P$ invariante ? Le but étant bien sûr de se ramener dans un cas plus simple sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des actions de groupes et étudierons leurs orbites.\\
  La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter globalement  les bifurcations (depuis une branche triviale). D'abord, nous exposons les approches classiques par théorie du degré topologique, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des développements plus modernes: \coldef{le degré orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
- La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \ref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
+ La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
 
 \newpage
 \section{Théorie des opérateurs de Fredholm}
@@ -57,7 +57,7 @@ Soit $U$ un ouvert de $X$ et $F,G\in C^0(U,Y)$, $F$ et $G$ sont \coldef{tangents
 \end{equation*}
 \end{definition}
 Il est clair que la relation "être tangent en un point" est une relation d'équivalence.
-\begin{lemme}
+\begin{lemme}\label{Lemme-unicité}
 Dans les conditions de la définition précédente, s'il existe un élément $h$ de $C^0(U,Y)$ tangent à $f$ en $x_0$ et un élément  $u\in L(X,Y)$ tels que
 \begin{equation}\label{equ1}
     h(x)=f(x_0)+u(x-x_0)
@@ -65,7 +65,7 @@ Dans les conditions de la définition précédente, s'il existe un élément $h$
 alors il est unique
 \end{lemme}
 \begin{preuve}
-   Supposons avoir $h$ et $h'$ satisfaisant \ref{equ1} et notons $u_1,u_2$ les éléments de $L(X,Y)$ correspondant, on a alors 
+   Supposons avoir $h$ et $h'$ satisfaisant \eqref{equ1} et notons $u_1,u_2$ les éléments de $L(X,Y)$ correspondant, on a alors 
    \begin{equation*}
            \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||h(x)-h'(x)||_Y}{||x-x_0||_X}
            = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x)-u_2(x)||_Y}{||x-x_0||}
@@ -92,7 +92,7 @@ Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclur
 \end{preuve}
 On vérifie facilement que si $F$ est constante sur $U$, alors elle est dérivable sur $U$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $du=u$ sur $X$.
 \begin{remarque}
-On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme 1.2, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
+On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme \ref{Lemme-unicité}, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
 \end{remarque}
 \begin{remarque}
 Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
@@ -295,7 +295,7 @@ de ce qui précède, on déduit le résultat suivant
 \begin{proposition}
     Si $d\in\mathcal{F}(X,Y)$ alors il existe des sous espaces fermés $X_0,Y_0$ tels que 
     \begin{equation*}
-        Y=\im d \oplus Y_0\text{ et } X=\ker d\oplus d_0
+        Y=\im d \oplus Y_0\text{ et } X=\ker d\oplus X_0
     \end{equation*}
 \end{proposition}
 On a bien envie que si cette propriété 
@@ -442,7 +442,7 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
     \end{equation*}
     Les injections et projections naturelles $\iota$ et $\pi$ sont évidemment continues. On considère également la fonction
     \begin{equation*}
-        \psi : \mathcal{L}(X,F)\rightarrow \mathcal{L}(X_1,\im d), G\rightarrow \pi G\iota 
+        \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_1,\im d), G\rightarrow \pi G\iota 
     \end{equation*}
     C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (F/\im d)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
     On conclut immédiatement via \ref{lemma-compo} car 
@@ -467,7 +467,7 @@ On définit alors \coldef{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
 Nous montrons maintenant quelques propriétés utiles des opérateurs de Fredholm. 
- Rappelons qu'une fonction continue entre deux espaces topologique $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ et $V\ni x$ un voisinage, il existe un autre voisinage de $x$ $V'$ tel que $V'\subseteq V$ et un voisinage $U$ de $f(x)$ tel que $f':A\rightarrow U$ avec soit propre.
+ Rappelons qu'une fonction continue entre deux espaces topologique $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ et $V\ni x$ un voisinage, il existe un autre voisinage de $x$ $V'$ tel que $V'\subseteq V$ et un voisinage $U$ de $f(x)$ tel que $f':V'\rightarrow U$ avec soit propre.
  \begin{remarque}
     Bien qu'on ne le montrera pas ici, il existe une large  classe d'espaces (appelés $k$-espaces) pour lesquels les fonctions propres sont fermées, et les espace de Banach en font partie. Et il est vrai, en toute généralité, que si une fonction est fermée et que les images inverses de points sont compactes, alors elle est propre. Le lecteur intéressé peut consulter les cours de Lee et Ryszard, par exemple. [SOURCES]
  \end{remarque}
@@ -583,7 +583,7 @@ En pratique, celà signifie qu'il n'y a rien à étudier si l'indice de Fredholm
     \centering
     \includegraphics[width=0.3\textwidth]{figures/GEN_1.png}\hfill
     \includegraphics[width=0.3\textwidth]{figures/GEN_2.png}
-    \caption{ $F^{-1}(-\varepsilon)$ et  pour la pitchfork }
+    \caption{ $F^{-1}(-\varepsilon)$ et $F^{-1}(\varepsilon)$ pour la pitchfork }
     \label{fig:pitchfork_globale}
 \end{figure}
 Le corollaire précédent nous informe que les 

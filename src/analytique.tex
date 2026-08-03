@@ -32,7 +32,7 @@ sont homéomorphes
 
     \begin{equation} \label{SysteLP}
         F(x, \lambda) = 0 \iff 
-\begin{cases} 
+\begin{cases}
     \pi_2 F(\pi_1(x)+(\operatorname*{Id}-\pi_1)(x),\lambda) = 0 \\ 
     (\operatorname*{Id} - \pi_2) F(\pi_1(x) +(\operatorname*{Id}-\pi_1)(x),\lambda) = 0 
 \end{cases}
@@ -58,7 +58,7 @@ Ainsi, $U_1=U'_1+W_1$, $V_1$ et
 \end{equation}
 répondent à la question
 \end{preuve}
-On résume la procédure ci-dessus: On scinde l'espace d'arrivée en 2 grâce à $\pi_2$, ensuite on obtient une description (sur un certain sous voisinage) des solutions de la partie $\im D$, et on applique la seconde projection pour avoir une solution du système \ref{SysteLP}.
+
 \begin{corollaire}\label{corr-deriv-o}
     Avec les notations de la preuve précédente, si $F\in C^1(U\times V,Y)$, alors $\varphi$ et $\Phi$ sont $C^1$ sur leur domaines et
     \begin{equation*}
@@ -72,13 +72,37 @@ On résume la procédure ci-dessus: On scinde l'espace d'arrivée en 2 grâce à
     Notez que lors de la procédure précédente, le choix des espaces compléments $X_0$ et $Y_0$ est arbitraire. Ainsi, à un problème de bifurcation donné, il existe potentiellement plusieurs fonctions de bifurcation associées... Cela motive déjà l'approche proposée lors de la section \ref{detfin} où on introduit la notion d'équivalence entre problèmes de bifurcation. C'est Golubitsky dans 
     \cite{golubitsky1985sgb1} qui remarqua qu'on peut relier le choix arbitraire fait lors de la réduction de Lyapunov-Schmidt avec la notion d'équivalence entre bifurcation : i.e, on veut que deux façons de réduire donnent des fonctions de bifurcation équivalente. 
 \end{remarque}
-
-Pour être plus précis, La 
-procédure ci-dessus réduit le 
-problème en un problème de la 
-même dimension que le "défaut 
-à être bijectif" de $DF(x_0,
-\lambda_0)$. 
+On illustre le principe sur deux exemples, en commençant par un exemple en dimension finie
+\begin{exemple}
+   Considérez la fonction
+   \begin{equation*}
+    F: \R^2\times\R, (x,y,\lambda)\mapsto 
+    \begin{pmatrix}
+        \lambda x -x^3+xy^2\\
+        x\sin(3x)-y
+    \end{pmatrix}
+   \end{equation*}
+   Ci-dessous, une représentation graphique du lieu d'annulation
+   \begin{center}
+       \includegraphics[width=0.32\textwidth]{figures/pitch3DLredux.png}.
+   \end{center}
+   Et la réduction de Lyapunov-Schmidt correspond simplement à projeter cette courbe dans $\R^2$. Des calculs simples permettent d'obtenir que $\ker D_{(x,y)}F(0,0,0)$ est généré par $\begin{pmatrix}
+    1 \\ 0
+   \end{pmatrix}$ et $\im D_{(x,y)}F(0,0,0)$ par 
+   $
+   \begin{pmatrix}
+    0 \\ 1
+   \end{pmatrix}$ 
+   $\pi_1$ et $\pi_2$ sont 
+   alors simplement les 
+   projections canoniques sur 
+   la  première composante (souvenez vous qu'on projette sur la co-image). Dans ce cas-ci, le système s'écrit  \eqref{SysteLP} simplement
+   \begin{align*}
+    x\sin(3x)-y=0\\
+    \lambda x -x^3+xy^2=0
+   \end{align*}
+   \todo{Terminer}
+\end{exemple}
 
 Un exemple classique, la formulation est inspirée de [SOURCE]. 
 \begin{exemple}\label{Poutre}
@@ -106,7 +130,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
         d_1F: (\theta,\lambda)\mapsto
         D^2 + P_{crit}\cos(\theta)\text{ donc } d_1F(0,0): h\mapsto D^2h +P_{crit}h
     \end{equation*}
-    On remarque que les fonctions vérifiant $D^2h +P_{crit}h$ sont de la forme 
+    On remarque que les fonctions vérifiant $D^2h +P_{crit}h=0$ sont de la forme 
     \begin{equation*}
         h: s\mapsto A\cos(\sqrt{P_{crit}}s)+B\cos(\sqrt{P_
         {crit}}s)\text{ avec } A,B\in \R
@@ -126,7 +150,8 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
         \int_{0}^{1} g(s)\phi_n(s)ds=0
     \end{equation*}
     et donc $g$ est dans le noyau de la forme linéaire $h\mapsto\int_{0}^{1}h(s)\phi_n(s)=0$. 
-    Via [PROPOSITION] on sait que l'indice de Fredholm est nul
+    \todo{Montrer que c'est un opérateur d'indice nul}\\
+
     \todo{TERMINER EXEMPLE}
 \end{exemple}
 
@@ -160,7 +185,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (r
 \end{theobox}
 \begin{preuve}
     En appliquant \ref{LP-redux}, et avec les notations de ce théorème, on sait qu'il existe un voisinage de $(x_0,\lambda_0)$, $U_1\times V_1$ sur lequel le problème se ramène à résoudre $\Phi(v,\lambda)=0$.
-    Par hypothèses et via \ref{FI}, cette fonction est continûment dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \ref{fonctionproj} 
+    Par hypothèses et via \ref{FI}, cette fonction est continûment dérivable par rapport à $\lambda$, et on a alors, en appliquant la définition de $\Phi$ donnée par \eqref{fonctionproj} 
     \begin{equation*}
         d_2\Phi(v_0,\lambda_0)=\pi_2 d_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 d_2 F(x_0,\lambda_0)
     \end{equation*}
@@ -364,7 +389,7 @@ $\alpha=n$ si et seulement si tous les $d_2^{*} y_j^{*}$ sont nuls
     dans les conditions présentes, si $\dim \Lambda=1$, $(x_0,\lambda_0)$ est un zéro de type $(\alpha,n)$ si et seulement si $d_2\notin \im d_1$ 
 \end{lemme}
 
-La proposition \ref{zeronlinINd} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $d_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthogonalement par $(\lambda)_{0\leq j\leq n}$. On a également la bi-orthogonalité des $y^{*}_j$ et des $d_2\lambda_i$, on considère l'opérateur associé de Schmidt associé (voir \ref{OpSCHimdt}), qui s'écrit donc
+La proposition \ref{zeronlinINd} nous suggère de considérer le cas particulier d'un zéro de type $(0,n)$. On complète les $d_2^{*}y_j^{*}\in \Lambda^{*}$ bi-orthogonalement par $(\lambda)_{0\leq j\leq n}$. On a également la bi-orthogonalité des $y^{*}_j$ et des $d_2\lambda_i$, on considère l'opérateur associé de Schmidt associé (voir \eqref{OpSCHimdt}), qui s'écrit donc
 
 \begin{equation}\label{SCHMIdTopreminder}
     U=-d_1+ \sum_{i=1}^n x_i^{*}(\cdot) d_2 \lambda_i
@@ -474,7 +499,7 @@ Avant de présenter la preuve, résumons un peu la situation sur un diagramme
     alors c'est un élément de bifurcation non perpendiculaire
 \end{theobox}
 \begin{preuve}
-    On va supposer $\mu$ et $\lambda_1$ alignés, i.e $\mu=t\lambda_1$ avec $t\in\R$ tel que $t\lambda_1\in V_1$. Au vu  de \ref{réécrituresPHI} et la proposition  \ref{ApplicationFI} on doit résoudre $\lambda=\varphi_1(t\lambda_1)$, par bi-orthogonalité, on a
+    On va supposer $\mu$ et $\lambda_1$ alignés, i.e $\mu=t\lambda_1$ avec $t\in\R$ tel que $t\lambda_1\in V_1$. Au vu  de \eqref{réécrituresPHI} et la proposition  \ref{ApplicationFI} on doit résoudre $\lambda=\varphi_1(t\lambda_1)$, par bi-orthogonalité, on a
     \begin{align*}
         \lambda
         = \varphi_1(t\lambda_1)&=\lambda_0+t\lambda_1-\bigg(d_2^{*}y_1^{*}(t\lambda_1)+y_1^{*}\big(\frac{1}{2}W(t\lambda_1)+U(R(t\lambda_1))\big)\bigg)\lambda_1\\
@@ -521,7 +546,7 @@ Avant de présenter la preuve, résumons un peu la situation sur un diagramme
     \begin{equation*}
         \psi(t\lambda_1)=\frac{1}{2}U^{-1}d^2_{11}(x_1,x_1)t^2+R(t\lambda_1)
     \end{equation*}
-    On a alors, utilisant la définition de $\varphi_2$ \ref{réécrituresPHI}
+    On a alors,en utilisant la définition de $\varphi_2$ \eqref{réécrituresPHI}
     \begin{equation*}
         \psi(t_2\lambda_1)-\psi(t_1\lambda_1)=(t_1-t_2)x_1
     \end{equation*}
