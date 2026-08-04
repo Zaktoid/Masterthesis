@@ -1,12 +1,12 @@
 \documentclass[memoire.tex]{subfiles}
 \begin{document}
-\section{Approche topologiques}
+\section{Approche topologique}
 
-Les approches précédentes, bien que permettant d'extraire beaucoup d'information sur la bifurcation, peuvent d'une part être calculatoirement très lourdes, et d'autre part impose une grande régularité à la fonction $F$. Nous présentons ici des résultats de bifurcations obtenus grâce à la théorie du degré. Bien que les informations géométriques soit "vagues", obtiendrons un \coldef{résultat global}. Notez que des techniques purement analytiques peuvent aussi donner des résultats globaux, mais sous hypothèse d'holomorphie, voir par exemple [SOURCE]
+Les approches précédentes, bien que permettant d'extraire beaucoup d'information sur la bifurcation, peuvent d'une part être calculatoirement très lourdes, et d'autre part imposent une grande régularité à la fonction $F$. Nous présentons ici des résultats de bifurcations obtenus grâce à la théorie du degré. Bien que les informations géométriques soient "vagues",nous obtiendrons un \coldef{résultat global}. Notez que des techniques purement analytiques peuvent aussi donner des résultats globaux, mais sous hypothèse d'holomorphie, voir par exemple [SOURCE]
 
 \subsection{Introduction à la théorie du degré}
 
-Plaçons nous, dans un premier temps, en dimension finie et considérons un ouvert borné  $U$ de $\R^n$, $f\in C^0(\bar{U},\R^n)$ et $y\notin f(\partial U)$ et supposons qu'on veuille construire une fonction $\operatorname{deg}$ qui "compte" le nombre de de solutions de l'équation $f(x)=y$ dans $U$. Faisons une petite analyse de la situation: remarquons d'abord qu'on doit avoir la \coldef{normalité}
+Plaçons nous, dans un premier temps, en dimension finie et considérons un ouvert borné  $U$ de $\R^n$, $f\in C^0(\bar{U},\R^n)$ et $y\notin f(\partial U)$ et supposons qu'on veuille construire une fonction $\operatorname{deg}$ qui "compte" le nombre de solutions de l'équation $f(x)=y$ dans $U$. Faisons une petite analyse de la situation: remarquons d'abord qu'on doit avoir la \coldef{normalité}
 \begin{equation*}
     \forall y\in U,\operatorname{deg}(\operatorname{Id},U,y)=1
 \end{equation*}
@@ -31,7 +31,7 @@ alors  on voudrait que
 \begin{equation*}
     \operatorname{deg}(H(t,\cdot),U,y(t))
 \end{equation*}
-Soit toujours le même. Notez qu'en plus la fonction, on s'autorise aussi à bouger la "cible", mais on s'interdit de toucher la frontière !
+Soit toujours le même. Notez qu'en plus de la fonction, on s'autorise aussi à bouger la "cible", mais on s'interdit de toucher la frontière !
 de façon remarquable, en dimension finie, il n'y a qu'une seule fonction qui possède ces propriétés ! On peut donc parler "du" degré. On l'appelle le \coldef{degré de Brouwer}
 
 \begin{definition}
@@ -68,7 +68,7 @@ Il est impossible de généraliser la notion du degré de Brouwer aux espaces de
     \end{equation*}
     C'est une homotopie entre $\operatorname{Id}-f$ et 
     l'identité et $0\notin H([0,1]\times\partial \bar{B(0,r)})
-    $ car, si $x\in\partial \bar{B(0,r)}$, $H(t,x)=x-f(x)\neq 
+    $ car, si $x\in\partial \bar{B(0,r)}$, $H(1,x)=x-f(x)\neq 
     0$ par hypothèse et si $0\leq t<1$
     \begin{equation*}
         |H(t,x)|\geq |x|-t|f(x)|\geq (1-t)r>0
@@ -91,9 +91,9 @@ Un petit contre exemple en dimension infinie:
     \end{equation*}
     On vérifie facilement que $f$ est continue. Supposons donc qu'elle a un point fixe $y$, on aurait alors 
     \begin{equation*}
-        y_1= 1- ||y||_{\infty}\text{ et, si $k\geq 2$  } y_k = |y_1|^{\frac{1}{2^{k-1}}}
+        y_1= 1- ||y||_{\infty}\text{ et, si $k\geq 2$,  } y_k = |y_1|^{\frac{1}{2^{k-1}}}
     \end{equation*}
-    Si $||y||_\infty=1$,  alors tous les $y_k$ sont nuls, absurdité. Si $||y||_\infty<1$, alors $y_1$ et la suite converge vers 1, absurdité car cela impliquerait $||y||_{\infty}=1$
+    Si $||y||_\infty=1$,  alors tous les $y_k$ sont nuls, absurdité. Si $||y||_\infty<1$, alors $y_1>0$ et la suite converge vers 1, absurdité car cela impliquerait $||y||_{\infty}=1$
 \end{exemple}
 \begin{corollaire}
     Il n'existe pas d'équivalent au degré de Brouwer en dimension infinie.
@@ -106,11 +106,11 @@ Le degré de Leray-Schauder est défini sur les \coldef{ perturbations compactes
     Soit $X$ un espace de Banach et 
     \begin{equation*}
         A=\left\{
-            (I-G,U,y): U \subseteq\mathcal{B}(X)\text{ et ouvert },G\in\mathbb{K}(\bar{U}),y\notin (I-G)(\partial U)
+            (I-G,U,y): U \subseteq(X)\text{ est ouvert et borné },G\in\mathcal{K}(\bar{U}),y\notin (I-G)(\partial U)
         \right \}
     \end{equation*}
-    l'ensemble des \coldef{triplets admissibles}
-    il existe une unique fonction 
+    l'ensemble des \coldef{triplets admissibles}.
+    Il existe une unique fonction 
     \begin{equation*}
         \operatorname{deg}: A\rightarrow \mathbb{Z}
     \end{equation*}
@@ -118,7 +118,7 @@ Le degré de Leray-Schauder est défini sur les \coldef{ perturbations compactes
 \end{theobox}
 
 
-Avec ce degré, on peut obtenir des résultats globaux de Bifurcation sa construction nécéssite pas mal de lemmes techniques, les démonstrations sont laborieuse et les résultats sont plus faibles que ceux obtenus avec la notion de degré plus récente présentée ci-dessous
+Avec ce degré, on peut obtenir des résultats globaux de Bifurcation. Sa construction nécessite pas mal de lemmes techniques, les démonstrations sont laborieuses et les résultats sont plus faibles que ceux obtenus avec la notion de degré plus récente présentée ci-dessous.
 
 \subsection{Le degré de Furi}
 \subsubsection{Orientation de fonction de Fredholm d'indice nul}
@@ -148,9 +148,9 @@ Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la m�
    \begin{equation*}
         (D+E')F= (D+E')-(D+E)=E'-E
    \end{equation*}
-   donc $\im F=\im (E-E')$. Et du fait que 
+   donc $\dim\im F=\dim\im (E-E')$. Et du fait que 
    \begin{equation*}
-        \dim \im (E-E')\leq \dim (E+E')\leq \dim(E)+\dim(E'),
+        \dim \im (E-E')\leq \dim\im (E+E')\leq \dim\im(E)+\dim\im(E'),
    \end{equation*}
    on conclut.
 \end{preuve}
@@ -175,7 +175,7 @@ Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la m�
     \begin{equation*}
             \begin{pmatrix}
         \operatorname{Id}_{X'_0} & 0 \\
-        -\pi_F & (I-F)_{E_0} 
+        -\pi_F & (I-F)_{X_0} 
         \end{pmatrix}
     \end{equation*}
 où  $\pi_F$ est la projection sur $X_0$ de  $F_{X'_0}$, on conclut immédiatement. Maintenant, dans le cas général, notez que $X_0\cap X_1$ contient $\im F$ et est de dimension finie. On applique alors le résultat obtenu deux fois 
@@ -197,7 +197,7 @@ Dans la suite, on s'autorisera parfois à écrire $\det \phi_{E,E'}$, en laissai
     $\sim_D$ est une relation d'équivalence sur $\mathcal{C}(D)$
 \end{proposition}
 \begin{preuve}
-    La réfléxivité et la transitivité sont évidentes,on montre alors la transitivité. Soient donc $E,F,G\in\mathcal{C}(D)$ tels que $E\sim_D F$ et $F\sim_D G$ on considère alors un sous vectoriel de dimension fini $X_0$ content les images de $I-\phi_{E,F},I-\phi_{F,G},I-\phi_{E,G}$ , il suifft alors de remarquer que 
+    La réflexivité et la transitivité sont évidentes,on montre alors la transitivité. Soient donc $E,F,G\in\mathcal{C}(D)$ tels que $E\sim_D F$ et $F\sim_D G$ on considère alors un sous vectoriel de dimension fini $X_0$ contenant les images de $I-\phi_{E,F},I-\phi_{F,G},I-\phi_{E,G}$ , il suffit alors de remarquer que 
     \begin{equation*}
         \det \phi_{E,G}|_{X_0}=
         \det \phi_{F,G}\phi_{E,F}|_
@@ -208,7 +208,7 @@ Dans la suite, on s'autorisera parfois à écrire $\det \phi_{E,E'}$, en laissai
     donc $E\sim_{D} G$ 
 \end{preuve}
 
-Il  de plus clair que cette relation d'équivalence partitionne 
+Il est de plus clair que cette relation d'équivalence partitionne 
 $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peuvent être composés et que si $E_1$ et $E_2$ sont des correcteurs de $D_1$ et $D_2$ respectivement, alors $D_2E_1+ E_2E_1+ E_2D_1$ est un correcteur de $D_2D_1$, de fait 
 
 \begin{equation*}
@@ -243,7 +243,7 @@ alors
     \operatorname*{Sign}: \mathcal{G}(D)\rightarrow \mathbf{B}\mathbb{Z}_2, E\mapsto o, \phi_{E,E'}\mapsto \operatorname*{sgn}\det \phi_{E,E'}
 \end{equation*}
 
-est un foncteur donc $\mathcal{G}^+(D)$, la catégorie $\mathcal{G}(D)$ ou on retire les les morphismes dont le determinant restreint est négatif, est un sous groupoïde (c'est même un sous groupoïde normal) de $\mathcal{G}(D)$. Il est clair que ce groupoïde à axactement deux composantes connexes, qui correspondent donc aux choix possibles d'orientation\\
+est un foncteur donc $\mathcal{G}^+(D)$, la catégorie $\mathcal{G}(D)$ ou on retire les les morphismes dont le determinant restreint est négatif, est un sous groupoïde (c'est même un sous groupoïde normal) de $\mathcal{G}(D)$. Il est clair que ce groupoïde à exactement deux composantes connexes, qui correspondent donc aux choix possibles d'orientation\\
 Soit $(D,c)$ un opérateur orienté, via Hanh-Banach, on peut supposer que le correcteur $A$ donné en \ref{correcteur-exemple} est continu, on peut de plus supposer qu'il est positif. Maintenant, $D+A$ est un isomorphisme d'espaces de Banach et il existe un voisinage (pour la topologie des opérateurs) $V_D$ tel que si $D'\in V_D$, alors $A$ est un correcteur de $D'$, on appelle alors \textcolor{color-def}{l'orientation induite par $(D,c)$} sur $D'$ celle qui fait de $A$ un correcteur positif \\
 On définit maintenant l'orientation pour une famille continue d'opérateurs de Fredholm
 \begin{definition}
@@ -251,11 +251,11 @@ On définit maintenant l'orientation pour une famille continue d'opérateurs de 
     $\alpha_{\lambda}$
     est une 
      \textcolor{color-def}{orientation} 
-    si  pour tout $\lambda\in\Lambda$, $\alpha_{\lambda}\in\mathcal{C}(h(\lambda))/\sim_{h(\lambda)}$ et il existe $A_{\lambda}\in\alpha_\lambda$ qui est correcteur positif (pour l'orientation induite) de $h(\lambda')$ si $\lambda'$ est dans un voisinnage de $\lambda$. Une famille est alors dite \textcolor{color-def}{orientable} si il existe une orientation. Un sous ensemble $\mathcal{D}$ d'opérateurs de Fredholm d'indice 0 est orientable si l'inclusion $\iota : \mathcal{D}\rightarrow \mathcal{F}_0(X,Y)$ est orientable
+    si  pour tout $\lambda\in\Lambda$, $\alpha_{\lambda}\in\mathcal{C}(h(\lambda))/\sim_{h(\lambda)}$ et il existe $A_{\lambda}\in\alpha_\lambda$ qui est correcteur positif (pour l'orientation induite) de $h(\lambda')$ si $\lambda'$ est dans un voisinage de $\lambda$. Une famille est alors dite \textcolor{color-def}{orientable} si il existe une orientation. Un sous ensemble $\mathcal{D}$ d'opérateurs de Fredholm d'indice 0 est orientable si l'inclusion $\iota : \mathcal{D}\rightarrow \mathcal{F}_0(X,Y)$ est orientable
 \end{definition}
 
 \begin{lemme}
-    Dans les condition de la définition précédente, si $\Lambda$ est connexe, et si $h$ est orientable, alors $h$ admet exactement deux orietations 
+    Dans les condition de la définition précédente, si $\Lambda$ est connexe, et si $h$ est orientable, alors $h$ admet exactement deux orientations 
 \end{lemme}
 
 \begin{preuve}
@@ -284,7 +284,7 @@ On peut maintenant construire le degré de Furi
     \textcolor{color-def}{admissible} si $F^{-1}(y)\cap U$ est compact et \textcolor{color-def}{fortement admissible } si $F$ admet une extension $F'$ continue $\bar{U}$, propre, et telle que $y\notin F(\partial U)$
 \end{definition}
 
-Dans la suite, on suppose $F$ orientée.Du fait que les fonctions de Fredholm sont localement propre \ref{propre-fred}, l'admissiblité du triplet $(F,X,y)$ implique l'existance d'un voisinnage ouvert de $F^{-1}(y)$ qui rend le triplet $(F,U,y)$ fortement admissible 
+Dans la suite, on suppose $F$ orientée.Du fait que les fonctions de Fredholm sont localement propre \ref{propre-fred}, l'admissiblité du triplet $(F,X,y)$ implique l'existence d'un voisinage ouvert de $F^{-1}(y)$ qui rend le triplet $(F,U,y)$ fortement admissible 
 
 \begin{definition}
     Soit $U\subseteq X$ un ouvert et  $H\in C^0(U\times [0,1],Y)$ continûment dérivable par rapport à la première variable. $(H,\alpha)$ est une \coldef{homotopie orientée} si $\alpha$ est une orientation de $D_1 H$
@@ -292,7 +292,7 @@ Dans la suite, on suppose $F$ orientée.Du fait que les fonctions de Fredholm so
 
 On adapte alors les propriétés qu'on voudrait avoir pour  le degré \\
 Les conditions d'\coldef{additivité} et de \coldef
-{normalité} restent les mêmes que pour le degré de Brouver \coldef{L'invariance par 
+{normalité} restent les mêmes que pour le degré de Brouwer \coldef{L'invariance par 
 homotopie} devient une \coldef{invariance par homotopie 
 orientée}:\\  Soit $H: U\times [0,1]\rightarrow Y$ une homotopie orientée et $y\in C^0([0,1],Y)$, si l'ensemble 
 \begin{equation}\label{K-dude}
@@ -346,7 +346,7 @@ Enfin, une propriété qui nous permet de faire l'analogue de l'analogue de la r
 \end{remarque}
 \coldef{Réduction}: si $F:X\rightarrow Y$ est orientée et $F\pitchfork Y_0$, alors on pose  $F_1$ la restriction de $F$ à $X_0=F^{-1}(Y_0)$, alors on veut que
 \begin{equation*}
-    \deg (f,X,y)=\deg(f_1,X_0,y)
+    \deg (F,X,y)=\deg(F_1,X_0,y)
 \end{equation*}
 On aussi la propriété \coldef{d'excision} qui découle directement de l'additivité:
  si $(F,X,y)$ est admissible et $U$ est un voisinage ouvert de $F^{-1}(y)$ alors 
@@ -355,7 +355,7 @@ On aussi la propriété \coldef{d'excision} qui découle directement de l'additi
 \end{equation*}
 
 \begin{definition}
-    Si $(F,X,y)$ est $y$ est une valeure régulière de $F$. alors on pose
+    Si $(F,X,y)$ est $y$ est une valeur régulière de $F$. alors on pose
     \begin{equation*}
         \deg_f(F,X,y)=\sum_{x\in f^{-1}(y)} \operatorname{sgn}DF(x)
     \end{equation*}
@@ -403,7 +403,7 @@ conditions attendues.\\
 \end{lemme}
 
 \begin{preuve}
-    Par le lemme précédent,  $X_0$ est bien bien une variété de même dimension que $Y_0$, on montre alors qu'elle est orientable.
+    Par le lemme précédent,  $X_0$ est bien bien une variété de même dimension que $Y_0$, on montre alors qu'elle est orientable.\todo{terminer, conséquence directe de l'orentabilité d'un espace de dimension fini et de l'orientabilité de $F$}
 \end{preuve}
 
 \begin{lemme}
@@ -413,7 +413,7 @@ conditions attendues.\\
     $, alors il existe un 
     voisinage $V$ de $y$ tel que 
     pour toute paire de valeur 
-    régulière $y_1,y_2\in V$, on aie 
+    régulière $y_1,y_2\in V$, on ait 
     \begin{equation*}
         \deg_f(F,U_1,y_1)= \deg_f(F,U_2,y_2)
     \end{equation*}
@@ -438,13 +438,13 @@ On peut maintenant définir le degré de Furi
     \begin{equation*}
         \deg_f(F,U,y)=\deg_B(F,W,y_0)
     \end{equation*}
-    avec $y_0$ une valeur régulière suffisement proche de $y$
+    avec $y_0$ une valeur régulière suffisamment proche de $y$
 \end{definition}
 
 Le résultat suivant est en fait une version plus puissante de \ref{propre-fred}
 
 \begin{lemme}\label{lemme-loc-prop}
-    Soit $U$ un ouvert de $\R^n\times X$, et $F\in C^0(U,Y)$. Si $F$ est continument dérivable par rapport à $\lambda$ et si $D_2F$ est de Fredholm sur $U$, alors $F$ est localement propre
+    Soit $U$ un ouvert de $\R^n\times X$, et $F\in C^0(U,Y)$. Si $F$ est continûment dérivable par rapport à $\lambda$ et si $D_2F$ est de Fredholm sur $U$, alors $F$ est localement propre
 \end{lemme}
 \begin{preuve}
     Soit $(x_0,\lambda_0)\in U$, étant donné que $D=D_2F(x_0,\lambda_0)$ est de Fredholm, il existe des sous espaces $X_0,Y_0$ tels que $X=\ker D\oplus X_0 $ et $Y=Y_0\oplus \im D$. On pose alors $\pi_1,\pi_2$ les projections naturelles associées avec la décomposition de $Y$. Un élément de $X$ (resp. $Y$) s'écrit comme $x_1+x_2$ (resp. $y_1+y_2$) avec $x_1\in \ker D$ (resp $y_1\in Y_0$) et 
@@ -477,7 +477,7 @@ Le résultat suivant est en fait une version plus puissante de \ref{propre-fred}
     \lambda_n)=(y_1)$, on veut montrer que $(x_{1,
     n},x_{2,n},\lambda_n)_
     {n\in\mathbb{N}}$ admet une sous suite 
-    convergente. On peut supposer que $\lambda_n$ et $x_{1,n}$ converge ($A$ et $D$ de dimension finie)
+    convergente. On peut supposer que $\lambda_n$ et $x_{1,n}$ converge ($A$ et $D$ de dimension finie). La continuité de $g$ permet de conclure.
 \end{preuve}
 
 
@@ -518,7 +518,7 @@ On peut déjà obtenir un petit résultat local
     =\left\{ x\in X: (x,\lambda)\in U\right\}$ est 
     non vide, $F(\cdot,\lambda): U_{\lambda}
     \rightarrow Y$ est de Fredholm d'index nul et si 
-    $D_2F$ est coninue sur $U$
+    $D_2F$ est continue sur $U$
 \end{definition}
 \begin{remarque}
     Notez que cette condition est plus faible que celles des chapitres précédents étant donné qu'on ne demande pas à $F$ elle même d'être régulière sur une partie du produit $X\times \Lambda$
@@ -553,7 +553,7 @@ On peut déjà obtenir un petit résultat local
     \begin{equation*}
         \deg_f (F(\cdot,\lambda),B_r(0),0)=\operatorname*{Sign}D_2F(\cdot,\lambda)=\operatorname*{Sign} \det ((D_2F(0,\lambda)+A)^{-1}D_2F(0,\lambda))
     \end{equation*}
-    si $\lambda\in ]\lambda_0-\delta,\lambda_0+\delta[ $.Le signe reste alors constant, contradiciton.
+    si $\lambda\in ]\lambda_0-\delta,\lambda_0+\delta[ $.Le signe reste alors constant, contradiction.
 \end{preuve}
 \subsubsection{Un résultat global via le degré de Furi}
 Nous allons maintenant obtenir un résultat de Bifurcation global. Pour ce-faire, il nous faut d'abord montrer quelques lemmes techniques, à commencer par un résultat purement topologique, dû à [SOURCE]. Ce dernier dépend du résultat suivant, que nous admettons afin de ne pas alourdir l'exposé
@@ -583,7 +583,7 @@ Nous allons maintenant obtenir un résultat de Bifurcation global. Pour ce-faire
     les autres points, ce qui en fait un espace compact et séparé (c'est simplement le compactifié). Il suffit alors de trouver un 
     sous ensemble connexe $C$ de $E'\setminus(K\cup 
     \left\{\infty \right\}) $ et tel que $\infty\in 
-    \bar{C}$. Supposons qu'un tel ensemble n'existe pas, du fait que $(E',\mathcal{T}')$ est compact et séparé, et au vu \ref{seperation-of-sets}, on peut trouver deux ensembles compacts $C_{\infty}\ni \infty $ et $C_{K}\supseteq K$ tels que $C_{K}\cup C_{\infty}=E'$, $C_{K}\cap C_{\infty}=\infty $. Mais alors, $C_{K}$ est un compact ouvert, donc de frontière vide, qui contient $K$, impossible. Donc il existe bel et bien un tel $C$
+    \bar{C}$. Supposons qu'un tel ensemble n'existe pas, du fait que $(E',\mathcal{T}')$ est compact et séparé, et au vu \ref{seperation-of-sets}, on peut trouver deux ensembles compacts $C_{\infty}\ni \infty $ et $C_{K}\supseteq K$ tels que $C_{K}\cup C_{\infty}=E'$, $C_{K}\cap C_{\infty}=\emptyset $. Mais alors, $C_{K}$ est un compact ouvert, donc de frontière vide, qui contient $K$, impossible. Donc il existe bel et bien un tel $C$
 \end{preuve}
 \begin{remarque}
     La condition du lemme précédent est vraie dès qu'on a un espace séparé, connexe et non compact $E$. En effet supposons avoir un compact $K_1$ qui contient $K$. Si on suppose $\partial K_1=\emptyset$ alors $K_1$ est ouvert fermé, étant donné qu'il est non vide, on doit avoir $K_1=E$, contradiction car $E$ non compact
@@ -623,7 +623,7 @@ famille continue orientable de fonctions de
 Fredholm d'indice zéro ayant une branche triviale de solution. Si 
 
 \begin{equation*}
-    \lambda\rightarrow DF(\lambda,\cdot)(0)
+    \lambda\rightarrow D_1F(\cdot,\lambda)(0)
 \end{equation*}
 présente un saut de signe en $\lambda_0$ alors il existe un ensemble connexe de solution non triviale $S$ tel que son adhérence dans $U$ contient $(0,\lambda_0)$ et est soit non compacte, soit contient un point $(\lambda_1,0)$ avec $\lambda_1\neq \lambda_0$
 
@@ -632,7 +632,7 @@ présente un saut de signe en $\lambda_0$ alors il existe un ensemble connexe de
 \begin{preuve}
     On choisi une orientation pour $F$. Soit $S$ l'ensemble des solutions non-triviales, on cherche à appliquer le lemme \ref{Lemme-top-pure} à $E=S\cup \left\{ (0,\lambda_0)\right\}$ et $K=\left\{(0,\lambda_0)\right\}$. Via le lemme \ref{lemme-loc-prop}, $F$ est localement propre, donc $S$ est localement compact donc $E$ l'est aussi. Supposons qu'il existe un compact $K_1$ de frontière vide contenant $(0,\lambda_0)$. C'est alors un voisinage ouvert de $(0,\lambda_0)$ dans $E$ ce qui implique qu'il existe un ouvert $V\subseteq U$ tel que $V\cap E=K_1$. Soient $\lambda_1,\lambda_2\in R$ tels que $\lambda_1<\lambda_0<\lambda_2$ et $[\lambda_1,\lambda_2]\times \left\{0\right\}\subseteq V$ et
     \begin{equation*}
-        \operatorname{sign}D_2F(0,\lambda_1)\operatorname{sign}D_2F(0,\lambda_1)<0.
+        \operatorname{sgn}D_1F(0,\lambda_1)\operatorname{sgn}D_1F(0,\lambda_2)<0.
     \end{equation*}
     Notez qu'étant donné $\lambda\in\R$ fixé, on a, avec des notations évidentes,
     \begin{equation*}
@@ -659,9 +659,9 @@ présente un saut de signe en $\lambda_0$ alors il existe un ensemble connexe de
     \end{equation*}
     Or, par définition du degré, on a que
     \begin{equation*}
-        \deg_f(F(\cdot,\lambda_1),B(0,\delta)_{||X||},0)=\operatorname{sign}D_2F(\lambda_1,0)
+        \deg_f(F(\cdot,\lambda_1),B(0,\delta)_{||X||},0)=\operatorname{sgn}D_1F(\lambda_1,0)
     \end{equation*}
-    ce qui est impossible, car il y'a un chamgement de signe $\lambda_0$. On conclut alors an appliquant le lemme \ref{Lemme-top-pure}, on obtient l'existence d'un ensemble connexe $C\subseteq E$ dont l'adhérence n'est pas compact dans $E$ et intersecte $\left\{(0,\lambda_0)\right\}$. Si l'adhérence de $C$ dans $U$ n'est pas compacte, alors on a terminé. On suppose alors que $\bar{C}\cap U$ est compact. On a alors que $\bar{C}\cap E$, n'étant pas compact est strictement contenu dans $\bar{C}\cap U$. Et donc, $\bar{C}$ contient une solution à l'équation $F(x,\lambda)=0$ qui n'est pas dans $E$, et c'est une solution triviale $(0,\lambda_1)$, avec $\lambda_1\neq \lambda_0$
+    ce qui est impossible, car il y'a un changement de signe $\lambda_0$. On conclut alors en appliquant le lemme \ref{Lemme-top-pure}, on obtient l'existence d'un ensemble connexe $C\subseteq E$ dont l'adhérence n'est pas compacte dans $E$ et intersecte $\left\{(0,\lambda_0)\right\}$. Si l'adhérence de $C$ dans $U$ n'est pas compacte, alors on a terminé. On suppose alors que $\bar{C}\cap U$ est compact. On a alors que $\bar{C}\cap E$, n'étant pas compact est strictement contenu dans $\bar{C}\cap U$. Et donc, $\bar{C}$ contient une solution à l'équation $F(x,\lambda)=0$ qui n'est pas dans $E$, et c'est une solution triviale $(0,\lambda_1)$, avec $\lambda_1\neq \lambda_0$
 \end{preuve}
 
 \begin{figure}[htbp]
