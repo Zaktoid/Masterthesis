@@ -70,32 +70,31 @@ Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" 
 \subsection{Le principe d'échange de stabilité}
 
 Si on se place dans une situation de bifurcation simple alors l'équilibre qui se trouve au croisement $(x_0,\lambda_0)$ des deux courbes n'est pas stable. Le but de cette section est alors de comprendre la stabilité des équilibres qui sont proches, et donc de comprendre comment le spectre, et spécifiquement la valeur propre $0$ se comporte au voisinage de $(x_0,\lambda_0)$.\\
-
-
+On suppose bien sûr que $F(\cdot,\lambda)$ est de Fredholm si $\lambda$ au voisinage de $\lambda_0$
 
 \begin{proposition}\label{courbe-vp}
-    Soit $F\in C^2(U\times V,Y)$ une fonction de Fredholm d'indice nul.
+    Soit $U\times V$ un voisinage de $(x_0,\lambda_0)$,$F\in C^2(U\times V,Y)$ une famille de fonctions de Fredholm d'indice nul.
     Posons $N=\ker D_1F(x_0,\lambda_0)$
     et $R=\im D_1F(x_0,\lambda_0)$ et 
     supposons que
     \begin{equation}\label{transvers-ker}
-        N=\rangle v_0\langle_\R\Rightarrow v_0\notin R.
+        N=\rangle \hat{v_0}\langle_\R\text{ et }\hat{v_0}\notin R.
     \end{equation}
     Il existe alors une courbe de solution $\gamma\in C^1(]-\delta,\delta[,X\times \R)$, $\mu\in C^1(]-\delta,\delta [, \R)$ et $w\in C^1(]-\delta,\delta[,X\cap R)$ tels que $w(0)=0$ et
-    \begin{equation*}
-        D_1F(\gamma)(v_0+w(s))=\mu(s)(v_0+w(s)).
-    \end{equation*}
+    \begin{equation}\label{perturb-vb}
+        D_1F(\gamma)(\hat{v_0}+w(s))=\mu(s)(\hat{v_0}+w(s)).
+    \end{equation}
     On dit que $\mu$ est une courbe de valeurs propres perturbées
 \end{proposition}
 \begin{preuve}
     Posons
     \begin{equation*}
-        G: U\times V\times (R\cap X)\times \R\rightarrow Y, (x,\lambda,w,\mu)\mapsto D_1 F(x,\lambda)(v_0+w)-\mu(v_0+w)
+        G: U\times V\times (R\cap X)\times \R\rightarrow Y, (x,\lambda,w,\mu)\mapsto D_1 F(x,\lambda)(\hat{v_0}+w)-\mu(\hat{v_0}+w)
     \end{equation*}
     Notez que $G(x_0,\lambda_0,0,0)=0$ et 
     \begin{align*}
         &D_3 G(x_0,\lambda_0,0,0)=D_1 F(x_0,\lambda_0)\\
-        &D_4(x_0,\lambda_0,0,0)=-v_0
+        &D_4(x_0,\lambda_0,0,0)=-\hat{v_0}
     \end{align*}
     L'équation \ref{transvers-ker} permet d'affirmer que
     \begin{equation*}
@@ -159,18 +158,22 @@ nous permet d'écrire, avec les notations de la proposition précédente,
     Y=R\oplus N\text{ et donc }
     X=N\oplus (R\cap X)
 \end{equation*}
-On pose alors $\pi_1: Y\rightarrow N$ et $\pi_2: \pi_1|_{X}$. Du fait que le noyau est de la forme $\rangle v\langle_\R$, le théorème de Hahn-Banach nous assure l'existence d'un élément du dual $v_0^*$ tel que $v_0^{*}(v_0)=1$ et qui est nul sur $\R$. on peut alors écrire $\pi_1$ comme $\pi_1(y)=v_0^{*}(y)v_0$. On peut alors utiliser $\pi_1$ et $\pi_2$ pour faire la réduction de Lyapunov-Schmidt, en effet, on rappelle que la co-image coïncide ici avec la noyau. Rappelons que la fonction $\Phi$ obtenue par cette réduction (c.f 
-\eqref{fonctionproj}) nous permet de trouver une courbe de solution, plus précisemment, il existe
+On pose alors $\pi_1: Y\rightarrow N$ et $\pi_2: \pi_1|_{X}$. Du fait que le noyau est de la forme $\rangle \hat{v_0}\langle_\R$, le théorème de Hahn-Banach nous assure l'existence d'un élément du dual $\hat{v_0}^*$ tel que $\hat{v_0}^{*}(\hat{v_0})=1$ et qui est nul sur $\R$. on peut alors écrire $\pi_1$ comme $\pi_1(y)=\hat{v_0}^{*}(y)\hat{v_0}$. On peut alors utiliser $\pi_1$ et $\pi_2$ pour faire la réduction de Lyapunov-Schmidt, en effet, on rappelle que la co-image coïncide ici avec la noyau. Rappelons que la fonction $\Phi$ obtenue par cette réduction (c.f 
+\eqref{fonctionproj}) nous permet de trouver une courbe de solution, plus précisemment, il existe, avec les notations de la preuve de \ref{LP-redux}
 \begin{equation*}
-    \gamma: ]-\delta,\delta[\rightarrow N\times \R, t\mapsto (\pi_2(t),\lambda(t))
+    \gamma': ]-\delta,\delta[\rightarrow N\times \R, s\mapsto (\pi_2(s),\lambda(s))
 \end{equation*}
-telle que $\Phi(\gamma(]-\delta,\delta[))=\left\{0\right\}$.
-Maintenant, on se ramène à un problème sur $\R^2$ en posant
+telle que $\Phi(\gamma'(]-\delta,\delta[))=\left\{0\right\}$. Ici, $\Phi$ sera à valeurs dans $N$. On effectue alors un changement de coordonnées pour se ramener dans $\R^2$. On pose $\pi_2(x_0)=v_0$ et $\pi_2(s)=v(s)$, on a dans ce cas que $\gamma(0)=(v_0,\lambda_0)$. On pose également
 \begin{equation*}
-    \Psi : U_2\times V_2\rightarrow \R, (y,\lambda)\mapsto v_0^*(\Phi(v_0+yv_0,\lambda))
+    y: ]-\delta,\delta[\rightarrow\R,s\mapsto \hat{v_0}^*(v(s)-v_0)\text{ et }\Psi : ]-\delta,\delta[\times V_1\rightarrow \R, (y,\lambda)\mapsto \hat{v_0}^{*}(\Phi(v_0+y\hat{v_0}))
 \end{equation*}
-\begin{proposition}
-    Avec les notations qui précèdent, on a
+Avec $V_1$ comme dans \ref{LP-redux}. On a dans ce cas
+\begin{equation*}
+    \Psi(y(s),\lambda(s))=0\text{ et }(y(0),\lambda(0))=(0,\lambda_0)
+\end{equation*}
+Celà étant, la proposition suivante nous permet de relier les variations de la courbe de valeur propre perturbée $\mu$ et la géométrie de $\Psi^{-1}(0)$, qui n'est qu'une reparamétrisation locale du lieu d'annulation de départ $F^{-1}(0)$.
+\begin{proposition}\label{prop-perturb-deriv}
+    Avec les notations qui précèdent, et en supposant $F\in C^3(U\times V)$ on a
     \begin{equation*}
         \partial_s D_1 \Psi(\gamma)(0)=\partial_s \mu(0)
     \end{equation*}
@@ -179,15 +182,78 @@ Maintenant, on se ramène à un problème sur $\R^2$ en posant
         \partial^2_{s}D_1\Psi(\gamma)(0)=\partial^2_s\mu(0)
     \end{equation*}
 \end{proposition}
-
 \begin{preuve}
-    Soit $\mu(s)$
+    Par définition, on a
+    \begin{equation*}
+        D_1\Psi(y,\lambda)=\hat{v_0}^*(D_1\Phi(v_0+y\hat{v_0},\lambda))
+    \end{equation*}
+    et
+    \begin{equation}\label{eq-dyn-1}    
+        \begin{aligned}
+            &\partial_s(\hat{v_0}^*(D_1\Phi(v_0+y(s)\hat{v_0},\lambda)))(0)\\
+            =&\hat{v_0}^*(D^2_{11}\Phi(v_0,\lambda_0)[\partial_s y(0)\hat{v_0},\hat{v_0}])+\partial_s\lambda(0)\hat{v_0}^{*}(D^2_{12}\Phi(v_0,\lambda_0))
+        \end{aligned}
+    \end{equation} 
+    En dérivant \eqref{perturb-vb} par rapport à $s$ et en évaluant à zéro, on récupère, en posant $\gamma(s)=(x(s),\lambda(s))$
+    \begin{equation}\label{eq-dyn-2}
+        D^2_{11}F(x_0,\lambda_0)[\partial_s x(0),\hat{v_0}]+D^2_{12}F(x_0,\lambda_0)\hat{v_0}\partial_s\lambda(0)+D_1F(x_0,\lambda_0)\partial_sw(0)=\partial_s\mu (0)\hat{v_0}
+    \end{equation}
+    Et donc
+    \begin{equation}\label{eq-dyn-3}
+        \partial_s\mu(0)=\hat{v_0}^*(D^2_{11}F(x_0,\lambda_0)[\partial_sx(0),\hat{v_0}])+\hat{v_0}^*(D^2_{12}F(x_0,\lambda_0)\hat{v}_0)\partial_s\lambda(0)
+    \end{equation}
+    En utilisant le fait que $x(s)=v(s)+\varphi(v(s,\lambda(s)))$, on obtient, avec le corollaire \ref{corr-deriv-o}
+    \begin{equation}\label{eq-dyn-4}
+        \partial_s x(0)=\partial_sy(0)\hat{v_0}+D_2\varphi(x_0,\lambda_0)\partial_s\lambda(0)
+    \end{equation}
+    De plus, par ce même corollaire, on a 
+    \begin{equation}\label{eq-dyn-5}
+        \hat{v_0}^*(D^2_{11}\Phi(v_0,\lambda_0)[\partial_sy(0)\hat{v_0},\hat{v_0}])=\hat{v_0}^*(D^2_{11}F(x_0,\lambda_0)[\partial_s y(0)\hat{v_0},\hat{v_0}])
+    \end{equation}
+    et
+    \begin{equation}\label{eq-dyn-6}      
+        \begin{aligned}
+            &\hat{v_0}^*(D^2_{12}\Phi(v_0,\lambda_0)\hat{v_0})\\
+            &=\hat{v_0}^*(D^2_{11}F(v_0,\lambda_0)[\hat{v_0},D_2\varphi(x_0,\lambda_0)])+\hat{v_0}^*(D^2_{12}F(v_0,\lambda_0)\hat{v_0})
+        \end{aligned}
+    \end{equation}
+    En combinant \eqref{eq-dyn-1}, \eqref{eq-dyn-4}, \ref{eq-dyn-5},\ref{eq-dyn-6} avec \eqref{eq-dyn-3} nous donne la première équation de l'énoncé\\
+    On commence par prouver la seconde dans un cas particulier: on suppose
+    \begin{equation*}
+        x(s)=s\hat{v_0}+\varphi(s\hat{v_0},\lambda(s))
+    \end{equation*}
+    ce qui implique $x(0)=0,\partial_sx(0)=\hat{v_0},\partial_s\lambda(0)$ et $F(0,\lambda)=0$ si $\lambda\in V_1$. On suppose également $\partial_s\mu(0)=0$. On dérive une deuxième fois \eqref{perturb-vb}, ce qui nous donne
+    \begin{equation}
+        \begin{aligned}
+            &D^3_{111}F(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}]+2D^2_{11}F(0,\lambda_0)[\hat{v_0},\partial_sw(0)]\\
+            &+D^2_{11}F(0,\lambda)[\partial^2_s x(0)]+D^2_{12}F(0,\lambda_0)\hat{v_0}\partial^2_s\lambda(0)\\
+            &+D_1F(0,\lambda_0)\partial^2_sw(0)=\partial^2_s\mu(0)\hat{v_0}
+        \end{aligned}
+    \end{equation}
+    On a alors que
+    \begin{equation*}
+        \partial^2_sx(0)=D^2_{11}\varphi[\hat{v_0},\hat{v_0}]
+    \end{equation*}
+    L'équation \eqref{eq-dyn-3}, quand $\partial_s\mu(0)=0$, peut être résolue pour $\partial_sw(0)\in (I-\pi_1)X$.
+    Ce qui nous donne
+    \begin{equation*}
+        \partial_s w(0)=-(I-\pi_1)(D_1F(0,\lambda_0))^{-1}(I-\pi_2)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]=\partial^2_sx(0)
+    \end{equation*}
+    \todo{Terminer les calculs}
 \end{preuve}
+On peut maintenant formuler le principe d'échange de stabilité
+\begin{definition}
+    Dans les conditions habituelles de ce chapitre,
+    soient \\
+    $\gamma_1(s)=\left(x_1(s),\lambda_1(s)\right)$,$\gamma_2(s)=\left(x_2(s),\lambda_2(s)\right)$ deux courbes de solutions passant par $(x_0,\lambda_0)$. Supposons $\pi_1x_i(s)=v_0+y_i(s)\hat{v}_0$, $i=1,2$. Si il existe des paramètres $s_1,s_2$ tels que $y_1(s_1),y_2(s_2)$ sont des zéros consécutifs de $\Psi(\cdot,\lambda)$ en $\lambda=\lambda(s_1)=\lambda(s_2)$ alors les courbes sont dites adjacentes
+\end{definition}
 
-On en tire le résultat suivant
 \begin{theobox}{Principe d'échange de stabilité}{}
-    feur
+    Si $\gamma_1,\gamma_2$ sont des courbes de solutions adjacentes et si $\partial_s\mu(0)\neq 0$ ou $\partial_s\mu(0)=0$ et $\partial^2_s\mu(0)\neq 0$. Alors si $s_1,s_2$ sont comme dans la définition précédente, et si $\mu_i$ sont les courbes de valeurs propres perturbées des $\gamma_i$, alors $\mu_1(s_1)\mu_2(s_2)<0$
 \end{theobox}
+\begin{preuve}
+    Cela découle directement de la proposition \ref{prop-perturb-deriv}
+\end{preuve}
 \subsection{Lien entre spectre et stabilité}\label{eigen-stab}
 Ici, on explore plus en détail le lien 
 entre le spectre de la jacobienne et 
@@ -241,8 +307,92 @@ Notez que c'est une propriété "générique"
 
 \newpage
 \subsection{La bifurcation de Hopf}
-On comprend, avec ce qui précède que l'apparition de nouvelle branche stables depuis $(x_0,\lambda_0)$ peut s'expliquer par le fait que la branche principale devient instable et cette perte de stabilité s'explique par le fait qu'une valeur propre réelle simple de $D_1F(0,\lambda)$ quitte la partie gauche du plan complexe pour aller dans celle de droite, en passant par zéro "assez vite". Maintenant,  on s'intéresse à une paire de valeur propre complexes  conjuguées entre elle quittant la partie gauche du plan complexe quand $\lambda$ atteint une valeur critique $\lambda_0$. Et on montrera que dans ce cas, même si zéro n'est pas valeur propre de $D_1 F(0,\lambda_0)$, des nouvelles solutions périodiques peuvent apparaître (mais bien sûr, pas de nouveaux équilibres vu le théorème des fonctions implicites).
+\subsubsection{Introduction}
+On comprend, avec ce qui précède que l'apparition de nouvelle branche 
+stables depuis $(x_0,\lambda_0)$ peut s'expliquer par le fait que la 
+branche principale devient instable et cette perte de stabilité s'explique 
+par le fait qu'une valeur propre réelle simple de $D_1F(0,\lambda)$ quitte 
+la partie gauche du plan complexe pour aller dans celle de droite, en 
+passant par zéro "assez vite". Maintenant,  on s'intéresse à une paire de 
+valeur propre complexes  conjuguées entre elle quittant la partie gauche du 
+plan complexe en passant par l'axe imaginaire pure quand $\lambda$ atteint 
+une valeur critique $\lambda_0$. Et on montrera que dans ce cas, même si 
+zéro n'est pas valeur propre de $D_1 F(0,\lambda_0)$, des nouvelles 
+solutions périodiques peuvent apparaître (mais bien sûr, pas de nouveaux 
+équilibres vu le théorème des fonctions implicites).\\
+Pour se faire une idée, on peut commencer par regarder un système dynamique simple pour lequel une telle bifurcation apparaît
+\begin{exemple}
+    Considérons le modèle d'interaction prédateur-proie de Lotka-Volterra: on pose $p$ la densité de population de la proie (le nombre de singes par $km^2$) et $q$ la densité de population du prédateur (le nombre de jaguars par $km^2$)
+    On considère alors le système
+    \begin{equation*}
+        \partial_tx=F(x)\text{ avec }F:\R^2\rightarrow\R^2, (p,q)\mapsto(\alpha p-\beta pq,-\gamma q+\delta pq)
+    \end{equation*}
+    Avec $\alpha$ la taux de croissance maximal de la population de la proie, $\beta$ la taux de succès de chasse du prédateurs, $\gamma$ la mortalité du prédateur et $\delta$ l'effet de la présence de proies sur le taux de croissance de la population de prédateur. 
+    Regardons le champ de vecteurs associé:
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{figures/hopf_1.png}
+    \end{center}
+    Quelques observations: l'équilibre en bas à gauche correspond au cas ou aucun animal n'est dans le système, il est instable dans la mesure ou introduire des proies sans prédateurs fait exploser leur population, tandis qu'introduire des prédateurs sans proie conduit immédiatement à leur disparition. \footnote{Notez que le modèle suppose que les proies ont accès à une quantité illimitée de ressources, pour le rendre plus réaliste, on pourrait faire dépendre le taux de mortalité de la population globale}. Les orbites elliptiques correspondent aux régimes "stables", qui ici sont oscillants. Une perturbation d'une solution qui est en "régime oscillant" conduit tantôt en une explosion de la population de proies, tantôt en un effondrement du système. Ici, on  étudiera comment détecter ces passages à des "régimes oscillants"
+\end{exemple}
 
-\subsection{Bifurcations d'attracteurs}
-\newpage
+Notez que $x(t)$ est une solution de $2\pi$-périodique de $\kappa\partial_t x=F(x,\lambda)$ si et seulement si $x(\kappa t)$ est une solution périodique de $\partial_t x=F(x,\lambda)$, on considère alors
+\begin{equation*}
+    G(x,\kappa,\lambda)=\kappa \partial_t x-F(x,\lambda).
+\end{equation*}
+Et la détection de solutions $2\pi$-périodiques revient alors à chercher les zéros de $G$. 
+\begin{definition}
+    Soit $E$ un espace de Banach, on défini \coldef{l'espace de Hölder} des fonction continues $2\pi$ périodique réelles à valeurs dans $X$ comme
+    \begin{align*}
+        C^{\alpha}_{2\pi}(\R,E)=&\{ x:\R\rightarrow E\big| x(\cdot+2\pi)=x,\\
+        &C=\max_{t\in\R} ||x(t)||_{X}+\sup_{t\neq s} \frac{||x(t)-x(s)||_{X}}{|t-s|^{\alpha}}<\infty \}
+    \end{align*}
+    où $\alpha\in ]0,1]$ est l'exposant de Hölder. On pose de plus 
+    \begin{equation*}
+        C^{k+\alpha}_{2\pi}(\R,E)=\left\{x:\R\rightarrow E \big|\partial^k_tx\in C^{\alpha}_{2\pi}(\R,E)\right\}
+    \end{equation*}
+    pour un entier $k\geq 0$. On munit naturellement ces espaces d'une norme
+    \begin{equation*}
+        ||x||_{C^{\alpha}_{2\pi}(\R,E)}=C\text{ et }||x||_{C^{k+\alpha}_{2\pi}(\R,E)}=C+||\partial^k_tx||_{C^{\alpha}_{2\pi}(\R,E)}
+    \end{equation*}
+\end{definition}
+    Il est bien connu que les espaces définis précédemment sont des espaces de Banach. On pose $E=C^{\alpha}_{2\pi}(\R,X)$, $W=C^{\alpha}_{2\pi}(\R,Y)$ et  $Z=C^{1+\alpha}_{2\pi}(\R,X)$.  On précise alors le domaine de $G$: considérons $V$ un voisinage de $(\kappa_0,\lambda_0)$ dans $\R^2$
+    et $U$ un voisinage de $0$ dans $Z\cap E$, on pose
+    \begin{equation*}
+        G: U\times V\rightarrow W, (x,\kappa,\lambda)\mapsto \kappa \partial_t x-F(x,\lambda).
+    \end{equation*}
+    On impose une condition assez subtile sur $D_1F(0,\lambda_0)$
+    \begin{definition}
+        Soit $E$ un espace de Banach $\Delta=\left\{z\in\mathbb{C}, 
+        \alpha_1<\arg z<\alpha_2, \alpha_1<0<\alpha_2\right\}$ un secteur 
+        du plan complexe. La famille $(D_z)_{z\in\Delta}\in\mathcal{L}(E)^
+        {\Delta}$ est un \coldef{semi-groupe analytique sur $E$} si
+        \begin{itemize}
+            \item $z\mapsto D_z$ est holomorphe (dans l'espace de Banach $\mathcal{L}(E)$)
+            \item $D_0=I$ et $\lim_{z\to 0,z\in\Delta}D_{z}x=x$ pour tout $x\in E$
+            \item $D_{z_1+z_2}=D_{z_1}D_{z_2}$
+        \end{itemize}
+        Une famille $(D'_t)_{t\geq 0}\in\mathcal{L}(E)^{\R^+}$ est un semi-groupe analytique si c'est la restriction d'un semi-groupe analytique sur un certain secteur $\Delta$.
+    \end{definition}
+    On rappelle qu'on défini l'exponentielle d'un opérateur $A\in\mathcal{L}(X)$ comme
+    \begin{equation*}
+        e^{A}=\sum_{n\geq 0}\frac{(A)^n}{n!}
+    \end{equation*}
+    On vérifie facilement que la famille $(e^{tA})_{t\geq 0}$ est un semi-groupe analytique sur $X$. Le résultat suivant donne des conditions pour que $D_1 G(0,\kappa_0,\lambda_0)$. La preuve étant assez lourde, nous nous contenter de l'énoncer et renvoyons le lecteur vers \cite{kielhoefer2012bta} pour les détails
+    \begin{proposition}
+        Supposons que
+        \begin{itemize}
+            \item $\kappa_0\in\R$ soit tel que $i\kappa_0$ est une valeur propre simple  de $D_1F(0,\lambda_0)$ avec un vecteur propre $\phi_0\notin R(i\kappa_0I -D_1F(0,\lambda_0)) $
+            \item $(\pm i\kappa_0I -D_1F(0,\lambda_0))$ sont des opérateurs de Fredholm d'indice nul
+            \item $X$ est dense dans $Y$
+            \item $(e^{tD_1F(0,\lambda_0)})_{t\geq 0}$ est un semi-groupe analytique sur $Y$
+            \item Si $n\in\mathbb{Z}\setminus\left\{1,-1\right\}$ alors $n\kappa_0$ n'est pas valeur propre de $D_1F(0,\lambda_0)$
+        \end{itemize}
+        Alors l'opérateur linéaire
+        \begin{equation*}
+            J_0=D_1 G(0,\kappa_0,\lambda_0)=\kappa_0\partial_t -D_1F(0,\lambda_0)
+        \end{equation*}
+        est de Fredholm, d'indice nul et tel que $\dim\ker J_0=2$
+    \end{proposition}
+    Nous pouvons désormais appliquer la réduction de Lyapunov-Schmidt à $G$
+    \newpage
 \end{document}
