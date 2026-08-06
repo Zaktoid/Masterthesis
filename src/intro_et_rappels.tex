@@ -540,7 +540,6 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
         \varphi : u_0\times \ker DF(x_0)\rightarrow  \operatorname*{coim}DF(x_0)
     \end{equation*}
     on applique alors le théorème de Morse-Sard en dimension finie, on récupère une valeur régulière $z$ de $\varphi$ dans $\pi (U_1)$ (car cet ensemble contient $U_1$). Soit $y\in\pi^{-1}(z)\cap U_1$, $y$ est alors une valeur régulière de $F$.
-    \todo{Expliquer pourquoi c'est une valeur régulire}
     Du fait que l'ensemble des points singuliers forme un fermé (étant donné que l'ensemble des opérateurs surjectifs est ouvert) et via \ref{propre-fred}, on conclut.
 \end{preuve}
 \begin{corollaire}
@@ -633,15 +632,22 @@ Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui
 \begin{definition}
     L'opérateur $P(x,D)$  est \coldef
     {elliptique } en $x_0$ si $m=2p$ et si pour 
-    tout $x\in \R$, le polynôme $P(x,\xi)$ est 
-    de signe constant sur $U$.
+    tout $x\in \R$, le polynôme $P(x,\xi)_m$ est 
+    de signe constant sur $U\setminus\left\{0\right\}$.
     S'il existe un constante $c>0$ telle que 
     pour tout $x\in U$, on aie $P_m(x,\xi)\geq 
     c |\xi|^m$ alors il est  \coldef{uniformément 
     elliptique }
 \end{definition}
 
-\todomaybe{MONTRER LA PROPRIETE DE Fredholm}
+En général, on étudie des problèmes du type
+\begin{equation*}
+    Ex=f\text{ sur $U$ et } \forall \alpha:|\alpha|\leq p-1, D^{\alpha}x|_{\partial U}=0 
+\end{equation*}
+En supposant typiquement que $U$ est une partie bornée de $\R^n$ ayant une frontière lisse et $E$ comme dans la définition précédente
+\todo{Déplacer la définition des espaces de Hölder}
+
+
 
 \newpage
 

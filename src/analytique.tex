@@ -28,13 +28,12 @@ sont homéomorphes
         &\pi_2 : Y\rightarrow Y_0
     \end{align*}
     Elles sont continues via le théorème du graphe fermé.
-    On remarque que
-
+    On remarque que, en posant $v=\pi_1(x)$, $w=(I-\pi_1)(x)$
     \begin{equation} \label{SysteLP}
         F(x, \lambda) = 0 \iff 
 \begin{cases}
-    \pi_2 F(\pi_1(x)+(\operatorname*{Id}-\pi_1)(x),\lambda) = 0 \\ 
-    (\operatorname*{Id} - \pi_2) F(\pi_1(x) +(\operatorname*{Id}-\pi_1)(x),\lambda) = 0 
+    \pi_2 F(v+w,\lambda) = 0 \\ 
+    (\operatorname*{Id} - \pi_2) F(v+w,\lambda) = 0 
 \end{cases}
     \end{equation}
 Considérons alors   $U'$,$W$,$V_0$ des ouverts de $\ker D$ ,$X_0$ et $V$ respectivement tels que 
@@ -72,7 +71,13 @@ répondent à la question
     Notez que lors de la procédure précédente, le choix des espaces compléments $X_0$ et $Y_0$ est arbitraire. Ainsi, à un problème de bifurcation donné, il existe potentiellement plusieurs fonctions de bifurcation associées... Cela motive déjà l'approche proposée lors de la section \ref{detfin} où on introduit la notion d'équivalence entre problèmes de bifurcation. C'est Golubitsky dans 
     \cite{golubitsky1985sgb1} qui remarqua qu'on peut relier le choix arbitraire fait lors de la réduction de Lyapunov-Schmidt avec la notion d'équivalence entre bifurcation : i.e, on veut que deux façons de réduire donnent des fonctions de bifurcation équivalente. 
 \end{remarque}
-On illustre le principe sur deux exemples, en commençant par un exemple en dimension finie
+En pratique, il est extrêmement courant que $X$ et $Y$ soient des sous espaces de $L^2(U)$ avec $U$ une partie bornée de $\R^n$. On a donc accès au produit scalaire habituel
+\begin{equation*}
+    \langle f,g\rangle=\int_{U}f(t)g(t)dt.
+\end{equation*}
+
+
+On illustre le principe sur deux exemples, en commençant par un exemple en dimension finie,
 \begin{exemple}
    Considérez la fonction
    \begin{equation*}
@@ -149,10 +154,6 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     \begin{equation*}
         \int_{0}^{1} g(s)\phi_n(s)ds=0
     \end{equation*}
-    et donc $g$ est dans le noyau de la forme linéaire $h\mapsto\int_{0}^{1}h(s)\phi_n(s)=0$. 
-    \todo{Montrer que c'est un opérateur d'indice nul}\\
-
-    \todo{TERMINER EXEMPLE}
 \end{exemple}
 
 \begin{remarque}
@@ -272,10 +273,11 @@ dans ce cas, on peut identifier $d^2_{12} F$ avec un élément de $\mathcal{L}(X
         &+\pi_2(d_1 F(v+\varphi(v,\lambda),\lambda))d^2_{21}\varphi(v,\lambda)x_1\\
         &+\pi_2 d^2_{12}F(v+\varphi(v,\lambda),\lambda)(x_1+d_1\varphi(v,\lambda)x_1)
     \end{align*}
-    En évaluant cette expression en $(0,\lambda_0)=0$, et via \ref{corr-deriv-o}, le premier terme s'annule. Au vu de la définition de $\pi_2$, le second s'annule aussi. Et donc, encore via \ref{corr-deriv-o} et par hypothèses on a \todo{JUSTIF dERIVATION INTEGRALE}
+    En évaluant cette expression en $(0,\lambda_0)=0$, et via \ref{corr-deriv-o}, le premier terme s'annule. Au vu de la définition de $\pi_2$, le second s'annule aussi. Et donc, encore via \ref{corr-deriv-o} et par hypothèses on a
     \begin{equation*}
         d_{\lambda}\tilde{\Phi}(0,\lambda_0)=\pi_2 d^2_{12}F(0,\lambda_0)x_1\neq 0
     \end{equation*}
+    la dérivée passant dans l'intégrale car $\Phi$ est $C^2$.
     de façon similaire à \ref{fold}, on applique le théorème des fonctions implicites, donc quitte à réduire l'intervalle $]-\delta,+\delta[$, on peut supposer l'existence d'une fonction 
         \begin{equation*}
         \psi : ]-\delta,\delta [\rightarrow V_1\text{ telle que} 

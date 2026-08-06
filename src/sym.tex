@@ -14,14 +14,32 @@ avec $A(T)$ de la forme "d'Arrhenius":
     A(T)=\exp\left( \frac{T_a}{T_f}-\frac{T_a}{T}\right)\text{avec $T_a$ la température "d'activation"}
 \end{equation*}
 \subsection{Systèmes de réaction diffusion}
+\subsubsection*{Généralités}
+\subsubsection*{Quelques exemples célèbres}
+\subsubsection*{Réduction et calcul du déploiment universel}
 
 \subsection{Convection de Rayleigh-Bénard}
-
-\subsection{Équation de Nekrasov}
-
+\subsubsection*{Contexte}
+On suppose avoir un fluide compris entre deux plans parallèle. On suppose également que les deux plans ont la même température au départ, et qu'ensuite, la température du plan du dessous augmente légèrement, provoquant ainsi un gradient de température dans le système.
+On décrit d'abord les mouvements du fluide, à l'aide d'une équation de Navier-Stokes (adapté à notre contexte)
+\begin{equation*}
+    \frac{1}{P_r}\left[\partial_tu +(u\cdot\nabla)u\right]+\nabla p-\Delta u-RTk=0
+\end{equation*}
+On donne ensuite l'équation de la chaleur
+\begin{equation*}
+    \partial_t T+ (u\cdot \nabla)T-\Delta T=0
+\end{equation*}
+Enfin, on suppose le fluide incompressible
+\begin{equation*}
+    \nabla\cdot u=0
+\end{equation*}
+Avec $u:U\rightarrow\R^3$ le champ de vitesse, $p:U\rightarrow\R$ la fonction de pression, $T:U\rightarrow\R$ la fonction de température et $k=(0,0,1)$, avec par exemple $U=\mathbb{T}^3\times ]0,1[$.
+On rappelle que $\nabla\cdot u=\sum_{i=1}^3\partial_{x_i} u_i$ est la divergence.
+\subsubsection*{Écriture de l'opérateur fonctionnel}
+\subsubsection*{Application du degré orienté de Furi}
 \subsection{Réseau de neurones récurrents}
-
-\subsection{Modèle climatique simple}
+\subsubsection*{Contexte}
+\subsubsection*{Application du théorème de bifurcation de Hopf}
 
 \newpage
 \end{document}
