@@ -49,7 +49,11 @@
 \newcommand{\conttane}[3]{TK_{#1}^{e}}
 \newcommand{\fibltan}[3]{TC_{#1}}
 \newcommand{\gentan}[3]{TG_{#1}}
-\newcommand{\todo}[1]{\textcolor{red}{TO DO [}#1\textcolor{red}{]}}
+\newcounter{todocounter}
+\newcommand{\todo}[1]{%
+    \stepcounter{todocounter}% On ajoute +1 au compteur
+    \textcolor{red}{\textbf{TO DO \#\arabic{todocounter} [}#1\textbf{]}}%
+}
 
 
 \newcommand{\todomaybe}[1]{\textcolor{orange}{TO DO ? [}#1\textcolor{orange}{]}}

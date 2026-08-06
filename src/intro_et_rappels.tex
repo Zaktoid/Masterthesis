@@ -21,7 +21,7 @@ $F_{\lambda}^{-1}(0)$. Considérons le cas très simple d'un mobile ayant un seu
 \end{equation*}
 On constate immédiatement 
 que le nombre de points 
-d'équilibres passe de 1 à 2 
+d'équilibres passe de 1 à 3 
 quand $\lambda$ devient 
 positif. Remarquons déjà 
 qu'ici une partie du lieu 
@@ -68,8 +68,8 @@ alors il est unique
    Supposons avoir $h$ et $h'$ satisfaisant \eqref{equ1} et notons $u_1,u_2$ les éléments de $L(X,Y)$ correspondant, on a alors 
    \begin{equation*}
            \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||h(x)-h'(x)||_Y}{||x-x_0||_X}
-           = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x)-u_2(x)||_Y}{||x-x_0||}
-           =           \lim_{y\rightarrow{0},y\neq 0}  \frac{||v(y)||}{||y||}=0
+           = \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||u_1(x-x_0)-u_2(x-x_0)||_Y}{||x-x_0||_X}
+           =           \lim_{y\rightarrow{0},y\neq 0}  \frac{||v(y)||_Y}{||y||_X}=0
    \end{equation*}
    où on a posé $y=x-x_0$ et $v=u_1-u_2$. Soit $\varepsilon>0$, il existe $r>0$ tel que $||v(y)||\leq \varepsilon||y||$ si $||y||\leq r$, si $x\neq 0$, on récupère $||v(x)||\leq \varepsilon  ||x||$ en choisissant $y=\frac{r x}{||x||}$, ce qui permet d'affirmer que $v=0$, et donc $h=h'$
 \end{preuve}
@@ -105,7 +105,7 @@ bilinéaire, alors B est dérivable et $dB(x_0,y_0)(x,y)= B(x_0,y)+B(x,y_0)$
 pour tous $(x_0,y_0),(x,y)\in X\times Y$
 \end{proposition}
 \begin{preuve}
-     Par hypothèse, il existe $C>0$ tel que $||B(x,y)||\leq ||x|| ||y||$. Et donc, si $\varepsilon>0$ est fixé et si $\sup(||s||,||t||)=||(s,t)||\leq \frac{\varepsilon}{C}$, on a 
+     Par hypothèse, il existe $C>0$ tel que $||B(x,y)||\leq  C||x|| ||y||$. Et donc, si $\varepsilon>0$ est fixé et si $\sup(||x||,||y||)=||(x,y)||\leq \frac{\varepsilon}{C}$, on a 
      \begin{equation*}
          || B(x_0+x,y_0+y)-B(x_0,y_0)-
          B(x_0,y)-B(x,y_0)||= ||B(x,y)||\leq\varepsilon ||(x,y)||
@@ -215,8 +215,8 @@ Où $d^{*}$ est l'opérateur adjoint, défini comme
 \begin{eqnarray*}
     d^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ d
 \end{eqnarray*}
-C'est simplement du fait que $Y/\im 
-d\cong (\im d)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker d^
+C'est simplement du fait que $(Y/\im d)^* 
+\cong (\im d)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker d^
 {*}=(\im d)^{\perp}$
 où on rappelle que l'annihilateur d'une partie $A$ de $Y$ est défini comme 
 \begin{equation*}
@@ -240,7 +240,7 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
     \begin{equation*}
         d(f)(x)=xc - 3x\int_{0}^1 cy^2dy=0
     \end{equation*}
-    Posons $I:f\mapsto \int_{0}^1 uf(y)dy$ soit $g\in \im d$, c'est à dire qu'il existe $f$ tel que 
+    Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im d$, c'est à dire qu'il existe $f$ tel que 
     \begin{equation*}
         f(x)=g(x)+3xI(f)
     \end{equation*}
@@ -248,12 +248,12 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
     \begin{equation*}
         I(f) = \int_{0}^1
         x(g(x)+3xI(f))dx = \int_{0}^{1}x g(x)dx + I(f)\Rightarrow \int_{0}^{1} x g(x) dx=0
-    \end{equation*}z
+    \end{equation*}
     et donc $g$ est dans le noyau de la forme linéaire $I$. Bien sûr, si $g$ est dans le noyau de $I$ alors c'est un point fixe de $d$ et donc $\im d= \ker I$, le noyau d'une forme linéaire continue non nulle étant de codimension finie, on conclut.
 \end{exemple}
 Rappelons que si $d\in\mathcal{L}(X,Y)$ alors il induit une norme sur $\im d$: si $g=d(f)$ 
 \begin{equation*}
-    ||g||_{d}=||g||_{Y}+ ||[f]||_{Y/\ker d}
+    ||g||_{d}=||g||_{Y}+ ||[f]||_{X/\ker d}
 \end{equation*}
 On rappelle également  que la norme habituelle sur le quotient est donnée par 
     \begin{equation*}
@@ -339,7 +339,7 @@ On obtient, de façon purement algébrique, le résultat suivant
 	0 & {\ker d_1} & {\ker (d_2\circ d_1)} & {\operatorname{im}(d_1)\cap \ker (d_2)} & 0
 	\arrow["0", from=1-1, to=1-2]
 	\arrow["\iota", hook, from=1-2, to=1-3]
-	\arrow["{d_2}", two heads, from=1-3, to=1-4]
+	\arrow["{d_1}", two heads, from=1-3, to=1-4]
 	\arrow["0", from=1-4, to=1-5]
     \end{tikzcd}\]
 On a alors
@@ -373,7 +373,7 @@ On a alors la suite exacte suivante
 	\arrow["\pi", two heads, from=1-4, to=1-5]
 	\arrow["0", from=1-5, to=1-6]
 \end{tikzcd}\]
-Vu ce qui précède, le 4ème élément de la suite est de dimension finie, les 2ème et 4ème éléments le sont par hypothèse  et donc le troisième doit l'être aussi et
+Vu ce qui précède, le 1er élément de la suite est de dimension finie, les 2ème et 4ème éléments le sont par hypothèse  et donc le troisième doit l'être aussi et
 \begin{equation*}
     \dim(G/\im(d_2\circ d_1)) = \dim(G/\im d_2) + \dim(Y/\im d_1) - \dim(\ker(d_2)) + \dim(\ker(d_2)\cap \im(d_1))
 \end{equation*}
@@ -399,17 +399,17 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automor
     Montrons alors que $d'$ est l'inverse de $\operatorname{Id} -d$.
     On a
     \begin{equation*}
-        d\circ\big( \sum_{0\leq n\leq k} d^n\big)=\sum_{0\leq n\leq k} d^{n+1}=\big( \sum_{0\leq n\leq k} d^n\big)\circ d = \sum_{0\leq n\leq k+1} d^n- \operatorname{Id}
+        d\circ\big( \sum_{0\leq n\leq k} d^n\big)= \sum_{0\leq n\leq k+1} d^n- \operatorname{Id}
     \end{equation*}
 
-    En posant $S_k=\sum_{0\leq n\leq k} d^n$
+    En posant $d_k=\sum_{0\leq n\leq k} d^n$
     \begin{equation*}
-        \lim_{k\rightarrow \infty} ||S_kd -Sd||\leq 
-        ||d||\lim_{k\rightarrow \infty}  ||S_k-d'||< \lim_{k\rightarrow \infty}  ||S_k-d'||=0
+        \lim_{k\rightarrow \infty} ||d_kd -d'd||\leq 
+        ||d||\lim_{k\rightarrow \infty}  ||d_k-d'||=0
     \end{equation*}
     de la même façon 
     \begin{equation*}
-        \lim_{k\rightarrow \infty} ||dS_k -dS||=0
+        \lim_{k\rightarrow \infty} ||dd_k -dd'||=0
     \end{equation*}
     Et donc
     \begin{equation*}
@@ -417,7 +417,7 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automor
     \end{equation*}
     de plus, $d'$ est continu et
     \begin{equation*}
-        ||(I-d)^{-1}||\leq \sum_{n\in\mathbb{N}} ||d||^k \leq  \frac{1}{1-||d||}
+        ||(I-d)^{-1}||\leq \sum_{n\in\mathbb{N}} ||d||^n \leq  \frac{1}{1-||d||}
     \end{equation*}
 \end{preuve}
 On en tire immédiatement le résultat suivant
@@ -438,16 +438,16 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
     On complémente $\ker d$ par $X_0$ et $\im D$ par $Y_0$
     On considère
     \begin{equation*}
-        \iota: X_1\rightarrow X\text{ et }\pi: X_0\rightarrow \im d
+        \iota: X_0\rightarrow X\text{ et }\pi: Y\rightarrow \im d
     \end{equation*}
     Les injections et projections naturelles $\iota$ et $\pi$ sont évidemment continues. On considère également la fonction
     \begin{equation*}
-        \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_1,\im d), G\rightarrow \pi G\iota 
+        \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_0,\im d), G\rightarrow \pi G\iota 
     \end{equation*}
-    C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (F/\im d)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
+    C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (Y/\im d)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
     On conclut immédiatement via \ref{lemma-compo} car 
     \begin{equation*}
-        0=\operatorname{Ind}(\psi(G))= -\dim(\ker d)+\operatorname{Ind}(G)+\dim(F/\im d)
+        0=\operatorname{Ind}(\psi(G))= -\dim(\ker d)+\operatorname{Ind}(G)+\dim(Y/\im d)
     \end{equation*} 
 \end{preuve}
 
@@ -455,13 +455,13 @@ Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile da
 \begin{definition}
     Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker dF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ dF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
     \begin{equation*}
-        \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n,\in Y:\forall 0\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)=\delta_{ij}
+        \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n\in Y:\forall 1\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)=\delta_{ij}
     \end{equation*}
 \end{definition}
 
 On définit alors \coldef{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 \begin{equation}\label{OpSCHimdt}
-    U : X\rightarrow Y, x\mapsto -dF(0)(x)+\sum_{i=0}^n x_i^{*}(x)y_i
+    U : X\rightarrow Y, x\mapsto -dF(0)(x)+\sum_{i=1}^n x_i^{*}(x)y_i
 \end{equation}
 
 On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
@@ -534,12 +534,12 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
     Soit alors $x_0\in X$, et considérons le 
     voisinage $U\times V$ de la preuve de \ref
     {propre-fred} et la décomposition $x_0=(u_0,v_0)$ de cette même preuve. Soit $U_1$ un voisinage de 
-    $F(x_0)$ dans $Y$, considérons $\pi: Y\rightarrow \operatorname*{coim}DF(x_0)$ la projection canonique
+    $F(x_0)$ dans $Y$, considérons, avec les notations habituelles, $\pi: Y\rightarrow Y_0$ la projection canonique
     et 
     \begin{equation*}
-        \varphi : u_0\times \ker DF(x_0)\rightarrow  \operatorname*{coim}DF(x_0)
+        \varphi : u_0\times \ker DF(x_0)\rightarrow  Y_0
     \end{equation*}
-    on applique alors le théorème de Morse-Sard en dimension finie, on récupère une valeur régulière $z$ de $\varphi$ dans $\pi (U_1)$ (car cet ensemble contient $U_1$). Soit $y\in\pi^{-1}(z)\cap U_1$, $y$ est alors une valeur régulière de $F$.
+    on applique alors le théorème de Morse-Sard en dimension finie, on récupère une valeur régulière $z$ de $\varphi$ dans $\pi (U_1)$. Soit $y\in\pi^{-1}(z)\cap U_1$, $y$ est alors une valeur régulière de $F$.
     Du fait que l'ensemble des points singuliers forme un fermé (étant donné que l'ensemble des opérateurs surjectifs est ouvert) et via \ref{propre-fred}, on conclut.
 \end{preuve}
 \begin{corollaire}
@@ -576,7 +576,7 @@ En pratique, celà signifie qu'il n'y a rien à étudier si l'indice de Fredholm
 
 
 \begin{corollaire}
-    Si $X,Y$ sont des espaces de Banach séparables, $U\subseteq X$,$V\subseteq Y$ sont des ouverts  et si $F\in C^k(U,V)$ est de Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$ alors il existe un sous ensemble $V'$ de $V$, dont le complémentaire dans $V$ est maigre tel que si $y\in V$, alors $F^{-1}(y)$ est une variété de dimension $\operatorname*{Ind}(f)$ ou est vide
+    Si $X,Y$ sont des espaces de Banach séparables, $U\subseteq X$,$V\subseteq Y$ sont des ouverts  et si $F\in C^k(U,V)$ est de Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$ alors il existe un sous ensemble $V'$ de $V$, dont le complémentaire dans $V$ est maigre tel que si $y\in V'$, alors $F^{-1}(y)$ est une variété de dimension $\operatorname*{Ind}(f)$ ou est vide
 \end{corollaire}
 \begin{figure}[htbp]
     \centering
@@ -612,7 +612,7 @@ Les opérateurs de Fredholm apparaissent très naturellement
 Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
     Soient $U$ un ouvert connexe de $\R^n$ et $m\geq 1$. Si pour tout $x\in U$, 
-    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré $m$ en $D_1,\cdots,D_n$ et $m\geq l\geq 1$, alors un opérateur de la forme 
+    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré $m$ en $D_1,\cdots,D_n$ et $l\geq m\geq 1$, alors un opérateur de la forme 
     \begin{equation}\label{ellipticop}
         E: C^{l}(U)\rightarrow C^{l-m}(U), f 
         \mapsto \sum_{|\alpha|\leq m} c_{\alpha} D^{\alpha}f
@@ -631,10 +631,9 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
 Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui-ci dessus, et par $P_m(x,D)$ sa partie principale.
 \begin{definition}
     L'opérateur $P(x,D)$  est \coldef
-    {elliptique } en $x_0$ si $m=2p$ et si pour 
-    tout $x\in \R$, le polynôme $P(x,\xi)_m$ est 
-    de signe constant sur $U\setminus\left\{0\right\}$.
-    S'il existe un constante $c>0$ telle que 
+    {elliptique } en $x_0$ si $m=2p$ et si le polynôme $P(x,\xi)_m$ est 
+    de signe constant sur $\R^n\setminus\left\{0\right\}$. Il est elliptique sur $U$ si il l'est en tout point de $U$ et 
+    s'il existe un constante $c>0$ telle que 
     pour tout $x\in U$, on aie $P_m(x,\xi)\geq 
     c |\xi|^m$ alors il est  \coldef{uniformément 
     elliptique }

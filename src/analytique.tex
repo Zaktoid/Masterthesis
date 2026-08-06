@@ -5,7 +5,7 @@
 
 \section{Approche analytique}
 \subsection{La réduction de Lyapunov-Schmidt}
-Lorsque l'opérateur $D_1f(x_0,\lambda_0)$ est de Fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
+Lorsque l'opérateur $D_1F(x_0,\lambda_0)$ est de Fredholm et que la dimension de l'espace des paramètres est finie, il est possible de se ramener à un problème en dimension finie
 \begin{theobox}{Lyapunov-Schmidt}{}\label{LP-redux}
 Soit $U\times V\ni (x_0,\lambda_0)$ un ouvert, $F\in C^0
 (U\times V,Y)$ telle que $D_1 F\in C^0(U\times V,\mathcal{L}(X,Y))$, $F(x_0,
@@ -59,7 +59,7 @@ répondent à la question
 \end{preuve}
 
 \begin{corollaire}\label{corr-deriv-o}
-    Avec les notations de la preuve précédente, si $F\in C^1(U\times V,Y)$, alors $\varphi$ et $\Phi$ sont $C^1$ sur leur domaines et
+    Avec les notations de la preuve précédente, si $F\in C^1(U\times V,Y)$, alors $\varphi$ et $\Phi$ sont $C^1$ sur leurs domaines et
     \begin{equation*}
         D_1\varphi(v_0,\lambda_0)=0\text{ et }    D_1\Phi(v_0,\lambda_0)=0
     \end{equation*}
@@ -101,7 +101,7 @@ On illustre le principe sur deux exemples, en commençant par un exemple en dime
    $\pi_1$ et $\pi_2$ sont 
    alors simplement les 
    projections canoniques sur 
-   la  première composante (souvenez vous qu'on projette sur le co-noyau). Dans ce cas-ci, le système s'écrit  \eqref{SysteLP} simplement
+   la  première composante (souvenez-vous qu'on projette sur le co-noyau). Dans ce cas-ci, le système s'écrit  \eqref{SysteLP} simplement
    \begin{align*}
     x\sin(3x)-y=0\\
     \lambda x -x^3+xy^2=0
@@ -111,7 +111,7 @@ On illustre le principe sur deux exemples, en commençant par un exemple en dime
 
 Un exemple classique, la formulation est inspirée de [SOURCE]. 
 \begin{exemple}\label{Poutre}
-    Supposons avoir une  poutre élastique parfaitement cylindrique fixée verticalement à un support et à laquelle on soumet une charge $P$, tant que $P$ est faible, il ne se passe rien, si $P$ excède une certaine valeur critique, alors la poutre va se tordre, cette valeur critique sera une bifurcation ! On suppose la poutre très fine par rapport à sa taille, et que la déformation est planaire i.e, la poutre se courbe dans un plan. Pour le choix des coordonnées, on va prendre l’abscisse curviligne, et on note alors $\theta(s)$ l'angle fait par la tangente en l’abscisse curviligne $s$, l'équation s'écrit alors 
+    Supposons avoir une  poutre élastique parfaitement cylindrique fixée verticalement à un support et à laquelle on soumet une charge $P$. Tant que $P$ est faible, il ne se passe rien, si $P$ excède une certaine valeur critique, alors la poutre va se tordre, cette valeur critique sera une bifurcation ! On suppose la poutre très fine par rapport à sa taille, et que la déformation est planaire i.e, la poutre se courbe dans un plan. Pour le choix des coordonnées, on va prendre l’abscisse curviligne, et on note alors $\theta(s)$ l'angle fait par la tangente en l’abscisse curviligne $s$, l'équation s'écrit alors 
     \begin{equation*}
         D^2 \theta + P \sin\theta=0\footnote{C'est Euler qui a obtenu cette équation en premier}
     \end{equation*}
@@ -124,9 +124,9 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     alors $Y$ est un espace de Banach (avec la norme 
     habituelle) et $X$ est un espace de Banach avec la 
     norme $||f||_2= ||f||_{[0,1]}+||f'||_{[0,1]}+||f''||_
-    {[0,1]}$
-    posons $\lambda=P-P_{crit}$ avec $P_{crit}$ la valeur 
-    critique, on écrit alors
+    {[0,1]}$.
+    En posant $\lambda=P-P_{crit}$ (avec $P_{crit}$ la valeur 
+    critique) on peut écrire:
     \begin{equation*}
         F: X\times \R\rightarrow Y| (\theta,\lambda)\mapsto D^2 \theta + (\lambda+P_{crit}) \sin\theta 
     \end{equation*}
@@ -137,14 +137,14 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     \end{equation*}
     On remarque que les fonctions vérifiant $D^2h +P_{crit}h=0$ sont de la forme 
     \begin{equation*}
-        h: s\mapsto A\cos(\sqrt{P_{crit}}s)+B\cos(\sqrt{P_
+        h: s\mapsto A\cos(\sqrt{P_{crit}}s)+B\sin(\sqrt{P_
         {crit}}s)\text{ avec } A,B\in \R
     \end{equation*}
     les conditions de bord imposent $B=0$ et $-\sqrt{P_{crit}}A\sin(\sqrt{P_{crit}})=0$, maintenant, pour avoir une solution non triviale, il faut que $A\neq 0$, $P_{crit}\neq 0$, et donc 
     \begin{equation}\label{modes}
         P_{crit}=n^2\pi^2\text{ avec } n\in\mathbb{N}_{0}
     \end{equation}
-    si on fixe un $n\in\mathbb{N}_0$ (voir remarque suivante), le noyau est alors la droite générée par $\phi_{n}(s)=cos(n\pi )$, il est de dimension $1$.
+    si on fixe un $n\in\mathbb{N}_0$ (voir remarque suivante), le noyau est alors la droite générée par $\phi_{n}(s)=\cos(n\pi s)$, il est de dimension $1$.
     On calcule alors l'ensemble image: soit $g$ tel qu'il existe $h\in X$ tel que 
     \begin{align*}
         &D^2 h + P_{crit}h=g \Rightarrow \int_{0}^1 (D^2 h + P_{crit}h)\phi_n(s)ds=\int_{0}^1g(s)\phi_n(s)ds
@@ -154,6 +154,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
     \begin{equation*}
         \int_{0}^{1} g(s)\phi_n(s)ds=0
     \end{equation*}
+    \todo{terminer}
 \end{exemple}
 
 \begin{remarque}
@@ -162,7 +163,7 @@ Un exemple classique, la formulation est inspirée de [SOURCE].
 
 
 \subsection{Cas où $\dim \Lambda=1$}\label{section-dim-1}
-dans la suite, nous supposons $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $d_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
+Dans la suite, nous supposons $\dim \Lambda = 1$,rappelons que dans ce cas, on peut identifier $d_2F$ avec un élément de $Y$ (cf. remarque \ref{remarque 1-dim})
 
 On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (repliement), on met des guillemets car tous les auteurs ne la considèrent pas comme une "vraie" bifurcation, cela deviendra clair dans la suite. 
 
@@ -172,7 +173,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (r
     \begin{itemize}
         \item $F\in C^1(U\times V,Y)$
         \item $F(x_0,\lambda_0)=0$ et $\dim (\ker d_1F(x_0,\lambda_0))=\dim (Y/ \im d_1F(x_0,\lambda_0))=1$
-        \item $d_2F(x_0,\lambda_0)\notin \im(d_1F(x_0,\lambda_0))$ (Transversalité)
+        \item $d_2F(x_0,\lambda_0)\notin \im d_1F(x_0,\lambda_0)$ (Transversalité)
     \end{itemize}
     Alors il existe une courbe $C^1$
     \begin{equation*}
@@ -190,7 +191,7 @@ On peut déjà présenter un cas très simple, la "bifurcation" \coldef{fold} (r
     \begin{equation*}
         d_2\Phi(v_0,\lambda_0)=\pi_2 d_2 F(v_0+\varphi(v_0,\lambda_0),\lambda_0)=\pi_2 d_2 F(x_0,\lambda_0)
     \end{equation*}
-    or, étant donné que $d_2F(x_0,\lambda_0)\notin \im(d_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à reduire $U_1\times V_1$, on peut supposer l'existence d'une fonction 
+    or, étant donné que $d_2F(x_0,\lambda_0)\notin \im(d_1F(x_0,\lambda_0))$, la projection doit être différente de zéro ! On applique alors le théorème des fonctions implicites, et donc, quitte à réduire $U_1\times V_1$, on peut supposer l'existence d'une fonction 
     \begin{equation*}
         \psi : U_1\rightarrow V_1\text{ telle que} 
         \begin{cases}
@@ -227,13 +228,13 @@ On a alors simplement la situation "vecteur tangent vertical"
     \todo{Ajouter exemple opérateur entre espaces de Banach de dimension infinie}
 \end{exemple}
 \begin{remarque}
-    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'observables, et on voit lambda comme une perturbation externe du système. On peut donc pas mélanger le paramètre avec les variables d'état.
+    On pourrait se dire qu'il doit être possible d'effacer cette bifurcation en opérant une rotation dans $X\times \R$. En principe oui, mais en pratique, $X$ est interprété comme étant l'espace d'états d'un système, par exemple un espace de phase d'un système mécanique, un espace de fonctions (corde vibrante,tambour, ...), $Y$ est un espace d'observables, et on voit lambda comme une perturbation externe du système. On ne peut donc pas mélanger le paramètre avec les variables d'état.
 \end{remarque}
 La plupart des articles de théorie de la bifurcation supposent l'existence d'une \coldef{courbe de solutions triviales}, i.e $\gamma: \R\rightarrow X\times \R$ tel que $F(\gamma(\R))={0}$. Bien sûr, on peut supposer que cette courbe est simplement  donnée par $\gamma(s)=(0,s)$, en posant 
 \begin{equation*}
 \tilde{F}(x,\lambda)=F(\gamma_1(\lambda)+x,\gamma_2(\lambda))
 \end{equation*}
-Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale.On peut bien sûr supposer que cela à lieu en $(0,0)$
+Ainsi, on parlera de (vraie) bifurcation  en $(x_0,\lambda_0)$ lorsqu'il existe, pour tout voisinage de $(x_0,\lambda_0)$, des solutions n'étant pas sur la branche triviale. On peut bien sûr supposer que cela à lieu en $(0,0)$
 Le résultat suivant nous donne un petit critère pour l'existence de telles solutions non triviales, on présente ainsi la \coldef{bifurcation simple}, ou encore \coldef{bifurcation depuis une branche principale}.
 dans la suite, nous supposons $F\in C^2(U\times V,Y)$ 
 dans ce cas, on peut identifier $d^2_{12} F$ avec un élément de $\mathcal{L}(X,Y)$ et on peut permuter les dérivées 
@@ -252,7 +253,7 @@ dans ce cas, on peut identifier $d^2_{12} F$ avec un élément de $\mathcal{L}(X
     Il existe alors un voisinage  de $(0,\lambda_0)$ tel que tous les zéros de $F(x,\lambda)$ sont  soit sur la branche triviale, soit sur $\gamma$. 
 \end{theobox}
 \begin{preuve}
-    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi: U_1\times V_1\rightarrow Y_0$ la fonction de Bifurcation, par hypothèses
+    Bien sûr, on applique immédiatement \ref{LP-redux} et avec les notations de ce théorème, considérons alors $\Phi: U_1\times V_1\rightarrow Y_0$ la fonction de Bifurcation, par hypothèse
     \begin{equation*}
         \forall \lambda\in V_1,\Phi(0,\lambda)=0
     \end{equation*}
@@ -315,7 +316,7 @@ Il est possible d'obtenir quelques résultats quand la dimension de l'espace de 
 \begin{remarque}
     Remarquez qu'une bifurcation depuis la branche triviale est un élément de bifurcation mais que l'inverse n'est pas vrai.
 \end{remarque}
-dans la suite de cette section, nous supposons $F$ $C^k$ ($k\geq 1$) sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(d_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque INd=0}). Posons également $d_1=d_1F(x_0,\lambda_0)$ et $d_2=d_2F(x_0,\lambda_0)$
+dans la suite de cette section, nous supposons $F\in C^k (U\times V)$ ($k\geq 1$) sur un ouvert contenant $(x_0,\lambda_0)$ et  $\operatorname{Ind}(d_1F(x_0,\lambda_0))=0$ (c.f remarque \ref{remarque INd=0}). Posons également $d_1=d_1F(x_0,\lambda_0)$ et $d_2=d_2F(x_0,\lambda_0)$
 
 \begin{definition}
     Avec les notations habituelles, si $F$ est $C^1$, on note 
@@ -455,7 +456,7 @@ En appliquant le théorème des fonctions implicites, on en tire  immédiatement
 \end{proposition}
 On peut obtenir une description explicite de $\varphi_1$ et $\varphi_2$. La preuve consistant en des calculs ennuyeux, on l'admet
 \begin{corollaire}
-    dans les condition de la proposition précédente, et en exigeant $F$ au moins $C^2$. Si on pose $T(\mu)=\mu-\sum_{i=1}^n (d_2^{*}y_i^{*})(\mu)\lambda_i$
+    Dans les conditions de la proposition précédente, et en exigeant $F$ au moins $C^2$. Si on pose $T(\mu)=\mu-\sum_{i=1}^n (d_2^{*}y_i^{*})(\mu)\lambda_i$
     \begin{align*}
         W: \Lambda\rightarrow Y: \mu\mapsto 
         d^2_{22}\bigg(T(\mu),T(\mu)\bigg)
@@ -501,7 +502,7 @@ Avant de présenter la preuve, résumons un peu la situation sur un diagramme
     alors c'est un élément de bifurcation non perpendiculaire
 \end{theobox}
 \begin{preuve}
-    On va supposer $\mu$ et $\lambda_1$ alignés, i.e $\mu=t\lambda_1$ avec $t\in\R$ tel que $t\lambda_1\in V_1$. Au vu  de \eqref{réécrituresPHI} et la proposition  \ref{ApplicationFI} on doit résoudre $\lambda=\varphi_1(t\lambda_1)$, par bi-orthogonalité, on a
+    On va supposer $\mu$ et $\lambda_1$ alignés, i.e $\mu=t\lambda_1$ avec $t\in\R$ tel que $t\lambda_1\in V_1$. Au vu de \eqref{réécrituresPHI} et la proposition  \ref{ApplicationFI} on doit résoudre $\lambda=\varphi_1(t\lambda_1)$, par bi-orthogonalité, on a
     \begin{align*}
         \lambda
         = \varphi_1(t\lambda_1)&=\lambda_0+t\lambda_1-\bigg(d_2^{*}y_1^{*}(t\lambda_1)+y_1^{*}\big(\frac{1}{2}W(t\lambda_1)+U(R(t\lambda_1))\big)\bigg)\lambda_1\\
@@ -529,7 +530,7 @@ Avant de présenter la preuve, résumons un peu la situation sur un diagramme
         g(\Phi(r))=\frac{1}{2}y_1^{*}d^2_{11}(x_1,x_1)r^2
     \end{equation*}
     avec $\Phi$ un $C^1$ difféomorphisme sur $V_1$, on peut sans perte de généralité supposer $\Phi(0)=0$. Cela 
-    étant, Soit 
+    étant, soit 
     $(u_n)_{n\in\mathbb{N}}\in (\im g)^{\mathbb{N}}$ et telle que $u_n\rightarrow 0$, il existe alors $(v_n)_{n\in\mathbb{N}}$ telle que
     \begin{equation*}
         u_n=\frac{1}{2} y_1^{*}(d^2_{11}F(x_1,x_1))v^2_n
@@ -544,7 +545,7 @@ Avant de présenter la preuve, résumons un peu la situation sur un diagramme
         x_n^{\pm}=\varphi_2(\Phi(v^\pm_n)\lambda_1)
     \end{align*}
     Notez que $\Phi(v_n^\pm)$ tendent vers zéro, donc 
-    $F(x_n^{\pm},\lambda_n)$ tendent vers zéro. Montrons qu'il existe $n_0$ tels que $x_n^-\neq x_n^+$ si $n\geq n_0$, cela revient à demander que si $t_1$ et $t_2$ sont assez petits, $\varphi_2(t_1)\neq\varphi_2(t_2)$. Supposons que ça ne soit pas le cas, on pose
+    $F(x_n^{\pm},\lambda_n)$ tendent vers zéro. Montrons qu'il existe $n_0$ tel que $x_n^-\neq x_n^+$ si $n\geq n_0$, cela revient à demander que si $t_1$ et $t_2$ sont assez petits, $\varphi_2(t_1)\neq\varphi_2(t_2)$. Supposons que ça ne soit pas le cas, on pose
     \begin{equation*}
         \psi(t\lambda_1)=\frac{1}{2}U^{-1}d^2_{11}(x_1,x_1)t^2+R(t\lambda_1)
     \end{equation*}
