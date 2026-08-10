@@ -39,7 +39,7 @@ Avec $\mathcal{T}''$ la topologie induite sur l'intersection des domaines de $f$
 \begin{definition}
     Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \coldef{l'espace des germes} $C^k$ est donné par
     \begin{equation*}
-        \mathcal{E}(S,X,Y,T)=\mathcal{G}_{\infty}(S,X,Y,T)/\sim_{S}
+        \mathcal{E}(S,X,Y,T)=\mathcal{G}_{k}(S,X,Y,T)/\sim_{S}
     \end{equation*}
 \end{definition}
 Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
@@ -61,11 +61,11 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     alors on définit 
     \begin{equation*}
         f\times g: (X_1\times X_2,S_1\times S_2)\rightarrow 
-        (Y_1\times Y_2,S_1\times S_2)
+        (Y_1\times Y_2,T_1\times T_2)
     \end{equation*}
     Comme étant la classe d'équivalence de
     \begin{equation*}
-        (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_1))
+        (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_2))
     \end{equation*}
     Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est simplement le germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
 \end{definition}
@@ -1131,7 +1131,7 @@ partielles?
 \begin{lemme}
     Si $f\in\mathcal{E}^m_{p+q}$ et pour un certain $k\geq 0$, $\mathfrak{m}^{k+1}_{p+q}\cdot \mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}$. Alors $g\in T_f\mathcal{RB} $ si et seulement si il exste des germes de matrices à éléments polynômiaux de  degré au plus $k$ telles que
     $A\in\mathcal{E}^{m\times m}_{p+q},
-    B\in\mathcal{E}^{p\times p}_{p+q},C \in\mathcal{E}^{q\times q}_{p+q}$ telles que
+    B\in\mathcal{E}^{p\times p}_{p+k},C \in\mathcal{E}^{p\times q}_{p+q}$ telles que
     \begin{equation*}
         \forall |\alpha|\leq k,
         \partial^{\alpha}\left( g- \left( Af+\partial_x fB x+ \partial_\lambda f C\lambda \right)\right)(0,0)=0
@@ -1706,9 +1706,9 @@ En particulier, on peut écrire, avec les notations du lemme précédent
 \end{equation*}
 Enfin, on pose 
 \begin{equation*}
-    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi(\alpha,s)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}.
+    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi(\alpha,s)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}-\sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}.
 \end{equation*}
-On a que $(dS)(X)=\mathcal{Y}\circ S$, et on applique alors le lemme précédent.
+On a que $(dJ)(X)=\mathcal{Y}\circ J$, et on applique alors le lemme précédent.
 {\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
 
 

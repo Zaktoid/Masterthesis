@@ -88,9 +88,9 @@ On suppose bien sûr que $F(\cdot,\lambda)$ est de Fredholm si $\lambda$ au vois
 \end{proposition}
 \begin{preuve}
     Posons
-    \begin{equation*}
+    \begin{equation}\label{Mapping-vp}
         G: U\times V\times (R\cap X)\times \R\rightarrow Y, (x,\lambda,w,\mu)\mapsto D_1 F(x,\lambda)(\hat{v_0}+w)-\mu(\hat{v_0}+w)
-    \end{equation*}
+    \end{equation}
     Notez que $G(x_0,\lambda_0,0,0)=0$ et 
     \begin{align*}
         &D_3 G(x_0,\lambda_0,0,0)=D_1 F(x_0,\lambda_0)\\
@@ -150,7 +150,7 @@ Lorsque $\lambda=0.85$, on a un équilibre (qu'on peut identifier comme instable
 \begin{remarque}
     En dimension finie la condition de 
     transversalité 
-    \eqref{transvers-ker} est équivalente à l'existence d'une base dans laquelle $D_1F(0)$ présente un bloc de jordan nilpotent.
+    \eqref{transvers-ker} est équivalente à l'absence d'une base dans laquelle $D_1F(0)$ présente un bloc de jordan nilpotent.
 \end{remarque}
 La  condition \eqref{transvers-ker}
 nous permet d'écrire, avec les notations de la proposition précédente,
@@ -223,23 +223,36 @@ Celà étant, la proposition suivante nous permet de relier les variations de la
         x(s)=s\hat{v_0}+\varphi(s\hat{v_0},\lambda(s))
     \end{equation*}
     ce qui implique $x(0)=0,\partial_sx(0)=\hat{v_0},\partial_s\lambda(0)$ et $F(0,\lambda)=0$ si $\lambda\in V_1$. On suppose également $\partial_s\mu(0)=0$. On dérive une deuxième fois \eqref{perturb-vb}, ce qui nous donne
-    \begin{equation}
+    \begin{equation}\label{equation-horrible-1}
         \begin{aligned}
             &D^3_{111}F(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}]+2D^2_{11}F(0,\lambda_0)[\hat{v_0},\partial_sw(0)]\\
-            &+D^2_{11}F(0,\lambda)[\partial^2_s x(0)]+D^2_{12}F(0,\lambda_0)\hat{v_0}\partial^2_s\lambda(0)\\
+            &+D^2_{11}F(0,\lambda)[\partial^2_s x(0),\hat{v_0}]+D^2_{12}F(0,\lambda_0)\hat{v_0}\partial^2_s\lambda(0)\\
             &+D_1F(0,\lambda_0)\partial^2_sw(0)=\partial^2_s\mu(0)\hat{v_0}
         \end{aligned}
     \end{equation}
     On a alors que
-    \begin{equation*}
+    \begin{equation}\label{x-deri-second}
         \partial^2_sx(0)=D^2_{11}\varphi[\hat{v_0},\hat{v_0}]
-    \end{equation*}
+    \end{equation}
     L'équation \eqref{eq-dyn-3}, quand $\partial_s\mu(0)=0$, peut être résolue pour $\partial_sw(0)\in (I-\pi_1)X$.
     Ce qui nous donne
-    \begin{equation*}
+    \begin{equation*}\label{deriv-w}
         \partial_s w(0)=-(I-\pi_1)(D_1F(0,\lambda_0))^{-1}(I-\pi_2)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]=\partial^2_sx(0)
     \end{equation*}
-    \todo{Terminer les calculs}
+    Si on reprend \eqref{equation-horrible-1}, notez que 
+    $D_1F(0,\lambda_0)\partial^2_sw(0)\in R$. En appliquant $\hat{v_0}^*$ à \eqref{equation-horrible-1} et en substituant \eqref{x-deri-second} et \eqref{deriv-w}, on obtient
+    \begin{equation}
+        \begin{aligned}
+            \partial^2_s\mu(0)=&\hat{v_0}^*(D^3_{111}F(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}])
+            \\&- 3\hat{v_0}^*\left(D^2_{11}DF(0,\lambda_0)[\hat{v_0},-(I-\pi_1)(D_1F(0,\lambda_0))^{-1}(I-\pi_2)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]]\right)\\
+            &+\hat{v_0}^*(D^2_{12}F(0,\lambda_0))\partial^2_{s}\lambda(0)
+        \end{aligned}
+    \end{equation}
+    En dérivant à nouveau l'expression \eqref{eq-dyn-1} et en évaluant en 0, on obtient
+    \begin{equation*}
+        \partial^2_s D_1\Psi(s,\lambda(s))(0)=\hat{v_0}^*\left(D^3_{111}\Phi(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}]\right)+\hat{v_0}^{*}(D^2_{12}\Phi(0,\lambda_0)\hat{v_0})\partial^2_s\lambda(0)
+    \end{equation*}
+    Ce qui permet de conclure dans le cas particulier. On montre facilement que le cas général se ramène à ce cas particuliers par un changement de coordonnées
 \end{preuve}
 On peut maintenant formuler le principe d'échange de stabilité
 \begin{definition}
@@ -381,18 +394,45 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
     \begin{proposition}
         Supposons que
         \begin{itemize}
-            \item $\kappa_0\in\R$ soit tel que $i\kappa_0$ est une valeur propre simple  de $D_1F(0,\lambda_0)$ avec un vecteur propre $\phi_0\notin R(i\kappa_0I -D_1F(0,\lambda_0)) $
+            \item $\kappa_0\in\R$ soit tel que $i\kappa_0$ est une valeur propre simple  de $D_1F(0,\lambda_0)$ avec un vecteur propre $\varphi_0\notin \im(i\kappa_0I -D_1F(0,\lambda_0)) $
             \item $(\pm i\kappa_0I -D_1F(0,\lambda_0))$ sont des opérateurs de Fredholm d'indice nul
             \item $X$ est dense dans $Y$
             \item $(e^{tD_1F(0,\lambda_0)})_{t\geq 0}$ est un semi-groupe analytique sur $Y$
-            \item Si $n\in\mathbb{Z}\setminus\left\{1,-1\right\}$ alors $n\kappa_0$ n'est pas valeur propre de $D_1F(0,\lambda_0)$
+            \item Si $n\in\mathbb{Z}\setminus\left\{1,-1\right\}$ alors $in\kappa_0$ n'est pas valeur propre de $D_1F(0,\lambda_0)$
         \end{itemize}
         Alors l'opérateur linéaire
         \begin{equation*}
-            J_0=D_1 G(0,\kappa_0,\lambda_0)=\kappa_0\partial_t -D_1F(0,\lambda_0)
+            J_0=D_1 G(0,\kappa_0,\lambda_0)=\kappa_0\partial_t -D_1F(0,\lambda_0): Z\cap E\rightarrow W
         \end{equation*}
         est de Fredholm, d'indice nul et tel que $\dim\ker J_0=2$
     \end{proposition}
-    Nous pouvons désormais appliquer la réduction de Lyapunov-Schmidt à $G$
+    Notez que la deuxième condition nous permet de définir une courbe de valeurs propres perturbées. En effet, il suffit d'adapter légèrement la preuve de \ref{courbe-vp} en replaçant $R$ par $\im(i\kappa_0I -D_1F(0,\lambda_0))$ et $\hat{v_0}$ par $\varphi_0$ dans \eqref{Mapping-vp} et en évaluant en $(0,\lambda_0,0,i\kappa_0)$. On a donc une courbe $C^1$ du plan complexe $\mu$ telle que
+    \begin{equation*}
+        D_1F(0,\lambda)\varphi(\lambda)=\mu(\lambda)\varphi(\lambda),\mu(\lambda_0)=i\kappa_0, \varphi(\lambda_0)=\varphi_0.
+    \end{equation*}
+    De façon assez naturelle, on suppose que la courbe traverse l'axe des imaginaires pures avec une vitesse horizontale non nulle, i.e 
+    \begin{equation*}
+        \Re \partial_\lambda \mu(\lambda_0)\neq 0
+    \end{equation*}
+    On décrit alors la bifurcation de Hopf:
+    \begin{theobox}{Théorème de bifurcation de Hopf}{}
+        Soit $U\times V$ un voisinage de $(0,\lambda_0)$. Supposons $F\in C^3(U\times V)$, $F$ ayant une branche de solutions triviales et respectant les conditions de la proposition précédente. Supposons également disposer de $\mu$ comme décrit précédemment.\\
+        Alors il existe une courbe de solutions réelles de $\partial_t x=F(x,\lambda)$,
+        \begin{equation*}
+            \Gamma: ]-\delta,\delta[\rightarrow (C^{1+\alpha}(\R,Y)\cap C^{\alpha}(\R,X))\times \R, r\mapsto (x(r),\lambda(r))
+        \end{equation*}
+        telle que $(x(r),\lambda(r))$ est $2\pi/\kappa(r)$-périodique avec $\kappa(0)=\kappa_0$. De plus, toutes les autres solutions périodiques de $(0,\lambda_0)$ (dans la topologie induite sur l'intersection) sont obtenus à partir d'un certain point de la courbe $(x(r),\lambda(r))$ via un shift de phase $S_\theta x(r)$
+        avec 
+        \begin{equation*}
+            S_{\theta}x(r)(\cdot)=x(r)(\cdot+\theta),\text{ pour un certain $\theta\in\R \pmod {2\pi}$}
+        \end{equation*}
+    \end{theobox}
+    \begin{preuve}
+        La proposition précédente nous permet d'appliquer la réduction de Lyapunov-Schmidt. On considère donc les projections habituelles
+        \begin{equation*}
+            \pi_1: Z\cap E\rightarrow \ker(J_0), \pi_2: W \rightarrow \ker(J_0)
+        \end{equation*}
+    \end{preuve}
+    
     \newpage
 \end{document}

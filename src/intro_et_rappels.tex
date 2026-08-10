@@ -76,7 +76,7 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(A,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $A$ si elle est dérivable en chaque point
+$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
@@ -92,7 +92,7 @@ Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclur
 \end{preuve}
 On vérifie facilement que si $F$ est constante sur $U$, alors elle est dérivable sur $U$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $du=u$ sur $X$.
 \begin{remarque}
-On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, on perd l'unicité démontrée au lemme \ref{Lemme-unicité}, et de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
+On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
 \end{remarque}
 \begin{remarque}
 Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
@@ -121,7 +121,7 @@ On obtient facilement le résultat suivant:
     \Leftrightarrow \forall 0\leq i \leq m\quad  \pi_i(f) \text{ est dérivable en $x_0$} 
     \end{equation*}
 \end{proposition}
-On écrira $dF(x_0)=(dF_1(x_0),\cdots,dF_m(x_0))$ où $F_i=\pi_i(f)$
+On écrira $DF(x_0)=(DF_1(x_0),\cdots,DF_m(x_0))$ où $F_i=\pi_i(f)$
 \\
 On récupère alors le \colprop{théorème de dérivation des fonctions composées}. La preuve est assez similaire au cas $\mathbb{R}^n$
 \begin{proposition}
@@ -131,7 +131,7 @@ On récupère alors le \colprop{théorème de dérivation des fonctions composé
     \end{equation*}
 Et on a l'expression habituelle
 \begin{equation*}
-    d(g\circ f)(x_0)= (dg(y_0))(df(x_0))
+    D(G\circ F)(x_0)= (DG(y_0))(DF(x_0))
 \end{equation*}
 
 \end{proposition}
@@ -141,8 +141,8 @@ Et on a l'expression habituelle
 
 
 De ce qui précède, on déduit immédiatement que l'ensemble des fonctions dérivables en un point $x_0$ est un espace vectoriel, et que si $f$,$g$ dérivables en $x_0$, alors 
-$d (f+g)(x_0)=df(x_0)+dg(x_0)$ et si $\alpha$ est un scalaire,
-$d(\alpha f)(x_0)=\alpha df(x_0)$.
+$D (f+g)(x_0)=Df(x_0)+Dg(x_0)$ et si $\alpha$ est un scalaire,
+$D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{remarque}\label{remarque 1-dim}
     Avec les notations qui précèdent, si $X$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(X,Y)$ est isomorphe à $Y$ via $f\mapsto (\xi\mapsto f\xi)$.
     $df(x_0)$ est alors identifé un élément de l'espace d'arrivée $Y$
@@ -150,23 +150,23 @@ $d(\alpha f)(x_0)=\alpha df(x_0)$.
    
 \begin{definition}
     Soient $X,Y$ des espaces de Banach, soit $U$ un ouvert de $X$.
-    $f\in C^1(U,Y)$ si $df\in C^0(U,\mathcal{L}(X,Y))$
+    $f\in C^1(U,Y)$ si $Df\in C^0(U,\mathcal{L}(X,Y))$
 \end{definition}
 \begin{definition}
     Si $X=\prod_{i=1}^n X_i$ où les $X_i$ sont des espaces 
     de Banach, \\si $a=(a_1,\cdots,a_m)\in\prod_{i=1}^n X_i$,  
-    et si $x_i\mapsto f(a_1,\cdots,x_i,\cdots,a_n)$
-    est dérivable en $a_i$ , on note  $D_{i}f(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{f}$ comme étant $f$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $d_{k,\cdots,j }f=d_2 \tilde{f}$ 
+    et si $x_i\mapsto F(a_1,\cdots,x_i,\cdots,a_n)$
+    est dérivable en $a_i$ , on note  $D_{i}F(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{F}$ comme étant $F$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $D_{(k,\cdots,j) }f=D_2 \tilde{f}$ 
 \end{definition}
 \begin{proposition}
     dans les conditions des définitions précédentes, 
     \begin{equation*}
         f\in C^1(U,Y)\Leftrightarrow \forall a\in U, \space
-        \forall 1\leq i \leq n \quad  d_i f(a)\text{ est défini et continu}
+        \forall 1\leq i \leq n \quad  D_i f(a)\text{ est défini et continu}
     \end{equation*}
     la dérivée est alors donnée par
     \begin{equation*}
-        df(a)(t)=\sum_{i=1}^n d_i f(a)(t_i)
+        Df(a)(t)=\sum_{i=1}^n D_i f(a)(t_i)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
@@ -206,26 +206,26 @@ Nous étudierons la situation où la "non-bijectivité" de $d_{1}f(x_0,\lambda_0
     dans les conditions de la définition précédente, $D$ est un \coldef{opérateur de Fredholm} si son index est défini. On notera 
     $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. On dit qu'une fonction $F: X\rightarrow Y$ est \coldef{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $Df(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$, si l'indice de la dérivée est constant sur $U$ (on verra que c 'est le cas si $U$ est connexe) alors l'indice de $F$ est simplement l'indice de la dérivée en un point
 \end{definition}
-Nous verrons plus tard que si $f$ est de Fredholm en un point de $U$  et que $U$ est connexe, alors elle l'est sur $U$.
+Nous verrons plus tard que si $f$ est de Fredholm en un point, alors elle l'est sur un voisinage connexe $V$ et son indice y est constant.
 Remarquons que dans ce cas, $d^*$ est de Fredholm aussi et 
 \begin{equation}\label{adjointfred}
-    \operatorname*{Ind} d^*=- \operatorname*{Ind} d
+    \operatorname*{Ind} D^*=- \operatorname*{Ind} D
 \end{equation}
-Où $d^{*}$ est l'opérateur adjoint, défini comme
+Où $D^{*}$ est l'opérateur adjoint, défini comme
 \begin{eqnarray*}
-    d^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ d
+    D^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ d
 \end{eqnarray*}
 C'est simplement du fait que $(Y/\im d)^* 
-\cong (\im d)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker d^
-{*}=(\im d)^{\perp}$
+\cong (\im D)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker D^
+{*}=(\im D)^{\perp}$
 où on rappelle que l'annihilateur d'une partie $A$ de $Y$ est défini comme 
 \begin{equation*}
     A^{\perp}=\left\{ \varphi\in Y^{*} |\phi_{|_A}=0\right\}
 \end{equation*}
 \begin{exemple}
-dans la suite, on munit $C^k([0,1])$ de la norme habituelle $||f||_{C^k}=\sum_{j=0}^k ||d^j f||_{\infty} $. L'opérateur dérivée 
+dans la suite, on munit $C^k([0,1])$ de la norme habituelle $||f||_{C^k}=\sum_{j=0}^k ||D^j f||_{\infty} $. L'opérateur dérivée 
 \begin{equation*}
-    d: C^k([0,1])\mapsto C^{k-1}([0,1])\text{ avec $k\geq 1$}
+    D: C^k([0,1])\mapsto C^{k-1}([0,1])\text{ avec $k\geq 1$}
 \end{equation*}
 Il est linéaire et continu (car contractant).
 Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il est donc de dimension 1. Le théorème d'existence d'une primitive nous assure que l'opérateur est surjectif, il est donc d'indice de Fredholm 1.
@@ -233,12 +233,12 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
 \begin{exemple}
     Considérons 
     \begin{equation*}
-        d: C^0([0,1])\rightarrow C^0([0,1]): f\mapsto (x\mapsto f(x)-3x\int_{0}^{1}yf(y)dy)
+        F: C^0([0,1])\rightarrow C^0([0,1]): f\mapsto (x\mapsto f(x)-3x\int_{0}^{1}yf(y)dy)
     \end{equation*}
-    Supposons que $d(f)=0$, alors 
+    Supposons que $F(f)=0$, alors 
     $f(x)=3x\int_{0}^{1}yf(y)dy$, et donc $f\in\left\{ cx| c\in \R\right\}$. Maintenant, si $f\in\left\{ cx| c\in \R\right\}$ alors 
     \begin{equation*}
-        d(f)(x)=xc - 3x\int_{0}^1 cy^2dy=0
+        F(f)(x)=xc - 3x\int_{0}^1 cy^2dy=0
     \end{equation*}
     Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im d$, c'est à dire qu'il existe $f$ tel que 
     \begin{equation*}
@@ -249,15 +249,15 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
         I(f) = \int_{0}^1
         x(g(x)+3xI(f))dx = \int_{0}^{1}x g(x)dx + I(f)\Rightarrow \int_{0}^{1} x g(x) dx=0
     \end{equation*}
-    et donc $g$ est dans le noyau de la forme linéaire $I$. Bien sûr, si $g$ est dans le noyau de $I$ alors c'est un point fixe de $d$ et donc $\im d= \ker I$, le noyau d'une forme linéaire continue non nulle étant de codimension finie, on conclut.
+    et donc $g$ est dans le noyau de la forme linéaire $I$. Bien sûr, si $g$ est dans le noyau de $I$ alors c'est un point fixe de $F$ et donc $\im F= \ker I$, le noyau d'une forme linéaire continue non nulle étant de codimension finie, on conclut.
 \end{exemple}
-Rappelons que si $d\in\mathcal{L}(X,Y)$ alors il induit une norme sur $\im d$: si $g=d(f)$ 
+Rappelons que si $D\in\mathcal{L}(X,Y)$ alors il induit une norme sur $\im D$: si $g=D(f)$ 
 \begin{equation*}
-    ||g||_{d}=||g||_{Y}+ ||[f]||_{X/\ker d}
+    ||g||_{D}=||g||_{Y}+ ||[f]||_{X/\ker D}
 \end{equation*}
 On rappelle également  que la norme habituelle sur le quotient est donnée par 
     \begin{equation*}
-        ||[f]||_{X/\ker d}= \inf_{g\in \ker d} ||f-g||_{X}
+        ||[f]||_{X/\ker D}= \inf_{g\in \ker D} ||f-g||_{X}
     \end{equation*}
     Il est bien connu que le quotient d'un espace de Banach par un fermé est un espace de Banach (voir par exemple le cours de Céline Esser \cite{EsserFONCT}). Nous montrons quelques propriétés élémentaires des opérateurs de Fredholm, les résultats suivant sont adaptés de \cite{abramovich2002invitation}
 \begin{lemme}
@@ -327,16 +327,16 @@ Quand on a une suite exacte, le noyau du premier morphisme est trivial, il est d
 
 On obtient, de façon purement algébrique, le résultat suivant
 \begin{lemme}\label{lemma-compo}
-    Soient $X,Y,G$ des espaces Banach, $d_1:X\rightarrow Y, d_2: Y\rightarrow G$ si 2 des 3 opérateurs $d_1$,$d_2$ et $d_2\circ d_1$ sont de Fredholm alors le 3ème l'est aussi et on a 
+    Soient $X,Y,G$ des espaces Banach, $d_1:X\rightarrow Y, D_2: Y\rightarrow G$ si 2 des 3 opérateurs $d_1$,$d_2$ et $d_2\circ D_1$ sont de Fredholm alors le 3ème l'est aussi et on a 
     \begin{equation*}
-        \operatorname{Ind}(d_2\circ d_1)= \operatorname{Ind}(d_1)+\operatorname{Ind}(d_2)
+        \operatorname{Ind}(D_2\circ D_1)= \operatorname{Ind}(D_1)+\operatorname{Ind}(D_2)
     \end{equation*}
 \end{lemme}
 \begin{proof}
     Nous supposons d'abord $d_1$ et $d_2$ de Fredholm.
     Remarquons d'abord qu'on a la suite exacte courte suivante
     \[\begin{tikzcd}
-	0 & {\ker d_1} & {\ker (d_2\circ d_1)} & {\operatorname{im}(d_1)\cap \ker (d_2)} & 0
+	0 & {\ker D_1} & {\ker (D_2\circ D_1)} & {\operatorname{im}(D_1)\cap \ker (D_2)} & 0
 	\arrow["0", from=1-1, to=1-2]
 	\arrow["\iota", hook, from=1-2, to=1-3]
 	\arrow["{d_1}", two heads, from=1-3, to=1-4]
@@ -344,38 +344,38 @@ On obtient, de façon purement algébrique, le résultat suivant
     \end{tikzcd}\]
 On a alors
     \begin{equation*}
-        \operatorname{im}(d_1)\cap \ker (d_2) \cong \ker (d_2\circ d_1)/\ker (d_1)
+        \operatorname{im}(D_1)\cap \ker (D_2) \cong \ker (D_2\circ D_1)/\ker (D_1)
     \end{equation*}
 et donc
 \begin{equation*}
-    \dim (\im (d_1)\cap \ker (d_2))= \dim(\ker (d_2\circ d_1))-\dim(\ker (d_1))
+    \dim (\im (D_1)\cap \ker (D_2))= \dim(\ker (D_2\circ D_1))-\dim(\ker (D_1))
 \end{equation*}
 Ce qui nous permet de contrôler la dimension du noyau du troisième si on contrôle celle des deux autres ! Maintenant, le conoyau: remarquez d'abord qu'on a
 \begin{equation*}
-    \im(d_2\circ d_1)\subseteq \im(d_2)\subseteq G
+    \im(D_2\circ D_1)\subseteq \im(D_2)\subseteq G
 \end{equation*}
 (Ce sont bien entendu des sous-groupes normaux vis à vis de l'addition de $G$) on définit alors une projection naturelle
 
 \begin{equation*}
-    \pi : G/\im(d_2\circ d_1)\rightarrow 
-    G/\im(d_2), g+\im(d_2\circ d_1)\mapsto g+\im(d_2) 
+    \pi : G/\im(D_2\circ D_1)\rightarrow 
+    G/\im(D_2), g+\im(D_2\circ D_1)\mapsto g+\im(D_2) 
 \end{equation*}
 de plus, le second théorème d'isomorphisme nous permet d'écrire
 \begin{equation*}
-    (\im(d_1)+\ker(d_2))/\im(d_1)\cong \ker(d_2)/(\im(d_1)\cap \ker(d_2) )
+    (\im(D_1)+\ker(D_2))/\im(D_1)\cong \ker(D_2)/(\im(D_1)\cap \ker(D_2) )
 \end{equation*}
 On a alors la suite exacte suivante
 \[\begin{tikzcd}
-	0 & {\frac{\operatorname{im} (d_1)+\ker(d_2)}{\operatorname{im} (d_1)}} & {\frac{Y}{\operatorname{im} (d_1)}} & {\frac{G}{\operatorname{im} (d_2\circ d_1)}} & { \frac{G}{\operatorname{im}(d_2)}} & 0
+	0 & {\frac{\operatorname{im} (D_1)+\ker(D_2)}{\operatorname{im} (D_1)}} & {\frac{Y}{\operatorname{im} (D_1)}} & {\frac{G}{\operatorname{im} (D_2\circ D_1)}} & { \frac{G}{\operatorname{im}(D_2)}} & 0
 	\arrow["0", from=1-1, to=1-2]
 	\arrow["\iota", hook, from=1-2, to=1-3]
-	\arrow["{d_2}", from=1-3, to=1-4]
+	\arrow["{D_2}", from=1-3, to=1-4]
 	\arrow["\pi", two heads, from=1-4, to=1-5]
 	\arrow["0", from=1-5, to=1-6]
 \end{tikzcd}\]
 Vu ce qui précède, le 1er élément de la suite est de dimension finie, les 2ème et 4ème éléments le sont par hypothèse  et donc le troisième doit l'être aussi et
 \begin{equation*}
-    \dim(G/\im(d_2\circ d_1)) = \dim(G/\im d_2) + \dim(Y/\im d_1) - \dim(\ker(d_2)) + \dim(\ker(d_2)\cap \im(d_1))
+    \dim(G/\im(D_2\circ D_1)) = \dim(G/\im D_2) + \dim(Y/\im D_1) - \dim(\ker(D_2)) + \dim(\ker(D_2)\cap \im(D_1))
 \end{equation*}
 Ce qui permet de conclure. Les autres cas se montrent de façon similaire
 \end{proof}
@@ -453,7 +453,7 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
 
 Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile dans la section $\ref{Lambdainfdim}$
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker dF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ dF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
+    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$ et $\operatorname*{Ind}(DF(0))=0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker dF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ dF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
     \begin{equation*}
         \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n\in Y:\forall 1\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)=\delta_{ij}
     \end{equation*}
@@ -491,11 +491,7 @@ Les résultats suivants sont dus à  [SOURCE]
     :X_0\rightarrow Y$ est injective 
     sur $X_0$ et l'envoie sur un 
     espace fermé. Par le lemme 
-    précédent, il existe un ouvert $U_0\ni (u_0,v_0)$ sur lequelle la propriété reste vraie . En applicant le théorème des 
-    fonctions implicites et le fait que la dimension du noyau est finie, on peut 
-    trouver un voisinage $U\times 
-    V$ de $(u_0,v_0)$ tel que $U$ est fermé et borné,$V$ est compact, et si $v\in V$ alors $F$ restreinte à $U\times v$ soit un homéomorphisme sur son image. On va montrer que $F$ est propre sur $U\times V$. Soit $K$ un compact de $Y$, et $(u_i,v_i)\in F^{-1}(K)\cap (U\times V)$. $K$ étant compact, on peut supposer que la suite $F(u_i,v_i)\rightarrow y$, mais $V$ étant compact également, on suppose aussi que la suite $v_i\rightarrow v$, une application du théorème des accroissements finis permet d'affirmer que $F(u_i,v)\rightarrow y$.
-    Or, $F$ restreinte à $U\times v$ est un homéomorphisme, donc $u_i\rightarrow u$, ce qui suffit.
+    précédent, il existe un voisinage $W=U_1\times V_1$ sur lequel la propriété reste vraie et on peut supposer $V_1$ compact. quitte à réduire $U_1$ et $V_1$, on peut supposer pouvoir appliquer le théorème des fonctions implicites qui nous permet alors d'affirmer que $F(\cdot,v_1)|_{U_1}$ est un homéomorphisme sur son image si $v_1\in V_1$. Maintenant, soit $K$ un compact de $Y$, nous devons montrer que $A=F^{-1}(K)\cap W$ est compact. Il suffit de montrer qu'il est séquentiellement compact, soit donc $(u_i,v_i)_{i\in\mathbb{N}}$ une suite de $A$. $F(u_i,v_i)$ est une suite de $K$, qu'on peut supposer converger vers $y\in K$ , et $V_1$ étant compact, on peut supposer $v_i\to v$. De plus, en appliquant l'inégalité des accroissements finis, on peut même supposer $v_i=v$. $F(\cdot,v)|_{D_1}$ étant un homéomorphisme, on conclut.
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
@@ -527,7 +523,7 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
     alors l'ensemble des valeurs singulières est maigre
 \end{theobox}
 \begin{preuve}
-    Les espaces de de Banach séparés étant à 
+    Les espaces de de Banach séparables étant à 
     base dénombrable, et les ensemble maigres 
     étant stables par union dénombrable, il 
     suffit de prouver la propriété localement. 
@@ -537,7 +533,7 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
     $F(x_0)$ dans $Y$, considérons, avec les notations habituelles, $\pi: Y\rightarrow Y_0$ la projection canonique
     et 
     \begin{equation*}
-        \varphi : u_0\times \ker DF(x_0)\rightarrow  Y_0
+        \varphi : \times \ker DF(x_0)\rightarrow  Y_0, v\mapsto \pi (F(u_0,v))
     \end{equation*}
     on applique alors le théorème de Morse-Sard en dimension finie, on récupère une valeur régulière $z$ de $\varphi$ dans $\pi (U_1)$. Soit $y\in\pi^{-1}(z)\cap U_1$, $y$ est alors une valeur régulière de $F$.
     Du fait que l'ensemble des points singuliers forme un fermé (étant donné que l'ensemble des opérateurs surjectifs est ouvert) et via \ref{propre-fred}, on conclut.
@@ -546,19 +542,7 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
     Si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
 \end{corollaire}
 \begin{remarque}
-    Il faut être prudent sur la façon dont on 
-    interprète le résultat précédent. Celui-ci ne stipule pas du tout que le lieu 
-    d'annulation va être constitué de point 
-    isolés. Ainsi, on pourrait tout à fait 
-    avoir zéro dans l'image et un lieu 
-    d'annulation qui présente une géométrie 
-    digne d'intérêt. Cependant, en pratique il 
-    est courant que l'espace d'arrivée soit une 
-    mesure physique (température,vitesse, 
-    etc...) il n'est pas réaliste qu'un système 
-    (classique) puisse avoir une telle  
-    variable qui ne 
-    peut prendre que quelque valeurs isolées.
+    En pratique, il est fréquent que l’espace d’arrivée Y représente des grandeurs physiques mesurables (température, vitesse, etc.). Or une mesure expérimentale n’est généralement connue qu’à une certaine précision. Il est alors naturel, au moins lorsque les composantes de Y représentent des observables indépendantes, d’attendre qu’une sortie réalisable reste réalisable après une perturbation suffisamment petite. Si Ind(F)<0, l’image de F est cependant d’intérieur vide : toute valeur atteinte est donc arbitrairement proche de valeurs qui ne sont pas atteintes. En ce sens, les sorties du système ne sont pas robustes vis-à-vis de petites perturbations dans Y. Cette observation ne rend évidemment pas les opérateurs d’indice négatif dénués d’intérêt — des contraintes physiques exactes peuvent naturellement imposer une image de codimension positive — mais elle explique pourquoi, dans le cadre considéré ici, nous nous intéresserons principalement aux indices non négatifs.
 \end{remarque}
 
 Notez que dans la suite, on ne travaillera pas avec des fonctions de Fredholm directement, mais avec des familles paramétrées. Typiquement, on supposera que l'espace des paramètres $\Lambda$ est de dimension finie et que $D_1 F$ est continue sur un ouvert $U\times V$ contenant un point critique 
@@ -566,7 +550,6 @@ $(x_0,\lambda_0)$, le théorème \ref{Atkinson} permet d'affirmer que l'index de
 Des calculs simples permettent d'établir que
 \begin{equation*}
    \operatorname*{Ind}(DF(x_0,\lambda_0))
-   =\operatorname*{Ind}(D_1F(x_0,\lambda_0)+D_2F(x_0,\lambda_0))
    =\operatorname*{Ind}(D_1F)+ \dim(\Lambda)
 \end{equation*}
 En pratique, celà signifie qu'il n'y a rien à étudier si l'indice de Fredholm des $F(\cdot,\lambda)$ est inférieur à $-\dim \Lambda$. Etant donné qu'on s'intéresse majoritairement au cas au $\dim \Lambda=1$, on justifie dès lors pourquoi on fera l'hypothèse que les $F(\cdot,\lambda)$ sont d'indice $\geq -1$

@@ -148,11 +148,7 @@ Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la m�
    \begin{equation*}
         (D+E')F= (D+E')-(D+E)=E'-E
    \end{equation*}
-   donc $\dim\im F=\dim\im (E-E')$. Et du fait que 
-   \begin{equation*}
-        \dim \im (E-E')\leq \dim\im (E+E')\leq \dim\im(E)+\dim\im(E'),
-   \end{equation*}
-   on conclut.
+   donc $\dim\im F=\dim\im (E-E')$, on conclut.
 \end{preuve}
 
 
@@ -212,7 +208,7 @@ Il est de plus clair que cette relation d'équivalence partitionne
 $\mathcal{C}(D)$ en deux classes d'équivalence. Notez que si $D_1$ et $D_2$ peuvent être composés et que si $E_1$ et $E_2$ sont des correcteurs de $D_1$ et $D_2$ respectivement, alors $D_2E_1+ E_2E_1+ E_2D_1$ est un correcteur de $D_2D_1$, de fait 
 
 \begin{equation*}
-    D_2D_1+ D_2E_1+ E_2E_1+ E_2D_1 =(D_1+E_1)(D_2 + E_2)
+    D_2D_1+ D_2E_1+ E_2E_1+ E_2D_1 =(D_2+E_2)(D_1 + E_1)
 \end{equation*}
 
 
@@ -501,7 +497,7 @@ Le résultat suivant est en fait une version plus puissante de \ref{propre-fred}
     \begin{equation*}
         \sigma : [0,1]\rightarrow \mathbb{Z}, t\mapsto \deg_f(H(\cdot,t),W,y(t))
     \end{equation*}
-    est localement constante. Soit $t_0\notin [0,1]$, notez que $y(t_0)\in H(\partial W,t_0)$, car sinon il existerait $w\in \partial W$ tel que $y(t_0)=H(w,t_0)$ et $w\in C\cap \partial W$, or  c'est impossible car $C\subseteq W$ et $W$ ouvert. Maintenant, du fait que $H$ et $y$ sont continus, il existe un voisinage compact $J$ de $t_0$ tel que $y(t)\notin H(t,\partial W)$ si $t\in J$. Du fait que $H$ est propre, elle est fermée, et donc $H(\partial W\times J)$ est fermé et il existe alors un voisinage connexe ouvert $V$ de $y(t_0)$ tel que $H(\partial W\times J)\cap V=\emptyset$. Soit alors $z\in V$, du fait que $V$ est connexe et par ce qui précède, on a que $\sigma(t)=\deg_F(H(\cdot,t),W,z)$ si $t\in J$. On suppose de plus que $z$ est une valeur régulière de $H(\cdot,t_0)$ dans $W$ ce qui signifie que $H(\cdot,t_0)^{-1}(z)$ est un ensemble fini de points réguliers $\left\{x_1,\cdots,x_n\right\}$. On applique alors le théorème des fonctions implicites autour de chaque paire $(x_i,t_0)$ qui nous fourni des voisinages $V_1\times J_i$ sur lesquels $H(\cdot,t_0)^{-1}(z)$ est le graphe d'une courbe continue $\gamma_i: J_i\rightarrow U$. Étant donné que $J$ est compact, $H$ est propre sur $\bar{W}\times J$. De plus, $z\notin H(\partial W\times J)$, donc $H^{-1}(z)\cap (W\times J)$ est compact. Ce qui implique l'existence d'un voisinage $J_0$ de $t$ tel que
+    est localement constante. Soit $t_0\in [0,1]$, notez que $y(t_0)\notin H(\partial W,t_0)$, car sinon il existerait $w\in \partial W$ tel que $y(t_0)=H(w,t_0)$ et $w\in C\cap \partial W$, or  c'est impossible car $C\subseteq W$ et $W$ ouvert. Maintenant, du fait que $H$ et $y$ sont continus, il existe un voisinage compact $J$ de $t_0$ tel que $y(t)\notin H(t,\partial W)$ si $t\in J$. Du fait que $H$ est propre, elle est fermée, et donc $H(\partial W\times J)$ est fermé et il existe alors un voisinage connexe ouvert $V$ de $y(t_0)$ tel que $H(\partial W\times J)\cap V=\emptyset$. Soit alors $z\in V$, du fait que $V$ est connexe et par ce qui précède, on a que $\sigma(t)=\deg_F(H(\cdot,t),W,z)$ si $t\in J$. On suppose de plus que $z$ est une valeur régulière de $H(\cdot,t_0)$ dans $W$ ce qui signifie que $H(\cdot,t_0)^{-1}(z)$ est un ensemble fini de points réguliers $\left\{x_1,\cdots,x_n\right\}$. On applique alors le théorème des fonctions implicites autour de chaque paire $(x_i,t_0)$ qui nous fourni des voisinages $V_1\times J_i$ sur lesquels $H(\cdot,t_0)^{-1}(z)$ est le graphe d'une courbe continue $\gamma_i: J_i\rightarrow U$. Étant donné que $J$ est compact, $H$ est propre sur $\bar{W}\times J$. De plus, $z\notin H(\partial W\times J)$, donc $H^{-1}(z)\cap (W\times J)$ est compact. Ce qui implique l'existence d'un voisinage $J_0$ de $t$ tel que
     \begin{equation*}
         \forall t\in J_0,H(\cdot,t)^{-1}(z)=\left\{\gamma_1(t),\cdots,\gamma_n(t)\right\}.
     \end{equation*}
