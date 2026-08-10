@@ -98,7 +98,7 @@ On suppose bien sûr que $F(\cdot,\lambda)$ est de Fredholm si $\lambda$ au vois
     \end{align*}
     L'équation \ref{transvers-ker} permet d'affirmer que
     \begin{equation*}
-        D_{(2,3)}G(x_0,\lambda_0,0,0): R\cap X\times \R\rightarrow U
+        D_{(3,4)}G(x_0,\lambda_0,0,0): R\cap X\times \R\rightarrow U
     \end{equation*}
     est un isomorphisme, le théorème des fonctions implicites nous donne alors des fonctions $w:U_1\times V_1\rightarrow R\cap X$, $\mu: U_1\times V_1\rightarrow \R$ telles que $x_0\in U_1\subseteq U$ $\lambda_0\in V_1\subseteq V$,  $w(x_0,\lambda_0)=0$, $\mu(x_0,\lambda_0)=0$ et 
     \begin{equation*}
@@ -234,17 +234,17 @@ Celà étant, la proposition suivante nous permet de relier les variations de la
     \begin{equation}\label{x-deri-second}
         \partial^2_sx(0)=D^2_{11}\varphi[\hat{v_0},\hat{v_0}]
     \end{equation}
-    L'équation \eqref{eq-dyn-3}, quand $\partial_s\mu(0)=0$, peut être résolue pour $\partial_sw(0)\in (I-\pi_1)X$.
+    L'équation \eqref{eq-dyn-2}, quand $\partial_s\mu(0)=0$, peut être résolue pour $\partial_sw(0)\in (I-\pi_1)X$.
     Ce qui nous donne
     \begin{equation*}\label{deriv-w}
-        \partial_s w(0)=-(I-\pi_1)(D_1F(0,\lambda_0))^{-1}(I-\pi_2)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]=\partial^2_sx(0)
+        \partial_s w(0)=-((I-\pi_2)(D_1F(0,\lambda_0)))^{-1}(I-\pi_1)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]=\partial^2_sx(0)
     \end{equation*}
     Si on reprend \eqref{equation-horrible-1}, notez que 
     $D_1F(0,\lambda_0)\partial^2_sw(0)\in R$. En appliquant $\hat{v_0}^*$ à \eqref{equation-horrible-1} et en substituant \eqref{x-deri-second} et \eqref{deriv-w}, on obtient
     \begin{equation}
         \begin{aligned}
             \partial^2_s\mu(0)=&\hat{v_0}^*(D^3_{111}F(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}])
-            \\&- 3\hat{v_0}^*\left(D^2_{11}DF(0,\lambda_0)[\hat{v_0},-(I-\pi_1)(D_1F(0,\lambda_0))^{-1}(I-\pi_2)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]]\right)\\
+            \\&- 3\hat{v_0}^*\left(D^2_{11}DF(0,\lambda_0)[\hat{v_0},-(I-\pi_2)(D_1F(0,\lambda_0))^{-1}(I-\pi_1)D^2_{11}F(0,\lambda_0)[\hat{v_0},\hat{v_0}]]\right)\\
             &+\hat{v_0}^*(D^2_{12}F(0,\lambda_0))\partial^2_{s}\lambda(0)
         \end{aligned}
     \end{equation}
@@ -258,7 +258,7 @@ On peut maintenant formuler le principe d'échange de stabilité
 \begin{definition}
     Dans les conditions habituelles de ce chapitre,
     soient \\
-    $\gamma_1(s)=\left(x_1(s),\lambda_1(s)\right)$,$\gamma_2(s)=\left(x_2(s),\lambda_2(s)\right)$ deux courbes de solutions passant par $(x_0,\lambda_0)$. Supposons $\pi_1x_i(s)=v_0+y_i(s)\hat{v}_0$, $i=1,2$. Si il existe des paramètres $s_1,s_2$ tels que $y_1(s_1),y_2(s_2)$ sont des zéros consécutifs de $\Psi(\cdot,\lambda)$ en $\lambda=\lambda(s_1)=\lambda(s_2)$ alors les courbes sont dites adjacentes
+    $\gamma_1(s)=\left(x_1(s),\lambda_1(s)\right)$,$\gamma_2(s)=\left(x_2(s),\lambda_2(s)\right)$ deux courbes de solutions passant par $(x_0,\lambda_0)$. Supposons $\pi_2x_i(s)=v_0+y_i(s)\hat{v}_0$, $i=1,2$. Si il existe des paramètres $s_1,s_2$ tels que $y_1(s_1),y_2(s_2)$ sont des zéros consécutifs de $\Psi(\cdot,\lambda)$ en $\lambda=\lambda(s_1)=\lambda(s_2)$ alors les courbes sont dites adjacentes
 \end{definition}
 
 \begin{theobox}{Principe d'échange de stabilité}{}
@@ -432,6 +432,7 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
         \begin{equation*}
             \pi_1: Z\cap E\rightarrow \ker(J_0), \pi_2: W \rightarrow \ker(J_0)
         \end{equation*}
+        \todo{terminer}
     \end{preuve}
     
     \newpage

@@ -1131,10 +1131,10 @@ partielles?
 \begin{lemme}
     Si $f\in\mathcal{E}^m_{p+q}$ et pour un certain $k\geq 0$, $\mathfrak{m}^{k+1}_{p+q}\cdot \mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}$. Alors $g\in T_f\mathcal{RB} $ si et seulement si il exste des germes de matrices à éléments polynômiaux de  degré au plus $k$ telles que
     $A\in\mathcal{E}^{m\times m}_{p+q},
-    B\in\mathcal{E}^{p\times p}_{p+k},C \in\mathcal{E}^{p\times q}_{p+q}$ telles que
+    B\in\mathcal{E}^{p\times p}_{p+q},C \in\mathcal{E}^{p\times q}_{p+q}$ telles que
     \begin{equation*}
         \forall |\alpha|\leq k,
-        \partial^{\alpha}\left( g- \left( Af+\partial_x fB x+ \partial_\lambda f C\lambda \right)\right)(0,0)=0
+        \partial^{\alpha}\left( g- \left( Af+\partial_x f(B x+ C\lambda) \right)\right)(0,0)=0
     \end{equation*}
 \end{lemme}
 \begin{preuve}
@@ -1142,11 +1142,11 @@ partielles?
     \begin{equation*}
         g-(A'f+\partial_x fB'x+ \partial_x fC'\lambda)=0
     \end{equation*}
-    On vérifie facilement que $J^k A,J^kB, J^k C$ conviennent.\\
-    Maintenant,supposons que $g$ satisfait la condition de l'énoncé pour $A,B,C$. Via \ref{Hadamard-corr}, on a 
+    On vérifie facilement que $J^k A',J^kB', J^k C'$ conviennent.\\
+    Maintenant,supposons que $g$ satisfait la condition de l'énoncé pour $A,B,C$. Via \eqref{Hadamard-corr}, on a 
     \begin{equation*}
-        r=\left( g- \left( Af+\partial_x fB x+ 
-        \partial_\lambda f C\lambda \right)
+        r=\left( g- \left( Af+\partial_x f(B x+ 
+        f C\lambda) \right)
         \right)\in\mathfrak{m}^{k+1}_{p+q}\cdot\mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}.         
     \end{equation*}
     Et $g$ s'écrit alors comme la somme de deux éléments du tangent, ce qui suffit.
@@ -1196,7 +1196,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     \end{equation*}
     et donc
     \begin{equation*}
-        1=\codim(M+\mathfrak{m}_{p+q}
+        1\leq \codim(M+\mathfrak{m}_{p+q}
         ^{\times m})
         \leq 
         \codim(M+
@@ -1240,7 +1240,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
 
 \begin{lemme}
     Si \ref{segment} est correct quand $t$ est dans un voisinage de $0$ alors en posant il existe des germes
-     $A\in\mathcal{E}_{p+q+1}^{m\times m},b\in\mathcal{E}_{p+q+1}^{ m }$ telles que $B(0,0,t)=0$ et 
+     $A\in\mathcal{E}_{p+q+1}^{m\times m},b\in\mathcal{E}_{p+q+1}^{ p }$ telles que $b(0,0,t)=0$ et 
     \begin{equation}\label{eq-locale}
         p(x,\lambda)= A(x,\lambda,t)G(x,\lambda,t) + \partial_x G b(x,\lambda,t)\text{ avec } G(x,\lambda,t)= f(x,\lambda)+ tp(x,\lambda)
     \end{equation}
@@ -1285,7 +1285,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
     \end{equation*}
     $I$ étant bien sûr inversible, la germe de matrice $I+t Q$ est inversible, on a alors
     \begin{equation*}
-        v(h)=(I+t Q)^{-1} Qv(G).
+        v(p)=(I+t Q)^{-1} Qv(G).
     \end{equation*}
     Si on regarde la premère composante, il vient enfin
     \begin{equation*}
@@ -1522,7 +1522,7 @@ Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est  universel si et 
 \begin{equation*}
     \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
 \end{equation*}
-Autrement dit, la $D$-codimension et la codimension (par rapport à $\mathcal{B}$) coïncident.
+Autrement dit, la $D$-codimension et la codimension (par rapport au tangent étendu) coïncident.
 \end{theobox}
 {\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition nécessaire}}\ }
 
@@ -1538,14 +1538,14 @@ $g\in\mathcal{E}^m_{p+q}$ un germe quelconque. Remarquez que
 \end{equation*}
 Est un déploiement à $1$ paramètres de $f$. Par définition, on a $H \preccurlyeq  G$ il existe donc des germes $A,\Lambda,X,S$ comme celle de \ref{Factor-unfold} telles que
 \begin{equation*}
-    H(x,\lambda,\varepsilon)=S(x,\lambda,\varepsilon)G(X(x,\lambda,\varepsilon),\Lambda(x,\varepsilon),A(\varepsilon))
+    H(x,\lambda,\varepsilon)=S(x,\lambda,\varepsilon)G(X(x,\lambda,\varepsilon),\Lambda(\lambda,\varepsilon),A(\varepsilon))
 \end{equation*}
 En dérivant par rapport à $\varepsilon$ et en évaluant à zéro, on récupère
 \begin{equation*}
     g(x,\lambda)
     =\partial_\varepsilon (S(x,
-    \lambda,\varepsilon)g(X(x,
-    \lambda,\varepsilon),\Lambda(x,
+    \lambda,\varepsilon)fX(x,
+    \lambda,\varepsilon),\Lambda(\lambda,
     \varepsilon)))(0)+\sum_{i=1}^
     {k} (\partial_\varepsilon A_i)
     (0)\partial_{\alpha_i}G(x,

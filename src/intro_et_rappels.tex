@@ -76,7 +76,7 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
+$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
@@ -206,8 +206,8 @@ Nous étudierons la situation où la "non-bijectivité" de $d_{1}f(x_0,\lambda_0
     dans les conditions de la définition précédente, $D$ est un \coldef{opérateur de Fredholm} si son index est défini. On notera 
     $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. On dit qu'une fonction $F: X\rightarrow Y$ est \coldef{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $Df(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$, si l'indice de la dérivée est constant sur $U$ (on verra que c 'est le cas si $U$ est connexe) alors l'indice de $F$ est simplement l'indice de la dérivée en un point
 \end{definition}
-Nous verrons plus tard que si $f$ est de Fredholm en un point, alors elle l'est sur un voisinage connexe $V$ et son indice y est constant.
-Remarquons que dans ce cas, $d^*$ est de Fredholm aussi et 
+
+Remarquons que si $D$ est de Fredholm alors  $D^*$ l'est aussi 
 \begin{equation}\label{adjointfred}
     \operatorname*{Ind} D^*=- \operatorname*{Ind} D
 \end{equation}
@@ -481,17 +481,54 @@ Les résultats suivants sont dus à  [SOURCE]
     Si $F:X\rightarrow Y$ est de Fredholm, alors $F$ est localement propre
 \end{proposition}
 \begin{preuve}
-    Soit $x_0\in X$ et $U\ni x_0$ un 
-    ouvert. Par hypothèse, $X$ peut 
-    se factoriser en $X_0\times \ker 
-    DF(x_0)$, on écrit alors $x_0=(u_0,
-    v_0)$. Notez qu'on a $DF=D_1F$ 
-    sur $X_0$, par \ref
-    {im-fred-closed}, $D_1F(u_0,v_0)
-    :X_0\rightarrow Y$ est injective 
-    sur $X_0$ et l'envoie sur un 
-    espace fermé. Par le lemme 
-    précédent, il existe un voisinage $W=U_1\times V_1$ sur lequel la propriété reste vraie et on peut supposer $V_1$ compact. quitte à réduire $U_1$ et $V_1$, on peut supposer pouvoir appliquer le théorème des fonctions implicites qui nous permet alors d'affirmer que $F(\cdot,v_1)|_{U_1}$ est un homéomorphisme sur son image si $v_1\in V_1$. Maintenant, soit $K$ un compact de $Y$, nous devons montrer que $A=F^{-1}(K)\cap W$ est compact. Il suffit de montrer qu'il est séquentiellement compact, soit donc $(u_i,v_i)_{i\in\mathbb{N}}$ une suite de $A$. $F(u_i,v_i)$ est une suite de $K$, qu'on peut supposer converger vers $y\in K$ , et $V_1$ étant compact, on peut supposer $v_i\to v$. De plus, en appliquant l'inégalité des accroissements finis, on peut même supposer $v_i=v$. $F(\cdot,v)|_{D_1}$ étant un homéomorphisme, on conclut.
+Soit $x_0\in X$ et $U\ni x_0$ un voisinage.
+Comme $DF(x_0)$ est de Fredholm, on peut écrire
+\begin{equation*}
+    X=X_0\oplus \ker DF(x_0)
+    \qquad\text{et}\qquad
+    Y=\im DF(x_0)\oplus Y_0,
+\end{equation*}
+où $X_0$ et $Y_0$ sont fermés. On identifie alors $X$ à
+$X_0\times \ker DF(x_0)$ et on écrit $x_0=(u_0,v_0)$. Soit
+$\pi:Y\rightarrow \im DF(x_0)$ la projection associée à la décomposition précédente. On a
+\begin{equation*}
+    D_1(\pi\circ F)(u_0,v_0)
+    =
+    DF(x_0)_{\mid X_0}
+    :
+    X_0\rightarrow \im DF(x_0),
+\end{equation*}
+qui est un isomorphisme d'espaces de Banach. Le théorème des 
+fonctions implicites fournit donc des voisinages  $U_1$
+de $u_0$, $V_1$ de $v_0$ et $W_1$ de $\pi(F(x_0))$, ainsi qu'une
+application continue $\varphi:W_1\times V_1\rightarrow U_1$ telle que $\pi(F(\varphi(y,v),v))=y$, et, quitte à réduire ces voisinages,
+\begin{equation*}
+    \pi(F(u,v))=y
+    \Leftrightarrow
+    u=\varphi(y,v)
+\end{equation*}
+pour $(u,v)\in U_1\times V_1$ et $y\in W_1$.Comme $\ker DF(x_0)$ est de dimension finie, on peut choisir $V_1$
+de sorte que son adhérence $\overline{V_1}$ soit compacte et, quitte
+encore à réduire les voisinages, supposer que $V'=U_1\times \overline{V_1}\subseteq U$. Soit maintenant $K$ un compact suffisamment petit de $Y$ et
+$(u_i,v_i)_{i\in\mathbb N}$ une suite de $F^{-1}(K)\cap V'$. Par compacité de $K$, quitte à extraire une sous-suite, on peut supposer que $F(u_i,v_i)\rightarrow y\in K$. De même, puisque $\overline{V_1}$ est compacte, quitte à extraire de
+nouveau une sous-suite, on peut supposer que $v_i\rightarrow v\in\overline{V_1}$.Or, par définition de $\varphi$,
+\begin{equation*}
+    u_i
+    =
+    \varphi\bigl(\pi(F(u_i,v_i)),v_i\bigr).
+\end{equation*}
+Par continuité de $\varphi$, on obtient alors
+\begin{equation*}
+    u_i
+    \rightarrow
+    \varphi(\pi(y),v).
+\end{equation*}
+Ainsi, $(u_i,v_i)$ admet une sous-suite convergente. Comme
+$F^{-1}(K)\cap V'$ est fermé dans $V'$, sa limite appartient encore à
+$F^{-1}(K)\cap V'$. Cet ensemble est donc compact.
+
+On en déduit que $F$ est localement propre en $x_0$. Comme $x_0$ est
+arbitraire, $F$ est localement propre.
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
@@ -523,20 +560,23 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
     alors l'ensemble des valeurs singulières est maigre
 \end{theobox}
 \begin{preuve}
-    Les espaces de de Banach séparables étant à 
-    base dénombrable, et les ensemble maigres 
-    étant stables par union dénombrable, il 
-    suffit de prouver la propriété localement. 
-    Soit alors $x_0\in X$, et considérons le 
-    voisinage $U\times V$ de la preuve de \ref
-    {propre-fred} et la décomposition $x_0=(u_0,v_0)$ de cette même preuve. Soit $U_1$ un voisinage de 
-    $F(x_0)$ dans $Y$, considérons, avec les notations habituelles, $\pi: Y\rightarrow Y_0$ la projection canonique
-    et 
-    \begin{equation*}
-        \varphi : \times \ker DF(x_0)\rightarrow  Y_0, v\mapsto \pi (F(u_0,v))
-    \end{equation*}
-    on applique alors le théorème de Morse-Sard en dimension finie, on récupère une valeur régulière $z$ de $\varphi$ dans $\pi (U_1)$. Soit $y\in\pi^{-1}(z)\cap U_1$, $y$ est alors une valeur régulière de $F$.
-    Du fait que l'ensemble des points singuliers forme un fermé (étant donné que l'ensemble des opérateurs surjectifs est ouvert) et via \ref{propre-fred}, on conclut.
+Les espaces de Banach séparables étant à base dénombrable, et les ensembles maigres étant stables par union dénombrable, il suffit de prouver la propriété localement. Soit alors $x_0\in X$.  Considérons $X_0,Y_0$ et $\pi$ comme dans la preuve précédente et 
+\begin{equation*}
+    \Psi:X_0\times\ker DF(x_0)\rightarrow
+    \im DF(x_0)\times\ker DF(x_0),\qquad
+    (u,v)\mapsto(\pi F(u,v),v).
+\end{equation*}
+Comme
+\begin{equation*}
+    D\Psi(x_0)(h,k)=(DF(x_0)h,k)
+\end{equation*}
+est un isomorphisme, le théorème des fonctions implicites permet, quitte à restreindre les voisinages, d'écrire $F$ dans ces coordonnées sous la forme
+\begin{equation*}
+    F(u,v)=(u,\varphi(u,v)),
+    \qquad
+    \varphi:U\times V\rightarrow Y_0.
+\end{equation*}
+Pour $u\in U$ fixé, posons $\varphi_u(v)=\varphi(u,v)$. Un point $(u,v)$ est régulier pour $F$ si et seulement si $D\varphi_u(v)$ est surjective. Or $\dim\ker DF(x_0)-\dim Y_0=\operatorname{Ind}(F)$,et donc $k>\max(\dim\ker DF(x_0)-\dim Y_0,0)$. Le théorème de Morse--Sard appliqué à $\varphi_u$ montre alors que ses valeurs régulières sont denses dans $Y_0$. On en déduit que, dans tout voisinage de $F(x_0)$, il existe une valeur régulière de $F$ ; l'ensemble des valeurs singulières locales est donc d'intérieur vide. Enfin, l'ensemble des points singuliers est fermé, puisque l'ensemble des opérateurs surjectifs est ouvert. En réduisant encore le voisinage, \ref{propre-fred} permet de supposer $F$ propre sur celui-ci ; l'image de l'ensemble des points singuliers y est donc fermée, et par ce qui précède dense nulle part.
 \end{preuve}
 \begin{corollaire}
     Si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
@@ -552,7 +592,7 @@ Des calculs simples permettent d'établir que
    \operatorname*{Ind}(DF(x_0,\lambda_0))
    =\operatorname*{Ind}(D_1F)+ \dim(\Lambda)
 \end{equation*}
-En pratique, celà signifie qu'il n'y a rien à étudier si l'indice de Fredholm des $F(\cdot,\lambda)$ est inférieur à $-\dim \Lambda$. Etant donné qu'on s'intéresse majoritairement au cas au $\dim \Lambda=1$, on justifie dès lors pourquoi on fera l'hypothèse que les $F(\cdot,\lambda)$ sont d'indice $\geq -1$
+C'est pour celà qu'en pratique, on se concentrera surtout sur le cas ou $ \operatorname*{Ind}F(\cdot,\lambda)\geq -\dim \Lambda$
 
 
 
