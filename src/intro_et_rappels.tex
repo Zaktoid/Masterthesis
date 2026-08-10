@@ -319,7 +319,7 @@ Rappelons les notions de suite exacte et de suite exacte courte
 	\arrow["0", from=1-4, to=1-5]
     \end{tikzcd}\]
 \end{definition}
-Quand on a une suite exacte, le noyau du premier morphisme est trivial, il est donc injectif. L'image du second morphisme est le noyau de l'application nulle, donc c'est tout l'espace, il est donc surjectif. Intuitivement,on peut voir $A$ comme "inclus" dans $B$ via $j_1$, et $j_2$ peut être compris comme une projection, en fait, le premier théorème d'isomorphisme nous assure que 
+Quand on a une suite exacte courte, le noyau du premier morphisme est trivial, il est donc injectif. L'image du second morphisme est le noyau de l'application nulle, donc c'est tout l'espace, il est donc surjectif. Intuitivement,on peut voir $A$ comme "inclus" dans $B$ via $j_1$, et $j_2$ peut être compris comme une projection, en fait, le premier théorème d'isomorphisme nous assure que 
 \begin{equation*}
     B/\im(j_1)\cong C
 \end{equation*}
@@ -635,9 +635,9 @@ Les opérateurs de Fredholm apparaissent très naturellement
 Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
     Soient $U$ un ouvert connexe de $\R^n$ et $m\geq 1$. Si pour tout $x\in U$, 
-    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré $m$ en $D_1,\cdots,D_n$ et $l\geq m\geq 1$, alors un opérateur de la forme 
+    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré $m$ en $D_1,\cdots,D_n$, $l\geq m\geq 1$ et $c_\alpha\in C^{l-m}(W,\R)$ avec $W$ un ouvert contenant $\bar{U}$ alors un opérateur de la forme 
     \begin{equation}\label{ellipticop}
-        E: C^{l}(U)\rightarrow C^{l-m}(U), f 
+        E: C^{l}(U;\R^p)\rightarrow C^{l-m}(U;\R^p), f 
         \mapsto \sum_{|\alpha|\leq m} c_{\alpha} D^{\alpha}f
     \end{equation}
     est appelé \coldef{opérateur différentiel 
@@ -646,7 +646,7 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
     \begin{equation}\label{principalpart}
         f\mapsto \sum_{|\alpha|= m} c_{\alpha}D^{\alpha}f
     \end{equation}
-    est la partie principale de  $E$ et les coefficients $a_
+    est la partie principale de  $E$ et les coefficients $c_
     {\alpha}$ avec $|\alpha|=m$ sont appelés coefficients 
     principaux
 \end{definition}
@@ -654,7 +654,7 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
 Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui-ci dessus, et par $P_m(x,D)$ sa partie principale.
 \begin{definition}
     L'opérateur $P(x,D)$  est \coldef
-    {elliptique } en $x_0$ si $m=2p$ et si le polynôme $P(x,\xi)_m$ est 
+    {elliptique } en $x_0$ si $m=2p$ et si le polynôme $P(x_0,\xi)_m$ est 
     de signe constant sur $\R^n\setminus\left\{0\right\}$. Il est elliptique sur $U$ si il l'est en tout point de $U$ et 
     s'il existe un constante $c>0$ telle que 
     pour tout $x\in U$, on aie $P_m(x,\xi)\geq 
