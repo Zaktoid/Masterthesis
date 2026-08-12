@@ -45,6 +45,7 @@ triviale}, i.e,  si $(x_0,
 
 \newpage
 \section{Théorie des opérateurs de Fredholm}
+\todomaybe{clean up un peu Sard-Smale si j'ai le time}
 
 \subsection{Calcul différentiel dans des Espaces de Banach}
 
@@ -76,7 +77,7 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $dF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
+$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $DF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
@@ -101,7 +102,7 @@ Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{x\in B(1
 
 \begin{proposition}
 Si $B\in C^0(X\times Y,Z)$ est 
-bilinéaire, alors B est dérivable et $dB(x_0,y_0)(x,y)= B(x_0,y)+B(x,y_0)$ 
+bilinéaire, alors B est dérivable et $DB(x_0,y_0)(x,y)= B(x_0,y)+B(x,y_0)$ 
 pour tous $(x_0,y_0),(x,y)\in X\times Y$
 \end{proposition}
 \begin{preuve}
@@ -185,6 +186,18 @@ et
     D\varphi(\lambda_0)=-D_1F(x_0,\lambda_0)^{-1}D_2F(x_0,\lambda_0)
 \end{equation*}
 \end{theobox}
+On en tire immédiatement le théorème des fonctions inverses 
+\begin{corollaire}
+    Soient $U$ un ouvert de $X$ et $x_0\in U$. Soit de plus $F\in C^1(U,Y)$.
+    Si $DF(x_0)$ est un isomorphisme alors il existe $U'\subseteq U$u n voisinage ouvert de $x_0$ et $V'$ un voisinage de $y_0$ tels que
+    $F|_{U'}\in C^1(U',V')$ soit un difféomorphisme. On a de plus
+    \begin{equation*}
+        D(F|_{U'}^{-1})(y)= DF(F|_{U'}^{-1}(y))^{-1}
+    \end{equation*}
+\end{corollaire}
+\begin{preuve}
+    Appliquer le résultat précédent à  $F(x)-y$
+\end{preuve}
 
 On termine par une petite remarque sur les dérivées d'ordre supérieur. On définit les fonctions $C^k$ comme pour les fonctions réelles, mais remarquez que, avec les notations habituelles,
 \begin{equation*}
@@ -193,9 +206,9 @@ On termine par une petite remarque sur les dérivées d'ordre supérieur. On dé
 Ainsi, $d^2F$ prend en entrée un point $x$ de $U$, $d^2F(x)$ une direction $h$ de $X$ et  $d^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
 \subsection{Opérateurs et fonctions de Fredholm}
 
-Nous étudierons la situation où la "non-bijectivité" de $d_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons :
+Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons :
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach et soit $D\in  \mathcal{L}(X,Y)$. \coldef{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  Y / \text{im } D=\text{codim } \text{im }d$ sont finis, et il vaut, dans ce cas
+    Soient $X,Y$ des espaces de Banach et soit $D\in  \mathcal{L}(X,Y)$. \coldef{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  Y / \text{im } D=\text{codim } \text{im }D$ sont finis, et il vaut, dans ce cas
     \begin{equation*}
         \text{Ind }  D= \dim \ker D -\operatorname*{codim } \im D
     \end{equation*}
@@ -261,41 +274,41 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
     \end{equation*}
     Il est bien connu que le quotient d'un espace de Banach par un fermé est un espace de Banach (voir par exemple le cours de Céline Esser \cite{EsserFONCT}). Nous montrons quelques propriétés élémentaires des opérateurs de Fredholm, les résultats suivant sont adaptés de \cite{abramovich2002invitation}
 \begin{lemme}
-    Soit $d\in\mathcal{L}(X,Y)$, $\im d$ est fermé si et seulement s'il existe un sous espace fermé $Y_0$ de $Y$ tel que $\im d \cap Y_0=\{0\}$ et $\im d\oplus Y_0$ est un fermé de $Y$
+    Soit $D\in\mathcal{L}(X,Y)$, $\im D$ est fermé si et seulement s'il existe un sous espace fermé $Y_0$ de $Y$ tel que $\im D \cap Y_0=\{0\}$ et $\im D\oplus Y_0$ est un fermé de $Y$
 \end{lemme}
 \begin{preuve}
-    Si $\im d$ est fermé, il suffit de prendre $Y_0=\{0\}$. Maintenant, supposons avoir $Y_0$ vérifiant les conditions de l'énoncé et posons $G=\im d\oplus Y_0$ et considérons $G/Y_0$ muni de la norme quotient habituelle et la fonction 
+    Si $\im D$ est fermé, il suffit de prendre $Y_0=\{0\}$. Maintenant, supposons avoir $Y_0$ vérifiant les conditions de l'énoncé et posons $G=\im D\oplus Y_0$. Considérons $G/Y_0$ muni de la norme quotient habituelle et la fonction 
     \begin{equation*}
-        J:  (\im d, ||\cdot||_d)\rightarrow (G/Y_0, ||\cdot||_{G/Y_0}), y\mapsto y+Y_0
+        J:  (\im D, ||\cdot||_D)\rightarrow (G/Y_0, ||\cdot||_{G/Y_0}), y\mapsto y+Y_0
     \end{equation*}
-    Du fait que $\im d\cap Y_0=\{0\}$, cet opérateur est injectif et  il est clairement surjectif.  
-    du fait que pour tous $y\in\im d$, $||J(y)||_{G/Y_0}\leq ||y||_Y\leq ||y||_{d}$,
-    $J$ est un isomorphisme d'espace de Banach et donc $\exists c>0$ telle que $c||y||_d\leq ||J(y)||_{G/Y_0}$ pour tous $y\in \im d $ on a alors 
+    Du fait que $\im D\cap Y_0=\{0\}$, cet opérateur est injectif et  il est clairement surjectif.  
+    Du fait que pour tous $y\in\im D$, $||J(y)||_{G/Y_0}\leq ||y||_Y\leq ||y||_{d}$,
+    $J$ est un isomorphisme d'espace de Banach et donc $\exists c>0$ telle que $c||y||_d\leq ||J(y)||_{G/Y_0}$ pour tous $y\in \im D $ on a alors 
     \begin{equation*}
-        c ||y||_d\leq ||y||_Y\leq ||y||_d
+        c ||y||_D\leq ||y||_Y\leq ||y||_D
     \end{equation*}
-    et donc les normes $||\cdot ||_d$ et $||\cdot||_Y$ sont équivalentes sur $\im d$, ce qui permet d'affirmer que c'est un fermé
+    et donc les normes $||\cdot ||_D$ et $||\cdot||_Y$ sont équivalentes sur $\im D$, ce qui permet d'affirmer que c'est un fermé
 \end{preuve}
 
 \begin{corollaire}\label{im-fred-closed}
-    Si $d\in\mathcal{L}(X,Y)$ est tel que $\operatorname*{codim} \im d$ est fini, alors $\im d$ est fermé. En particulier, l'image d'un opérateur de Fredholm est fermée
+    Si $d\in\mathcal{L}(X,Y)$ est tel que $\operatorname*{codim} \im D$ est fini, alors $\im D$ est fermé. En particulier, l'image d'un opérateur de Fredholm est fermée
 \end{corollaire}
 \begin{preuve}
-    Soit  $\left\{[y_1],\cdots, [y_n]\right\}$ une base de  $Y/\im d$. Bien sûr, les éléments sont linéairement indépendants, donc 
+    Soit  $\left\{[y_1],\cdots, [y_n]\right\}$ une base de  $Y/\im D$. Bien sûr, les éléments sont linéairement indépendants, donc 
     \begin{equation*}
-        \rangle y_1,\cdots,y_n\langle_{\R}\cap \im d = \{0\}
+        \rangle y_1,\cdots,y_n\langle_{\R}\cap \im D = \{0\}
     \end{equation*}
-    du fait qu'un sous-vectoriel de dimension finie est fermé, et que $\im d \oplus\rangle y_1,\cdots,y_n\langle_{\R}\ =Y $, on conclut par la proposition précédente.
+    du fait qu'un sous-vectoriel de dimension finie est fermé, et que $\im D \oplus\rangle y_1,\cdots,y_n\langle_{\R}\ =Y $, on conclut par la proposition précédente.
 \end{preuve}
 Le résultat suivant est un corollaire direct du théorème de Hahn-Banach
 \begin{lemme}
 Si $X_0$ est  sous espace de dimension finie de $X$ alors il est \coldef{complémenté},i.e, il existe un sous espace fermé $X_1$ tel que $X_1\oplus X_0=X$
 \end{lemme}
 de ce qui précède, on déduit le résultat suivant
-\begin{proposition}
-    Si $d\in\mathcal{F}(X,Y)$ alors il existe des sous espaces fermés $X_0,Y_0$ tels que 
+\begin{proposition}\label{spliting}
+    Si $D\in\mathcal{F}(X,Y)$ alors il existe des sous espaces fermés $X_0,Y_0$ tels que 
     \begin{equation*}
-        Y=\im d \oplus Y_0\text{ et } X=\ker d\oplus X_0
+        Y=\im D \oplus Y_0\text{ et } X=\ker D\oplus X_0
     \end{equation*}
 \end{proposition}
 On a bien envie que si cette propriété 
@@ -481,54 +494,19 @@ Les résultats suivants sont dus à  [SOURCE]
     Si $F:X\rightarrow Y$ est de Fredholm, alors $F$ est localement propre
 \end{proposition}
 \begin{preuve}
-Soit $x_0\in X$ et $U\ni x_0$ un voisinage.
-Comme $DF(x_0)$ est de Fredholm, on peut écrire
+Soit $x_0\in X$ et $U\ni x_0$ un voisinage. On on pose $R=\im DF(x_0)$ et $N=\ker DF(x_0)$
+Comme $DF(x_0)$ est de Fredholm, on a, via \ref{spliting}, $X\cong X_0\times N $ et $Y\cong Y_0\times R$. On pose $x_0=(u_0,v_0)$, remarquez alors que $D_1F(u_0,v_0): X_0\rightarrow Y$ est injective et d'image fermée. Considérez $\pi: Y\rightarrow R$ la projection associée à la décomposition ci-dessus, on a que $D_1\pi\circ F$ est un isomorphisme d'espace de Banach et on pose
 \begin{equation*}
-    X=X_0\oplus \ker DF(x_0)
-    \qquad\text{et}\qquad
-    Y=\im DF(x_0)\oplus Y_0,
+    H: X_0\times N\rightarrow R\times N, (u,v)\mapsto (\pi F(u,v),v).
 \end{equation*}
-où $X_0$ et $Y_0$ sont fermés. On identifie alors $X$ à
-$X_0\times \ker DF(x_0)$ et on écrit $x_0=(u_0,v_0)$. Soit
-$\pi:Y\rightarrow \im DF(x_0)$ la projection associée à la décomposition précédente. On a
+On remarque alors que
 \begin{equation*}
-    D_1(\pi\circ F)(u_0,v_0)
-    =
-    DF(x_0)_{\mid X_0}
-    :
-    X_0\rightarrow \im DF(x_0),
+    DH(u_0,v_0)=\begin{pmatrix}
+        \pi\circ D_1F(u_0,v_0) && 0\\
+        0 && I\\
+    \end{pmatrix}
 \end{equation*}
-qui est un isomorphisme d'espaces de Banach. Le théorème des 
-fonctions implicites fournit donc des voisinages  $U_1$
-de $u_0$, $V_1$ de $v_0$ et $W_1$ de $\pi(F(x_0))$, ainsi qu'une
-application continue $\varphi:W_1\times V_1\rightarrow U_1$ telle que $\pi(F(\varphi(y,v),v))=y$, et, quitte à réduire ces voisinages,
-\begin{equation*}
-    \pi(F(u,v))=y
-    \Leftrightarrow
-    u=\varphi(y,v)
-\end{equation*}
-pour $(u,v)\in U_1\times V_1$ et $y\in W_1$.Comme $\ker DF(x_0)$ est de dimension finie, on peut choisir $V_1$
-de sorte que son adhérence $\overline{V_1}$ soit compacte et, quitte
-encore à réduire les voisinages, supposer que $V'=U_1\times \overline{V_1}\subseteq U$. Soit maintenant $K$ un compact suffisamment petit de $Y$ et
-$(u_i,v_i)_{i\in\mathbb N}$ une suite de $F^{-1}(K)\cap V'$. Par compacité de $K$, quitte à extraire une sous-suite, on peut supposer que $F(u_i,v_i)\rightarrow y\in K$. De même, puisque $\overline{V_1}$ est compacte, quitte à extraire de
-nouveau une sous-suite, on peut supposer que $v_i\rightarrow v\in\overline{V_1}$.Or, par définition de $\varphi$,
-\begin{equation*}
-    u_i
-    =
-    \varphi\bigl(\pi(F(u_i,v_i)),v_i\bigr).
-\end{equation*}
-Par continuité de $\varphi$, on obtient alors
-\begin{equation*}
-    u_i
-    \rightarrow
-    \varphi(\pi(y),v).
-\end{equation*}
-Ainsi, $(u_i,v_i)$ admet une sous-suite convergente. Comme
-$F^{-1}(K)\cap V'$ est fermé dans $V'$, sa limite appartient encore à
-$F^{-1}(K)\cap V'$. Cet ensemble est donc compact.
-
-On en déduit que $F$ est localement propre en $x_0$. Comme $x_0$ est
-arbitraire, $F$ est localement propre.
+C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni un voisinage $U_1\times V_1$ tel que $F(\cdot,v)|_{U_1}$ est un difféomorphisme sur son image. $N$ étant de dimension finie, on peut supposer $V_1$ compact. Soit maintenant $K$ un compact de $Y$, on doit montrer que $L=F^{-1}(K)\cap (U_1\times V_1)$ est compact. Soit $(u_i,v_i)$ une suite de $L$, du fait que $V_1$ est compact, on peut supposer que $v_i\to v$. Mais étant donné que $K$ est compact, on peut supposer $F(u_i,v)\to F(x)$. L'inégalité des accroissements finis nous permet enfin de supposer que $v_i=v$. Mais étant donné que $F(\cdot,v)|_{U_1}$ est un homéomorphisme, on a que $u_i\to u$
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
@@ -611,8 +589,28 @@ C'est pour celà qu'en pratique, on se concentrera surtout sur le cas ou $ \oper
 Le corollaire précédent nous informe que les 
 cas où un ensemble de niveau présente une 
 bifurcation est "rare", et que la "plupart du 
-temps"(de façon générique voir [SROUCE (mémoire de Thelma ?)]), il s'agit d'une variété. 
-
+temps"(de façon générique voir [SROUCE (mémoire de Thelma ?)]), il s'agit d'une variété. Notez cependant qu'un ensemble maigre peut avoir des points d'accumulation ($\mathbb{Q}$, par exemple).
+\begin{exemple}
+    On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble de $y\in \R$ tel que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
+    \begin{equation*}
+        a_{n}=\begin{cases}
+            r_{k/2}\text{ si $k$ est pair}
+            \\ \min (r_{(k-1)/2},r_{(k-1)/2+1})-1 \text{ sinon}
+        \end{cases}
+    \end{equation*}
+    Il est possible de construire une fonction lisse $g$ telle que 
+    \begin{equation*}
+        g(n)=a_n, \forall n<x<n+1,g'(x)\neq 0\text{ et } \forall j\geq 1, g^{(j)}(n)=0
+    \end{equation*}
+    L'ensemble des points critiques de $g$ est $\mathbb{Z}$, et l'ensemble des valeurs critiques est $\mathbb{Q}$. On pose alors
+    \begin{equation*}
+        F:\R^2\rightarrow \R, (x,\lambda)\mapsto g(x)+\lambda^2.
+    \end{equation*}
+    Maintenant si $y=r_k$, alors $a_{2k-1}<a_{2k}$ et $a_{2k+1}<a_{2k}$ et $2k$ alors un maximum local strict et on a donc localement
+    \begin{equation*}
+        F(x,\lambda)=r_k\Leftrightarrow \lambda^2=r_k-g(x)
+    \end{equation*}
+\end{exemple}
 On aimerait 
 bien avoir le pendant pour les paramètres, i.e 
 que les bifurcations aient lieu en des valeurs 
@@ -626,7 +624,6 @@ soit "la plupart du temps" une variété de dimension $\operatorname*{Ind}(F)$. 
     \end{equation*}
     avec $g(x)=e^{-\frac{1}{x}}\chi_{x>0}$. Il est clair que le lieu d'annulation est composé d'une droite horizontale connectée à un demi plan en $(0,0)$
 \end{exemple}
-\todo{Théorèmes de transersalités et généricité }
 
 
 \subsection{Opérateurs de Fredholm différentiels}

@@ -1395,42 +1395,6 @@ que l'espace tangent est un module ne
 s'appliquent pas en toute généralité.
 Le théorème \ref{segment-inclus} nous permet de comprendre comment calculer l'orbite d'un germe donné, on regarde l'espace tangent, on prend les générateurs et on regarde les petites perturbations par ces générateurs qui ne change pas l'espace tangent et on dévoile ainsi petit à petit l'orbite.
 
-\subsubsection{Un exemple avancé: la bifurcation à $n$ branches}
-
-On illustre la théorie développée ci-dessus, ainsi que quelques autres outils sur un exemple. Considérons le germe
-
-\begin{equation*}
-    g(x,\lambda)=x\prod_{k=1}^{m}(x^2-k\lambda).
-\end{equation*}
-Pour $m=1$ c'est juste une bifurcation trident et augment $m$ rajoute des nouvelles branches. 
-
-On sait que l'espace tangent est donné par
-\begin{equation*}
-    T_g\mathcal{RB}=\rangle g,x\partial_x g,\lambda \partial_x g\langle
-\end{equation*}
-
-On introduit la fonction une fonction de poids de la façon suivante
-
-\begin{equation*}
-    w(x)=1, w(\lambda)=2\text{ et }
-    w(p_1 p_2)=w(p_1)+w(p_2).
-\end{equation*}
-De plus, si $p_1$ et $p_2$ sont des 
-polynômes de même poids, alors $w(p_1
-+p_2)$ est bien défini vaut $w(p_1)$ 
-et enfin, $w(\partial x h)=w(h)-w(x)$.
-Avec cette astuce, le germe $g$ peut 
-être vu comme un polynôme homogène 
-vis à vis de $w$, de poids $2m+1$.\\
-Regardons maintenant le poids des générateurs, $w(g)=w(\partial_x g)=2m+1$ et $w(\lambda\partial_x g)=2m+2$.
-On comprend déjà que la codimension 
-augmente avec $m$: un germe de monôme, pour faire partie du tangent, ne peut pas avoir un poids plus petit que $2m+1$. Le nombre de monôme de la forme $x^j\lambda^i$ dont le poids est $\leq 2m$ est $(m+1)^2$. On doit donc montrer que
-\begin{equation*}
-    \mathcal{E}_2=T_g \mathcal{RB} \oplus \left\{ x^i\lambda^j| i+2j\leq 2m\right\} 
-\end{equation*}
-\todo{Suite: developper avec taylor et montrer que tout marche, regarder un peu la méthode des chemins}
-
-On peut bien sûr généraliser ce genre d'approches, et la combiner avec d'autres (idéaux intrasèques de Golubitsky, bases de Gröbner, etc... voir [SOURCE])
 \subsection{Déploiements versels et universels} 
 
 

@@ -222,7 +222,7 @@ Celà étant, la proposition suivante nous permet de relier les variations de la
     \begin{equation*}
         x(s)=s\hat{v_0}+\varphi(s\hat{v_0},\lambda(s))
     \end{equation*}
-    ce qui implique $x(0)=0,\partial_sx(0)=\hat{v_0},\partial_s\lambda(0)$ et $F(0,\lambda)=0$ si $\lambda\in V_1$. On suppose également $\partial_s\mu(0)=0$. On dérive une deuxième fois \eqref{perturb-vb}, ce qui nous donne
+    ce qui implique $x(0)=0,\partial_sx(0)=\hat{v_0},\partial_s\lambda(0)=0$ et $F(0,\lambda)=0$ si $\lambda\in V_1$. On suppose également $\partial_s\mu(0)=0$. On dérive une deuxième fois \eqref{perturb-vb}, ce qui nous donne
     \begin{equation}\label{equation-horrible-1}
         \begin{aligned}
             &D^3_{111}F(0,\lambda_0)[\hat{v_0},\hat{v_0},\hat{v_0}]+2D^2_{11}F(0,\lambda_0)[\hat{v_0},\partial_sw(0)]\\
@@ -354,10 +354,10 @@ Notez que $x(t)$ est une solution de $2\pi$-périodique de $\kappa\partial_t x=F
 \end{equation*}
 Et la détection de solutions $2\pi$-périodiques revient alors à chercher les zéros de $G$. 
 \begin{definition}
-    Soit $E$ un espace de Banach, on défini \coldef{l'espace de Hölder} des fonction continues $2\pi$ périodique réelles à valeurs dans $X$ comme
+    Soit $E$ un espace de Banach, on défini \coldef{l'espace de Hölder} des fonction continues $2\pi$ périodique réelles à valeurs dans $E$ comme
     \begin{align*}
         C^{\alpha}_{2\pi}(\R,E)=&\{ x:\R\rightarrow E\big| x(\cdot+2\pi)=x,\\
-        &C=\max_{t\in\R} ||x(t)||_{X}+\sup_{t\neq s} \frac{||x(t)-x(s)||_{X}}{|t-s|^{\alpha}}<\infty \}
+        &C=\max_{t\in\R} ||x(t)||_{E}+\sup_{t\neq s} \frac{||x(t)-x(s)||_{X}}{|t-s|^{\alpha}}<\infty \}
     \end{align*}
     où $\alpha\in ]0,1]$ est l'exposant de Hölder. On pose de plus 
     \begin{equation*}
@@ -368,7 +368,7 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
         ||x||_{C^{\alpha}_{2\pi}(\R,E)}=C\text{ et }||x||_{C^{k+\alpha}_{2\pi}(\R,E)}=C+||\partial^k_tx||_{C^{\alpha}_{2\pi}(\R,E)}
     \end{equation*}
 \end{definition}
-    Il est bien connu que les espaces définis précédemment sont des espaces de Banach. On pose $E=C^{\alpha}_{2\pi}(\R,X)$, $W=C^{\alpha}_{2\pi}(\R,Y)$ et  $Z=C^{1+\alpha}_{2\pi}(\R,X)$.  On précise alors le domaine de $G$: considérons $V$ un voisinage de $(\kappa_0,\lambda_0)$ dans $\R^2$
+    Il est bien connu que les espaces définis précédemment sont des espaces de Banach. On pose $E=C^{\alpha}_{2\pi}(\R,X)$, $W=C^{\alpha}_{2\pi}(\R,Y)$ et  $Z=C^{1+\alpha}_{2\pi}(\R,Y)$.  On précise alors le domaine de $G$: considérons $V$ un voisinage de $(\kappa_0,\lambda_0)$ dans $\R^2$
     et $U$ un voisinage de $0$ dans $Z\cap E$, on pose
     \begin{equation*}
         G: U\times V\rightarrow W, (x,\kappa,\lambda)\mapsto \kappa \partial_t x-F(x,\lambda).
@@ -428,12 +428,112 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
         \end{equation*}
     \end{theobox}
     \begin{preuve}
-        La proposition précédente nous permet d'appliquer la réduction de Lyapunov-Schmidt. On considère donc les projections habituelles
-        \begin{equation*}
-            \pi_1: Z\cap E\rightarrow \ker(J_0), \pi_2: W \rightarrow \ker(J_0)
-        \end{equation*}
-        \todo{terminer}
-    \end{preuve}
+        Posons $\mathcal X=Z\cap E$, $A(\lambda)=D_1F(0,\lambda)$ et
+        \begin{equation}
+            J_0=\kappa_0\partial_t-A(\lambda_0):\mathcal X\rightarrow W.
+        \end{equation}
+        Par la proposition précédente, $J_0$ est de Fredholm d'indice nul et
+        $\dim\ker J_0=2$. Si $\varphi_0=a+ib$ est un vecteur propre associé à
+        $i\kappa_0$, alors
+        \begin{equation}
+            e_1(t)=\Re(e^{it}\varphi_0),\qquad
+            e_2(t)=\Im(e^{it}\varphi_0)
+        \end{equation}
+        engendrent $\ker J_0$, et $\partial_t e_1=-e_2$.
+
+        Choisissons un complément fermé $\mathcal X_0$ de $\ker J_0$ dans
+        $\mathcal X$ et notons
+        \begin{equation}
+            q:W\rightarrow W/\im J_0
+        \end{equation}
+        la projection canonique. Comme $\operatorname{Ind}(J_0)=0$, le conoyau
+        est de dimension $2$. Montrons que $q(e_1),q(e_2)$ en forment une base.
+        Si $c_1e_1+c_2e_2=J_0h$, en prenant le premier coefficient de Fourier
+        complexe on obtient
+        \begin{equation}
+            (i\kappa_0I-A(\lambda_0))\widehat h_1
+            =\frac{c_1-ic_2}{2}\varphi_0.
+        \end{equation}
+        Or $\varphi_0\notin\im(i\kappa_0I-A(\lambda_0))$, donc $c_1=c_2=0$.
+
+        La courbe de valeurs propres perturbées vérifie
+        \begin{equation}
+            A(\lambda)\varphi(\lambda)=\mu(\lambda)\varphi(\lambda).
+        \end{equation}
+        En dérivant en $\lambda_0$,
+        \begin{equation}
+            A'(\lambda_0)\varphi_0-\mu'(\lambda_0)\varphi_0
+            \in\im(i\kappa_0I-A(\lambda_0)).
+        \end{equation}
+        Si $\mu'(\lambda_0)=\alpha+i\beta$, il vient donc
+        \begin{equation}
+            q(A'(\lambda_0)e_1)
+            =\alpha q(e_1)-\beta q(e_2).
+        \end{equation}
+        Comme $\partial_t e_1=-e_2$ et $\alpha=\Re\mu'(\lambda_0)\neq0$, les
+        classes de $\partial_t e_1$ et $-A'(\lambda_0)e_1$ forment une base du
+        conoyau.
+
+        On utilise maintenant, comme dans la preuve de Crandall--Rabinowitz,
+        le fait que $G(0,\kappa,\lambda)=0$. Pour $r$ assez petit, posons
+        \begin{equation}
+            H(r,w,\kappa,\lambda)
+            =
+            \int_0^1
+            D_1G(sr(e_1+w),\kappa,\lambda)(e_1+w)\,ds,
+            \qquad w\in\mathcal X_0.
+        \end{equation}
+        Alors
+        \begin{equation}
+            G(r(e_1+w),\kappa,\lambda)=rH(r,w,\kappa,\lambda)
+        \end{equation}
+        et $H(0,0,\kappa_0,\lambda_0)=0$. De plus,
+        \begin{align}
+            D_{(w,\kappa,\lambda)}H(0,0,\kappa_0,\lambda_0)
+            :\mathcal X_0\times\R^2&\rightarrow W,\\
+            (h,s,\eta)&\mapsto
+            J_0h+s\partial_t e_1-\eta A'(\lambda_0)e_1.
+        \end{align}
+        La restriction $J_0|_{\mathcal X_0}:\mathcal X_0\to\im J_0$ est un
+        isomorphisme et les deux derniers termes engendrent le conoyau ; cette
+        dérivée est donc un isomorphisme.
+
+        Le théorème des fonctions implicites fournit alors des fonctions $C^1$
+        $w(r)$, $\kappa(r)$ et $\lambda(r)$ telles que
+        \begin{equation}
+            w(0)=0,\qquad
+            \kappa(0)=\kappa_0,\qquad
+            \lambda(0)=\lambda_0,\qquad
+            H(r,w(r),\kappa(r),\lambda(r))=0.
+        \end{equation}
+        Ainsi
+        \begin{equation}
+            \widetilde x(r)=r(e_1+w(r))
+        \end{equation}
+        est une solution $2\pi$-périodique de
+        $\kappa(r)\partial_t x=F(x,\lambda(r))$. Par changement d'échelle du
+        temps,
+        \begin{equation}
+            x(r)(t)=\widetilde x(r)(\kappa(r)t)
+        \end{equation}
+        est une solution de $\partial_t x=F(x,\lambda(r))$ de période
+        $2\pi/\kappa(r)$.
+
+        Enfin, $G$ commute avec les translations
+        $S_\theta x=x(\cdot+\theta)$ et celles-ci agissent sur $\ker J_0$ par
+        rotation :
+        \begin{equation}
+            S_\theta e_1=\cos(\theta)e_1-\sin(\theta)e_2.
+        \end{equation}
+        Toute solution non triviale suffisamment proche peut donc, après un
+        shift de phase, être écrite sous la forme $r(e_1+w)$ avec
+        $w\in\mathcal X_0$. L'unicité donnée par le théorème des fonctions
+        implicites impose alors
+        \begin{equation}
+            w=w(r),\qquad \kappa=\kappa(r),\qquad\lambda=\lambda(r),
+        \end{equation}
+        ce qui donne l'unicité locale de la branche modulo changement de phase.
+\end{preuve}
     
     \newpage
 \end{document}

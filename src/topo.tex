@@ -259,13 +259,7 @@ On définit maintenant l'orientation pour une famille continue d'opérateurs de 
     $A_2\in\alpha'(\lambda_1)$ qui sont des correcteurs positifs pour $h(\lambda')$ si $\lambda'$ est dans $V_1$ ou $V_2$, respectivement. Il suffit alors de remarquer que $\alpha$ et $\alpha'$ coïncident sur $V_1\cap V_2$. De façon identique, l'ensemble sur lesquels les orientations sont opposées est un ouvert, on conclut immédiatement
 \end{preuve}
 
-\begin{remarque}
-    Notez que cette notion d'orientabilité est une généralisation de la notion d'orientabilité d'une variété plongée $M$ de dimension finie $n$: en effet, il suffit de considérer
-    \begin{equation*}
-        h: M\rightarrow L(\R^n,\R^n), x\mapsto \pi^{N_x} 
-    \end{equation*}
-    avec  $\pi^{N_x}$ la projection sur l'espace normal $N_xM$
-\end{remarque}
+
 
 \begin{definition}
     Soit $U\subseteq X$ un ouvert et $F: U\rightarrow X$ une fonction de Fredholm d'indice zéro. Une \textcolor{color-def}{orientation} de $F$ est simplement une orientation de $DF$ , et $F$ est \textcolor{color-def}{orientable} si $DF$ l'est. Si $F$ est un difféomorphisme, alors $F$ possède une orientation naturelle, notée $\nu$
@@ -432,7 +426,7 @@ On peut maintenant définir le degré de Furi
 \begin{definition}
     Soit $(F,U,y)$, soit $W$ un voisinage ouvert de $F^{-1}(y)$ tel que $W\subseteq U$ et $F$ est propre sur $\bar{W}$, on pose
     \begin{equation*}
-        \deg_f(F,U,y)=\deg_B(F,W,y_0)
+        \deg_f(F,U,y)=\deg_f(F,W,y_0)
     \end{equation*}
     avec $y_0$ une valeur régulière suffisamment proche de $y$
 \end{definition}
