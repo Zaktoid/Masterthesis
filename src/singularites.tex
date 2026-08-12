@@ -184,7 +184,7 @@ Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons
 \end{equation*}
 si $f_i=[\tilde{f}_i]$, on a alors
 \begin{equation*}
-    f=\sum_{i=1}^{k}x_i f_i
+    f=\sum_{i=1}^{n}x_i f_i
 \end{equation*}
 ce qui nous permet de conclure quand $r=1$. Maintenant, si 
 $f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de 
@@ -272,7 +272,7 @@ Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
     constitué des fonctions qui s'annulent sur $S$ est bien 
     sûr un $\mathcal{E}_S(\R^3)$-module. Par \ref{Hadamard}, on a $I_S= \rangle x,z \langle$. Mais on peut écrire 
     \begin{equation*}
-        z\cdot y + (-y)\cdot z= 0
+        z\cdot x + (-x)\cdot z= 0
     \end{equation*}
     et les  germes des fonctions $x$ et $-y$ ne sont pas nuls sur $\mathcal{E}_S$. Il est donc impossible d'avoir une base
 \end{exemple}
@@ -405,7 +405,7 @@ calculatoire, il est simplement rappelé
 \begin{lemme}\label{DivMather}
 Soient $g\in\mathcal{E}_{(y,0)}(P\times \R)$ et 
 $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
-^m$ telle que
+^m$ et $q\in\mathcal{E}_{(y,0)}(P\times \R)$ tels que
 \begin{equation*}
     g=\Gamma_u q +R_h
 \end{equation*}
