@@ -158,7 +158,7 @@ Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
 \end{corollaire}
 
 \begin{remarque}
-    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \coldef{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter [SOURCE]
+    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \coldef{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter \cite{Tougeron1972Ideaux}
 \end{remarque}
 
 Dans la suite, si $R$ est anneau, on notera $R^r[x_1,\cdots,x_n]$ le polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes homogènes de degré $r$.
@@ -802,7 +802,7 @@ n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orb
 \subsection{Déploiements et espaces tangents}
 
 La notion de déploiement remonte à 
-René Thom [SOURCE].
+René Thom \cite{Thom1972Stabilite}.
 \begin{definition} 
     $G\in \mathfrak{m}_{n+d}^{\times (m+d)}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
     si il respecte le diagramme suivant:
@@ -1342,7 +1342,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
         S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)= S_0(x,\lambda,0)G(X(x,\lambda,0),\lambda,0)=f(x,\lambda)
     \end{equation}
     Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et 
-    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques [SOURCE] permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
+    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques \cite{HirschSmale1974Dynamical} permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
 \end{preuve}
 
 {\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
@@ -1450,15 +1450,7 @@ Naturellement, on va se demander si on peut trouver un déploiement qui "contien
     Notez que "dans la nature", on ne verra absolument jamais de diagramme de bifurcation qui ressemble parfaitement à une pitchfork. Mais, les mesures étant constamment influencées par du bruit, on verra une version déformée. On parle de "bifurcation imparfaite". Mais souvenez que le lieu d'annulation, est "de façon générique" une variété lisse ! Ainsi, si on perturbe légèrement une germe présentant un singularité, on est "certains" que le lieu d'annulation redevienne une variété lisse
 \end{remarque}
 
-\begin{remarque}
-    On considère les déploiements 
-    comme des germes sur $\R^{p+q+p_1}
-    $. On pourrait croire que c'est la même chose que demander l'existence d'un voisinage $V$ de zéro dans $\R^{p_1}$ tel que
-    \begin{equation*}
-        \forall \alpha\in V,G(\cdot,\cdot,\alpha)\in\mathcal{E}^m_{p+q}.
-    \end{equation*}
-    Il y'a cependant une différence cruciale: dans le premier cas, il existe un représentant définie sur un voisinage $W_0$ de $0$ dans $\R^{p+q+p_1}$. Et donc on récupère un voisinage fixé $\pi(W_0)$ de zéro dans $\R^{p+q}$, tandis que la seconde version \todo{TERMINER REMARQUE}
-\end{remarque}
+
 
 Remarquez que jusqu'à 
 présent, on a supposé que les 
@@ -1613,10 +1605,10 @@ Pour ne pas alourdir
 l'exposé, on admet le lemme 
 suivant. La preuve est 
 classique est faite dans 
-[SOURCE] pour le cas 
+\cite{golubitsky1979theory} pour le cas 
 particulier du groupe 
 $\mathcal{B}$ et dans 
-[SOURCE] pour le cas plus 
+\cite{Martinet1976Deploiements} pour le cas plus 
 général.
 
 \begin{lemme}\colprop{(lemme de réduction)}

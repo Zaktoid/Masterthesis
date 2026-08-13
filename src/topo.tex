@@ -2,7 +2,7 @@
 \begin{document}
 \section{Approche topologique}
 
-Les approches précédentes, bien que permettant d'extraire beaucoup d'information sur la bifurcation, peuvent d'une part être calculatoirement très lourdes, et d'autre part imposent une grande régularité à la fonction $F$. Nous présentons ici des résultats de bifurcations obtenus grâce à la théorie du degré. Bien que les informations géométriques soient "vagues",nous obtiendrons un \coldef{résultat global}. Notez que des techniques purement analytiques peuvent aussi donner des résultats globaux, mais sous hypothèse d'holomorphie, voir par exemple [SOURCE]
+Les approches précédentes, bien que permettant d'extraire beaucoup d'information sur la bifurcation, peuvent d'une part être calculatoirement très lourdes, et d'autre part imposent une grande régularité à la fonction $F$. Nous présentons ici des résultats de bifurcations obtenus grâce à la théorie du degré. Bien que les informations géométriques soient "vagues",nous obtiendrons un \coldef{résultat global}. Notez que des techniques purement analytiques peuvent aussi donner des résultats globaux, mais sous hypothèse d'holomorphie, voir par exemple \cite{BuffoniToland2003}
 
 \subsection{Introduction à la théorie du degré}
 
@@ -130,7 +130,7 @@ On remarque que $\mathcal{C}(D)$ n'est jamais vide, en effet, si on écrit $X=\k
 \begin{equation}\label{correcteur-exemple}
     A:  X\rightarrow Y, x_1+x_2\mapsto A_0(x_1)
 \end{equation}
-répond à la question. En effet, il est injectif car $Y_0\oplus \operatorname*{im} D=Y$ et il est surjectif car une perturbation de rang fini d'un opérateur de Fredholm ne change pas l'indice.
+répond à la question. En effet, $D+A$ est injectif car $Y_0\oplus \operatorname*{im} D=Y$ et il est surjectif car une perturbation de rang fini d'un opérateur de Fredholm ne change pas l'indice.
 Dans la suite de cette section on suppose $D$ comme dans la définition précédente.
 Avant de pouvoir définir l'orientation, il nous faut une notion de "avoir la même orientation", on fait ça en définissant une relation d'équivalence sur $\mathcal{C}(D)$
 
@@ -393,7 +393,7 @@ conditions attendues.\\
 \end{lemme}
 
 \begin{preuve}
-    Par le lemme précédent,  $X_0$ est bien bien une variété de même dimension que $Y_0$, on montre alors qu'elle est orientable.\todo{terminer, conséquence directe de l'orentabilité d'un espace de dimension fini et de l'orientabilité de $F$}
+    Par le lemme précédent,  $X_0$ est bien bien une variété de même dimension que $Y_0$. $Y_0$ est un espace vectoriel, il est orientable, il suffit alors d'orienter $X_0$ de tels sorte que $X_0$ et $Y_0$ sont orientés selon $F$. L'égalité des degrés est alors une conséquence de la définition du degré de Brouwer
 \end{preuve}
 
 \begin{lemme}
@@ -546,12 +546,12 @@ On peut déjà obtenir un petit résultat local
     si $\lambda\in ]\lambda_0-\delta,\lambda_0+\delta[ $.Le signe reste alors constant, contradiction.
 \end{preuve}
 \subsubsection{Un résultat global via le degré de Furi}
-Nous allons maintenant obtenir un résultat de Bifurcation global. Pour ce-faire, il nous faut d'abord montrer quelques lemmes techniques, à commencer par un résultat purement topologique, dû à [SOURCE]. Ce dernier dépend du résultat suivant, que nous admettons afin de ne pas alourdir l'exposé
+Nous allons maintenant obtenir un résultat de Bifurcation global. Pour ce-faire, il nous faut d'abord montrer quelques lemmes techniques, à commencer par un résultat purement topologique, dû à \cite{FuriPera1997GlobalFixedPoints}. Ce dernier dépend du résultat suivant, que nous admettons afin de ne pas alourdir l'exposé
 \begin{proposition}\label{seperation-of-sets}
     Soit $(E,\mathcal{T})$ un espace compact séparé. Si $A$ et $B$ sont des sous ensembles fermés pour lesquels il n'existe pas de d'ouverts $U,V$ tels que $U\cap V=\emptyset$, $U\cup V=E$ et $A\subseteq U, B\subseteq V$, alors il existe un sous ensemble connexe $C$ tel que $A\cap C$ et $B\cap C$ sont non vides 
 \end{proposition}
 \begin{preuve}
-    Voir [SOURCE]
+    Voir \cite{Alexander1981PrimerConnectivity}
 \end{preuve}
 \begin{lemme}\label{Lemme-top-pure}
     Soit $(E,\mathcal{T})$ un espace topologique séparé localement compact  et $K\subseteq E$ compact.

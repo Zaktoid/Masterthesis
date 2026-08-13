@@ -42,10 +42,10 @@ triviale}, i.e,  si $(x_0,
  La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \coldef{classifier} les bifurcations, i.e, étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utile de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les  transformations $T$ qui laissent $P$ invariante ? Le but étant bien sûr de se ramener dans un cas plus simple sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des actions de groupes et étudierons leurs orbites.\\
  La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter globalement  les bifurcations (depuis une branche triviale). D'abord, nous exposons les approches classiques par théorie du degré topologique, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des développements plus modernes: \coldef{le degré orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
  La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
-
+ 
 \newpage
 \section{Théorie des opérateurs de Fredholm}
-\todomaybe{clean up un peu Sard-Smale si j'ai le time}
+
 
 \subsection{Calcul différentiel dans des Espaces de Banach}
 
@@ -96,7 +96,7 @@ On vérifie facilement que si $F$ est constante sur $U$, alors elle est dérivab
 On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
 \end{remarque}
 \begin{remarque}
-Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe, nous renvoyons le lecteur vers [SOURCE]. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
+Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe.. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
 \end{remarque}
 Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{x\in B(1)} ||u(x)||$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
 
@@ -318,7 +318,7 @@ les valeurs voisines. Nous montrons ici
 que c'est bel et bien le cas. Nous donnons une jolie preuve, très algébrique, obtenue dans un cours de l'université d'Utrecht \cite{Marcut2009FredholmNotes}. 
 Rappelons les notions de suite exacte et de suite exacte courte
 \begin{definition}
-    Si $G_0,G_1,\cdots, G_n$ sont des groupes (ou espaces vectoriels, modules, etc...)\footnote{Plus généralement, des objets d'une catégorie abélienne, voir [Source] pour plus d'informations} alors la suite 
+    Si $G_0,G_1,\cdots, G_n$ sont des groupes (ou espaces vectoriels, modules, etc...)\footnote{Plus généralement, des objets d'une catégorie semi-abélienne, voir \coldef{\href{https://ncatlab.org/nlab/show/exact+sequence}{nlab}} pour plus d'informations} alors la suite 
     \begin{equation*}
        G_0 \xrightarrow{J_1} G_1 \xrightarrow{J_2} G_2 \xrightarrow{J_3} \cdots \xrightarrow{J_n} G_n
     \end{equation*}
@@ -482,14 +482,14 @@ On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur
 Nous montrons maintenant quelques propriétés utiles des opérateurs de Fredholm. 
  Rappelons qu'une fonction continue entre deux espaces topologique $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ et $V\ni x$ un voisinage, il existe un autre voisinage de $x$ $V'$ tel que $V'\subseteq V$ et un voisinage $U$ de $f(x)$ tel que $f':V'\rightarrow U$ avec soit propre.
  \begin{remarque}
-    Bien qu'on ne le montrera pas ici, il existe une large  classe d'espaces (appelés $k$-espaces) pour lesquels les fonctions propres sont fermées, et les espace de Banach en font partie. Et il est vrai, en toute généralité, que si une fonction est fermée et que les images inverses de points sont compactes, alors elle est propre. Le lecteur intéressé peut consulter les cours de Lee et Ryszard, par exemple. [SOURCES]
+    Bien qu'on ne le montrera pas ici, il existe une large  classe d'espaces (appelés $k$-espaces) pour lesquels les fonctions propres sont fermées, et les espace de Banach en font partie. Et il est vrai, en toute généralité, que si une fonction est fermée et que les images inverses de points sont compactes, alors elle est propre. Le lecteur intéressé peut consulter les cours de Lee et Ryszard, par exemple. \cite{Lee2011TopologicalManifolds,Engelking1989GeneralTopology}
  \end{remarque}
 
-On rappelle deux propriétés basiques sur les opérateurs d'espace de Banach, pour une preuve, voir par exemple le cours de W. Rudin ([SOURCE])
+On rappelle deux propriétés basiques sur les opérateurs d'espace de Banach, pour une preuve, voir par exemple le cours de W. Rudin (\cite{rudin1991functional})
 \begin{lemme}
     L'ensemble des opérateurs linéaires entre deux espaces de Banach qui sont injectif et à image fermée est un ouvert de $\mathcal{L}(X,Y)$ et l'ensemble des applications surjectives est un ouvert
 \end{lemme}
-Les résultats suivants sont dus à  [SOURCE]
+Les résultats suivants sont dus à  \cite{Smale1965Sard}
 \begin{proposition}\label{propre-fred}
     Si $F:X\rightarrow Y$ est de Fredholm, alors $F$ est localement propre
 \end{proposition}
@@ -589,7 +589,7 @@ C'est pour celà qu'en pratique, on se concentrera surtout sur le cas ou $ \oper
 Le corollaire précédent nous informe que les 
 cas où un ensemble de niveau présente une 
 bifurcation est "rare", et que la "plupart du 
-temps"(de façon générique voir [SROUCE (mémoire de Thelma ?)]), il s'agit d'une variété. Notez cependant qu'un ensemble maigre peut avoir des points d'accumulation ($\mathbb{Q}$, par exemple).
+temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'agit d'une variété. Notez cependant qu'un ensemble maigre peut avoir des points d'accumulation ($\mathbb{Q}$, par exemple).
 \begin{exemple}
     On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble de $y\in \R$ tel que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
     \begin{equation*}
