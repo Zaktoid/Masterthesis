@@ -201,9 +201,9 @@ On en tire immédiatement le théorème des fonctions inverses
 
 On termine par une petite remarque sur les dérivées d'ordre supérieur. On définit les fonctions $C^k$ comme pour les fonctions réelles, mais remarquez que, avec les notations habituelles,
 \begin{equation*}
-    F\in C^2(U,Y)\Rightarrow d(dF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
+    F\in C^2(U,Y)\Rightarrow D(DF)\in C^0(U,\mathcal{L}(X,\mathcal{L}(X,Y)))
 \end{equation*}
-Ainsi, $d^2F$ prend en entrée un point $x$ de $U$, $d^2F(x)$ une direction $h$ de $X$ et  $d^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
+Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ de $X$ et  $D^2F(x)(h)$ prend une deuxième direction $k$, c'est la généralisation de la matrice Hessienne (ou plutôt de l'application bilinéaire représentée par cette dernière). En général, la dérivée $k$-ième sera $k$-linéaire.
 \subsection{Opérateurs et fonctions de Fredholm}
 
 Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons :
@@ -228,7 +228,7 @@ Où $D^{*}$ est l'opérateur adjoint, défini comme
 \begin{eqnarray*}
     D^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ d
 \end{eqnarray*}
-C'est simplement du fait que $(Y/\im d)^* 
+C'est simplement du fait que $(Y/\im D)^* 
 \cong (\im D)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker D^
 {*}=(\im D)^{\perp}$
 où on rappelle que l'annihilateur d'une partie $A$ de $Y$ est défini comme 
@@ -253,7 +253,7 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
     \begin{equation*}
         F(f)(x)=xc - 3x\int_{0}^1 cy^2dy=0
     \end{equation*}
-    Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im d$, c'est à dire qu'il existe $f$ tel que 
+    Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im D$, c'est à dire qu'il existe $f$ tel que 
     \begin{equation*}
         f(x)=g(x)+3xI(f)
     \end{equation*}
@@ -340,19 +340,19 @@ Quand on a une suite exacte courte, le noyau du premier morphisme est trivial, i
 
 On obtient, de façon purement algébrique, le résultat suivant
 \begin{lemme}\label{lemma-compo}
-    Soient $X,Y,G$ des espaces Banach, $d_1:X\rightarrow Y, D_2: Y\rightarrow G$ si 2 des 3 opérateurs $d_1$,$d_2$ et $d_2\circ D_1$ sont de Fredholm alors le 3ème l'est aussi et on a 
+    Soient $X,Y,G$ des espaces Banach, $D_1:X\rightarrow Y, D_2: Y\rightarrow G$ si 2 des 3 opérateurs $D_1$,$D_2$ et $D_2\circ D_1$ sont de Fredholm alors le 3ème l'est aussi et on a 
     \begin{equation*}
         \operatorname{Ind}(D_2\circ D_1)= \operatorname{Ind}(D_1)+\operatorname{Ind}(D_2)
     \end{equation*}
 \end{lemme}
 \begin{proof}
-    Nous supposons d'abord $d_1$ et $d_2$ de Fredholm.
+    Nous supposons d'abord $D_1$ et $D_2$ de Fredholm.
     Remarquons d'abord qu'on a la suite exacte courte suivante
     \[\begin{tikzcd}
 	0 & {\ker D_1} & {\ker (D_2\circ D_1)} & {\operatorname{im}(D_1)\cap \ker (D_2)} & 0
 	\arrow["0", from=1-1, to=1-2]
 	\arrow["\iota", hook, from=1-2, to=1-3]
-	\arrow["{d_1}", two heads, from=1-3, to=1-4]
+	\arrow["{D_1}", two heads, from=1-3, to=1-4]
 	\arrow["0", from=1-4, to=1-5]
     \end{tikzcd}\]
 On a alors
@@ -396,41 +396,41 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automor
 \begin{lemme}
     Si $X$ est un espace de Banach, alors 
     \begin{equation*}
-        \forall d\in\mathcal{L}(X), ||d||< 1 \Rightarrow (\operatorname*{Id}-d)\in\mathcal{GL}(X)
+        \forall D\in\mathcal{L}(X), ||D||< 1 \Rightarrow (\operatorname*{Id}-D)\in\mathcal{GL}(X)
     \end{equation*}
 \end{lemme}
 \begin{preuve}
     Notons d'abord que 
     \begin{equation*}
-        \forall n\in\mathbb{N}, ||d^n||\leq ||d||^n 
+        \forall n\in\mathbb{N}, ||D^n||\leq ||D||^n 
     \end{equation*}
     donc la série
     \begin{equation*}
-        \sum_{n\in\mathbb{N}} d^n
+        \sum_{n\in\mathbb{N}} D^n
     \end{equation*}
-    Est absolument convergente, étant donné que $\mathcal{L}(X)$ est un Banach, $d'=\sum_{n\in\mathbb{N}} d^n$ est dans $\mathcal{L}(X)$. 
-    Montrons alors que $d'$ est l'inverse de $\operatorname{Id} -d$.
+    Est absolument convergente, étant donné que $\mathcal{L}(X)$ est un Banach, $D'=\sum_{n\in\mathbb{N}} D^n$ est dans $\mathcal{L}(X)$. 
+    Montrons alors que $D'$ est l'inverse de $\operatorname{Id} -d$.
     On a
     \begin{equation*}
-        d\circ\big( \sum_{0\leq n\leq k} d^n\big)= \sum_{0\leq n\leq k+1} d^n- \operatorname{Id}
+        d\circ\big( \sum_{0\leq n\leq k} D^n\big)= \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
     \end{equation*}
 
-    En posant $d_k=\sum_{0\leq n\leq k} d^n$
+    En posant $D_k=\sum_{0\leq n\leq k} D^n$
     \begin{equation*}
-        \lim_{k\rightarrow \infty} ||d_kd -d'd||\leq 
-        ||d||\lim_{k\rightarrow \infty}  ||d_k-d'||=0
+        \lim_{k\rightarrow \infty} ||D_kD -D'D||\leq 
+        ||D||\lim_{k\rightarrow \infty}  ||D_k-D'||=0
     \end{equation*}
     de la même façon 
     \begin{equation*}
-        \lim_{k\rightarrow \infty} ||dd_k -dd'||=0
+        \lim_{k\rightarrow \infty} ||DD_k -DD'||=0
     \end{equation*}
     Et donc
     \begin{equation*}
-        d'd=dd'=d'-I\Rightarrow (I-d)^{-1}=d'
+        D'D=DD'=D'-I\Rightarrow (I-D)^{-1}=D'
     \end{equation*}
-    de plus, $d'$ est continu et
+    de plus, $D'$ est continu et
     \begin{equation*}
-        ||(I-d)^{-1}||\leq \sum_{n\in\mathbb{N}} ||d||^n \leq  \frac{1}{1-||d||}
+        ||(I-D)^{-1}||\leq \sum_{n\in\mathbb{N}} ||D||^n \leq  \frac{1}{1-||D||}
     \end{equation*}
 \end{preuve}
 On en tire immédiatement le résultat suivant
@@ -451,22 +451,22 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
     On complémente $\ker d$ par $X_0$ et $\im D$ par $Y_0$
     On considère
     \begin{equation*}
-        \iota: X_0\rightarrow X\text{ et }\pi: Y\rightarrow \im d
+        \iota: X_0\rightarrow X\text{ et }\pi: Y\rightarrow \im D
     \end{equation*}
     Les injections et projections naturelles $\iota$ et $\pi$ sont évidemment continues. On considère également la fonction
     \begin{equation*}
-        \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_0,\im d), G\rightarrow \pi G\iota 
+        \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_0,\im D), G\rightarrow \pi G\iota 
     \end{equation*}
-    C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (Y/\im d)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
+    C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (Y/\im D)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
     On conclut immédiatement via \ref{lemma-compo} car 
     \begin{equation*}
-        0=\operatorname{Ind}(\psi(G))= -\dim(\ker d)+\operatorname{Ind}(G)+\dim(Y/\im d)
+        0=\operatorname{Ind}(\psi(G))= -\dim(\ker d)+\operatorname{Ind}(G)+\dim(Y/\im D)
     \end{equation*} 
 \end{preuve}
 
 Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile dans la section $\ref{Lambdainfdim}$
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$ et $\operatorname*{Ind}(DF(0))=0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker dF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ dF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
+    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$ et $\operatorname*{Ind}(DF(0))=0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker DF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ DF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
     \begin{equation*}
         \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n\in Y:\forall 1\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)=\delta_{ij}
     \end{equation*}
@@ -474,7 +474,7 @@ Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile da
 
 On définit alors \coldef{l'opérateur de Schmidt associé à}  $(B,B^{*})$
 \begin{equation}\label{OpSCHimdt}
-    U : X\rightarrow Y, x\mapsto -dF(0)(x)+\sum_{i=1}^n x_i^{*}(x)y_i
+    U : X\rightarrow Y, x\mapsto -DF(0)(x)+\sum_{i=1}^n x_i^{*}(x)y_i
 \end{equation}
 
 On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
@@ -506,7 +506,7 @@ On remarque alors que
         0 && I\\
     \end{pmatrix}
 \end{equation*}
-C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni un voisinage $U_1\times V_1$ tel que $F(\cdot,v)|_{U_1}$ est un difféomorphisme sur son image. $N$ étant de dimension finie, on peut supposer $V_1$ compact. Soit maintenant $K$ un compact de $Y$, on doit montrer que $L=F^{-1}(K)\cap (U_1\times V_1)$ est compact. Soit $(u_i,v_i)$ une suite de $L$, du fait que $V_1$ est compact, on peut supposer que $v_i\to v$. Mais étant donné que $K$ est compact, on peut supposer $F(u_i,v)\to F(x)$. L'inégalité des accroissements finis nous permet enfin de supposer que $v_i=v$. Mais étant donné que $F(\cdot,v)|_{U_1}$ est un homéomorphisme, on a que $u_i\to u$
+C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni des voisinages $U_1\times V_1\ni (u_0,v_0) $ et $W\ni H(u_0,v_0)$ tel que $H$ est un $C^1$ de $U_1\times V_1$ ver $W$. $W$, on sait que $H^{-1}$ est de la forme $H^{-1}(r,v)=(\varphi(r,v),v)$. On choisi alors un rectangle fermé $A=\bar{B}_{R}(\pi F(x_0),\delta)\times \bar{B}_{N}(v_0,\delta) \subseteq W$. Étant donné que $N$ est de dimension finie, on peut supposer $\bar{B}_{N}(v_0,\delta)$ compact. On pose enfin $U_0=H^{-1}(A)$. On veut alors montrer que $F|_{U_0}$ est propre. Considérons alors $K\subseteq  Y$ et $(x_n)_{n}$ une suite de $F|_{U_0}^{-1}(K)$ et  $(r_n,v_n)=H(x_n)$. Par définition $r_n=\pi F(x_n)$, et donc, du fait que $\pi$ est continu, $\pi(K)$ est compact et on peut alors supposer $r_n\to r$ et $v_n\to v$. Par continuité de $H^-1$, on a que $x_n=H^{-1}(r_n,v_n)\to H^{-1}(r,v)$. Ce qui permet de conclure
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
@@ -532,7 +532,7 @@ Etant donné qu'on est en dimension infinie on remplace la mesure par une notion
 \begin{definition}
     Si $(E,\mathcal{T})$ est un espace topologique, un sous ensemble de $E$ est dit \textcolor{color-def}{dense nulle part} si son adhérence  a un intérieur vide. Un ensemble est dit \textcolor{color-def}{maigre} si c'est une union dénombrable d'ensembles denses nulle part
 \end{definition}
-\begin{theobox}{Smale}{}
+\begin{theobox}{Morse-Sard-Smale}{}
     Si $X,Y$ sont des espaces de Banach séparables et si $F\in C^k(X,Y)$ est une fonction de 
     Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$
     alors l'ensemble des valeurs singulières est maigre
@@ -557,7 +557,8 @@ est un isomorphisme, le théorème des fonctions implicites permet, quitte à re
 Pour $u\in U$ fixé, posons $\varphi_u(v)=\varphi(u,v)$. Un point $(u,v)$ est régulier pour $F$ si et seulement si $D\varphi_u(v)$ est surjective. Or $\dim\ker DF(x_0)-\dim Y_0=\operatorname{Ind}(F)$,et donc $k>\max(\dim\ker DF(x_0)-\dim Y_0,0)$. Le théorème de Morse--Sard appliqué à $\varphi_u$ montre alors que ses valeurs régulières sont denses dans $Y_0$. On en déduit que, dans tout voisinage de $F(x_0)$, il existe une valeur régulière de $F$ ; l'ensemble des valeurs singulières locales est donc d'intérieur vide. Enfin, l'ensemble des points singuliers est fermé, puisque l'ensemble des opérateurs surjectifs est ouvert. En réduisant encore le voisinage, \ref{propre-fred} permet de supposer $F$ propre sur celui-ci ; l'image de l'ensemble des points singuliers y est donc fermée, et par ce qui précède dense nulle part.
 \end{preuve}
 \begin{corollaire}
-    Si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
+    Dans les hypothèse du théorème précédent,
+    si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
 \end{corollaire}
 \begin{remarque}
     En pratique, il est fréquent que l’espace d’arrivée Y représente des grandeurs physiques mesurables (température, vitesse, etc.). Or une mesure expérimentale n’est généralement connue qu’à une certaine précision. Il est alors naturel, au moins lorsque les composantes de Y représentent des observables indépendantes, d’attendre qu’une sortie réalisable reste réalisable après une perturbation suffisamment petite. Si Ind(F)<0, l’image de F est cependant d’intérieur vide : toute valeur atteinte est donc arbitrairement proche de valeurs qui ne sont pas atteintes. En ce sens, les sorties du système ne sont pas robustes vis-à-vis de petites perturbations dans Y. Cette observation ne rend évidemment pas les opérateurs d’indice négatif dénués d’intérêt — des contraintes physiques exactes peuvent naturellement imposer une image de codimension positive — mais elle explique pourquoi, dans le cadre considéré ici, nous nous intéresserons principalement aux indices non négatifs.

@@ -1,0 +1,147 @@
+\documentclass[memoire.tex]{subfiles}
+\begin{document}
+
+\section*{Notations}
+\addcontentsline{toc}{section}{Notations}
+
+\small
+\renewcommand{\arraystretch}{1.12}
+
+\noindent\textbf{Cadre général.}\quad
+Sauf mention contraire, $X,Y,Z$ désignent des espaces de Banach réels,
+$\Lambda$ un espace de paramètres, $x\in X$ une variable d'état et
+$\lambda\in\Lambda$ un paramètre. On considère typiquement une application
+$F:X\times\Lambda\rightarrow Y$ et un zéro de référence $(x_0,\lambda_0)$.
+
+\medskip
+\noindent\textbf{Calcul différentiel et opérateurs}
+\smallskip
+
+\begin{tabular}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+$\mathcal L(X,Y)$, $L(X,Y)$
+& Espace des applications linéaires continues de $X$ dans $Y$.\\
+$DF(x)$
+& Dérivée de Fréchet de $F$ au point $x$.\\
+$D_iF$, $D^2_{ij}F$
+& Dérivées partielles de $F$ par rapport à la $i$-ième variable, et dérivées partielles secondes/mixes.\\
+$X^*$, $D^*$
+& Dual topologique de $X$ et opérateur adjoint de $D$.\\
+$\ker D$, $\operatorname{im}D$
+& Noyau et image de l'opérateur $D$.\\
+$\operatorname{codim}V$
+& Codimension d'un sous-espace vectoriel $V$.\\
+$\operatorname{Ind}D$
+& Indice de Fredholm :
+$\dim\ker D-\operatorname{codim}(\operatorname{im}D)$.\\
+$\mathcal F_n(X,Y)$, $\mathcal F(X,Y)$
+& Opérateurs de Fredholm $X\to Y$ d'indice $n$, respectivement de tout indice.\\
+$\mathcal{GL}(X)$
+& Groupe des automorphismes linéaires continus de $X$.\\
+$A^\perp$
+& Annihilateur de $A$ dans le dual ; dans un cadre hilbertien, désigne aussi le complément orthogonal.\\
+$\rangle v_1,\ldots,v_k\langle_R$
+& Sous-espace ou sous-module engendré par $v_1,\ldots,v_k$ sur l'anneau (ou corps) $R$.\\
+\end{tabular}
+
+\medskip
+\noindent\textbf{Réduction de Lyapunov--Schmidt et bifurcation}
+\smallskip
+
+\begin{tabular}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+$D=D_1F(x_0,\lambda_0)$
+& Linéarisation de $F$ par rapport à la variable d'état au point étudié.\\
+$X=\ker D\oplus X_0$
+& Décomposition de l'espace d'état en noyau de $D$ et complément fermé.\\
+$Y=\operatorname{im}D\oplus Y_0$
+& Décomposition de l'espace d'arrivée en image de $D$ et complément fermé.\\
+$\pi_1$, $\pi_2$
+& Projections associées sur $\ker D$ et $Y_0$.\\
+$\varphi$
+& Fonction implicite donnant la composante dans $X_0$ lors de la réduction.\\
+$\Phi$
+& Fonction réduite (ou fonction de bifurcation) à valeurs dans $Y_0$.\\
+$F(\cdot,\lambda)$
+& Application $x\mapsto F(x,\lambda)$ obtenue en fixant le paramètre.\\
+$\alpha_F(x_0,\lambda_0)$
+& $\dim\!\bigl(\ker D_2^*\cap\ker D_1^*\bigr)$, utilisée pour les zéros de type $(\alpha,n)$.\\
+\end{tabular}
+
+\newpage
+
+\noindent\textbf{Germes et théorie des singularités}
+\smallskip
+
+\begin{tabular}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+$\mathcal E(S,X,Y,T)$
+& Espace des germes lisses, de source $S\subset X$ et à valeurs dans $Y$, envoyant $S$ dans $T$.\\
+$\mathcal E_S(N)$
+& Anneau des germes de fonctions réelles définies au voisinage de $S\subset N$.\\
+$\mathcal E_n^m$
+& Abréviation de $\mathcal E(0,\mathbb R^n,\mathbb R^m)$.\\
+$\mathfrak m_S$, $\mathfrak m_n$
+& Idéal des germes scalaires s'annulant sur la source ; $\mathfrak m_n$ désigne le cas $(0,\mathbb R^n)$.\\
+$\mathcal D_n$
+& Groupe des germes de difféomorphismes de $(\mathbb R^n,0)$ fixant l'origine.\\
+$j^k f$
+& $k$-jet de $f$, c'est-à-dire son développement de Taylor tronqué à l'ordre $k$.\\
+$\mathcal K$
+& Groupe de contact agissant sur les germes.\\
+$\mathcal B$, $\mathcal{RB}$
+& Groupes d'équivalence de bifurcation, respectivement non restreinte et restreinte (paramètres fixés).\\
+$T_f(\mathcal G\!\cdot\! f)$, $T_f\mathcal G$
+& Espace tangent à l'orbite de $f$ sous l'action du groupe $\mathcal G$.\\
+$T_f^{(e)}\mathcal G$
+& Espace tangent étendu associé à l'action de $\mathcal G$.\\
+$\operatorname{codim}(f,\mathcal G)$
+& $\dim_{\mathbb R}\bigl(\mathcal E_n^m/T_f\mathcal G\bigr)$, lorsque cette dimension est finie.\\
+$\mathcal U_d(f)$
+& Ensemble des déploiements à $d$ paramètres du germe $f$.\\
+$H\preccurlyeq G$
+& $H$ est un facteur du déploiement $G$ (pour la relation d'équivalence considérée).\\
+\end{tabular}
+
+\medskip
+\noindent\textbf{Degré, orientation et dynamique}
+\smallskip
+
+\begin{tabular}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+$\deg_B(f,U,y)$
+& Degré de Brouwer de $f$ sur $U$ relativement à $y$.\\
+$\mathcal C(D)$
+& Ensemble des correcteurs de l'opérateur de Fredholm d'indice nul $D$.\\
+$E\sim_D E'$
+& Les correcteurs $E,E'$ définissent la même orientation de $D$.\\
+$\nu(D)$, $\operatorname{sgn}D$
+& Orientation naturelle d'un isomorphisme et signe d'un opérateur orienté.\\
+$\deg_f(F,U,y)$
+& Degré orienté de Furi d'une fonction de Fredholm d'indice nul.\\
+$F\pitchfork Y_0$
+& $F$ est transverse au sous-espace $Y_0$.\\[0.2em]
+$V^{\mathbb C}$, $D^{\mathbb C}$
+& Complexifiés d'un espace vectoriel réel $V$ et d'un opérateur réel $D$.\\
+$\sigma(D)$
+& Spectre de $D$ (entendu via son complexifié).\\
+$\mu$
+& Courbe de valeurs propres perturbées au voisinage d'un équilibre critique.\\
+$C_{2\pi}^{k+\alpha}(\mathbb R,E)$
+& Espace de Hölder des fonctions $2\pi$-périodiques à valeurs dans $E$.\\
+$\kappa$
+& Paramètre de fréquence ; après remise à l'échelle, la période vaut $2\pi/\kappa$.\\
+$G(x,\kappa,\lambda)$
+& Dans l'étude de Hopf, $G=\kappa\,\partial_t x-F(x,\lambda)$.\\
+$J_0$
+& Linéarisation de $G$ au point critique :
+$J_0=\kappa_0\partial_t-D_1F(0,\lambda_0)$.\\
+$S_\theta x$
+& Translation de phase : $(S_\theta x)(t)=x(t+\theta)$.\\
+\end{tabular}
+
+\medskip
+\noindent\textit{Attention aux notations dépendant du contexte :}
+$\mathcal K$ désigne le groupe de contact dans la partie sur les singularités,
+tandis que $\mathcal K(\bar U)$ désigne les applications compactes dans la
+partie Leray--Schauder. De même, $A^\perp$ désigne un annihilateur dans le cadre
+des espaces de Banach et un complément orthogonal lorsqu'un produit scalaire
+est fixé.
+
+\end{document}
