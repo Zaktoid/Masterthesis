@@ -47,9 +47,9 @@ triviale}, i.e,  si $(x_0,
 \section{Théorie des opérateurs de Fredholm}
 
 
-\subsection{Calcul différentiel dans des Espaces de Banach}
+\subsection{Calcul différentiel dans des espaces de Banach}
 
-Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but étant de pouvoir présenter le \colprop{théorème des fonctions implicites}, un des outils principaux de la théorie de la bifurcation. Nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach
+Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but est de pouvoir présenter le \colprop{théorème des fonctions implicites}, un des outils principaux de la théorie de la bifurcation. Nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach
 
 \begin{definition}
 Soit $U$ un ouvert de $X$ et $F,G\in C^0(U,Y)$, $F$ et $G$ sont \coldef{tangents} en $x_0\in U$ si 
@@ -77,7 +77,7 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ tangent en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $DF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
+$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ soit tangent à $F$ en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $DF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
@@ -162,8 +162,8 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{proposition}
     dans les conditions des définitions précédentes, 
     \begin{equation*}
-        f\in C^1(U,Y)\Leftrightarrow \forall a\in U, \space
-        \forall 1\leq i \leq n \quad  D_i f(a)\text{ est défini et continu}
+        f\in C^1(U,Y)\Leftrightarrow
+        \forall 1\leq i \leq n \quad  D_i f:U\rightarrow \mathcal{L}(X,Y)\text{ est défini et continu}
     \end{equation*}
     la dérivée est alors donnée par
     \begin{equation*}
@@ -412,7 +412,7 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automor
     Montrons alors que $D'$ est l'inverse de $\operatorname{Id} -d$.
     On a
     \begin{equation*}
-        d\circ\big( \sum_{0\leq n\leq k} D^n\big)= \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
+        D\circ\big( \sum_{0\leq n\leq k} D^n\big)= \sum_{0\leq n\leq k+1} D^n- \operatorname{Id}
     \end{equation*}
 
     En posant $D_k=\sum_{0\leq n\leq k} D^n$
@@ -506,7 +506,7 @@ On remarque alors que
         0 && I\\
     \end{pmatrix}
 \end{equation*}
-C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni des voisinages $U_1\times V_1\ni (u_0,v_0) $ et $W\ni H(u_0,v_0)$ tel que $H$ est un $C^1$ de $U_1\times V_1$ ver $W$. $W$, on sait que $H^{-1}$ est de la forme $H^{-1}(r,v)=(\varphi(r,v),v)$. On choisi alors un rectangle fermé $A=\bar{B}_{R}(\pi F(x_0),\delta)\times \bar{B}_{N}(v_0,\delta) \subseteq W$. Étant donné que $N$ est de dimension finie, on peut supposer $\bar{B}_{N}(v_0,\delta)$ compact. On pose enfin $U_0=H^{-1}(A)$. On veut alors montrer que $F|_{U_0}$ est propre. Considérons alors $K\subseteq  Y$ et $(x_n)_{n}$ une suite de $F|_{U_0}^{-1}(K)$ et  $(r_n,v_n)=H(x_n)$. Par définition $r_n=\pi F(x_n)$, et donc, du fait que $\pi$ est continu, $\pi(K)$ est compact et on peut alors supposer $r_n\to r$ et $v_n\to v$. Par continuité de $H^-1$, on a que $x_n=H^{-1}(r_n,v_n)\to H^{-1}(r,v)$. Ce qui permet de conclure
+C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni des voisinages $U_1\times V_1\ni (u_0,v_0) $ et $W\ni H(u_0,v_0)$ tel que $H$ est un $C^1$ de $U_1\times V_1$ ver $W$. $W$, on sait que $H^{-1}$ est de la forme $H^{-1}(r,v)=(\varphi(r,v),v)$. On choisi alors un rectangle fermé $A=\bar{B}_{R}(\pi F(x_0),\delta)\times \bar{B}_{N}(v_0,\delta) \subseteq W$. Étant donné que $N$ est de dimension finie, on peut supposer $\bar{B}_{N}(v_0,\delta)$ compact. On pose enfin $U_0=H^{-1}(A)$. On veut alors montrer que $F|_{U_0}$ est propre. Considérons alors un compact $K\subseteq  Y$ et $(x_n)_{n}$ une suite de $F|_{U_0}^{-1}(K)$ et  $(r_n,v_n)=H(x_n)$. Par définition $r_n=\pi F(x_n)$, et donc, du fait que $\pi$ est continu, $\pi(K)$ est compact et on peut alors supposer $r_n\to r$ et $\bar{B}_{N}(v_0,\delta)$  étant compact,  $v_n\to v$. Par continuité de $H^{-1}$, on a que $x_n=H^{-1}(r_n,v_n)\to H^{-1}(r,v)$.  Et conclut par la continuité de $F$.
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
@@ -595,8 +595,8 @@ temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'a
     On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble de $y\in \R$ tel que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
     \begin{equation*}
         a_{n}=\begin{cases}
-            r_{k/2}\text{ si $k$ est pair}
-            \\ \min (r_{(k-1)/2},r_{(k-1)/2+1})-1 \text{ sinon}
+            r_{k/2}\text{ si $n$ est pair}
+            \\ \min (r_{(n-1)/2},r_{(n-1)/2+1})-1 \text{ sinon}
         \end{cases}
     \end{equation*}
     Il est possible de construire une fonction lisse $g$ telle que 
@@ -607,9 +607,9 @@ temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'a
     \begin{equation*}
         F:\R^2\rightarrow \R, (x,\lambda)\mapsto g(x)+\lambda^2.
     \end{equation*}
-    Maintenant si $y=r_k$, alors $a_{2k-1}<a_{2k}$ et $a_{2k+1}<a_{2k}$ et $2k$ alors un maximum local strict et on a donc localement
+    Maintenant si $y=r_n$, alors $a_{2n-1}<a_{2n}$ et $a_{2n+1}<a_{2n}$ et $2k$ alors un maximum local strict et on a donc localement
     \begin{equation*}
-        F(x,\lambda)=r_k\Leftrightarrow \lambda^2=r_k-g(x)
+        F(x,\lambda)=r_n\Leftrightarrow \lambda^2=r_n-g(x)
     \end{equation*}
 \end{exemple}
 On aimerait 

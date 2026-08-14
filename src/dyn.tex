@@ -65,7 +65,7 @@ On a alors
 \begin{equation*}
     D(-\nabla V)(x_0,\lambda_0)=-\operatorname*{Hess}(V)(x_0,\lambda_0).
 \end{equation*}
-Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" i.e que la courbure soit totalement positive, donc que toutes les valeurs propres de la Hessienne soit positives et donc que toutes les valeur propre de $DF$ soit négatives. On peut déjà noter, et ça sera crucial pour la suite, que $DF$ est alors une matrice symétrique, donc toutes ses valeurs propres sont réelles. Nous montrons la validité de ce principe en dimension finie dans la section \ref{eigen-stab}\\
+Pour avoir un équilibre stable, il faut que la courbe soit localement un "bol" i.e que la courbure soit totalement positive, donc que toutes les valeurs propres de la Hessienne soit positives et donc que toutes les valeur propre de $DF$ soit négatives. On peut déjà noter, et ça sera crucial pour la suite, que $DF$ est alors une matrice symétrique, donc toutes ses valeurs propres sont réelles. Nous donnons plus de justifications de ce principe dans la section \ref{eigen-stab}\\
 
 \subsection{Le principe d'échange de stabilité}
 
@@ -305,13 +305,12 @@ On commence par donner une sens précis à la notion de stabilité. Une façon d
     On dit qu'un équilibre $x_0$ est 
     \coldef{hyperbolique} si aucune de ses valeurs propres n'a de partie réelle nulle
 \end{definition}
-Notez que c'est une propriété "générique"
+Notez que c'est une propriété "générique". Le résultat suivant justifie complètement notre choix de définition de la stabilité en dimension finie. La preuve étant classique, il est simplement rappelé
 \begin{theorem}
     Soit $U\subseteq X$ un ouvert et $F\in C^1(U,X)$. Supposons que $x_0\in U$  soit un équilibre stable de $\partial_t x=F(x)$. Alors $DF(x_0)$ n'a pas de valeur propres ayant une partie réelle positive
 \end{theorem}
 \begin{preuve}
-    On peut bien sûr supposer $x_0=0$. Supposons alors que $DF(0)$ a une valeur propre dont la partie réelle est positive, et on montre que c'est un équilibre instable. Grâce à la forme de canonique de Jordan réelle, on trouve deux sous espaces vectoriels $X_0,X_1$ tels que $X=X_0\oplus X_1$ et que les valeurs propres de $A=DF(0)|_{X_0}$ sont $>0$ et  celles de $B=DF(0)|_{X_1}$ sont $\leq 0$ via le lemme [LEMME]
-    \todo{Terminer preuve}
+    voir \cite{HirschSmale1974Dynamical}
 \end{preuve}
 
 

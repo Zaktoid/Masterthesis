@@ -70,9 +70,11 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est simplement le germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
 \end{definition}
 L'opération de composition entre germes est clairement bien 
-définie. Pour définir les germes de sous ensemble, on 
-identifie simplement une partie $S$ à $\chi_{S}$ et 
-considère le germe de fonction correspondante
+définie. Si $S$ est sous ensemble de $X$, on pose 
+\begin{equation*}
+    A\sim_S B\Leftrightarrow \exists U\in\mathcal{V}_S: A\cap U=B\cap U
+\end{equation*}
+et la germe d'un sous ensemble $A$ est alors la classe $[A]_S$
 \begin{definition}
     un germe  de difféomorphisme de $\mathcal{E}(\{0\},\R^n,
     \R^n)$ est un élément de $\mathcal{E}(\{0\},\R^n,\R^n,
@@ -184,7 +186,7 @@ Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons
 \end{equation*}
 si $f_i=[\tilde{f}_i]$, on a alors
 \begin{equation*}
-    f=\sum_{i=1}^{n}x_i f_i
+    f=\sum_{i=1}^{k}x_i f_i
 \end{equation*}
 ce qui nous permet de conclure quand $r=1$. Maintenant, si 
 $f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de 
@@ -457,7 +459,7 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
         &\forall 1\leq j<i\leq m,\space \frac{\partial }{\partial a_j}\tilde{h}_i(y,0)=0\\
         &\forall 1\leq i\leq m,\space \frac{\partial }{\partial a_i}\tilde{h}_i(y,0)\neq 0
     \end{align*}
-    Ainsi, la matrice $(\frac{\partial}{\partial a_j}h_j(0))_{1\leq i,j\leq m}$ est inversible. Via le théorème des fonctions implicites, il existe $P_1\in\mathcal{V}^{P_0}_{y}$ et  $\tilde{u}:P_1\rightarrow \R^m$ tels que $\tilde{h}(z,\tilde{u}(z))$. Posons enfin $\tilde{q}(z,b)=\tilde{q}_1(z,\tilde{u}(z),b)$, les germes ayant pour représentants $\tilde{u}$ et $\tilde{q}$ répondent à la question.
+    Ainsi, la matrice $(\frac{\partial}{\partial a_j}h_j(y,0))_{1\leq i,j\leq m}$ est inversible. Via le théorème des fonctions implicites, il existe $P_1\in\mathcal{V}^{P_0}_{y}$ et  $\tilde{u}:P_1\rightarrow \R^m$ tels que $\tilde{h}(z,\tilde{u}(z))=0$. Posons enfin $\tilde{q}(z,b)=\tilde{q}_1(z,\tilde{u}(z),b)$, les germes ayant pour représentants $\tilde{u}$ et $\tilde{q}$ répondent à la question.
 \end{preuve}
 
 
@@ -592,10 +594,6 @@ Soient $f:(N,S)\rightarrow (P,y)$ un germe  lisse $S$ une partie finie de $N$ et
     \dim_{\R} M/(f^{*}(\mathfrak{m}_y(P))M)< 
     \infty\Leftrightarrow M \text{ est finiment généré en tant que $\mathcal{E}_y(P)$-module}
 \end{equation*}
-En particulier, si $\pi:M\rightarrow   M/(f^{*}(\mathfrak{m}_y(P))M)$ est la projection canonique
-\begin{equation*}
-    M=\rangle a_1,\cdots a_l \langle_{\mathcal{E}_S}\Leftrightarrow M/(f^{*}(\mathfrak{m}_y(P))M)=\rangle \pi(a_1),\cdots,\pi(a_l)\langle_{\R}
-\end{equation*}
 \end{theobox}
 \begin{preuve}
     cela découle immédiatement du résultat précédent et \ref{décomposition} 
@@ -604,9 +602,9 @@ En particulier, si $\pi:M\rightarrow   M/(f^{*}(\mathfrak{m}_y(P))M)$ est la pro
 \subsection{Relations d'équivalences: exemple introductif} 
 Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.Dans la suite, on pose $\mathcal{E}^m_{n}=\mathcal{E}(0,\R^{n},\R^m)$.\\
 Soient $f,g\in\mathcal{E}^m_n$, on dira qu'elles sont 
-faiblement équivalentes s'il existe un germe  de difféomorphisme de le forme $\phi\in\mathcal{D}_{p+q}$
+faiblement équivalentes s'il existe un germe  de difféomorphisme $\phi\in\mathcal{D}_{p+q}$ de la forme 
 \begin{equation*}
-     \phi :(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes de difféomorphismes }
+     \phi :(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes lissmes }
 \end{equation*}
 Et $S\in\mathcal{E}(\R^{p+q},\operatorname*{GL}(\R^m))$ tels que
 \begin{equation}\label{GolubEQ}
@@ -827,7 +825,7 @@ René Thom \cite{Thom1972Stabilite}.
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathfrak{m}^{\times m}_n$  et $v\in V$ une \coldef{famille à $d$-paramètres}  $G$   \coldef{ à travers} $v$ \coldef{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(u,\cdot)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n$  et $v\in V$ une \coldef{famille à $d$-paramètres}  $G$   \coldef{ à travers} $v$ \coldef{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(\cdot,u)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
 \end{definition}
 
 \begin{exemple}
@@ -879,12 +877,8 @@ l'orbite, d'où la définition suivante
 \begin{definition}
     Soient $f\in\mathcal{E}^m_n$ et $\mathcal{G}
     \cdot f\subseteq \mathcal{E}^m_n$ l'orbite 
-    d'une action de groupe. Un élément $g\in\mathcal{U}_d(f,\mathcal{G}\cdot f)$ est \coldef{un chemin lisse} dans   $\mathcal{G}
-    \cdot f\subseteq \mathcal{E}^m_n$ si
-    \begin{equation*}
-        g_0\cdot f=f
-    \end{equation*}
-    et si l'action dépend de façon lisse en $u$. Si de plus $G(0,0,t)=0$
+    d'une action de groupe. Un élément $g\in\mathcal{U}_1(f,\mathcal{G}\cdot f)$ est \coldef{un chemin lisse} dans   $\mathcal{G}
+    \cdot f\subseteq \mathcal{E}^m_n$ si il peut être réalisé par une famille d'élements de $\mathcal{G}$ dépendant lissement du paramètre
 \end{definition}
 La condition "dépendre de façon lisse" est légèrement floue, cela deviendra clair quand on calculera des espaces tangents.
 \begin{definition}
@@ -1179,7 +1173,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     \mathfrak{m}_n\cdot M$
 \end{corollaire} 
 \begin{proposition}
-    Soit $M$ un sous module de 
+    Soit $M$ un sous module propre de 
     $\mathcal{E}^m_{p+q}$. Il existe un entier $k$ tel que $(\mathfrak{m}^k_{p+q})^{\times m}\subseteq M$ si et seulement si $M$ est de codimension finie
 \end{proposition}
 \begin{preuve}
@@ -1196,7 +1190,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     \end{equation*}
     et donc
     \begin{equation*}
-        1\leq \codim(M+\mathfrak{m}_{p+q}
+        1\leq M\leq  \codim(M+\mathfrak{m}_{p+q}
         ^{\times m})
         \leq 
         \codim(M+
@@ -1465,7 +1459,7 @@ des espaces tangents. Dans ce qui suit, on va utiliser la notion d'espace tangen
     \rangle \partial_{\lambda}f\langle_{\mathcal{E}_q}
 \end{equation*}
 
-Du fait que $\mathcal{E}_n=\R^n\oplus\mathfrak{m}_n$ 
+Du fait que $\mathcal{E}_n=\R\oplus\mathfrak{m}_n$ 
 (en identifiant les fonctions 
 constantes à leur 
 constantes), et on vérifie 
