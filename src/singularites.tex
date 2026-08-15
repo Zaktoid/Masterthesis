@@ -146,7 +146,7 @@ Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-    Souvenez-vous qu'on suppose que les variétés sont des espaces topologiques séparés, il existe donc $U_1,\cdots,U_p$ des voisinages de $S_1,\cdots,S_p$. Soit maintenant un germe  $f\in\mathcal{E}_S$, c'est la classe d’équivalence d'une fonction $\tilde{f}$ définie sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
+    Souvenez-vous qu'on suppose que les variétés sont des espaces topologiques normaux, il existe donc $U_1,\cdots,U_p$ des voisinages de $S_1,\cdots,S_p$. Soit maintenant un germe  $f\in\mathcal{E}_S$, c'est la classe d’équivalence d'une fonction $\tilde{f}$ définie sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
     $\tilde{f}_{|_{V'}}\sim_{S} \tilde{f}$
     et donc on vérifie facilement que 
     \begin{equation*}
@@ -186,7 +186,7 @@ Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons
 \end{equation*}
 si $f_i=[\tilde{f}_i]$, on a alors
 \begin{equation*}
-    f=\sum_{i=1}^{k}x_i f_i
+    f=\sum_{i=1}^{n}x_i f_i
 \end{equation*}
 ce qui nous permet de conclure quand $r=1$. Maintenant, si 
 $f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de 
@@ -413,13 +413,13 @@ $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
 \end{equation*}
 \end{lemme}
 \begin{definition}
-    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulière si le germe $f|_{(y\times \R, (y,0) )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
+    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulièr si le germe $f|_{(y\times \R, (y,0) )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
 \end{definition}
 
 Le théorème suivant montre que le "terme de reste" du lemme précédent disparaît si $f$ est régulière
 
 \begin{theorem}
-    Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulière, alors il existe un germe  inversible 
+    Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulièr, alors il existe un germe  inversible 
     $q\in\mathcal{E}_{(y,0)}(P\times \R)$ et $u\in\mathcal{E}_y(P)^{m}$
     \begin{equation*}
         f=q\Gamma_u
@@ -453,18 +453,18 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
     \begin{equation*}
         \frac{\partial^m }{\partial b^m}\widetilde{f}_1(y,0,0)=m! \widetilde{q}_1(y, 0, 0)
     \end{equation*}
-    $f$ étant $m$-régulière, on a que $\tilde{q}_1(y,0,0)\neq 0$. Des calculs similaires permettent de montrer que 
+    $f$ étant $m$-régulièr, on a que $\tilde{q}_1(y,0,0)\neq 0$. Des calculs similaires permettent de montrer que 
     \begin{align*}
         &\forall 1\leq i\leq m,\space  h_i(y,0)=0\\
         &\forall 1\leq j<i\leq m,\space \frac{\partial }{\partial a_j}\tilde{h}_i(y,0)=0\\
         &\forall 1\leq i\leq m,\space \frac{\partial }{\partial a_i}\tilde{h}_i(y,0)\neq 0
     \end{align*}
-    Ainsi, la matrice $(\frac{\partial}{\partial a_j}h_j(y,0))_{1\leq i,j\leq m}$ est inversible. Via le théorème des fonctions implicites, il existe $P_1\in\mathcal{V}^{P_0}_{y}$ et  $\tilde{u}:P_1\rightarrow \R^m$ tels que $\tilde{h}(z,\tilde{u}(z))=0$. Posons enfin $\tilde{q}(z,b)=\tilde{q}_1(z,\tilde{u}(z),b)$, les germes ayant pour représentants $\tilde{u}$ et $\tilde{q}$ répondent à la question.
+    Ainsi, la matrice $(\frac{\partial}{\partial a_j}\tilde{h_i}(y,0))_{1\leq i,j\leq m}$ est inversible. Via le théorème des fonctions implicites, il existe $P_1\in\mathcal{V}^{P_0}_{y}$ et  $\tilde{u}:P_1\rightarrow \R^m$ tels que $\tilde{h}(z,\tilde{u}(z))=0$. Posons enfin $\tilde{q}(z,b)=\tilde{q}_1(z,\tilde{u}(z),b)$, les germes ayant pour représentants $\tilde{u}$ et $\tilde{q}$ répondent à la question.
 \end{preuve}
 
 
 \begin{corollaire}\label{ThmDIV}("Divison euclidienne")
-    Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulière, il existe $q\in\mathcal{E}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
+    Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulièr, il existe $q\in\mathcal{E}_{(y,0)}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
     \begin{equation*}
         g=fq+R_h
     \end{equation*}
@@ -501,15 +501,15 @@ On commence par montrer un cas particulier :
     \end{equation*}
     Ainsi, pour tout élément $m$ on a 
     \begin{equation*}
-        [m]=\sum_{i=1}^{q}c_i [m_i]\Rightarrow \exists r\in \pi^{*}(\mathfrak{m}_y(P))M : a=\sum_{i=1}^q c_ia_i+r
+        [m]=\sum_{i=1}^{q}c_i [m_i]\Rightarrow \exists r\in \pi^{*}(\mathfrak{m}_y(P))M : m=\sum_{i=1}^q c_im_i+r
     \end{equation*}
-    or $r$ s'écrit comme une somme de produits finis d'éléments de $\pi^{*}(\mathfrak{m}_y(P))M$ et $M$, il vient alors qu'on peut écrire
+    or $r$ s'écrit comme une somme de produits finis d'éléments de $\pi^{*}(\mathfrak{m}_y(P))$ et $M$, il vient alors qu'on peut écrire
     \begin{equation*}
         m=\sum_{i=1}^{q} c_i m_i +\sum_{i=1}^{q} d_i m_i\text{ avec les $c_i\in\ \R $ et les $d_i\in\pi^{*}(\mathfrak{m}_y(P))\mathcal{E}_S(N)$}
     \end{equation*}
-    on rappelle que la projection $t: ((0,y)P\times \R)\rightarrow \R$ est un scalaire de $M$ ! en particulier 
+    on rappelle que la projection $t: ((y,0),P\times \R)\rightarrow \R$ est un scalaire de $M$ ! en particulier 
     \begin{equation*}
-        \forall 1\leq i\leq q,\exists c_{i,j}\in R,z_{ij}\in\pi^{*}(\mathfrak{m}_y(P))\mathcal{E}_S(N): tm_i=\sum_{j=1}^q (c_{ij}+z_{ij})m_j
+        \forall 1\leq i\leq q,\exists c_{i,j}\in \R,z_{ij}\in\pi^{*}(\mathfrak{m}_y(P))\mathcal{E}_S(N): tm_i=\sum_{j=1}^q (c_{ij}+z_{ij})m_j
     \end{equation*}
     On écrit cette identité de manière matricielle:
     \begin{equation}\label{equationMatrice1}
@@ -521,22 +521,22 @@ On commence par montrer un cas particulier :
          \end{pmatrix}
          =0
     \end{equation}
-    où $A_{ij}=t\delta_{ij}-c_{ij}-z_{ij}$. Posons $\Delta=\det A$, via la règle de Kramer, on sait que $\Delta m_i=0$ si $1\leq i\leq q$. On remarque que $-\Delta$ est en réalité le polynôme caractéristique de la matrice $(c_{ij}+z_{ij})$ évalué en $t$, ainsi, 
+    où $A_{ij}=t\delta_{ij}-c_{ij}-z_{ij}$. Posons $\Delta=\det A$, via la règle de Cramer, on sait que $\Delta m_i=0$ si $1\leq i\leq q$. On remarque que $\Delta$ est en réalité le polynôme caractéristique de la matrice $(c_{ij}+z_{ij})$ évalué en $t$, ainsi, 
     $\Delta\in\mathcal{E}_{(y,0)}(P\times\R)$ et $\Delta|_
     {((y,0),y\times \R)}$ est alors un polynôme monique 
-    d'ordre $q$, et donc $\Delta$ 
+    de degré $q$, et donc $\Delta$ est
     régulière d'ordre $q'\leq q$. Mais, par 
     \ref{equationMatrice1}, $\Delta\cdot M=0$ donc $M$  est un $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$-module.
-    Montrons que le module $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$ est finiment généré en tant que $\mathcal{E}_y(P)$-module. Par \ref{ThmDIV}, pour tous $g\in\mathcal{E}_S(N)$, il existe $h\in\mathcal{E}_y(P)^{q'}$ et $q\in\mathcal{E}_S(N)$
+    Montrons que le module $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$ est finiment généré en tant que $\mathcal{E}_y(P)$-module. Par \ref{ThmDIV}, pour tous $g\in\mathcal{E}_S(N)$, il existe $h\in\mathcal{E}_y(P)^{q'}$ et $Q\in\mathcal{E}_S(N)$
     \begin{equation*}
-        g=\Delta q +R_h
+        g=\Delta Q +R_h
     \end{equation*}
-    En passant au quotient, le terme de gauche disparait et on  on note églament que
+    En passant au quotient, le terme de gauche disparait et on note églament que
     \begin{equation*}
-        R_h = \sum_{i=1}^{q'} \underbrace{(h_i \circ \pi)}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_y(P)}} \underbrace{t^{m-1}}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_S(N)}}
+        R_h = \sum_{i=1}^{q'} \underbrace{(h_i \circ \pi)}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_{(y,0)}(P\times\R)}} \underbrace{t^{q'-i}}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_S(N)}}
     \end{equation*}
     Ce qui suffit.\\
-    Etant donné que $M$ est un $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$-module finiment généré, il est finiment généré en tant que $\mathcal{E}_y(P)$-module
+    Étant donné que $M$ est un $(\mathcal{E}_S(N)/\Delta\cdot\mathcal{E}_S(N))$-module finiment généré, il est finiment généré en tant que $\mathcal{E}_y(P)$-module
 \end{preuve}
 
 \begin{lemme}
@@ -566,7 +566,7 @@ On commence par montrer un cas particulier :
         (f,\varphi)^*:\mathcal{E}_{(y,0)}(P\times\R^n)\rightarrow \mathcal{E}_{x}(N)
     \end{equation*}
     est surjective, ce qui permet d'affirmer que $M$ est finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^n)$-module.\\
-    Supposons maintenant que $M$ soit finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^k)$-module. Notons qu'on a 
+    Supposons maintenant que $M$ soit finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^{k+1})$-module. Notons qu'on a 
     \begin{equation}\label{equation1}
         f^*(\mathfrak{m}_y(P))\cdot_{M}M=(\pi^{*}_{k+1}\circ\cdots \circ \pi^{*}_1)(\mathfrak{m}_y(P))\cdot_{\Phi_{k+1}^*}M
     \end{equation}
@@ -583,8 +583,8 @@ On commence par montrer un cas particulier :
         \pi^*_{k+1}(\mathfrak{m}_{(y,0)}
         (P\times \R^k))M
     \end{equation*}
-    On en déduit que $M/\pi_{k+1}^*
-    (\mathfrak{m}_{y,0}(P\times \R^k))$ 
+    On en déduit que $M/(\pi_{k+1}^*
+    (\mathfrak{m}_{y,0}(P\times \R^k))M)$ 
     est un $\R$-vectoriel de dimension 
     finie et le résultat précédent permet de dire que $M$ est finiment généré en tant que $\mathcal{E}_{(y,0)}(P\times\R^k)$-module
 \end{preuve}

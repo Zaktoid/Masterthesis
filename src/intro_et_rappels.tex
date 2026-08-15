@@ -39,9 +39,9 @@ les \coldef{bifurcations
 depuis une branche 
 triviale}, i.e,  si $(x_0,
 \lambda_0)\in F^{-1}(0)$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \coldef{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
- La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1} et reformulée et enrichie par Montaldi dans \cite{montaldi2021sbc}. Cette approche nous permettra de \coldef{classifier} les bifurcations, i.e, étant donné une fonction $F(x,\lambda)$ et un point de son domaine $(x_0,\lambda_0)$ autour duquel on veut étudier le comportement de $F$, il peut être utile de se poser la question suivante: si je m'intéresse à une propriété quelconque $P$, quelles sont les  transformations $T$ qui laissent $P$ invariante ? Le but étant bien sûr de se ramener dans un cas plus simple sans perdre $P$. Cela nous ramène naturellement à étudier le travail de Wall dans \cite{Wall1981FiniteDeterminacy}. Nous verrons alors ces transformations comme des actions de groupes et étudierons leurs orbites.\\
- La troisième partie présente des techniques d'un tout autre type: nous utilisons des outils de topologie et topologie algébrique pour détecter globalement  les bifurcations (depuis une branche triviale). D'abord, nous exposons les approches classiques par théorie du degré topologique, en nous basant sur \cite{Feckan2008Topological} pour ensuite introduire des développements plus modernes: \coldef{le degré orienté} de Furi \cite{BenevieriFuri2001} ainsi que le fibré virtuel d'index de Pejsachowicz \cite{Pejsachowicz2011Index}\\
- La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map").
+ La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1}. On y étudiera la notion d'équivalence entre (germe de) fonctions. L'idée étant de comprendre quelle transformations ne "détruise pas" l'information qualitative au voisinage du point d'intérêt $(x_0,\lambda_0)$. Nous étudierons ces équivalences sous le prisme de l'action de groupe: deux (germes) de fonctions seront alors équivalentes si elles se trouvent dans le même orbite de l'action\\
+ La troisième partie présentera un outil d'un tout autre type: un degré topologique. Nous y introduiront les bases de la théorie générale du degré et une généralisation du degré proposée par M. Furi dans \cite{BenevieriFuri2001} \\
+ La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map"). Le but de ce travail est donner une vision d'ensemble des techniques qui peuvent être déployée pour étudier l'apparition de nouvelle branche de solutions dans un système d'équations paramétré
  
 \newpage
 \section{Théorie des opérateurs de Fredholm}
@@ -163,7 +163,7 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
     dans les conditions des définitions précédentes, 
     \begin{equation*}
         f\in C^1(U,Y)\Leftrightarrow
-        \forall 1\leq i \leq n \quad  D_i f:U\rightarrow \mathcal{L}(X,Y)\text{ est défini et continu}
+        \forall 1\leq i \leq n \quad  D_i f:U\rightarrow \mathcal{L}(X_i,Y)\text{ est défini et continu}
     \end{equation*}
     la dérivée est alors donnée par
     \begin{equation*}
@@ -628,12 +628,11 @@ soit "la plupart du temps" une variété de dimension $\operatorname*{Ind}(F)$. 
 
 
 \subsection{Opérateurs de Fredholm différentiels}
-Les opérateurs de Fredholm apparaissent très naturellement 
-
+Dans cette dernière sous-section, nous motivons l'étude des opérateurs de Fredholm en présentant le cadre le plus naturel dans lequel il apparaîssent. Nous nous contenterons de donner les définitions et les énoncés importants, le lecteur intéressé par les détails pourra consulter \cite{berger1977nonlinearity}
 Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
     Soient $U$ un ouvert connexe de $\R^n$ et $m\geq 1$. Si pour tout $x\in U$, 
-    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré $m$ en $D_1,\cdots,D_n$, $l\geq m\geq 1$ et $c_\alpha\in C^{l-m}(W,\R)$ avec $W$ un ouvert contenant $\bar{U}$ alors un opérateur de la forme 
+    $P(x,D)=\sum_{|\alpha|\leq m} c_{\alpha}(x) D^{\alpha}$ est un polynôme de degré au plus $m$ en $D_1,\cdots,D_n$, $l\geq m\geq 1$ et $c_\alpha\in C^{l-m}(W,\R)$ avec $W$ un ouvert contenant $\bar{U}$ alors un opérateur de la forme 
     \begin{equation}\label{ellipticop}
         E: C^{l}(U;\R^p)\rightarrow C^{l-m}(U;\R^p), f 
         \mapsto \sum_{|\alpha|\leq m} c_{\alpha} D^{\alpha}f
@@ -652,23 +651,49 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
 Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui-ci dessus, et par $P_m(x,D)$ sa partie principale.
 \begin{definition}
     L'opérateur $P(x,D)$  est \coldef
-    {elliptique } en $x_0$ si $m=2p$ et si le polynôme $P(x_0,\xi)_m$ est 
-    de signe constant sur $\R^n\setminus\left\{0\right\}$. Il est elliptique sur $U$ si il l'est en tout point de $U$ et 
+    {elliptique } en $x_0$ si le polynôme $P(x_0,\xi)_m$ est 
+    de signe constant sur $\R^n\setminus\left\{0\right\}$. Notez que cela impose à $m$ d'être pair. Il est elliptique sur $U$ si il l'est en tout point de $U$ et 
     s'il existe un constante $c>0$ telle que 
     pour tout $x\in U$, on aie $P_m(x,\xi)\geq 
     c |\xi|^m$ alors il est  \coldef{uniformément 
     elliptique }
 \end{definition}
-
-En général, on étudie des problèmes du type
+Le contexte fonctionnel le plus simple est celui des espaces de Hölder: on rappelle que fonction est $\alpha$-hölderienne sur $\bar{U}$ si
 \begin{equation*}
-    Ex=f\text{ sur $U$ et } \forall \alpha:|\alpha|\leq p-1, D^{\alpha}x|_{\partial U}=0 
+    ||f||_{C^{\alpha}}=||f||_{\infty}+\sup_{x\neq y}\frac{|f(x)-f(y)|}{|x-y|^{\alpha}}<\infty
 \end{equation*}
-En supposant typiquement que $U$ est une partie bornée de $\R^n$ ayant une frontière lisse et $E$ comme dans la définition précédente
-\todo{Déplacer la définition des espaces de Hölder}
+On note $C^{\alpha}(\bar{U})$ l'ensemble des fonctions $\alpha$-hölderienne sur $\bar{U}$ et $C^{k+\alpha}(\bar{U})$ l'ensemble des fonctions dont toutes les dérivées d'ordre $\leq k$ sont $\alpha$-hölderienne.  Il est bien connu que $(C^\alpha(\bar{U}),||\cdot||_{C^{\alpha}})$ est un espace de Banach et en posant
+\begin{equation*}
+    ||f||_{C^{k+\alpha}(\bar{U})}=\sum_{|\beta|\leq k}||D^\beta f||_{C^\alpha}
+\end{equation*}
+On munit $C^{k+\alpha}(\bar{U})$ d'une structure d'espace de Banach. On peut montrer que
+\begin{proposition}
+    Soit $U$ une partie ouverte et bornée de $\R^n$ ayant un bord $\partial U$ lisse. Soit $E$ un opérateur elliptique d'ordre $2k$ sur $\bar{U}$ à coefficients lisses (ou au moins $C^{l+\alpha}$)
+    \begin{equation*}
+        X=\left\{ f\in C^{2k+l+\alpha}(\bar{U}):\forall |\alpha|\leq k-1, D^{\alpha}f|_{\partial U}=0\right\}\text{ et } Y=C^{l+\alpha}(\bar{U})
+    \end{equation*}
+    Alors $E: X\rightarrow Y$ est un opérateur de Fredholm d'indice 0
+\end{proposition}
+\begin{preuve}
+    voir \cite{berger1977nonlinearity}
+\end{preuve}
+Ce type d'opérateurs est très courant en physique, par exemple:
+\begin{exemple}
+    Hamiltonien de Schrödinger magnétique
+    \begin{equation*}
+        H_{A,V}=\frac{1}{2m}(-ih\nabla - qA(x))^2+V(x)
+    \end{equation*}
+    avec $A$ le potentiel vecteur électromagnétique et $V$ le potentiel scalaire. La partie principale est donnée par $\frac{h^2}{2m}|\xi^2|$. Il est alors uniformément elliptique quand $A$ et $V$ sont lisses.
+\end{exemple}
 
-
-
+\begin{exemple}
+    Si $g$ est une métrique riemannienne lisse, le Laplacian $\Delta_g$ est elliptique. En particulier, l'opérateur de Klein-Gordon euclidien (utilisé en QFT relativiste) défini par
+    \begin{equation*}
+        P=-\Delta_g+m^2+cR_g
+    \end{equation*}
+    avec $R_g$ la courbure scalaire $c$ et $m$ constants est également elliptique
+\end{exemple}
+De manière analogue, pour un opérateur scalaire uniformément elliptique du second ordre à coefficients réguliers sur un domaine borné à bord lisse, la condition homogène de Neumann $\partial_\nu u=0$ sur $\partial U$ définit également un problème de Fredholm d'indice nul.
 \newpage
 
 \end{document}
