@@ -28,7 +28,7 @@ catastrophes sans croiser le nom de Thom.
 \end{definition}
 
 \begin{definition}
-    Soient $X,Y$ des espaces topologiques, $f,g\in \mathcal{G}(S,X,Y,T)$ on définit la relation d'équivalence suivante
+    Soient $X,Y$ des espaces topologiques, $f,g\in \mathcal{G}_0(S,X,Y,T)$ on définit la relation d'équivalence suivante
     \begin{equation*}
         f\sim_{S} g \Leftrightarrow \exists U\in
         \mathcal{V}^{\mathcal{T}''}_{S} : f_{|_{U}}=g_{|_{U}}
@@ -37,9 +37,9 @@ Avec $\mathcal{T}''$ la topologie induite sur l'intersection des domaines de $f$
 \end{definition}
  Bien sûr, si $f\sim_{S} g$ alors $f_{|_{S}}=g_{|_{S}}$, la définition suivante est donc licite
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \coldef{l'espace des germes} $C^k$ est donné par
+    Soient $X,Y$ des espaces de Banach (ou des variétés lisses), \coldef{l'espace des germes} lisses est donné par
     \begin{equation*}
-        \mathcal{E}(S,X,Y,T)=\mathcal{G}_{k}(S,X,Y,T)/\sim_{S}
+        \mathcal{E}(S,X,Y,T)=\mathcal{G}_{\infty}(S,X,Y,T)/\sim_{S}
     \end{equation*}
 \end{definition}
 Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
@@ -47,27 +47,27 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     f : (S,X)\rightarrow (Y,T)\text{ et }f : (S,X)\rightarrow Y\text{ si }T=Y
 \end{equation*}
 \begin{definition}
-    Soient $f:(X,S)\rightarrow Y$ et $g:(X,S)\rightarrow Z$
+    Soient $f:(S,X)\rightarrow Y$ et $g:(S,X)\rightarrow Z$
     on définit 
     \begin{equation*}
-       (f,g): (X,S)\rightarrow Y\times Z 
+       (f,g): (S,X)\rightarrow Y\times Z 
     \end{equation*}
     comme étant la classe d'équivalence de 
     \begin{equation*}
         x\mapsto (\tilde{f}(x),\tilde{g}(x))
     \end{equation*}
     où $\tilde{f}$ et $\tilde{g}$ sont des représentants de $f$ et $g$.
-    Si $f:(X,S_1)\rightarrow (Y,T_1)$ et $g:(X,S_2)\rightarrow (Y,T_2)$
+    Si $f:(S_1,X_1)\rightarrow (Y_1,T_1)$ et $g:(S_2,X_2)\rightarrow (Y_2,T_2)$
     alors on définit 
     \begin{equation*}
-        f\times g: (X_1\times X_2,S_1\times S_2)\rightarrow 
+        f\times g: (S_1\times S_2,X_1\times X_2)\rightarrow 
         (Y_1\times Y_2,T_1\times T_2)
     \end{equation*}
     Comme étant la classe d'équivalence de
     \begin{equation*}
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_2))
     \end{equation*}
-    Enfin, si $X'\subseteq X$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est simplement le germe ayant pour représentant $\tilde{f}_{|_{X'\cap S'}}$
+    Enfin, si $X'\subseteq X$,  $S'\subseteq X'$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est le germe en $S'$ ayant pour représentant $\tilde{f}|_{U\cap X'}$ en supposant le représentant $\tilde{f}$ défini sur $U$.
 \end{definition}
 L'opération de composition entre germes est clairement bien 
 définie. Si $S$ est sous ensemble de $X$, on pose 
@@ -94,23 +94,22 @@ et la germe d'un sous ensemble $A$ est alors la classe $[A]_S$
         \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
         \item $\forall U,V,W\in\mathcal{T}: U\subseteq V\subseteq W$, $\rho^V_U\circ \rho^W_V=\rho^W_U$. (fonctorialité 2)
         \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$ si $s,t\in\mathcal{F}(U)$ sont telles que \\$ \forall i\in\mathcal{I},\rho^U_{U_i}(s)=\rho^U_{U_i}(t)$ alors $s=t$ (localité )
-        \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^U_{U_i\cap U_j}(s_j)=\rho^U_{U_i\cap U_j}(s_i)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
+        \item $\forall U\in\mathcal{T}, (U_i)_{i\in\mathcal{I}}\in\mathcal{T}^{\mathcal{I}}: U=\bigcup_{i\in\mathcal{I}}U_i$, si $s_i\in\mathcal{F}(U_i)$ et si $\rho^{U_i}_{U_i\cap U_j}(s_i)=\rho^{U_j}_{U_i\cap U_j}(s_j)$ alors $\exists s\in\mathcal{F}(U)$ telle que $\forall i\in\mathcal{I},\rho^U_{U_i}(s)=s_i$ (recollage)
     \end{itemize}
-    Les deux axiomes sont des axiomes purement structurels. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y,X$ sont des variétés lisses alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on définit enfin le \coldef{germe} d'un faisceau en un sous-ensemble $S\supseteq X$ comme étant
+    Les deux axiomes sont des axiomes purement structurels. Les deux autres permettent de capturer les propriétés désirées. Ainsi,si $Y,X$ sont des variétés lisses alors $C^{\infty}(\cdot,Y): U\mapsto C^{\infty}(U,Y)$ est un faisceau. Et si on définit enfin le \coldef{germe} d'un faisceau en un sous-ensemble $S\subseteq X$ comme étant
     \begin{equation*}
-        \mathcal{F}_S=\varinjlim_{U \supseteq S} F(U)
+        \mathcal{F}_S=\varinjlim_{U \supseteq S} \mathcal{F}(U)
     \end{equation*}
     alors
     \begin{equation*}
         \mathcal{E}(S,X,Y)=C^{\infty}(\cdot,Y)_{S}
     \end{equation*} 
 \end{remarque}
-Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{E}(N)_S
-=\mathcal{E}_S(S,N,\R)$, si le contexte est clair, on notera $\mathcal{E}_S$. On 
+Dans la suite, $N$ sera une variété lisse de dimension $n$. On pose $\mathcal{E}_S(N)
+=\mathcal{E}(S,N,\R)$, si le contexte est clair, on notera $\mathcal{E}_S$. On 
 remarque que les opérations de multiplication et d'addition 
 passent au quotient, ce qui en fait un 
-anneau commutatif. On remarque également que l'évaluation 
-en $0$ et la dérivée passent aussi au quotient. Dans les prochaines pages, on étudie cet anneau ainsi que les modules qu'on peut construire dessus. Pour ce faire, nous adaptons le travail de John Mather \cite{Mather1968vol3}
+anneau commutatif. On remarque également que pour tout $s\in S$, l'évaluation en $s$  et l'évaluation des dérivées passent aussi au quotient. Dans les prochaines pages, on étudie cet anneau ainsi que les modules qu'on peut construire dessus. Pour ce faire, nous adaptons le travail de John Mather \cite{Mather1968vol3}
 \begin{remarque}
     Des notions similaires existent en dimension infinie. 
     C'est assez marginal car en pratique, l'approche par 
@@ -125,10 +124,10 @@ On rappelle la notion d'anneau local
 \begin{definition}
     Un anneau commutatif $R$ est local s'il a un unique idéal maximal. Il est semi local s'il a un nombre fini d'idéaux maximaux
 \end{definition}
-
+Dans la suite, si $S\subseteq N$, on pose $\mathfrak{m}_S=\mathcal{E}_S(S,N,\R,0)$
 \begin{proposition}
     Si $S=\left\{s\right\}$ est un singleton,
-    l'ensemble $\mathfrak{m}_S=\mathcal{E}_s(s,N,\R,0)$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}(N)$ est un anneau local.
+    $\mathfrak{m}_S$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}$ est un anneau local.
 \end{proposition}
 \begin{preuve}
 Il suffit d'observer que si $f\in\mathcal{E}_S
@@ -146,12 +145,12 @@ Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-    Souvenez-vous qu'on suppose que les variétés sont des espaces topologiques normaux, il existe donc $U_1,\cdots,U_p$ des voisinages de $S_1,\cdots,S_p$. Soit maintenant un germe  $f\in\mathcal{E}_S$, c'est la classe d’équivalence d'une fonction $\tilde{f}$ définie sur un voisinage $V'$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap Uj$. Bien sûr, 
+    Souvenez-vous qu'on suppose que les variétés sont des espaces topologiques normaux, il existe donc $U_1,\cdots,U_p$ des voisinages deux à deux disjoints de $S_1,\cdots,S_p$. Soit maintenant un germe  $f\in\mathcal{E}_S$, c'est la classe d’équivalence d'une fonction $\tilde{f}$ définie sur un voisinage $V$ de $S$, on pose alors $V'=\bigcup_{j=1}^p V_j=\bigcup_{j=1}^p V\cap U_j$. Bien sûr, 
     $\tilde{f}_{|_{V'}}\sim_{S} \tilde{f}$
     et donc on vérifie facilement que 
     \begin{equation*}
         \Phi : \mathcal{E}_S\rightarrow \prod_{j=1}^p 
-        \mathcal{E}_{S_i}(N), [f]_S\mapsto ([f|_{V_1}]_{S_1},\cdots [f|_{V_p}]_{S_p} )
+        \mathcal{E}_{S_j}(N), [f]_S\mapsto ([f|_{V_1}]_{S_1},\cdots [f|_{V_p}]_{S_p} )
     \end{equation*}
     est un isomorphisme d'anneau. La décomposition de l'idéal $\mathfrak{m}_S$ en découle immédiatement.
 \end{preuve}
@@ -178,29 +177,29 @@ U\cap(\tilde{x}_1,\cdots,\tilde{x}_k)^{-1}(0)$ et $x_1,\cdots,x_n$ les germes  a
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-Il est clair que $\mathbb{Z}[x_1,\cdots,x_k]_{r}\subseteq I(k,r)$. Nous montrons l'autre inclusion en procédant par récurrence. Soit alors $f\in I(k,r)$, pour $1\leq i\leq k$, on pose 
+Il est clair que $ \rangle \mathbb{Z}[x_1,\cdots,x_k]_{r} \langle_{\mathcal{E}_x(N)}\subseteq I(k,r)$. Nous montrons l'autre inclusion en procédant par récurrence. Soit alors $f\in I(k,r)$, pour $1\leq i\leq k$, on pose 
 \begin{equation*}
     \tilde{f}_i(\tilde{x_1},\cdots,\tilde{x_n})=\int_{0}^
-    {1}  D_i \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i
+    {1}  \partial_{x_i} \tilde{f}(0,\cdots,0,t\tilde{x}_i,\tilde{x}_{i
     +1},\cdots,\tilde{x}_n)dt
 \end{equation*}
 si $f_i=[\tilde{f}_i]$, on a alors
 \begin{equation*}
-    f=\sum_{i=1}^{n}x_i f_i
+    f=\sum_{i=1}^{k}x_i f_i
 \end{equation*}
-ce qui nous permet de conclure quand $r=1$. Maintenant, si 
-$f\in I(k,r)$, alors $f_i\in I(k,r-1)$. Par hypothèse de 
-récurrence, $f_i\in  \mathbb{Z}[x_1,\cdots,x_k]_{r-1}$, et 
-$f=\sum_{i=1}^{n}x_i f_i$, on conclut.
+ce qui nous permet de conclure quand $r=1$. Maintenant, si on a le résultat pour $r-1$, du fait qu'en dérivant sous l'intégrale, toute dérivée d'ordre $<r-1$ de $f_i$ fait intervenir une dérivée d'ordre $<r$ de $f$, donc s'annule sur $\left\{x_1=\cdots x_k=0\right\}$.Donc 
+\begin{equation*}
+f_i\in I(k,r-1)=\rangle \mathbb{Z}[x_1,\cdots,x_k]_{r-1} \langle_{\mathcal{E}_x(N)}
+\end{equation*}. Et du fait que $f=\sum_{i=1}^{k}x_if_i$, on conclut.
 \end{preuve}
 
 Ce résultat nous permet d'affirmer que 
 \begin{equation}\label{Hadamard-corr}
     \mathfrak{m}_x(N)=\rangle x_1,\cdots,x_n \langle_
-    {\mathcal{E}_S}
+    {\mathcal{E}_x(N)}
 \end{equation}
 et que $\mathfrak{m}_x(N)^r$ est exactement égale aux germes 
-dont les dérivées d'ordres $<r$ sont nulles en $0$.\\
+dont les dérivées d'ordres $<r$ sont nulles en $x$.\\
 Si $R$ est un  anneau, on note $R[[X_1,\cdots,X_n]]$ 
 l'ensemble 
 des séries formelles à $n$ variables\footnote{ On pourrait 
@@ -222,14 +221,14 @@ On munit $R[[X_1,\cdots,X_n]]$ d'une structure d'anneau via
     {\alpha\in\mathbb{N}^n}(c_{\alpha}+b_{\alpha})X^{\alpha}
     \\
     &(\sum_{\alpha\in\mathbb{N}^n} c_{\alpha}X^{\alpha})
-    \cdot (\sum_{\alpha\in\mathbb{N}^n} b_{\beta}X^{\beta})
+    \cdot (\sum_{\beta\in\mathbb{N}^n} b_{\beta}X^{\beta})
     =\sum_{\alpha,\beta\in\mathbb{N}^n}c_{\alpha}b_{\beta}X^
     {\alpha+\beta}
 \end{align*}
 On Rappelle également que ce nouvel anneau hérite de 
 certaines propriétés de l'anneau $R$, en particulier si $R$ 
-est local, $R[[X_1,\cdots,X_n]]$ l'est aussi, et l'unique 
-idéal maximal $\mathfrak{m}$ est l'ensemble des séries dont 
+est local avec pour unique idéal maximal $\mathfrak{m}$, $R[[X_1,\cdots,X_n]]$ l'est aussi, et l'unique 
+idéal maximal $\mathfrak{M}$ est l'ensemble des séries dont 
 le terme constant est dans $\mathfrak{m}$.
 
 \begin{corollaire}\label{Isopoly}
@@ -265,23 +264,8 @@ On va désormais s'intéresser aux modules sur l'anneau $\mathcal{E}_S$ avec $S$
 \begin{definition}
     Un module est dit \coldef{libre} s'il possède une base. Un module est \coldef{finiment généré} s'il possède une partie génératrice finie. Enfin, un module libre est à \coldef{rang constant} si toutes les bases ont le même nombre d'éléments
 \end{definition}
-Contrairement aux espaces vectoriels, les modules ne sont pas forcément libres
-\begin{exemple}
-    Considérons par exemple
-    $S=\left\{ (x,y,z)\in\R^3| 
-    x=0,z=0\right\}$, $\mathcal
-    {E}_S(\R^3)$. L'idéal $I_S$ 
-    constitué des fonctions qui s'annulent sur $S$ est bien 
-    sûr un $\mathcal{E}_S(\R^3)$-module. Par \ref{Hadamard}, on a $I_S= \rangle x,z \langle$. Mais on peut écrire 
-    \begin{equation*}
-        z\cdot x + (-x)\cdot z= 0
-    \end{equation*}
-    et les  germes des fonctions $x$ et $-y$ ne sont pas nuls sur $\mathcal{E}_S$. Il est donc impossible d'avoir une base
-\end{exemple}
 
-On peut aussi avoir la situation où $r\cdot x=0$ avec $r$ 
-et $x$ non nuls, c'est ce qu'on appelle un module à \coldef
-{torsion}. La notion d'homomorphisme de module est la même 
+La notion d'homomorphisme de module est la même 
 que celle d'application linéaire.
 Nous rappelons (sans preuve) le lemme de Nakayama, qui est 
 central dans l'étude des $\mathcal{E}_S$-modules 
@@ -349,7 +333,7 @@ finiment généré
     \end{equation*}
     Remarquez qu'on a 
     \begin{equation*}
-        M'\supseteq M'\mathfrak{m}_S\supseteq M'\mathfrak{m}^2_S(N)\supseteq \cdots \supseteq M'\mathfrak{m}^{l+1}_S
+        M'\supseteq M'\mathfrak{m}_S\supseteq M'\mathfrak{m}^2_S\supseteq \cdots \supseteq M'\mathfrak{m}^{l+1}_S
     \end{equation*}
     et donc 
     \begin{equation*}
@@ -359,14 +343,14 @@ finiment généré
     \begin{equation*}
         \mathfrak{m}_S^{k+1}M'=\mathfrak{m}_S^{k}M'
     \end{equation*}
-    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S$, $I=\mathfrak{m}_S$ et $F=\mathfrak{m}_S(M)^kM'$, ce qui permet d'affirmer que $\mathfrak{m}_S^k M'=\mathfrak{m}_S^k (M/V)=0$ ce qui permet de conclure.
+    On applique alors \ref{Nakayama} avec $E=0$, $R=\mathcal{E}_S$, $I=\mathfrak{m}_S$ et $F=\mathfrak{m}_S^kM'$, ce qui permet d'affirmer que $\mathfrak{m}_S^k M'=\mathfrak{m}_S^k (M/V)=0$ ce qui permet de conclure.
 \end{preuve}
 
 
 
 \begin{proposition}
-    Dans les hypothèses du lemme précédent, si $S=\left\{s\right\}$ alors $M'$ est finiment généré (en tant que $\mathcal{E}_S$-module) 
-    il existe un ensemble de générateurs ayant au plus $m$$ 
+    Dans les hypothèses du lemme précédent, si $S=\left\{s\right\}$ alors $V$ est finiment généré (en tant que $\mathcal{E}_S$-module) 
+    il existe un ensemble de générateurs ayant au plus $m 
     {n+l}\choose {l}$ éléments, où $m$ est la taille du plus petit ensemble de générateurs de $M$
 \end{proposition}
 
@@ -413,7 +397,7 @@ $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
 \end{equation*}
 \end{lemme}
 \begin{definition}
-    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulièr si le germe $f|_{(y\times \R, (y,0) )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
+    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulière si le germe $f|_{((y,0),\left\{y\right\}\times \R )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
 \end{definition}
 
 Le théorème suivant montre que le "terme de reste" du lemme précédent disparaît si $f$ est régulière
@@ -601,16 +585,16 @@ Soient $f:(N,S)\rightarrow (P,y)$ un germe  lisse $S$ une partie finie de $N$ et
 
 \subsection{Relations d'équivalences: exemple introductif} 
 Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.Dans la suite, on pose $\mathcal{E}^m_{n}=\mathcal{E}(0,\R^{n},\R^m)$.\\
-Soient $f,g\in\mathcal{E}^m_n$, on dira qu'elles sont 
-faiblement équivalentes s'il existe un germe  de difféomorphisme $\phi\in\mathcal{D}_{p+q}$ de la forme 
+Soient $f,g\in\mathcal{E}^m_n$, avec $n=p+k$ on dira qu'elles sont 
+faiblement équivalentes s'il existe un germe  de difféomorphisme $\phi\in\mathcal{D}_{p+k}$ de la forme 
 \begin{equation*}
      \phi :(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes lissmes }
 \end{equation*}
-Et $S\in\mathcal{E}(\R^{p+q},\operatorname*{GL}(\R^m))$ tels que
+Et $S\in\mathcal{E}(\R^{p+k},\operatorname*{GL}_m(\R))$ tels que
 \begin{equation}\label{GolubEQ}
     S\cdot f\circ\phi=  g
 \end{equation}
- si $h=I_n$ on dira qu'ils sont \coldef{fortement équivalents}
+ si $h=I_k$ on dira qu'ils sont \coldef{fortement équivalents}
 \begin{exemple}
     reprenons encore la bifurcation "trident"
     \begin{equation*}
@@ -645,7 +629,7 @@ $(H(x_1,\lambda_0),h(\lambda_0)),\cdots,\\
 sur la même "tranche" $\R^p\times \{h
 (\lambda_0)\}$.\\ 
 Si on a un germe  
-$g(x,\lambda)$ on peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ un germe  et considérons $G\in\mathcal{E}_{p+q+1}^m$ telle que
+$g(x,\lambda)$ on peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ un germe  et considérons $G\in\mathcal{E}_{p+k+1}^m$ telle que
 \begin{equation}\label{Perturb}
     G(x,\lambda,t)=g(x,\lambda)+tp(x,\lambda)
 \end{equation}
@@ -725,7 +709,7 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     $-équivalentes si et 
     seulement s'il existe 
     \\$S\in\mathcal{E}(0,\R^n,
-    \operatorname{GL_{p}(\R)}) 
+    \operatorname{GL_{m}(\R)}) 
     $  et $\phi\in\mathcal{D}_
     {n}$  tels que 
     \begin{equation*}
@@ -739,16 +723,15 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     $-équivalentes. 
     Maintenant supposons qu'elles sont 
     $\mathcal{K}$-équivalentes,via \ref{Kequ}, il existe 
-    $H\in\mathcal{D}_{n+p}$ tel que 
+    $H\in\mathcal{D}_{n+m}$ tel que 
     \begin{equation}\label{Proprecr}
         g(h(x))=H_1(x,f(x))
     \end{equation}
     via \ref{Projo}, on sait que 
-    $H_1(x,0)=(H_{1,1}(x,0),\cdots,H_{1,n
-    +m}(x,0))^T=0$. On applique alors 
-    \ref{Hadamard} aux $(H_{1,i})_{1\leq i \leq n+m}$
+    $H_1(x,0)=(H_{1,1}(x,0),\cdots,H_{1,m}(x,0))^T=0$. On applique alors 
+    \ref{Hadamard} aux $(H_{1,i})_{1\leq i \leq m}$
     \begin{equation*}
-        H_{1,i}(x,0)=0\Rightarrow \exists \lambda_{i,1}\cdots \lambda_{i,n}\in\mathcal{E}_{n+m} :H_{1,i}=\sum_{j=1}^m \lambda_{i,j}\pi_j 
+        H_{1,i}(x,0)=0\Rightarrow \exists \lambda_{i,1}\cdots \lambda_{i,m}\in\mathcal{E}_{n+m} :H_{1,i}=\sum_{j=1}^m \lambda_{i,j}\pi_j 
     \end{equation*}
     Ainsi, $H_1(x,y)=M(x,y)\cdot y$ avec $M$ une matrice de germe lisses. Le fait que $M$ est inversible découle du fait que $H$ est un difféomorphisme et que sa matrice jacobienne est donnée par 
     \begin{equation*}
@@ -763,23 +746,35 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     \end{equation*}
     Ce qui permet de conclure
 \end{preuve}
-La relation d'équivalence 
-introduite dans la sous section précédente peut également s'écrire comme un groupe de germe. Si on reprend les notation de \ref{GolubEQ}, on écrit
+Posons $\mathcal{M}=\mathcal{E}(0,\R^n,\operatorname{GL_m}(\R))$.
+On vient de montrer qu'en choisissant de faire agir le groupe $\mathcal{K}$ génère les mêmes orbites que le groupe
+\begin{equation}\label{semi-direct}
+    \mathcal{K'}=\mathcal{M}\ltimes_{\varphi} \mathcal{D}_n,\text{ avec }\varphi: \mathcal{D}_n\rightarrow \operatorname*{Aut}(\mathcal{M}), h\mapsto \left[ S\mapsto S\circ h^{-1}\right]
+\end{equation}
+Où on rappelle que si $A$,$B$ sont des groupes, et si $\varphi: B\rightarrow \operatorname*{Aut}(A)$ alors $A\ltimes_{\varphi} B$ est le produit cartésien $A\times B$ muni de l'opération 
 \begin{equation*}
-    ((S,H,h)\cdot f)(x,\lambda)=S(x,\lambda)\cdot f(H(x,\lambda),h(\lambda))
-\end{equation*} 
-Or, on a, avec des notations évidentes
-\begin{align*}
-    (S_1,H_1,h_1)((S,H,h)\cdot f)&=(S_1,H_1,h_1)(S(x,\lambda)\cdot f(H(x,\lambda),h(\lambda)))
-    \\&=S_1(x,\lambda)S(H_1(x,\lambda),h_1(\lambda))f(H_1(H(x,\lambda),h(\lambda)), h_1(h(\lambda)))
-\end{align*}
-\todo{Alléger les notations, check que c'est un groupe}
-On défini naturellement le 
-produit entre 2 triplets $\Phi$ 
-et $\Phi'$ de telle sorte que
-\begin{equation*}
-    (\Phi*\Phi')\cdot(f)=\Phi\cdot (\Phi'\cdot f)
+    \bullet: (A\times B)^2\rightarrow A\times B, (a_1,b_1)\bullet (a_2,b_2)=(a_1\varphi(b_1)(a_2),b_1b_2)
 \end{equation*}
+Et qui si $A$,$B$ agissent sur un ensemble $E$ et si leur action vérifie la compatibilité
+\begin{equation*}
+    \forall a\in A,b\in B,x\in E b\cdot (a\cdot x)=\varphi(b)(a)\cdot (b\cdot x)
+\end{equation*} 
+Alors $A\ltimes_{\varphi} B$ agit sur $E$ via $(a,b)\cdot x= a\cdot (b\cdot x)$.
+La relation d'équivalence 
+introduite dans la sous section précédente peut également s'écrire comme un groupe de germe. Précisons que pour que l'action de \ref{semi-direct} soit la bonne, il faut faire agir les germe de difféomorphisme en composant $f$ avec leur inverse. Maintenant on réécrit l'équivalence décrite à la sous section précédente comme une action de groupe, $\mathcal D_{\mathrm{fib}}$ comme étant l'ensemble des éléments $H$ de $\mathcal{D}_{p+k}$ tel qu'il existe $h$ respectant le diagramme
+\[\begin{tikzcd}
+	{(0,\R^{p+k})} & {(0,\R^{p+k})} & \\
+	{(0,\R^k)} & {(0,\R^k)} 
+	\arrow["H", from=1-1, to=1-2]
+	\arrow["\pi", from=1-1, to=2-1]
+	\arrow["\pi", from=1-2, to=2-2]
+	\arrow["h", from=2-1, to=2-2]
+\end{tikzcd}\]
+et la relation d'équivalence précédente est alors décrite par l'action de groupe
+\begin{equation*}
+    \mathcal{B}=\mathcal{M}\ltimes_{\varphi}\mathcal{D}_{\text{fib}}.
+\end{equation*}
+Du fait que $D_{\text{fib}}\leq D_n$, on a que $\mathcal{B}\leq \mathcal{K}'$
 
  On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminé si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce  résultat de théorie des groupes de Lie 
 \begin{theobox}{}{}
@@ -802,11 +797,11 @@ n'est pas une variété. On veut donc une notion "d'espace tangent" pour les orb
 La notion de déploiement remonte à 
 René Thom \cite{Thom1972Stabilite}.
 \begin{definition} 
-    $G\in \mathfrak{m}_{n+d}^{\times (m+d)}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
+    $G\in \mathcal{E}_{n+d}^{m+d}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
     si il respecte le diagramme suivant:
     \[\begin{tikzcd}
-	{(0,\R^n)} & {(0,\R^m)} \\
-	{(0,\R^{n+d})} & {(0,\R^{m+d})} \\
+	{(0,\R^n)} & {(f(0),\R^m)} \\
+	{(0,\R^{n+d})} & {(f(0),\R^{m+d})} \\
 	{(0,\R^d)}
 	\arrow["f", from=1-1, to=1-2]
 	\arrow["\iota"', from=1-1, to=2-1]
@@ -1358,7 +1353,7 @@ si $s$ est assez petit. On conclut
     $j^k f$
 \end{theorem}
 \begin{preuve}
-    Montrons d'abord qui si $M=\rangle v_1,\cdots, v_n\langle _{\mathcal{E}_n}$ est un sous module $\mathcal{E}_n^m$ et si $q_1,\cdots,q_l$ sont dans $\mathfrak{m}_n\cdot M$ alors $M$ est également généré par les $v_i+w_i$, $1\leq i\leq l$. Bien sûr, $\rangle v_1 +w_1,\cdots v_l +w_l \langle_{\mathcal{E}_n}\subseteq M$. Or, $v_j=(v_j+w_j)-w_j$ donc
+    Montrons d'abord qui si $M=\rangle v_1,\cdots, v_n\langle _{\mathcal{E}_n}$ est un sous module $\mathcal{E}_n^m$ et si $w_1,\cdots,w_l$ sont dans $\mathfrak{m}_n\cdot M$ alors $M$ est également généré par les $v_i+w_i$, $1\leq i\leq l$. Bien sûr, $\rangle v_1 +w_1,\cdots v_l +w_l \langle_{\mathcal{E}_n}\subseteq M$. Or, $v_j=(v_j+w_j)-w_j$ donc
     \begin{equation*}
         M\subseteq \rangle v_1+w_1,\cdots, v_l+w_l\langle_{\mathcal{E}_n}+\mathfrak{m}_n\cdot M
     \end{equation*}
@@ -1368,7 +1363,10 @@ si $s$ est assez petit. On conclut
         T_{f}\mathcal{RB}=T_{f+tr}\mathcal{RB}
     \end{equation*}
     pour tout $t\in [0,1]$. Mais étant donné que $T_{f+tr}\mathcal{RB}$ est généré par 
-    \todo{TERMINER preuve, avec générateurs mutlivariés}
+    \begin{equation*}
+        (f_j+tr_j)e_i,\quad x_l \partial_{x_a}(f+tr),\quad \partial_s\partial_{x_a}(f+tr)
+    \end{equation*}
+    pour les indices appropriés. Chacun de ses éléments diffère du générateurs par un un élément de $(\mathfrak{m}^{k+1}_n)^{\times m}\subseteq \mathfrak{m}_n T_f\mathcal{RB}$
 \end{preuve}
 
 \begin{exemple}
