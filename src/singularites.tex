@@ -938,7 +938,7 @@ On peut donc multiplier des germes de $\mathcal{E}_{n_1}$ et $\mathcal{E}_{n_2}$
         h(\lambda,u))
     \end{equation*}
     \begin{equation*}
-        T_f\mathcal{B}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) B(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathcal{E}^p_{p+k}, C\in\mathcal{E}^k_k \right\}
+        T_f\mathcal{B}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) b(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathfrak{m}^{\times p}_{p+k}, c\in\mathfrak{m}^{\times k}_k \right\}
     \end{equation*}
     Qu'on réécrit comme
     \begin{equation*}
@@ -954,10 +954,10 @@ Notez que $T_f\mathcal{RB}$ est sous module, tandis que $T_f\mathcal{B}$ ne l'es
 \begin{exemple}
     De façon similaire, on calcule l'espace tangent par rapport aux groupes $\mathcal{K}$ et $\mathcal{A}$
     \begin{equation*}
-       T_f\mathcal{A} = \rangle \partial_{x_1}f, \cdots, \partial_{x_n}f \langle_{\mathcal{E}_n} + f^*(\mathcal{E}_m) \cdot \mathcal{E}_m^m
+       T_f\mathcal{A} = \rangle \partial_{x_1}f, \cdots, \partial_{x_n}f \langle_{\mathcal{E}_n} + f^*(\mathfrak{m}_n) \cdot \mathcal{E}_m^m
     \end{equation*}
     \begin{equation*}
-        T_f\mathcal{K} = \rangle f_1, \cdots, f_m \langle_{\mathcal{E}_{p+k}} \cdot \mathcal{E}_{p+k}^m + \rangle \partial_{x_1}f, \cdots, \partial_{x_p}f, \partial_{\lambda_1}f, \cdots, \partial_{\lambda_k}f \langle_{\mathcal{E}_{p+k}}
+        T_f\mathcal{K} = \rangle f_1, \cdots, f_m \langle_{\mathcal{E}_{p+k}} \cdot \mathcal{E}_{p+k}^m + \rangle \partial_{x_1}f, \cdots, \partial_{x_p}f, \partial_{\lambda_1}f, \cdots, \partial_{\lambda_k}f \langle_{\mathcal{E}_{p+k}}\cdot \mathfrak{m}_n
     \end{equation*}
 \end{exemple}
 
@@ -1240,7 +1240,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
         f+t_0 p&=A_1 f +B_1 x\partial_x f +C_1\lambda \partial_x f\\
         x\partial_x f+t_0 x\partial_x p&
         =A_2 f +B_2 x\partial_x f +C_2\lambda \partial_x f\\
-        \lambda \partial_x +t_0 \lambda \partial_x &=A_3 f +B_3 x\partial_x f +C_3\lambda \partial_x f
+        \lambda \partial_xf +t_0 \lambda \partial_xp &=A_3 f +B_3 x\partial_x f +C_3\lambda \partial_x f
     \end{align*}
     On peut obtenir une germe $Q\in\mathcal{E}_2^{3\times 3}$
     telle que
@@ -1338,8 +1338,8 @@ Pour ce-faire, on montre deux lemmes intermédiaires
 On définit une relation d'équivalence sur $[0,1]$ en disant que $t_1\sim t_2$ si $f+t_1p\sim_{\mathcal{RB}} f+t_2p$. On montre que les classes d'équivalences sont ouvertes dans $[0,1]$ et on conclura alors par la connexité de $[0,1]$. Soit $h=f+t_0p$,
 alors on a
 \begin{equation*}
-    T_{h+ts}\mathcal{RB}
-    =T_{f+(s+t_0)}\mathcal{RB}
+    T_{h+sp}\mathcal{RB}
+    =T_{f+(s+t_0)p}\mathcal{RB}
     =T_f\mathcal{RB}=T_h\mathcal{RB}
 \end{equation*}
 si $s$ est assez petit. On conclut
@@ -1349,7 +1349,7 @@ si $s$ est assez petit. On conclut
 
 
 \begin{theorem}
-    Si un germe $f$ est de codimension finie, alors il est $\mathcal{RB}$-équivalent à 
+    Si un germe $f$ est de codimension finie, alors il il existe $k\in\mathbb{Z}$ tel que $f$ est $\mathcal{RB}$-équivalent à 
     $j^k f$
 \end{theorem}
 \begin{preuve}
@@ -1364,7 +1364,7 @@ si $s$ est assez petit. On conclut
     \end{equation*}
     pour tout $t\in [0,1]$. Mais étant donné que $T_{f+tr}\mathcal{RB}$ est généré par 
     \begin{equation*}
-        (f_j+tr_j)e_i,\quad x_l \partial_{x_a}(f+tr),\quad \partial_s\partial_{x_a}(f+tr)
+        (f_j+tr_j)e_i,\quad x_l \partial_{x_a}(f+tr),\quad \lambda_s\partial_{x_a}(f+tr)
     \end{equation*}
     pour les indices appropriés. Chacun de ses éléments diffère du générateurs par un un élément de $(\mathfrak{m}^{k+1}_n)^{\times m}\subseteq \mathfrak{m}_n T_f\mathcal{RB}$
 \end{preuve}
@@ -1582,7 +1582,7 @@ préparation
     \end{equation*}
     et donc
     \begin{equation*}
-        M/\pi^{*}(\mathfrak{m}_k)\cong \mathcal{E}^{m}_{p+q}/T^{(e)}_f\mathcal{RB}
+        M/\pi^{*}(\mathfrak{m}_k)M\cong \mathcal{E}^{m}_{p+q}/T^{(e)}_f\mathcal{RB}
     \end{equation*}
     Et on applique alors la proposition précédente aux générateurs $p_1,\cdots,p_s,q_1,\cdots q_r$ pour obtenir $\ref{eq-1}\Rightarrow \ref{eq-2}$. L'autre sens s'obtient facilement en fixant $\alpha=0$
 
@@ -1627,34 +1627,30 @@ supposons que $    \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\
 \begin{equation*}
     J(x,\lambda,\alpha,\beta)=G(x,\lambda,\alpha)+H(x,\lambda,\beta)-f(x,\lambda)
 \end{equation*}
-Supposons disposer d'un germe $h\in\mathcal{E}_{k+l}^k$ telle que $J$ est facteur se $h_{*}G$ via l'identité. On a alors
+Supposons disposer d'un germe de submersion $h\in\mathcal{E}_{k+l}^k$ telle que $J$ est facteur se $h_{*}G$ via l'identité. On a alors
 \begin{equation*}
-    J(x, \lambda, \alpha, \beta) = G(x, \lambda, h(\alpha, \beta)).
+    J(\cdot, \cdot, \alpha, \beta) \sim_{\mathcal{B}} G(\cdot, \cdot, h(\alpha, \beta)).
 \end{equation*}
-Ce qui donne en $\beta=0$
+ En évaluant en $\alpha=0$, on a
 \begin{equation*}
-    G(x, \lambda, \alpha) = G(x, \lambda, h(\alpha, 0))
-\end{equation*}
-et donc $h(\alpha,0)=\alpha$, ce qui impose à $h$ d'être une submersion. En évaluant en $\alpha=0$, on a
-\begin{equation*}
-    H(x,\lambda,\beta)=G(x,\lambda,h(0,\beta)).
+    H(\cdot,\cdot,\beta)\sim_{\mathcal{B}} G(\cdot,\cdot,h(0,\beta)).
 \end{equation*}
 Ce qui montre qu'il suffit de trouver une sumbersion $h$ telle que $J$ est facteur de $h_{*}G$ via l'identité. On procède par récurrence sur $l$. Le cas $l=0$ étant évident, on montre l'induction.\\
 On pose $m_i(x,\lambda,\alpha,\beta)=\partial_{\alpha_i} J(x,\lambda,\alpha,\beta)$. Avec les notations de \ref{unif-depl},$m_{i,0}=\partial_{\alpha_i}G(\cdot,\cdot,0)$ et applique alors ce dernier à $J$, ce qui nous donne
 \begin{equation*}
     \rangle J\langle^m+\rangle  \partial_x J\langle_{\mathcal{E}_{p+q+k+l}}
     +\rangle  \partial_\lambda J\langle_{\mathcal{E}_{q+k+l}}
-    +\rangle m_1,\cdots,m_k\langle_{\mathcal{E}_{k+l}}=\mathcal{E}_{p+q+k+l}
+    +\rangle m_1,\cdots,m_k\langle_{\mathcal{E}_{k+l}}=\mathcal{E}_{p+q+k+l}^m
 \end{equation*}
 En particulier, on peut écrire, avec les notations du lemme précédent
 \begin{equation*}
     \partial_{\beta_{l}}J=
     \mathcal{Y}(x,\lambda,
-    \alpha,\beta)(J)+\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}J+\sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}J+\sum_{j=1}^{k}\xi(\alpha,\beta)\partial_{\alpha_i} J.
+    \alpha,\beta)(J)+\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}J+\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}J+\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_i} J.
 \end{equation*}
 Enfin, on pose 
 \begin{equation*}
-    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi(\alpha,s)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}-\sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}.
+    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}-\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}.
 \end{equation*}
 On a que $(dJ)(X)=\mathcal{Y}\circ J$, et on applique alors le lemme précédent.
 {\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
