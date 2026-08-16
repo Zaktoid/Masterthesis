@@ -2,8 +2,8 @@
 \begin{document}
 \section{Approche via la théorie des singularités}\label{SINGsection}
 
-Le lien entre l'étude des bifurcations et la théorie des 
-singularités et théorie des catastrophes peut être aperçu 
+Le lien entre l'étude des bifurcations et les théories des 
+singularités et catastrophes peut être aperçu 
 dans "Stabilité structurelle et morphogenèse" de René Thom.
 Ce qu'il entend par "stabilité structurelle d'un modèle 
 mathématique" c'est la "persistance par rapport aux petites 
@@ -67,14 +67,14 @@ Si $f\in\mathcal{E}(S,X,Y,T)$, on notera
     \begin{equation*}
         (x_1,x_2)\mapsto (\tilde{f}(x_1),\tilde{g}(x_2))
     \end{equation*}
-    Enfin, si $X'\subseteq X$,  $S'\subseteq X'$ et $S'\subseteq S$, on pose $f_{|_{(S',X')}}$ est le germe en $S'$ ayant pour représentant $\tilde{f}|_{U\cap X'}$ en supposant le représentant $\tilde{f}$ défini sur $U$.
+    Enfin, si $X'\subseteq X$,  $S'\subseteq X'$ et $S'\subseteq S$, on définit $f_{|_{(S',X')}}$ comme le germe en $S'$ ayant pour représentant $\tilde{f}|_{U\cap X'}$ en supposant le représentant $\tilde{f}$ défini sur $U$.
 \end{definition}
 L'opération de composition entre germes est clairement bien 
-définie. Si $S$ est sous ensemble de $X$, on pose 
+définie. Si $S$ est un sous-ensemble de $X$, on pose 
 \begin{equation*}
     A\sim_S B\Leftrightarrow \exists U\in\mathcal{V}_S: A\cap U=B\cap U
 \end{equation*}
-et la germe d'un sous ensemble $A$ est alors la classe $[A]_S$
+et le germe d'un sous-ensemble $A$ est alors la classe $[A]_S$
 \begin{definition}
     un germe  de difféomorphisme de $\mathcal{E}(\{0\},\R^n,
     \R^n)$ est un élément de $\mathcal{E}(\{0\},\R^n,\R^n,
@@ -89,7 +89,7 @@ et la germe d'un sous ensemble $A$ est alors la classe $[A]_S$
 
 \begin{remarque}\label{remsheaf}
     C'est un cas particulier de \coldef{faisceau}\footnote{Le lecteur familier avec la théorie des catégories ne manquera pas de remarquer qu'un faisceau est un cas particulier de foncteur contravariant de la catégorie des ouverts (dont les morphismes sont les inclusions) et la catégorie des ensembles.}
-    Si $(X,\mathcal{T})$ est un espace topologique, un \coldef{faisceau} d'ensemble $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonction $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, V\subseteq U}$ respectant les axiomes suivants :
+    Si $(X,\mathcal{T})$ est un espace topologique, un \coldef{faisceau} d'ensembles $\mathcal{F}$ sur $X$ est la donnée d'une famille d'ensembles $(\mathcal{F}(U))_{U\in \mathcal{T} }$ et d'une famille de fonctions $(\rho^U_V: \mathcal{F}(U)\rightarrow\mathcal{F}(V))_{V\in \mathcal{T}, V\subseteq U}$ respectant les axiomes suivants :
     \begin{itemize}
         \item $\forall U\in\mathcal{T}$, $\rho^U_U = \operatorname{Id}_{\mathcal{F}(U)}$ (fonctorialité 1)
         \item $\forall U,V,W\in\mathcal{T}: U\subseteq V\subseteq W$, $\rho^V_U\circ \rho^W_V=\rho^W_U$. (fonctorialité 2)
@@ -124,7 +124,7 @@ On rappelle la notion d'anneau local
 \begin{definition}
     Un anneau commutatif $R$ est local s'il a un unique idéal maximal. Il est semi local s'il a un nombre fini d'idéaux maximaux
 \end{definition}
-Dans la suite, si $S\subseteq N$, on pose $\mathfrak{m}_S=\mathcal{E}_S(S,N,\R,0)$
+Dans la suite, si $S\subseteq N$, on pose $\mathfrak{m}_S=\mathcal{E}(S,N,\R,\{0\})$
 \begin{proposition}
     Si $S=\left\{s\right\}$ est un singleton,
     $\mathfrak{m}_S$ est l'unique idéal maximal de $\mathcal{E}_s$. En particulier, $\mathcal{E}_{s}$ est un anneau local.
@@ -136,12 +136,12 @@ si $\tilde{f}\in f$ alors $1/\tilde{f}$ est défini sur un
 voisinage de $s$ et $g=[1/\tilde{f}]_{\sim_s}$ est 
 l'inverse de $f$
 \end{preuve}
-Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
+Le lemme suivant montre qu'on peut se ramener au cas où $S$ est connexe
 \begin{proposition}\label{décomposition}
     Soit $N$ une variété lisse $S\subseteq N$
     \begin{equation*}
         S=\bigcup_{j=1}^p S_j\text{ et } \bar{S_i}\cap 
-        \bar{S_{i'}}=\emptyset\text{ si } i\neq i'\Rightarrow \mathcal{E}_S\cong \prod_{j=1}^p \mathcal{E}_{S_i}(N)\text{ et }\mathfrak{m}_S=\prod_{j=1}^p \mathfrak{m}_{S_j}(N)
+        \bar{S_{i'}}=\emptyset\text{ si } i\neq i'\Rightarrow \mathcal{E}_S\cong \prod_{j=1}^p \mathcal{E}_{S_j}(N)\text{ et }\mathfrak{m}_S=\prod_{j=1}^p \mathfrak{m}_{S_j}(N)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
@@ -152,17 +152,17 @@ Le lemme suivant montre qu'on peut se ramener au cas ou $S$ est connexe
         \Phi : \mathcal{E}_S\rightarrow \prod_{j=1}^p 
         \mathcal{E}_{S_j}(N), [f]_S\mapsto ([f|_{V_1}]_{S_1},\cdots [f|_{V_p}]_{S_p} )
     \end{equation*}
-    est un isomorphisme d'anneau. La décomposition de l'idéal $\mathfrak{m}_S$ en découle immédiatement.
+    est un isomorphisme d'anneaux. La décomposition de l'idéal $\mathfrak{m}_S$ en découle immédiatement.
 \end{preuve}
 \begin{corollaire}
     Si $S$ est fini, $\mathcal{E}_S$ est un anneau semi-local.
 \end{corollaire}
 
 \begin{remarque}
-    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \coldef{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ca n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous variétés (ou de sous ensembles arbitraires), nous n'exploreront donc pas cette direction, le lecteur intéressé peut par exemple consulter \cite{Tougeron1972Ideaux}
+    Dans la littérature (\cite{damon1984unfolding},\cite{montaldi2021sbc}) il est assez courant qu'on se restreigne à l'étude de germes de \coldef{points}. Dans ce cas, on peut "oublier" le fait qu'on travaille sur une variété et simplement supposer qu'on est dans $\R^n$. Ça n'est bien sûr pas le cas en général. Par exemple, si $S$ est une sous-variété de dimension $\geq 1$, on voit immédiatement que $\mathcal{E}_S$ n'est pas un anneau local, ou même semi-local. Les choses deviennent incroyablement plus compliquées si on s'intéresse aux germes de sous-variétés (ou de sous-ensembles arbitraires), nous n'explorerons donc pas cette direction, le lecteur intéressé peut par exemple consulter \cite{Tougeron1972Ideaux}
 \end{remarque}
 
-Dans la suite, si $R$ est anneau, on notera $R^r[x_1,\cdots,x_n]$ le polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes homogènes de degré $r$.
+Dans la suite, si $R$ est un anneau, on notera $R^r[x_1,\cdots,x_n]$ les polynômes de degré $r$ en $x_1,\cdots,x_n$, $R[x_1,\cdots,x_n]_r$ les polynômes homogènes de degré $r$.
 Le lemme suivant mobilise le fait que $N$ est de dimension finie, et nous permettra de décomposer $\mathfrak{m}_N(S)$
 
 
@@ -198,12 +198,12 @@ Ce résultat nous permet d'affirmer que
     \mathfrak{m}_x(N)=\rangle x_1,\cdots,x_n \langle_
     {\mathcal{E}_x(N)}
 \end{equation}
-et que $\mathfrak{m}_x(N)^r$ est exactement égale aux germes 
-dont les dérivées d'ordres $<r$ sont nulles en $x$.\\
+et que $\mathfrak{m}_x(N)^r$ est exactement l'ensemble des germes
+dont les dérivées d'ordre $<r$ sont nulles en $x$.\\
 Si $R$ est un  anneau, on note $R[[X_1,\cdots,X_n]]$ 
 l'ensemble 
 des séries formelles à $n$ variables\footnote{ On pourrait 
-tout à fait avoir un nombre infini de variable}. Rappelons 
+tout à fait avoir un nombre infini de variables}. Rappelons 
 qu'une série formelle peut être vue comme une fonction qui 
 à un  
 multi-indice $\alpha\in\mathbb{N}^n$ associe un  élément 
@@ -225,7 +225,7 @@ On munit $R[[X_1,\cdots,X_n]]$ d'une structure d'anneau via
     =\sum_{\alpha,\beta\in\mathbb{N}^n}c_{\alpha}b_{\beta}X^
     {\alpha+\beta}
 \end{align*}
-On Rappelle également que ce nouvel anneau hérite de 
+On rappelle également que ce nouvel anneau hérite de 
 certaines propriétés de l'anneau $R$, en particulier si $R$ 
 est local avec pour unique idéal maximal $\mathfrak{m}$, $R[[X_1,\cdots,X_n]]$ l'est aussi, et l'unique 
 idéal maximal $\mathfrak{M}$ est l'ensemble des séries dont 
@@ -252,7 +252,7 @@ le terme constant est dans $\mathfrak{m}$.
 On va désormais s'intéresser aux modules sur l'anneau $\mathcal{E}_S$ avec $S$ fini, on rappelle que 
 
 \begin{definition}
-    Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à gauche est la donnée d'un groupe abélien $G$ est d'une opération "multiplier par un scalaire" $\cdot:R\times G\rightarrow G$ qui respecte les mêmes axiomes que pour un espace vectoriel, i.e, $\forall r,s\in R,x,y\in G$
+    Soit $R$ un anneau, un $R$-module\footnote{Attention, ici on suppose tous les modules unitaires, c'est pas le cas de tous les auteurs. Ainsi, certains ne supposent pas la quatrième condition vraie pour tous les anneaux} à gauche est la donnée d'un groupe abélien $G$ et d'une opération "multiplier par un scalaire" $\cdot:R\times G\rightarrow G$ qui respecte les mêmes axiomes que pour un espace vectoriel, i.e, $\forall r,s\in R,x,y\in G$
     \begin{align*}
         &r\cdot(x+_{G}y)= r\cdot x+_{G}r\cdot y\\
         &(r+_{R} s)\cdot x = r\cdot x+_{G} s\cdot x\\
@@ -280,11 +280,11 @@ central dans l'étude des $\mathcal{E}_S$-modules
 par $IF$ on entend l'ensemble des sommes finies d’éléments $if$ où $i\in I$, $f\in F$.\\
 On aura également besoin de ce petit corollaire
 \begin{corollaire}\label{corrNakayama}
-    Soit $M$ est un $R$-module finiment généré avec $R$ un anneau local d'idéal maximal $\mathfrak{m}$. Si $[m_1],\cdots,[m_k]$ génèrent $M/\mathfrak{m}M$, alors 
+    Soit $M$ un $R$-module finiment généré avec $R$ un anneau local d'idéal maximal $\mathfrak{m}$. Si $[m_1],\cdots,[m_k]$ génèrent $M/\mathfrak{m}M$, alors 
     $m_1,\cdots,m_k$ génèrent $M$.
 \end{corollaire}
 \begin{definition}
-    Si $M$ est un $R$-module et $N$ un sous module, on définit le module quotient de la façon habituelle:
+    Si $M$ est un $R$-module et $N$ un sous-module, on définit le module quotient de la façon habituelle:
     \begin{equation*}
         M/N=\left\{ m+N | m\in M \right\}
     \end{equation*}
@@ -297,15 +297,15 @@ On aura également besoin de ce petit corollaire
     (M/T)/(S/T)\cong M/S
 \end{equation*}
 
-Vous remarquerez qu'on a pas mis 
+Vous remarquerez qu'on n'a pas mis 
 d'hypothèses pour le sous 
 module (contrairement aux 
-quotient de groupes). C'est 
+quotients de groupes). C'est 
 parce 
-qu'on en a pas besoin pour que les opérations soient bien 
+qu'on n'en a pas besoin pour que les opérations soient bien 
 définies ! Ainsi, on vérifie facilement que $M/N$ est bien 
 un module. Notez que le quotient d'un $\mathcal{E}_S
-$-module par un sous module est, en 
+$-module par un sous-module est, en 
 particulier, un espace 
 vectoriel sur $\R$ (en identifiant  les 
 germes constants à 
@@ -314,12 +314,12 @@ signifiera la dimension de $M/N$ en tant que $\R$-vectoriel.
 \\
 
 Les résultats suivants nous permettent de contrôler le nombre de 
-générateurs d'un sous module d'un $\mathcal{E}_S$-module 
+générateurs d'un sous-module d'un $\mathcal{E}_S$-module 
 finiment généré
 \begin{lemme}\label{Lemme inclusion}
     Soient $S$ un ensemble fini, $M$ un 
     $\mathcal{E}_S$-module finiment généré et $V$ un 
-    sous module de $M$, on a 
+    sous-module de $M$, on a 
     \begin{equation*}
         \dim_{\R}( M/(\mathfrak{m}_S^{l+1}M+V))\leq 
         l\Rightarrow \mathfrak{m}_S^{l}M\subseteq V
@@ -397,20 +397,20 @@ $u\in\mathcal{E}_y(P)^m$, il existe $h\in\mathcal{E}_y(P)
 \end{equation*}
 \end{lemme}
 \begin{definition}
-    $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est dite $m$-régulière si le germe $f|_{((y,0),\left\{y\right\}\times \R )}$ (identifiée à un élément de $\mathcal{E}_0(\R)$ ) si ses dérivées d'ordre $0\leq i < m$ sont nulle en l'origine, mais pas la dérivée d'ordre $m$.
+    On dit que $f\in\mathcal{E}_{(y,0)}(P\times\R)$ est $m$-régulier si le germe $f|_{((y,0),\left\{y\right\}\times \R )}$ (identifié à un élément de $\mathcal{E}_0(\R)$ ) a toutes ses dérivées d'ordre $0\leq i < m$  nulles en l'origine, mais pas la dérivée d'ordre $m$.
 \end{definition}
 
 Le théorème suivant montre que le "terme de reste" du lemme précédent disparaît si $f$ est régulière
 
 \begin{theorem}
-    Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulièr, alors il existe un germe  inversible 
+    Si $f\in\mathcal{E}_{(y,0)}(P\times\R)$ $m$-régulier, alors il existe un germe  inversible 
     $q\in\mathcal{E}_{(y,0)}(P\times \R)$ et $u\in\mathcal{E}_y(P)^{m}$
     \begin{equation*}
         f=q\Gamma_u
     \end{equation*}
 \end{theorem}
 \begin{preuve}
-    Soit $\tilde{f}$ un représentant de $f$,considérons le germe $f_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times \R)$ ayant pour représentant $(z,a,b)\mapsto \tilde{f}(z,b) $ et $v\in\mathcal{E}_{(y,0)}(P\times\R^m)^m$ ayant pour représentant $(z,a)\mapsto a$.
+    Soit $\tilde{f}$ un représentant de $f$, considérons le germe $f_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times \R)$ ayant pour représentant $(z,a,b)\mapsto \tilde{f}(z,b) $ et $v\in\mathcal{E}_{(y,0)}(P\times\R^m)^m$ ayant pour représentant $(z,a)\mapsto a$.
     Le résultat précédent nous assure l'existence de 
     germes 
     $q_1\in\mathcal{E}_{(y,0,0)}(P\times\R^m\times\R)$
@@ -437,7 +437,7 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
     \begin{equation*}
         \frac{\partial^m }{\partial b^m}\widetilde{f}_1(y,0,0)=m! \widetilde{q}_1(y, 0, 0)
     \end{equation*}
-    $f$ étant $m$-régulièr, on a que $\tilde{q}_1(y,0,0)\neq 0$. Des calculs similaires permettent de montrer que 
+    $f$ étant $m$-régulier, on a que $\tilde{q}_1(y,0,0)\neq 0$. Des calculs similaires permettent de montrer que 
     \begin{align*}
         &\forall 1\leq i\leq m,\space  h_i(y,0)=0\\
         &\forall 1\leq j<i\leq m,\space \frac{\partial }{\partial a_j}\tilde{h}_i(y,0)=0\\
@@ -447,14 +447,14 @@ Le théorème suivant montre que le "terme de reste" du lemme précédent dispar
 \end{preuve}
 
 
-\begin{corollaire}\label{ThmDIV}("Divison euclidienne")
-    Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulièr, il existe $q\in\mathcal{E}_{(y,0)}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
+\begin{corollaire}\label{ThmDIV}("Division euclidienne")
+    Soient $f,g\in\mathcal{E}_{(y,0)}(P\times\R)$ et $f$ $m$-régulier, il existe $q\in\mathcal{E}_{(y,0)}(P\times\R)$ et $h\in\mathcal{E}_{y}(P)^m$ tels que 
     \begin{equation*}
         g=fq+R_h
     \end{equation*}
 \end{corollaire}
 \begin{preuve}
-    Soit $u,q_1$ comme le résultat précédents, on a $f=q_1\Gamma_u$. On conclut en appliquant \ref{DivMather}.\\
+    Soient $u,q_1$ comme dans le résultat précédent, on a $f=q_1\Gamma_u$. On conclut en appliquant \ref{DivMather}.\\
 \end{preuve}
 
 \begin{definition}
@@ -515,7 +515,7 @@ On commence par montrer un cas particulier :
     \begin{equation*}
         g=\Delta Q +R_h
     \end{equation*}
-    En passant au quotient, le terme de gauche disparait et on note églament que
+    En passant au quotient, le terme de gauche disparaît et on note également que
     \begin{equation*}
         R_h = \sum_{i=1}^{q'} \underbrace{(h_i \circ \pi)}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_{(y,0)}(P\times\R)}} \underbrace{t^{q'-i}}_{\substack{\rotatebox{-90}{$\in$} \\ \mathcal{E}_S(N)}}
     \end{equation*}
@@ -583,12 +583,12 @@ Soient $f:(N,S)\rightarrow (P,y)$ un germe  lisse $S$ une partie finie de $N$ et
     cela découle immédiatement du résultat précédent et \ref{décomposition} 
 \end{preuve}
 
-\subsection{Relations d'équivalences: exemple introductif} 
-Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposés par Golubitsky dans \cite{golubitsky1985sgb1}.Dans la suite, on pose $\mathcal{E}^m_{n}=\mathcal{E}(0,\R^{n},\R^m)$.\\
+\subsection{Relations d'équivalence: exemple introductif} 
+Pour pouvoir classifier les bifurcations, il nous faut une notion d'équivalence  ! Le travail serait alors de lister les différentes classes d'équivalences. Ce travail est impossible à réaliser complètement car d'une part la liste serait infinie mais d'autre part, et c'est peut-être le pire, il serait "de plus en plus difficile" de la poursuivre, ceci deviendra plus clair lorsque nous introduirons la notion de \coldef{codimension} qui pourra être vue comme une mesure de la complexité d'un problème de bifurcation donné. Nous commençons par explorer un exemple de relation d'équivalence  entre germes pertinent pour la théorie de la bifurcation, proposé par Golubitsky dans \cite{golubitsky1985sgb1}.Dans la suite, on pose $\mathcal{E}^m_{n}=\mathcal{E}(0,\R^{n},\R^m)$.\\
 Soient $f,g\in\mathcal{E}^m_n$, avec $n=p+k$ on dira qu'elles sont 
 faiblement équivalentes s'il existe un germe  de difféomorphisme $\phi\in\mathcal{D}_{p+k}$ de la forme 
 \begin{equation*}
-     \phi :(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes lissmes }
+     \phi :(x,\lambda)\mapsto (H(x,\lambda),h(\lambda))\text{ avec }H,h\text{ des germes lisses }
 \end{equation*}
 Et $S\in\mathcal{E}(\R^{p+k},\operatorname*{GL}_m(\R))$ tels que
 \begin{equation}\label{GolubEQ}
@@ -615,7 +615,7 @@ Et $S\in\mathcal{E}(\R^{p+k},\operatorname*{GL}_m(\R))$ tels que
     \label{fig:pitchfork_globale}
 \end{figure}
 On peut voir assez rapidement que cette 
-relation d'équivalence est pertinente de le 
+relation d'équivalence est pertinente dans le 
 cadre d'étude de problèmes de bifurcation: 
 la matrice $S$ étant 
 inversible, ne change pas l'ensemble 
@@ -625,11 +625,11 @@ exemple
 $(x_1,\lambda_0)$,...,$(x_n,\lambda_0)$ alors 
 cet ensemble va être transporté, via $\phi$ sur 
 $(H(x_1,\lambda_0),h(\lambda_0)),\cdots,\\
-(H(x_1,\lambda_0),h(\lambda_0))$ et donc,grâce à la structure de $\phi$, elles se trouvent 
+(H(x_n,\lambda_0),h(\lambda_0))$ et donc,grâce à la structure de $\phi$, elles se trouvent 
 sur la même "tranche" $\R^p\times \{h
 (\lambda_0)\}$.\\ 
 Si on a un germe  
-$g(x,\lambda)$ on peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisemment, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ un germe  et considérons $G\in\mathcal{E}_{p+k+1}^m$ telle que
+$g(x,\lambda)$ on peut se demander quelles sont les perturbations qui conservent sa structure, ou plus précisément, qui ne la font pas changer de classe d'équivalence  pour la relation \ref{GolubEQ}. Soit $p(x,\lambda)$ un germe  et considérons $G\in\mathcal{E}_{p+k+1}^m$ telle que
 \begin{equation}\label{Perturb}
     G(x,\lambda,t)=g(x,\lambda)+tp(x,\lambda)
 \end{equation}
@@ -640,7 +640,7 @@ qu'il existe un voisinage de zéro $U$
 tel que si on fixe $t_0\in U$ alors 
 $g$ et $g+t_0p$ sont faiblement 
 équivalents, i.e il existe $S(x,
-\lambda,t_0), H(x,\lambda,t_0),(h,
+\lambda,t_0), H(x,\lambda,t_0),h(
 \lambda,t_0)$ qui satisfont \ref
 {GolubEQ}. Les fonctions
 \begin{equation*}
@@ -654,7 +654,7 @@ $S,h,H$ et on va naturellement exiger qu'elles soient lisses.
 
 \subsection{Détermination finie: généralités}\label{detfin}
 C'est le coeur du sujet: on veut 
-pouvoir se ramener à l'étude d'un nombre fini de termes du développement de Taylor, comment être sûr qu'on a pas perdu d'information essentielle en tronquant la série ?
+pouvoir se ramener à l'étude d'un nombre fini de termes du développement de Taylor, comment être sûr qu'on n'a pas perdu d'information essentielle en tronquant la série ?
 Nous introduisons la notion suivante
 \begin{definition}
     Si $\mathcal{R}$ est une relation 
@@ -662,13 +662,13 @@ Nous introduisons la notion suivante
     \begin{equation*}
         \forall g\in \mathcal{E}(0,\R^n,\R^m): j^k g=j^k f, (f,g)\in\mathcal{R}
     \end{equation*}
-    où $j^k f$ est la série de taylor de $f$ en $0$ tronquée à l'ordre $k$, on l'appelle le $k$-jet de $f$.
+    où $j^k f$ est la série de Taylor de $f$ en $0$ tronquée à l'ordre $k$, on l'appelle le $k$-jet de $f$.
 \end{definition}
-Les relations d'équivalences qui nous intéressent seront définies par l'action d'un certain groupe $G$
+Les relations d'équivalence qui nous intéressent seront définies par l'action d'un certain groupe $G$
  \begin{equation*}
     \sim_G : e \sim_Gf \Leftrightarrow \exists g\in G : g\cdot e=f
  \end{equation*}
- On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{D}_{n+m}$ telles qu'il existe une $h\in\mathcal{D}_n$ respectant le  diagramme suivant:
+ On définit le groupe de contact $\mathcal{K}$ comme étant l'ensemble des germes de difféomorphisme des $H\in\mathcal{D}_{n+m}$ tels qu'il existe une $h\in\mathcal{D}_n$ respectant le  diagramme suivant:
 \[\begin{tikzcd}
 	{(0,\R^{n+m})} & {(0,\R^{n+m})} & \\
 	{(0,\R^n)} & {(0,\R^n)} & {\text{avec }\iota(x)=(x,0)}
@@ -680,7 +680,7 @@ Les relations d'équivalences qui nous intéressent seront définies par l'actio
 	\arrow["\iota", shift left=3, from=2-2, to=1-2]
 \end{tikzcd}\]
 Avec la composition comme produit.
-Remarquez cela impose que $H$ est de la forme $H(x,y)=(h(x),H_1(x,y))$ en effet 
+Remarquez que cela impose que $H$ est de la forme $H(x,y)=(h(x),H_1(x,y))$ en effet 
 $H(x,y)=(H_0(x,y),H_1(x,y))$ avec $H_0\in\mathcal{E}^n_{n+m}$, et donc 
 \begin{equation*}\label{Structpi}
     \pi\circ H(x,y)= H_0(x,y)=h\circ\pi(x,y)=h(x)
@@ -718,7 +718,7 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
 \end{proposition} 
 \begin{preuve}
     Bien sûr, s'il existe $\phi$ et $S$ 
-    verifiant la condition de l'énoncé, 
+    vérifiant la condition de l'énoncé, 
     alors $f,g$ sont $\mathcal{K}
     $-équivalentes. 
     Maintenant supposons qu'elles sont 
@@ -733,7 +733,7 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     \begin{equation*}
         H_{1,i}(x,0)=0\Rightarrow \exists \lambda_{i,1}\cdots \lambda_{i,m}\in\mathcal{E}_{n+m} :H_{1,i}=\sum_{j=1}^m \lambda_{i,j}\pi_j 
     \end{equation*}
-    Ainsi, $H_1(x,y)=M(x,y)\cdot y$ avec $M$ une matrice de germe lisses. Le fait que $M$ est inversible découle du fait que $H$ est un difféomorphisme et que sa matrice jacobienne est donnée par 
+    Ainsi, $H_1(x,y)=M(x,y)\cdot y$ avec $M$ une matrice de germes lisses. Le fait que $M$ est inversible découle du fait que $H$ est un difféomorphisme et que sa matrice jacobienne est donnée par 
     \begin{equation*}
         \begin{pmatrix}
         \frac{\partial h}{\partial x} & 0 \\
@@ -747,21 +747,21 @@ L'équation \ref{GraphK} sert simplement à mettre en évidence le fait que $H$ 
     Ce qui permet de conclure
 \end{preuve}
 Posons $\mathcal{M}=\mathcal{E}(0,\R^n,\operatorname{GL_m}(\R))$.
-On vient de montrer qu'en choisissant de faire agir le groupe $\mathcal{K}$ génère les mêmes orbites que le groupe
+On vient de montrer que le groupe $\mathcal{K}$ génère les mêmes orbites que le groupe
 \begin{equation}\label{semi-direct}
     \mathcal{K'}=\mathcal{M}\ltimes_{\varphi} \mathcal{D}_n,\text{ avec }\varphi: \mathcal{D}_n\rightarrow \operatorname*{Aut}(\mathcal{M}), h\mapsto \left[ S\mapsto S\circ h^{-1}\right]
 \end{equation}
 Où on rappelle que si $A$,$B$ sont des groupes, et si $\varphi: B\rightarrow \operatorname*{Aut}(A)$ alors $A\ltimes_{\varphi} B$ est le produit cartésien $A\times B$ muni de l'opération 
 \begin{equation*}
-    \bullet: (A\times B)^2\rightarrow A\times B, (a_1,b_1)\bullet (a_2,b_2)=(a_1\varphi(b_1)(a_2),b_1b_2)
+    \bullet: (A\times B)^2\rightarrow A\times B, (a_1,b_1)\bullet (a_2,b_2)=(a_1\varphi(b_1)(a_2),b_1b_2).
 \end{equation*}
-Et qui si $A$,$B$ agissent sur un ensemble $E$ et si leur action vérifie la compatibilité
+Et si $A$ et $B$ agissent sur un ensemble $E$ et si leur action vérifie la compatibilité
 \begin{equation*}
     \forall a\in A,b\in B,x\in E b\cdot (a\cdot x)=\varphi(b)(a)\cdot (b\cdot x)
 \end{equation*} 
 Alors $A\ltimes_{\varphi} B$ agit sur $E$ via $(a,b)\cdot x= a\cdot (b\cdot x)$.
 La relation d'équivalence 
-introduite dans la sous section précédente peut également s'écrire comme un groupe de germe. Précisons que pour que l'action de \ref{semi-direct} soit la bonne, il faut faire agir les germe de difféomorphisme en composant $f$ avec leur inverse. Maintenant on réécrit l'équivalence décrite à la sous section précédente comme une action de groupe, $\mathcal D_{\mathrm{fib}}$ comme étant l'ensemble des éléments $H$ de $\mathcal{D}_{p+k}$ tel qu'il existe $h$ respectant le diagramme
+introduite dans la sous-section précédente peut également s'écrire comme un groupe de germes. Précisons que pour que l'action de \ref{semi-direct} soit la bonne, il faut faire agir les germes de difféomorphisme en composant $f$ avec leur inverse. Maintenant on réécrit l'équivalence décrite à la sous-section précédente comme une action de groupe, $\mathcal D_{\mathrm{fib}}$ comme étant l'ensemble des éléments $H$ de $\mathcal{D}_{p+k}$ tels qu'il existe $h$ respectant le diagramme
 \[\begin{tikzcd}
 	{(0,\R^{p+k})} & {(0,\R^{p+k})} & \\
 	{(0,\R^k)} & {(0,\R^k)} 
@@ -774,16 +774,16 @@ et la relation d'équivalence précédente est alors décrite par l'action de gr
 \begin{equation*}
     \mathcal{B}=\mathcal{M}\ltimes_{\varphi}\mathcal{D}_{\text{fib}}.
 \end{equation*}
-Du fait que $D_{\text{fib}}\leq D_n$, on a que $\mathcal{B}\leq \mathcal{K}'$
+Du fait que $D_{\text{fib}}\leq D_n$, on a $\mathcal{B}\leq \mathcal{K}'$
 
- On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$E$-déterminé si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce  résultat de théorie des groupes de Lie 
+ On peut alors reformuler le problème de la façon suivante: $f\in\mathcal{E}(0,\R^n,\R^m)$  est $k$-$G$-déterminé si $\operatorname{orb}_G(f)$ contient les germes ayant le même jet d'ordre $k$ que $f$. On veut un équivalent de ce  résultat de théorie des groupes de Lie 
 \begin{theobox}{}{}
-    Si $G$ est un groupe de Lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la gauche et si $V$ est une sous variété connexe et lisse de $M$ alors 
+    Si $G$ est un groupe de Lie, $M$ une variété lisse, si $G$ agit sur $M$ (par exemple) par la gauche et si $V$ est une sous-variété connexe et lisse de $M$ alors 
     \begin{equation*}
         \exists m\in M : V \subseteq G\cdot m \Leftrightarrow \forall v\in V, T_v (G\cdot v) \supseteq T_v (V)\text{ et } \dim T_v (G\cdot v) \text{ est constante }
     \end{equation*}
 \end{theobox}
-la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que cela revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteint par des "petites" $G$-transformations, i.e, si on a pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
+la première condition est assez intuitive: en effet si on prend l'exemple d'une surface $S$ présentant une symétrie de révolution selon un axe, $S^1$ agit sur $S$ (via la rotation autour de l'axe central) et les orbites sont alors des cercles. Ainsi une courbe qui vit dans $S$ sera contenue dans une orbite si c'est un cercle qui entoure l'axe de révolution et on remarque que cela revient à exiger qu'en chaque point, l'espace tangent (ici la droite tangente à la courbe) soit inclus dans celui du cercle entourant l'axe de révolution généré par $S^1$ et ce point. En général, on veut que les points  de $V$ "très proches" de $v$ puissent être atteints par des "petites" $G$-transformations, i.e, si on n'a pas l'inclusion des espaces tangents, on peut "sortir" de l'orbite. La deuxième condition permet d'éviter les situations "dégénérées" où 
 \begin{equation*}
     \Bigl\{G\cdot v | v\in V\Bigr\}  
 \end{equation*}
@@ -798,7 +798,7 @@ La notion de déploiement remonte à
 René Thom \cite{Thom1972Stabilite}.
 \begin{definition} 
     $G\in \mathcal{E}_{n+d}^{m+d}$ est  \coldef{un déploiement à $d$ paramètres} de $f$
-    si il respecte le diagramme suivant:
+    s'il respecte le diagramme suivant:
     \[\begin{tikzcd}
 	{(0,\R^n)} & {(f(0),\R^m)} \\
 	{(0,\R^{n+d})} & {(f(0),\R^{m+d})} \\
@@ -816,11 +816,11 @@ René Thom \cite{Thom1972Stabilite}.
 \end{definition}
 
 \begin{remarque}
-    dans la littérature, la notion de déploiement et parfois interchangée avec la notion de \coldef{déformation}. Une déformation $F$ de $f$ est simplement un germe  de $\mathcal{E}^{m}_{n+d}$ telle que $F(\cdot,0)=f$. En quelque sorte, le déploiement "mémorise" le paramètre mais pas la déformation.
+    dans la littérature, la notion de déploiement est parfois interchangée avec la notion de \coldef{déformation}. Une déformation $F$ de $f$ est simplement un germe  de $\mathcal{E}^{m}_{n+d}$ tel que $F(\cdot,0)=f$. En quelque sorte, le déploiement "mémorise" le paramètre mais pas la déformation.
 \end{remarque}
 
 \begin{definition}
-    Soit $V\subseteq \mathcal{E}^m_n$  et $v\in V$ une \coldef{famille à $d$-paramètres}  $G$   \coldef{ à travers} $v$ \coldef{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(\cdot,u)]\in V$ si $u\in U$. L'ensemble de tel déploiements sera noté $\mathcal{U}_d(v,V)$
+    Soit $V\subseteq \mathcal{E}^m_n$  et $v\in V$ une \coldef{famille à $d$-paramètres}  $G$   \coldef{ à travers} $v$ \coldef{dans $V$} est un élément de  $\mathcal{U}_d(v)$ tel qu'il existe un représentant de  $G_1$, $\tilde{G}_1$ et un voisinage de 0 $U$ tel que $[\tilde{G_1}(\cdot,u)]\in V$ si $u\in U$. L'ensemble de tels déploiements sera noté $\mathcal{U}_d(v,V)$
 \end{definition}
 
 \begin{exemple}
@@ -828,16 +828,16 @@ René Thom \cite{Thom1972Stabilite}.
     \begin{equation*}
         G_1(x,u)=x^3+ux^2
     \end{equation*}
-    est une famille à 1 paramètres à travers $v$ dans $V$. Mais par exemple 
+    est une famille à 1 paramètre à travers $v$ dans $V$. Mais par exemple 
     \begin{equation*}
         G_2(x,u)=x^3+ux
     \end{equation*}
     ne l'est pas.
 \end{exemple}
-On va s'intéresser particulièrement aux famille à 1 seul paramètre, c'est à dire les \coldef{chemin lisses} dans une sous "variété"  $V$ de $\mathcal{E}^n_m$.
+On va s'intéresser particulièrement aux familles à 1 seul paramètre, c'est-à-dire les \coldef{chemins lisses} dans une sous "variété"  $V$ de $\mathcal{E}^n_m$.
 
 
-Rappelons que si $M$ est $N$ sont des variétés lisses et si $f\in C^{\infty}(M,N)$ alors l'ensemble des champs de vecteurs lisses \coldef{le long} de $f$, $\mathcal{V}(f)$ est donné par l'ensemble des $\xi: M\rightarrow TN$
+Rappelons que si $M$ et $N$ sont des variétés lisses et si $f\in C^{\infty}(M,N)$ alors l'ensemble des champs de vecteurs lisses \coldef{le long} de $f$, $\mathcal{V}(f)$ est donné par l'ensemble des $\xi: M\rightarrow TN$
 respectant le diagramme suivant: 
 
 \[\begin{tikzcd}
@@ -863,9 +863,9 @@ des champs de vecteurs le long d'un
 représentant de $f$.
 
 On va maintenant définir l'espace tangent de 
-l'orbite d'une fonciton par l'action d'un 
+l'orbite d'une fonction par l'action d'un 
 groupe de germes (en cette fonction). Il faut 
-d'abord supposer qu'on a un chemin regulier qui 
+d'abord supposer qu'on a un chemin régulier qui 
 passe par la fonction et qui reste dans 
 l'orbite, d'où la définition suivante
 
@@ -873,7 +873,7 @@ l'orbite, d'où la définition suivante
     Soient $f\in\mathcal{E}^m_n$ et $\mathcal{G}
     \cdot f\subseteq \mathcal{E}^m_n$ l'orbite 
     d'une action de groupe. Un élément $g\in\mathcal{U}_1(f,\mathcal{G}\cdot f)$ est \coldef{un chemin lisse} dans   $\mathcal{G}
-    \cdot f\subseteq \mathcal{E}^m_n$ si il peut être réalisé par une famille d'élements de $\mathcal{G}$ dépendant lissement du paramètre
+    \cdot f\subseteq \mathcal{E}^m_n$ s'il peut être réalisé par une famille d'éléments de $\mathcal{G}$ dépendant de façon lisse du paramètre
 \end{definition}
 La condition "dépendre de façon lisse" est légèrement floue, cela deviendra clair quand on calculera des espaces tangents.
 \begin{definition}
@@ -884,11 +884,11 @@ La condition "dépendre de façon lisse" est légèrement floue, cela deviendra 
     \end{equation*}
 \end{definition}
 
-Dans la suite, on écrira $T_f \mathcal{G}$ pour alléger les notations. On remarque alors que $T_f\mathcal{G}$ est un champ de vecteur le long de $f$. En effet, si on fixe $x$, l'application
+Dans la suite, on écrira $T_f \mathcal{G}$ pour alléger les notations. On remarque alors que $T_f\mathcal{G}\subseteq \mathcal{V}(f)$. En effet, si on fixe $x$, l'application
 \begin{equation*}
     \gamma: u\mapsto G(x,u)
 \end{equation*}
-Trace une courbe passant par $f(x)$ en zéro, 
+trace une courbe passant par $f(x)$ en zéro, 
 et la dérivée $\partial_u G(x,0)$ est bien un 
 vecteur tangent à $\R^m$, attaché au point $f
 (x)$. C'est donc bien une section de $f^* T\R^m$.
@@ -938,7 +938,7 @@ On peut donc multiplier des germes de $\mathcal{E}_{n_1}$ et $\mathcal{E}_{n_2}$
         h(\lambda,u))
     \end{equation*}
     \begin{equation*}
-        T_f\mathcal{B}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) b(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid a\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathfrak{m}^{\times p}_{p+k}, c\in\mathfrak{m}^{\times k}_k \right\}
+        T_f\mathcal{B}=\left\{ A(x,\lambda)f(x,\lambda)+ \partial_x f(x,\lambda) b(x,\lambda) + \partial_\lambda f(x,\lambda) c(\lambda) \mid A\in\mathcal{E}(0,\R^{p+k},\R^m_m), b\in\mathfrak{m}^{\times p}_{p+k}, c\in\mathfrak{m}^{\times k}_k \right\}
     \end{equation*}
     Qu'on réécrit comme
     \begin{equation*}
@@ -946,15 +946,15 @@ On peut donc multiplier des germes de $\mathcal{E}_{n_1}$ et $\mathcal{E}_{n_2}$
         =T_f\mathcal{RB} + 
         \rangle \partial_{\lambda} f\langle_{\mathcal{E}_{k}}\cdot\mathfrak{m}_{k}
     \end{equation*}
-    Qui correspond bien à l'idée qu'il s'agit du groupe restreint mais où on s'autorise à modifier
+    Qui correspond bien à l'idée qu'il s'agit du groupe restreint mais où on s'autorise à modifier le paramètre.
 \end{exemple}
 
-Notez que $T_f\mathcal{RB}$ est sous module, tandis que $T_f\mathcal{B}$ ne l'est pas.
+Notez que $T_f\mathcal{RB}$ est sous-module, tandis que $T_f\mathcal{B}$ ne l'est pas.
 
 \begin{exemple}
     De façon similaire, on calcule l'espace tangent par rapport aux groupes $\mathcal{K}$ et $\mathcal{A}$
     \begin{equation*}
-       T_f\mathcal{A} = \rangle \partial_{x_1}f, \cdots, \partial_{x_n}f \langle_{\mathcal{E}_n} + f^*(\mathfrak{m}_n) \cdot \mathcal{E}_m^m
+    T_f\mathcal{A}=\rangle\partial_{x_1}f,\cdots,\partial_{x_n}f\langle_{\mathcal{E}_n}\cdot\mathfrak{m}_n+\left(f^*(\mathfrak{m}_m)\right)^{\times m}.
     \end{equation*}
     \begin{equation*}
         T_f\mathcal{K} = \rangle f_1, \cdots, f_m \langle_{\mathcal{E}_{p+k}} \cdot \mathcal{E}_{p+k}^m + \rangle \partial_{x_1}f, \cdots, \partial_{x_p}f, \partial_{\lambda_1}f, \cdots, \partial_{\lambda_k}f \langle_{\mathcal{E}_{p+k}}\cdot \mathfrak{m}_n
@@ -963,16 +963,16 @@ Notez que $T_f\mathcal{RB}$ est sous module, tandis que $T_f\mathcal{B}$ ne l'es
 
 \subsection{Etude du groupe $\mathcal{RB}$}
 \subsubsection{Espace tangent et détermination finie}
-Le but de cette section est de comprendre le groupe restreint, qui permet d'obtenir des résultats intéressants de façon assez naturelle. Et nous pointerons, via l'étude d'exemples, les limite de cet outil. Les pages qui suivent sont adaptées de \cite{golubitsky1985sgb1}\\
+Le but de cette section est de comprendre le groupe restreint, qui permet d'obtenir des résultats intéressants de façon assez naturelle. Et nous pointerons également les limites de cet outil. Les pages qui suivent sont adaptées de \cite{golubitsky1985sgb1}\\
 On commence par une caractérisation de l'appartenance à l'espace tangent. Posons $\mathcal{E}_{p+k}^{m\times n}=\mathcal{E}(0,\R^{p+k},\R^m_n)$
 \begin{lemme}\label{Lemm-tg-reecriture}
-    Soit $f\in\mathcal{E}_{p+k}^m$, $g$ est dans l'espace tangent $T_f \mathcal{RB}$ si et seulement si il existe $A\in\mathcal{E}_{p+k}^{m\times m},B\in\mathcal{E}^{p\times p}_{p+k},C\in\mathcal{E}^{p\times k}_{p+k}$ telles que
+    Soit $f\in\mathcal{E}_{p+k}^m$, $g$ est dans l'espace tangent $T_f \mathcal{RB}$ si et seulement s'il existe $A\in\mathcal{E}_{p+k}^{m\times m},B\in\mathcal{E}^{p\times p}_{p+k},C\in\mathcal{E}^{p\times k}_{p+k}$ telles que
     \begin{equation}\label{eq-RT}
         g=Af+\partial_x f(Bx+C\lambda)
     \end{equation}
 \end{lemme}
 \begin{preuve}
-    Si $g$ est de la forme \ref{eq-RT} alors il est clair qu'elle est dans l'espace tangent. Maintenant, supposons $g$ est dans l'espace tangent, alors 
+    Si $g$ est de la forme \ref{eq-RT} alors il est clair qu'il est dans l'espace tangent. Maintenant, supposons que $g$ est dans l'espace tangent, alors 
     \begin{equation*}
         g=a(x,\lambda)f(x,\lambda)+ \partial_x f b(x,\lambda)\text{ avec }a\in\mathcal{E}_{p+k}^{m\times m}\text{ et }b\in\mathcal{E}^p_{p+k}\mathfrak{m}_{p+k}
     \end{equation*}
@@ -981,7 +981,7 @@ On commence par une caractérisation de l'appartenance à l'espace tangent. Poso
 
 
 
-Le corollaire \ref{Isopoly} permet d'affirmer que si $f\in\mathcal{E}_n^m$, alors pour tout entier $k\geq 0$, il existe des germes $(c_{\alpha})_{|\alpha|=k+1}$ telles que
+Le corollaire \ref{Isopoly} permet d'affirmer que si $f\in\mathcal{E}_n^m$, alors pour tout entier $k\geq 0$, il existe des germes $(c_{\alpha})_{|\alpha|=k+1}$ tels que
 
 \begin{equation}\label{taylor}
     f(x)=J^kf +\sum_{|\alpha|=k+1}c_{\alpha}x^
@@ -991,7 +991,7 @@ Le corollaire \ref{Isopoly} permet d'affirmer que si $f\in\mathcal{E}_n^m$, alor
 Calculons explicitement les espaces tangents de bifurcations simples
 
 \begin{exemple}
-    On calcul l'espace tangent d'une 
+    On calcule l'espace tangent d'une 
     bifurcation de type "fold": soit $E=T_{x^2
     +\lambda}\mathcal{RB}$. Le lemme précédent 
     nous permet d'affirmer que les éléments 
@@ -1004,12 +1004,12 @@ Calculons explicitement les espaces tangents de bifurcations simples
     \begin{equation*}
         a=c_2, b=(c_1-c_2)/2, c=0
     \end{equation*}
-    On remarque que les gemres de la forme $c_1 x^2+c_2\lambda$ sont dans $E$.
+    On remarque que les germes de la forme $c_1 x^2+c_2\lambda$ sont dans $E$.
     On peut maintenant montrer que
     \begin{equation}\label{FORME-COOL}
         E=\left\{f\in\mathcal{E}_2^1: f(0)=\partial_x f(0)=0\right\}
     \end{equation}
-    L'inclusion $\subseteq$ étant évidente, on montre, $\supseteq$. Si $f$ est elle que $f(0)=\partial_x f(0)=0$ alors en applicant la formule \ref{taylor}  on a , avec des notations évidentes,
+    L'inclusion $\subseteq$ étant évidente, on montre, $\supseteq$. Si $f$ est telle que $f(0)=\partial_x f(0)=0$ alors en appliquant la formule \ref{taylor}  on a , avec des notations évidentes,
     \begin{equation*}
         f(x,\lambda)=\partial_\lambda f(0,0)\lambda +a_{20}x^2+a_{11}\lambda x+a_{02}\lambda^2= a_{20}x^2+(\partial_\lambda f(0,0)+a_{11}x+a_{02}\lambda)\lambda
     \end{equation*}
@@ -1017,19 +1017,19 @@ Calculons explicitement les espaces tangents de bifurcations simples
 \end{exemple}
 
 
-Tout l'enjeu, c'est d'obtenir une forme du type \ref{FORME-COOL} pour l'espace tangent, car il est ensuite trivial de vérifier l'appartenance d'une fonction donnée à cet espace. L'idéal, serait d'avoir une telle expression pour la classe d'équivalence elle même.
+Tout l'enjeu, c'est d'obtenir une forme du type \ref{FORME-COOL} pour l'espace tangent, car il est ensuite trivial de vérifier l'appartenance d'une fonction donnée à cet espace. L'idéal, serait d'avoir une telle expression pour la classe d'équivalence elle-même.
 \begin{exemple}
-    On calcule l'espace tangent de de la bifurcation trident: $E=T_{x^3-\lambda x}\mathcal{RB}$. On applique encore une fois le lemme: les éléments de $E$ s'écrivent, avec des notations évidentes,
+    On calcule l'espace tangent de la bifurcation trident: $E=T_{x^3-\lambda x}\mathcal{RB}$. On applique encore une fois le lemme: les éléments de $E$ s'écrivent, avec des notations évidentes,
     \begin{equation*}
-        (a+3b)x^3-(a+2b-3xc)\lambda x - c\lambda^2
+        (a+3b)x^3+(-a-b+3xc)\lambda x - c\lambda^2
     \end{equation*}
     du fait que le système
     \begin{align*}
         a+3b&=c_1\\
-        -a-2b+3xc=c_2\\
+        -a-b+3xc=c_2\\
         -c=c_3
     \end{align*}
-    est inversible, on déduit immédiatement que $E$ est généré par $x^3,\lambda x, \lambda^2$. En applicant \ref{taylor} comme l'exemple précédent, on montre que
+    est inversible, on déduit immédiatement que $E$ est généré par $x^3,\lambda x, \lambda^2$. En appliquant \ref{taylor} comme l'exemple précédent, on montre que
     \begin{equation*}
         E=\left\{f\in\mathcal{E}_2^1: f(0)=\partial_x f(0)=\partial_\lambda f(0)=\partial^2_{x,x} f(0)=0\right\}
     \end{equation*}
@@ -1053,17 +1053,17 @@ Tout l'enjeu, c'est d'obtenir une forme du type \ref{FORME-COOL} pour l'espace t
 
 
 
-Une idée importante apparait déjà sur ces 
+Une idée importante apparaît déjà sur ces 
 3 exemples. Notez déjà le fait que 
-$T_F\mathcal{RB}$ est "petit", dans le sens ou il est contenu dans les espaces tangents de la pitchfork et de la fold. On a plus précisemment
+$T_F\mathcal{RB}$ est "petit", dans le sens où il est contenu dans les espaces tangents de la pitchfork et de la fold. On a plus précisément
 
 \begin{equation*}
     \left\{0\right\}=T_0 \mathcal{RB}\subsetneq T_F\mathcal{RB}\subsetneq T_{x^3-\lambda x}\mathcal{RB}\subsetneq T_{x^2+\lambda}\mathcal{RB}
 \end{equation*}
 
 On remarque alors que les germes "plus 
-dégénérés" on un espace tangent plus petit. Si on interprète l'espace tangent comme les transformations infinitésimale qui conservent la structure du germe,on comprend intuitivement que le germes "plus compliqués" sont "fragiles", dans le sens ou y'a moins de façon de les perturber légèrement sans les "casser".
-on introduit donc naturellement le concept 
+dégénérés" ont un espace tangent plus petit. Si on interprète l'espace tangent comme les transformations infinitésimales qui conservent la structure du germe,on comprend intuitivement que les germes "plus compliqués" sont "fragiles", dans le sens où il y'a moins de façon de les perturber légèrement sans les "casser".
+On introduit donc naturellement le concept 
 suivant
 
 \begin{definition}
@@ -1077,7 +1077,7 @@ On montre facilement que
     \mathcal{E}_2=T_{x^2+\lambda}\mathcal{RB}\oplus \rangle 1,x\langle_{\R}=
     T_{x^3-\lambda x}\mathcal{RB}\oplus \rangle 1,x,\lambda,x^2\langle_{\R}
 \end{equation*}
-donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda)=4$
+donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda x)=4$
 
 
 
@@ -1102,23 +1102,23 @@ donc $\codim(x^2+\lambda)=2$ et $\codim(x^3-\lambda)=4$
 
 Le but de ce qui suit va être de généraliser 
 la procédure du calcul de l'espace tangent. Le résultat 
-suivant est une conséquence directe de la continuité du determinant:
+suivant est une conséquence directe de la continuité du déterminant:
 \begin{lemme}
     Soient 
     $f^{(1)},\cdots,f^{(k)}\in\mathcal{E} ^m_n$  et $V=\rangle f^{(1)},\cdots,f^{(k)}\langle_{\mathcal{E}_n}$. Pour tous $1\leq i\leq k,1\leq l\leq m$, on pose
     \begin{equation*}
         g^{(i)}=\sum_{j=1}^{k}a_{i,j}(x)f^{(j)}\text{ avec }a_{i,j}\in\mathcal{E}_n
     \end{equation*}
-Si la matrices $A=(a_{i,j}(0))_{i,j}$ est inversible alors $V$ est également généré par les $g^{(i)}$
+Si la matrice $A=(a_{i,j}(0))_{i,j}$ est inversible alors $V$ est également généré par les $g^{(i)}$
 \end{lemme}
 Maintenant, on formalise l'étape finale: 
 supposons avoir trouvé les générateurs, 
-comment obtenir une caractérisation en qui ne 
+comment obtenir une caractérisation qui ne 
 fait intervenir que les valeurs des dérivées 
 partielles?
 
 \begin{lemme}
-    Si $f\in\mathcal{E}^m_{p+q}$ et pour un certain $k\geq 0$, $\mathfrak{m}^{k+1}_{p+q}\cdot \mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}$. Alors $g\in T_f\mathcal{RB} $ si et seulement si il exste des germes de matrices à éléments polynômiaux de  degré au plus $k$ telles que
+    Si $f\in\mathcal{E}^m_{p+q}$ et pour un certain $k\geq 0$, $\mathfrak{m}^{k+1}_{p+q}\cdot \mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}$. Alors $g\in T_f\mathcal{RB} $ si et seulement s'il existe des germes de matrices à éléments polynomiaux de  degré au plus $k$ tels que
     $A\in\mathcal{E}^{m\times m}_{p+q},
     B\in\mathcal{E}^{p\times p}_{p+q},C \in\mathcal{E}^{p\times q}_{p+q}$ telles que
     \begin{equation*}
@@ -1127,7 +1127,7 @@ partielles?
     \end{equation*}
 \end{lemme}
 \begin{preuve}
-    Via le lemme \ref{Lemm-tg-reecriture}, si $g\in T_f\mathcal{RB}$ alors il existe des germes de matrices $A',B',C'$ telles que
+    Via le lemme \ref{Lemm-tg-reecriture}, si $g\in T_f\mathcal{RB}$ alors il existe des germes de matrices $A',B',C'$ tels que
     \begin{equation*}
         g-(A'f+\partial_x fB'x+ \partial_x fC'\lambda)=0
     \end{equation*}
@@ -1135,13 +1135,13 @@ partielles?
     Maintenant,supposons que $g$ satisfait la condition de l'énoncé pour $A,B,C$. Via \eqref{Hadamard-corr}, on a 
     \begin{equation*}
         r=\left( g- \left( Af+\partial_x f(B x+ 
-        f C\lambda) \right)
+         C\lambda) \right)
         \right)\in\mathfrak{m}^{k+1}_{p+q}\cdot\mathcal{E}^m_{p+q}\subseteq T_f\mathcal{RB}.         
     \end{equation*}
     Et $g$ s'écrit alors comme la somme de deux éléments du tangent, ce qui suffit.
 \end{preuve}
 
-Ainsi, si l'espace tangent est "suffisemment gros", on a une procédure explicite pour caractériser ses éléments en terme de dérivées. Evaluons la difficulté de cette procédure en fonction de cette quantité $k$. Il faut pour commencer compter le nombre de $\alpha_1,\cdots,\alpha_{p+q}\in\mathbb{N}$ tels que
+Ainsi, si l'espace tangent est "suffisamment gros", on a une procédure explicite pour caractériser ses éléments en termes de dérivées. Évaluons la difficulté de cette procédure en fonction de cette quantité $k$. Il faut pour commencer compter le nombre de $\alpha_1,\cdots,\alpha_{p+q}\in\mathbb{N}$ tels que
 \begin{equation*}
     \sum_{l=1}^{p+q}\alpha_l\leq k
 \end{equation*}
@@ -1151,24 +1151,23 @@ Un raisonnement combinatoire rapide permet de montrer que ça vaut
 \end{equation}
 Maintenant, regardons le nombre de coefficients des polynômes, il vaut
 \begin{equation}\label{nbVer}
-    E_2=(p^2+q^2+m^2)\binom{p+q+k}{p+q}
+    E_2=(m^2+p^2+pq)\binom{p+q+k}{p+q}
 \end{equation}
-On a donc (à priori) $mE_1$ équations (pour 
+On a donc (a priori) $mE_1$ équations (pour 
 chaque composante de $g$) à $E_2$ variables.\\
 On en tire deux choses: d'une part, on a une 
 explosion combinatoire en les dimensions du 
-problème. D'autre part, le système est sous 
-déterminé, et ce niveau de sous détermination 
+problème. D'autre part, le système est sous-déterminé, et ce niveau de sous-détermination 
 explose également quand on augmente les 
 dimensions.\\
-Cependant, il faut noter que $E_1,E_2$ représente le maximum d'équations et de variables, en pratique, il est souvent bien plus petit, mais ça ne sauvera pas cette approche si le nombre de paramètres et les dimensions deviennetnt trop élevées.Cependant,en codimension élevée certains outils de géométrie algébrique peuvent grandement simplifer les choses, c'est ce qu'on verra à la section suivante.
-Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est le sujet du résultat suivant. On va utiliser  ce corollaire direct du lemme de Nakayama
+Cependant, il faut noter que $E_1,E_2$ représentent le maximum d'équations et de variables, en pratique, il est souvent bien plus petit, mais ça ne sauvera pas cette approche si le nombre de paramètres et les dimensions deviennent trop élevées. Cependant,en codimension élevée certains outils de géométrie algébrique peuvent grandement simplifier les choses, c'est ce qu'on verra à la section suivante.
+Il est assez intuitif que ce $k$ soit directement lié à la codimension, c'est le sujet du résultat suivant. On va utiliser  ce corollaire direct du lemme de Nakayama
 \begin{corollaire}
-    Soient $M,N$ des sous modules de $\mathcal{E}^m_n$, et supposons $M$ finiment généré. Alors $M\subseteq N$ si et seulement si $M\subseteq N+
+    Soient $M,N$ des sous-modules de $\mathcal{E}^m_n$, et supposons $M$ finiment généré. Alors $M\subseteq N$ si et seulement si $M\subseteq N+
     \mathfrak{m}_n\cdot M$
 \end{corollaire} 
 \begin{proposition}
-    Soit $M$ un sous module propre de 
+    Soit $M$ un sous-module propre de 
     $\mathcal{E}^m_{p+q}$. Il existe un entier $k$ tel que $(\mathfrak{m}^k_{p+q})^{\times m}\subseteq M$ si et seulement si $M$ est de codimension finie
 \end{proposition}
 \begin{preuve}
@@ -1185,7 +1184,7 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     \end{equation*}
     et donc
     \begin{equation*}
-        1\leq M\leq  \codim(M+\mathfrak{m}_{p+q}
+        1\leq \codim(M+\mathfrak{m}_{p+q}
         ^{\times m})
         \leq 
         \codim(M+
@@ -1210,9 +1209,10 @@ Il est assez intuitf que ce $k$ soit directement lié à la codimension, c'est l
     Et donc, $(\mathfrak{m}_{p+q}^k)^
     {\times m}\subseteq  M+ \mathfrak{m}_{p+q}\cdot(\mathfrak{m}_{p+q}^k)^
     {\times m} $.
-    Et conclut via la corollaire ci-dessus
+    Et on conclut via le corollaire ci-dessus
 \end{preuve}
-On a donc obtenu une caractérisation des modules de codimension finie. Notez que par le 
+On a donc obtenu une caractérisation des modules de codimension finie.
+
 
 \subsubsection{Lien entre la codimension et la détermination finie}
 
@@ -1224,25 +1224,25 @@ Avant d'établir la caractérisation, on a besoin d'établir le résultat suivan
     \end{equation}
     alors le segment $(f+tp)_{t\in[0,1]}$ est inclus dans l'orbite de $f$
 \end{theorem}
-Pour ce-faire, on montre deux lemmes intermédiaires
+Pour ce faire, on montre deux lemmes intermédiaires
 
 
 \begin{lemme}
-    Si \ref{segment} est correct quand $t$ est dans un voisinage de $0$ alors en posant il existe des germes
-     $A\in\mathcal{E}_{p+q+1}^{m\times m},b\in\mathcal{E}_{p+q+1}^{ p }$ telles que $b(0,0,t)=0$ et 
+    Si \ref{segment} est correct quand $t$ est dans un voisinage de $0$ alors il existe des germes
+     $A\in\mathcal{E}_{p+q+1}^{m\times m},b\in\mathcal{E}_{p+q+1}^{ p }$ tels que $b(0,0,t)=0$ et 
     \begin{equation}\label{eq-locale}
         p(x,\lambda)= A(x,\lambda,t)G(x,\lambda,t) + \partial_x G b(x,\lambda,t)\text{ avec } G(x,\lambda,t)= f(x,\lambda)+ tp(x,\lambda)
     \end{equation}
 \end{lemme}
 \begin{preuve}
-    Pour éviter d'alourdir les notations, on prouve le résultat dans le cas $p=q=n=1$, la généralisation en dimensions arbitraires est directe. Cela étant, supposons que \ref{segment} est valide en $t_0\neq 0$. Dans ce cas, les générateurs de $T_{f+t_0p} \mathcal{RB}$ peuvent s'écrire comme combinaison linéaire des générateurs de $T_f \mathcal{RB}$. En appliquant \ref{Lemm-tg-reecriture} on sait qu'il existe alors des germes $A_i,B_i,C_i$, $1\leq i\leq 3$ telle que
+    Pour éviter d'alourdir les notations, on prouve le résultat dans le cas $p=q=n=1$, la généralisation en dimensions arbitraires est directe. Cela étant, supposons que \ref{segment} est valide en $t_0\neq 0$. Dans ce cas, les générateurs de $T_{f+t_0p} \mathcal{RB}$ peuvent s'écrire comme combinaison linéaire des générateurs de $T_f \mathcal{RB}$. En appliquant \ref{Lemm-tg-reecriture} on sait qu'il existe alors des germes $A_i,B_i,C_i$, $1\leq i\leq 3$ tels que
     \begin{align*}
         f+t_0 p&=A_1 f +B_1 x\partial_x f +C_1\lambda \partial_x f\\
         x\partial_x f+t_0 x\partial_x p&
         =A_2 f +B_2 x\partial_x f +C_2\lambda \partial_x f\\
         \lambda \partial_xf +t_0 \lambda \partial_xp &=A_3 f +B_3 x\partial_x f +C_3\lambda \partial_x f
     \end{align*}
-    On peut obtenir une germe $Q\in\mathcal{E}_2^{3\times 3}$
+    On peut obtenir un germe $Q\in\mathcal{E}_2^{3\times 3}$
     telle que
     \begin{equation*}
         \begin{pmatrix}
@@ -1260,7 +1260,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
             h\\ x \partial_x h\\  \lambda \partial_x h
         \end{pmatrix}
     \end{equation*}
-    On réécrit alors le sytème comme
+    On réécrit alors le système comme
     \begin{equation*}
         v(p)= Qv(f).
     \end{equation*}
@@ -1272,13 +1272,13 @@ Pour ce-faire, on montre deux lemmes intermédiaires
     \begin{equation*}
         (I+t Q)v(p)= Qv(G).
     \end{equation*}
-    $I$ étant bien sûr inversible, la germe de matrice $I+t Q$ est inversible, on a alors
+    $I$ étant bien sûr inversible, le germe de matrice $I+t Q$ est inversible, on a alors
     \begin{equation*}
         v(p)=(I+t Q)^{-1} Qv(G).
     \end{equation*}
-    Si on regarde la premère composante, il vient enfin
+    Si on regarde la première composante, il vient enfin
     \begin{equation*}
-        p= ag +bx\partial_x G +c\lambda \partial_x G
+        p= aG +bx\partial_x G +c\lambda \partial_x G
     \end{equation*}
     Ce qui suffit.
 \end{preuve}
@@ -1287,11 +1287,11 @@ Pour ce-faire, on montre deux lemmes intermédiaires
         Si \ref{segment} est correct si $t$ est dans un voisinage de $0$, alors $f+tp$ est fortement équivalent à $f$ si $t$ assez proche de zéro.
 \end{lemme}
 \begin{preuve}
-    Comme pour le lemme précédent, on supponse que toute les dimensions valent 1.
+    Comme pour le lemme précédent, on suppose que toutes les dimensions valent 1.
     On commence par prendre un représentant de 
-    la germe $f+tp$ qu'on note $\tilde{G}$. Le 
+    le germe $f+tp$ qu'on note $\tilde{G}$. Le 
     lemme précédent nous donne une égalité de 
-    germe, on peut donc choisir un voisinage 
+    germes, on peut donc choisir un voisinage 
     $V=K\times L\times M$ de $(0,0,0)$ sur lequel 
     \ref{eq-locale} est vérifié (en ayant bien sûr pris les représentants appropriés). On cherche alors des fonctions lisses $X$, $S$ telles que
     \begin{equation}\label{Big-syst}
@@ -1301,7 +1301,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
         & S(x,\lambda,0)=1
     \end{aligned}
     \end{equation}
-    Remarquons que résoudre les équations différentielles ordinaires suivantes nous permettent n'obtenir un $X$ et $S$ pour la première équation
+    Remarquons que résoudre les équations différentielles ordinaires suivantes nous permet d'obtenir un $X$ et $S$ pour la première équation
     \begin{equation}\label{equa-diff-1}
         \partial_t X (x,\lambda,t)=-b(X(x,\lambda,t),\lambda,t)\text{ avec } X(x,\lambda,0)=x
     \end{equation}
@@ -1309,7 +1309,7 @@ Pour ce-faire, on montre deux lemmes intermédiaires
     \begin{equation}\label{equa-diff-2}
         \partial_t S (x,\lambda,t)=-a(X(x,\lambda,t),\lambda,t) S(x,\lambda,t)\text{ avec } S(x,\lambda,0)=1.
     \end{equation}
-    Avec $a,b$ donnés par \ref{eq-locale}. En effet, supposons avoir des solutions $X_0$ et $S_0$, et dérivons le membre gauche de la première équation du sytème, on a 
+    Avec $a,b$ donnés par \ref{eq-locale}. En effet, supposons avoir des solutions $X_0$ et $S_0$, et dérivons le membre gauche de la première équation du système, on a 
     \begin{equation}\label{sol-syst}
     \begin{aligned}
         \partial_t\left( S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)\right)
@@ -1330,12 +1330,12 @@ Pour ce-faire, on montre deux lemmes intermédiaires
     \begin{equation}
         S_0(x,\lambda,t)G(X_0(x,\lambda,t),\lambda,t)= S_0(x,\lambda,0)G(X(x,\lambda,0),\lambda,0)=f(x,\lambda)
     \end{equation}
-    Et donc, la première équation de \ref{Big-syst} est vérifie si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et 
-    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisse étant de lipshitz). Il faut montrer que les deux équations différentielles on bel et bien au moins un solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques \cite{HirschSmale1974Dynamical} permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
+    Et donc, la première équation de \ref{Big-syst} est vérifiée si $X_0$ et $S_0$ sont des solutions de  \ref{equa-diff-1} et 
+    \ref{equa-diff-2}. Il faut alors montrer qu'on a bien les conditions initiales. Les deuxième et troisième conditions initiales étant trivialement respectées, il faut alors montrer que $X_0(0,0,t)=0$. Or, par le lemme précédent, $b(0,0,t)=0$ et $X_0(0,0,t)=0$ est alors une solution de \ref{equa-diff-1} pour chaque paire de paramètres fixée. On conclut par unicité des solutions (les fonctions lisses étant localement lipschitziennes). Il faut montrer que les deux équations différentielles ont bel et bien au moins une solution sur $V$. Un résultat bien connu de théorie des équations différentielles paramétriques \cite{HirschSmale1974Dynamical} permet de montrer que \ref{equa-diff-1} a une solution sur $V$, ce qui nous donne également une solution de \ref{equa-diff-2}.
 \end{preuve}
 
 {\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve du théorème \ref{segment-inclus}.}}\ }
-On définit une relation d'équivalence sur $[0,1]$ en disant que $t_1\sim t_2$ si $f+t_1p\sim_{\mathcal{RB}} f+t_2p$. On montre que les classes d'équivalences sont ouvertes dans $[0,1]$ et on conclura alors par la connexité de $[0,1]$. Soit $h=f+t_0p$,
+On définit une relation d'équivalence sur $[0,1]$ en disant que $t_1\sim t_2$ si $f+t_1p\sim_{\mathcal{RB}} f+t_2p$. On montre que les classes d'équivalence sont ouvertes dans $[0,1]$ et on conclura alors par la connexité de $[0,1]$. Soit $h=f+t_0p$,
 alors on a
 \begin{equation*}
     T_{h+sp}\mathcal{RB}
@@ -1349,16 +1349,16 @@ si $s$ est assez petit. On conclut
 
 
 \begin{theorem}
-    Si un germe $f$ est de codimension finie, alors il il existe $k\in\mathbb{Z}$ tel que $f$ est $\mathcal{RB}$-équivalent à 
+    Si un germe $f$ est de codimension finie, alors il existe $k\in\mathbb{N}$ tel que $f$ est $\mathcal{RB}$-équivalent à 
     $j^k f$
 \end{theorem}
 \begin{preuve}
-    Montrons d'abord qui si $M=\rangle v_1,\cdots, v_n\langle _{\mathcal{E}_n}$ est un sous module $\mathcal{E}_n^m$ et si $w_1,\cdots,w_l$ sont dans $\mathfrak{m}_n\cdot M$ alors $M$ est également généré par les $v_i+w_i$, $1\leq i\leq l$. Bien sûr, $\rangle v_1 +w_1,\cdots v_l +w_l \langle_{\mathcal{E}_n}\subseteq M$. Or, $v_j=(v_j+w_j)-w_j$ donc
+    Montrons d'abord que si $M=\rangle v_1,\cdots, v_n\langle _{\mathcal{E}_n}$ est un sous-module $\mathcal{E}_n^m$ et si $w_1,\cdots,w_n$ sont dans $\mathfrak{m}_n\cdot M$ alors $M$ est également généré par les $v_i+w_i$, $1\leq i\leq n$. Bien sûr, $\rangle v_1 +w_1,\cdots v_n +w_n \langle_{\mathcal{E}_n}\subseteq M$. Or, $v_j=(v_j+w_j)-w_j$ donc
     \begin{equation*}
-        M\subseteq \rangle v_1+w_1,\cdots, v_l+w_l\langle_{\mathcal{E}_n}+\mathfrak{m}_n\cdot M
+        M\subseteq \rangle v_1+w_1,\cdots, v_n+w_n\langle_{\mathcal{E}_n}+\mathfrak{m}_n\cdot M
     \end{equation*}
-    Et le lemme de Nakayama nous assure alors que $M\subseteq \rangle v_1+w_1,\cdots, v_l+w_l\langle$, et on conlut.\\
-    Celà étant, on peut écrire $f=j^kf-r$ avec $r\in(\mathfrak{m}^{k+1}_n)^{\times m}$ au vu du théorème \ref{segment-inclus}, il suffit alors de montrer
+    Et le lemme de Nakayama nous assure alors que $M\subseteq \rangle v_1+w_1,\cdots, v_n+w_n\langle$, et on conclut.\\
+    Cela étant, on peut écrire $f=j^kf-r$ avec $r\in(\mathfrak{m}^{k+1}_n)^{\times m}$ au vu du théorème \ref{segment-inclus}, il suffit alors de montrer
     \begin{equation*}
         T_{f}\mathcal{RB}=T_{f+tr}\mathcal{RB}
     \end{equation*}
@@ -1366,7 +1366,7 @@ si $s$ est assez petit. On conclut
     \begin{equation*}
         (f_j+tr_j)e_i,\quad x_l \partial_{x_a}(f+tr),\quad \lambda_s\partial_{x_a}(f+tr)
     \end{equation*}
-    pour les indices appropriés. Chacun de ses éléments diffère du générateurs par un un élément de $(\mathfrak{m}^{k+1}_n)^{\times m}\subseteq \mathfrak{m}_n T_f\mathcal{RB}$
+    pour les indices appropriés. Chacun de ses éléments diffère du générateur par un élément de $(\mathfrak{m}^{k+1}_n)^{\times m}\subseteq \mathfrak{m}_n T_f\mathcal{RB}$
 \end{preuve}
 
 \begin{exemple}
@@ -1380,12 +1380,12 @@ On a donc obtenu un critère pour pouvoir tronquer la série de Taylor, mais pas
 la méthode employée ci-dessus n'a 
 rien de spécifique au groupe $\mathcal
 {RB}$, on peut adapter la plupart des 
-résultats aux autres groupe agissant 
+résultats aux autres groupes agissant 
 sur le germe. Cependant, notez que 
 les résultats qui dépendent du fait 
 que l'espace tangent est un module ne 
 s'appliquent pas en toute généralité.
-Le théorème \ref{segment-inclus} nous permet de comprendre comment calculer l'orbite d'un germe donné, on regarde l'espace tangent, on prend les générateurs et on regarde les petites perturbations par ces générateurs qui ne change pas l'espace tangent et on dévoile ainsi petit à petit l'orbite.
+Le théorème \ref{segment-inclus} nous permet de comprendre comment calculer l'orbite d'un germe donné, on regarde l'espace tangent, on prend les générateurs et on regarde les petites perturbations par ces générateurs qui ne changent pas l'espace tangent et on dévoile ainsi petit à petit l'orbite.
 
 \subsection{Déploiements versels et universels} 
 
@@ -1395,8 +1395,8 @@ On s'inspire encore de Golubitsky
 section. Dans la suite, on identifie un déploiement de la forme 
 $G(x,\lambda,u)=(G_1(x,\lambda,u),u)$ à $G_1$. 
 \begin{definition}
-    Soient $G\in\mathcal{E}_{p+q+a_1}^m$ et $H\in\mathcal{E}_{p+q+a_2}^m$ des déploiement d'un germe $f$, et $\mathcal{G}$ un groupe qui agit sur les germes. On dit que $H$ est un \coldef{facteur} de $G$   si il existe un représentant 
-    $\tilde{H}$ tel que pour tout $\beta\in \R^{p_2}$ tels que
+    Soient $G\in\mathcal{E}_{p+q+a_1}^m$ et $H\in\mathcal{E}_{p+q+a_2}^m$ des déploiements d'un germe $f$, et $\mathcal{G}$ un groupe qui agit sur les germes. On dit que $H$ est un \coldef{facteur} de $G$   s'il existe un représentant 
+    $\tilde{H}$ tel que pour tout $\beta\in \R^{a_2}$ tel que
     $\tilde{H}(\cdot,\cdot,\beta)$ est défini, il existe un représentant $\tilde{G}$ et $A(\beta)$ tels que
     \begin{equation}\label{def-fact}
         H(\cdot,\cdot,\beta)
@@ -1406,23 +1406,23 @@ $G(x,\lambda,u)=(G_1(x,\lambda,u),u)$ à $G_1$.
     $\mathcal{G}_{un}$ cette relation d'équivalence. La fonction $A$ est appelée \coldef{la fonction de factorisation}
 \end{definition}
 
-Notez qu'une perturbation du type $f+tp$ est un déploiement ! Un déploiement contient donc "plusieurs façon de déformer la germe". Si on particularise la définition ci-dessus à $\mathcal{RB}$, cela revient à demander l'existence de germes lisses $S,X,\Lambda, A$ telles que
+Notez qu'une perturbation du type $f+tp$ est un déploiement ! Un déploiement contient donc "plusieurs façons de déformer le germe". Si on particularise la définition ci-dessus à $\mathcal{B}$, cela revient à demander l'existence de germes lisses $S,X,\Lambda, A$ tels que
 \begin{equation}\label{Factor-unfold}
-    H(x,\lambda,\beta)=S(x,\lambda,\beta)G(X(x,\lambda,\beta),\Lambda(b),A(\beta)).
+    H(x,\lambda,\beta)=S(x,\lambda,\beta)G(X(x,\lambda,\beta),\Lambda(\lambda,\beta),A(\beta)).
 \end{equation}
 Pour simplifier les choses, on pose 
 \begin{equation*}
-    S(x,\lambda,0)=1,X(x,\lambda,0)=x,\Lambda(\lambda,0)=\lambda,A(0)=0.
+    S(x,\lambda,0)=I_m,X(x,\lambda,0)=x,\Lambda(\lambda,0)=\lambda,A(0)=0.
 \end{equation*}
 En effet, étant donné que $H(x,\lambda,0)=G(x,\lambda,0)=f$, il est 
 naturel d'exiger que l'équivalence 
 soit donnée par l'identité.\\
-Il est intéressant de noter que si applique la définition avec $\mathcal{G}=\mathcal{K}$ alors on exige alors des germes lisses $S(x,\lambda,\beta)$, $\phi(x,\lambda,\beta),A(\beta)$ telles que
+Il est intéressant de noter que si on applique la définition avec $\mathcal{G}=\mathcal{K}$ alors on exige alors des germes lisses $S(x,\lambda,\beta)$, $\phi(x,\lambda,\beta),A(\beta)$ tels que
 
 \begin{equation*}
     S(x,\lambda,\beta)G(\phi(x,\lambda,\beta),A(\beta))=H(x,\lambda,\beta)
 \end{equation*}
-Et on remarque alors que $\mathcal{K}_{un}$ n'est nul autre que $\mathcal{B}$.
+Et on remarque alors que $\mathcal{K}_{un}$ n'est nul autre que $\mathcal{B}$. (si on voit $\beta$ comme le paramètre !)
 
 \begin{exemple}
     La relation $\preccurlyeq$ n'est pas particulièrement liée au nombre de paramètres. Considérez par exemple les déploiements de la pitchfork suivants:
@@ -1434,12 +1434,12 @@ Et on remarque alors que $\mathcal{K}_{un}$ n'est nul autre que $\mathcal{B}$.
 
 Naturellement, on va se demander si on peut trouver un déploiement qui "contient tous les autres", dans le sens suivant:
 \begin{definition}
-    Un déploiement $G$ de $f$ est dit \coldef{universel} si tout autre déploiement de $f$ est un facteur de $G$. Il est dit \coldef{miniversel} si il est universel et tout autre déploiement universel a un nombre de paramètres plus grand ou égal. Le nombre de paramètres d'un déploiement miniversel de $f$ est appelée la \coldef{D-codimension}
+    Un déploiement $G$ de $f$ est dit \coldef{universel} si tout autre déploiement de $f$ est un facteur de $G$. Il est dit \coldef{miniversel} s'il est universel et tout autre déploiement universel a un nombre de paramètres plus grand ou égal. Le nombre de paramètres d'un déploiement miniversel de $f$ est appelé la \coldef{D-codimension}
 \end{definition}
 
 
 \begin{remarque}
-    Notez que "dans la nature", on ne verra absolument jamais de diagramme de bifurcation qui ressemble parfaitement à une pitchfork. Mais, les mesures étant constamment influencées par du bruit, on verra une version déformée. On parle de "bifurcation imparfaite". Mais souvenez que le lieu d'annulation, est "de façon générique" une variété lisse ! Ainsi, si on perturbe légèrement une germe présentant un singularité, on est "certains" que le lieu d'annulation redevienne une variété lisse
+    Notez que "dans la nature", on ne verra absolument jamais de diagramme de bifurcation qui ressemble parfaitement à une pitchfork. Mais, les mesures étant constamment influencées par du bruit, on verra une version déformée. On parle de "bifurcation imparfaite". Mais souvenez-vous que le lieu d'annulation est "de façon générique" une variété lisse ! Ainsi, une perturbation générique d'un germe présentant une singularité donnera un lieu d'annulation qui est une variété lisse
 \end{remarque}
 
 
@@ -1447,9 +1447,9 @@ Naturellement, on va se demander si on peut trouver un déploiement qui "contien
 Remarquez que jusqu'à 
 présent, on a supposé que les 
 germes de difféomorphisme 
-renvoyait zéro sur zéro, ce 
+renvoyaient zéro sur zéro, ce 
 qui a influencé les calculs 
-des espaces tangents. Dans ce qui suit, on va utiliser la notion d'espace tangent étendu, ça veut simplement dire que retire cette restriction. On a par exemple
+des espaces tangents. Dans ce qui suit, on va utiliser la notion d'espace tangent étendu, ça veut simplement dire qu'on retire cette restriction. On a par exemple
 \begin{equation*}
     T^{(e)}_f\mathcal{B}=\rangle f\langle^m+\rangle 
     \partial_{x}f\langle
@@ -1462,10 +1462,10 @@ Du fait que $\mathcal{E}_n=\R\oplus\mathfrak{m}_n$
 constantes à leur 
 constantes), et on vérifie 
 facilement que la 
-codimension du tangent est finie si et seulement ci celle du tangent étendu est finie.
+codimension du tangent est finie si et seulement si celle du tangent étendu est finie.
 
 Le but de ce qui suit  va être de démontrer le résultat suivant 
-\begin{theobox}{Théorème du déploiment universel}{}\label{unif-depl}
+\begin{theobox}{Théorème du déploiement universel}{}\label{unif-depl}
 Soit $f$ un germe, un déploiement à $k$ paramètres $G$  est  universel si et seulement si
 \begin{equation*}
     \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}
@@ -1484,7 +1484,7 @@ $g\in\mathcal{E}^m_{p+q}$ un germe quelconque. Remarquez que
     H(x,\lambda,\varepsilon)=f(x,\lambda)+
     \varepsilon g(x,\lambda)
 \end{equation*}
-Est un déploiement à $1$ paramètres de $f$. Par définition, on a $H \preccurlyeq  G$ il existe donc des germes $A,\Lambda,X,S$ comme celle de \ref{Factor-unfold} telles que
+Est un déploiement à $1$ paramètre de $f$. Par définition, on a $H \preccurlyeq  G$. Il existe donc des germes $A,\Lambda,X,S$ comme ceux de \ref{Factor-unfold} tels que
 \begin{equation*}
     H(x,\lambda,\varepsilon)=S(x,\lambda,\varepsilon)G(X(x,\lambda,\varepsilon),\Lambda(\lambda,\varepsilon),A(\varepsilon))
 \end{equation*}
@@ -1492,7 +1492,7 @@ En dérivant par rapport à $\varepsilon$ et en évaluant à zéro, on récupèr
 \begin{equation*}
     g(x,\lambda)
     =\partial_\varepsilon (S(x,
-    \lambda,\varepsilon)fX(x,
+    \lambda,\varepsilon)f(X(x,
     \lambda,\varepsilon),\Lambda(\lambda,
     \varepsilon)))(0)+\sum_{i=1}^
     {k} (\partial_\varepsilon A_i)
@@ -1515,7 +1515,7 @@ préparation
 \begin{proposition}
     Soit $M$ un module finiment 
     généré sur 
-    $\mathcal{E}_{p+q}$, $\pi: \R^{p+q}\rightarrow \R^p$ la projection habituelle, $N$ un sous module de $M$ et $m_1,\cdots,m_r\in M$. On pose également $M_0=M/(\pi^{*}(\mathfrak{m}_p)M)$ (c'est un $\mathcal{E}_p$-module via $\pi^{*}$) et $N_0,\tilde{m}_{1},\cdots \tilde{m}_{r}$ les projections de $N$ et $m_1,\cdots,m_r$ dans $M_0$. On a alors
+    $\mathcal{E}_{p+q}$, $\pi: \R^{p+q}\rightarrow \R^p$ la projection habituelle, $N$ un sous-module de $M$ et $m_1,\cdots,m_r\in M$. On pose également $M_0=M/(\pi^{*}(\mathfrak{m}_p)M)$ (c'est un $\mathcal{E}_p$-module via $\pi^{*}$) et $N_0,\tilde{m}_{1},\cdots \tilde{m}_{r}$ les projections de $N$ et $m_1,\cdots,m_r$ dans $M_0$. On a alors
     \begin{equation*}
         N+\rangle m_1,\cdots,m_r\langle_{\mathcal{E}_p}=M \Leftrightarrow N_0+\rangle 
         \tilde{m}_{1},\cdots \tilde{m}_{r}
@@ -1523,11 +1523,11 @@ préparation
     \end{equation*}
 \end{proposition}
 \begin{preuve}
-    Le premier sens étant évident, on prouve l'autre. On considère le module $P=M/N$, il est finement généré, et on a
+    Le premier sens étant évident, on prouve l'autre. On considère le module $P=M/N$, il est finiment généré, et on a
     \begin{equation*}
         P/(\pi^{*}(\mathfrak{m_p})P)\cong M_0/N_0
     \end{equation*}
-    Et on conclut en appliquant le théorème de preparation
+    Et on conclut en appliquant le théorème de préparation
 \end{preuve}
 
 \begin{proposition}\label{Lemme-unif-depl}
@@ -1556,7 +1556,7 @@ préparation
     \end{equation}
 \end{proposition}
 \begin{preuve}
-    $f$ étant de codimension finie, il existe des germes $p_1,\cdots,p_s$ telles que
+    $f$ étant de codimension finie, il existe des germes $p_1,\cdots,p_s$ tels que
     \begin{equation*}
         T^{(e)}_f\mathcal{B}=T^{(e)}_f\mathcal{RB}+\rangle p_1,\cdots,p_s\langle_{\R}.
     \end{equation*}
@@ -1587,16 +1587,16 @@ préparation
     Et on applique alors la proposition précédente aux générateurs $p_1,\cdots,p_s,q_1,\cdots q_r$ pour obtenir $\ref{eq-1}\Rightarrow \ref{eq-2}$. L'autre sens s'obtient facilement en fixant $\alpha=0$
 
 \end{preuve}
-Soit $h\in\mathcal{E}_{l}^k$ et $G$ un déploiment à $k$ paramètres de $f$, on pose
+Soit $h\in\mathcal{E}_{l}^k$ et $G$ un déploiement à $k$ paramètres de $f$, on pose
 \begin{equation*}
     (h_{*}G)(x,\lambda,\beta)=
-    G(x,\lambda,h(\alpha))
+    G(x,\lambda,h(\beta))
 \end{equation*}
 
 Pour ne pas alourdir 
 l'exposé, on admet le lemme 
 suivant. La preuve est 
-classique est faite dans 
+classique et est faite dans 
 \cite{golubitsky1979theory} pour le cas 
 particulier du groupe 
 $\mathcal{B}$ et dans 
@@ -1604,14 +1604,14 @@ $\mathcal{B}$ et dans
 général.
 
 \begin{lemme}\colprop{(lemme de réduction)}
-Soit $G$ un déploiement à $k$ paramètres de $f$ et $E=G|_{\R^{p+q}\times\R^{k-1}}$. Si il existe un champ de vecteur $V$ sur $\R^{p+q}\times \R^k$ de la forme
+Soit $G$ un déploiement à $k$ paramètres de $f$ et $E=G|_{\R^{p+q}\times\R^{k-1}}$. S'il existe un champ de vecteurs $V$ sur $\R^{p+q}\times \R^k$ de la forme
 \begin{equation*}
     V=\partial_{\alpha_k}+
     \sum_{i=1}^{k-1}a_i(\alpha)\partial_{\alpha_i}+
     \sum_{i=1}^{q}b_i(\lambda,\alpha)\partial_{\lambda_i}
     +\sum_{j=1}^{p}V_j(x,\lambda,\alpha)\partial_{x_j},
 \end{equation*}
- Et une familles de champs de vecteurs
+ Et une famille de champs de vecteurs
 \begin{equation*}
     \mathcal{Y}: \R^{p+q+k}\rightarrow \Gamma T\R^m
 \end{equation*}
@@ -1623,11 +1623,11 @@ tels que
 Alors il existe une submersion $h$ telle que $G$ est facteur de $h_{*}E$ via l'identité.
 \end{lemme}
 {\hypersetup{linkcolor=color-prop}\par\noindent\textcolor{color-prop}{\textit{Preuve de la condition suffisante du théorème \ref{unif-depl}.}}\ }\\
-supposons que $    \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}$ et soit $H\in\mathcal{E}_{p+q+l}^m$ un autre déploiment de $f$. Considérons le déploiement à $k+l$ paramètres
+supposons que $    \mathcal{E}^m_{p+q}=T^{(e)}_f\mathcal{B}+ \rangle \partial_{\alpha_1}G(\cdot,\cdot,0),\cdots, \partial_{\alpha_k}G(\cdot,\cdot,0)\langle_{\R}$ et soit $H\in\mathcal{E}_{p+q+l}^m$ un autre déploiement de $f$. Considérons le déploiement à $k+l$ paramètres
 \begin{equation*}
     J(x,\lambda,\alpha,\beta)=G(x,\lambda,\alpha)+H(x,\lambda,\beta)-f(x,\lambda)
 \end{equation*}
-Supposons disposer d'un germe de submersion $h\in\mathcal{E}_{k+l}^k$ telle que $J$ est facteur se $h_{*}G$ via l'identité. On a alors
+Supposons disposer d'un germe de submersion $h\in\mathcal{E}_{k+l}^k$ tel que $J$ est facteur de $h_{*}G$ via l'identité. On a alors
 \begin{equation*}
     J(\cdot, \cdot, \alpha, \beta) \sim_{\mathcal{B}} G(\cdot, \cdot, h(\alpha, \beta)).
 \end{equation*}
@@ -1635,8 +1635,8 @@ Supposons disposer d'un germe de submersion $h\in\mathcal{E}_{k+l}^k$ telle que 
 \begin{equation*}
     H(\cdot,\cdot,\beta)\sim_{\mathcal{B}} G(\cdot,\cdot,h(0,\beta)).
 \end{equation*}
-Ce qui montre qu'il suffit de trouver une sumbersion $h$ telle que $J$ est facteur de $h_{*}G$ via l'identité. On procède par récurrence sur $l$. Le cas $l=0$ étant évident, on montre l'induction.\\
-On pose $m_i(x,\lambda,\alpha,\beta)=\partial_{\alpha_i} J(x,\lambda,\alpha,\beta)$. Avec les notations de \ref{unif-depl},$m_{i,0}=\partial_{\alpha_i}G(\cdot,\cdot,0)$ et applique alors ce dernier à $J$, ce qui nous donne
+Ce qui montre qu'il suffit de trouver une submersion $h$ telle que $J$ est facteur de $h_{*}G$ via l'identité. On procède par récurrence sur $l$. Le cas $l=0$ étant évident, on montre l'induction.\\
+On pose $m_i(x,\lambda,\alpha,\beta)=\partial_{\alpha_i} J(x,\lambda,\alpha,\beta)$. Avec les notations de \ref{Lemme-unif-depl}, on a $m_{i,0}=\partial_{\alpha_i}G(\cdot,\cdot,0)$ et on applique alors ce dernier à $J$, ce qui nous donne
 \begin{equation*}
     \rangle J\langle^m+\rangle  \partial_x J\langle_{\mathcal{E}_{p+q+k+l}}
     +\rangle  \partial_\lambda J\langle_{\mathcal{E}_{q+k+l}}
@@ -1646,13 +1646,13 @@ En particulier, on peut écrire, avec les notations du lemme précédent
 \begin{equation*}
     \partial_{\beta_{l}}J=
     \mathcal{Y}(x,\lambda,
-    \alpha,\beta)(J)+\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}J+\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}J+\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_i} J.
+    \alpha,\beta)(J)+\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}J+\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}J+\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_j} J.
 \end{equation*}
 Enfin, on pose 
 \begin{equation*}
-    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_i}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}-\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}.
+    X=\partial_{\beta_l}-\sum_{j=1}^{k}\xi_j(\alpha,\beta)\partial_{\alpha_j}-\sum_{i=1}^{p}X_i(x,\lambda,\alpha,\beta)\partial_{x_i}-\sum_{i=1}^{q}b_i(\lambda,\alpha,\beta)\partial_{\lambda_i}.
 \end{equation*}
-On a que $(dJ)(X)=\mathcal{Y}\circ J$, et on applique alors le lemme précédent.
+On a $(dJ)(X)=\mathcal{Y}\circ J$, et on applique alors le lemme précédent.
 {\unskip\nobreak\hfill\textcolor{color-prop}{$\blacksquare$}\par}
 
 
