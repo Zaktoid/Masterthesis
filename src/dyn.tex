@@ -138,7 +138,7 @@ ou elle n'est pas respectée
         \begin{pmatrix} 
             0 & 1 \\ \lambda & 0 \end{pmatrix}
     \end{equation*}
-    On remarque que le noyau est égal à l'image quand $\lambda=0$. Maintenant, regardons comment le spectre évolue quand $\lambda$ varie: le polynôme caractéristique est donné par $\mu^2-\lambda$. D'une part, quand lambda positif, on pert le caractère $C^1$. Ensuite, lorsqu'il passe par zéro, toutes les valeurs propres deviennent complexes
+    On remarque que le noyau est égal à l'image quand $\lambda=0$. Maintenant, regardons comment le spectre évolue quand $\lambda$ varie: le polynôme caractéristique est donné par $\mu^2-\lambda$. Donc $\mu_{\pm}(\lambda)=\pm \sqrt{\lambda}$, et la courbe n'est pas $C^1$ en $\lambda=0$
 \end{exemple}
 Il est particulièrement enrichissant de regarder le champ de vecteur associé avec la fonction et d'observer comment il se modifie quand on fait varier le (ou les ) paramètre(s) de bifurcation.
 \begin{figure}[htbp]
@@ -150,11 +150,6 @@ Il est particulièrement enrichissant de regarder le champ de vecteur associé a
     \label{vectfield_1}
 \end{figure}\\
 Lorsque $\lambda=0.85$, on a un équilibre (qu'on peut identifier comme instable visuellement) au centre. Et lorsque le $\lambda$ se rapproche de $0$, les deux tourbillons qui se trouvent de part et d'autre fusionnent en un seul.
-\begin{remarque}
-    En dimension finie la condition de 
-    transversalité 
-    \eqref{transvers-ker} équivaut à l'absence d'un bloc de Jordan non trivial associé à la valeur propre $0$
-\end{remarque}
 La  condition \eqref{transvers-ker}
 nous permet d'écrire, avec les notations de la proposition précédente,
 \begin{equation*}
@@ -181,11 +176,11 @@ Celà étant, la proposition suivante nous permet de relier les variations de la
 \begin{proposition}\label{prop-perturb-deriv}
     Avec les notations qui précèdent, et en supposant $F\in C^3(U\times V)$ on a
     \begin{equation*}
-        \partial_s D_1 \Psi(\gamma)(0)=\partial_s \mu(0)
+        \partial_s D_1 \Psi(y,\lambda)(0)=\partial_s \mu(0)
     \end{equation*}
     et si $\partial_s \mu(0)=0$ alors
     \begin{equation*}
-        \partial^2_{s}D_1\Psi(\gamma)(0)=\partial^2_s\mu(0)
+        \partial^2_{s}D_1\Psi(y,\lambda)(0)=\partial^2_s\mu(0)
     \end{equation*}
 \end{proposition}
 \begin{preuve}
@@ -264,11 +259,11 @@ On peut maintenant formuler le principe d'échange de stabilité
 \begin{definition}
     Dans les conditions habituelles de ce chapitre,
     soient \\
-    $\gamma_1(s)=\left(x_1(s),\lambda_1(s)\right)$,$\gamma_2(s)=\left(x_2(s),\lambda_2(s)\right)$ deux courbes de solutions passant par $(x_0,\lambda_0)$. Supposons $\pi_2x_i(s)=v_0+y_i(s)\hat{v}_0$, $i=1,2$. Si il existe des paramètres $s_1,s_2$ tels que $y_1(s_1),y_2(s_2)$ sont des zéros consécutifs de $\Psi(\cdot,\lambda)$ en $\lambda=\lambda(s_1)=\lambda(s_2)$ alors les courbes sont dites adjacentes
+    $\gamma_1(s)=\left(x_1(s),\lambda_1(s)\right)$,$\gamma_2(s)=\left(x_2(s),\lambda_2(s)\right)$ deux courbes de solutions passant par $(x_0,\lambda_0)$. Supposons $\pi_2x_i(s)=v_0+y_i(s)\hat{v}_0$, $i=1,2$. Si il existe des paramètres $s_1,s_2$ tels que $y_1(s_1),y_2(s_2)$ sont des zéros consécutifs de $\Psi(\cdot,\lambda)$ en $\lambda=\lambda_1(s_1)=\lambda_2(s_2)$ alors les courbes sont dites adjacentes
 \end{definition}
 
 \begin{theobox}{Principe d'échange de stabilité}{}
-    Si $\gamma_1,\gamma_2$ sont des courbes de solutions adjacentes et si $\partial_s\mu(0)\neq 0$ ou $\partial_s\mu(0)=0$ et $\partial^2_s\mu(0)\neq 0$. Alors si $s_1,s_2$ sont comme dans la définition précédente, et si $\mu_i$ sont les courbes de valeurs propres perturbées des $\gamma_i$, alors $\mu_1(s_1)\mu_2(s_2)<0$
+    Si $\gamma_1,\gamma_2$ sont des courbes de solutions adjacentes et si leurs courbes de valeurs propres perturbées $\mu_1,\mu_2$ sont telles que $\partial_s\mu_i(0)\neq 0$ ou $\partial_s\mu_i(0)=0$ et $\partial^2_s\mu_i(0)\neq 0$, $i=1,2$. Alors si $s_1,s_2$ sont comme dans la définition précédente, on a $\mu_1(s_1)\mu_2(s_2)<0$
 \end{theobox}
 \begin{preuve}
     Cela découle directement de la proposition \ref{prop-perturb-deriv}
@@ -293,7 +288,7 @@ On commence par donner une sens précis à la notion de stabilité. Une façon d
     \begin{equation*}
         \partial_t x=Ax
     \end{equation*}
-    où $A$ est une matrice réelle et observer le champ de vecteurs en fonction des valeurs propres. La matrice étant réelles, ses valeurs propres $\lambda_1,\lambda_2$ sont soit de la forme $\lambda_1=\alpha+i\beta,\lambda_1=\alpha-i\beta $, $\alpha,\beta$ réels, ou alors toutes les deux réelles. Ci dessous des représentations des champ de vecteurs pour les cas ou elles sont toutes les deux $<0$, de signes opposés et toutes les deux $>0$, respectivement.
+    où $A$ est une matrice réelle et observer le champ de vecteurs en fonction des valeurs propres. La matrice étant réelles, ses valeurs propres $\lambda_1,\lambda_2$ sont soit de la forme $\lambda_1=\alpha+i\beta,\lambda_2=\alpha-i\beta $, $\alpha,\beta$ réels, ou alors toutes les deux réelles. Ci dessous des représentations des champ de vecteurs pour les cas ou elles sont toutes les deux $<0$, de signes opposés et toutes les deux $>0$, respectivement.
     \begin{center}
         \includegraphics[width=0.32\textwidth]{figures/real_eigen_value_neg.png}
         \includegraphics[width=0.32\textwidth]{figures/real_opposite_sign.png}
@@ -388,11 +383,11 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
         \end{itemize}
         Une famille $(D'_t)_{t\geq 0}\in\mathcal{L}(E)^{\R^+}$ est un semi-groupe analytique si c'est la restriction d'un semi-groupe analytique sur un certain secteur $\Delta$. Posons
         \begin{equation*}
-            U=\left\{ x\in E:\lim_{z\to 0,z\in\Delta}\frac{D(z)x-x}{t}\right\}
+            U=\left\{ x\in E:\lim_{z\to 0,z\in\Delta}\frac{D_zx-x}{z}\text{exist dans } E\right\}
         \end{equation*}
         Alors l'opérateur défini sur $U$ par
         \begin{equation*}
-            Ax=\lim_{z\to 0,z\in\Delta}\frac{D(z)x-x}{z}
+            Ax=\lim_{z\to 0,z\in\Delta}\frac{D_zx-x}{z}
         \end{equation*}
         est \coldef{le générateur }de $(D_z)_{z\in\Delta}$
     \end{definition}
@@ -400,7 +395,7 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
     \begin{equation*}
         e^{A}=\sum_{n\geq 0}\frac{(A)^n}{n!}
     \end{equation*}
-    On vérifie facilement que la famille $(e^{tA})_{t\geq 0}$ est un semi-groupe analytique sur $X$. Lorsque $A$ génère un groupe analytique, on note typiquement ce groupe $(e^{tA})_{t\geq 0}$Le résultat suivant donne des conditions pour que $D_1 G(0,\kappa_0,\lambda_0)$. La preuve étant assez lourde, nous nous contenter de l'énoncer et renvoyons le lecteur vers \cite{kielhoefer2012bta} pour les détails
+    On vérifie facilement que la famille $(e^{tA})_{t\geq 0}$ est un semi-groupe analytique sur $X$. Lorsque $A$ génère un semi-groupe analytique, on note typiquement ce semi-groupe $(e^{tA})_{t\geq 0}$Le résultat suivant donne des conditions pour que $D_1 G(0,\kappa_0,\lambda_0)$ soit de Fredholm d'indice nul. La preuve étant assez lourde, nous nous contentons de l'énoncer et renvoyons le lecteur vers \cite{kielhoefer2012bta} pour les détails
     \begin{proposition}
         Supposons que
         \begin{itemize}
@@ -431,10 +426,10 @@ Et la détection de solutions $2\pi$-périodiques revient alors à chercher les 
         \begin{equation*}
             \Gamma: ]-\delta,\delta[\rightarrow (C^{1+\alpha}(\R,Y)\cap C^{\alpha}(\R,X))\times \R, r\mapsto (x(r),\lambda(r))
         \end{equation*}
-        telle que $(x(r),\lambda(r))$ est $2\pi/\kappa(r)$-périodique avec $\kappa(0)=\kappa_0$. De plus, toutes les autres solutions périodiques de $(0,\lambda_0)$ (dans la topologie induite sur l'intersection) sont obtenus à partir d'un certain point de la courbe $(x(r),\lambda(r))$ via un shift de phase $S_\theta x(r)$
+        telle que $(x(r),\lambda(r))$ est $2\pi/\kappa(r)$-périodique avec $\kappa(0)=\kappa_0$ et $(x(0),\lambda(0))=(0,\lambda_0)$. De plus, toutes les autres solutions périodiques de $(0,\lambda_0)$ (dans la topologie induite sur l'intersection) sont obtenus à partir d'un certain point de la courbe $(x(r),\lambda(r))$ via un shift de phase $S_\theta x(r)$
         avec 
         \begin{equation*}
-            S_{\theta}x(r)(\cdot)=x(r)(\cdot+\theta),\text{ pour un certain $\theta\in\R \pmod {2\pi}$}
+            S_{\theta}x(r)(\cdot)=x(r)(\cdot+\theta),\text{ pour un certain $\theta\in\R$}
         \end{equation*}
     \end{theobox}
     \begin{preuve}

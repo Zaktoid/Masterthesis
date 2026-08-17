@@ -4,24 +4,24 @@
 
 
 \section*{Introduction}
-Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
+Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètres $\Lambda$ et une famille de fonctions 
 \begin{equation*}
     (f_{\lambda}: X\rightarrow Y)_{\lambda\in\Lambda}
 \end{equation*} comment le lieu $f^{-1}_{\lambda}(0)$ change-t-il quand $\lambda$ varie ? On peut réécrire cette famille de fonctions comme une fonction 
 $F: X\times\Lambda\rightarrow Y$. Il faut bien sûr préciser un peu ce que sont ces espaces, sans quoi, on ne peut rien dire.\\Nous supposerons que les outils de base du calcul différentiel s'appliquent confortablement à $X$ et $Y$ et nous verrons que pour ce faire, il faut supposer que ce sont des espaces de Banach.\\
-Historiquement, ce type de problème apparut lors de l'étude de systèmes dynamiques dont la loi d'évolution dépend d'un paramètre. Précisons: 
+Historiquement, ce type de problème apparut lors de l'étude de systèmes dynamiques dont la loi d'évolution dépend d'un paramètre. Précisons : 
 considérons l'équation différentielle suivante :
 \begin{equation}\label{equanewton}
     \frac{\partial  x}{\partial t }= F(x,\lambda)
 \end{equation}
-en supposant, par exemple, $x:\R\rightarrow \R^n$ et $\lambda\in\R$. On peut s'intéresser, dans un premier temps, aux \coldef{équilibres} de ce système, naturellement, cela correspond à étudier 
+en supposant, par exemple, $x:\R\rightarrow \R^n$ et $\lambda\in\R$. On peut s'intéresser, dans un premier temps, aux \coldef{équilibres} de ce système. Naturellement, cela correspond à étudier 
 $F_{\lambda}^{-1}(0)$. Considérons le cas très simple d'un mobile ayant un seul degré de liberté, et 
 \begin{equation*}
     F(x,\lambda)= x^3-\lambda x
 \end{equation*}
 On constate immédiatement 
 que le nombre de points 
-d'équilibres passe de 1 à 3 
+d'équilibre passe de 1 à 3 
 quand $\lambda$ devient 
 positif. Remarquons déjà 
 qu'ici une partie du lieu 
@@ -37,11 +37,11 @@ triviale et la majorité du
 travail consistera à étudier 
 les \coldef{bifurcations 
 depuis une branche 
-triviale}, i.e,  si $(x_0,
+triviale}, i.e.,  si $(x_0,
 \lambda_0)\in F^{-1}(0)$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \coldef{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
- La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1}. On y étudiera la notion d'équivalence entre (germe de) fonctions. L'idée étant de comprendre quelle transformations ne "détruise pas" l'information qualitative au voisinage du point d'intérêt $(x_0,\lambda_0)$. Nous étudierons ces équivalences sous le prisme de l'action de groupe: deux (germes) de fonctions seront alors équivalentes si elles se trouvent dans le même orbite de l'action.\\
- La troisième partie présentera un outil d'un tout autre type: un degré topologique. Nous y introduiront les bases de la théorie générale du degré et une généralisation du degré proposée par M. Furi dans \cite{BenevieriFuri2001} \\
- La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map"). Le but de ce travail est donner une vision d'ensemble des techniques qui peuvent être déployée pour étudier l'apparition de nouvelle branche de solutions dans un système d'équations paramétré
+ La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1}. On y étudiera la notion d'équivalence entre (germe de) fonctions. L'idée étant de comprendre quelles transformations ne "détruisent pas" l'information qualitative au voisinage du point d'intérêt $(x_0,\lambda_0)$. Nous étudierons ces équivalences sous le prisme de l'action de groupe: deux (germes) de fonctions seront alors équivalentes si elles se trouvent dans la même orbite de l'action.\\
+ La troisième partie présentera un outil d'un tout autre type: un degré topologique. Nous y introduirons les bases de la théorie générale du degré et une généralisation du degré proposée par M. Furi dans \cite{BenevieriFuri2001} \\
+ La dernière partie, quant à elle, constituera une brève introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à la manière les propriétés purement dynamiques changent quand $\lambda$ varie. Dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map"). Le but de ce travail est de donner une vision d'ensemble des techniques qui peuvent être déployées pour étudier l'apparition de nouvelles branches de solutions dans un système d'équations paramétré
  
 \newpage
 \section{Théorie des opérateurs de Fredholm}
@@ -49,21 +49,21 @@ triviale}, i.e,  si $(x_0,
 
 \subsection{Calcul différentiel dans des espaces de Banach}
 
-Dans cette section nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but est de pouvoir présenter le \colprop{théorème des fonctions implicites}, un des outils principaux de la théorie de la bifurcation. Nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach
+Dans cette section, nous rappelons brièvement les résultats classiques du calcul différentiel dans des espaces de Banach. Le but est de pouvoir présenter le \colprop{théorème des fonctions implicites}, un des outils principaux de la théorie de la bifurcation. Nous nous basons principalement sur \cite{dieudonne1969fma8} et \cite{coleman2012calculus}. Dans la suite, les lettres $X,Y,\Lambda,Z$ font référence à des espaces de Banach.
 
 \begin{definition}
 Soit $U$ un ouvert de $X$ et $F,G\in C^0(U,Y)$, $F$ et $G$ sont \coldef{tangents} en $x_0\in U$ si 
 \begin{equation*}
-    \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||f(x)-g(x)||_Y}{||x-x_0||_X}=0
+    \lim_{x\rightarrow{x_0},x\neq x_0}  \frac{||F(x)-G(x)||_Y}{||x-x_0||_X}=0.
 \end{equation*}
 \end{definition}
 Il est clair que la relation "être tangent en un point" est une relation d'équivalence.
 \begin{lemme}\label{Lemme-unicité}
-Dans les conditions de la définition précédente, s'il existe un élément $h$ de $C^0(U,Y)$ tangent à $f$ en $x_0$ et un élément  $u\in L(X,Y)$ tels que
+Dans les conditions de la définition précédente, s'il existe un élément $h$ de $C^0(U,Y)$ tangent à $F$ en $x_0$ et un élément  $u\in L(X,Y)$ tels que
 \begin{equation}\label{equ1}
-    h(x)=f(x_0)+u(x-x_0)
+    h(x)=F(x_0)+u(x-x_0)
 \end{equation}
-alors il est unique
+alors il est unique.
 \end{lemme}
 \begin{preuve}
    Supposons avoir $h$ et $h'$ satisfaisant \eqref{equ1} et notons $u_1,u_2$ les éléments de $L(X,Y)$ correspondant, on a alors 
@@ -77,7 +77,7 @@ alors il est unique
 Il est donc licite d'introduire la définition suivante
 \begin{definition}
 Soit $U$ un ouvert de $X$
-$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ soit tangent à $F$ en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $DF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point
+$F\in C^0(U,Y)$ est \coldef{dérivable} en $x_0\in U$ s'il existe $u\in L(X,Y)$ tel que  $h(x)=f(x_0)+u(x-x_0)$ soit tangent à $F$ en $x_0$, ce $u$ est alors \coldef{la dérivée de $F$ en $x_0$} qu'on notera $DF(x_0)$. Naturellement, $F$ est dérivable sur $U$ si elle est dérivable en chaque point.
 \end{definition}
 Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifierons pas l'espace dont on utilise la norme. 
 \begin{proposition}
@@ -86,17 +86,17 @@ Notons que dès à présent, lorsque le contexte sera clair, nous ne spécifiero
 \begin{preuve}
     Pour tout $\varepsilon>0$, il existe $0<r<1$ tel que
     \begin{equation*}
-        ||t||<r\Rightarrow ||f(x_0+t) - f(x_0)||\leq 
-        \frac{\varepsilon}{2}\text{ et } ||f(x_0+t)-(f(x_0)+u(t))||\leq\frac{\varepsilon}{2} ||t||
+        ||t||<r\Rightarrow ||F(x_0+t) - F(x_0)||\leq 
+        \frac{\varepsilon}{2}\text{ et } ||F(x_0+t)-(F(x_0)+u(t))||\leq\frac{\varepsilon}{2} ||t||
     \end{equation*}
-Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$,ce qui permet de conclure.
+Ainsi, $||t||\leq r\Rightarrow ||u(t)||\leq\varepsilon$, ce qui permet de conclure.
 \end{preuve}
-On vérifie facilement que si $F$ est constante sur $U$, alors elle est dérivable sur $U$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $du=u$ sur $X$.
+On vérifie facilement que si $F$ est constante sur $U$, alors elle est dérivable sur $U$ et que celle-ci y est nulle. De même, il est immédiat que si $u\in \mathcal{L}(X,Y)$ alors $u$ est dérivable et $Du=u$ sur $X$.
 \begin{remarque}
-On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites,etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
+On pourrait se demander s'il est possible de relaxer les hypothèses davantage. Et bien non, par exemple, si on travaille avec un espace de Fréchet, de nombreux problèmes de stabilité surviennent. Ainsi, on perd le théorème de la fonction inverse, on perd le théorème des fonctions implicites, etc... Il est quand même possible de dire des choses ! Le lecteur intéressé pourra regarder le théorème de Nash-Moser en consultant, par exemple, \cite{schwartz1960nash}. Ainsi, les espaces de Banach remplissent les conditions "minimales" pour faire de l'analyse sereinement.
 \end{remarque}
 \begin{remarque}
-Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe.. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
+Nous allons travailler principalement avec des espaces de Banach réels dans le reste de ce travail. Il existe également des résultats dans le cas complexe. Quant aux autres champs ($p$-adiques, ...), il ne semble pas qu'il y ait une théorie des bifurcations  bien établie. Notez cependant qu'il existe une généralisation du théorème des fonctions implicites à d'autres champs ! Voir par exemple \cite{glockner2006implicit}
 \end{remarque}
 Rappelons que l'espace $\mathcal{L}(X,Y)$ muni de la norme $||u||=\sup_{x\in B(1)} ||u(x)||$  est un espace de Banach et que $|| u(x) ||\leq ||u||\cdot||x||$. 
 
@@ -115,20 +115,20 @@ pour tous $(x_0,y_0),(x,y)\in X\times Y$
 
 On obtient facilement le résultat suivant:
 \begin{proposition}
-    Si $(Y_i)_{i=0}^m$ est une suite finie d'espaces de Banach,$U$ un ouvert de $X$, $Y=\prod_{i=0}^m Y_i$ 
+    Si $(Y_i)_{i=0}^m$ est une suite finie d'espaces de Banach, $U$ un ouvert de $X$, $Y=\prod_{i=0}^m Y_i$ 
     et si $F\in C^0(U,Y)$ alors, pour tout $x_0\in U$
     \begin{equation*}
     F \text{ est dérivable en $x_0$ }
     \Leftrightarrow \forall 0\leq i \leq m\quad  \pi_i(f) \text{ est dérivable en $x_0$} 
     \end{equation*}
 \end{proposition}
-On écrira $DF(x_0)=(DF_1(x_0),\cdots,DF_m(x_0))$ où $F_i=\pi_i(f)$
+On écrira $DF(x_0)=(DF_0(x_0),\cdots,DF_m(x_0))$ où $F_i=\pi_i(F)$
 \\
 On récupère alors le \colprop{théorème de dérivation des fonctions composées}. La preuve est assez similaire au cas $\mathbb{R}^n$
 \begin{proposition}
     Soit $U$ un ouvert de $X$,$x_0\in U$, $F\in C^0(U,Y)$, $y_0=F(x_0)$, $V$ un ouvert de $Y$ contenant $y_0$ et enfin  $G\in C^0(V,Z)$ alors 
     \begin{equation*}
-        F\text{ dérivable en  $x_0$ et G dérivable en $y_0$ et }\Rightarrow G\circ F \text{ dérivable en $x_0$}  
+        F\text{ dérivable en  $x_0$ et G dérivable en $y_0$}\Rightarrow G\circ F \text{ dérivable en $x_0$}  
     \end{equation*}
 Et on a l'expression habituelle
 \begin{equation*}
@@ -146,7 +146,7 @@ $D (f+g)(x_0)=Df(x_0)+Dg(x_0)$ et si $\alpha$ est un scalaire,
 $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \begin{remarque}\label{remarque 1-dim}
     Avec les notations qui précèdent, si $X$ a une seule dimension (il est dans ce cas isomorphe à son champ de scalaire), $\mathcal{L}(X,Y)$ est isomorphe à $Y$ via $f\mapsto (\xi\mapsto f\xi)$.
-    $df(x_0)$ est alors identifé un élément de l'espace d'arrivée $Y$
+    $Df(x_0)$ est alors identifié un à élément de l'espace d'arrivée $Y$
 \end{remarque}
    
 \begin{definition}
@@ -155,12 +155,12 @@ $D(\alpha f)(x_0)=\alpha Df(x_0)$.
 \end{definition}
 \begin{definition}
     Si $X=\prod_{i=1}^n X_i$ où les $X_i$ sont des espaces 
-    de Banach, \\si $a=(a_1,\cdots,a_m)\in\prod_{i=1}^n X_i$,  
+    de Banach, \\si $a=(a_1,\cdots,a_n)\in\prod_{i=1}^n X_i$,  
     et si $x_i\mapsto F(a_1,\cdots,x_i,\cdots,a_n)$
-    est dérivable en $a_i$ , on note  $D_{i}F(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{F}$ comme étant $F$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $D_{(k,\cdots,j) }f=D_2 \tilde{f}$ 
+    est dérivable en $a_i$ , on note  $D_{i}F(a)$ sa dérivée. Si $1\leq k<j \leq n$, alors on considère  $\tilde{F}$ comme étant $F$ mais définie sur $(\prod_{i=1}^{k-1} X_i)\times (\prod_{i=k}^{j} X_i)\times (\prod_{i=j+1}^{n} X_i)$ et on pose dans ce cas $D_{(k,\cdots,j) }F=D_2 \tilde{F}$ 
 \end{definition}
 \begin{proposition}
-    dans les conditions des définitions précédentes, 
+    Dans les conditions des définitions précédentes, 
     \begin{equation*}
         f\in C^1(U,Y)\Leftrightarrow
         \forall 1\leq i \leq n \quad  D_i f:U\rightarrow \mathcal{L}(X_i,Y)\text{ est défini et continu}
@@ -189,7 +189,7 @@ et
 On en tire immédiatement le théorème des fonctions inverses 
 \begin{corollaire}
     Soient $U$ un ouvert de $X$ et $x_0\in U$. Soit de plus $F\in C^1(U,Y)$.
-    Si $DF(x_0)$ est un isomorphisme alors il existe $U'\subseteq U$u n voisinage ouvert de $x_0$ et $V'$ un voisinage de $y_0$ tels que
+    Si $DF(x_0)$ est un isomorphisme alors il existe $U'\subseteq U$ un voisinage ouvert de $x_0$ et $V'$ un voisinage de $y_0$ tels que
     $F|_{U'}\in C^1(U',V')$ soit un difféomorphisme. On a de plus
     \begin{equation*}
         D(F|_{U'}^{-1})(y)= DF(F|_{U'}^{-1}(y))^{-1}
@@ -208,7 +208,7 @@ Ainsi, $D^2F$ prend en entrée un point $x$ de $U$, $D^2F(x)$ une direction $h$ 
 
 Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0)$ n'est pas "trop grave", précisons :
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach et soit $D\in  \mathcal{L}(X,Y)$. \coldef{l'index de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  Y / \text{im } D=\text{codim } \text{im }D$ sont finis, et il vaut, dans ce cas
+    Soient $X,Y$ des espaces de Banach et soit $D\in  \mathcal{L}(X,Y)$. \coldef{l'indice de  Fredholm de $D$} est défini si $\dim \ker D$ et $\dim  Y / \text{im } D=\text{codim } \text{im }D$ sont finis, et il vaut, dans ce cas
     \begin{equation*}
         \text{Ind }  D= \dim \ker D -\operatorname*{codim } \im D
     \end{equation*}
@@ -216,8 +216,8 @@ Nous étudierons la situation où la "non-bijectivité" de $D_{1}f(x_0,\lambda_0
 \end{definition}
 
 \begin{definition}
-    dans les conditions de la définition précédente, $D$ est un \coldef{opérateur de Fredholm} si son index est défini. On notera 
-    $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. On dit qu'une fonction $F: X\rightarrow Y$ est \coldef{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $Df(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$, si l'indice de la dérivée est constant sur $U$ (on verra que c 'est le cas si $U$ est connexe) alors l'indice de $F$ est simplement l'indice de la dérivée en un point
+    Dans les conditions de la définition précédente, $D$ est un \coldef{opérateur de Fredholm} si son index est défini. On notera 
+    $\mathcal{F}_n(X,Y)$  l'ensemble des opérateurs de Fredholm d'indice $n$ et $\mathcal{F}(X,Y)$ l'ensemble des opérateurs de Fredholm. On dit qu'une fonction $F: X\rightarrow Y$ est \coldef{de Fredholm en } $x\in X$ si elle est dérivable en $x$ et si $DF(x)$ est de Fredholm. Une fonction est de Fredholm sur un ouvert $U$ de $X$ si elle est $C^1$ sur $U$ et si sa dérivée est de Fredholm sur $U$, si l'indice de la dérivée est constant sur $U$ alors l'indice de $F$ est simplement l'indice de la dérivée en un point
 \end{definition}
 
 Remarquons que si $D$ est de Fredholm alors  $D^*$ l'est aussi 
@@ -226,17 +226,17 @@ Remarquons que si $D$ est de Fredholm alors  $D^*$ l'est aussi
 \end{equation}
 Où $D^{*}$ est l'opérateur adjoint, défini comme
 \begin{eqnarray*}
-    D^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ d
+    D^{*}: Y^{*}\rightarrow X^{*}, f\mapsto  f\circ D
 \end{eqnarray*}
 C'est simplement du fait que $(Y/\im D)^* 
 \cong (\im D)^{\perp}$ (\cite{EsserFONCT}, exercice 5.6.2) et que $\ker D^
 {*}=(\im D)^{\perp}$
 où on rappelle que l'annihilateur d'une partie $A$ de $Y$ est défini comme 
 \begin{equation*}
-    A^{\perp}=\left\{ \varphi\in Y^{*} |\phi_{|_A}=0\right\}
+    A^{\perp}=\left\{ \varphi\in Y^{*} |\varphi_{|_A}=0\right\}
 \end{equation*}
 \begin{exemple}
-dans la suite, on munit $C^k([0,1])$ de la norme habituelle $||f||_{C^k}=\sum_{j=0}^k ||D^j f||_{\infty} $. L'opérateur dérivée 
+dans la suite, on munit $C^k([0,1])$ de la norme habituelle $||f||_{C^k}=\sum_{j=0}^k ||D^j f||_{\infty} $. L'opérateur de dérivation 
 \begin{equation*}
     D: C^k([0,1])\mapsto C^{k-1}([0,1])\text{ avec $k\geq 1$}
 \end{equation*}
@@ -253,7 +253,7 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
     \begin{equation*}
         F(f)(x)=xc - 3x\int_{0}^1 cy^2dy=0
     \end{equation*}
-    Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im D$, c'est à dire qu'il existe $f$ tel que 
+    Posons $I:f\mapsto \int_{0}^1 yf(y)dy$ soit $g\in \im F$, c'est-à-dire qu'il existe $f$ tel que 
     \begin{equation*}
         f(x)=g(x)+3xI(f)
     \end{equation*}
@@ -262,7 +262,7 @@ Le noyau est simplement donné par $\left\{ c\chi_{[0,1]} | c\in \R\right\}$, il
         I(f) = \int_{0}^1
         x(g(x)+3xI(f))dx = \int_{0}^{1}x g(x)dx + I(f)\Rightarrow \int_{0}^{1} x g(x) dx=0
     \end{equation*}
-    et donc $g$ est dans le noyau de la forme linéaire $I$. Bien sûr, si $g$ est dans le noyau de $I$ alors c'est un point fixe de $F$ et donc $\im F= \ker I$, le noyau d'une forme linéaire continue non nulle étant de codimension finie, on conclut.
+    et donc $g$ est dans le noyau de la forme linéaire $I$. Bien sûr, si $g$ est dans le noyau de $I$ alors c'est un point fixe de $F$ et donc $\im F= \ker I$, le noyau d'une forme linéaire continue non nulle étant de codimension $1$, la fonction est de Fredholm d'indice nul.
 \end{exemple}
 Rappelons que si $D\in\mathcal{L}(X,Y)$ alors il induit une norme sur $\im D$: si $g=D(f)$ 
 \begin{equation*}
@@ -272,9 +272,9 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
     \begin{equation*}
         ||[f]||_{X/\ker D}= \inf_{g\in \ker D} ||f-g||_{X}
     \end{equation*}
-    Il est bien connu que le quotient d'un espace de Banach par un fermé est un espace de Banach (voir par exemple le cours de Céline Esser \cite{EsserFONCT}). Nous montrons quelques propriétés élémentaires des opérateurs de Fredholm, les résultats suivant sont adaptés de \cite{abramovich2002invitation}
+    Il est bien connu que le quotient d'un espace de Banach par un fermé est un espace de Banach (voir par exemple le cours de Céline Esser \cite{EsserFONCT}). Nous montrons quelques propriétés élémentaires des opérateurs de Fredholm, les résultats suivants sont adaptés de \cite{abramovich2002invitation}
 \begin{lemme}
-    Soit $D\in\mathcal{L}(X,Y)$, $\im D$ est fermé si et seulement s'il existe un sous espace fermé $Y_0$ de $Y$ tel que $\im D \cap Y_0=\{0\}$ et $\im D\oplus Y_0$ est un fermé de $Y$
+    Soit $D\in\mathcal{L}(X,Y)$, $\im D$ est fermé si et seulement s'il existe un sous-espace fermé $Y_0$ de $Y$ tel que $\im D \cap Y_0=\{0\}$ et $\im D\oplus Y_0$ est un fermé de $Y$
 \end{lemme}
 \begin{preuve}
     Si $\im D$ est fermé, il suffit de prendre $Y_0=\{0\}$. Maintenant, supposons avoir $Y_0$ vérifiant les conditions de l'énoncé et posons $G=\im D\oplus Y_0$. Considérons $G/Y_0$ muni de la norme quotient habituelle et la fonction 
@@ -282,8 +282,8 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
         J:  (\im D, ||\cdot||_D)\rightarrow (G/Y_0, ||\cdot||_{G/Y_0}), y\mapsto y+Y_0
     \end{equation*}
     Du fait que $\im D\cap Y_0=\{0\}$, cet opérateur est injectif et  il est clairement surjectif.  
-    Du fait que pour tous $y\in\im D$, $||J(y)||_{G/Y_0}\leq ||y||_Y\leq ||y||_{d}$,
-    $J$ est un isomorphisme d'espace de Banach et donc $\exists c>0$ telle que $c||y||_d\leq ||J(y)||_{G/Y_0}$ pour tous $y\in \im D $ on a alors 
+    Du fait que pour tous $y\in\im D$, $||J(y)||_{G/Y_0}\leq ||y||_Y\leq ||y||_{D}$,
+    $J$ est un isomorphisme d'espace de Banach et donc $\exists c>0$ tel que $c||y||_d\leq ||J(y)||_{G/Y_0}$ pour tous $y\in \im D $ on a alors 
     \begin{equation*}
         c ||y||_D\leq ||y||_Y\leq ||y||_D
     \end{equation*}
@@ -291,7 +291,7 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
 \end{preuve}
 
 \begin{corollaire}\label{im-fred-closed}
-    Si $d\in\mathcal{L}(X,Y)$ est tel que $\operatorname*{codim} \im D$ est fini, alors $\im D$ est fermé. En particulier, l'image d'un opérateur de Fredholm est fermée
+    Si $D\in\mathcal{L}(X,Y)$ est tel que $\operatorname*{codim} \im D$ est fini, alors $\im D$ est fermé. En particulier, l'image d'un opérateur de Fredholm est fermée
 \end{corollaire}
 \begin{preuve}
     Soit  $\left\{[y_1],\cdots, [y_n]\right\}$ une base de  $Y/\im D$. Bien sûr, les éléments sont linéairement indépendants, donc 
@@ -302,11 +302,11 @@ On rappelle également  que la norme habituelle sur le quotient est donnée par
 \end{preuve}
 Le résultat suivant est un corollaire direct du théorème de Hahn-Banach
 \begin{lemme}
-Si $X_0$ est  sous espace de dimension finie de $X$ alors il est \coldef{complémenté},i.e, il existe un sous espace fermé $X_1$ tel que $X_1\oplus X_0=X$
+Si $X_0$ est un sous-espace de dimension finie de $X$ alors il est \coldef{complémenté},i.e., il existe un sous-espace fermé $X_1$ tel que $X_1\oplus X_0=X$
 \end{lemme}
 de ce qui précède, on déduit le résultat suivant
 \begin{proposition}\label{spliting}
-    Si $D\in\mathcal{F}(X,Y)$ alors il existe des sous espaces fermés $X_0,Y_0$ tels que 
+    Si $D\in\mathcal{F}(X,Y)$ alors il existe des sous-espaces fermés $X_0,Y_0$ tels que 
     \begin{equation*}
         Y=\im D \oplus Y_0\text{ et } X=\ker D\oplus X_0
     \end{equation*}
@@ -320,7 +320,7 @@ Rappelons les notions de suite exacte et de suite exacte courte
 \begin{definition}
     Si $G_0,G_1,\cdots, G_n$ sont des groupes (ou espaces vectoriels, modules, etc...)\footnote{Plus généralement, des objets d'une catégorie semi-abélienne, voir \coldef{\href{https://ncatlab.org/nlab/show/exact+sequence}{nlab}} pour plus d'informations} alors la suite 
     \begin{equation*}
-       G_0 \xrightarrow{J_1} G_1 \xrightarrow{J_2} G_2 \xrightarrow{J_3} \cdots \xrightarrow{J_n} G_n
+       G_0 \xrightarrow{j_1} G_1 \xrightarrow{j_2} G_2 \xrightarrow{j_3} \cdots \xrightarrow{j_n} G_n
     \end{equation*}
     est \coldef{exacte} si $\im(j_i)=\ker(j_{i+1})$
     Une suite \coldef{exacte courte} est une suite de la forme
@@ -332,7 +332,7 @@ Rappelons les notions de suite exacte et de suite exacte courte
 	\arrow["0", from=1-4, to=1-5]
     \end{tikzcd}\]
 \end{definition}
-Quand on a une suite exacte courte, le noyau du premier morphisme est trivial, il est donc injectif. L'image du second morphisme est le noyau de l'application nulle, donc c'est tout l'espace, il est donc surjectif. Intuitivement,on peut voir $A$ comme "inclus" dans $B$ via $j_1$, et $j_2$ peut être compris comme une projection, en fait, le premier théorème d'isomorphisme nous assure que 
+Quand on a une suite exacte courte, le noyau du premier morphisme est trivial, il est donc injectif. L'image du second morphisme est le noyau de l'application nulle, donc c'est tout l'espace, il est donc surjectif. Intuitivement, on peut voir $A$ comme "inclus" dans $B$ via $j_1$, et $j_2$ peut être compris comme une projection, en fait, le premier théorème d'isomorphisme nous assure que 
 \begin{equation*}
     B/\im(j_1)\cong C
 \end{equation*}
@@ -367,7 +367,7 @@ Ce qui nous permet de contrôler la dimension du noyau du troisième si on contr
 \begin{equation*}
     \im(D_2\circ D_1)\subseteq \im(D_2)\subseteq G
 \end{equation*}
-(Ce sont bien entendu des sous-groupes normaux vis à vis de l'addition de $G$) on définit alors une projection naturelle
+(Ce sont bien entendu des sous-groupes normaux vis-à-vis de l'addition de $G$) on définit alors une projection naturelle
 
 \begin{equation*}
     \pi : G/\im(D_2\circ D_1)\rightarrow 
@@ -392,7 +392,7 @@ Vu ce qui précède, le 1er élément de la suite est de dimension finie, les 2�
 \end{equation*}
 Ce qui permet de conclure. Les autres cas se montrent de façon similaire
 \end{proof}
-Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automorphisme continus de $X$
+Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automorphismes continus de $X$
 \begin{lemme}
     Si $X$ est un espace de Banach, alors 
     \begin{equation*}
@@ -408,7 +408,7 @@ Si $X$ est un espace de Banach, on pose $\mathcal{GL}(X)$ l'ensemble des automor
     \begin{equation*}
         \sum_{n\in\mathbb{N}} D^n
     \end{equation*}
-    Est absolument convergente, étant donné que $\mathcal{L}(X)$ est un Banach, $D'=\sum_{n\in\mathbb{N}} D^n$ est dans $\mathcal{L}(X)$. 
+    est absolument convergente, étant donné que $\mathcal{L}(X)$ est un Banach, $D'=\sum_{n\in\mathbb{N}} D^n$ est dans $\mathcal{L}(X)$. 
     Montrons alors que $D'$ est l'inverse de $\operatorname{Id} -d$.
     On a
     \begin{equation*}
@@ -457,7 +457,7 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
     \begin{equation*}
         \psi : \mathcal{L}(X,Y)\rightarrow \mathcal{L}(X_0,\im D), G\rightarrow \pi G\iota 
     \end{equation*}
-    C'est une fonction continue. étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (Y/\im D)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
+    C'est une fonction continue. Étant donné que $\psi(d)$ est un isomorphisme, $\psi(G)$ sera un isomorphisme si $G$ est assez proche de $d$ via \ref{iso-ouverts}. Or, $\operatorname{Ind}(\pi)=\dim (Y/\im D)$ et $\operatorname{Ind}(\iota)=-\dim (\ker d)$
     On conclut immédiatement via \ref{lemma-compo} car 
     \begin{equation*}
         0=\operatorname{Ind}(\psi(G))= -\dim(\ker d)+\operatorname{Ind}(G)+\dim(Y/\im D)
@@ -466,7 +466,7 @@ Si on pose $\operatorname*{IsoBanach}(X,Y)$ comme étant l'ensemble des homéomo
 
 Nous présentons un cas particulier d’opérateur de Fredholm qui sera utile dans la section $\ref{Lambdainfdim}$
 \begin{definition}
-    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ telle que de Fredholm en $0$ et $\operatorname*{Ind}(DF(0))=0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker DF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ DF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e, 
+    Soient $X,Y$ des espaces de Banach, $F:X\rightarrow Y$ de Fredholm en $0$ et $\operatorname*{Ind}(DF(0))=0$. Considérons alors une base $B=x_1,\cdots,x_n$ de $\ker DF(0)$ et  $B^{*}=y^{*}_1,\cdots,y^{*}_n$ une base de $\ker{ DF(0)}^{*}$. Le théorème de Hahn-Banach nous assure l’existence d'une complétion bi-orthogonale, i.e., 
     \begin{equation*}
         \exists x^{*}_1,\cdots x^{*}_n\in X^{*}, y_1,\cdots y_n\in Y:\forall 1\leq i,j\leq n,\space  y^{*}_j(y_i)= x^{*}_j(x_i)=\delta_{ij}
     \end{equation*}
@@ -477,24 +477,20 @@ On définit alors \coldef{l'opérateur de Schmidt associé à}  $(B,B^{*})$
     U : X\rightarrow Y, x\mapsto -DF(0)(x)+\sum_{i=1}^n x_i^{*}(x)y_i
 \end{equation}
 
-On peut montrer qu'il est inversible d'inverse continu,nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
+On peut montrer qu'il est inversible d'inverse continu. Nous renvoyons le lecteur vers la section 8.6 de \cite{zeidler1986nonlinear}
 
 Nous montrons maintenant quelques propriétés utiles des opérateurs de Fredholm. 
- Rappelons qu'une fonction continue entre deux espaces topologique $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ et $V\ni x$ un voisinage, il existe un autre voisinage de $x$ $V'$ tel que $V'\subseteq V$ et un voisinage $U$ de $f(x)$ tel que $f':V'\rightarrow U$ avec soit propre.
+ Rappelons qu'une fonction continue entre deux espaces topologiques $f:E\rightarrow F$ est \textcolor{color-def}{propre} si la pré-image de tout compact est compact et \textcolor{color-def}{ localement propre} si pour tout $x\in E$ il existe un voisinage $V'$ de $x$ et un voisinage $U$ de $f(x)$ tel que $f|_{V'}:V\rightarrow U$ est propre.
  \begin{remarque}
-    Bien qu'on ne le montrera pas ici, il existe une large  classe d'espaces (appelés $k$-espaces) pour lesquels les fonctions propres sont fermées, et les espace de Banach en font partie. Et il est vrai, en toute généralité, que si une fonction est fermée et que les images inverses de points sont compactes, alors elle est propre. Le lecteur intéressé peut consulter les cours de Lee et Ryszard, par exemple. \cite{Lee2011TopologicalManifolds,Engelking1989GeneralTopology}
+    Bien que nous le montrions pas ici, il existe une large  classe d'espaces (appelés $k$-espaces) pour lesquels les fonctions propres sont fermées, et les espaces de Banach en font partie. Et il est vrai, en toute généralité, que si une fonction est fermée et que les images inverses de points sont compactes, alors elle est propre. Le lecteur intéressé peut consulter les cours de Lee et Ryszard, par exemple. \cite{Lee2011TopologicalManifolds,Engelking1989GeneralTopology}
  \end{remarque}
 
-On rappelle deux propriétés basiques sur les opérateurs d'espace de Banach, pour une preuve, voir par exemple le cours de W. Rudin (\cite{rudin1991functional})
-\begin{lemme}
-    L'ensemble des opérateurs linéaires entre deux espaces de Banach qui sont injectif et à image fermée est un ouvert de $\mathcal{L}(X,Y)$ et l'ensemble des applications surjectives est un ouvert
-\end{lemme}
 Les résultats suivants sont dus à  \cite{Smale1965Sard}
 \begin{proposition}\label{propre-fred}
     Si $F:X\rightarrow Y$ est de Fredholm, alors $F$ est localement propre
 \end{proposition}
 \begin{preuve}
-Soit $x_0\in X$ et $U\ni x_0$ un voisinage. On on pose $R=\im DF(x_0)$ et $N=\ker DF(x_0)$
+Soit $x_0\in X$ et $U\ni x_0$ un voisinage. On pose $R=\im DF(x_0)$ et $N=\ker DF(x_0)$
 Comme $DF(x_0)$ est de Fredholm, on a, via \ref{spliting}, $X\cong X_0\times N $ et $Y\cong Y_0\times R$. On pose $x_0=(u_0,v_0)$, remarquez alors que $D_1F(u_0,v_0): X_0\rightarrow Y$ est injective et d'image fermée. Considérez $\pi: Y\rightarrow R$ la projection associée à la décomposition ci-dessus, on a que $D_1\pi\circ F$ est un isomorphisme d'espace de Banach et on pose
 \begin{equation*}
     H: X_0\times N\rightarrow R\times N, (u,v)\mapsto (\pi F(u,v),v).
@@ -506,12 +502,12 @@ On remarque alors que
         0 && I\\
     \end{pmatrix}
 \end{equation*}
-C'est un isomorphisme d'espace de Banach on on peut alors appliquer le théorème des fonctions inverses, qui nous fourni des voisinages $U_1\times V_1\ni (u_0,v_0) $ et $W\ni H(u_0,v_0)$ tel que $H$ est un $C^1$ de $U_1\times V_1$ ver $W$. $W$, on sait que $H^{-1}$ est de la forme $H^{-1}(r,v)=(\varphi(r,v),v)$. On choisi alors un rectangle fermé $A=\bar{B}_{R}(\pi F(x_0),\delta)\times \bar{B}_{N}(v_0,\delta) \subseteq W$. Étant donné que $N$ est de dimension finie, on peut supposer $\bar{B}_{N}(v_0,\delta)$ compact. On pose enfin $U_0=H^{-1}(A)$. On veut alors montrer que $F|_{U_0}$ est propre. Considérons alors un compact $K\subseteq  Y$ et $(x_n)_{n}$ une suite de $F|_{U_0}^{-1}(K)$ et  $(r_n,v_n)=H(x_n)$. Par définition $r_n=\pi F(x_n)$, et donc, du fait que $\pi$ est continu, $\pi(K)$ est compact et on peut alors supposer $r_n\to r$ et $\bar{B}_{N}(v_0,\delta)$  étant compact,  $v_n\to v$. Par continuité de $H^{-1}$, on a que $x_n=H^{-1}(r_n,v_n)\to H^{-1}(r,v)$.  Et conclut par la continuité de $F$.
+C'est un isomorphisme d'espace de Banach, on peut alors appliquer le théorème des fonctions inverses, qui nous fournit des voisinages $U_1\times V_1\ni (u_0,v_0) $ et $W\ni H(u_0,v_0)$ tels que $H$ est un $C^1$ de $U_1\times V_1$ vers $W$. $W$, on sait que $H^{-1}$ est de la forme $H^{-1}(r,v)=(\varphi(r,v),v)$. On choisit alors un rectangle fermé $A=\bar{B}_{R}(\pi F(x_0),\delta)\times \bar{B}_{N}(v_0,\delta) \subseteq W$. Étant donné que $N$ est de dimension finie, on peut supposer $\bar{B}_{N}(v_0,\delta)$ compact. On pose enfin $U_0=H^{-1}(A)$. On veut alors montrer que $F|_{U_0}$ est propre. Considérons alors un compact $K\subseteq  Y$ et $(x_n)_{n}$ une suite de $F|_{U_0}^{-1}(K)$ et  $(r_n,v_n)=H(x_n)$. Par définition $r_n=\pi F(x_n)$, et donc, du fait que $\pi$ est continu, $\pi(K)$ est compact et on peut alors supposer $r_n\to r$ et $\bar{B}_{N}(v_0,\delta)$  étant compact,  $v_n\to v$. Par continuité de $H^{-1}$, on a que $x_n=H^{-1}(r_n,v_n)\to H^{-1}(r,v)$.  Et on conclut par la continuité de $F$.
 \end{preuve}
 
 \subsection{Quelques remarques géométriques }
 
-Ce sous chapitre sert essentiellement à justifier le cadre dans lequel nous nous placerons (en majorité) dans ce travail: les fonctions de Fredholm d'indice nul. Nous montrons d'abord pourquoi l'étude des fonctions d'indice négatif est sans intérêt
+Ce sous-chapitre sert essentiellement à justifier le cadre dans lequel nous nous placerons (en majorité) dans ce travail: les fonctions de Fredholm d'indice nul. Nous montrons d'abord pourquoi l'étude des fonctions d'indice négatif est sans intérêt
 \begin{definition}
     Soit $F\in C^1(X,Y)$, un point $x\in X$ est 
     \coldef{régulier} si $DF(x)$ est surjective 
@@ -523,14 +519,14 @@ Ce sous chapitre sert essentiellement à justifier le cadre dans lequel nous nou
 \end{definition}
 
 \begin{theobox}{Morse-Sard}{}\label{morse-sard}
-    Si $U$ un ouvert de $\R^p$ et $F\in C^k(U,\R^q)$ où $k>\max(p-q,0)$ alors l'ensemble des valeurs singulières a une mesure nulle 
+    Si $U$ est un ouvert de $\R^p$ et $F\in C^k(U,\R^q)$ où $k>\max(p-q,0)$ alors l'ensemble des valeurs singulières a une mesure nulle 
 \end{theobox}
 
 Etant donné qu'on est en dimension infinie on remplace la mesure par une notion topologique
 
 
 \begin{definition}
-    Si $(E,\mathcal{T})$ est un espace topologique, un sous ensemble de $E$ est dit \textcolor{color-def}{dense nulle part} si son adhérence  a un intérieur vide. Un ensemble est dit \textcolor{color-def}{maigre} si c'est une union dénombrable d'ensembles denses nulle part
+    Si $(E,\mathcal{T})$ est un espace topologique, un sous-ensemble de $E$ est dit \textcolor{color-def}{dense nulle part} si son adhérence  a un intérieur vide. Un ensemble est dit \textcolor{color-def}{maigre} si c'est une union dénombrable d'ensembles denses nulle part
 \end{definition}
 \begin{theobox}{Morse-Sard-Smale}{}
     Si $X,Y$ sont des espaces de Banach séparables et si $F\in C^k(X,Y)$ est une fonction de 
@@ -557,7 +553,7 @@ est un isomorphisme, le théorème des fonctions implicites permet, quitte à re
 Pour $u\in U$ fixé, posons $\varphi_u(v)=\varphi(u,v)$. Un point $(u,v)$ est régulier pour $F$ si et seulement si $D\varphi_u(v)$ est surjective. Or $\dim\ker DF(x_0)-\dim Y_0=\operatorname{Ind}(F)$,et donc $k>\max(\dim\ker DF(x_0)-\dim Y_0,0)$. Le théorème de Morse--Sard appliqué à $\varphi_u$ montre alors que ses valeurs régulières sont denses dans $Y_0$. On en déduit que, dans tout voisinage de $F(x_0)$, il existe une valeur régulière de $F$ ; l'ensemble des valeurs singulières locales est donc d'intérieur vide. Enfin, l'ensemble des points singuliers est fermé, puisque l'ensemble des opérateurs surjectifs est ouvert. En réduisant encore le voisinage, \ref{propre-fred} permet de supposer $F$ propre sur celui-ci ; l'image de l'ensemble des points singuliers y est donc fermée, et par ce qui précède dense nulle part.
 \end{preuve}
 \begin{corollaire}
-    Dans les hypothèse du théorème précédent,
+    Dans les hypothèses du théorème précédent,
     si $F:X\rightarrow Y$ est une fonction d'indice de Fredholm négatif, alors son image n'a aucun point intérieur 
 \end{corollaire}
 \begin{remarque}
@@ -565,20 +561,20 @@ Pour $u\in U$ fixé, posons $\varphi_u(v)=\varphi(u,v)$. Un point $(u,v)$ est r�
 \end{remarque}
 
 Notez que dans la suite, on ne travaillera pas avec des fonctions de Fredholm directement, mais avec des familles paramétrées. Typiquement, on supposera que l'espace des paramètres $\Lambda$ est de dimension finie et que $D_1 F$ est continue sur un ouvert $U\times V$ contenant un point critique 
-$(x_0,\lambda_0)$, le théorème \ref{Atkinson} permet d'affirmer que l'index de $F(\cdot,\lambda)$ y sera constant, mais qu'en est-il de la fonction totale $F:X\times \Lambda\rightarrow Y$ ?
+$(x_0,\lambda_0)$, le théorème \ref{Atkinson} permet d'affirmer que l'indice de $F(\cdot,\lambda)$ y sera constant, mais qu'en est-il de la fonction totale $F:X\times \Lambda\rightarrow Y$ ?
 Des calculs simples permettent d'établir que
 \begin{equation*}
    \operatorname*{Ind}(DF(x_0,\lambda_0))
    =\operatorname*{Ind}(D_1F)+ \dim(\Lambda)
 \end{equation*}
-C'est pour celà qu'en pratique, on se concentrera surtout sur le cas ou $ \operatorname*{Ind}F(\cdot,\lambda)\geq -\dim \Lambda$
+C'est pour cela qu'en pratique, on se concentrera surtout sur le cas où $ \operatorname*{Ind}F(\cdot,\lambda)\geq -\dim \Lambda$
 
 
 
 
 
 \begin{corollaire}
-    Si $X,Y$ sont des espaces de Banach séparables, $U\subseteq X$,$V\subseteq Y$ sont des ouverts  et si $F\in C^k(U,V)$ est de Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$ alors il existe un sous ensemble $V'$ de $V$, dont le complémentaire dans $V$ est maigre tel que si $y\in V'$, alors $F^{-1}(y)$ est une variété de dimension $\operatorname*{Ind}(f)$ ou est vide
+    Si $X,Y$ sont des espaces de Banach séparables, $U\subseteq X$,$V\subseteq Y$ sont des ouverts  et si $F\in C^k(U,V)$ est de Fredholm avec $k>\max(\operatorname*{Ind}(F),0)$ alors il existe un sous-ensemble $V'$ de $V$, dont le complémentaire dans $V$ est maigre tel que si $y\in V'$, alors $F^{-1}(y)$ est une variété de dimension $\operatorname*{Ind}(f)$ ou est vide
 \end{corollaire}
 \begin{figure}[htbp]
     \centering
@@ -589,10 +585,10 @@ C'est pour celà qu'en pratique, on se concentrera surtout sur le cas ou $ \oper
 \end{figure}
 Le corollaire précédent nous informe que les 
 cas où un ensemble de niveau présente une 
-bifurcation est "rare", et que la "plupart du 
+bifurcation sont "rares", et que la "plupart du 
 temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'agit d'une variété. Notez cependant qu'un ensemble maigre peut avoir des points d'accumulation ($\mathbb{Q}$, par exemple).
 \begin{exemple}
-    On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble de $y\in \R$ tel que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
+    On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble des $y\in \R$ tels que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
     \begin{equation*}
         a_{n}=\begin{cases}
             r_{n/2}\text{ si $n$ est pair}
@@ -601,13 +597,13 @@ temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'a
     \end{equation*}
     Il est possible de construire une fonction lisse $g$ telle que 
     \begin{equation*}
-        g(n)=a_n, \forall n<x<n+1,g'(x)\neq 0\text{ et } \forall j\geq 1, g^{(j)}(n)=0
+        \forall n\in\mathbb{Z},g(n)=a_n, \forall n<x<n+1,g'(x)\neq 0\text{ et } \forall j\geq 1, g^{(j)}(n)=0
     \end{equation*}
     L'ensemble des points critiques de $g$ est $\mathbb{Z}$, et l'ensemble des valeurs critiques est $\mathbb{Q}$. On pose alors
     \begin{equation*}
         F:\R^2\rightarrow \R, (x,\lambda)\mapsto g(x)+\lambda^2.
     \end{equation*}
-    Maintenant si $y=r_n$, alors $a_{2n-1}<a_{2n}$ et $a_{2n+1}<a_{2n}$ et $2n$ alors un maximum local strict et on a donc localement
+    Maintenant si $y=r_n$, alors $a_{2n-1}<a_{2n}$ et $a_{2n+1}<a_{2n}$ et $2n$ est alors un maximum local strict et on a donc localement
     \begin{equation*}
         F(x,\lambda)=r_n\Leftrightarrow \lambda^2=r_n-g(x)
     \end{equation*}
@@ -617,7 +613,7 @@ On aimerait
 bien avoir le pendant pour les paramètres, i.e 
 que les bifurcations aient lieu en des valeurs 
 singulières isolées, et que le lieu d'annulation 
-soit "la plupart du temps" une variété de dimension $\operatorname*{Ind}(F)$. Ca n'est bien sûr pas vrai en général, même avec des fonctions non nulles: 
+soit "la plupart du temps" une variété de dimension $\operatorname*{Ind}(F)$. Ça n'est bien sûr pas vrai en général, même avec des fonctions non nulles: 
 
 \begin{exemple}
     Considérez la fonction
@@ -629,7 +625,7 @@ soit "la plupart du temps" une variété de dimension $\operatorname*{Ind}(F)$. 
 
 
 \subsection{Opérateurs de Fredholm différentiels}
-Dans cette dernière sous-section, nous motivons l'étude des opérateurs de Fredholm en présentant le cadre le plus naturel dans lequel il apparaîssent. Nous nous contenterons de donner les définitions et les énoncés importants, le lecteur intéressé par les détails pourra consulter \cite{berger1977nonlinearity}
+Dans cette dernière sous-section, nous motivons l'étude des opérateurs de Fredholm en présentant le cadre le plus naturel dans lequel ils apparaissent. Nous nous contenterons de donner les définitions et les énoncés importants, le lecteur intéressé par les détails pourra consulter \cite{berger1977nonlinearity}
 Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple de nombres naturels $(\alpha_1,\cdots,\alpha_n)$ et qu'on a $D^{\alpha}=D^{\alpha_1}_1\cdots D^{\alpha_n}_n$, on pose aussi $|\alpha|=\sum_{i=1}^n \alpha_i$ et $\alpha !=\alpha_1!\cdots\alpha_n!$
 \begin{definition}
     Soient $U$ un ouvert connexe de $\R^n$ et $m\geq 1$. Si pour tout $x\in U$, 
@@ -649,21 +645,21 @@ Nous rappelons qu'un multi-indice $\alpha$ de taille $n$ est simplement un tuple
     principaux
 \end{definition}
 
-Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui-ci dessus, et par $P_m(x,D)$ sa partie principale.
+Dans la suite, on dénotera par $P(x,D)$ un opérateur différentiel comme celui ci-dessus, et par $P_m(x,D)$ sa partie principale.
 \begin{definition}
     L'opérateur $P(x,D)$  est \coldef
     {elliptique } en $x_0$ si le polynôme $P(x_0,\xi)_m$ est 
-    de signe constant sur $\R^n\setminus\left\{0\right\}$. Notez que cela impose à $m$ d'être pair. Il est elliptique sur $U$ si il l'est en tout point de $U$ et 
-    s'il existe un constante $c>0$ telle que 
-    pour tout $x\in U$, on aie $P_m(x,\xi)\geq 
+    de signe constant sur $\R^n\setminus\left\{0\right\}$. Notez que cela impose à $m$ d'être pair. Il est elliptique sur $U$ s'il l'est en tout point de $U$ et 
+    s'il existe une constante $c>0$ telle que 
+    pour tout $x\in U$,$\xi\in\R^n$ on ait $P_m(x,\xi)\geq 
     c |\xi|^m$ alors il est  \coldef{uniformément 
     elliptique }
 \end{definition}
-Le contexte fonctionnel le plus simple est celui des espaces de Hölder: on rappelle que fonction est $\alpha$-hölderienne sur $\bar{U}$ si
+Le contexte fonctionnel le plus simple est celui des espaces de Hölder: on rappelle que fonction est $\alpha$-hölderiennes ($0<\alpha<1$)sur $\bar{U}$ si
 \begin{equation*}
     ||f||_{C^{\alpha}}=||f||_{\infty}+\sup_{x\neq y}\frac{|f(x)-f(y)|}{|x-y|^{\alpha}}<\infty
 \end{equation*}
-On note $C^{\alpha}(\bar{U})$ l'ensemble des fonctions $\alpha$-hölderienne sur $\bar{U}$ et $C^{k+\alpha}(\bar{U})$ l'ensemble des fonctions dont toutes les dérivées d'ordre $\leq k$ sont $\alpha$-hölderienne.  Il est bien connu que $(C^\alpha(\bar{U}),||\cdot||_{C^{\alpha}})$ est un espace de Banach et en posant
+On note $C^{\alpha}(\bar{U})$ l'ensemble des fonctions $\alpha$-hölderienne sur $\bar{U}$ et $C^{k+\alpha}(\bar{U})$ l'ensemble des fonctions dont toutes les dérivées d'ordre $\leq k$ sont $\alpha$-hölderiennes.  Il est bien connu que $(C^\alpha(\bar{U}),||\cdot||_{C^{\alpha}})$ est un espace de Banach et en posant
 \begin{equation*}
     ||f||_{C^{k+\alpha}(\bar{U})}=\sum_{|\beta|\leq k}||D^\beta f||_{C^\alpha}
 \end{equation*}
@@ -671,7 +667,7 @@ On munit $C^{k+\alpha}(\bar{U})$ d'une structure d'espace de Banach. On peut mon
 \begin{proposition}
     Soit $U$ une partie ouverte et bornée de $\R^n$ ayant un bord $\partial U$ lisse. Soit $E$ un opérateur elliptique d'ordre $2k$ sur $\bar{U}$ à coefficients lisses (ou au moins $C^{l+\alpha}$)
     \begin{equation*}
-        X=\left\{ f\in C^{2k+l+\alpha}(\bar{U}):\forall |\alpha|\leq k-1, D^{\alpha}f|_{\partial U}=0\right\}\text{ et } Y=C^{l+\alpha}(\bar{U})
+        X=\left\{ f\in C^{2k+l+\alpha}(\bar{U}):\forall |\beta|\leq k-1, D^{\beta}f|_{\partial U}=0\right\}\text{ et } Y=C^{l+\alpha}(\bar{U})
     \end{equation*}
     Alors $E: X\rightarrow Y$ est un opérateur de Fredholm d'indice 0
 \end{proposition}
@@ -688,11 +684,11 @@ Ce type d'opérateurs est très courant en physique, par exemple:
 \end{exemple}
 
 \begin{exemple}
-    Si $g$ est une métrique riemannienne lisse, le Laplacian $\Delta_g$ est elliptique. En particulier, l'opérateur de Klein-Gordon euclidien (utilisé en QFT relativiste) défini par
+    Si $g$ est une métrique riemannienne lisse, le laplacien $\Delta_g$ est elliptique. En particulier, l'opérateur de Klein-Gordon euclidien (utilisé en QFT relativiste) défini par
     \begin{equation*}
         P=-\Delta_g+m^2+cR_g
     \end{equation*}
-    avec $R_g$ la courbure scalaire $c$ et $m$ constants est également elliptique
+    avec $R_g$ la courbure scalaire $c$ et $m$, constants est également elliptique
 \end{exemple}
 De manière analogue, pour un opérateur scalaire uniformément elliptique du second ordre à coefficients réguliers sur un domaine borné à bord lisse, la condition homogène de Neumann $\partial_\nu u=0$ sur $\partial U$ définit également un problème de Fredholm d'indice nul.
 \newpage
