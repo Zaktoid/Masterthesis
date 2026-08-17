@@ -4,7 +4,7 @@
 
 
 \section*{Introduction}
-Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : Étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
+Dans sa forme la plus générale, la théorie de la bifurcation (statique) pourrait se résumer aux différentes techniques mises en place pour répondre à la question suivante : étant donné deux espaces abstraits $X$ et $Y$, un espace de paramètre $\Lambda$ et une famille de fonctions 
 \begin{equation*}
     (f_{\lambda}: X\rightarrow Y)_{\lambda\in\Lambda}
 \end{equation*} comment le lieu $f^{-1}_{\lambda}(0)$ change-t-il quand $\lambda$ varie ? On peut réécrire cette famille de fonctions comme une fonction 
@@ -39,7 +39,7 @@ les \coldef{bifurcations
 depuis une branche 
 triviale}, i.e,  si $(x_0,
 \lambda_0)\in F^{-1}(0)$ dans quelles conditions est-ce que tout voisinage de $(x_0,\lambda_0)$ contient des solutions \coldef{non triviales}, c'est-à-dire des zéros  de $F$ ne se trouvant pas sur la branche triviale.\\
- La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1}. On y étudiera la notion d'équivalence entre (germe de) fonctions. L'idée étant de comprendre quelle transformations ne "détruise pas" l'information qualitative au voisinage du point d'intérêt $(x_0,\lambda_0)$. Nous étudierons ces équivalences sous le prisme de l'action de groupe: deux (germes) de fonctions seront alors équivalentes si elles se trouvent dans le même orbite de l'action\\
+ La première partie de ce travail établit les notions prérequises et a pour but de le rendre le plus autonome possible. La seconde partie introduit la \coldef{réduction de Lyapunov-Schmidt}, qui,  dans des conditions que nous allons préciser, permet de se ramener à un problème en dimension finie. Ensuite, nous introduirons l'approche par \coldef{ la théorie des singularités} initiée par Golubitsky dans \cite{golubitsky1985sgb1}. On y étudiera la notion d'équivalence entre (germe de) fonctions. L'idée étant de comprendre quelle transformations ne "détruise pas" l'information qualitative au voisinage du point d'intérêt $(x_0,\lambda_0)$. Nous étudierons ces équivalences sous le prisme de l'action de groupe: deux (germes) de fonctions seront alors équivalentes si elles se trouvent dans le même orbite de l'action.\\
  La troisième partie présentera un outil d'un tout autre type: un degré topologique. Nous y introduiront les bases de la théorie générale du degré et une généralisation du degré proposée par M. Furi dans \cite{BenevieriFuri2001} \\
  La dernière partie, quant à elle, constituera une introduction aux bifurcations dynamiques. Si on se replace dans le contexte d'un système dynamique (donc l'étude d'une équation d'évolution comme  \eqref{equanewton}), on s'intéresse à comment les propriétés purement dynamiques changent quand $\lambda$ varie, dans ce travail, nous exposerons uniquement la plus fameuse bifurcation dynamique : la bifurcation de Hopf. Intuitivement, elle correspond à un passage d'un régime présentant des  points d'attraction ou de répulsion à un régime présentant des orbites périodiques attractives ou répulsives, nous en profiterons également pour introduire quelques notions de stabilité. Nous n'explorerons pas la dynamique plus loin, mais notez qu'on peut également considérer des bifurcations correspondant à un passage d'un système non chaotique à un système chaotique (voir par exemple la fameuse "logistic map"). Le but de ce travail est donner une vision d'ensemble des techniques qui peuvent être déployée pour étudier l'apparition de nouvelle branche de solutions dans un système d'équations paramétré
  
@@ -522,7 +522,7 @@ Ce sous chapitre sert essentiellement à justifier le cadre dans lequel nous nou
     valeur singulière
 \end{definition}
 
-\begin{theobox}{Morse-Sard}{}
+\begin{theobox}{Morse-Sard}{}\label{morse-sard}
     Si $U$ un ouvert de $\R^p$ et $F\in C^k(U,\R^q)$ où $k>\max(p-q,0)$ alors l'ensemble des valeurs singulières a une mesure nulle 
 \end{theobox}
 
@@ -595,7 +595,7 @@ temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'a
     On peut construire une fonction $F\in C^{\infty}(\R^2,\R)$ pour laquelle l'ensemble de $y\in \R$ tel que $F^{-1}(y)$ n'est pas une variété est $\mathbb{Q}$. Considérons une énumération des rationnels $(r_n)_{n\in\mathbb{\mathbb{Z}}}$ et considérons la suite
     \begin{equation*}
         a_{n}=\begin{cases}
-            r_{k/2}\text{ si $n$ est pair}
+            r_{n/2}\text{ si $n$ est pair}
             \\ \min (r_{(n-1)/2},r_{(n-1)/2+1})-1 \text{ sinon}
         \end{cases}
     \end{equation*}
@@ -607,10 +607,11 @@ temps"(de façon générique voir \cite{Hirsch1976DifferentialTopology}), il s'a
     \begin{equation*}
         F:\R^2\rightarrow \R, (x,\lambda)\mapsto g(x)+\lambda^2.
     \end{equation*}
-    Maintenant si $y=r_n$, alors $a_{2n-1}<a_{2n}$ et $a_{2n+1}<a_{2n}$ et $2k$ alors un maximum local strict et on a donc localement
+    Maintenant si $y=r_n$, alors $a_{2n-1}<a_{2n}$ et $a_{2n+1}<a_{2n}$ et $2n$ alors un maximum local strict et on a donc localement
     \begin{equation*}
         F(x,\lambda)=r_n\Leftrightarrow \lambda^2=r_n-g(x)
     \end{equation*}
+    et $F^{-1}(r_n)$ n'est pas une variété
 \end{exemple}
 On aimerait 
 bien avoir le pendant pour les paramètres, i.e 
